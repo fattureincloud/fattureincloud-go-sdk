@@ -30,16 +30,17 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
     createClientRequest := *fattureincloud.NewCreateClientRequest() // CreateClientRequest | The client to create (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.ClientsApi.CreateClient(auth, companyId).CreateClientRequest(createClientRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ClientsApi.CreateClient``: %v\n", err)
@@ -104,16 +105,17 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
     clientId := int32(56) // int32 | The ID of the client.
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.ClientsApi.DeleteClient(auth, companyId, clientId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ClientsApi.DeleteClient``: %v\n", err)
@@ -177,7 +179,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
@@ -186,9 +189,9 @@ func main() {
     fields := "fields_example" // string | List of comma-separated fields. (optional)
     fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.ClientsApi.GetClient(auth, companyId, clientId).Fields(fields).Fieldset(fieldset).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ClientsApi.GetClient``: %v\n", err)
@@ -256,7 +259,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
@@ -268,9 +272,9 @@ func main() {
     perPage := int32(56) // int32 | The size of the page. (optional) (default to 5)
     q := "q_example" // string | Query for filtering the results. (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.ClientsApi.ListClients(auth, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ClientsApi.ListClients``: %v\n", err)
@@ -340,7 +344,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
@@ -348,9 +353,9 @@ func main() {
     clientId := int32(56) // int32 | The ID of the client.
     modifyClientRequest := *fattureincloud.NewModifyClientRequest() // ModifyClientRequest | The modified Client. First level parameters are managed in delta mode. (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.ClientsApi.ModifyClient(auth, companyId, clientId).ModifyClientRequest(modifyClientRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ClientsApi.ModifyClient``: %v\n", err)

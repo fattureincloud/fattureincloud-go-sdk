@@ -41,15 +41,16 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.InfoApi.ListArchiveCategories(auth, companyId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListArchiveCategories``: %v\n", err)
@@ -113,16 +114,17 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
     postalCode := "postalCode_example" // string | Postal code for filtering. (optional)
     city := "city_example" // string | City for filtering (ignored if postal_code is passed). (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.InfoApi.ListCities(auth).PostalCode(postalCode).City(city).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListCities``: %v\n", err)
@@ -183,15 +185,16 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.InfoApi.ListCostCenters(auth, companyId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListCostCenters``: %v\n", err)
@@ -255,14 +258,15 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.InfoApi.ListCountries(auth).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListCountries``: %v\n", err)
@@ -318,14 +322,15 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.InfoApi.ListCurrencies(auth).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListCurrencies``: %v\n", err)
@@ -381,14 +386,15 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.InfoApi.ListDeliveryNotesDefaultCausals(auth).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListDeliveryNotesDefaultCausals``: %v\n", err)
@@ -444,14 +450,15 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.InfoApi.ListDetailedCountries(auth).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListDetailedCountries``: %v\n", err)
@@ -507,14 +514,15 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.InfoApi.ListLanguages(auth).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListLanguages``: %v\n", err)
@@ -570,7 +578,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
@@ -579,9 +588,9 @@ func main() {
     fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
     sort := "sort_example" // string | List of comma-separated fields for result sorting (minus for desc sorting). (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.InfoApi.ListPaymentAccounts(auth, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListPaymentAccounts``: %v\n", err)
@@ -648,7 +657,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
@@ -657,9 +667,9 @@ func main() {
     fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
     sort := "sort_example" // string | List of comma-separated fields for result sorting (minus for desc sorting). (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.InfoApi.ListPaymentMethods(auth, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListPaymentMethods``: %v\n", err)
@@ -726,16 +736,17 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
     context := "context_example" // string | 
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.InfoApi.ListProductCategories(auth, companyId).Context(context).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListProductCategories``: %v\n", err)
@@ -800,15 +811,16 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.InfoApi.ListReceivedDocumentCategories(auth, companyId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListReceivedDocumentCategories``: %v\n", err)
@@ -872,15 +884,16 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.InfoApi.ListRevenueCenters(auth, companyId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListRevenueCenters``: %v\n", err)
@@ -944,16 +957,17 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
     type_ := "type__example" // string | Type of the templates. (optional) (default to "all")
     byType := true // bool | [Only if type=all] If true, splits the list in objects, grouping templates by type. (optional) (default to false)
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.InfoApi.ListTemplates(auth).Type_(type_).ByType(byType).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListTemplates``: %v\n", err)
@@ -1014,14 +1028,15 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.InfoApi.ListUnitsOfMeasure(auth).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListUnitsOfMeasure``: %v\n", err)
@@ -1077,16 +1092,17 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
     fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.InfoApi.ListVatTypes(auth, companyId).Fieldset(fieldset).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListVatTypes``: %v\n", err)

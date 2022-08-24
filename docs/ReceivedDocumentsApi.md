@@ -35,16 +35,17 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
     createReceivedDocumentRequest := *fattureincloud.NewCreateReceivedDocumentRequest() // CreateReceivedDocumentRequest | Document to create (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.ReceivedDocumentsApi.CreateReceivedDocument(auth, companyId).CreateReceivedDocumentRequest(createReceivedDocumentRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsApi.CreateReceivedDocument``: %v\n", err)
@@ -109,16 +110,17 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
     documentId := int32(56) // int32 | The ID of the document.
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.ReceivedDocumentsApi.DeleteReceivedDocument(auth, companyId, documentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsApi.DeleteReceivedDocument``: %v\n", err)
@@ -182,16 +184,17 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
     documentId := int32(56) // int32 | The ID of the document.
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.ReceivedDocumentsApi.DeleteReceivedDocumentAttachment(auth, companyId, documentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsApi.DeleteReceivedDocumentAttachment``: %v\n", err)
@@ -255,7 +258,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
@@ -263,9 +267,9 @@ func main() {
     documentId := int32(56) // int32 | The ID of the document.
     getExistingReceivedDocumentTotalsRequest := *fattureincloud.NewGetExistingReceivedDocumentTotalsRequest() // GetExistingReceivedDocumentTotalsRequest | Received document. (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.ReceivedDocumentsApi.GetExistingReceivedDocumentTotals(auth, companyId, documentId).GetExistingReceivedDocumentTotalsRequest(getExistingReceivedDocumentTotalsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsApi.GetExistingReceivedDocumentTotals``: %v\n", err)
@@ -332,16 +336,17 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
     getNewReceivedDocumentTotalsRequest := *fattureincloud.NewGetNewReceivedDocumentTotalsRequest() // GetNewReceivedDocumentTotalsRequest | Received document. (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.ReceivedDocumentsApi.GetNewReceivedDocumentTotals(auth, companyId).GetNewReceivedDocumentTotalsRequest(getNewReceivedDocumentTotalsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsApi.GetNewReceivedDocumentTotals``: %v\n", err)
@@ -406,7 +411,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
@@ -415,9 +421,9 @@ func main() {
     fields := "fields_example" // string | List of comma-separated fields. (optional)
     fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.ReceivedDocumentsApi.GetReceivedDocument(auth, companyId, documentId).Fields(fields).Fieldset(fieldset).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsApi.GetReceivedDocument``: %v\n", err)
@@ -485,16 +491,17 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
     type_ := "type__example" // string | The type of the received document.
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.ReceivedDocumentsApi.GetReceivedDocumentPreCreateInfo(auth, companyId).Type_(type_).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsApi.GetReceivedDocumentPreCreateInfo``: %v\n", err)
@@ -559,7 +566,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
@@ -572,9 +580,9 @@ func main() {
     perPage := int32(56) // int32 | The size of the page. (optional) (default to 5)
     q := "q_example" // string | Query for filtering the results. (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.ReceivedDocumentsApi.ListReceivedDocuments(auth, companyId).Type_(type_).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsApi.ListReceivedDocuments``: %v\n", err)
@@ -645,7 +653,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
@@ -653,9 +662,9 @@ func main() {
     documentId := int32(56) // int32 | The ID of the document.
     modifyReceivedDocumentRequest := *fattureincloud.NewModifyReceivedDocumentRequest() // ModifyReceivedDocumentRequest | Modified document. (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.ReceivedDocumentsApi.ModifyReceivedDocument(auth, companyId, documentId).ModifyReceivedDocumentRequest(modifyReceivedDocumentRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsApi.ModifyReceivedDocument``: %v\n", err)
@@ -722,7 +731,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
@@ -730,9 +740,9 @@ func main() {
     filename := "filename_example" // string | Name of the file. (optional)
     attachment := os.NewFile(1234, "some_file") // *os.File | Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.ReceivedDocumentsApi.UploadReceivedDocumentAttachment(auth, companyId).Filename(filename).Attachment(attachment).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsApi.UploadReceivedDocumentAttachment``: %v\n", err)

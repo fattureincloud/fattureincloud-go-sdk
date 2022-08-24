@@ -26,15 +26,16 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.CompaniesApi.GetCompanyInfo(auth, companyId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CompaniesApi.GetCompanyInfo``: %v\n", err)

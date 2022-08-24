@@ -30,16 +30,17 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
     createCashbookEntryRequest := *fattureincloud.NewCreateCashbookEntryRequest() // CreateCashbookEntryRequest | Cashbook entry.  (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.CashbookApi.CreateCashbookEntry(auth, companyId).CreateCashbookEntryRequest(createCashbookEntryRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CashbookApi.CreateCashbookEntry``: %v\n", err)
@@ -104,16 +105,17 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
     documentId := "documentId_example" // string | The ID of the document.
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.CashbookApi.DeleteCashbookEntry(auth, companyId, documentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CashbookApi.DeleteCashbookEntry``: %v\n", err)
@@ -177,7 +179,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
@@ -186,9 +189,9 @@ func main() {
     fields := "fields_example" // string | List of comma-separated fields. (optional)
     fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.CashbookApi.GetCashbookEntry(auth, companyId, documentId).Fields(fields).Fieldset(fieldset).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CashbookApi.GetCashbookEntry``: %v\n", err)
@@ -256,7 +259,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
@@ -267,9 +271,9 @@ func main() {
     type_ := "type__example" // string | Filter cashbook by type. (optional)
     paymentAccountId := int32(56) // int32 | Filter by payment account. (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.CashbookApi.ListCashbookEntries(auth, companyId).DateFrom(dateFrom).DateTo(dateTo).Year(year).Type_(type_).PaymentAccountId(paymentAccountId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CashbookApi.ListCashbookEntries``: %v\n", err)
@@ -338,7 +342,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
 )
 
 func main() {
@@ -346,9 +351,9 @@ func main() {
     documentId := "documentId_example" // string | The ID of the document.
     modifyCashbookEntryRequest := *fattureincloud.NewModifyCashbookEntryRequest() // ModifyCashbookEntryRequest | Cashbook Entry (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloud.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloud.NewConfiguration()
-    apiClient := fattureincloud.NewAPIClient(configuration)
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.CashbookApi.ModifyCashbookEntry(auth, companyId, documentId).ModifyCashbookEntryRequest(modifyCashbookEntryRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CashbookApi.ModifyCashbookEntry``: %v\n", err)
