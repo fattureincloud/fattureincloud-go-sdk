@@ -46,7 +46,7 @@ func NewIssuedDocumentPaymentsListItem() *IssuedDocumentPaymentsListItem {
 // but it doesn't guarantee that properties required by API are set
 func NewIssuedDocumentPaymentsListItemWithDefaults() *IssuedDocumentPaymentsListItem {
 	this := IssuedDocumentPaymentsListItem{}
-	var status IssuedDocumentStatus = IssuedDocumentStatuss.NOT_PAID
+	var status IssuedDocumentStatus = IssuedDocumentStatuses.NOT_PAID
 	this.Status = &status
 	return &this
 }

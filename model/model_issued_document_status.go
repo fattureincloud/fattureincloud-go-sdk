@@ -20,7 +20,7 @@ import (
 type IssuedDocumentStatus string
 
 // List of IssuedDocumentStatus
-var IssuedDocumentStatuss = struct {
+var IssuedDocumentStatuses = struct {
 	NOT_PAID IssuedDocumentStatus
 	PAID IssuedDocumentStatus
 	REVERSED IssuedDocumentStatus

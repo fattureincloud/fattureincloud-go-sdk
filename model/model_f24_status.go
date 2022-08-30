@@ -20,7 +20,7 @@ import (
 type F24Status string
 
 // List of F24Status
-var F24Statuss = struct {
+var F24Statuses = struct {
 	PAID F24Status
 	NOT_PAID F24Status
 	REVERSED F24Status
