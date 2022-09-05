@@ -1,0 +1,56 @@
+# UploadReceivedDocumentAttachmentResponse
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Data** | Pointer to [**AttachmentData**](AttachmentData.md) |  | [optional] 
+
+## Methods
+
+### NewUploadReceivedDocumentAttachmentResponse
+
+`func NewUploadReceivedDocumentAttachmentResponse() *UploadReceivedDocumentAttachmentResponse`
+
+NewUploadReceivedDocumentAttachmentResponse instantiates a new UploadReceivedDocumentAttachmentResponse object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewUploadReceivedDocumentAttachmentResponseWithDefaults
+
+`func NewUploadReceivedDocumentAttachmentResponseWithDefaults() *UploadReceivedDocumentAttachmentResponse`
+
+NewUploadReceivedDocumentAttachmentResponseWithDefaults instantiates a new UploadReceivedDocumentAttachmentResponse object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetData
+
+`func (o *UploadReceivedDocumentAttachmentResponse) GetData() AttachmentData`
+
+GetData returns the Data field if non-nil, zero value otherwise.
+
+### GetDataOk
+
+`func (o *UploadReceivedDocumentAttachmentResponse) GetDataOk() (*AttachmentData, bool)`
+
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetData
+
+`func (o *UploadReceivedDocumentAttachmentResponse) SetData(v AttachmentData)`
+
+SetData sets Data field to given value.
+
+### HasData
+
+`func (o *UploadReceivedDocumentAttachmentResponse) HasData() bool`
+
+HasData returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
