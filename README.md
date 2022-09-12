@@ -1,6 +1,6 @@
 # FattureInCloud Go SDK
 
-![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/fattureincloud/fattureincloud-go-sdk) ![unit tests](https://github.com/fattureincloud/fattureincloud-go-sdk/actions/workflows/validate.yaml/badge.svg)
+![Release](https://img.shields.io/github/v/release/fattureincloud/fattureincloud-go-sdk?display_name=Release) ![unit tests](https://github.com/fattureincloud/fattureincloud-go-sdk/actions/workflows/validate.yaml/badge.svg)
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 400.000 businesses in Italy. 
 
