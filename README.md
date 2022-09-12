@@ -1,4 +1,6 @@
-# Go API client for fattureincloud
+# FattureInCloud Go SDK
+
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/fattureincloud/fattureincloud-go-sdk) ![unit tests](https://github.com/fattureincloud/fattureincloud-go-sdk/actions/workflows/validate.yaml/badge.svg)
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 400.000 businesses in Italy. 
 
@@ -17,62 +19,7 @@ For more information, please visit [https://www.fattureincloud.it](https://www.f
 Install the following dependencies:
 
 ```shell
-go get github.com/stretchr/testify/assert
-go get golang.org/x/oauth2
-go get golang.org/x/net/context
-```
-
-Put the package under your project folder and add the following in import:
-
-```golang
-import fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk"
-```
-
-To use a proxy, set the environment variable `HTTP_PROXY`:
-
-```golang
-os.Setenv("HTTP_PROXY", "http://proxy_name:proxy_port")
-```
-
-## Configuration of Server URL
-
-Default configuration comes with `Servers` field that contains server objects as defined in the OpenAPI specification.
-
-### Select Server Configuration
-
-For using other server than the one defined on index 0 set context value `sw.ContextServerIndex` of type `int`.
-
-```golang
-ctx := context.WithValue(context.Background(), fattureincloud.ContextServerIndex, 1)
-```
-
-### Templated Server URL
-
-Templated server URL is formatted using default variables from configuration or from context value `sw.ContextServerVariables` of type `map[string]string`.
-
-```golang
-ctx := context.WithValue(context.Background(), fattureincloud.ContextServerVariables, map[string]string{
-	"basePath": "v2",
-})
-```
-
-Note, enum values are always validated and all unused variables are silently ignored.
-
-### URLs Configuration per Operation
-
-Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
-An operation is uniquely identified by `"{classname}Service.{nickname}"` string.
-Similar rules for overriding default operation server index and variables applies by using `sw.ContextOperationServerIndices` and `sw.ContextOperationServerVariables` context maps.
-
-```
-ctx := context.WithValue(context.Background(), fattureincloud.ContextOperationServerIndices, map[string]int{
-	"{classname}Service.{nickname}": 2,
-})
-ctx = context.WithValue(context.Background(), fattureincloud.ContextOperationServerVariables, map[string]map[string]string{
-	"{classname}Service.{nickname}": {
-		"port": "8443",
-	},
-})
+go get github.com/fattureincloud/fattureincloud-go-sdk
 ```
 
 ## Documentation for API Endpoints
