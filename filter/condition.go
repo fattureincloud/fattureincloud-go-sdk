@@ -18,19 +18,19 @@ func NewCondition(field string, op Operator, value interface{}) *Condition {
 
 func (c *Condition) BuildQuery() string {
 	if c.Value == nil {
-		return fmt.Sprintf("%s %s %s", c.Field, c.Operator, "null")
+		return fmt.Sprintf("%s %s %s", c.Field, string(c.Operator), "null")
 	}
 	switch c.Value.(type) {
 	case bool:
-		return fmt.Sprintf("%s %s %t", c.Field, c.Operator, c.Value)
+		return fmt.Sprintf("%s %s %t", c.Field, string(c.Operator), c.Value)
 	case int:
-		return fmt.Sprintf("%s %s %d", c.Field, c.Operator, c.Value)
+		return fmt.Sprintf("%s %s %d", c.Field, string(c.Operator), c.Value)
 	case float64:
-		return fmt.Sprintf("%s %s %f", c.Field, c.Operator, c.Value)
+		return fmt.Sprintf("%s %s %f", c.Field, string(c.Operator), c.Value)
 	case string:
-		return fmt.Sprintf("%s %s \"%s\"", c.Field, c.Operator, c.Value)
+		return fmt.Sprintf("%s %s '%s'", c.Field, string(c.Operator), c.Value)
 	}
-	return fmt.Sprintf("%s %s \"%s\"", c.Field, c.Operator, c.Value)
+	return fmt.Sprintf("%s %s '%s'", c.Field, string(c.Operator), c.Value)
 }
 
 func (c *Condition) String() string {

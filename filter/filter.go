@@ -6,8 +6,16 @@ type Filter struct {
 	Expression Expression
 }
 
-func (f *Filter) NewFilter(e Expression) {
-	f.Expression = e
+func NewEmptyFilter() *Filter {
+	this := Filter{}
+	this.Expression = nil
+	return &this
+}
+
+func NewFilter(e Expression) *Filter {
+	this := Filter{}
+	this.Expression = e
+	return &this
 }
 
 func (f *Filter) Where(field string, op Operator, value interface{}) *Filter {
@@ -69,11 +77,19 @@ func (f *Filter) OrFilter(filter Filter) *Filter {
 }
 
 func (f *Filter) BuildQuery() string {
-	return f.Expression.BuildQuery()
+	if f.Expression != nil {
+		return f.Expression.BuildQuery()
+	} else {
+		return ""
+	}
 }
 
 func (f *Filter) BuildUrlEncodedQuery() string {
-	return url.QueryEscape(f.BuildQuery())
+	if f.Expression != nil {
+		return url.QueryEscape(f.BuildQuery())
+	} else {
+		return ""
+	}
 }
 
 func (f *Filter) String() string {
