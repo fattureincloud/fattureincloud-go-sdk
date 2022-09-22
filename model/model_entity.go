@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 400.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.19
+API version: 2.0.20
 Contact: info@fattureincloud.it
 */
 
@@ -58,7 +58,7 @@ type Entity struct {
 	DefaultVat NullableVatType `json:"default_vat,omitempty"`
 	// [Only for client] Default payment terms.
 	DefaultPaymentTerms NullableInt32 `json:"default_payment_terms,omitempty"`
-	DefaultPaymentTermsType *DefaultPaymentTermsType `json:"default_payment_terms_type,omitempty"`
+	DefaultPaymentTermsType *PaymentTermsType `json:"default_payment_terms_type,omitempty"`
 	DefaultPaymentMethod *PaymentMethod `json:"default_payment_method,omitempty"`
 	// [Only for client] Bank name.
 	BankName NullableString `json:"bank_name,omitempty"`
@@ -96,7 +96,7 @@ func NewEntity() *Entity {
 // but it doesn't guarantee that properties required by API are set
 func NewEntityWithDefaults() *Entity {
 	this := Entity{}
-	var defaultPaymentTermsType DefaultPaymentTermsType = DefaultPaymentTermsTypes.STANDARD
+	var defaultPaymentTermsType PaymentTermsType = PaymentTermsTypes.STANDARD
 	this.DefaultPaymentTermsType = &defaultPaymentTermsType
 	return &this
 }
@@ -1070,9 +1070,9 @@ func (o *Entity) UnsetDefaultPaymentTerms() {
 }
 
 // GetDefaultPaymentTermsType returns the DefaultPaymentTermsType field value if set, zero value otherwise.
-func (o *Entity) GetDefaultPaymentTermsType() DefaultPaymentTermsType {
+func (o *Entity) GetDefaultPaymentTermsType() PaymentTermsType {
 	if o == nil || o.DefaultPaymentTermsType == nil {
-		var ret DefaultPaymentTermsType
+		var ret PaymentTermsType
 		return ret
 	}
 	return *o.DefaultPaymentTermsType
@@ -1080,7 +1080,7 @@ func (o *Entity) GetDefaultPaymentTermsType() DefaultPaymentTermsType {
 
 // GetDefaultPaymentTermsTypeOk returns a tuple with the DefaultPaymentTermsType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Entity) GetDefaultPaymentTermsTypeOk() (*DefaultPaymentTermsType, bool) {
+func (o *Entity) GetDefaultPaymentTermsTypeOk() (*PaymentTermsType, bool) {
 	if o == nil || o.DefaultPaymentTermsType == nil {
 		return nil, false
 	}
@@ -1096,8 +1096,8 @@ func (o *Entity) HasDefaultPaymentTermsType() bool {
 	return false
 }
 
-// SetDefaultPaymentTermsType gets a reference to the given DefaultPaymentTermsType and assigns it to the DefaultPaymentTermsType field.
-func (o *Entity) SetDefaultPaymentTermsType(v DefaultPaymentTermsType) *Entity {
+// SetDefaultPaymentTermsType gets a reference to the given PaymentTermsType and assigns it to the DefaultPaymentTermsType field.
+func (o *Entity) SetDefaultPaymentTermsType(v PaymentTermsType) *Entity {
 	o.DefaultPaymentTermsType = &v
 	return o
 }

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 400.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.19
+API version: 2.0.20
 Contact: info@fattureincloud.it
 */
 
@@ -38,6 +38,8 @@ type IssuedDocumentPreCreateInfo struct {
 	PaymentAccountsList []PaymentAccount `json:"payment_accounts_list,omitempty"`
 	// Vat types list.
 	VatTypesList []VatType `json:"vat_types_list,omitempty"`
+	// Languages list.
+	LanguagesList []Language `json:"languages_list,omitempty"`
 }
 
 // NewIssuedDocumentPreCreateInfo instantiates a new IssuedDocumentPreCreateInfo object
@@ -527,6 +529,40 @@ func (o *IssuedDocumentPreCreateInfo) SetVatTypesList(v []VatType) *IssuedDocume
 	return o
 }
 
+// GetLanguagesList returns the LanguagesList field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *IssuedDocumentPreCreateInfo) GetLanguagesList() []Language {
+	if o == nil {
+		var ret []Language
+		return ret
+	}
+	return o.LanguagesList
+}
+
+// GetLanguagesListOk returns a tuple with the LanguagesList field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *IssuedDocumentPreCreateInfo) GetLanguagesListOk() ([]Language, bool) {
+	if o == nil || o.LanguagesList == nil {
+		return nil, false
+	}
+	return o.LanguagesList, true
+}
+
+// HasLanguagesList returns a boolean if a field has been set.
+func (o *IssuedDocumentPreCreateInfo) HasLanguagesList() bool {
+	if o != nil && o.LanguagesList != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLanguagesList gets a reference to the given []Language and assigns it to the LanguagesList field.
+func (o *IssuedDocumentPreCreateInfo) SetLanguagesList(v []Language) *IssuedDocumentPreCreateInfo {
+	o.LanguagesList = v
+	return o
+}
+
 func (o IssuedDocumentPreCreateInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Numerations != nil {
@@ -567,6 +603,9 @@ func (o IssuedDocumentPreCreateInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.VatTypesList != nil {
 		toSerialize["vat_types_list"] = o.VatTypesList
+	}
+	if o.LanguagesList != nil {
+		toSerialize["languages_list"] = o.LanguagesList
 	}
 	return json.Marshal(toSerialize)
 }

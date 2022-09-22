@@ -30,6 +30,8 @@ Name | Type | Description | Notes
 **AttachmentUrl** | Pointer to **NullableString** | [Read Only] Attachment url. | [optional] [readonly] 
 **AttachmentPreviewUrl** | Pointer to **NullableString** | [Read Only] Attachment preview url. | [optional] [readonly] 
 **AttachmentToken** | Pointer to **NullableString** | Uploaded attachement token. | [optional] 
+**CreatedAt** | Pointer to **NullableString** |  | [optional] 
+**UpdatedAt** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -940,6 +942,76 @@ HasAttachmentToken returns a boolean if a field has been set.
 `func (o *ReceivedDocument) UnsetAttachmentToken()`
 
 UnsetAttachmentToken ensures that no value is present for AttachmentToken, not even an explicit nil
+### GetCreatedAt
+
+`func (o *ReceivedDocument) GetCreatedAt() string`
+
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+
+### GetCreatedAtOk
+
+`func (o *ReceivedDocument) GetCreatedAtOk() (*string, bool)`
+
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedAt
+
+`func (o *ReceivedDocument) SetCreatedAt(v string)`
+
+SetCreatedAt sets CreatedAt field to given value.
+
+### HasCreatedAt
+
+`func (o *ReceivedDocument) HasCreatedAt() bool`
+
+HasCreatedAt returns a boolean if a field has been set.
+
+### SetCreatedAtNil
+
+`func (o *ReceivedDocument) SetCreatedAtNil(b bool)`
+
+ SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
+
+### UnsetCreatedAt
+`func (o *ReceivedDocument) UnsetCreatedAt()`
+
+UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
+### GetUpdatedAt
+
+`func (o *ReceivedDocument) GetUpdatedAt() string`
+
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+
+### GetUpdatedAtOk
+
+`func (o *ReceivedDocument) GetUpdatedAtOk() (*string, bool)`
+
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdatedAt
+
+`func (o *ReceivedDocument) SetUpdatedAt(v string)`
+
+SetUpdatedAt sets UpdatedAt field to given value.
+
+### HasUpdatedAt
+
+`func (o *ReceivedDocument) HasUpdatedAt() bool`
+
+HasUpdatedAt returns a boolean if a field has been set.
+
+### SetUpdatedAtNil
+
+`func (o *ReceivedDocument) SetUpdatedAtNil(b bool)`
+
+ SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
+
+### UnsetUpdatedAt
+`func (o *ReceivedDocument) UnsetUpdatedAt()`
+
+UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

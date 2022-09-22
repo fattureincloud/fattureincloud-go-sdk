@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 400.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.19
+API version: 2.0.20
 Contact: info@fattureincloud.it
 */
 
@@ -57,7 +57,7 @@ type Client struct {
 	Notes NullableString `json:"notes,omitempty"`
 	DefaultVat NullableVatType `json:"default_vat,omitempty"`
 	DefaultPaymentTerms NullableInt32 `json:"default_payment_terms,omitempty"`
-	DefaultPaymentTermsType *DefaultPaymentTermsType `json:"default_payment_terms_type,omitempty"`
+	DefaultPaymentTermsType *PaymentTermsType `json:"default_payment_terms_type,omitempty"`
 	DefaultPaymentMethod *PaymentMethod `json:"default_payment_method,omitempty"`
 	// Client bank name.
 	BankName NullableString `json:"bank_name,omitempty"`
@@ -99,7 +99,7 @@ func NewClient() *Client {
 // but it doesn't guarantee that properties required by API are set
 func NewClientWithDefaults() *Client {
 	this := Client{}
-	var defaultPaymentTermsType DefaultPaymentTermsType = DefaultPaymentTermsTypes.STANDARD
+	var defaultPaymentTermsType PaymentTermsType = PaymentTermsTypes.STANDARD
 	this.DefaultPaymentTermsType = &defaultPaymentTermsType
 	return &this
 }
@@ -1073,9 +1073,9 @@ func (o *Client) UnsetDefaultPaymentTerms() {
 }
 
 // GetDefaultPaymentTermsType returns the DefaultPaymentTermsType field value if set, zero value otherwise.
-func (o *Client) GetDefaultPaymentTermsType() DefaultPaymentTermsType {
+func (o *Client) GetDefaultPaymentTermsType() PaymentTermsType {
 	if o == nil || o.DefaultPaymentTermsType == nil {
-		var ret DefaultPaymentTermsType
+		var ret PaymentTermsType
 		return ret
 	}
 	return *o.DefaultPaymentTermsType
@@ -1083,7 +1083,7 @@ func (o *Client) GetDefaultPaymentTermsType() DefaultPaymentTermsType {
 
 // GetDefaultPaymentTermsTypeOk returns a tuple with the DefaultPaymentTermsType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Client) GetDefaultPaymentTermsTypeOk() (*DefaultPaymentTermsType, bool) {
+func (o *Client) GetDefaultPaymentTermsTypeOk() (*PaymentTermsType, bool) {
 	if o == nil || o.DefaultPaymentTermsType == nil {
 		return nil, false
 	}
@@ -1099,8 +1099,8 @@ func (o *Client) HasDefaultPaymentTermsType() bool {
 	return false
 }
 
-// SetDefaultPaymentTermsType gets a reference to the given DefaultPaymentTermsType and assigns it to the DefaultPaymentTermsType field.
-func (o *Client) SetDefaultPaymentTermsType(v DefaultPaymentTermsType) *Client {
+// SetDefaultPaymentTermsType gets a reference to the given PaymentTermsType and assigns it to the DefaultPaymentTermsType field.
+func (o *Client) SetDefaultPaymentTermsType(v PaymentTermsType) *Client {
 	o.DefaultPaymentTermsType = &v
 	return o
 }

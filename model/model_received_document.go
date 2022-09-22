@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 400.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.19
+API version: 2.0.20
 Contact: info@fattureincloud.it
 */
 
@@ -62,6 +62,8 @@ type ReceivedDocument struct {
 	AttachmentPreviewUrl NullableString `json:"attachment_preview_url,omitempty"`
 	// Uploaded attachement token.
 	AttachmentToken NullableString `json:"attachment_token,omitempty"`
+	CreatedAt NullableString `json:"created_at,omitempty"`
+	UpdatedAt NullableString `json:"updated_at,omitempty"`
 }
 
 // NewReceivedDocument instantiates a new ReceivedDocument object
@@ -1185,6 +1187,94 @@ func (o *ReceivedDocument) UnsetAttachmentToken() {
 	o.AttachmentToken.Unset()
 }
 
+// GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ReceivedDocument) GetCreatedAt() string {
+	if o == nil || o.CreatedAt.Get() == nil {
+		var ret string
+		return ret
+	}
+	return *o.CreatedAt.Get()
+}
+
+// GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ReceivedDocument) GetCreatedAtOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
+}
+
+// HasCreatedAt returns a boolean if a field has been set.
+func (o *ReceivedDocument) HasCreatedAt() bool {
+	if o != nil && o.CreatedAt.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedAt gets a reference to the given NullableString and assigns it to the CreatedAt field.
+func (o *ReceivedDocument) SetCreatedAt(v string) *ReceivedDocument {
+	o.CreatedAt.Set(&v)
+	return o
+}
+// SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
+func (o *ReceivedDocument) SetCreatedAtNil() *ReceivedDocument {
+	o.CreatedAt.Set(nil)
+	return o
+}
+
+// UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
+func (o *ReceivedDocument) UnsetCreatedAt() {
+	o.CreatedAt.Unset()
+}
+
+// GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ReceivedDocument) GetUpdatedAt() string {
+	if o == nil || o.UpdatedAt.Get() == nil {
+		var ret string
+		return ret
+	}
+	return *o.UpdatedAt.Get()
+}
+
+// GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ReceivedDocument) GetUpdatedAtOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
+}
+
+// HasUpdatedAt returns a boolean if a field has been set.
+func (o *ReceivedDocument) HasUpdatedAt() bool {
+	if o != nil && o.UpdatedAt.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetUpdatedAt gets a reference to the given NullableString and assigns it to the UpdatedAt field.
+func (o *ReceivedDocument) SetUpdatedAt(v string) *ReceivedDocument {
+	o.UpdatedAt.Set(&v)
+	return o
+}
+// SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
+func (o *ReceivedDocument) SetUpdatedAtNil() *ReceivedDocument {
+	o.UpdatedAt.Set(nil)
+	return o
+}
+
+// UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
+func (o *ReceivedDocument) UnsetUpdatedAt() {
+	o.UpdatedAt.Unset()
+}
+
 func (o ReceivedDocument) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id.IsSet() {
@@ -1264,6 +1354,12 @@ func (o ReceivedDocument) MarshalJSON() ([]byte, error) {
 	}
 	if o.AttachmentToken.IsSet() {
 		toSerialize["attachment_token"] = o.AttachmentToken.Get()
+	}
+	if o.CreatedAt.IsSet() {
+		toSerialize["created_at"] = o.CreatedAt.Get()
+	}
+	if o.UpdatedAt.IsSet() {
+		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
 	return json.Marshal(toSerialize)
 }
