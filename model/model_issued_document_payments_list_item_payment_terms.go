@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 400.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.19
+API version: 2.0.20
 Contact: info@fattureincloud.it
 */
 
@@ -19,8 +19,7 @@ import (
 type IssuedDocumentPaymentsListItemPaymentTerms struct {
 	// The number of days by which the payment must be made.
 	Days NullableInt32 `json:"days,omitempty"`
-	// Payment terms type.
-	Type NullableString `json:"type,omitempty"`
+	Type *PaymentTermsType `json:"type,omitempty"`
 }
 
 // NewIssuedDocumentPaymentsListItemPaymentTerms instantiates a new IssuedDocumentPaymentsListItemPaymentTerms object
@@ -37,6 +36,8 @@ func NewIssuedDocumentPaymentsListItemPaymentTerms() *IssuedDocumentPaymentsList
 // but it doesn't guarantee that properties required by API are set
 func NewIssuedDocumentPaymentsListItemPaymentTermsWithDefaults() *IssuedDocumentPaymentsListItemPaymentTerms {
 	this := IssuedDocumentPaymentsListItemPaymentTerms{}
+	var type_ PaymentTermsType = PaymentTermsTypes.STANDARD
+	this.Type = &type_
 	return &this
 }
 
@@ -84,48 +85,37 @@ func (o *IssuedDocumentPaymentsListItemPaymentTerms) UnsetDays() {
 	o.Days.Unset()
 }
 
-// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IssuedDocumentPaymentsListItemPaymentTerms) GetType() string {
-	if o == nil || o.Type.Get() == nil {
-		var ret string
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *IssuedDocumentPaymentsListItemPaymentTerms) GetType() PaymentTermsType {
+	if o == nil || o.Type == nil {
+		var ret PaymentTermsType
 		return ret
 	}
-	return *o.Type.Get()
+	return *o.Type
 }
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IssuedDocumentPaymentsListItemPaymentTerms) GetTypeOk() (*string, bool) {
-	if o == nil {
+func (o *IssuedDocumentPaymentsListItemPaymentTerms) GetTypeOk() (*PaymentTermsType, bool) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
-	return o.Type.Get(), o.Type.IsSet()
+	return o.Type, true
 }
 
 // HasType returns a boolean if a field has been set.
 func (o *IssuedDocumentPaymentsListItemPaymentTerms) HasType() bool {
-	if o != nil && o.Type.IsSet() {
+	if o != nil && o.Type != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetType gets a reference to the given NullableString and assigns it to the Type field.
-func (o *IssuedDocumentPaymentsListItemPaymentTerms) SetType(v string) *IssuedDocumentPaymentsListItemPaymentTerms {
-	o.Type.Set(&v)
+// SetType gets a reference to the given PaymentTermsType and assigns it to the Type field.
+func (o *IssuedDocumentPaymentsListItemPaymentTerms) SetType(v PaymentTermsType) *IssuedDocumentPaymentsListItemPaymentTerms {
+	o.Type = &v
 	return o
-}
-// SetTypeNil sets the value for Type to be an explicit nil
-func (o *IssuedDocumentPaymentsListItemPaymentTerms) SetTypeNil() *IssuedDocumentPaymentsListItemPaymentTerms {
-	o.Type.Set(nil)
-	return o
-}
-
-// UnsetType ensures that no value is present for Type, not even an explicit nil
-func (o *IssuedDocumentPaymentsListItemPaymentTerms) UnsetType() {
-	o.Type.Unset()
 }
 
 func (o IssuedDocumentPaymentsListItemPaymentTerms) MarshalJSON() ([]byte, error) {
@@ -133,8 +123,8 @@ func (o IssuedDocumentPaymentsListItemPaymentTerms) MarshalJSON() ([]byte, error
 	if o.Days.IsSet() {
 		toSerialize["days"] = o.Days.Get()
 	}
-	if o.Type.IsSet() {
-		toSerialize["type"] = o.Type.Get()
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
 	}
 	return json.Marshal(toSerialize)
 }

@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **PaymentMethodsList** | Pointer to [**[]PaymentMethod**](PaymentMethod.md) | Payment methods list. | [optional] 
 **PaymentAccountsList** | Pointer to [**[]PaymentAccount**](PaymentAccount.md) | Payment accounts list. | [optional] 
 **VatTypesList** | Pointer to [**[]VatType**](VatType.md) | Vat types list. | [optional] 
+**LanguagesList** | Pointer to [**[]Language**](Language.md) | Languages list. | [optional] 
 
 ## Methods
 
@@ -472,6 +473,41 @@ HasVatTypesList returns a boolean if a field has been set.
 `func (o *IssuedDocumentPreCreateInfo) UnsetVatTypesList()`
 
 UnsetVatTypesList ensures that no value is present for VatTypesList, not even an explicit nil
+### GetLanguagesList
+
+`func (o *IssuedDocumentPreCreateInfo) GetLanguagesList() []Language`
+
+GetLanguagesList returns the LanguagesList field if non-nil, zero value otherwise.
+
+### GetLanguagesListOk
+
+`func (o *IssuedDocumentPreCreateInfo) GetLanguagesListOk() (*[]Language, bool)`
+
+GetLanguagesListOk returns a tuple with the LanguagesList field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLanguagesList
+
+`func (o *IssuedDocumentPreCreateInfo) SetLanguagesList(v []Language)`
+
+SetLanguagesList sets LanguagesList field to given value.
+
+### HasLanguagesList
+
+`func (o *IssuedDocumentPreCreateInfo) HasLanguagesList() bool`
+
+HasLanguagesList returns a boolean if a field has been set.
+
+### SetLanguagesListNil
+
+`func (o *IssuedDocumentPreCreateInfo) SetLanguagesListNil(b bool)`
+
+ SetLanguagesListNil sets the value for LanguagesList to be an explicit nil
+
+### UnsetLanguagesList
+`func (o *IssuedDocumentPreCreateInfo) UnsetLanguagesList()`
+
+UnsetLanguagesList ensures that no value is present for LanguagesList, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

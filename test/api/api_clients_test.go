@@ -48,7 +48,7 @@ func TestCreateClient(t *testing.T) {
 			SetValue(45).
 			SetDescription("").
 			SetIsDisabled(false)).
-		SetDefaultPaymentTermsType(DefaultPaymentTermsTypes.STANDARD).
+		SetDefaultPaymentTermsType(PaymentTermsTypes.STANDARD).
 		SetDefaultPaymentMethod(*NewPaymentMethod().
 			SetId(386092).
 			SetName("Credit card")).
@@ -128,7 +128,7 @@ func TestGetClient(t *testing.T) {
 			SetValue(45).
 			SetDescription("").
 			SetIsDisabled(false)).
-		SetDefaultPaymentTermsType(DefaultPaymentTermsTypes.STANDARD).
+		SetDefaultPaymentTermsType(PaymentTermsTypes.STANDARD).
 		SetDefaultPaymentMethod(*NewPaymentMethod().
 			SetId(386092).
 			SetName("Credit card")).
@@ -188,7 +188,7 @@ func TestListClients(t *testing.T) {
 			SetValue(45).
 			SetDescription("").
 			SetIsDisabled(false)).
-		SetDefaultPaymentTermsType(DefaultPaymentTermsTypes.STANDARD).
+		SetDefaultPaymentTermsType(PaymentTermsTypes.STANDARD).
 		SetDefaultPaymentMethod(*NewPaymentMethod().
 			SetId(386092).
 			SetName("Credit card")).
@@ -248,7 +248,7 @@ func TestModifyClient(t *testing.T) {
 			SetValue(45).
 			SetDescription("").
 			SetIsDisabled(false)).
-		SetDefaultPaymentTermsType(DefaultPaymentTermsTypes.STANDARD).
+		SetDefaultPaymentTermsType(PaymentTermsTypes.STANDARD).
 		SetDefaultPaymentMethod(*NewPaymentMethod().
 			SetId(386092).
 			SetName("Credit card")).

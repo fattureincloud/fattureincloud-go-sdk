@@ -1,8 +1,6 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
-api/openapi.yaml
 api_archive.go
 api_cashbook.go
 api_clients.go
@@ -66,7 +64,6 @@ docs/CreateSupplierResponse.md
 docs/CreateVatTypeRequest.md
 docs/CreateVatTypeResponse.md
 docs/Currency.md
-docs/DefaultPaymentTermsType.md
 docs/DetailedCountry.md
 docs/DocumentTemplate.md
 docs/EInvoiceRejectionReason.md
@@ -196,6 +193,7 @@ docs/PaymentAccountType.md
 docs/PaymentMethod.md
 docs/PaymentMethodDetails.md
 docs/PaymentMethodType.md
+docs/PaymentTermsType.md
 docs/PermissionLevel.md
 docs/Permissions.md
 docs/PermissionsFicIssuedDocumentsDetailed.md
@@ -244,7 +242,6 @@ docs/VerifyEInvoiceXmlErrorResponseError.md
 docs/VerifyEInvoiceXmlErrorResponseExtra.md
 docs/VerifyEInvoiceXmlResponse.md
 docs/VerifyEInvoiceXmlResponseData.md
-git_push.sh
 go.mod
 go.sum
 model_archive_document.go
@@ -290,7 +287,6 @@ model_create_supplier_response.go
 model_create_vat_type_request.go
 model_create_vat_type_response.go
 model_currency.go
-model_default_payment_terms_type.go
 model_detailed_country.go
 model_document_template.go
 model_e_invoice_rejection_reason.go
@@ -417,6 +413,7 @@ model_payment_account_type.go
 model_payment_method.go
 model_payment_method_details.go
 model_payment_method_type.go
+model_payment_terms_type.go
 model_permission_level.go
 model_permissions.go
 model_permissions_fic_issued_documents_detailed.go

@@ -17,6 +17,6 @@ import (
 )
 
 func TestDefaultPaymentTermsTypeResponse(t *testing.T) {
-	assert.Equal(t, "standard", string(DefaultPaymentTermsTypes.STANDARD))
-	assert.Equal(t, "end_of_month", string(DefaultPaymentTermsTypes.END_OF_MONTH))
+	assert.Equal(t, "standard", string(PaymentTermsTypes.STANDARD))
+	assert.Equal(t, "end_of_month", string(PaymentTermsTypes.END_OF_MONTH))
 }

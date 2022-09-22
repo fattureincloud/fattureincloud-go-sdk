@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **Notes** | Pointer to **NullableString** | Extra notes. | [optional] 
 **DefaultVat** | Pointer to [**NullableVatType**](VatType.md) |  | [optional] 
 **DefaultPaymentTerms** | Pointer to **NullableInt32** | [Only for client] Default payment terms. | [optional] 
-**DefaultPaymentTermsType** | Pointer to [**DefaultPaymentTermsType**](DefaultPaymentTermsType.md) |  | [optional] [default to STANDARD]
+**DefaultPaymentTermsType** | Pointer to [**PaymentTermsType**](PaymentTermsType.md) |  | [optional] [default to STANDARD]
 **DefaultPaymentMethod** | Pointer to [**PaymentMethod**](PaymentMethod.md) |  | [optional] 
 **BankName** | Pointer to **NullableString** | [Only for client] Bank name. | [optional] 
 **BankIban** | Pointer to **NullableString** | [Only for client] Iban. | [optional] 
@@ -831,20 +831,20 @@ HasDefaultPaymentTerms returns a boolean if a field has been set.
 UnsetDefaultPaymentTerms ensures that no value is present for DefaultPaymentTerms, not even an explicit nil
 ### GetDefaultPaymentTermsType
 
-`func (o *Entity) GetDefaultPaymentTermsType() DefaultPaymentTermsType`
+`func (o *Entity) GetDefaultPaymentTermsType() PaymentTermsType`
 
 GetDefaultPaymentTermsType returns the DefaultPaymentTermsType field if non-nil, zero value otherwise.
 
 ### GetDefaultPaymentTermsTypeOk
 
-`func (o *Entity) GetDefaultPaymentTermsTypeOk() (*DefaultPaymentTermsType, bool)`
+`func (o *Entity) GetDefaultPaymentTermsTypeOk() (*PaymentTermsType, bool)`
 
 GetDefaultPaymentTermsTypeOk returns a tuple with the DefaultPaymentTermsType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultPaymentTermsType
 
-`func (o *Entity) SetDefaultPaymentTermsType(v DefaultPaymentTermsType)`
+`func (o *Entity) SetDefaultPaymentTermsType(v PaymentTermsType)`
 
 SetDefaultPaymentTermsType sets DefaultPaymentTermsType field to given value.
 
