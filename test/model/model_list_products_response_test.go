@@ -14,7 +14,7 @@ import (
 	"reflect"
 	"testing"
 
-	. "github.com/fattureincloud/fattureincloud-go-sdk/model"
+	. "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 	"github.com/stretchr/testify/assert"
 )
 

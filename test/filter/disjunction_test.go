@@ -3,7 +3,7 @@ package filter
 import (
 	"testing"
 
-	"github.com/fattureincloud/fattureincloud-go-sdk/filter"
+	"github.com/fattureincloud/fattureincloud-go-sdk/v2/filter"
 	"github.com/stretchr/testify/assert"
 )
 
