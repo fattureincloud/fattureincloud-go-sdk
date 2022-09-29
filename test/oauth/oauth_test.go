@@ -3,7 +3,7 @@ package oauth
 import (
 	"testing"
 
-	oauth "github.com/fattureincloud/fattureincloud-go-sdk/oauth2"
+	oauth "github.com/fattureincloud/fattureincloud-go-sdk/v2/oauth2"
 	"github.com/stretchr/testify/assert"
 )
 
