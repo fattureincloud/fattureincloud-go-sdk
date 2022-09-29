@@ -1,4 +1,4 @@
-module github.com/fattureincloud/fattureincloud-go-sdk
+module github.com/fattureincloud/fattureincloud-go-sdk/v2
 
 go 1.13
 
