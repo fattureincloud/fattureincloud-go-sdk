@@ -19,7 +19,7 @@ For more information, please visit [https://www.fattureincloud.it](https://www.f
 Install the following dependencies:
 
 ```shell
-go get github.com/fattureincloud/fattureincloud-go-sdk
+go get github.com/fattureincloud/fattureincloud-go-sdk/v2
 ```
 
 ## Documentation for API Endpoints

@@ -41,8 +41,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
@@ -114,8 +114,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
@@ -185,8 +185,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
@@ -258,8 +258,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
@@ -322,8 +322,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
@@ -386,8 +386,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
@@ -450,8 +450,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
@@ -514,8 +514,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
@@ -578,8 +578,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
@@ -657,8 +657,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
@@ -736,8 +736,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
@@ -811,8 +811,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
@@ -884,8 +884,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
@@ -957,8 +957,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
@@ -1028,8 +1028,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
@@ -1092,8 +1092,8 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/model"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
