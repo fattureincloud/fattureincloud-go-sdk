@@ -38,6 +38,12 @@ func TestOperator(t *testing.T) {
 	contains := string(filter.Operators.CONTAINS)
 	assert.Equal(t, "contains", contains)
 
+	notLike := string(filter.Operators.NOT_LIKE)
+	assert.Equal(t, "not like", notLike)
+
+	notContains := string(filter.Operators.NOT_CONTAINS)
+	assert.Equal(t, "not contains", notContains)
+
 	startsWith := string(filter.Operators.STARTS_WITH)
 	assert.Equal(t, "starts with", startsWith)
 
