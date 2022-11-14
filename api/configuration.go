@@ -1,9 +1,9 @@
 /*
 Fatture in Cloud API v2 - API Reference
 
-Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 400.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
+Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.20
+API version: 2.0.22
 Contact: info@fattureincloud.it
 */
 
@@ -102,7 +102,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "FattureInCloud/2.0.1/Go-SDK",
+		UserAgent:        "FattureInCloud/2.0.2/Go-SDK",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
@@ -124,7 +124,7 @@ func (c *Configuration) AddDefaultHeader(key string, value string) {
 // URL formats template on a index using given variables
 func (sc ServerConfigurations) URL(index int, variables map[string]string) (string, error) {
 	if index < 0 || len(sc) <= index {
-		return "", fmt.Errorf("Index %v out of range %v", index, len(sc)-1)
+		return "", fmt.Errorf("index %v out of range %v", index, len(sc)-1)
 	}
 	server := sc[index]
 	url := server.URL
@@ -139,7 +139,7 @@ func (sc ServerConfigurations) URL(index int, variables map[string]string) (stri
 				}
 			}
 			if !found {
-				return "", fmt.Errorf("The variable %s in the server URL has invalid value %v. Must be %v", name, value, variable.EnumValues)
+				return "", fmt.Errorf("the variable %s in the server URL has invalid value %v. Must be %v", name, value, variable.EnumValues)
 			}
 			url = strings.Replace(url, "{"+name+"}", value, -1)
 		} else {
