@@ -1,9 +1,9 @@
 /*
 Fatture in Cloud API v2 - API Reference
 
-Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 400.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
+Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.20
+API version: 2.0.21
 Contact: info@fattureincloud.it
 */
 
@@ -905,6 +905,140 @@ func (a *IssuedDocumentsApiService) GetNewIssuedDocumentTotalsExecute(r ApiGetNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiJoinIssuedDocumentsRequest struct {
+	ctx context.Context
+	ApiService *IssuedDocumentsApiService
+	companyId int32
+	ids *string
+	group *int32
+	eInvoice *int32
+}
+
+// Ids of the documents.
+func (r ApiJoinIssuedDocumentsRequest) Ids(ids string) ApiJoinIssuedDocumentsRequest {
+	r.ids = &ids
+	return r
+}
+
+// Group items.
+func (r ApiJoinIssuedDocumentsRequest) Group(group int32) ApiJoinIssuedDocumentsRequest {
+	r.group = &group
+	return r
+}
+
+// New document e_invoice.
+func (r ApiJoinIssuedDocumentsRequest) EInvoice(eInvoice int32) ApiJoinIssuedDocumentsRequest {
+	r.eInvoice = &eInvoice
+	return r
+}
+
+func (r ApiJoinIssuedDocumentsRequest) Execute() (*JoinIssuedDocumentsResponse, *http.Response, error) {
+	return r.ApiService.JoinIssuedDocumentsExecute(r)
+}
+
+/*
+JoinIssuedDocuments Join issued documents
+
+Joins issued documents.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param companyId The ID of the company.
+ @return ApiJoinIssuedDocumentsRequest
+*/
+func (a *IssuedDocumentsApiService) JoinIssuedDocuments(ctx context.Context, companyId int32) ApiJoinIssuedDocumentsRequest {
+	return ApiJoinIssuedDocumentsRequest{
+		ApiService: a,
+		ctx: ctx,
+		companyId: companyId,
+	}
+}
+
+// Execute executes the request
+//  @return JoinIssuedDocumentsResponse
+func (a *IssuedDocumentsApiService) JoinIssuedDocumentsExecute(r ApiJoinIssuedDocumentsRequest) (*JoinIssuedDocumentsResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *JoinIssuedDocumentsResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.JoinIssuedDocuments")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/c/{company_id}/issued_documents/join"
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.ids == nil {
+		return localVarReturnValue, nil, reportError("ids is required and must be specified")
+	}
+
+	localVarQueryParams.Add("ids", parameterToString(*r.ids, ""))
+	if r.group != nil {
+		localVarQueryParams.Add("group", parameterToString(*r.group, ""))
+	}
+	if r.eInvoice != nil {
+		localVarQueryParams.Add("e_invoice", parameterToString(*r.eInvoice, ""))
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiListIssuedDocumentsRequest struct {
 	ctx context.Context
 	ApiService *IssuedDocumentsApiService
@@ -1298,6 +1432,151 @@ func (a *IssuedDocumentsApiService) ScheduleEmailExecute(r ApiScheduleEmailReque
 	}
 
 	return localVarHTTPResponse, nil
+}
+
+type ApiTransformIssuedDocumentRequest struct {
+	ctx context.Context
+	ApiService *IssuedDocumentsApiService
+	companyId int32
+	originalDocumentId *string
+	newType *string
+	eInvoice *int32
+	transformKeepCopy *int32
+}
+
+// Original document id.
+func (r ApiTransformIssuedDocumentRequest) OriginalDocumentId(originalDocumentId string) ApiTransformIssuedDocumentRequest {
+	r.originalDocumentId = &originalDocumentId
+	return r
+}
+
+// New document type.
+func (r ApiTransformIssuedDocumentRequest) NewType(newType string) ApiTransformIssuedDocumentRequest {
+	r.newType = &newType
+	return r
+}
+
+// New document e_invoice.
+func (r ApiTransformIssuedDocumentRequest) EInvoice(eInvoice int32) ApiTransformIssuedDocumentRequest {
+	r.eInvoice = &eInvoice
+	return r
+}
+
+// Keep the old document.
+func (r ApiTransformIssuedDocumentRequest) TransformKeepCopy(transformKeepCopy int32) ApiTransformIssuedDocumentRequest {
+	r.transformKeepCopy = &transformKeepCopy
+	return r
+}
+
+func (r ApiTransformIssuedDocumentRequest) Execute() (*TransformIssuedDocumentResponse, *http.Response, error) {
+	return r.ApiService.TransformIssuedDocumentExecute(r)
+}
+
+/*
+TransformIssuedDocument Transform issued document
+
+Transforms the document.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param companyId The ID of the company.
+ @return ApiTransformIssuedDocumentRequest
+*/
+func (a *IssuedDocumentsApiService) TransformIssuedDocument(ctx context.Context, companyId int32) ApiTransformIssuedDocumentRequest {
+	return ApiTransformIssuedDocumentRequest{
+		ApiService: a,
+		ctx: ctx,
+		companyId: companyId,
+	}
+}
+
+// Execute executes the request
+//  @return TransformIssuedDocumentResponse
+func (a *IssuedDocumentsApiService) TransformIssuedDocumentExecute(r ApiTransformIssuedDocumentRequest) (*TransformIssuedDocumentResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *TransformIssuedDocumentResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.TransformIssuedDocument")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/c/{company_id}/issued_documents/transform"
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.originalDocumentId == nil {
+		return localVarReturnValue, nil, reportError("originalDocumentId is required and must be specified")
+	}
+	if r.newType == nil {
+		return localVarReturnValue, nil, reportError("newType is required and must be specified")
+	}
+
+	localVarQueryParams.Add("original_document_id", parameterToString(*r.originalDocumentId, ""))
+	localVarQueryParams.Add("new_type", parameterToString(*r.newType, ""))
+	if r.eInvoice != nil {
+		localVarQueryParams.Add("e_invoice", parameterToString(*r.eInvoice, ""))
+	}
+	if r.transformKeepCopy != nil {
+		localVarQueryParams.Add("transform_keep_copy", parameterToString(*r.transformKeepCopy, ""))
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
 type ApiUploadIssuedDocumentAttachmentRequest struct {

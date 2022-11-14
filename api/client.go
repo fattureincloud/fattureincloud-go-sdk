@@ -1,9 +1,9 @@
 /*
 Fatture in Cloud API v2 - API Reference
 
-Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 400.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
+Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.20
+API version: 2.0.21
 Contact: info@fattureincloud.it
 */
 
@@ -42,7 +42,7 @@ var (
 	xmlCheck  = regexp.MustCompile(`(?i:(?:application|text)/xml)`)
 )
 
-// APIClient manages communication with the Fatture in Cloud API v2 - API Reference API v2.0.20
+// APIClient manages communication with the Fatture in Cloud API v2 - API Reference API v2.0.21
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
@@ -57,6 +57,8 @@ type APIClient struct {
 	ClientsApi *ClientsApiService
 
 	CompaniesApi *CompaniesApiService
+
+	EmailsApi *EmailsApiService
 
 	InfoApi *InfoApiService
 
@@ -99,6 +101,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.CashbookApi = (*CashbookApiService)(&c.common)
 	c.ClientsApi = (*ClientsApiService)(&c.common)
 	c.CompaniesApi = (*CompaniesApiService)(&c.common)
+	c.EmailsApi = (*EmailsApiService)(&c.common)
 	c.InfoApi = (*InfoApiService)(&c.common)
 	c.IssuedDocumentsApi = (*IssuedDocumentsApiService)(&c.common)
 	c.IssuedEInvoicesApi = (*IssuedEInvoicesApiService)(&c.common)
@@ -160,7 +163,7 @@ func typeCheckParameter(obj interface{}, expected string, name string) error {
 
 	// Check the type is as expected.
 	if reflect.TypeOf(obj).String() != expected {
-		return fmt.Errorf("Expected %s to be of type %s but received %s.", name, expected, reflect.TypeOf(obj).String())
+		return fmt.Errorf("expected %s to be of type %s but received %s", name, expected, reflect.TypeOf(obj).String())
 	}
 	return nil
 }
@@ -499,7 +502,7 @@ func setBody(body interface{}, contentType string) (bodyBuf *bytes.Buffer, err e
 	}
 
 	if bodyBuf.Len() == 0 {
-		err = fmt.Errorf("Invalid body type %s\n", contentType)
+		err = fmt.Errorf("invalid body type %s\n", contentType)
 		return nil, err
 	}
 	return bodyBuf, nil
@@ -600,4 +603,24 @@ func (e GenericOpenAPIError) Body() []byte {
 // Model returns the unpacked model of the error
 func (e GenericOpenAPIError) Model() interface{} {
 	return e.model
+}
+
+// format error message using title and detail when model implements rfc7807
+func formatErrorMessage(status string, v interface{}) string {
+
+    str := ""
+    metaValue := reflect.ValueOf(v).Elem()
+
+    field := metaValue.FieldByName("Title")
+    if field != (reflect.Value{}) {
+        str = fmt.Sprintf("%s", field.Interface())
+    }
+
+    field = metaValue.FieldByName("Detail")
+    if field != (reflect.Value{}) {
+        str = fmt.Sprintf("%s (%s)", str, field.Interface())
+    }
+
+    // status title (detail)
+    return fmt.Sprintf("%s %s", status, str)
 }
