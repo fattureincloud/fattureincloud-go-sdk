@@ -31,7 +31,7 @@ import (
 )
 
 func main() {
-    companyId := "companyId_example" // string | 
+    companyId := 12345
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**companyId** | **string** |  | 
+**companyId** | **int** |  | 
 
 ### Other Parameters
 

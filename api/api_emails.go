@@ -28,7 +28,7 @@ type EmailsApiService service
 type ApiListEmailsRequest struct {
 	ctx context.Context
 	ApiService *EmailsApiService
-	companyId string
+	companyId int
 }
 
 func (r ApiListEmailsRequest) Execute() (*ListEmailsResponse, *http.Response, error) {
@@ -44,7 +44,7 @@ List Emails.
  @param companyId
  @return ApiListEmailsRequest
 */
-func (a *EmailsApiService) ListEmails(ctx context.Context, companyId string) ApiListEmailsRequest {
+func (a *EmailsApiService) ListEmails(ctx context.Context, companyId int) ApiListEmailsRequest {
 	return ApiListEmailsRequest{
 		ApiService: a,
 		ctx: ctx,

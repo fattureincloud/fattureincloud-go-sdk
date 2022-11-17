@@ -1438,14 +1438,14 @@ type ApiTransformIssuedDocumentRequest struct {
 	ctx context.Context
 	ApiService *IssuedDocumentsApiService
 	companyId int32
-	originalDocumentId *string
+	originalDocumentId *int
 	newType *string
 	eInvoice *int32
 	transformKeepCopy *int32
 }
 
 // Original document id.
-func (r ApiTransformIssuedDocumentRequest) OriginalDocumentId(originalDocumentId string) ApiTransformIssuedDocumentRequest {
+func (r ApiTransformIssuedDocumentRequest) OriginalDocumentId(originalDocumentId int) ApiTransformIssuedDocumentRequest {
 	r.originalDocumentId = &originalDocumentId
 	return r
 }

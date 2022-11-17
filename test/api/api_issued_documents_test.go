@@ -11,6 +11,8 @@ package api
 
 import (
 	"context"
+	"encoding/json"
+	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"net/url"
@@ -670,4 +672,71 @@ func TestUploadIssuedDocumentAttachment(t *testing.T) {
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.Equal(t, 200, resp.StatusCode)
+}
+
+func TestTransformIssuedDocument(t *testing.T) {
+	s := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		w.Write([]byte(`{"data":{"id":12345,"type":"invoice"},"options":{"create_from":["82112399"],"transform":true,"keep_copy":true}}`))
+	}))
+	defer s.Close()
+
+	serverURL, _ := url.Parse(s.URL)
+	configuration := fattureincloud.NewConfiguration()
+	configuration.HTTPClient = s.Client()
+	configuration.Host = serverURL.Host
+	configuration.Scheme = "http"
+	apiClient := fattureincloud.NewAPIClient(configuration)
+
+	actual, _, err := apiClient.IssuedDocumentsApi.TransformIssuedDocument(context.Background(), 2).OriginalDocumentId(12345).NewType("proforma").Execute()
+	assert.NoError(t, err, "errore in chiamata api")
+
+	expected := NewTransformIssuedDocumentResponse().
+		SetData(
+			*NewIssuedDocument().
+				SetId(12345).
+				SetType(IssuedDocumentTypes.INVOICE),
+		).
+		SetOptions(
+			*NewIssuedDocumentOptions().
+				SetCreateFrom([]string{"82112399"}).
+				SetKeepCopy(true).
+				SetTransform(true),
+		)
+
+	assert.True(t, reflect.DeepEqual(expected, actual))
+}
+
+func TestJoinIssuedDocuments(t *testing.T) {
+	s := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		w.Write([]byte(`{"data":{"id":12345,"type":"invoice"},"options":{"create_from":["82112399","82112400"]}}`))
+	}))
+	defer s.Close()
+
+	serverURL, _ := url.Parse(s.URL)
+	configuration := fattureincloud.NewConfiguration()
+	configuration.HTTPClient = s.Client()
+	configuration.Host = serverURL.Host
+	configuration.Scheme = "http"
+	apiClient := fattureincloud.NewAPIClient(configuration)
+
+	actual, _, err := apiClient.IssuedDocumentsApi.JoinIssuedDocuments(context.Background(), 2).Ids("2332,876").Execute()
+	assert.NoError(t, err, "errore in chiamata api")
+
+	expected := NewJoinIssuedDocumentsResponse().
+		SetData(
+			*NewIssuedDocument().
+				SetId(12345).
+				SetType(IssuedDocumentTypes.INVOICE),
+		).
+		SetOptions(
+			*NewIssuedDocumentOptions().
+				SetCreateFrom([]string{"82112399", "82112400"}),
+		)
+
+	exj, _ := json.Marshal(expected)
+	fmt.Print(string(exj))
+
+	assert.True(t, reflect.DeepEqual(expected, actual))
 }
