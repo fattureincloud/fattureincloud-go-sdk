@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Message** | Pointer to **NullableString** |  | [optional] 
-**ValidationResult** | Pointer to **map[string]interface{}** |  | [optional] 
+**ValidationResult** | Pointer to [**NullableVerifyEInvoiceXmlErrorResponseErrorValidationResult**](VerifyEInvoiceXmlErrorResponseErrorValidationResult.md) |  | [optional] 
 
 ## Methods
 
@@ -63,20 +63,20 @@ HasMessage returns a boolean if a field has been set.
 UnsetMessage ensures that no value is present for Message, not even an explicit nil
 ### GetValidationResult
 
-`func (o *VerifyEInvoiceXmlErrorResponseError) GetValidationResult() map[string]interface{}`
+`func (o *VerifyEInvoiceXmlErrorResponseError) GetValidationResult() VerifyEInvoiceXmlErrorResponseErrorValidationResult`
 
 GetValidationResult returns the ValidationResult field if non-nil, zero value otherwise.
 
 ### GetValidationResultOk
 
-`func (o *VerifyEInvoiceXmlErrorResponseError) GetValidationResultOk() (*map[string]interface{}, bool)`
+`func (o *VerifyEInvoiceXmlErrorResponseError) GetValidationResultOk() (*VerifyEInvoiceXmlErrorResponseErrorValidationResult, bool)`
 
 GetValidationResultOk returns a tuple with the ValidationResult field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValidationResult
 
-`func (o *VerifyEInvoiceXmlErrorResponseError) SetValidationResult(v map[string]interface{})`
+`func (o *VerifyEInvoiceXmlErrorResponseError) SetValidationResult(v VerifyEInvoiceXmlErrorResponseErrorValidationResult)`
 
 SetValidationResult sets ValidationResult field to given value.
 

@@ -1,9 +1,9 @@
 /*
 Fatture in Cloud API v2 - API Reference
 
-Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 400.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
+Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.20
+API version: 2.0.22
 Contact: info@fattureincloud.it
 */
 
@@ -18,7 +18,7 @@ import (
 // VerifyEInvoiceXmlErrorResponseError struct for VerifyEInvoiceXmlErrorResponseError
 type VerifyEInvoiceXmlErrorResponseError struct {
 	Message NullableString `json:"message,omitempty"`
-	ValidationResult map[string]interface{} `json:"validation_result,omitempty"`
+	ValidationResult NullableVerifyEInvoiceXmlErrorResponseErrorValidationResult `json:"validation_result,omitempty"`
 }
 
 // NewVerifyEInvoiceXmlErrorResponseError instantiates a new VerifyEInvoiceXmlErrorResponseError object
@@ -83,37 +83,47 @@ func (o *VerifyEInvoiceXmlErrorResponseError) UnsetMessage() {
 }
 
 // GetValidationResult returns the ValidationResult field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *VerifyEInvoiceXmlErrorResponseError) GetValidationResult() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *VerifyEInvoiceXmlErrorResponseError) GetValidationResult() VerifyEInvoiceXmlErrorResponseErrorValidationResult {
+	if o == nil || o.ValidationResult.Get() == nil {
+		var ret VerifyEInvoiceXmlErrorResponseErrorValidationResult
 		return ret
 	}
-	return o.ValidationResult
+	return *o.ValidationResult.Get()
 }
 
 // GetValidationResultOk returns a tuple with the ValidationResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *VerifyEInvoiceXmlErrorResponseError) GetValidationResultOk() (map[string]interface{}, bool) {
-	if o == nil || o.ValidationResult == nil {
+func (o *VerifyEInvoiceXmlErrorResponseError) GetValidationResultOk() (*VerifyEInvoiceXmlErrorResponseErrorValidationResult, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ValidationResult, true
+	return o.ValidationResult.Get(), o.ValidationResult.IsSet()
 }
 
 // HasValidationResult returns a boolean if a field has been set.
 func (o *VerifyEInvoiceXmlErrorResponseError) HasValidationResult() bool {
-	if o != nil && o.ValidationResult != nil {
+	if o != nil && o.ValidationResult.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetValidationResult gets a reference to the given map[string]interface{} and assigns it to the ValidationResult field.
-func (o *VerifyEInvoiceXmlErrorResponseError) SetValidationResult(v map[string]interface{}) *VerifyEInvoiceXmlErrorResponseError {
-	o.ValidationResult = v
+// SetValidationResult gets a reference to the given NullableVerifyEInvoiceXmlErrorResponseErrorValidationResult and assigns it to the ValidationResult field.
+func (o *VerifyEInvoiceXmlErrorResponseError) SetValidationResult(v VerifyEInvoiceXmlErrorResponseErrorValidationResult) *VerifyEInvoiceXmlErrorResponseError {
+	o.ValidationResult.Set(&v)
 	return o
+}
+// SetValidationResultNil sets the value for ValidationResult to be an explicit nil
+func (o *VerifyEInvoiceXmlErrorResponseError) SetValidationResultNil() *VerifyEInvoiceXmlErrorResponseError {
+	o.ValidationResult.Set(nil)
+	return o
+}
+
+// UnsetValidationResult ensures that no value is present for ValidationResult, not even an explicit nil
+func (o *VerifyEInvoiceXmlErrorResponseError) UnsetValidationResult() {
+	o.ValidationResult.Unset()
 }
 
 func (o VerifyEInvoiceXmlErrorResponseError) MarshalJSON() ([]byte, error) {
@@ -121,8 +131,8 @@ func (o VerifyEInvoiceXmlErrorResponseError) MarshalJSON() ([]byte, error) {
 	if o.Message.IsSet() {
 		toSerialize["message"] = o.Message.Get()
 	}
-	if o.ValidationResult != nil {
-		toSerialize["validation_result"] = o.ValidationResult
+	if o.ValidationResult.IsSet() {
+		toSerialize["validation_result"] = o.ValidationResult.Get()
 	}
 	return json.Marshal(toSerialize)
 }

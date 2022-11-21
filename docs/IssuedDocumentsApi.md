@@ -12,9 +12,11 @@ Method | HTTP request | Description
 [**GetIssuedDocument**](IssuedDocumentsApi.md#GetIssuedDocument) | **Get** /c/{company_id}/issued_documents/{document_id} | Get Issued Document
 [**GetIssuedDocumentPreCreateInfo**](IssuedDocumentsApi.md#GetIssuedDocumentPreCreateInfo) | **Get** /c/{company_id}/issued_documents/info | Get Issued Document Pre-create info
 [**GetNewIssuedDocumentTotals**](IssuedDocumentsApi.md#GetNewIssuedDocumentTotals) | **Post** /c/{company_id}/issued_documents/totals | Get New Issued Document Totals
+[**JoinIssuedDocuments**](IssuedDocumentsApi.md#JoinIssuedDocuments) | **Get** /c/{company_id}/issued_documents/join | Join issued documents
 [**ListIssuedDocuments**](IssuedDocumentsApi.md#ListIssuedDocuments) | **Get** /c/{company_id}/issued_documents | List Issued Documents
 [**ModifyIssuedDocument**](IssuedDocumentsApi.md#ModifyIssuedDocument) | **Put** /c/{company_id}/issued_documents/{document_id} | Modify Issued Document
 [**ScheduleEmail**](IssuedDocumentsApi.md#ScheduleEmail) | **Post** /c/{company_id}/issued_documents/{document_id}/email | Schedule Email
+[**TransformIssuedDocument**](IssuedDocumentsApi.md#TransformIssuedDocument) | **Get** /c/{company_id}/issued_documents/transform | Transform issued document
 [**UploadIssuedDocumentAttachment**](IssuedDocumentsApi.md#UploadIssuedDocumentAttachment) | **Post** /c/{company_id}/issued_documents/attachment | Upload Issued Document Attachment
 
 
@@ -626,6 +628,85 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## JoinIssuedDocuments
+
+> JoinIssuedDocumentsResponse JoinIssuedDocuments(ctx, companyId).Ids(ids).Group(group).EInvoice(eInvoice).Execute()
+
+Join issued documents
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "encoding/json"
+    "fmt"
+    "os"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+)
+
+func main() {
+    companyId := int32(12345) // int32 | The ID of the company.
+    ids := "1,2,3,4" // string | Ids of the documents.
+    group := int32(56) // int32 | Group items. (optional)
+    eInvoice := int32(56) // int32 | New document e_invoice. (optional)
+
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
+    resp, r, err := apiClient.IssuedDocumentsApi.JoinIssuedDocuments(auth, companyId).Ids(ids).Group(group).EInvoice(eInvoice).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsApi.JoinIssuedDocuments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `JoinIssuedDocuments`: JoinIssuedDocumentsResponse
+    json.NewEncoder(os.Stdout).Encode(resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**companyId** | **int32** | The ID of the company. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiJoinIssuedDocumentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **ids** | **string** | Ids of the documents. | 
+ **group** | **int32** | Group items. | 
+ **eInvoice** | **int32** | New document e_invoice. | 
+
+### Return type
+
+[**JoinIssuedDocumentsResponse**](JoinIssuedDocumentsResponse.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ListIssuedDocuments
 
 > ListIssuedDocumentsResponse ListIssuedDocuments(ctx, companyId).Type_(type_).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
@@ -861,6 +942,87 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json
 - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## TransformIssuedDocument
+
+> TransformIssuedDocumentResponse TransformIssuedDocument(ctx, companyId).OriginalDocumentId(originalDocumentId).NewType(newType).EInvoice(eInvoice).TransformKeepCopy(transformKeepCopy).Execute()
+
+Transform issued document
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "encoding/json"
+    "fmt"
+    "os"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+)
+
+func main() {
+    companyId := int32(12345) // int32 | The ID of the company.
+    originalDocumentId := "originalDocumentId_example" // string | Original document id.
+    newType := "newType_example" // string | New document type.
+    eInvoice := int32(56) // int32 | New document e_invoice. (optional)
+    transformKeepCopy := int32(56) // int32 | Keep the old document. (optional)
+
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
+    resp, r, err := apiClient.IssuedDocumentsApi.TransformIssuedDocument(auth, companyId).OriginalDocumentId(originalDocumentId).NewType(newType).EInvoice(eInvoice).TransformKeepCopy(transformKeepCopy).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsApi.TransformIssuedDocument``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `TransformIssuedDocument`: TransformIssuedDocumentResponse
+    json.NewEncoder(os.Stdout).Encode(resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**companyId** | **int32** | The ID of the company. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiTransformIssuedDocumentRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **originalDocumentId** | **string** | Original document id. | 
+ **newType** | **string** | New document type. | 
+ **eInvoice** | **int32** | New document e_invoice. | 
+ **transformKeepCopy** | **int32** | Keep the old document. | 
+
+### Return type
+
+[**TransformIssuedDocumentResponse**](TransformIssuedDocumentResponse.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

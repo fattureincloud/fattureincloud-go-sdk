@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **AddressProvince** | Pointer to **NullableString** | Province. | [optional] 
 **AddressExtra** | Pointer to **NullableString** | Address extra info. | [optional] 
 **Country** | Pointer to **NullableString** | Country | [optional] 
+**CountryIso** | Pointer to **NullableString** | Country Iso | [optional] 
 **Email** | Pointer to **NullableString** | Email. | [optional] 
 **CertifiedEmail** | Pointer to **NullableString** | Certified email. | [optional] 
 **Phone** | Pointer to **NullableString** | Phone. | [optional] 
@@ -584,6 +585,41 @@ HasCountry returns a boolean if a field has been set.
 `func (o *Entity) UnsetCountry()`
 
 UnsetCountry ensures that no value is present for Country, not even an explicit nil
+### GetCountryIso
+
+`func (o *Entity) GetCountryIso() string`
+
+GetCountryIso returns the CountryIso field if non-nil, zero value otherwise.
+
+### GetCountryIsoOk
+
+`func (o *Entity) GetCountryIsoOk() (*string, bool)`
+
+GetCountryIsoOk returns a tuple with the CountryIso field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCountryIso
+
+`func (o *Entity) SetCountryIso(v string)`
+
+SetCountryIso sets CountryIso field to given value.
+
+### HasCountryIso
+
+`func (o *Entity) HasCountryIso() bool`
+
+HasCountryIso returns a boolean if a field has been set.
+
+### SetCountryIsoNil
+
+`func (o *Entity) SetCountryIsoNil(b bool)`
+
+ SetCountryIsoNil sets the value for CountryIso to be an explicit nil
+
+### UnsetCountryIso
+`func (o *Entity) UnsetCountryIso()`
+
+UnsetCountryIso ensures that no value is present for CountryIso, not even an explicit nil
 ### GetEmail
 
 `func (o *Entity) GetEmail() string`
