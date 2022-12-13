@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.24
 Contact: info@fattureincloud.it
 */
 
@@ -80,7 +80,7 @@ func NewSupplierWithDefaults() *Supplier {
 
 // GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetId() int32 {
-	if o == nil || o.Id.Get() == nil {
+	if o == nil || isNil(o.Id.Get()) {
 		var ret int32
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *Supplier) UnsetId() {
 
 // GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetCode() string {
-	if o == nil || o.Code.Get() == nil {
+	if o == nil || isNil(o.Code.Get()) {
 		var ret string
 		return ret
 	}
@@ -168,7 +168,7 @@ func (o *Supplier) UnsetCode() {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetName() string {
-	if o == nil || o.Name.Get() == nil {
+	if o == nil || isNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -212,7 +212,7 @@ func (o *Supplier) UnsetName() {
 
 // GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetType() SupplierType {
-	if o == nil || o.Type.Get() == nil {
+	if o == nil || isNil(o.Type.Get()) {
 		var ret SupplierType
 		return ret
 	}
@@ -256,7 +256,7 @@ func (o *Supplier) UnsetType() {
 
 // GetFirstName returns the FirstName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetFirstName() string {
-	if o == nil || o.FirstName.Get() == nil {
+	if o == nil || isNil(o.FirstName.Get()) {
 		var ret string
 		return ret
 	}
@@ -300,7 +300,7 @@ func (o *Supplier) UnsetFirstName() {
 
 // GetLastName returns the LastName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetLastName() string {
-	if o == nil || o.LastName.Get() == nil {
+	if o == nil || isNil(o.LastName.Get()) {
 		var ret string
 		return ret
 	}
@@ -344,7 +344,7 @@ func (o *Supplier) UnsetLastName() {
 
 // GetContactPerson returns the ContactPerson field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetContactPerson() string {
-	if o == nil || o.ContactPerson.Get() == nil {
+	if o == nil || isNil(o.ContactPerson.Get()) {
 		var ret string
 		return ret
 	}
@@ -388,7 +388,7 @@ func (o *Supplier) UnsetContactPerson() {
 
 // GetVatNumber returns the VatNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetVatNumber() string {
-	if o == nil || o.VatNumber.Get() == nil {
+	if o == nil || isNil(o.VatNumber.Get()) {
 		var ret string
 		return ret
 	}
@@ -432,7 +432,7 @@ func (o *Supplier) UnsetVatNumber() {
 
 // GetTaxCode returns the TaxCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetTaxCode() string {
-	if o == nil || o.TaxCode.Get() == nil {
+	if o == nil || isNil(o.TaxCode.Get()) {
 		var ret string
 		return ret
 	}
@@ -476,7 +476,7 @@ func (o *Supplier) UnsetTaxCode() {
 
 // GetAddressStreet returns the AddressStreet field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetAddressStreet() string {
-	if o == nil || o.AddressStreet.Get() == nil {
+	if o == nil || isNil(o.AddressStreet.Get()) {
 		var ret string
 		return ret
 	}
@@ -520,7 +520,7 @@ func (o *Supplier) UnsetAddressStreet() {
 
 // GetAddressPostalCode returns the AddressPostalCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetAddressPostalCode() string {
-	if o == nil || o.AddressPostalCode.Get() == nil {
+	if o == nil || isNil(o.AddressPostalCode.Get()) {
 		var ret string
 		return ret
 	}
@@ -564,7 +564,7 @@ func (o *Supplier) UnsetAddressPostalCode() {
 
 // GetAddressCity returns the AddressCity field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetAddressCity() string {
-	if o == nil || o.AddressCity.Get() == nil {
+	if o == nil || isNil(o.AddressCity.Get()) {
 		var ret string
 		return ret
 	}
@@ -608,7 +608,7 @@ func (o *Supplier) UnsetAddressCity() {
 
 // GetAddressProvince returns the AddressProvince field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetAddressProvince() string {
-	if o == nil || o.AddressProvince.Get() == nil {
+	if o == nil || isNil(o.AddressProvince.Get()) {
 		var ret string
 		return ret
 	}
@@ -652,7 +652,7 @@ func (o *Supplier) UnsetAddressProvince() {
 
 // GetAddressExtra returns the AddressExtra field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetAddressExtra() string {
-	if o == nil || o.AddressExtra.Get() == nil {
+	if o == nil || isNil(o.AddressExtra.Get()) {
 		var ret string
 		return ret
 	}
@@ -696,7 +696,7 @@ func (o *Supplier) UnsetAddressExtra() {
 
 // GetCountry returns the Country field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetCountry() string {
-	if o == nil || o.Country.Get() == nil {
+	if o == nil || isNil(o.Country.Get()) {
 		var ret string
 		return ret
 	}
@@ -740,7 +740,7 @@ func (o *Supplier) UnsetCountry() {
 
 // GetEmail returns the Email field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetEmail() string {
-	if o == nil || o.Email.Get() == nil {
+	if o == nil || isNil(o.Email.Get()) {
 		var ret string
 		return ret
 	}
@@ -784,7 +784,7 @@ func (o *Supplier) UnsetEmail() {
 
 // GetCertifiedEmail returns the CertifiedEmail field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetCertifiedEmail() string {
-	if o == nil || o.CertifiedEmail.Get() == nil {
+	if o == nil || isNil(o.CertifiedEmail.Get()) {
 		var ret string
 		return ret
 	}
@@ -828,7 +828,7 @@ func (o *Supplier) UnsetCertifiedEmail() {
 
 // GetPhone returns the Phone field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetPhone() string {
-	if o == nil || o.Phone.Get() == nil {
+	if o == nil || isNil(o.Phone.Get()) {
 		var ret string
 		return ret
 	}
@@ -872,7 +872,7 @@ func (o *Supplier) UnsetPhone() {
 
 // GetFax returns the Fax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetFax() string {
-	if o == nil || o.Fax.Get() == nil {
+	if o == nil || isNil(o.Fax.Get()) {
 		var ret string
 		return ret
 	}
@@ -916,7 +916,7 @@ func (o *Supplier) UnsetFax() {
 
 // GetNotes returns the Notes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetNotes() string {
-	if o == nil || o.Notes.Get() == nil {
+	if o == nil || isNil(o.Notes.Get()) {
 		var ret string
 		return ret
 	}
@@ -960,7 +960,7 @@ func (o *Supplier) UnsetNotes() {
 
 // GetBankIban returns the BankIban field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetBankIban() string {
-	if o == nil || o.BankIban.Get() == nil {
+	if o == nil || isNil(o.BankIban.Get()) {
 		var ret string
 		return ret
 	}
@@ -1004,7 +1004,7 @@ func (o *Supplier) UnsetBankIban() {
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetCreatedAt() string {
-	if o == nil || o.CreatedAt.Get() == nil {
+	if o == nil || isNil(o.CreatedAt.Get()) {
 		var ret string
 		return ret
 	}
@@ -1048,7 +1048,7 @@ func (o *Supplier) UnsetCreatedAt() {
 
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supplier) GetUpdatedAt() string {
-	if o == nil || o.UpdatedAt.Get() == nil {
+	if o == nil || isNil(o.UpdatedAt.Get()) {
 		var ret string
 		return ret
 	}

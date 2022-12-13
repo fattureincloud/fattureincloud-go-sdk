@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.24
 Contact: info@fattureincloud.it
 */
 
@@ -53,7 +53,7 @@ func NewEmailScheduleWithDefaults() *EmailSchedule {
 
 // GetSenderId returns the SenderId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EmailSchedule) GetSenderId() int32 {
-	if o == nil || o.SenderId.Get() == nil {
+	if o == nil || isNil(o.SenderId.Get()) {
 		var ret int32
 		return ret
 	}
@@ -97,7 +97,7 @@ func (o *EmailSchedule) UnsetSenderId() {
 
 // GetSenderEmail returns the SenderEmail field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EmailSchedule) GetSenderEmail() string {
-	if o == nil || o.SenderEmail.Get() == nil {
+	if o == nil || isNil(o.SenderEmail.Get()) {
 		var ret string
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *EmailSchedule) UnsetSenderEmail() {
 
 // GetRecipientEmail returns the RecipientEmail field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EmailSchedule) GetRecipientEmail() string {
-	if o == nil || o.RecipientEmail.Get() == nil {
+	if o == nil || isNil(o.RecipientEmail.Get()) {
 		var ret string
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *EmailSchedule) UnsetRecipientEmail() {
 
 // GetSubject returns the Subject field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EmailSchedule) GetSubject() string {
-	if o == nil || o.Subject.Get() == nil {
+	if o == nil || isNil(o.Subject.Get()) {
 		var ret string
 		return ret
 	}
@@ -229,7 +229,7 @@ func (o *EmailSchedule) UnsetSubject() {
 
 // GetBody returns the Body field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EmailSchedule) GetBody() string {
-	if o == nil || o.Body.Get() == nil {
+	if o == nil || isNil(o.Body.Get()) {
 		var ret string
 		return ret
 	}
@@ -273,7 +273,7 @@ func (o *EmailSchedule) UnsetBody() {
 
 // GetInclude returns the Include field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EmailSchedule) GetInclude() EmailScheduleInclude {
-	if o == nil || o.Include.Get() == nil {
+	if o == nil || isNil(o.Include.Get()) {
 		var ret EmailScheduleInclude
 		return ret
 	}
@@ -317,7 +317,7 @@ func (o *EmailSchedule) UnsetInclude() {
 
 // GetAttachPdf returns the AttachPdf field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EmailSchedule) GetAttachPdf() bool {
-	if o == nil || o.AttachPdf.Get() == nil {
+	if o == nil || isNil(o.AttachPdf.Get()) {
 		var ret bool
 		return ret
 	}
@@ -361,7 +361,7 @@ func (o *EmailSchedule) UnsetAttachPdf() {
 
 // GetSendCopy returns the SendCopy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EmailSchedule) GetSendCopy() bool {
-	if o == nil || o.SendCopy.Get() == nil {
+	if o == nil || isNil(o.SendCopy.Get()) {
 		var ret bool
 		return ret
 	}

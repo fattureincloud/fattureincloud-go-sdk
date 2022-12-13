@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.24
 Contact: info@fattureincloud.it
 */
 
@@ -39,7 +39,7 @@ func NewCreateSupplierRequestWithDefaults() *CreateSupplierRequest {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *CreateSupplierRequest) GetData() Supplier {
-	if o == nil || o.Data == nil {
+	if o == nil || isNil(o.Data) {
 		var ret Supplier
 		return ret
 	}
@@ -49,7 +49,7 @@ func (o *CreateSupplierRequest) GetData() Supplier {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateSupplierRequest) GetDataOk() (*Supplier, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || isNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +57,7 @@ func (o *CreateSupplierRequest) GetDataOk() (*Supplier, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *CreateSupplierRequest) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !isNil(o.Data) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *CreateSupplierRequest) SetData(v Supplier) *CreateSupplierRequest {
 
 func (o CreateSupplierRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
+	if !isNil(o.Data) {
 		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)

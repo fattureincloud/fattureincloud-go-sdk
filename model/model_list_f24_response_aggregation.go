@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.24
 Contact: info@fattureincloud.it
 */
 
@@ -39,7 +39,7 @@ func NewListF24ResponseAggregationWithDefaults() *ListF24ResponseAggregation {
 
 // GetAggregatedData returns the AggregatedData field value if set, zero value otherwise.
 func (o *ListF24ResponseAggregation) GetAggregatedData() ListF24ResponseAggregatedData {
-	if o == nil || o.AggregatedData == nil {
+	if o == nil || isNil(o.AggregatedData) {
 		var ret ListF24ResponseAggregatedData
 		return ret
 	}
@@ -49,7 +49,7 @@ func (o *ListF24ResponseAggregation) GetAggregatedData() ListF24ResponseAggregat
 // GetAggregatedDataOk returns a tuple with the AggregatedData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListF24ResponseAggregation) GetAggregatedDataOk() (*ListF24ResponseAggregatedData, bool) {
-	if o == nil || o.AggregatedData == nil {
+	if o == nil || isNil(o.AggregatedData) {
 		return nil, false
 	}
 	return o.AggregatedData, true
@@ -57,7 +57,7 @@ func (o *ListF24ResponseAggregation) GetAggregatedDataOk() (*ListF24ResponseAggr
 
 // HasAggregatedData returns a boolean if a field has been set.
 func (o *ListF24ResponseAggregation) HasAggregatedData() bool {
-	if o != nil && o.AggregatedData != nil {
+	if o != nil && !isNil(o.AggregatedData) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *ListF24ResponseAggregation) SetAggregatedData(v ListF24ResponseAggregat
 
 func (o ListF24ResponseAggregation) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AggregatedData != nil {
+	if !isNil(o.AggregatedData) {
 		toSerialize["aggregated_data"] = o.AggregatedData
 	}
 	return json.Marshal(toSerialize)

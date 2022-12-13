@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.24
 Contact: info@fattureincloud.it
 */
 
@@ -49,7 +49,7 @@ func NewEInvoiceRejectionReasonWithDefaults() *EInvoiceRejectionReason {
 
 // GetReason returns the Reason field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EInvoiceRejectionReason) GetReason() string {
-	if o == nil || o.Reason.Get() == nil {
+	if o == nil || isNil(o.Reason.Get()) {
 		var ret string
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *EInvoiceRejectionReason) UnsetReason() {
 
 // GetEiStatus returns the EiStatus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EInvoiceRejectionReason) GetEiStatus() string {
-	if o == nil || o.EiStatus.Get() == nil {
+	if o == nil || isNil(o.EiStatus.Get()) {
 		var ret string
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *EInvoiceRejectionReason) UnsetEiStatus() {
 
 // GetSolution returns the Solution field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EInvoiceRejectionReason) GetSolution() string {
-	if o == nil || o.Solution.Get() == nil {
+	if o == nil || isNil(o.Solution.Get()) {
 		var ret string
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *EInvoiceRejectionReason) UnsetSolution() {
 
 // GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EInvoiceRejectionReason) GetCode() string {
-	if o == nil || o.Code.Get() == nil {
+	if o == nil || isNil(o.Code.Get()) {
 		var ret string
 		return ret
 	}
@@ -225,7 +225,7 @@ func (o *EInvoiceRejectionReason) UnsetCode() {
 
 // GetDate returns the Date field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EInvoiceRejectionReason) GetDate() time.Time {
-	if o == nil || o.Date.Get() == nil {
+	if o == nil || isNil(o.Date.Get()) {
 		var ret time.Time
 		return ret
 	}

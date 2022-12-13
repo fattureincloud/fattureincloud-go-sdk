@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.24
 Contact: info@fattureincloud.it
 */
 
@@ -61,7 +61,7 @@ func NewIssuedDocumentPreCreateInfoWithDefaults() *IssuedDocumentPreCreateInfo {
 
 // GetNumerations returns the Numerations field value if set, zero value otherwise.
 func (o *IssuedDocumentPreCreateInfo) GetNumerations() map[string]map[string]int32 {
-	if o == nil || o.Numerations == nil {
+	if o == nil || isNil(o.Numerations) {
 		var ret map[string]map[string]int32
 		return ret
 	}
@@ -71,15 +71,15 @@ func (o *IssuedDocumentPreCreateInfo) GetNumerations() map[string]map[string]int
 // GetNumerationsOk returns a tuple with the Numerations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IssuedDocumentPreCreateInfo) GetNumerationsOk() (map[string]map[string]int32, bool) {
-	if o == nil || o.Numerations == nil {
-		return nil, false
+	if o == nil || isNil(o.Numerations) {
+		return map[string]map[string]int32{}, false
 	}
 	return o.Numerations, true
 }
 
 // HasNumerations returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfo) HasNumerations() bool {
-	if o != nil && o.Numerations != nil {
+	if o != nil && !isNil(o.Numerations) {
 		return true
 	}
 
@@ -94,7 +94,7 @@ func (o *IssuedDocumentPreCreateInfo) SetNumerations(v map[string]map[string]int
 
 // GetDnNumerations returns the DnNumerations field value if set, zero value otherwise.
 func (o *IssuedDocumentPreCreateInfo) GetDnNumerations() map[string]map[string]int32 {
-	if o == nil || o.DnNumerations == nil {
+	if o == nil || isNil(o.DnNumerations) {
 		var ret map[string]map[string]int32
 		return ret
 	}
@@ -104,15 +104,15 @@ func (o *IssuedDocumentPreCreateInfo) GetDnNumerations() map[string]map[string]i
 // GetDnNumerationsOk returns a tuple with the DnNumerations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IssuedDocumentPreCreateInfo) GetDnNumerationsOk() (map[string]map[string]int32, bool) {
-	if o == nil || o.DnNumerations == nil {
-		return nil, false
+	if o == nil || isNil(o.DnNumerations) {
+		return map[string]map[string]int32{}, false
 	}
 	return o.DnNumerations, true
 }
 
 // HasDnNumerations returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfo) HasDnNumerations() bool {
-	if o != nil && o.DnNumerations != nil {
+	if o != nil && !isNil(o.DnNumerations) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *IssuedDocumentPreCreateInfo) SetDnNumerations(v map[string]map[string]i
 
 // GetDefaultValues returns the DefaultValues field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentPreCreateInfo) GetDefaultValues() IssuedDocumentPreCreateInfoDefaultValues {
-	if o == nil || o.DefaultValues.Get() == nil {
+	if o == nil || isNil(o.DefaultValues.Get()) {
 		var ret IssuedDocumentPreCreateInfoDefaultValues
 		return ret
 	}
@@ -171,7 +171,7 @@ func (o *IssuedDocumentPreCreateInfo) UnsetDefaultValues() {
 
 // GetExtraDataDefaultValues returns the ExtraDataDefaultValues field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentPreCreateInfo) GetExtraDataDefaultValues() IssuedDocumentPreCreateInfoExtraDataDefaultValues {
-	if o == nil || o.ExtraDataDefaultValues.Get() == nil {
+	if o == nil || isNil(o.ExtraDataDefaultValues.Get()) {
 		var ret IssuedDocumentPreCreateInfoExtraDataDefaultValues
 		return ret
 	}
@@ -215,7 +215,7 @@ func (o *IssuedDocumentPreCreateInfo) UnsetExtraDataDefaultValues() {
 
 // GetItemsDefaultValues returns the ItemsDefaultValues field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentPreCreateInfo) GetItemsDefaultValues() IssuedDocumentPreCreateInfoItemsDefaultValues {
-	if o == nil || o.ItemsDefaultValues.Get() == nil {
+	if o == nil || isNil(o.ItemsDefaultValues.Get()) {
 		var ret IssuedDocumentPreCreateInfoItemsDefaultValues
 		return ret
 	}
@@ -270,7 +270,7 @@ func (o *IssuedDocumentPreCreateInfo) GetCountriesList() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IssuedDocumentPreCreateInfo) GetCountriesListOk() ([]string, bool) {
-	if o == nil || o.CountriesList == nil {
+	if o == nil || isNil(o.CountriesList) {
 		return nil, false
 	}
 	return o.CountriesList, true
@@ -278,7 +278,7 @@ func (o *IssuedDocumentPreCreateInfo) GetCountriesListOk() ([]string, bool) {
 
 // HasCountriesList returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfo) HasCountriesList() bool {
-	if o != nil && o.CountriesList != nil {
+	if o != nil && isNil(o.CountriesList) {
 		return true
 	}
 
@@ -304,7 +304,7 @@ func (o *IssuedDocumentPreCreateInfo) GetCurrenciesList() []Currency {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IssuedDocumentPreCreateInfo) GetCurrenciesListOk() ([]Currency, bool) {
-	if o == nil || o.CurrenciesList == nil {
+	if o == nil || isNil(o.CurrenciesList) {
 		return nil, false
 	}
 	return o.CurrenciesList, true
@@ -312,7 +312,7 @@ func (o *IssuedDocumentPreCreateInfo) GetCurrenciesListOk() ([]Currency, bool) {
 
 // HasCurrenciesList returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfo) HasCurrenciesList() bool {
-	if o != nil && o.CurrenciesList != nil {
+	if o != nil && isNil(o.CurrenciesList) {
 		return true
 	}
 
@@ -338,7 +338,7 @@ func (o *IssuedDocumentPreCreateInfo) GetTemplatesList() []DocumentTemplate {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IssuedDocumentPreCreateInfo) GetTemplatesListOk() ([]DocumentTemplate, bool) {
-	if o == nil || o.TemplatesList == nil {
+	if o == nil || isNil(o.TemplatesList) {
 		return nil, false
 	}
 	return o.TemplatesList, true
@@ -346,7 +346,7 @@ func (o *IssuedDocumentPreCreateInfo) GetTemplatesListOk() ([]DocumentTemplate, 
 
 // HasTemplatesList returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfo) HasTemplatesList() bool {
-	if o != nil && o.TemplatesList != nil {
+	if o != nil && isNil(o.TemplatesList) {
 		return true
 	}
 
@@ -372,7 +372,7 @@ func (o *IssuedDocumentPreCreateInfo) GetDnTemplatesList() []DocumentTemplate {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IssuedDocumentPreCreateInfo) GetDnTemplatesListOk() ([]DocumentTemplate, bool) {
-	if o == nil || o.DnTemplatesList == nil {
+	if o == nil || isNil(o.DnTemplatesList) {
 		return nil, false
 	}
 	return o.DnTemplatesList, true
@@ -380,7 +380,7 @@ func (o *IssuedDocumentPreCreateInfo) GetDnTemplatesListOk() ([]DocumentTemplate
 
 // HasDnTemplatesList returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfo) HasDnTemplatesList() bool {
-	if o != nil && o.DnTemplatesList != nil {
+	if o != nil && isNil(o.DnTemplatesList) {
 		return true
 	}
 
@@ -406,7 +406,7 @@ func (o *IssuedDocumentPreCreateInfo) GetAiTemplatesList() []DocumentTemplate {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IssuedDocumentPreCreateInfo) GetAiTemplatesListOk() ([]DocumentTemplate, bool) {
-	if o == nil || o.AiTemplatesList == nil {
+	if o == nil || isNil(o.AiTemplatesList) {
 		return nil, false
 	}
 	return o.AiTemplatesList, true
@@ -414,7 +414,7 @@ func (o *IssuedDocumentPreCreateInfo) GetAiTemplatesListOk() ([]DocumentTemplate
 
 // HasAiTemplatesList returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfo) HasAiTemplatesList() bool {
-	if o != nil && o.AiTemplatesList != nil {
+	if o != nil && isNil(o.AiTemplatesList) {
 		return true
 	}
 
@@ -440,7 +440,7 @@ func (o *IssuedDocumentPreCreateInfo) GetPaymentMethodsList() []PaymentMethod {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IssuedDocumentPreCreateInfo) GetPaymentMethodsListOk() ([]PaymentMethod, bool) {
-	if o == nil || o.PaymentMethodsList == nil {
+	if o == nil || isNil(o.PaymentMethodsList) {
 		return nil, false
 	}
 	return o.PaymentMethodsList, true
@@ -448,7 +448,7 @@ func (o *IssuedDocumentPreCreateInfo) GetPaymentMethodsListOk() ([]PaymentMethod
 
 // HasPaymentMethodsList returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfo) HasPaymentMethodsList() bool {
-	if o != nil && o.PaymentMethodsList != nil {
+	if o != nil && isNil(o.PaymentMethodsList) {
 		return true
 	}
 
@@ -474,7 +474,7 @@ func (o *IssuedDocumentPreCreateInfo) GetPaymentAccountsList() []PaymentAccount 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IssuedDocumentPreCreateInfo) GetPaymentAccountsListOk() ([]PaymentAccount, bool) {
-	if o == nil || o.PaymentAccountsList == nil {
+	if o == nil || isNil(o.PaymentAccountsList) {
 		return nil, false
 	}
 	return o.PaymentAccountsList, true
@@ -482,7 +482,7 @@ func (o *IssuedDocumentPreCreateInfo) GetPaymentAccountsListOk() ([]PaymentAccou
 
 // HasPaymentAccountsList returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfo) HasPaymentAccountsList() bool {
-	if o != nil && o.PaymentAccountsList != nil {
+	if o != nil && isNil(o.PaymentAccountsList) {
 		return true
 	}
 
@@ -508,7 +508,7 @@ func (o *IssuedDocumentPreCreateInfo) GetVatTypesList() []VatType {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IssuedDocumentPreCreateInfo) GetVatTypesListOk() ([]VatType, bool) {
-	if o == nil || o.VatTypesList == nil {
+	if o == nil || isNil(o.VatTypesList) {
 		return nil, false
 	}
 	return o.VatTypesList, true
@@ -516,7 +516,7 @@ func (o *IssuedDocumentPreCreateInfo) GetVatTypesListOk() ([]VatType, bool) {
 
 // HasVatTypesList returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfo) HasVatTypesList() bool {
-	if o != nil && o.VatTypesList != nil {
+	if o != nil && isNil(o.VatTypesList) {
 		return true
 	}
 
@@ -542,7 +542,7 @@ func (o *IssuedDocumentPreCreateInfo) GetLanguagesList() []Language {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IssuedDocumentPreCreateInfo) GetLanguagesListOk() ([]Language, bool) {
-	if o == nil || o.LanguagesList == nil {
+	if o == nil || isNil(o.LanguagesList) {
 		return nil, false
 	}
 	return o.LanguagesList, true
@@ -550,7 +550,7 @@ func (o *IssuedDocumentPreCreateInfo) GetLanguagesListOk() ([]Language, bool) {
 
 // HasLanguagesList returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfo) HasLanguagesList() bool {
-	if o != nil && o.LanguagesList != nil {
+	if o != nil && isNil(o.LanguagesList) {
 		return true
 	}
 
@@ -565,10 +565,10 @@ func (o *IssuedDocumentPreCreateInfo) SetLanguagesList(v []Language) *IssuedDocu
 
 func (o IssuedDocumentPreCreateInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Numerations != nil {
+	if !isNil(o.Numerations) {
 		toSerialize["numerations"] = o.Numerations
 	}
-	if o.DnNumerations != nil {
+	if !isNil(o.DnNumerations) {
 		toSerialize["dn_numerations"] = o.DnNumerations
 	}
 	if o.DefaultValues.IsSet() {

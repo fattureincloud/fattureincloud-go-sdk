@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.24
 Contact: info@fattureincloud.it
 */
 
@@ -59,7 +59,7 @@ func NewEmailDataWithDefaults() *EmailData {
 
 // GetRecipientEmail returns the RecipientEmail field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EmailData) GetRecipientEmail() string {
-	if o == nil || o.RecipientEmail.Get() == nil {
+	if o == nil || isNil(o.RecipientEmail.Get()) {
 		var ret string
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *EmailData) UnsetRecipientEmail() {
 
 // GetDefaultSenderEmail returns the DefaultSenderEmail field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EmailData) GetDefaultSenderEmail() EmailDataDefaultSenderEmail {
-	if o == nil || o.DefaultSenderEmail.Get() == nil {
+	if o == nil || isNil(o.DefaultSenderEmail.Get()) {
 		var ret EmailDataDefaultSenderEmail
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *EmailData) GetSenderEmailsList() []SenderEmail {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EmailData) GetSenderEmailsListOk() ([]SenderEmail, bool) {
-	if o == nil || o.SenderEmailsList == nil {
+	if o == nil || isNil(o.SenderEmailsList) {
 		return nil, false
 	}
 	return o.SenderEmailsList, true
@@ -166,7 +166,7 @@ func (o *EmailData) GetSenderEmailsListOk() ([]SenderEmail, bool) {
 
 // HasSenderEmailsList returns a boolean if a field has been set.
 func (o *EmailData) HasSenderEmailsList() bool {
-	if o != nil && o.SenderEmailsList != nil {
+	if o != nil && isNil(o.SenderEmailsList) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *EmailData) SetSenderEmailsList(v []SenderEmail) *EmailData {
 
 // GetCcEmail returns the CcEmail field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EmailData) GetCcEmail() string {
-	if o == nil || o.CcEmail.Get() == nil {
+	if o == nil || isNil(o.CcEmail.Get()) {
 		var ret string
 		return ret
 	}
@@ -225,7 +225,7 @@ func (o *EmailData) UnsetCcEmail() {
 
 // GetSubject returns the Subject field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EmailData) GetSubject() string {
-	if o == nil || o.Subject.Get() == nil {
+	if o == nil || isNil(o.Subject.Get()) {
 		var ret string
 		return ret
 	}
@@ -269,7 +269,7 @@ func (o *EmailData) UnsetSubject() {
 
 // GetBody returns the Body field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EmailData) GetBody() string {
-	if o == nil || o.Body.Get() == nil {
+	if o == nil || isNil(o.Body.Get()) {
 		var ret string
 		return ret
 	}
@@ -313,7 +313,7 @@ func (o *EmailData) UnsetBody() {
 
 // GetDocumentExists returns the DocumentExists field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EmailData) GetDocumentExists() bool {
-	if o == nil || o.DocumentExists.Get() == nil {
+	if o == nil || isNil(o.DocumentExists.Get()) {
 		var ret bool
 		return ret
 	}
@@ -357,7 +357,7 @@ func (o *EmailData) UnsetDocumentExists() {
 
 // GetDeliveryNoteExists returns the DeliveryNoteExists field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EmailData) GetDeliveryNoteExists() bool {
-	if o == nil || o.DeliveryNoteExists.Get() == nil {
+	if o == nil || isNil(o.DeliveryNoteExists.Get()) {
 		var ret bool
 		return ret
 	}
@@ -401,7 +401,7 @@ func (o *EmailData) UnsetDeliveryNoteExists() {
 
 // GetAttachmentExists returns the AttachmentExists field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EmailData) GetAttachmentExists() bool {
-	if o == nil || o.AttachmentExists.Get() == nil {
+	if o == nil || isNil(o.AttachmentExists.Get()) {
 		var ret bool
 		return ret
 	}
@@ -445,7 +445,7 @@ func (o *EmailData) UnsetAttachmentExists() {
 
 // GetAccompanyingInvoiceExists returns the AccompanyingInvoiceExists field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EmailData) GetAccompanyingInvoiceExists() bool {
-	if o == nil || o.AccompanyingInvoiceExists.Get() == nil {
+	if o == nil || isNil(o.AccompanyingInvoiceExists.Get()) {
 		var ret bool
 		return ret
 	}
@@ -489,7 +489,7 @@ func (o *EmailData) UnsetAccompanyingInvoiceExists() {
 
 // GetDefaultAttachPdf returns the DefaultAttachPdf field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EmailData) GetDefaultAttachPdf() bool {
-	if o == nil || o.DefaultAttachPdf.Get() == nil {
+	if o == nil || isNil(o.DefaultAttachPdf.Get()) {
 		var ret bool
 		return ret
 	}

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.24
 Contact: info@fattureincloud.it
 */
 
@@ -49,7 +49,7 @@ func NewControlledCompanyWithDefaults() *ControlledCompany {
 
 // GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ControlledCompany) GetId() int32 {
-	if o == nil || o.Id.Get() == nil {
+	if o == nil || isNil(o.Id.Get()) {
 		var ret int32
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *ControlledCompany) UnsetId() {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ControlledCompany) GetName() string {
-	if o == nil || o.Name.Get() == nil {
+	if o == nil || isNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *ControlledCompany) UnsetName() {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *ControlledCompany) GetType() CompanyType {
-	if o == nil || o.Type == nil {
+	if o == nil || isNil(o.Type) {
 		var ret CompanyType
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *ControlledCompany) GetType() CompanyType {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ControlledCompany) GetTypeOk() (*CompanyType, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || isNil(o.Type) {
 		return nil, false
 	}
 	return o.Type, true
@@ -155,7 +155,7 @@ func (o *ControlledCompany) GetTypeOk() (*CompanyType, bool) {
 
 // HasType returns a boolean if a field has been set.
 func (o *ControlledCompany) HasType() bool {
-	if o != nil && o.Type != nil {
+	if o != nil && !isNil(o.Type) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *ControlledCompany) SetType(v CompanyType) *ControlledCompany {
 
 // GetAccessToken returns the AccessToken field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ControlledCompany) GetAccessToken() string {
-	if o == nil || o.AccessToken.Get() == nil {
+	if o == nil || isNil(o.AccessToken.Get()) {
 		var ret string
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *ControlledCompany) UnsetAccessToken() {
 
 // GetConnectionId returns the ConnectionId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ControlledCompany) GetConnectionId() float32 {
-	if o == nil || o.ConnectionId.Get() == nil {
+	if o == nil || isNil(o.ConnectionId.Get()) {
 		var ret float32
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *ControlledCompany) UnsetConnectionId() {
 
 // GetTaxCode returns the TaxCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ControlledCompany) GetTaxCode() string {
-	if o == nil || o.TaxCode.Get() == nil {
+	if o == nil || isNil(o.TaxCode.Get()) {
 		var ret string
 		return ret
 	}
@@ -308,7 +308,7 @@ func (o ControlledCompany) MarshalJSON() ([]byte, error) {
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	if o.Type != nil {
+	if !isNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
 	if o.AccessToken.IsSet() {

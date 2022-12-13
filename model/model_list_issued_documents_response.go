@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.24
 Contact: info@fattureincloud.it
 */
 
@@ -61,7 +61,7 @@ func NewListIssuedDocumentsResponseWithDefaults() *ListIssuedDocumentsResponse {
 
 // GetCurrentPage returns the CurrentPage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListIssuedDocumentsResponse) GetCurrentPage() int32 {
-	if o == nil || o.CurrentPage.Get() == nil {
+	if o == nil || isNil(o.CurrentPage.Get()) {
 		var ret int32
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *ListIssuedDocumentsResponse) UnsetCurrentPage() {
 
 // GetFirstPageUrl returns the FirstPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListIssuedDocumentsResponse) GetFirstPageUrl() string {
-	if o == nil || o.FirstPageUrl.Get() == nil {
+	if o == nil || isNil(o.FirstPageUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *ListIssuedDocumentsResponse) UnsetFirstPageUrl() {
 
 // GetFrom returns the From field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListIssuedDocumentsResponse) GetFrom() int32 {
-	if o == nil || o.From.Get() == nil {
+	if o == nil || isNil(o.From.Get()) {
 		var ret int32
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *ListIssuedDocumentsResponse) UnsetFrom() {
 
 // GetLastPage returns the LastPage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListIssuedDocumentsResponse) GetLastPage() int32 {
-	if o == nil || o.LastPage.Get() == nil {
+	if o == nil || isNil(o.LastPage.Get()) {
 		var ret int32
 		return ret
 	}
@@ -237,7 +237,7 @@ func (o *ListIssuedDocumentsResponse) UnsetLastPage() {
 
 // GetLastPageUrl returns the LastPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListIssuedDocumentsResponse) GetLastPageUrl() string {
-	if o == nil || o.LastPageUrl.Get() == nil {
+	if o == nil || isNil(o.LastPageUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -281,7 +281,7 @@ func (o *ListIssuedDocumentsResponse) UnsetLastPageUrl() {
 
 // GetNextPageUrl returns the NextPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListIssuedDocumentsResponse) GetNextPageUrl() string {
-	if o == nil || o.NextPageUrl.Get() == nil {
+	if o == nil || isNil(o.NextPageUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -325,7 +325,7 @@ func (o *ListIssuedDocumentsResponse) UnsetNextPageUrl() {
 
 // GetPath returns the Path field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListIssuedDocumentsResponse) GetPath() string {
-	if o == nil || o.Path.Get() == nil {
+	if o == nil || isNil(o.Path.Get()) {
 		var ret string
 		return ret
 	}
@@ -369,7 +369,7 @@ func (o *ListIssuedDocumentsResponse) UnsetPath() {
 
 // GetPerPage returns the PerPage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListIssuedDocumentsResponse) GetPerPage() int32 {
-	if o == nil || o.PerPage.Get() == nil {
+	if o == nil || isNil(o.PerPage.Get()) {
 		var ret int32
 		return ret
 	}
@@ -413,7 +413,7 @@ func (o *ListIssuedDocumentsResponse) UnsetPerPage() {
 
 // GetPrevPageUrl returns the PrevPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListIssuedDocumentsResponse) GetPrevPageUrl() string {
-	if o == nil || o.PrevPageUrl.Get() == nil {
+	if o == nil || isNil(o.PrevPageUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -457,7 +457,7 @@ func (o *ListIssuedDocumentsResponse) UnsetPrevPageUrl() {
 
 // GetTo returns the To field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListIssuedDocumentsResponse) GetTo() int32 {
-	if o == nil || o.To.Get() == nil {
+	if o == nil || isNil(o.To.Get()) {
 		var ret int32
 		return ret
 	}
@@ -501,7 +501,7 @@ func (o *ListIssuedDocumentsResponse) UnsetTo() {
 
 // GetTotal returns the Total field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListIssuedDocumentsResponse) GetTotal() int32 {
-	if o == nil || o.Total.Get() == nil {
+	if o == nil || isNil(o.Total.Get()) {
 		var ret int32
 		return ret
 	}
@@ -556,7 +556,7 @@ func (o *ListIssuedDocumentsResponse) GetData() []IssuedDocument {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListIssuedDocumentsResponse) GetDataOk() ([]IssuedDocument, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || isNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -564,7 +564,7 @@ func (o *ListIssuedDocumentsResponse) GetDataOk() ([]IssuedDocument, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *ListIssuedDocumentsResponse) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && isNil(o.Data) {
 		return true
 	}
 
