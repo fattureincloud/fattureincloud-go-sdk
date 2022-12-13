@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.23
 Contact: info@fattureincloud.it
 */
 
@@ -53,7 +53,7 @@ func NewIssuedDocumentExtraDataWithDefaults() *IssuedDocumentExtraData {
 
 // GetShowSofortButton returns the ShowSofortButton field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentExtraData) GetShowSofortButton() bool {
-	if o == nil || o.ShowSofortButton.Get() == nil {
+	if o == nil || isNil(o.ShowSofortButton.Get()) {
 		var ret bool
 		return ret
 	}
@@ -97,7 +97,7 @@ func (o *IssuedDocumentExtraData) UnsetShowSofortButton() {
 
 // GetMultifattureSent returns the MultifattureSent field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentExtraData) GetMultifattureSent() int32 {
-	if o == nil || o.MultifattureSent.Get() == nil {
+	if o == nil || isNil(o.MultifattureSent.Get()) {
 		var ret int32
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *IssuedDocumentExtraData) UnsetMultifattureSent() {
 
 // GetTsCommunication returns the TsCommunication field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentExtraData) GetTsCommunication() bool {
-	if o == nil || o.TsCommunication.Get() == nil {
+	if o == nil || isNil(o.TsCommunication.Get()) {
 		var ret bool
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *IssuedDocumentExtraData) UnsetTsCommunication() {
 
 // GetTsFlagTipoSpesa returns the TsFlagTipoSpesa field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentExtraData) GetTsFlagTipoSpesa() float32 {
-	if o == nil || o.TsFlagTipoSpesa.Get() == nil {
+	if o == nil || isNil(o.TsFlagTipoSpesa.Get()) {
 		var ret float32
 		return ret
 	}
@@ -229,7 +229,7 @@ func (o *IssuedDocumentExtraData) UnsetTsFlagTipoSpesa() {
 
 // GetTsPagamentoTracciato returns the TsPagamentoTracciato field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentExtraData) GetTsPagamentoTracciato() bool {
-	if o == nil || o.TsPagamentoTracciato.Get() == nil {
+	if o == nil || isNil(o.TsPagamentoTracciato.Get()) {
 		var ret bool
 		return ret
 	}
@@ -273,7 +273,7 @@ func (o *IssuedDocumentExtraData) UnsetTsPagamentoTracciato() {
 
 // GetTsTipoSpesa returns the TsTipoSpesa field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentExtraData) GetTsTipoSpesa() string {
-	if o == nil || o.TsTipoSpesa.Get() == nil {
+	if o == nil || isNil(o.TsTipoSpesa.Get()) {
 		var ret string
 		return ret
 	}
@@ -317,7 +317,7 @@ func (o *IssuedDocumentExtraData) UnsetTsTipoSpesa() {
 
 // GetTsOpposizione returns the TsOpposizione field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentExtraData) GetTsOpposizione() bool {
-	if o == nil || o.TsOpposizione.Get() == nil {
+	if o == nil || isNil(o.TsOpposizione.Get()) {
 		var ret bool
 		return ret
 	}
@@ -361,7 +361,7 @@ func (o *IssuedDocumentExtraData) UnsetTsOpposizione() {
 
 // GetTsStatus returns the TsStatus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentExtraData) GetTsStatus() int32 {
-	if o == nil || o.TsStatus.Get() == nil {
+	if o == nil || isNil(o.TsStatus.Get()) {
 		var ret int32
 		return ret
 	}
@@ -405,7 +405,7 @@ func (o *IssuedDocumentExtraData) UnsetTsStatus() {
 
 // GetTsFileId returns the TsFileId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentExtraData) GetTsFileId() string {
-	if o == nil || o.TsFileId.Get() == nil {
+	if o == nil || isNil(o.TsFileId.Get()) {
 		var ret string
 		return ret
 	}
@@ -449,7 +449,7 @@ func (o *IssuedDocumentExtraData) UnsetTsFileId() {
 
 // GetTsSentDate returns the TsSentDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentExtraData) GetTsSentDate() string {
-	if o == nil || o.TsSentDate.Get() == nil {
+	if o == nil || isNil(o.TsSentDate.Get()) {
 		var ret string
 		return ret
 	}
@@ -493,7 +493,7 @@ func (o *IssuedDocumentExtraData) UnsetTsSentDate() {
 
 // GetTsFullAmount returns the TsFullAmount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentExtraData) GetTsFullAmount() bool {
-	if o == nil || o.TsFullAmount.Get() == nil {
+	if o == nil || isNil(o.TsFullAmount.Get()) {
 		var ret bool
 		return ret
 	}
@@ -537,7 +537,7 @@ func (o *IssuedDocumentExtraData) UnsetTsFullAmount() {
 
 // GetImportedBy returns the ImportedBy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentExtraData) GetImportedBy() string {
-	if o == nil || o.ImportedBy.Get() == nil {
+	if o == nil || isNil(o.ImportedBy.Get()) {
 		var ret string
 		return ret
 	}
@@ -581,7 +581,7 @@ func (o *IssuedDocumentExtraData) UnsetImportedBy() {
 
 // GetTsSingleSending returns the TsSingleSending field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentExtraData) GetTsSingleSending() bool {
-	if o == nil || o.TsSingleSending.Get() == nil {
+	if o == nil || isNil(o.TsSingleSending.Get()) {
 		var ret bool
 		return ret
 	}

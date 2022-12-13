@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.23
 Contact: info@fattureincloud.it
 */
 
@@ -51,7 +51,7 @@ func NewCompanyInfoWithDefaults() *CompanyInfo {
 
 // GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfo) GetId() int32 {
-	if o == nil || o.Id.Get() == nil {
+	if o == nil || isNil(o.Id.Get()) {
 		var ret int32
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *CompanyInfo) UnsetId() {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfo) GetName() string {
-	if o == nil || o.Name.Get() == nil {
+	if o == nil || isNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -139,7 +139,7 @@ func (o *CompanyInfo) UnsetName() {
 
 // GetEmail returns the Email field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfo) GetEmail() string {
-	if o == nil || o.Email.Get() == nil {
+	if o == nil || isNil(o.Email.Get()) {
 		var ret string
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *CompanyInfo) UnsetEmail() {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *CompanyInfo) GetType() CompanyType {
-	if o == nil || o.Type == nil {
+	if o == nil || isNil(o.Type) {
 		var ret CompanyType
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *CompanyInfo) GetType() CompanyType {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CompanyInfo) GetTypeOk() (*CompanyType, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || isNil(o.Type) {
 		return nil, false
 	}
 	return o.Type, true
@@ -201,7 +201,7 @@ func (o *CompanyInfo) GetTypeOk() (*CompanyType, bool) {
 
 // HasType returns a boolean if a field has been set.
 func (o *CompanyInfo) HasType() bool {
-	if o != nil && o.Type != nil {
+	if o != nil && !isNil(o.Type) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *CompanyInfo) SetType(v CompanyType) *CompanyInfo {
 
 // GetAccessInfo returns the AccessInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfo) GetAccessInfo() CompanyInfoAccessInfo {
-	if o == nil || o.AccessInfo.Get() == nil {
+	if o == nil || isNil(o.AccessInfo.Get()) {
 		var ret CompanyInfoAccessInfo
 		return ret
 	}
@@ -260,7 +260,7 @@ func (o *CompanyInfo) UnsetAccessInfo() {
 
 // GetPlanInfo returns the PlanInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfo) GetPlanInfo() CompanyInfoPlanInfo {
-	if o == nil || o.PlanInfo.Get() == nil {
+	if o == nil || isNil(o.PlanInfo.Get()) {
 		var ret CompanyInfoPlanInfo
 		return ret
 	}
@@ -304,7 +304,7 @@ func (o *CompanyInfo) UnsetPlanInfo() {
 
 // GetAccountantId returns the AccountantId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfo) GetAccountantId() int32 {
-	if o == nil || o.AccountantId.Get() == nil {
+	if o == nil || isNil(o.AccountantId.Get()) {
 		var ret int32
 		return ret
 	}
@@ -348,7 +348,7 @@ func (o *CompanyInfo) UnsetAccountantId() {
 
 // GetIsAccountant returns the IsAccountant field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfo) GetIsAccountant() bool {
-	if o == nil || o.IsAccountant.Get() == nil {
+	if o == nil || isNil(o.IsAccountant.Get()) {
 		var ret bool
 		return ret
 	}
@@ -401,7 +401,7 @@ func (o CompanyInfo) MarshalJSON() ([]byte, error) {
 	if o.Email.IsSet() {
 		toSerialize["email"] = o.Email.Get()
 	}
-	if o.Type != nil {
+	if !isNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
 	if o.AccessInfo.IsSet() {

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.23
 Contact: info@fattureincloud.it
 */
 
@@ -62,7 +62,7 @@ func NewListF24ResponseWithDefaults() *ListF24Response {
 
 // GetCurrentPage returns the CurrentPage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListF24Response) GetCurrentPage() int32 {
-	if o == nil || o.CurrentPage.Get() == nil {
+	if o == nil || isNil(o.CurrentPage.Get()) {
 		var ret int32
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *ListF24Response) UnsetCurrentPage() {
 
 // GetFirstPageUrl returns the FirstPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListF24Response) GetFirstPageUrl() string {
-	if o == nil || o.FirstPageUrl.Get() == nil {
+	if o == nil || isNil(o.FirstPageUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *ListF24Response) UnsetFirstPageUrl() {
 
 // GetFrom returns the From field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListF24Response) GetFrom() int32 {
-	if o == nil || o.From.Get() == nil {
+	if o == nil || isNil(o.From.Get()) {
 		var ret int32
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *ListF24Response) UnsetFrom() {
 
 // GetLastPage returns the LastPage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListF24Response) GetLastPage() int32 {
-	if o == nil || o.LastPage.Get() == nil {
+	if o == nil || isNil(o.LastPage.Get()) {
 		var ret int32
 		return ret
 	}
@@ -238,7 +238,7 @@ func (o *ListF24Response) UnsetLastPage() {
 
 // GetLastPageUrl returns the LastPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListF24Response) GetLastPageUrl() string {
-	if o == nil || o.LastPageUrl.Get() == nil {
+	if o == nil || isNil(o.LastPageUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -282,7 +282,7 @@ func (o *ListF24Response) UnsetLastPageUrl() {
 
 // GetNextPageUrl returns the NextPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListF24Response) GetNextPageUrl() string {
-	if o == nil || o.NextPageUrl.Get() == nil {
+	if o == nil || isNil(o.NextPageUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -326,7 +326,7 @@ func (o *ListF24Response) UnsetNextPageUrl() {
 
 // GetPath returns the Path field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListF24Response) GetPath() string {
-	if o == nil || o.Path.Get() == nil {
+	if o == nil || isNil(o.Path.Get()) {
 		var ret string
 		return ret
 	}
@@ -370,7 +370,7 @@ func (o *ListF24Response) UnsetPath() {
 
 // GetPerPage returns the PerPage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListF24Response) GetPerPage() int32 {
-	if o == nil || o.PerPage.Get() == nil {
+	if o == nil || isNil(o.PerPage.Get()) {
 		var ret int32
 		return ret
 	}
@@ -414,7 +414,7 @@ func (o *ListF24Response) UnsetPerPage() {
 
 // GetPrevPageUrl returns the PrevPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListF24Response) GetPrevPageUrl() string {
-	if o == nil || o.PrevPageUrl.Get() == nil {
+	if o == nil || isNil(o.PrevPageUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -458,7 +458,7 @@ func (o *ListF24Response) UnsetPrevPageUrl() {
 
 // GetTo returns the To field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListF24Response) GetTo() int32 {
-	if o == nil || o.To.Get() == nil {
+	if o == nil || isNil(o.To.Get()) {
 		var ret int32
 		return ret
 	}
@@ -502,7 +502,7 @@ func (o *ListF24Response) UnsetTo() {
 
 // GetTotal returns the Total field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListF24Response) GetTotal() int32 {
-	if o == nil || o.Total.Get() == nil {
+	if o == nil || isNil(o.Total.Get()) {
 		var ret int32
 		return ret
 	}
@@ -557,7 +557,7 @@ func (o *ListF24Response) GetData() []F24 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListF24Response) GetDataOk() ([]F24, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || isNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -565,7 +565,7 @@ func (o *ListF24Response) GetDataOk() ([]F24, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *ListF24Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && isNil(o.Data) {
 		return true
 	}
 
@@ -580,7 +580,7 @@ func (o *ListF24Response) SetData(v []F24) *ListF24Response {
 
 // GetAggregatedData returns the AggregatedData field value if set, zero value otherwise.
 func (o *ListF24Response) GetAggregatedData() ListF24ResponseAggregatedData {
-	if o == nil || o.AggregatedData == nil {
+	if o == nil || isNil(o.AggregatedData) {
 		var ret ListF24ResponseAggregatedData
 		return ret
 	}
@@ -590,7 +590,7 @@ func (o *ListF24Response) GetAggregatedData() ListF24ResponseAggregatedData {
 // GetAggregatedDataOk returns a tuple with the AggregatedData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListF24Response) GetAggregatedDataOk() (*ListF24ResponseAggregatedData, bool) {
-	if o == nil || o.AggregatedData == nil {
+	if o == nil || isNil(o.AggregatedData) {
 		return nil, false
 	}
 	return o.AggregatedData, true
@@ -598,7 +598,7 @@ func (o *ListF24Response) GetAggregatedDataOk() (*ListF24ResponseAggregatedData,
 
 // HasAggregatedData returns a boolean if a field has been set.
 func (o *ListF24Response) HasAggregatedData() bool {
-	if o != nil && o.AggregatedData != nil {
+	if o != nil && !isNil(o.AggregatedData) {
 		return true
 	}
 
@@ -649,7 +649,7 @@ func (o ListF24Response) MarshalJSON() ([]byte, error) {
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	if o.AggregatedData != nil {
+	if !isNil(o.AggregatedData) {
 		toSerialize["aggregated_data"] = o.AggregatedData
 	}
 	return json.Marshal(toSerialize)

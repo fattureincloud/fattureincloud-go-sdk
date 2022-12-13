@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **ApplyWithholdingTaxes** | Pointer to **NullableBool** | Apply withholding taxes, rivalsa and cassa. | [optional] 
 **Discount** | Pointer to **NullableFloat32** | Discount percentual value. | [optional] 
 **DiscountHighlight** | Pointer to **NullableBool** |  | [optional] 
-**InDdt** | Pointer to **NullableBool** |  | [optional] 
+**InDn** | Pointer to **NullableBool** |  | [optional] 
 **Stock** | Pointer to **NullableBool** |  | [optional] 
 **EiRaw** | Pointer to **map[string]interface{}** | Advanced raw attributes for e-invoices. | [optional] 
 
@@ -567,41 +567,41 @@ HasDiscountHighlight returns a boolean if a field has been set.
 `func (o *IssuedDocumentItemsListItem) UnsetDiscountHighlight()`
 
 UnsetDiscountHighlight ensures that no value is present for DiscountHighlight, not even an explicit nil
-### GetInDdt
+### GetInDn
 
-`func (o *IssuedDocumentItemsListItem) GetInDdt() bool`
+`func (o *IssuedDocumentItemsListItem) GetInDn() bool`
 
-GetInDdt returns the InDdt field if non-nil, zero value otherwise.
+GetInDn returns the InDn field if non-nil, zero value otherwise.
 
-### GetInDdtOk
+### GetInDnOk
 
-`func (o *IssuedDocumentItemsListItem) GetInDdtOk() (*bool, bool)`
+`func (o *IssuedDocumentItemsListItem) GetInDnOk() (*bool, bool)`
 
-GetInDdtOk returns a tuple with the InDdt field if it's non-nil, zero value otherwise
+GetInDnOk returns a tuple with the InDn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetInDdt
+### SetInDn
 
-`func (o *IssuedDocumentItemsListItem) SetInDdt(v bool)`
+`func (o *IssuedDocumentItemsListItem) SetInDn(v bool)`
 
-SetInDdt sets InDdt field to given value.
+SetInDn sets InDn field to given value.
 
-### HasInDdt
+### HasInDn
 
-`func (o *IssuedDocumentItemsListItem) HasInDdt() bool`
+`func (o *IssuedDocumentItemsListItem) HasInDn() bool`
 
-HasInDdt returns a boolean if a field has been set.
+HasInDn returns a boolean if a field has been set.
 
-### SetInDdtNil
+### SetInDnNil
 
-`func (o *IssuedDocumentItemsListItem) SetInDdtNil(b bool)`
+`func (o *IssuedDocumentItemsListItem) SetInDnNil(b bool)`
 
- SetInDdtNil sets the value for InDdt to be an explicit nil
+ SetInDnNil sets the value for InDn to be an explicit nil
 
-### UnsetInDdt
-`func (o *IssuedDocumentItemsListItem) UnsetInDdt()`
+### UnsetInDn
+`func (o *IssuedDocumentItemsListItem) UnsetInDn()`
 
-UnsetInDdt ensures that no value is present for InDdt, not even an explicit nil
+UnsetInDn ensures that no value is present for InDn, not even an explicit nil
 ### GetStock
 
 `func (o *IssuedDocumentItemsListItem) GetStock() bool`

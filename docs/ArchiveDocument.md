@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **NullableInt32** | Archive document unique identifier. | [optional] 
 **Date** | Pointer to **NullableString** | Archive document date. | [optional] 
 **Description** | Pointer to **NullableString** | Archive Document description. | [optional] 
-**AttachmentUrl** | Pointer to **NullableString** | [Read Only] Absolute url of the attached file. Authomatically set if a valid attachment token is passed via POST /archive or PUT /archive/{documentId}. | [optional] [readonly] 
+**AttachmentUrl** | Pointer to **NullableString** | [Temporary] [Read Only] Absolute url of the attached file. Authomatically set if a valid attachment token is passed via POST /archive or PUT /archive/{documentId}. | [optional] [readonly] 
 **Category** | Pointer to **NullableString** | Archive document category. | [optional] 
 **AttachmentToken** | Pointer to **NullableString** | [Write Only]  [Required] Attachment token returned by POST /archive/attachment. Used to attach the file already uploaded. | [optional] 
 

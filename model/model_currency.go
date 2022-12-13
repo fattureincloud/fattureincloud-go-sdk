@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.23
 Contact: info@fattureincloud.it
 */
 
@@ -46,7 +46,7 @@ func NewCurrencyWithDefaults() *Currency {
 
 // GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Currency) GetId() string {
-	if o == nil || o.Id.Get() == nil {
+	if o == nil || isNil(o.Id.Get()) {
 		var ret string
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *Currency) UnsetId() {
 
 // GetSymbol returns the Symbol field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Currency) GetSymbol() string {
-	if o == nil || o.Symbol.Get() == nil {
+	if o == nil || isNil(o.Symbol.Get()) {
 		var ret string
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *Currency) UnsetSymbol() {
 
 // GetExchangeRate returns the ExchangeRate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Currency) GetExchangeRate() string {
-	if o == nil || o.ExchangeRate.Get() == nil {
+	if o == nil || isNil(o.ExchangeRate.Get()) {
 		var ret string
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *Currency) UnsetExchangeRate() {
 
 // GetHtmlSymbol returns the HtmlSymbol field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Currency) GetHtmlSymbol() string {
-	if o == nil || o.HtmlSymbol.Get() == nil {
+	if o == nil || isNil(o.HtmlSymbol.Get()) {
 		var ret string
 		return ret
 	}

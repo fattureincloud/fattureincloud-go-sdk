@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.23
 Contact: info@fattureincloud.it
 */
 
@@ -56,7 +56,7 @@ func NewVatTypeWithDefaults() *VatType {
 
 // GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VatType) GetId() int32 {
-	if o == nil || o.Id.Get() == nil {
+	if o == nil || isNil(o.Id.Get()) {
 		var ret int32
 		return ret
 	}
@@ -100,7 +100,7 @@ func (o *VatType) UnsetId() {
 
 // GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VatType) GetValue() float32 {
-	if o == nil || o.Value.Get() == nil {
+	if o == nil || isNil(o.Value.Get()) {
 		var ret float32
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *VatType) UnsetValue() {
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VatType) GetDescription() string {
-	if o == nil || o.Description.Get() == nil {
+	if o == nil || isNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *VatType) UnsetDescription() {
 
 // GetNotes returns the Notes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VatType) GetNotes() string {
-	if o == nil || o.Notes.Get() == nil {
+	if o == nil || isNil(o.Notes.Get()) {
 		var ret string
 		return ret
 	}
@@ -232,7 +232,7 @@ func (o *VatType) UnsetNotes() {
 
 // GetEInvoice returns the EInvoice field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VatType) GetEInvoice() bool {
-	if o == nil || o.EInvoice.Get() == nil {
+	if o == nil || isNil(o.EInvoice.Get()) {
 		var ret bool
 		return ret
 	}
@@ -276,7 +276,7 @@ func (o *VatType) UnsetEInvoice() {
 
 // GetEiType returns the EiType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VatType) GetEiType() string {
-	if o == nil || o.EiType.Get() == nil {
+	if o == nil || isNil(o.EiType.Get()) {
 		var ret string
 		return ret
 	}
@@ -320,7 +320,7 @@ func (o *VatType) UnsetEiType() {
 
 // GetEiDescription returns the EiDescription field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VatType) GetEiDescription() string {
-	if o == nil || o.EiDescription.Get() == nil {
+	if o == nil || isNil(o.EiDescription.Get()) {
 		var ret string
 		return ret
 	}
@@ -364,7 +364,7 @@ func (o *VatType) UnsetEiDescription() {
 
 // GetEditable returns the Editable field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VatType) GetEditable() bool {
-	if o == nil || o.Editable.Get() == nil {
+	if o == nil || isNil(o.Editable.Get()) {
 		var ret bool
 		return ret
 	}
@@ -408,7 +408,7 @@ func (o *VatType) UnsetEditable() {
 
 // GetIsDisabled returns the IsDisabled field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VatType) GetIsDisabled() bool {
-	if o == nil || o.IsDisabled.Get() == nil {
+	if o == nil || isNil(o.IsDisabled.Get()) {
 		var ret bool
 		return ret
 	}

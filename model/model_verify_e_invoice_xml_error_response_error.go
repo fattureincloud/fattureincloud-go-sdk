@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.23
 Contact: info@fattureincloud.it
 */
 
@@ -40,7 +40,7 @@ func NewVerifyEInvoiceXmlErrorResponseErrorWithDefaults() *VerifyEInvoiceXmlErro
 
 // GetMessage returns the Message field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VerifyEInvoiceXmlErrorResponseError) GetMessage() string {
-	if o == nil || o.Message.Get() == nil {
+	if o == nil || isNil(o.Message.Get()) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *VerifyEInvoiceXmlErrorResponseError) UnsetMessage() {
 
 // GetValidationResult returns the ValidationResult field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VerifyEInvoiceXmlErrorResponseError) GetValidationResult() VerifyEInvoiceXmlErrorResponseErrorValidationResult {
-	if o == nil || o.ValidationResult.Get() == nil {
+	if o == nil || isNil(o.ValidationResult.Get()) {
 		var ret VerifyEInvoiceXmlErrorResponseErrorValidationResult
 		return ret
 	}

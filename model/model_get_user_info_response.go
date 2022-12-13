@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.23
 Contact: info@fattureincloud.it
 */
 
@@ -41,7 +41,7 @@ func NewGetUserInfoResponseWithDefaults() *GetUserInfoResponse {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *GetUserInfoResponse) GetData() User {
-	if o == nil || o.Data == nil {
+	if o == nil || isNil(o.Data) {
 		var ret User
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *GetUserInfoResponse) GetData() User {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GetUserInfoResponse) GetDataOk() (*User, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || isNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -59,7 +59,7 @@ func (o *GetUserInfoResponse) GetDataOk() (*User, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *GetUserInfoResponse) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !isNil(o.Data) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *GetUserInfoResponse) SetData(v User) *GetUserInfoResponse {
 
 // GetInfo returns the Info field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetUserInfoResponse) GetInfo() GetUserInfoResponseInfo {
-	if o == nil || o.Info.Get() == nil {
+	if o == nil || isNil(o.Info.Get()) {
 		var ret GetUserInfoResponseInfo
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *GetUserInfoResponse) UnsetInfo() {
 
 // GetEmailConfirmationState returns the EmailConfirmationState field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetUserInfoResponse) GetEmailConfirmationState() GetUserInfoResponseEmailConfirmationState {
-	if o == nil || o.EmailConfirmationState.Get() == nil {
+	if o == nil || isNil(o.EmailConfirmationState.Get()) {
 		var ret GetUserInfoResponseEmailConfirmationState
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *GetUserInfoResponse) UnsetEmailConfirmationState() {
 
 func (o GetUserInfoResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
+	if !isNil(o.Data) {
 		toSerialize["data"] = o.Data
 	}
 	if o.Info.IsSet() {

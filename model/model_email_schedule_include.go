@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.23
 Contact: info@fattureincloud.it
 */
 
@@ -46,7 +46,7 @@ func NewEmailScheduleIncludeWithDefaults() *EmailScheduleInclude {
 
 // GetDocument returns the Document field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EmailScheduleInclude) GetDocument() bool {
-	if o == nil || o.Document.Get() == nil {
+	if o == nil || isNil(o.Document.Get()) {
 		var ret bool
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *EmailScheduleInclude) UnsetDocument() {
 
 // GetDeliveryNote returns the DeliveryNote field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EmailScheduleInclude) GetDeliveryNote() bool {
-	if o == nil || o.DeliveryNote.Get() == nil {
+	if o == nil || isNil(o.DeliveryNote.Get()) {
 		var ret bool
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *EmailScheduleInclude) UnsetDeliveryNote() {
 
 // GetAttachment returns the Attachment field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EmailScheduleInclude) GetAttachment() bool {
-	if o == nil || o.Attachment.Get() == nil {
+	if o == nil || isNil(o.Attachment.Get()) {
 		var ret bool
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *EmailScheduleInclude) UnsetAttachment() {
 
 // GetAccompanyingInvoice returns the AccompanyingInvoice field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EmailScheduleInclude) GetAccompanyingInvoice() bool {
-	if o == nil || o.AccompanyingInvoice.Get() == nil {
+	if o == nil || isNil(o.AccompanyingInvoice.Get()) {
 		var ret bool
 		return ret
 	}

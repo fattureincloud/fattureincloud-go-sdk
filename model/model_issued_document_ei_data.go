@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.23
 Contact: info@fattureincloud.it
 */
 
@@ -62,7 +62,7 @@ func NewIssuedDocumentEiDataWithDefaults() *IssuedDocumentEiData {
 
 // GetVatKind returns the VatKind field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentEiData) GetVatKind() VatKind {
-	if o == nil || o.VatKind.Get() == nil {
+	if o == nil || isNil(o.VatKind.Get()) {
 		var ret VatKind
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *IssuedDocumentEiData) UnsetVatKind() {
 
 // GetOriginalDocumentType returns the OriginalDocumentType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentEiData) GetOriginalDocumentType() OriginalDocumentType {
-	if o == nil || o.OriginalDocumentType.Get() == nil {
+	if o == nil || isNil(o.OriginalDocumentType.Get()) {
 		var ret OriginalDocumentType
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *IssuedDocumentEiData) UnsetOriginalDocumentType() {
 
 // GetOdNumber returns the OdNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentEiData) GetOdNumber() string {
-	if o == nil || o.OdNumber.Get() == nil {
+	if o == nil || isNil(o.OdNumber.Get()) {
 		var ret string
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *IssuedDocumentEiData) UnsetOdNumber() {
 
 // GetOdDate returns the OdDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentEiData) GetOdDate() string {
-	if o == nil || o.OdDate.Get() == nil {
+	if o == nil || isNil(o.OdDate.Get()) {
 		var ret string
 		return ret
 	}
@@ -238,7 +238,7 @@ func (o *IssuedDocumentEiData) UnsetOdDate() {
 
 // GetCig returns the Cig field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentEiData) GetCig() string {
-	if o == nil || o.Cig.Get() == nil {
+	if o == nil || isNil(o.Cig.Get()) {
 		var ret string
 		return ret
 	}
@@ -282,7 +282,7 @@ func (o *IssuedDocumentEiData) UnsetCig() {
 
 // GetCup returns the Cup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentEiData) GetCup() string {
-	if o == nil || o.Cup.Get() == nil {
+	if o == nil || isNil(o.Cup.Get()) {
 		var ret string
 		return ret
 	}
@@ -326,7 +326,7 @@ func (o *IssuedDocumentEiData) UnsetCup() {
 
 // GetPaymentMethod returns the PaymentMethod field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentEiData) GetPaymentMethod() string {
-	if o == nil || o.PaymentMethod.Get() == nil {
+	if o == nil || isNil(o.PaymentMethod.Get()) {
 		var ret string
 		return ret
 	}
@@ -370,7 +370,7 @@ func (o *IssuedDocumentEiData) UnsetPaymentMethod() {
 
 // GetBankName returns the BankName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentEiData) GetBankName() string {
-	if o == nil || o.BankName.Get() == nil {
+	if o == nil || isNil(o.BankName.Get()) {
 		var ret string
 		return ret
 	}
@@ -414,7 +414,7 @@ func (o *IssuedDocumentEiData) UnsetBankName() {
 
 // GetBankIban returns the BankIban field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentEiData) GetBankIban() string {
-	if o == nil || o.BankIban.Get() == nil {
+	if o == nil || isNil(o.BankIban.Get()) {
 		var ret string
 		return ret
 	}
@@ -458,7 +458,7 @@ func (o *IssuedDocumentEiData) UnsetBankIban() {
 
 // GetBankBeneficiary returns the BankBeneficiary field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentEiData) GetBankBeneficiary() string {
-	if o == nil || o.BankBeneficiary.Get() == nil {
+	if o == nil || isNil(o.BankBeneficiary.Get()) {
 		var ret string
 		return ret
 	}
@@ -502,7 +502,7 @@ func (o *IssuedDocumentEiData) UnsetBankBeneficiary() {
 
 // GetInvoiceNumber returns the InvoiceNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentEiData) GetInvoiceNumber() string {
-	if o == nil || o.InvoiceNumber.Get() == nil {
+	if o == nil || isNil(o.InvoiceNumber.Get()) {
 		var ret string
 		return ret
 	}
@@ -546,7 +546,7 @@ func (o *IssuedDocumentEiData) UnsetInvoiceNumber() {
 
 // GetInvoiceDate returns the InvoiceDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentEiData) GetInvoiceDate() string {
-	if o == nil || o.InvoiceDate.Get() == nil {
+	if o == nil || isNil(o.InvoiceDate.Get()) {
 		var ret string
 		return ret
 	}

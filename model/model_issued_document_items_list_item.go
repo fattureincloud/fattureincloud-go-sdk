@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.23
 Contact: info@fattureincloud.it
 */
 
@@ -44,7 +44,7 @@ type IssuedDocumentItemsListItem struct {
 	// Discount percentual value.
 	Discount NullableFloat32 `json:"discount,omitempty"`
 	DiscountHighlight NullableBool `json:"discount_highlight,omitempty"`
-	InDdt NullableBool `json:"in_ddt,omitempty"`
+	InDn NullableBool `json:"in_dn,omitempty"`
 	Stock NullableBool `json:"stock,omitempty"`
 	// Advanced raw attributes for e-invoices.
 	EiRaw map[string]interface{} `json:"ei_raw,omitempty"`
@@ -69,7 +69,7 @@ func NewIssuedDocumentItemsListItemWithDefaults() *IssuedDocumentItemsListItem {
 
 // GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentItemsListItem) GetId() int32 {
-	if o == nil || o.Id.Get() == nil {
+	if o == nil || isNil(o.Id.Get()) {
 		var ret int32
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *IssuedDocumentItemsListItem) UnsetId() {
 
 // GetProductId returns the ProductId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentItemsListItem) GetProductId() int32 {
-	if o == nil || o.ProductId.Get() == nil {
+	if o == nil || isNil(o.ProductId.Get()) {
 		var ret int32
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *IssuedDocumentItemsListItem) UnsetProductId() {
 
 // GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentItemsListItem) GetCode() string {
-	if o == nil || o.Code.Get() == nil {
+	if o == nil || isNil(o.Code.Get()) {
 		var ret string
 		return ret
 	}
@@ -201,7 +201,7 @@ func (o *IssuedDocumentItemsListItem) UnsetCode() {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentItemsListItem) GetName() string {
-	if o == nil || o.Name.Get() == nil {
+	if o == nil || isNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *IssuedDocumentItemsListItem) UnsetName() {
 
 // GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentItemsListItem) GetCategory() string {
-	if o == nil || o.Category.Get() == nil {
+	if o == nil || isNil(o.Category.Get()) {
 		var ret string
 		return ret
 	}
@@ -289,7 +289,7 @@ func (o *IssuedDocumentItemsListItem) UnsetCategory() {
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentItemsListItem) GetDescription() string {
-	if o == nil || o.Description.Get() == nil {
+	if o == nil || isNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
@@ -333,7 +333,7 @@ func (o *IssuedDocumentItemsListItem) UnsetDescription() {
 
 // GetQty returns the Qty field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentItemsListItem) GetQty() float32 {
-	if o == nil || o.Qty.Get() == nil {
+	if o == nil || isNil(o.Qty.Get()) {
 		var ret float32
 		return ret
 	}
@@ -377,7 +377,7 @@ func (o *IssuedDocumentItemsListItem) UnsetQty() {
 
 // GetMeasure returns the Measure field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentItemsListItem) GetMeasure() string {
-	if o == nil || o.Measure.Get() == nil {
+	if o == nil || isNil(o.Measure.Get()) {
 		var ret string
 		return ret
 	}
@@ -421,7 +421,7 @@ func (o *IssuedDocumentItemsListItem) UnsetMeasure() {
 
 // GetNetPrice returns the NetPrice field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentItemsListItem) GetNetPrice() float32 {
-	if o == nil || o.NetPrice.Get() == nil {
+	if o == nil || isNil(o.NetPrice.Get()) {
 		var ret float32
 		return ret
 	}
@@ -465,7 +465,7 @@ func (o *IssuedDocumentItemsListItem) UnsetNetPrice() {
 
 // GetGrossPrice returns the GrossPrice field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentItemsListItem) GetGrossPrice() float32 {
-	if o == nil || o.GrossPrice.Get() == nil {
+	if o == nil || isNil(o.GrossPrice.Get()) {
 		var ret float32
 		return ret
 	}
@@ -509,7 +509,7 @@ func (o *IssuedDocumentItemsListItem) UnsetGrossPrice() {
 
 // GetVat returns the Vat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentItemsListItem) GetVat() VatType {
-	if o == nil || o.Vat.Get() == nil {
+	if o == nil || isNil(o.Vat.Get()) {
 		var ret VatType
 		return ret
 	}
@@ -553,7 +553,7 @@ func (o *IssuedDocumentItemsListItem) UnsetVat() {
 
 // GetNotTaxable returns the NotTaxable field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentItemsListItem) GetNotTaxable() bool {
-	if o == nil || o.NotTaxable.Get() == nil {
+	if o == nil || isNil(o.NotTaxable.Get()) {
 		var ret bool
 		return ret
 	}
@@ -597,7 +597,7 @@ func (o *IssuedDocumentItemsListItem) UnsetNotTaxable() {
 
 // GetApplyWithholdingTaxes returns the ApplyWithholdingTaxes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentItemsListItem) GetApplyWithholdingTaxes() bool {
-	if o == nil || o.ApplyWithholdingTaxes.Get() == nil {
+	if o == nil || isNil(o.ApplyWithholdingTaxes.Get()) {
 		var ret bool
 		return ret
 	}
@@ -641,7 +641,7 @@ func (o *IssuedDocumentItemsListItem) UnsetApplyWithholdingTaxes() {
 
 // GetDiscount returns the Discount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentItemsListItem) GetDiscount() float32 {
-	if o == nil || o.Discount.Get() == nil {
+	if o == nil || isNil(o.Discount.Get()) {
 		var ret float32
 		return ret
 	}
@@ -685,7 +685,7 @@ func (o *IssuedDocumentItemsListItem) UnsetDiscount() {
 
 // GetDiscountHighlight returns the DiscountHighlight field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentItemsListItem) GetDiscountHighlight() bool {
-	if o == nil || o.DiscountHighlight.Get() == nil {
+	if o == nil || isNil(o.DiscountHighlight.Get()) {
 		var ret bool
 		return ret
 	}
@@ -727,53 +727,53 @@ func (o *IssuedDocumentItemsListItem) UnsetDiscountHighlight() {
 	o.DiscountHighlight.Unset()
 }
 
-// GetInDdt returns the InDdt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IssuedDocumentItemsListItem) GetInDdt() bool {
-	if o == nil || o.InDdt.Get() == nil {
+// GetInDn returns the InDn field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *IssuedDocumentItemsListItem) GetInDn() bool {
+	if o == nil || isNil(o.InDn.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.InDdt.Get()
+	return *o.InDn.Get()
 }
 
-// GetInDdtOk returns a tuple with the InDdt field value if set, nil otherwise
+// GetInDnOk returns a tuple with the InDn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IssuedDocumentItemsListItem) GetInDdtOk() (*bool, bool) {
+func (o *IssuedDocumentItemsListItem) GetInDnOk() (*bool, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.InDdt.Get(), o.InDdt.IsSet()
+	return o.InDn.Get(), o.InDn.IsSet()
 }
 
-// HasInDdt returns a boolean if a field has been set.
-func (o *IssuedDocumentItemsListItem) HasInDdt() bool {
-	if o != nil && o.InDdt.IsSet() {
+// HasInDn returns a boolean if a field has been set.
+func (o *IssuedDocumentItemsListItem) HasInDn() bool {
+	if o != nil && o.InDn.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInDdt gets a reference to the given NullableBool and assigns it to the InDdt field.
-func (o *IssuedDocumentItemsListItem) SetInDdt(v bool) *IssuedDocumentItemsListItem {
-	o.InDdt.Set(&v)
+// SetInDn gets a reference to the given NullableBool and assigns it to the InDn field.
+func (o *IssuedDocumentItemsListItem) SetInDn(v bool) *IssuedDocumentItemsListItem {
+	o.InDn.Set(&v)
 	return o
 }
-// SetInDdtNil sets the value for InDdt to be an explicit nil
-func (o *IssuedDocumentItemsListItem) SetInDdtNil() *IssuedDocumentItemsListItem {
-	o.InDdt.Set(nil)
+// SetInDnNil sets the value for InDn to be an explicit nil
+func (o *IssuedDocumentItemsListItem) SetInDnNil() *IssuedDocumentItemsListItem {
+	o.InDn.Set(nil)
 	return o
 }
 
-// UnsetInDdt ensures that no value is present for InDdt, not even an explicit nil
-func (o *IssuedDocumentItemsListItem) UnsetInDdt() {
-	o.InDdt.Unset()
+// UnsetInDn ensures that no value is present for InDn, not even an explicit nil
+func (o *IssuedDocumentItemsListItem) UnsetInDn() {
+	o.InDn.Unset()
 }
 
 // GetStock returns the Stock field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentItemsListItem) GetStock() bool {
-	if o == nil || o.Stock.Get() == nil {
+	if o == nil || isNil(o.Stock.Get()) {
 		var ret bool
 		return ret
 	}
@@ -828,15 +828,15 @@ func (o *IssuedDocumentItemsListItem) GetEiRaw() map[string]interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IssuedDocumentItemsListItem) GetEiRawOk() (map[string]interface{}, bool) {
-	if o == nil || o.EiRaw == nil {
-		return nil, false
+	if o == nil || isNil(o.EiRaw) {
+		return map[string]interface{}{}, false
 	}
 	return o.EiRaw, true
 }
 
 // HasEiRaw returns a boolean if a field has been set.
 func (o *IssuedDocumentItemsListItem) HasEiRaw() bool {
-	if o != nil && o.EiRaw != nil {
+	if o != nil && isNil(o.EiRaw) {
 		return true
 	}
 
@@ -896,8 +896,8 @@ func (o IssuedDocumentItemsListItem) MarshalJSON() ([]byte, error) {
 	if o.DiscountHighlight.IsSet() {
 		toSerialize["discount_highlight"] = o.DiscountHighlight.Get()
 	}
-	if o.InDdt.IsSet() {
-		toSerialize["in_ddt"] = o.InDdt.Get()
+	if o.InDn.IsSet() {
+		toSerialize["in_dn"] = o.InDn.Get()
 	}
 	if o.Stock.IsSet() {
 		toSerialize["stock"] = o.Stock.Get()

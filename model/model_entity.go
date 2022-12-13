@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.23
 Contact: info@fattureincloud.it
 */
 
@@ -105,7 +105,7 @@ func NewEntityWithDefaults() *Entity {
 
 // GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetId() int32 {
-	if o == nil || o.Id.Get() == nil {
+	if o == nil || isNil(o.Id.Get()) {
 		var ret int32
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *Entity) UnsetId() {
 
 // GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetCode() string {
-	if o == nil || o.Code.Get() == nil {
+	if o == nil || isNil(o.Code.Get()) {
 		var ret string
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *Entity) UnsetCode() {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetName() string {
-	if o == nil || o.Name.Get() == nil {
+	if o == nil || isNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -237,7 +237,7 @@ func (o *Entity) UnsetName() {
 
 // GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetType() EntityType {
-	if o == nil || o.Type.Get() == nil {
+	if o == nil || isNil(o.Type.Get()) {
 		var ret EntityType
 		return ret
 	}
@@ -281,7 +281,7 @@ func (o *Entity) UnsetType() {
 
 // GetFirstName returns the FirstName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetFirstName() string {
-	if o == nil || o.FirstName.Get() == nil {
+	if o == nil || isNil(o.FirstName.Get()) {
 		var ret string
 		return ret
 	}
@@ -325,7 +325,7 @@ func (o *Entity) UnsetFirstName() {
 
 // GetLastName returns the LastName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetLastName() string {
-	if o == nil || o.LastName.Get() == nil {
+	if o == nil || isNil(o.LastName.Get()) {
 		var ret string
 		return ret
 	}
@@ -369,7 +369,7 @@ func (o *Entity) UnsetLastName() {
 
 // GetContactPerson returns the ContactPerson field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetContactPerson() string {
-	if o == nil || o.ContactPerson.Get() == nil {
+	if o == nil || isNil(o.ContactPerson.Get()) {
 		var ret string
 		return ret
 	}
@@ -413,7 +413,7 @@ func (o *Entity) UnsetContactPerson() {
 
 // GetVatNumber returns the VatNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetVatNumber() string {
-	if o == nil || o.VatNumber.Get() == nil {
+	if o == nil || isNil(o.VatNumber.Get()) {
 		var ret string
 		return ret
 	}
@@ -457,7 +457,7 @@ func (o *Entity) UnsetVatNumber() {
 
 // GetTaxCode returns the TaxCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetTaxCode() string {
-	if o == nil || o.TaxCode.Get() == nil {
+	if o == nil || isNil(o.TaxCode.Get()) {
 		var ret string
 		return ret
 	}
@@ -501,7 +501,7 @@ func (o *Entity) UnsetTaxCode() {
 
 // GetAddressStreet returns the AddressStreet field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetAddressStreet() string {
-	if o == nil || o.AddressStreet.Get() == nil {
+	if o == nil || isNil(o.AddressStreet.Get()) {
 		var ret string
 		return ret
 	}
@@ -545,7 +545,7 @@ func (o *Entity) UnsetAddressStreet() {
 
 // GetAddressPostalCode returns the AddressPostalCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetAddressPostalCode() string {
-	if o == nil || o.AddressPostalCode.Get() == nil {
+	if o == nil || isNil(o.AddressPostalCode.Get()) {
 		var ret string
 		return ret
 	}
@@ -589,7 +589,7 @@ func (o *Entity) UnsetAddressPostalCode() {
 
 // GetAddressCity returns the AddressCity field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetAddressCity() string {
-	if o == nil || o.AddressCity.Get() == nil {
+	if o == nil || isNil(o.AddressCity.Get()) {
 		var ret string
 		return ret
 	}
@@ -633,7 +633,7 @@ func (o *Entity) UnsetAddressCity() {
 
 // GetAddressProvince returns the AddressProvince field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetAddressProvince() string {
-	if o == nil || o.AddressProvince.Get() == nil {
+	if o == nil || isNil(o.AddressProvince.Get()) {
 		var ret string
 		return ret
 	}
@@ -677,7 +677,7 @@ func (o *Entity) UnsetAddressProvince() {
 
 // GetAddressExtra returns the AddressExtra field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetAddressExtra() string {
-	if o == nil || o.AddressExtra.Get() == nil {
+	if o == nil || isNil(o.AddressExtra.Get()) {
 		var ret string
 		return ret
 	}
@@ -721,7 +721,7 @@ func (o *Entity) UnsetAddressExtra() {
 
 // GetCountry returns the Country field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetCountry() string {
-	if o == nil || o.Country.Get() == nil {
+	if o == nil || isNil(o.Country.Get()) {
 		var ret string
 		return ret
 	}
@@ -765,7 +765,7 @@ func (o *Entity) UnsetCountry() {
 
 // GetCountryIso returns the CountryIso field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetCountryIso() string {
-	if o == nil || o.CountryIso.Get() == nil {
+	if o == nil || isNil(o.CountryIso.Get()) {
 		var ret string
 		return ret
 	}
@@ -809,7 +809,7 @@ func (o *Entity) UnsetCountryIso() {
 
 // GetEmail returns the Email field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetEmail() string {
-	if o == nil || o.Email.Get() == nil {
+	if o == nil || isNil(o.Email.Get()) {
 		var ret string
 		return ret
 	}
@@ -853,7 +853,7 @@ func (o *Entity) UnsetEmail() {
 
 // GetCertifiedEmail returns the CertifiedEmail field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetCertifiedEmail() string {
-	if o == nil || o.CertifiedEmail.Get() == nil {
+	if o == nil || isNil(o.CertifiedEmail.Get()) {
 		var ret string
 		return ret
 	}
@@ -897,7 +897,7 @@ func (o *Entity) UnsetCertifiedEmail() {
 
 // GetPhone returns the Phone field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetPhone() string {
-	if o == nil || o.Phone.Get() == nil {
+	if o == nil || isNil(o.Phone.Get()) {
 		var ret string
 		return ret
 	}
@@ -941,7 +941,7 @@ func (o *Entity) UnsetPhone() {
 
 // GetFax returns the Fax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetFax() string {
-	if o == nil || o.Fax.Get() == nil {
+	if o == nil || isNil(o.Fax.Get()) {
 		var ret string
 		return ret
 	}
@@ -985,7 +985,7 @@ func (o *Entity) UnsetFax() {
 
 // GetNotes returns the Notes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetNotes() string {
-	if o == nil || o.Notes.Get() == nil {
+	if o == nil || isNil(o.Notes.Get()) {
 		var ret string
 		return ret
 	}
@@ -1029,7 +1029,7 @@ func (o *Entity) UnsetNotes() {
 
 // GetDefaultVat returns the DefaultVat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetDefaultVat() VatType {
-	if o == nil || o.DefaultVat.Get() == nil {
+	if o == nil || isNil(o.DefaultVat.Get()) {
 		var ret VatType
 		return ret
 	}
@@ -1073,7 +1073,7 @@ func (o *Entity) UnsetDefaultVat() {
 
 // GetDefaultPaymentTerms returns the DefaultPaymentTerms field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetDefaultPaymentTerms() int32 {
-	if o == nil || o.DefaultPaymentTerms.Get() == nil {
+	if o == nil || isNil(o.DefaultPaymentTerms.Get()) {
 		var ret int32
 		return ret
 	}
@@ -1117,7 +1117,7 @@ func (o *Entity) UnsetDefaultPaymentTerms() {
 
 // GetDefaultPaymentTermsType returns the DefaultPaymentTermsType field value if set, zero value otherwise.
 func (o *Entity) GetDefaultPaymentTermsType() PaymentTermsType {
-	if o == nil || o.DefaultPaymentTermsType == nil {
+	if o == nil || isNil(o.DefaultPaymentTermsType) {
 		var ret PaymentTermsType
 		return ret
 	}
@@ -1127,7 +1127,7 @@ func (o *Entity) GetDefaultPaymentTermsType() PaymentTermsType {
 // GetDefaultPaymentTermsTypeOk returns a tuple with the DefaultPaymentTermsType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Entity) GetDefaultPaymentTermsTypeOk() (*PaymentTermsType, bool) {
-	if o == nil || o.DefaultPaymentTermsType == nil {
+	if o == nil || isNil(o.DefaultPaymentTermsType) {
 		return nil, false
 	}
 	return o.DefaultPaymentTermsType, true
@@ -1135,7 +1135,7 @@ func (o *Entity) GetDefaultPaymentTermsTypeOk() (*PaymentTermsType, bool) {
 
 // HasDefaultPaymentTermsType returns a boolean if a field has been set.
 func (o *Entity) HasDefaultPaymentTermsType() bool {
-	if o != nil && o.DefaultPaymentTermsType != nil {
+	if o != nil && !isNil(o.DefaultPaymentTermsType) {
 		return true
 	}
 
@@ -1150,7 +1150,7 @@ func (o *Entity) SetDefaultPaymentTermsType(v PaymentTermsType) *Entity {
 
 // GetDefaultPaymentMethod returns the DefaultPaymentMethod field value if set, zero value otherwise.
 func (o *Entity) GetDefaultPaymentMethod() PaymentMethod {
-	if o == nil || o.DefaultPaymentMethod == nil {
+	if o == nil || isNil(o.DefaultPaymentMethod) {
 		var ret PaymentMethod
 		return ret
 	}
@@ -1160,7 +1160,7 @@ func (o *Entity) GetDefaultPaymentMethod() PaymentMethod {
 // GetDefaultPaymentMethodOk returns a tuple with the DefaultPaymentMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Entity) GetDefaultPaymentMethodOk() (*PaymentMethod, bool) {
-	if o == nil || o.DefaultPaymentMethod == nil {
+	if o == nil || isNil(o.DefaultPaymentMethod) {
 		return nil, false
 	}
 	return o.DefaultPaymentMethod, true
@@ -1168,7 +1168,7 @@ func (o *Entity) GetDefaultPaymentMethodOk() (*PaymentMethod, bool) {
 
 // HasDefaultPaymentMethod returns a boolean if a field has been set.
 func (o *Entity) HasDefaultPaymentMethod() bool {
-	if o != nil && o.DefaultPaymentMethod != nil {
+	if o != nil && !isNil(o.DefaultPaymentMethod) {
 		return true
 	}
 
@@ -1183,7 +1183,7 @@ func (o *Entity) SetDefaultPaymentMethod(v PaymentMethod) *Entity {
 
 // GetBankName returns the BankName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetBankName() string {
-	if o == nil || o.BankName.Get() == nil {
+	if o == nil || isNil(o.BankName.Get()) {
 		var ret string
 		return ret
 	}
@@ -1227,7 +1227,7 @@ func (o *Entity) UnsetBankName() {
 
 // GetBankIban returns the BankIban field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetBankIban() string {
-	if o == nil || o.BankIban.Get() == nil {
+	if o == nil || isNil(o.BankIban.Get()) {
 		var ret string
 		return ret
 	}
@@ -1271,7 +1271,7 @@ func (o *Entity) UnsetBankIban() {
 
 // GetBankSwiftCode returns the BankSwiftCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetBankSwiftCode() string {
-	if o == nil || o.BankSwiftCode.Get() == nil {
+	if o == nil || isNil(o.BankSwiftCode.Get()) {
 		var ret string
 		return ret
 	}
@@ -1315,7 +1315,7 @@ func (o *Entity) UnsetBankSwiftCode() {
 
 // GetShippingAddress returns the ShippingAddress field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetShippingAddress() string {
-	if o == nil || o.ShippingAddress.Get() == nil {
+	if o == nil || isNil(o.ShippingAddress.Get()) {
 		var ret string
 		return ret
 	}
@@ -1359,7 +1359,7 @@ func (o *Entity) UnsetShippingAddress() {
 
 // GetEInvoice returns the EInvoice field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetEInvoice() bool {
-	if o == nil || o.EInvoice.Get() == nil {
+	if o == nil || isNil(o.EInvoice.Get()) {
 		var ret bool
 		return ret
 	}
@@ -1403,7 +1403,7 @@ func (o *Entity) UnsetEInvoice() {
 
 // GetEiCode returns the EiCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetEiCode() string {
-	if o == nil || o.EiCode.Get() == nil {
+	if o == nil || isNil(o.EiCode.Get()) {
 		var ret string
 		return ret
 	}
@@ -1447,7 +1447,7 @@ func (o *Entity) UnsetEiCode() {
 
 // GetHasIntentDeclaration returns the HasIntentDeclaration field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetHasIntentDeclaration() bool {
-	if o == nil || o.HasIntentDeclaration.Get() == nil {
+	if o == nil || isNil(o.HasIntentDeclaration.Get()) {
 		var ret bool
 		return ret
 	}
@@ -1491,7 +1491,7 @@ func (o *Entity) UnsetHasIntentDeclaration() {
 
 // GetIntentDeclarationProtocolNumber returns the IntentDeclarationProtocolNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetIntentDeclarationProtocolNumber() string {
-	if o == nil || o.IntentDeclarationProtocolNumber.Get() == nil {
+	if o == nil || isNil(o.IntentDeclarationProtocolNumber.Get()) {
 		var ret string
 		return ret
 	}
@@ -1535,7 +1535,7 @@ func (o *Entity) UnsetIntentDeclarationProtocolNumber() {
 
 // GetIntentDeclarationProtocolDate returns the IntentDeclarationProtocolDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetIntentDeclarationProtocolDate() string {
-	if o == nil || o.IntentDeclarationProtocolDate.Get() == nil {
+	if o == nil || isNil(o.IntentDeclarationProtocolDate.Get()) {
 		var ret string
 		return ret
 	}
@@ -1579,7 +1579,7 @@ func (o *Entity) UnsetIntentDeclarationProtocolDate() {
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetCreatedAt() string {
-	if o == nil || o.CreatedAt.Get() == nil {
+	if o == nil || isNil(o.CreatedAt.Get()) {
 		var ret string
 		return ret
 	}
@@ -1623,7 +1623,7 @@ func (o *Entity) UnsetCreatedAt() {
 
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetUpdatedAt() string {
-	if o == nil || o.UpdatedAt.Get() == nil {
+	if o == nil || isNil(o.UpdatedAt.Get()) {
 		var ret string
 		return ret
 	}
@@ -1736,10 +1736,10 @@ func (o Entity) MarshalJSON() ([]byte, error) {
 	if o.DefaultPaymentTerms.IsSet() {
 		toSerialize["default_payment_terms"] = o.DefaultPaymentTerms.Get()
 	}
-	if o.DefaultPaymentTermsType != nil {
+	if !isNil(o.DefaultPaymentTermsType) {
 		toSerialize["default_payment_terms_type"] = o.DefaultPaymentTermsType
 	}
-	if o.DefaultPaymentMethod != nil {
+	if !isNil(o.DefaultPaymentMethod) {
 		toSerialize["default_payment_method"] = o.DefaultPaymentMethod
 	}
 	if o.BankName.IsSet() {

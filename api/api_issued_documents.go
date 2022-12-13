@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.23
 Contact: info@fattureincloud.it
 */
 
@@ -1438,14 +1438,14 @@ type ApiTransformIssuedDocumentRequest struct {
 	ctx context.Context
 	ApiService *IssuedDocumentsApiService
 	companyId int32
-	originalDocumentId *int
+	originalDocumentId *float32
 	newType *string
 	eInvoice *int32
 	transformKeepCopy *int32
 }
 
 // Original document id.
-func (r ApiTransformIssuedDocumentRequest) OriginalDocumentId(originalDocumentId int) ApiTransformIssuedDocumentRequest {
+func (r ApiTransformIssuedDocumentRequest) OriginalDocumentId(originalDocumentId float32) ApiTransformIssuedDocumentRequest {
 	r.originalDocumentId = &originalDocumentId
 	return r
 }

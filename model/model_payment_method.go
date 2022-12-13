@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.23
 Contact: info@fattureincloud.it
 */
 
@@ -58,7 +58,7 @@ func NewPaymentMethodWithDefaults() *PaymentMethod {
 
 // GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PaymentMethod) GetId() int32 {
-	if o == nil || o.Id.Get() == nil {
+	if o == nil || isNil(o.Id.Get()) {
 		var ret int32
 		return ret
 	}
@@ -102,7 +102,7 @@ func (o *PaymentMethod) UnsetId() {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PaymentMethod) GetName() string {
-	if o == nil || o.Name.Get() == nil {
+	if o == nil || isNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *PaymentMethod) UnsetName() {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *PaymentMethod) GetType() PaymentMethodType {
-	if o == nil || o.Type == nil {
+	if o == nil || isNil(o.Type) {
 		var ret PaymentMethodType
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *PaymentMethod) GetType() PaymentMethodType {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PaymentMethod) GetTypeOk() (*PaymentMethodType, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || isNil(o.Type) {
 		return nil, false
 	}
 	return o.Type, true
@@ -164,7 +164,7 @@ func (o *PaymentMethod) GetTypeOk() (*PaymentMethodType, bool) {
 
 // HasType returns a boolean if a field has been set.
 func (o *PaymentMethod) HasType() bool {
-	if o != nil && o.Type != nil {
+	if o != nil && !isNil(o.Type) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *PaymentMethod) SetType(v PaymentMethodType) *PaymentMethod {
 
 // GetIsDefault returns the IsDefault field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PaymentMethod) GetIsDefault() bool {
-	if o == nil || o.IsDefault.Get() == nil {
+	if o == nil || isNil(o.IsDefault.Get()) {
 		var ret bool
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *PaymentMethod) UnsetIsDefault() {
 
 // GetDefaultPaymentAccount returns the DefaultPaymentAccount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PaymentMethod) GetDefaultPaymentAccount() PaymentAccount {
-	if o == nil || o.DefaultPaymentAccount.Get() == nil {
+	if o == nil || isNil(o.DefaultPaymentAccount.Get()) {
 		var ret PaymentAccount
 		return ret
 	}
@@ -278,7 +278,7 @@ func (o *PaymentMethod) GetDetails() []PaymentMethodDetails {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaymentMethod) GetDetailsOk() ([]PaymentMethodDetails, bool) {
-	if o == nil || o.Details == nil {
+	if o == nil || isNil(o.Details) {
 		return nil, false
 	}
 	return o.Details, true
@@ -286,7 +286,7 @@ func (o *PaymentMethod) GetDetailsOk() ([]PaymentMethodDetails, bool) {
 
 // HasDetails returns a boolean if a field has been set.
 func (o *PaymentMethod) HasDetails() bool {
-	if o != nil && o.Details != nil {
+	if o != nil && isNil(o.Details) {
 		return true
 	}
 
@@ -301,7 +301,7 @@ func (o *PaymentMethod) SetDetails(v []PaymentMethodDetails) *PaymentMethod {
 
 // GetBankIban returns the BankIban field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PaymentMethod) GetBankIban() string {
-	if o == nil || o.BankIban.Get() == nil {
+	if o == nil || isNil(o.BankIban.Get()) {
 		var ret string
 		return ret
 	}
@@ -345,7 +345,7 @@ func (o *PaymentMethod) UnsetBankIban() {
 
 // GetBankName returns the BankName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PaymentMethod) GetBankName() string {
-	if o == nil || o.BankName.Get() == nil {
+	if o == nil || isNil(o.BankName.Get()) {
 		var ret string
 		return ret
 	}
@@ -389,7 +389,7 @@ func (o *PaymentMethod) UnsetBankName() {
 
 // GetBankBeneficiary returns the BankBeneficiary field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PaymentMethod) GetBankBeneficiary() string {
-	if o == nil || o.BankBeneficiary.Get() == nil {
+	if o == nil || isNil(o.BankBeneficiary.Get()) {
 		var ret string
 		return ret
 	}
@@ -433,7 +433,7 @@ func (o *PaymentMethod) UnsetBankBeneficiary() {
 
 // GetEiPaymentMethod returns the EiPaymentMethod field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PaymentMethod) GetEiPaymentMethod() string {
-	if o == nil || o.EiPaymentMethod.Get() == nil {
+	if o == nil || isNil(o.EiPaymentMethod.Get()) {
 		var ret string
 		return ret
 	}
@@ -483,7 +483,7 @@ func (o PaymentMethod) MarshalJSON() ([]byte, error) {
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	if o.Type != nil {
+	if !isNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
 	if o.IsDefault.IsSet() {

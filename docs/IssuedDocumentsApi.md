@@ -972,7 +972,7 @@ import (
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
-    originalDocumentId := "originalDocumentId_example" // string | Original document id.
+    originalDocumentId := float32(8.14) // float32 | Original document id.
     newType := "newType_example" // string | New document type.
     eInvoice := int32(56) // int32 | New document e_invoice. (optional)
     transformKeepCopy := int32(56) // int32 | Keep the old document. (optional)
@@ -1006,7 +1006,7 @@ Other parameters are passed through a pointer to a apiTransformIssuedDocumentReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **originalDocumentId** | **string** | Original document id. | 
+ **originalDocumentId** | **float32** | Original document id. | 
  **newType** | **string** | New document type. | 
  **eInvoice** | **int32** | New document e_invoice. | 
  **transformKeepCopy** | **int32** | Keep the old document. | 

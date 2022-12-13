@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.23
 Contact: info@fattureincloud.it
 */
 
@@ -43,7 +43,7 @@ func NewIssuedDocumentPaymentsListItemPaymentTermsWithDefaults() *IssuedDocument
 
 // GetDays returns the Days field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentPaymentsListItemPaymentTerms) GetDays() int32 {
-	if o == nil || o.Days.Get() == nil {
+	if o == nil || isNil(o.Days.Get()) {
 		var ret int32
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *IssuedDocumentPaymentsListItemPaymentTerms) UnsetDays() {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *IssuedDocumentPaymentsListItemPaymentTerms) GetType() PaymentTermsType {
-	if o == nil || o.Type == nil {
+	if o == nil || isNil(o.Type) {
 		var ret PaymentTermsType
 		return ret
 	}
@@ -97,7 +97,7 @@ func (o *IssuedDocumentPaymentsListItemPaymentTerms) GetType() PaymentTermsType 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IssuedDocumentPaymentsListItemPaymentTerms) GetTypeOk() (*PaymentTermsType, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || isNil(o.Type) {
 		return nil, false
 	}
 	return o.Type, true
@@ -105,7 +105,7 @@ func (o *IssuedDocumentPaymentsListItemPaymentTerms) GetTypeOk() (*PaymentTermsT
 
 // HasType returns a boolean if a field has been set.
 func (o *IssuedDocumentPaymentsListItemPaymentTerms) HasType() bool {
-	if o != nil && o.Type != nil {
+	if o != nil && !isNil(o.Type) {
 		return true
 	}
 
@@ -123,7 +123,7 @@ func (o IssuedDocumentPaymentsListItemPaymentTerms) MarshalJSON() ([]byte, error
 	if o.Days.IsSet() {
 		toSerialize["days"] = o.Days.Get()
 	}
-	if o.Type != nil {
+	if !isNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
 	return json.Marshal(toSerialize)

@@ -80,8 +80,10 @@ Name | Type | Description | Notes
 **ExtraData** | Pointer to [**NullableIssuedDocumentExtraData**](IssuedDocumentExtraData.md) |  | [optional] 
 **SeenDate** | Pointer to **NullableString** | Date when the client/supplier has seen the document. | [optional] 
 **NextDueDate** | Pointer to **NullableString** | Date of the next not paid payment. | [optional] 
-**Url** | Pointer to **NullableString** | Public url of the document PDF file. | [optional] 
-**AttachmentUrl** | Pointer to **NullableString** | [Read Only] Public url of the attached file. Authomatically set if a valid attachment token is passed via POST /issued_documents or PUT /issued_documents/{documentId}. | [optional] [readonly] 
+**Url** | Pointer to **NullableString** | [Temporary] [Read Only]   Public url of the document PDF file. | [optional] 
+**DnUrl** | Pointer to **NullableString** | [Temporary] [Read Only]   Public url of the attached delivery note PDF file. | [optional] 
+**AiUrl** | Pointer to **NullableString** | [Temporary] [Read Only]   Public url of the accompanying invoice PDF file. | [optional] 
+**AttachmentUrl** | Pointer to **NullableString** | [Temporary] [Read Only] Public url of the attached file. Authomatically set if a valid attachment token is passed via POST /issued_documents or PUT /issued_documents/{documentId}. | [optional] [readonly] 
 **AttachmentToken** | Pointer to **NullableString** | [Write Only] Attachment token returned by POST /issued_documents/attachment. Used to attach the file already uploaded. | [optional] 
 **EiRaw** | Pointer to **map[string]interface{}** | Advanced raw attributes for e-invoices. | [optional] 
 **EiStatus** | Pointer to **NullableString** | [Read only] Status of the e-invoice.   * &#x60;attempt&#x60; - We are trying to send the invoice, please wait up to 2 hours   * &#x60;missing&#x60; - The invoice is missing   * &#x60;not_sent&#x60; - The invoice has yet to be sent   * &#x60;sent&#x60; - The invoice was sent   * &#x60;pending&#x60; - The checks for the digital signature and sending are in progress   * &#x60;processing&#x60; - The SDI is delivering the invoice to the customer   * &#x60;error&#x60; - An error occurred while handling the invoice, please try to resend it or contact support   * &#x60;discarded&#x60; - The invoice has been rejected by the SDI, so it must be corrected and re-sent   * &#x60;not_delivered&#x60; - The SDI was unable to deliver the invoice   * &#x60;accepted&#x60; - The customer accepted the invoice   * &#x60;rejected&#x60; - The customer rejected the invoice, so it must be corrected   * &#x60;no_response&#x60; - A response has not yet been received whithin the deadline, contact the customer to ascertain the status of the invoice   * &#x60;manual_accepted&#x60; - The customer accepted the invoice   * &#x60;manual_rejected&#x60; - The customer rejected the invoice  | [optional] 
@@ -2712,6 +2714,76 @@ HasUrl returns a boolean if a field has been set.
 `func (o *IssuedDocument) UnsetUrl()`
 
 UnsetUrl ensures that no value is present for Url, not even an explicit nil
+### GetDnUrl
+
+`func (o *IssuedDocument) GetDnUrl() string`
+
+GetDnUrl returns the DnUrl field if non-nil, zero value otherwise.
+
+### GetDnUrlOk
+
+`func (o *IssuedDocument) GetDnUrlOk() (*string, bool)`
+
+GetDnUrlOk returns a tuple with the DnUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDnUrl
+
+`func (o *IssuedDocument) SetDnUrl(v string)`
+
+SetDnUrl sets DnUrl field to given value.
+
+### HasDnUrl
+
+`func (o *IssuedDocument) HasDnUrl() bool`
+
+HasDnUrl returns a boolean if a field has been set.
+
+### SetDnUrlNil
+
+`func (o *IssuedDocument) SetDnUrlNil(b bool)`
+
+ SetDnUrlNil sets the value for DnUrl to be an explicit nil
+
+### UnsetDnUrl
+`func (o *IssuedDocument) UnsetDnUrl()`
+
+UnsetDnUrl ensures that no value is present for DnUrl, not even an explicit nil
+### GetAiUrl
+
+`func (o *IssuedDocument) GetAiUrl() string`
+
+GetAiUrl returns the AiUrl field if non-nil, zero value otherwise.
+
+### GetAiUrlOk
+
+`func (o *IssuedDocument) GetAiUrlOk() (*string, bool)`
+
+GetAiUrlOk returns a tuple with the AiUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAiUrl
+
+`func (o *IssuedDocument) SetAiUrl(v string)`
+
+SetAiUrl sets AiUrl field to given value.
+
+### HasAiUrl
+
+`func (o *IssuedDocument) HasAiUrl() bool`
+
+HasAiUrl returns a boolean if a field has been set.
+
+### SetAiUrlNil
+
+`func (o *IssuedDocument) SetAiUrlNil(b bool)`
+
+ SetAiUrlNil sets the value for AiUrl to be an explicit nil
+
+### UnsetAiUrl
+`func (o *IssuedDocument) UnsetAiUrl()`
+
+UnsetAiUrl ensures that no value is present for AiUrl, not even an explicit nil
 ### GetAttachmentUrl
 
 `func (o *IssuedDocument) GetAttachmentUrl() string`

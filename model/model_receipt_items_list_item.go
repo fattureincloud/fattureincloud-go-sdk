@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.23
 Contact: info@fattureincloud.it
 */
 
@@ -47,7 +47,7 @@ func NewReceiptItemsListItemWithDefaults() *ReceiptItemsListItem {
 
 // GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceiptItemsListItem) GetId() int32 {
-	if o == nil || o.Id.Get() == nil {
+	if o == nil || isNil(o.Id.Get()) {
 		var ret int32
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *ReceiptItemsListItem) UnsetId() {
 
 // GetAmountNet returns the AmountNet field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceiptItemsListItem) GetAmountNet() float32 {
-	if o == nil || o.AmountNet.Get() == nil {
+	if o == nil || isNil(o.AmountNet.Get()) {
 		var ret float32
 		return ret
 	}
@@ -135,7 +135,7 @@ func (o *ReceiptItemsListItem) UnsetAmountNet() {
 
 // GetAmountGross returns the AmountGross field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceiptItemsListItem) GetAmountGross() float32 {
-	if o == nil || o.AmountGross.Get() == nil {
+	if o == nil || isNil(o.AmountGross.Get()) {
 		var ret float32
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *ReceiptItemsListItem) UnsetAmountGross() {
 
 // GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceiptItemsListItem) GetCategory() string {
-	if o == nil || o.Category.Get() == nil {
+	if o == nil || isNil(o.Category.Get()) {
 		var ret string
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *ReceiptItemsListItem) UnsetCategory() {
 
 // GetVat returns the Vat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceiptItemsListItem) GetVat() VatType {
-	if o == nil || o.Vat.Get() == nil {
+	if o == nil || isNil(o.Vat.Get()) {
 		var ret VatType
 		return ret
 	}
