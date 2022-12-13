@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.24
 Contact: info@fattureincloud.it
 */
 
@@ -53,7 +53,7 @@ func NewIssuedDocumentPaymentsListItemWithDefaults() *IssuedDocumentPaymentsList
 
 // GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentPaymentsListItem) GetId() int32 {
-	if o == nil || o.Id.Get() == nil {
+	if o == nil || isNil(o.Id.Get()) {
 		var ret int32
 		return ret
 	}
@@ -97,7 +97,7 @@ func (o *IssuedDocumentPaymentsListItem) UnsetId() {
 
 // GetDueDate returns the DueDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentPaymentsListItem) GetDueDate() string {
-	if o == nil || o.DueDate.Get() == nil {
+	if o == nil || isNil(o.DueDate.Get()) {
 		var ret string
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *IssuedDocumentPaymentsListItem) UnsetDueDate() {
 
 // GetAmount returns the Amount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentPaymentsListItem) GetAmount() float32 {
-	if o == nil || o.Amount.Get() == nil {
+	if o == nil || isNil(o.Amount.Get()) {
 		var ret float32
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *IssuedDocumentPaymentsListItem) UnsetAmount() {
 
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *IssuedDocumentPaymentsListItem) GetStatus() IssuedDocumentStatus {
-	if o == nil || o.Status == nil {
+	if o == nil || isNil(o.Status) {
 		var ret IssuedDocumentStatus
 		return ret
 	}
@@ -195,7 +195,7 @@ func (o *IssuedDocumentPaymentsListItem) GetStatus() IssuedDocumentStatus {
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IssuedDocumentPaymentsListItem) GetStatusOk() (*IssuedDocumentStatus, bool) {
-	if o == nil || o.Status == nil {
+	if o == nil || isNil(o.Status) {
 		return nil, false
 	}
 	return o.Status, true
@@ -203,7 +203,7 @@ func (o *IssuedDocumentPaymentsListItem) GetStatusOk() (*IssuedDocumentStatus, b
 
 // HasStatus returns a boolean if a field has been set.
 func (o *IssuedDocumentPaymentsListItem) HasStatus() bool {
-	if o != nil && o.Status != nil {
+	if o != nil && !isNil(o.Status) {
 		return true
 	}
 
@@ -218,7 +218,7 @@ func (o *IssuedDocumentPaymentsListItem) SetStatus(v IssuedDocumentStatus) *Issu
 
 // GetPaymentAccount returns the PaymentAccount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentPaymentsListItem) GetPaymentAccount() PaymentAccount {
-	if o == nil || o.PaymentAccount.Get() == nil {
+	if o == nil || isNil(o.PaymentAccount.Get()) {
 		var ret PaymentAccount
 		return ret
 	}
@@ -262,7 +262,7 @@ func (o *IssuedDocumentPaymentsListItem) UnsetPaymentAccount() {
 
 // GetPaidDate returns the PaidDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentPaymentsListItem) GetPaidDate() string {
-	if o == nil || o.PaidDate.Get() == nil {
+	if o == nil || isNil(o.PaidDate.Get()) {
 		var ret string
 		return ret
 	}
@@ -317,15 +317,15 @@ func (o *IssuedDocumentPaymentsListItem) GetEiRaw() map[string]interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IssuedDocumentPaymentsListItem) GetEiRawOk() (map[string]interface{}, bool) {
-	if o == nil || o.EiRaw == nil {
-		return nil, false
+	if o == nil || isNil(o.EiRaw) {
+		return map[string]interface{}{}, false
 	}
 	return o.EiRaw, true
 }
 
 // HasEiRaw returns a boolean if a field has been set.
 func (o *IssuedDocumentPaymentsListItem) HasEiRaw() bool {
-	if o != nil && o.EiRaw != nil {
+	if o != nil && isNil(o.EiRaw) {
 		return true
 	}
 
@@ -340,7 +340,7 @@ func (o *IssuedDocumentPaymentsListItem) SetEiRaw(v map[string]interface{}) *Iss
 
 // GetPaymentTerms returns the PaymentTerms field value if set, zero value otherwise.
 func (o *IssuedDocumentPaymentsListItem) GetPaymentTerms() IssuedDocumentPaymentsListItemPaymentTerms {
-	if o == nil || o.PaymentTerms == nil {
+	if o == nil || isNil(o.PaymentTerms) {
 		var ret IssuedDocumentPaymentsListItemPaymentTerms
 		return ret
 	}
@@ -350,7 +350,7 @@ func (o *IssuedDocumentPaymentsListItem) GetPaymentTerms() IssuedDocumentPayment
 // GetPaymentTermsOk returns a tuple with the PaymentTerms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IssuedDocumentPaymentsListItem) GetPaymentTermsOk() (*IssuedDocumentPaymentsListItemPaymentTerms, bool) {
-	if o == nil || o.PaymentTerms == nil {
+	if o == nil || isNil(o.PaymentTerms) {
 		return nil, false
 	}
 	return o.PaymentTerms, true
@@ -358,7 +358,7 @@ func (o *IssuedDocumentPaymentsListItem) GetPaymentTermsOk() (*IssuedDocumentPay
 
 // HasPaymentTerms returns a boolean if a field has been set.
 func (o *IssuedDocumentPaymentsListItem) HasPaymentTerms() bool {
-	if o != nil && o.PaymentTerms != nil {
+	if o != nil && !isNil(o.PaymentTerms) {
 		return true
 	}
 
@@ -382,7 +382,7 @@ func (o IssuedDocumentPaymentsListItem) MarshalJSON() ([]byte, error) {
 	if o.Amount.IsSet() {
 		toSerialize["amount"] = o.Amount.Get()
 	}
-	if o.Status != nil {
+	if !isNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
 	if o.PaymentAccount.IsSet() {
@@ -394,7 +394,7 @@ func (o IssuedDocumentPaymentsListItem) MarshalJSON() ([]byte, error) {
 	if o.EiRaw != nil {
 		toSerialize["ei_raw"] = o.EiRaw
 	}
-	if o.PaymentTerms != nil {
+	if !isNil(o.PaymentTerms) {
 		toSerialize["payment_terms"] = o.PaymentTerms
 	}
 	return json.Marshal(toSerialize)

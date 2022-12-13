@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.24
 Contact: info@fattureincloud.it
 */
 
@@ -61,7 +61,7 @@ func NewListEmailsResponseWithDefaults() *ListEmailsResponse {
 
 // GetCurrentPage returns the CurrentPage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListEmailsResponse) GetCurrentPage() int32 {
-	if o == nil || o.CurrentPage.Get() == nil {
+	if o == nil || isNil(o.CurrentPage.Get()) {
 		var ret int32
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *ListEmailsResponse) UnsetCurrentPage() {
 
 // GetFirstPageUrl returns the FirstPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListEmailsResponse) GetFirstPageUrl() string {
-	if o == nil || o.FirstPageUrl.Get() == nil {
+	if o == nil || isNil(o.FirstPageUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *ListEmailsResponse) UnsetFirstPageUrl() {
 
 // GetFrom returns the From field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListEmailsResponse) GetFrom() int32 {
-	if o == nil || o.From.Get() == nil {
+	if o == nil || isNil(o.From.Get()) {
 		var ret int32
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *ListEmailsResponse) UnsetFrom() {
 
 // GetLastPage returns the LastPage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListEmailsResponse) GetLastPage() int32 {
-	if o == nil || o.LastPage.Get() == nil {
+	if o == nil || isNil(o.LastPage.Get()) {
 		var ret int32
 		return ret
 	}
@@ -237,7 +237,7 @@ func (o *ListEmailsResponse) UnsetLastPage() {
 
 // GetLastPageUrl returns the LastPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListEmailsResponse) GetLastPageUrl() string {
-	if o == nil || o.LastPageUrl.Get() == nil {
+	if o == nil || isNil(o.LastPageUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -281,7 +281,7 @@ func (o *ListEmailsResponse) UnsetLastPageUrl() {
 
 // GetNextPageUrl returns the NextPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListEmailsResponse) GetNextPageUrl() string {
-	if o == nil || o.NextPageUrl.Get() == nil {
+	if o == nil || isNil(o.NextPageUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -325,7 +325,7 @@ func (o *ListEmailsResponse) UnsetNextPageUrl() {
 
 // GetPath returns the Path field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListEmailsResponse) GetPath() string {
-	if o == nil || o.Path.Get() == nil {
+	if o == nil || isNil(o.Path.Get()) {
 		var ret string
 		return ret
 	}
@@ -369,7 +369,7 @@ func (o *ListEmailsResponse) UnsetPath() {
 
 // GetPerPage returns the PerPage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListEmailsResponse) GetPerPage() int32 {
-	if o == nil || o.PerPage.Get() == nil {
+	if o == nil || isNil(o.PerPage.Get()) {
 		var ret int32
 		return ret
 	}
@@ -413,7 +413,7 @@ func (o *ListEmailsResponse) UnsetPerPage() {
 
 // GetPrevPageUrl returns the PrevPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListEmailsResponse) GetPrevPageUrl() string {
-	if o == nil || o.PrevPageUrl.Get() == nil {
+	if o == nil || isNil(o.PrevPageUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -457,7 +457,7 @@ func (o *ListEmailsResponse) UnsetPrevPageUrl() {
 
 // GetTo returns the To field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListEmailsResponse) GetTo() int32 {
-	if o == nil || o.To.Get() == nil {
+	if o == nil || isNil(o.To.Get()) {
 		var ret int32
 		return ret
 	}
@@ -501,7 +501,7 @@ func (o *ListEmailsResponse) UnsetTo() {
 
 // GetTotal returns the Total field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListEmailsResponse) GetTotal() int32 {
-	if o == nil || o.Total.Get() == nil {
+	if o == nil || isNil(o.Total.Get()) {
 		var ret int32
 		return ret
 	}
@@ -545,7 +545,7 @@ func (o *ListEmailsResponse) UnsetTotal() {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *ListEmailsResponse) GetData() []Email {
-	if o == nil || o.Data == nil {
+	if o == nil || isNil(o.Data) {
 		var ret []Email
 		return ret
 	}
@@ -555,7 +555,7 @@ func (o *ListEmailsResponse) GetData() []Email {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListEmailsResponse) GetDataOk() ([]Email, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || isNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -563,7 +563,7 @@ func (o *ListEmailsResponse) GetDataOk() ([]Email, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *ListEmailsResponse) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !isNil(o.Data) {
 		return true
 	}
 
@@ -611,7 +611,7 @@ func (o ListEmailsResponse) MarshalJSON() ([]byte, error) {
 	if o.Total.IsSet() {
 		toSerialize["total"] = o.Total.Get()
 	}
-	if o.Data != nil {
+	if !isNil(o.Data) {
 		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)

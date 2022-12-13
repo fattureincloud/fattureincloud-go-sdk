@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.24
 Contact: info@fattureincloud.it
 */
 
@@ -40,7 +40,7 @@ func NewJoinIssuedDocumentsResponseWithDefaults() *JoinIssuedDocumentsResponse {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *JoinIssuedDocumentsResponse) GetData() IssuedDocument {
-	if o == nil || o.Data == nil {
+	if o == nil || isNil(o.Data) {
 		var ret IssuedDocument
 		return ret
 	}
@@ -50,7 +50,7 @@ func (o *JoinIssuedDocumentsResponse) GetData() IssuedDocument {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JoinIssuedDocumentsResponse) GetDataOk() (*IssuedDocument, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || isNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -58,7 +58,7 @@ func (o *JoinIssuedDocumentsResponse) GetDataOk() (*IssuedDocument, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *JoinIssuedDocumentsResponse) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !isNil(o.Data) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *JoinIssuedDocumentsResponse) SetData(v IssuedDocument) *JoinIssuedDocum
 
 // GetOptions returns the Options field value if set, zero value otherwise.
 func (o *JoinIssuedDocumentsResponse) GetOptions() IssuedDocumentOptions {
-	if o == nil || o.Options == nil {
+	if o == nil || isNil(o.Options) {
 		var ret IssuedDocumentOptions
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *JoinIssuedDocumentsResponse) GetOptions() IssuedDocumentOptions {
 // GetOptionsOk returns a tuple with the Options field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JoinIssuedDocumentsResponse) GetOptionsOk() (*IssuedDocumentOptions, bool) {
-	if o == nil || o.Options == nil {
+	if o == nil || isNil(o.Options) {
 		return nil, false
 	}
 	return o.Options, true
@@ -91,7 +91,7 @@ func (o *JoinIssuedDocumentsResponse) GetOptionsOk() (*IssuedDocumentOptions, bo
 
 // HasOptions returns a boolean if a field has been set.
 func (o *JoinIssuedDocumentsResponse) HasOptions() bool {
-	if o != nil && o.Options != nil {
+	if o != nil && !isNil(o.Options) {
 		return true
 	}
 
@@ -106,10 +106,10 @@ func (o *JoinIssuedDocumentsResponse) SetOptions(v IssuedDocumentOptions) *JoinI
 
 func (o JoinIssuedDocumentsResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
+	if !isNil(o.Data) {
 		toSerialize["data"] = o.Data
 	}
-	if o.Options != nil {
+	if !isNil(o.Options) {
 		toSerialize["options"] = o.Options
 	}
 	return json.Marshal(toSerialize)
