@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.24
 Contact: info@fattureincloud.it
 */
 
@@ -42,7 +42,7 @@ func NewEmailAttachmentWithDefaults() *EmailAttachment {
 
 // GetFilename returns the Filename field value if set, zero value otherwise.
 func (o *EmailAttachment) GetFilename() string {
-	if o == nil || o.Filename == nil {
+	if o == nil || isNil(o.Filename) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *EmailAttachment) GetFilename() string {
 // GetFilenameOk returns a tuple with the Filename field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EmailAttachment) GetFilenameOk() (*string, bool) {
-	if o == nil || o.Filename == nil {
+	if o == nil || isNil(o.Filename) {
 		return nil, false
 	}
 	return o.Filename, true
@@ -60,7 +60,7 @@ func (o *EmailAttachment) GetFilenameOk() (*string, bool) {
 
 // HasFilename returns a boolean if a field has been set.
 func (o *EmailAttachment) HasFilename() bool {
-	if o != nil && o.Filename != nil {
+	if o != nil && !isNil(o.Filename) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *EmailAttachment) SetFilename(v string) *EmailAttachment {
 
 // GetUrl returns the Url field value if set, zero value otherwise.
 func (o *EmailAttachment) GetUrl() string {
-	if o == nil || o.Url == nil {
+	if o == nil || isNil(o.Url) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *EmailAttachment) GetUrl() string {
 // GetUrlOk returns a tuple with the Url field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EmailAttachment) GetUrlOk() (*string, bool) {
-	if o == nil || o.Url == nil {
+	if o == nil || isNil(o.Url) {
 		return nil, false
 	}
 	return o.Url, true
@@ -93,7 +93,7 @@ func (o *EmailAttachment) GetUrlOk() (*string, bool) {
 
 // HasUrl returns a boolean if a field has been set.
 func (o *EmailAttachment) HasUrl() bool {
-	if o != nil && o.Url != nil {
+	if o != nil && !isNil(o.Url) {
 		return true
 	}
 
@@ -108,10 +108,10 @@ func (o *EmailAttachment) SetUrl(v string) *EmailAttachment {
 
 func (o EmailAttachment) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Filename != nil {
+	if !isNil(o.Filename) {
 		toSerialize["filename"] = o.Filename
 	}
-	if o.Url != nil {
+	if !isNil(o.Url) {
 		toSerialize["url"] = o.Url
 	}
 	return json.Marshal(toSerialize)

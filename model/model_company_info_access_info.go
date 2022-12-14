@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.24
 Contact: info@fattureincloud.it
 */
 
@@ -41,7 +41,7 @@ func NewCompanyInfoAccessInfoWithDefaults() *CompanyInfoAccessInfo {
 
 // GetRole returns the Role field value if set, zero value otherwise.
 func (o *CompanyInfoAccessInfo) GetRole() UserCompanyRole {
-	if o == nil || o.Role == nil {
+	if o == nil || isNil(o.Role) {
 		var ret UserCompanyRole
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *CompanyInfoAccessInfo) GetRole() UserCompanyRole {
 // GetRoleOk returns a tuple with the Role field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CompanyInfoAccessInfo) GetRoleOk() (*UserCompanyRole, bool) {
-	if o == nil || o.Role == nil {
+	if o == nil || isNil(o.Role) {
 		return nil, false
 	}
 	return o.Role, true
@@ -59,7 +59,7 @@ func (o *CompanyInfoAccessInfo) GetRoleOk() (*UserCompanyRole, bool) {
 
 // HasRole returns a boolean if a field has been set.
 func (o *CompanyInfoAccessInfo) HasRole() bool {
-	if o != nil && o.Role != nil {
+	if o != nil && !isNil(o.Role) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *CompanyInfoAccessInfo) SetRole(v UserCompanyRole) *CompanyInfoAccessInf
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise.
 func (o *CompanyInfoAccessInfo) GetPermissions() Permissions {
-	if o == nil || o.Permissions == nil {
+	if o == nil || isNil(o.Permissions) {
 		var ret Permissions
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *CompanyInfoAccessInfo) GetPermissions() Permissions {
 // GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CompanyInfoAccessInfo) GetPermissionsOk() (*Permissions, bool) {
-	if o == nil || o.Permissions == nil {
+	if o == nil || isNil(o.Permissions) {
 		return nil, false
 	}
 	return o.Permissions, true
@@ -92,7 +92,7 @@ func (o *CompanyInfoAccessInfo) GetPermissionsOk() (*Permissions, bool) {
 
 // HasPermissions returns a boolean if a field has been set.
 func (o *CompanyInfoAccessInfo) HasPermissions() bool {
-	if o != nil && o.Permissions != nil {
+	if o != nil && !isNil(o.Permissions) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *CompanyInfoAccessInfo) SetPermissions(v Permissions) *CompanyInfoAccess
 
 // GetThroughAccountant returns the ThroughAccountant field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoAccessInfo) GetThroughAccountant() bool {
-	if o == nil || o.ThroughAccountant.Get() == nil {
+	if o == nil || isNil(o.ThroughAccountant.Get()) {
 		var ret bool
 		return ret
 	}
@@ -151,10 +151,10 @@ func (o *CompanyInfoAccessInfo) UnsetThroughAccountant() {
 
 func (o CompanyInfoAccessInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Role != nil {
+	if !isNil(o.Role) {
 		toSerialize["role"] = o.Role
 	}
-	if o.Permissions != nil {
+	if !isNil(o.Permissions) {
 		toSerialize["permissions"] = o.Permissions
 	}
 	if o.ThroughAccountant.IsSet() {

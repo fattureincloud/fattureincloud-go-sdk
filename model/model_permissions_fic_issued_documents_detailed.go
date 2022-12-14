@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.24
 Contact: info@fattureincloud.it
 */
 
@@ -48,7 +48,7 @@ func NewPermissionsFicIssuedDocumentsDetailedWithDefaults() *PermissionsFicIssue
 
 // GetQuotes returns the Quotes field value if set, zero value otherwise.
 func (o *PermissionsFicIssuedDocumentsDetailed) GetQuotes() PermissionLevel {
-	if o == nil || o.Quotes == nil {
+	if o == nil || isNil(o.Quotes) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) GetQuotes() PermissionLevel {
 // GetQuotesOk returns a tuple with the Quotes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PermissionsFicIssuedDocumentsDetailed) GetQuotesOk() (*PermissionLevel, bool) {
-	if o == nil || o.Quotes == nil {
+	if o == nil || isNil(o.Quotes) {
 		return nil, false
 	}
 	return o.Quotes, true
@@ -66,7 +66,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) GetQuotesOk() (*PermissionLevel,
 
 // HasQuotes returns a boolean if a field has been set.
 func (o *PermissionsFicIssuedDocumentsDetailed) HasQuotes() bool {
-	if o != nil && o.Quotes != nil {
+	if o != nil && !isNil(o.Quotes) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) SetQuotes(v PermissionLevel) *Pe
 
 // GetProformas returns the Proformas field value if set, zero value otherwise.
 func (o *PermissionsFicIssuedDocumentsDetailed) GetProformas() PermissionLevel {
-	if o == nil || o.Proformas == nil {
+	if o == nil || isNil(o.Proformas) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) GetProformas() PermissionLevel {
 // GetProformasOk returns a tuple with the Proformas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PermissionsFicIssuedDocumentsDetailed) GetProformasOk() (*PermissionLevel, bool) {
-	if o == nil || o.Proformas == nil {
+	if o == nil || isNil(o.Proformas) {
 		return nil, false
 	}
 	return o.Proformas, true
@@ -99,7 +99,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) GetProformasOk() (*PermissionLev
 
 // HasProformas returns a boolean if a field has been set.
 func (o *PermissionsFicIssuedDocumentsDetailed) HasProformas() bool {
-	if o != nil && o.Proformas != nil {
+	if o != nil && !isNil(o.Proformas) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) SetProformas(v PermissionLevel) 
 
 // GetInvoices returns the Invoices field value if set, zero value otherwise.
 func (o *PermissionsFicIssuedDocumentsDetailed) GetInvoices() PermissionLevel {
-	if o == nil || o.Invoices == nil {
+	if o == nil || isNil(o.Invoices) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) GetInvoices() PermissionLevel {
 // GetInvoicesOk returns a tuple with the Invoices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PermissionsFicIssuedDocumentsDetailed) GetInvoicesOk() (*PermissionLevel, bool) {
-	if o == nil || o.Invoices == nil {
+	if o == nil || isNil(o.Invoices) {
 		return nil, false
 	}
 	return o.Invoices, true
@@ -132,7 +132,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) GetInvoicesOk() (*PermissionLeve
 
 // HasInvoices returns a boolean if a field has been set.
 func (o *PermissionsFicIssuedDocumentsDetailed) HasInvoices() bool {
-	if o != nil && o.Invoices != nil {
+	if o != nil && !isNil(o.Invoices) {
 		return true
 	}
 
@@ -147,7 +147,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) SetInvoices(v PermissionLevel) *
 
 // GetReceipts returns the Receipts field value if set, zero value otherwise.
 func (o *PermissionsFicIssuedDocumentsDetailed) GetReceipts() PermissionLevel {
-	if o == nil || o.Receipts == nil {
+	if o == nil || isNil(o.Receipts) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) GetReceipts() PermissionLevel {
 // GetReceiptsOk returns a tuple with the Receipts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PermissionsFicIssuedDocumentsDetailed) GetReceiptsOk() (*PermissionLevel, bool) {
-	if o == nil || o.Receipts == nil {
+	if o == nil || isNil(o.Receipts) {
 		return nil, false
 	}
 	return o.Receipts, true
@@ -165,7 +165,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) GetReceiptsOk() (*PermissionLeve
 
 // HasReceipts returns a boolean if a field has been set.
 func (o *PermissionsFicIssuedDocumentsDetailed) HasReceipts() bool {
-	if o != nil && o.Receipts != nil {
+	if o != nil && !isNil(o.Receipts) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) SetReceipts(v PermissionLevel) *
 
 // GetDeliveryNotes returns the DeliveryNotes field value if set, zero value otherwise.
 func (o *PermissionsFicIssuedDocumentsDetailed) GetDeliveryNotes() PermissionLevel {
-	if o == nil || o.DeliveryNotes == nil {
+	if o == nil || isNil(o.DeliveryNotes) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) GetDeliveryNotes() PermissionLev
 // GetDeliveryNotesOk returns a tuple with the DeliveryNotes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PermissionsFicIssuedDocumentsDetailed) GetDeliveryNotesOk() (*PermissionLevel, bool) {
-	if o == nil || o.DeliveryNotes == nil {
+	if o == nil || isNil(o.DeliveryNotes) {
 		return nil, false
 	}
 	return o.DeliveryNotes, true
@@ -198,7 +198,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) GetDeliveryNotesOk() (*Permissio
 
 // HasDeliveryNotes returns a boolean if a field has been set.
 func (o *PermissionsFicIssuedDocumentsDetailed) HasDeliveryNotes() bool {
-	if o != nil && o.DeliveryNotes != nil {
+	if o != nil && !isNil(o.DeliveryNotes) {
 		return true
 	}
 
@@ -213,7 +213,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) SetDeliveryNotes(v PermissionLev
 
 // GetCreditNotes returns the CreditNotes field value if set, zero value otherwise.
 func (o *PermissionsFicIssuedDocumentsDetailed) GetCreditNotes() PermissionLevel {
-	if o == nil || o.CreditNotes == nil {
+	if o == nil || isNil(o.CreditNotes) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) GetCreditNotes() PermissionLevel
 // GetCreditNotesOk returns a tuple with the CreditNotes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PermissionsFicIssuedDocumentsDetailed) GetCreditNotesOk() (*PermissionLevel, bool) {
-	if o == nil || o.CreditNotes == nil {
+	if o == nil || isNil(o.CreditNotes) {
 		return nil, false
 	}
 	return o.CreditNotes, true
@@ -231,7 +231,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) GetCreditNotesOk() (*PermissionL
 
 // HasCreditNotes returns a boolean if a field has been set.
 func (o *PermissionsFicIssuedDocumentsDetailed) HasCreditNotes() bool {
-	if o != nil && o.CreditNotes != nil {
+	if o != nil && !isNil(o.CreditNotes) {
 		return true
 	}
 
@@ -246,7 +246,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) SetCreditNotes(v PermissionLevel
 
 // GetOrders returns the Orders field value if set, zero value otherwise.
 func (o *PermissionsFicIssuedDocumentsDetailed) GetOrders() PermissionLevel {
-	if o == nil || o.Orders == nil {
+	if o == nil || isNil(o.Orders) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -256,7 +256,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) GetOrders() PermissionLevel {
 // GetOrdersOk returns a tuple with the Orders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PermissionsFicIssuedDocumentsDetailed) GetOrdersOk() (*PermissionLevel, bool) {
-	if o == nil || o.Orders == nil {
+	if o == nil || isNil(o.Orders) {
 		return nil, false
 	}
 	return o.Orders, true
@@ -264,7 +264,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) GetOrdersOk() (*PermissionLevel,
 
 // HasOrders returns a boolean if a field has been set.
 func (o *PermissionsFicIssuedDocumentsDetailed) HasOrders() bool {
-	if o != nil && o.Orders != nil {
+	if o != nil && !isNil(o.Orders) {
 		return true
 	}
 
@@ -279,7 +279,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) SetOrders(v PermissionLevel) *Pe
 
 // GetWorkReports returns the WorkReports field value if set, zero value otherwise.
 func (o *PermissionsFicIssuedDocumentsDetailed) GetWorkReports() PermissionLevel {
-	if o == nil || o.WorkReports == nil {
+	if o == nil || isNil(o.WorkReports) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -289,7 +289,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) GetWorkReports() PermissionLevel
 // GetWorkReportsOk returns a tuple with the WorkReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PermissionsFicIssuedDocumentsDetailed) GetWorkReportsOk() (*PermissionLevel, bool) {
-	if o == nil || o.WorkReports == nil {
+	if o == nil || isNil(o.WorkReports) {
 		return nil, false
 	}
 	return o.WorkReports, true
@@ -297,7 +297,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) GetWorkReportsOk() (*PermissionL
 
 // HasWorkReports returns a boolean if a field has been set.
 func (o *PermissionsFicIssuedDocumentsDetailed) HasWorkReports() bool {
-	if o != nil && o.WorkReports != nil {
+	if o != nil && !isNil(o.WorkReports) {
 		return true
 	}
 
@@ -312,7 +312,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) SetWorkReports(v PermissionLevel
 
 // GetSupplierOrders returns the SupplierOrders field value if set, zero value otherwise.
 func (o *PermissionsFicIssuedDocumentsDetailed) GetSupplierOrders() PermissionLevel {
-	if o == nil || o.SupplierOrders == nil {
+	if o == nil || isNil(o.SupplierOrders) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -322,7 +322,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) GetSupplierOrders() PermissionLe
 // GetSupplierOrdersOk returns a tuple with the SupplierOrders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PermissionsFicIssuedDocumentsDetailed) GetSupplierOrdersOk() (*PermissionLevel, bool) {
-	if o == nil || o.SupplierOrders == nil {
+	if o == nil || isNil(o.SupplierOrders) {
 		return nil, false
 	}
 	return o.SupplierOrders, true
@@ -330,7 +330,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) GetSupplierOrdersOk() (*Permissi
 
 // HasSupplierOrders returns a boolean if a field has been set.
 func (o *PermissionsFicIssuedDocumentsDetailed) HasSupplierOrders() bool {
-	if o != nil && o.SupplierOrders != nil {
+	if o != nil && !isNil(o.SupplierOrders) {
 		return true
 	}
 
@@ -345,7 +345,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) SetSupplierOrders(v PermissionLe
 
 // GetSelfInvoices returns the SelfInvoices field value if set, zero value otherwise.
 func (o *PermissionsFicIssuedDocumentsDetailed) GetSelfInvoices() PermissionLevel {
-	if o == nil || o.SelfInvoices == nil {
+	if o == nil || isNil(o.SelfInvoices) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -355,7 +355,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) GetSelfInvoices() PermissionLeve
 // GetSelfInvoicesOk returns a tuple with the SelfInvoices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PermissionsFicIssuedDocumentsDetailed) GetSelfInvoicesOk() (*PermissionLevel, bool) {
-	if o == nil || o.SelfInvoices == nil {
+	if o == nil || isNil(o.SelfInvoices) {
 		return nil, false
 	}
 	return o.SelfInvoices, true
@@ -363,7 +363,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) GetSelfInvoicesOk() (*Permission
 
 // HasSelfInvoices returns a boolean if a field has been set.
 func (o *PermissionsFicIssuedDocumentsDetailed) HasSelfInvoices() bool {
-	if o != nil && o.SelfInvoices != nil {
+	if o != nil && !isNil(o.SelfInvoices) {
 		return true
 	}
 
@@ -378,34 +378,34 @@ func (o *PermissionsFicIssuedDocumentsDetailed) SetSelfInvoices(v PermissionLeve
 
 func (o PermissionsFicIssuedDocumentsDetailed) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Quotes != nil {
+	if !isNil(o.Quotes) {
 		toSerialize["quotes"] = o.Quotes
 	}
-	if o.Proformas != nil {
+	if !isNil(o.Proformas) {
 		toSerialize["proformas"] = o.Proformas
 	}
-	if o.Invoices != nil {
+	if !isNil(o.Invoices) {
 		toSerialize["invoices"] = o.Invoices
 	}
-	if o.Receipts != nil {
+	if !isNil(o.Receipts) {
 		toSerialize["receipts"] = o.Receipts
 	}
-	if o.DeliveryNotes != nil {
+	if !isNil(o.DeliveryNotes) {
 		toSerialize["delivery_notes"] = o.DeliveryNotes
 	}
-	if o.CreditNotes != nil {
+	if !isNil(o.CreditNotes) {
 		toSerialize["credit_notes"] = o.CreditNotes
 	}
-	if o.Orders != nil {
+	if !isNil(o.Orders) {
 		toSerialize["orders"] = o.Orders
 	}
-	if o.WorkReports != nil {
+	if !isNil(o.WorkReports) {
 		toSerialize["work_reports"] = o.WorkReports
 	}
-	if o.SupplierOrders != nil {
+	if !isNil(o.SupplierOrders) {
 		toSerialize["supplier_orders"] = o.SupplierOrders
 	}
-	if o.SelfInvoices != nil {
+	if !isNil(o.SelfInvoices) {
 		toSerialize["self_invoices"] = o.SelfInvoices
 	}
 	return json.Marshal(toSerialize)

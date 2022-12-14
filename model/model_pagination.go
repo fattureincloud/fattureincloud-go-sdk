@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.24
 Contact: info@fattureincloud.it
 */
 
@@ -60,7 +60,7 @@ func NewPaginationWithDefaults() *Pagination {
 
 // GetCurrentPage returns the CurrentPage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Pagination) GetCurrentPage() int32 {
-	if o == nil || o.CurrentPage.Get() == nil {
+	if o == nil || isNil(o.CurrentPage.Get()) {
 		var ret int32
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *Pagination) UnsetCurrentPage() {
 
 // GetFirstPageUrl returns the FirstPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Pagination) GetFirstPageUrl() string {
-	if o == nil || o.FirstPageUrl.Get() == nil {
+	if o == nil || isNil(o.FirstPageUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *Pagination) UnsetFirstPageUrl() {
 
 // GetFrom returns the From field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Pagination) GetFrom() int32 {
-	if o == nil || o.From.Get() == nil {
+	if o == nil || isNil(o.From.Get()) {
 		var ret int32
 		return ret
 	}
@@ -192,7 +192,7 @@ func (o *Pagination) UnsetFrom() {
 
 // GetLastPage returns the LastPage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Pagination) GetLastPage() int32 {
-	if o == nil || o.LastPage.Get() == nil {
+	if o == nil || isNil(o.LastPage.Get()) {
 		var ret int32
 		return ret
 	}
@@ -236,7 +236,7 @@ func (o *Pagination) UnsetLastPage() {
 
 // GetLastPageUrl returns the LastPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Pagination) GetLastPageUrl() string {
-	if o == nil || o.LastPageUrl.Get() == nil {
+	if o == nil || isNil(o.LastPageUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -280,7 +280,7 @@ func (o *Pagination) UnsetLastPageUrl() {
 
 // GetNextPageUrl returns the NextPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Pagination) GetNextPageUrl() string {
-	if o == nil || o.NextPageUrl.Get() == nil {
+	if o == nil || isNil(o.NextPageUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -324,7 +324,7 @@ func (o *Pagination) UnsetNextPageUrl() {
 
 // GetPath returns the Path field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Pagination) GetPath() string {
-	if o == nil || o.Path.Get() == nil {
+	if o == nil || isNil(o.Path.Get()) {
 		var ret string
 		return ret
 	}
@@ -368,7 +368,7 @@ func (o *Pagination) UnsetPath() {
 
 // GetPerPage returns the PerPage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Pagination) GetPerPage() int32 {
-	if o == nil || o.PerPage.Get() == nil {
+	if o == nil || isNil(o.PerPage.Get()) {
 		var ret int32
 		return ret
 	}
@@ -412,7 +412,7 @@ func (o *Pagination) UnsetPerPage() {
 
 // GetPrevPageUrl returns the PrevPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Pagination) GetPrevPageUrl() string {
-	if o == nil || o.PrevPageUrl.Get() == nil {
+	if o == nil || isNil(o.PrevPageUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -456,7 +456,7 @@ func (o *Pagination) UnsetPrevPageUrl() {
 
 // GetTo returns the To field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Pagination) GetTo() int32 {
-	if o == nil || o.To.Get() == nil {
+	if o == nil || isNil(o.To.Get()) {
 		var ret int32
 		return ret
 	}
@@ -500,7 +500,7 @@ func (o *Pagination) UnsetTo() {
 
 // GetTotal returns the Total field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Pagination) GetTotal() int32 {
-	if o == nil || o.Total.Get() == nil {
+	if o == nil || isNil(o.Total.Get()) {
 		var ret int32
 		return ret
 	}

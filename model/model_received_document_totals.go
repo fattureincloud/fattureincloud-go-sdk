@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.22
+API version: 2.0.24
 Contact: info@fattureincloud.it
 */
 
@@ -52,7 +52,7 @@ func NewReceivedDocumentTotalsWithDefaults() *ReceivedDocumentTotals {
 
 // GetAmountNet returns the AmountNet field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentTotals) GetAmountNet() float32 {
-	if o == nil || o.AmountNet.Get() == nil {
+	if o == nil || isNil(o.AmountNet.Get()) {
 		var ret float32
 		return ret
 	}
@@ -96,7 +96,7 @@ func (o *ReceivedDocumentTotals) UnsetAmountNet() {
 
 // GetAmountVat returns the AmountVat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentTotals) GetAmountVat() float32 {
-	if o == nil || o.AmountVat.Get() == nil {
+	if o == nil || isNil(o.AmountVat.Get()) {
 		var ret float32
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *ReceivedDocumentTotals) UnsetAmountVat() {
 
 // GetAmountGross returns the AmountGross field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentTotals) GetAmountGross() float32 {
-	if o == nil || o.AmountGross.Get() == nil {
+	if o == nil || isNil(o.AmountGross.Get()) {
 		var ret float32
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *ReceivedDocumentTotals) UnsetAmountGross() {
 
 // GetAmountWithholdingTax returns the AmountWithholdingTax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentTotals) GetAmountWithholdingTax() float32 {
-	if o == nil || o.AmountWithholdingTax.Get() == nil {
+	if o == nil || isNil(o.AmountWithholdingTax.Get()) {
 		var ret float32
 		return ret
 	}
@@ -228,7 +228,7 @@ func (o *ReceivedDocumentTotals) UnsetAmountWithholdingTax() {
 
 // GetAmountOtherWithholdingTax returns the AmountOtherWithholdingTax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentTotals) GetAmountOtherWithholdingTax() float32 {
-	if o == nil || o.AmountOtherWithholdingTax.Get() == nil {
+	if o == nil || isNil(o.AmountOtherWithholdingTax.Get()) {
 		var ret float32
 		return ret
 	}
@@ -272,7 +272,7 @@ func (o *ReceivedDocumentTotals) UnsetAmountOtherWithholdingTax() {
 
 // GetAmountDue returns the AmountDue field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentTotals) GetAmountDue() float32 {
-	if o == nil || o.AmountDue.Get() == nil {
+	if o == nil || isNil(o.AmountDue.Get()) {
 		var ret float32
 		return ret
 	}
@@ -316,7 +316,7 @@ func (o *ReceivedDocumentTotals) UnsetAmountDue() {
 
 // GetPaymentsSum returns the PaymentsSum field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentTotals) GetPaymentsSum() float32 {
-	if o == nil || o.PaymentsSum.Get() == nil {
+	if o == nil || isNil(o.PaymentsSum.Get()) {
 		var ret float32
 		return ret
 	}
