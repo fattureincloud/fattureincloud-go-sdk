@@ -18,7 +18,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-var IssuedDocumentItemsListItemJsonStr string = "{\"product_id\":12345,\"code\":\"cod3\",\"name\":\"prodott1\",\"category\":\"cat5\",\"description\":\"primo\",\"qty\":99,\"measure\":\"big\",\"net_price\":10,\"gross_price\":10,\"vat\":{\"id\":1},\"not_taxable\":true,\"apply_withholding_taxes\":true,\"discount\":0,\"discount_highlight\":true,\"in_ddt\":true,\"stock\":true}"
+var IssuedDocumentItemsListItemJsonStr string = "{\"product_id\":12345,\"code\":\"cod3\",\"name\":\"prodott1\",\"category\":\"cat5\",\"description\":\"primo\",\"qty\":99,\"measure\":\"big\",\"net_price\":10,\"gross_price\":10,\"vat\":{\"id\":1},\"not_taxable\":true,\"apply_withholding_taxes\":true,\"discount\":0,\"discount_highlight\":true,\"in_dn\":true,\"stock\":true}"
 
 func TestIssuedDocumentItemsListItem(t *testing.T) {
 	obj := NewIssuedDocumentItemsListItem()
@@ -58,8 +58,8 @@ func TestIssuedDocumentItemsListItem(t *testing.T) {
 	assert.True(t, reflect.DeepEqual(obj.GetDiscount(), newObj.GetDiscount()))
 	newObj.SetDiscountHighlight(obj.GetDiscountHighlight())
 	assert.True(t, reflect.DeepEqual(obj.GetDiscountHighlight(), newObj.GetDiscountHighlight()))
-	newObj.SetInDdt(obj.GetInDdt())
-	assert.True(t, reflect.DeepEqual(obj.GetInDdt(), newObj.GetInDdt()))
+	newObj.SetInDn(obj.GetInDn())
+	assert.True(t, reflect.DeepEqual(obj.GetInDn(), newObj.GetInDn()))
 	newObj.SetStock(obj.GetStock())
 	assert.True(t, reflect.DeepEqual(obj.GetStock(), newObj.GetStock()))
 	newObj.SetEiRaw(obj.GetEiRaw())
