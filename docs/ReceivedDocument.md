@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **PaymentsList** | Pointer to [**[]ReceivedDocumentPaymentsListItem**](ReceivedDocumentPaymentsListItem.md) |  | [optional] 
 **AttachmentUrl** | Pointer to **NullableString** | [Temporary] [Read Only]  Public url of the attached file. Authomatically set if a valid attachment token is passed via POST /received_documents or PUT /received_documents/{documentId}. | [optional] [readonly] 
 **AttachmentPreviewUrl** | Pointer to **NullableString** | [Temporary] [Read Only]  Attachment preview url. | [optional] [readonly] 
+**AutoCalculate** | Pointer to **NullableBool** | If set to false total items amount and total payments amount can be different. | [optional] 
 **AttachmentToken** | Pointer to **NullableString** | Uploaded attachement token. | [optional] 
 **CreatedAt** | Pointer to **NullableString** |  | [optional] 
 **UpdatedAt** | Pointer to **NullableString** |  | [optional] 
@@ -907,6 +908,41 @@ HasAttachmentPreviewUrl returns a boolean if a field has been set.
 `func (o *ReceivedDocument) UnsetAttachmentPreviewUrl()`
 
 UnsetAttachmentPreviewUrl ensures that no value is present for AttachmentPreviewUrl, not even an explicit nil
+### GetAutoCalculate
+
+`func (o *ReceivedDocument) GetAutoCalculate() bool`
+
+GetAutoCalculate returns the AutoCalculate field if non-nil, zero value otherwise.
+
+### GetAutoCalculateOk
+
+`func (o *ReceivedDocument) GetAutoCalculateOk() (*bool, bool)`
+
+GetAutoCalculateOk returns a tuple with the AutoCalculate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoCalculate
+
+`func (o *ReceivedDocument) SetAutoCalculate(v bool)`
+
+SetAutoCalculate sets AutoCalculate field to given value.
+
+### HasAutoCalculate
+
+`func (o *ReceivedDocument) HasAutoCalculate() bool`
+
+HasAutoCalculate returns a boolean if a field has been set.
+
+### SetAutoCalculateNil
+
+`func (o *ReceivedDocument) SetAutoCalculateNil(b bool)`
+
+ SetAutoCalculateNil sets the value for AutoCalculate to be an explicit nil
+
+### UnsetAutoCalculate
+`func (o *ReceivedDocument) UnsetAutoCalculate()`
+
+UnsetAutoCalculate ensures that no value is present for AutoCalculate, not even an explicit nil
 ### GetAttachmentToken
 
 `func (o *ReceivedDocument) GetAttachmentToken() string`

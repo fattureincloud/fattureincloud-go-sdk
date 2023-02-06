@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.24
+API version: 2.0.25
 Contact: info@fattureincloud.it
 */
 
@@ -60,6 +60,8 @@ type ReceivedDocument struct {
 	AttachmentUrl NullableString `json:"attachment_url,omitempty"`
 	// [Temporary] [Read Only]  Attachment preview url.
 	AttachmentPreviewUrl NullableString `json:"attachment_preview_url,omitempty"`
+	// If set to false total items amount and total payments amount can be different.
+	AutoCalculate NullableBool `json:"auto_calculate,omitempty"`
 	// Uploaded attachement token.
 	AttachmentToken NullableString `json:"attachment_token,omitempty"`
 	CreatedAt NullableString `json:"created_at,omitempty"`
@@ -1143,6 +1145,50 @@ func (o *ReceivedDocument) UnsetAttachmentPreviewUrl() {
 	o.AttachmentPreviewUrl.Unset()
 }
 
+// GetAutoCalculate returns the AutoCalculate field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ReceivedDocument) GetAutoCalculate() bool {
+	if o == nil || isNil(o.AutoCalculate.Get()) {
+		var ret bool
+		return ret
+	}
+	return *o.AutoCalculate.Get()
+}
+
+// GetAutoCalculateOk returns a tuple with the AutoCalculate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ReceivedDocument) GetAutoCalculateOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.AutoCalculate.Get(), o.AutoCalculate.IsSet()
+}
+
+// HasAutoCalculate returns a boolean if a field has been set.
+func (o *ReceivedDocument) HasAutoCalculate() bool {
+	if o != nil && o.AutoCalculate.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetAutoCalculate gets a reference to the given NullableBool and assigns it to the AutoCalculate field.
+func (o *ReceivedDocument) SetAutoCalculate(v bool) *ReceivedDocument {
+	o.AutoCalculate.Set(&v)
+	return o
+}
+// SetAutoCalculateNil sets the value for AutoCalculate to be an explicit nil
+func (o *ReceivedDocument) SetAutoCalculateNil() *ReceivedDocument {
+	o.AutoCalculate.Set(nil)
+	return o
+}
+
+// UnsetAutoCalculate ensures that no value is present for AutoCalculate, not even an explicit nil
+func (o *ReceivedDocument) UnsetAutoCalculate() {
+	o.AutoCalculate.Unset()
+}
+
 // GetAttachmentToken returns the AttachmentToken field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetAttachmentToken() string {
 	if o == nil || isNil(o.AttachmentToken.Get()) {
@@ -1351,6 +1397,9 @@ func (o ReceivedDocument) MarshalJSON() ([]byte, error) {
 	}
 	if o.AttachmentPreviewUrl.IsSet() {
 		toSerialize["attachment_preview_url"] = o.AttachmentPreviewUrl.Get()
+	}
+	if o.AutoCalculate.IsSet() {
+		toSerialize["auto_calculate"] = o.AutoCalculate.Get()
 	}
 	if o.AttachmentToken.IsSet() {
 		toSerialize["attachment_token"] = o.AttachmentToken.Get()

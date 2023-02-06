@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.24
+API version: 2.0.25
 Contact: info@fattureincloud.it
 */
 
@@ -18,6 +18,7 @@ import (
 // SendEInvoiceRequest struct for SendEInvoiceRequest
 type SendEInvoiceRequest struct {
 	Data NullableSendEInvoiceRequestData `json:"data,omitempty"`
+	Options NullableSendEInvoiceRequestOptions `json:"options,omitempty"`
 }
 
 // NewSendEInvoiceRequest instantiates a new SendEInvoiceRequest object
@@ -81,10 +82,57 @@ func (o *SendEInvoiceRequest) UnsetData() {
 	o.Data.Unset()
 }
 
+// GetOptions returns the Options field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SendEInvoiceRequest) GetOptions() SendEInvoiceRequestOptions {
+	if o == nil || isNil(o.Options.Get()) {
+		var ret SendEInvoiceRequestOptions
+		return ret
+	}
+	return *o.Options.Get()
+}
+
+// GetOptionsOk returns a tuple with the Options field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SendEInvoiceRequest) GetOptionsOk() (*SendEInvoiceRequestOptions, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Options.Get(), o.Options.IsSet()
+}
+
+// HasOptions returns a boolean if a field has been set.
+func (o *SendEInvoiceRequest) HasOptions() bool {
+	if o != nil && o.Options.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetOptions gets a reference to the given NullableSendEInvoiceRequestOptions and assigns it to the Options field.
+func (o *SendEInvoiceRequest) SetOptions(v SendEInvoiceRequestOptions) *SendEInvoiceRequest {
+	o.Options.Set(&v)
+	return o
+}
+// SetOptionsNil sets the value for Options to be an explicit nil
+func (o *SendEInvoiceRequest) SetOptionsNil() *SendEInvoiceRequest {
+	o.Options.Set(nil)
+	return o
+}
+
+// UnsetOptions ensures that no value is present for Options, not even an explicit nil
+func (o *SendEInvoiceRequest) UnsetOptions() {
+	o.Options.Unset()
+}
+
 func (o SendEInvoiceRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Data.IsSet() {
 		toSerialize["data"] = o.Data.Get()
+	}
+	if o.Options.IsSet() {
+		toSerialize["options"] = o.Options.Get()
 	}
 	return json.Marshal(toSerialize)
 }
