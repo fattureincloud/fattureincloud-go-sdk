@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.24
+API version: 2.0.26
 Contact: info@fattureincloud.it
 */
 
@@ -66,7 +66,7 @@ func (a *ProductsApiService) CreateProductExecute(r ApiCreateProductRequest) (*C
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CreateProductResponse
+		localVarReturnValue *CreateProductResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductsApiService.CreateProduct")
@@ -75,7 +75,7 @@ func (a *ProductsApiService) CreateProductExecute(r ApiCreateProductRequest) (*C
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/products"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -181,8 +181,8 @@ func (a *ProductsApiService) DeleteProductExecute(r ApiDeleteProductRequest) (*h
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/products/{product_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"product_id"+"}", url.PathEscape(parameterToString(r.productId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"product_id"+"}", url.PathEscape(parameterValueToString(r.productId, "productId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -284,7 +284,7 @@ func (a *ProductsApiService) GetProductExecute(r ApiGetProductRequest) (*GetProd
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetProductResponse
+		localVarReturnValue *GetProductResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductsApiService.GetProduct")
@@ -293,18 +293,18 @@ func (a *ProductsApiService) GetProductExecute(r ApiGetProductRequest) (*GetProd
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/products/{product_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"product_id"+"}", url.PathEscape(parameterToString(r.productId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"product_id"+"}", url.PathEscape(parameterValueToString(r.productId, "productId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		localVarQueryParams.Add("fields", parameterToString(*r.fields, ""))
+		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "")
 	}
 	if r.fieldset != nil {
-		localVarQueryParams.Add("fieldset", parameterToString(*r.fieldset, ""))
+		parameterAddToQuery(localVarQueryParams, "fieldset", r.fieldset, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -436,7 +436,7 @@ func (a *ProductsApiService) ListProductsExecute(r ApiListProductsRequest) (*Lis
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListProductsResponse
+		localVarReturnValue *ListProductsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductsApiService.ListProducts")
@@ -445,29 +445,29 @@ func (a *ProductsApiService) ListProductsExecute(r ApiListProductsRequest) (*Lis
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/products"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		localVarQueryParams.Add("fields", parameterToString(*r.fields, ""))
+		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "")
 	}
 	if r.fieldset != nil {
-		localVarQueryParams.Add("fieldset", parameterToString(*r.fieldset, ""))
+		parameterAddToQuery(localVarQueryParams, "fieldset", r.fieldset, "")
 	}
 	if r.sort != nil {
-		localVarQueryParams.Add("sort", parameterToString(*r.sort, ""))
+		parameterAddToQuery(localVarQueryParams, "sort", r.sort, "")
 	}
 	if r.page != nil {
-		localVarQueryParams.Add("page", parameterToString(*r.page, ""))
+		parameterAddToQuery(localVarQueryParams, "page", r.page, "")
 	}
 	if r.perPage != nil {
-		localVarQueryParams.Add("per_page", parameterToString(*r.perPage, ""))
+		parameterAddToQuery(localVarQueryParams, "per_page", r.perPage, "")
 	}
 	if r.q != nil {
-		localVarQueryParams.Add("q", parameterToString(*r.q, ""))
+		parameterAddToQuery(localVarQueryParams, "q", r.q, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -567,7 +567,7 @@ func (a *ProductsApiService) ModifyProductExecute(r ApiModifyProductRequest) (*M
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModifyProductResponse
+		localVarReturnValue *ModifyProductResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductsApiService.ModifyProduct")
@@ -576,8 +576,8 @@ func (a *ProductsApiService) ModifyProductExecute(r ApiModifyProductRequest) (*M
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/products/{product_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"product_id"+"}", url.PathEscape(parameterToString(r.productId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"product_id"+"}", url.PathEscape(parameterValueToString(r.productId, "productId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

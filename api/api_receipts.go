@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.24
+API version: 2.0.26
 Contact: info@fattureincloud.it
 */
 
@@ -66,7 +66,7 @@ func (a *ReceiptsApiService) CreateReceiptExecute(r ApiCreateReceiptRequest) (*C
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CreateReceiptResponse
+		localVarReturnValue *CreateReceiptResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsApiService.CreateReceipt")
@@ -75,7 +75,7 @@ func (a *ReceiptsApiService) CreateReceiptExecute(r ApiCreateReceiptRequest) (*C
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/receipts"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -181,8 +181,8 @@ func (a *ReceiptsApiService) DeleteReceiptExecute(r ApiDeleteReceiptRequest) (*h
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/receipts/{document_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterToString(r.documentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -284,7 +284,7 @@ func (a *ReceiptsApiService) GetReceiptExecute(r ApiGetReceiptRequest) (*GetRece
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetReceiptResponse
+		localVarReturnValue *GetReceiptResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsApiService.GetReceipt")
@@ -293,18 +293,18 @@ func (a *ReceiptsApiService) GetReceiptExecute(r ApiGetReceiptRequest) (*GetRece
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/receipts/{document_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterToString(r.documentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		localVarQueryParams.Add("fields", parameterToString(*r.fields, ""))
+		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "")
 	}
 	if r.fieldset != nil {
-		localVarQueryParams.Add("fieldset", parameterToString(*r.fieldset, ""))
+		parameterAddToQuery(localVarQueryParams, "fieldset", r.fieldset, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -394,7 +394,7 @@ func (a *ReceiptsApiService) GetReceiptPreCreateInfoExecute(r ApiGetReceiptPreCr
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetReceiptPreCreateInfoResponse
+		localVarReturnValue *GetReceiptPreCreateInfoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsApiService.GetReceiptPreCreateInfo")
@@ -403,7 +403,7 @@ func (a *ReceiptsApiService) GetReceiptPreCreateInfoExecute(r ApiGetReceiptPreCr
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/receipts/info"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -511,7 +511,7 @@ func (a *ReceiptsApiService) GetReceiptsMonthlyTotalsExecute(r ApiGetReceiptsMon
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetReceiptsMonthlyTotalsResponse
+		localVarReturnValue *GetReceiptsMonthlyTotalsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsApiService.GetReceiptsMonthlyTotals")
@@ -520,7 +520,7 @@ func (a *ReceiptsApiService) GetReceiptsMonthlyTotalsExecute(r ApiGetReceiptsMon
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/receipts/monthly_totals"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -532,8 +532,8 @@ func (a *ReceiptsApiService) GetReceiptsMonthlyTotalsExecute(r ApiGetReceiptsMon
 		return localVarReturnValue, nil, reportError("year is required and must be specified")
 	}
 
-	localVarQueryParams.Add("type", parameterToString(*r.type_, ""))
-	localVarQueryParams.Add("year", parameterToString(*r.year, ""))
+	parameterAddToQuery(localVarQueryParams, "type", r.type_, "")
+	parameterAddToQuery(localVarQueryParams, "year", r.year, "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -664,7 +664,7 @@ func (a *ReceiptsApiService) ListReceiptsExecute(r ApiListReceiptsRequest) (*Lis
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListReceiptsResponse
+		localVarReturnValue *ListReceiptsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsApiService.ListReceipts")
@@ -673,29 +673,29 @@ func (a *ReceiptsApiService) ListReceiptsExecute(r ApiListReceiptsRequest) (*Lis
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/receipts"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		localVarQueryParams.Add("fields", parameterToString(*r.fields, ""))
+		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "")
 	}
 	if r.fieldset != nil {
-		localVarQueryParams.Add("fieldset", parameterToString(*r.fieldset, ""))
+		parameterAddToQuery(localVarQueryParams, "fieldset", r.fieldset, "")
 	}
 	if r.page != nil {
-		localVarQueryParams.Add("page", parameterToString(*r.page, ""))
+		parameterAddToQuery(localVarQueryParams, "page", r.page, "")
 	}
 	if r.perPage != nil {
-		localVarQueryParams.Add("per_page", parameterToString(*r.perPage, ""))
+		parameterAddToQuery(localVarQueryParams, "per_page", r.perPage, "")
 	}
 	if r.sort != nil {
-		localVarQueryParams.Add("sort", parameterToString(*r.sort, ""))
+		parameterAddToQuery(localVarQueryParams, "sort", r.sort, "")
 	}
 	if r.q != nil {
-		localVarQueryParams.Add("q", parameterToString(*r.q, ""))
+		parameterAddToQuery(localVarQueryParams, "q", r.q, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -795,7 +795,7 @@ func (a *ReceiptsApiService) ModifyReceiptExecute(r ApiModifyReceiptRequest) (*M
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModifyReceiptResponse
+		localVarReturnValue *ModifyReceiptResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsApiService.ModifyReceipt")
@@ -804,8 +804,8 @@ func (a *ReceiptsApiService) ModifyReceiptExecute(r ApiModifyReceiptRequest) (*M
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/receipts/{document_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterToString(r.documentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

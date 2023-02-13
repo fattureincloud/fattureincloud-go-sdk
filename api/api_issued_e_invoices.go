@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.24
+API version: 2.0.26
 Contact: info@fattureincloud.it
 */
 
@@ -62,7 +62,7 @@ func (a *IssuedEInvoicesApiService) GetEInvoiceRejectionReasonExecute(r ApiGetEI
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetEInvoiceRejectionReasonResponse
+		localVarReturnValue *GetEInvoiceRejectionReasonResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedEInvoicesApiService.GetEInvoiceRejectionReason")
@@ -71,8 +71,8 @@ func (a *IssuedEInvoicesApiService) GetEInvoiceRejectionReasonExecute(r ApiGetEI
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/issued_documents/{document_id}/e_invoice/error_reason"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterToString(r.documentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -176,7 +176,7 @@ func (a *IssuedEInvoicesApiService) GetEInvoiceXmlExecute(r ApiGetEInvoiceXmlReq
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  string
+		localVarReturnValue string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedEInvoicesApiService.GetEInvoiceXml")
@@ -185,15 +185,15 @@ func (a *IssuedEInvoicesApiService) GetEInvoiceXmlExecute(r ApiGetEInvoiceXmlReq
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/issued_documents/{document_id}/e_invoice/xml"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterToString(r.documentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.includeAttachment != nil {
-		localVarQueryParams.Add("include_attachment", parameterToString(*r.includeAttachment, ""))
+		parameterAddToQuery(localVarQueryParams, "include_attachment", r.includeAttachment, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -293,7 +293,7 @@ func (a *IssuedEInvoicesApiService) SendEInvoiceExecute(r ApiSendEInvoiceRequest
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SendEInvoiceResponse
+		localVarReturnValue *SendEInvoiceResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedEInvoicesApiService.SendEInvoice")
@@ -302,8 +302,8 @@ func (a *IssuedEInvoicesApiService) SendEInvoiceExecute(r ApiSendEInvoiceRequest
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/issued_documents/{document_id}/e_invoice/send"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterToString(r.documentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -402,7 +402,7 @@ func (a *IssuedEInvoicesApiService) VerifyEInvoiceXmlExecute(r ApiVerifyEInvoice
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *VerifyEInvoiceXmlResponse
+		localVarReturnValue *VerifyEInvoiceXmlResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedEInvoicesApiService.VerifyEInvoiceXml")
@@ -411,8 +411,8 @@ func (a *IssuedEInvoicesApiService) VerifyEInvoiceXmlExecute(r ApiVerifyEInvoice
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/issued_documents/{document_id}/e_invoice/xml_verify"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterToString(r.documentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.24
+API version: 2.0.26
 Contact: info@fattureincloud.it
 */
 
@@ -14,6 +14,9 @@ package model
 import (
 	"encoding/json"
 )
+
+// checks if the VerifyEInvoiceXmlErrorResponseError type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &VerifyEInvoiceXmlErrorResponseError{}
 
 // VerifyEInvoiceXmlErrorResponseError struct for VerifyEInvoiceXmlErrorResponseError
 type VerifyEInvoiceXmlErrorResponseError struct {
@@ -127,6 +130,14 @@ func (o *VerifyEInvoiceXmlErrorResponseError) UnsetValidationResult() {
 }
 
 func (o VerifyEInvoiceXmlErrorResponseError) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o VerifyEInvoiceXmlErrorResponseError) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Message.IsSet() {
 		toSerialize["message"] = o.Message.Get()
@@ -134,7 +145,7 @@ func (o VerifyEInvoiceXmlErrorResponseError) MarshalJSON() ([]byte, error) {
 	if o.ValidationResult.IsSet() {
 		toSerialize["validation_result"] = o.ValidationResult.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableVerifyEInvoiceXmlErrorResponseError struct {

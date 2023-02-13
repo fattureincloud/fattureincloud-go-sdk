@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.24
+API version: 2.0.26
 Contact: info@fattureincloud.it
 */
 
@@ -65,7 +65,7 @@ func (a *SettingsApiService) CreatePaymentAccountExecute(r ApiCreatePaymentAccou
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CreatePaymentAccountResponse
+		localVarReturnValue *CreatePaymentAccountResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.CreatePaymentAccount")
@@ -74,7 +74,7 @@ func (a *SettingsApiService) CreatePaymentAccountExecute(r ApiCreatePaymentAccou
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/settings/payment_accounts"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -176,7 +176,7 @@ func (a *SettingsApiService) CreatePaymentMethodExecute(r ApiCreatePaymentMethod
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CreatePaymentMethodResponse
+		localVarReturnValue *CreatePaymentMethodResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.CreatePaymentMethod")
@@ -185,7 +185,7 @@ func (a *SettingsApiService) CreatePaymentMethodExecute(r ApiCreatePaymentMethod
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/settings/payment_methods"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -288,7 +288,7 @@ func (a *SettingsApiService) CreateVatTypeExecute(r ApiCreateVatTypeRequest) (*C
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CreateVatTypeResponse
+		localVarReturnValue *CreateVatTypeResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.CreateVatType")
@@ -297,7 +297,7 @@ func (a *SettingsApiService) CreateVatTypeExecute(r ApiCreateVatTypeRequest) (*C
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/settings/vat_types"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -403,8 +403,8 @@ func (a *SettingsApiService) DeletePaymentAccountExecute(r ApiDeletePaymentAccou
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/settings/payment_accounts/{payment_account_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"payment_account_id"+"}", url.PathEscape(parameterToString(r.paymentAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"payment_account_id"+"}", url.PathEscape(parameterValueToString(r.paymentAccountId, "paymentAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -499,8 +499,8 @@ func (a *SettingsApiService) DeletePaymentMethodExecute(r ApiDeletePaymentMethod
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/settings/payment_methods/{payment_method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"payment_method_id"+"}", url.PathEscape(parameterToString(r.paymentMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"payment_method_id"+"}", url.PathEscape(parameterValueToString(r.paymentMethodId, "paymentMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -595,8 +595,8 @@ func (a *SettingsApiService) DeleteVatTypeExecute(r ApiDeleteVatTypeRequest) (*h
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/settings/vat_types/{vat_type_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"vat_type_id"+"}", url.PathEscape(parameterToString(r.vatTypeId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"vat_type_id"+"}", url.PathEscape(parameterValueToString(r.vatTypeId, "vatTypeId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -698,7 +698,7 @@ func (a *SettingsApiService) GetPaymentAccountExecute(r ApiGetPaymentAccountRequ
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetPaymentAccountResponse
+		localVarReturnValue *GetPaymentAccountResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetPaymentAccount")
@@ -707,18 +707,18 @@ func (a *SettingsApiService) GetPaymentAccountExecute(r ApiGetPaymentAccountRequ
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/settings/payment_accounts/{payment_account_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"payment_account_id"+"}", url.PathEscape(parameterToString(r.paymentAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"payment_account_id"+"}", url.PathEscape(parameterValueToString(r.paymentAccountId, "paymentAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		localVarQueryParams.Add("fields", parameterToString(*r.fields, ""))
+		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "")
 	}
 	if r.fieldset != nil {
-		localVarQueryParams.Add("fieldset", parameterToString(*r.fieldset, ""))
+		parameterAddToQuery(localVarQueryParams, "fieldset", r.fieldset, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -825,7 +825,7 @@ func (a *SettingsApiService) GetPaymentMethodExecute(r ApiGetPaymentMethodReques
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetPaymentMethodResponse
+		localVarReturnValue *GetPaymentMethodResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetPaymentMethod")
@@ -834,18 +834,18 @@ func (a *SettingsApiService) GetPaymentMethodExecute(r ApiGetPaymentMethodReques
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/settings/payment_methods/{payment_method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"payment_method_id"+"}", url.PathEscape(parameterToString(r.paymentMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"payment_method_id"+"}", url.PathEscape(parameterValueToString(r.paymentMethodId, "paymentMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		localVarQueryParams.Add("fields", parameterToString(*r.fields, ""))
+		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "")
 	}
 	if r.fieldset != nil {
-		localVarQueryParams.Add("fieldset", parameterToString(*r.fieldset, ""))
+		parameterAddToQuery(localVarQueryParams, "fieldset", r.fieldset, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -938,7 +938,7 @@ func (a *SettingsApiService) GetVatTypeExecute(r ApiGetVatTypeRequest) (*GetVatT
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetVatTypeResponse
+		localVarReturnValue *GetVatTypeResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetVatType")
@@ -947,8 +947,8 @@ func (a *SettingsApiService) GetVatTypeExecute(r ApiGetVatTypeRequest) (*GetVatT
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/settings/vat_types/{vat_type_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"vat_type_id"+"}", url.PathEscape(parameterToString(r.vatTypeId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"vat_type_id"+"}", url.PathEscape(parameterValueToString(r.vatTypeId, "vatTypeId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1051,7 +1051,7 @@ func (a *SettingsApiService) ModifyPaymentAccountExecute(r ApiModifyPaymentAccou
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModifyPaymentAccountResponse
+		localVarReturnValue *ModifyPaymentAccountResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.ModifyPaymentAccount")
@@ -1060,8 +1060,8 @@ func (a *SettingsApiService) ModifyPaymentAccountExecute(r ApiModifyPaymentAccou
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/settings/payment_accounts/{payment_account_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"payment_account_id"+"}", url.PathEscape(parameterToString(r.paymentAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"payment_account_id"+"}", url.PathEscape(parameterValueToString(r.paymentAccountId, "paymentAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1167,7 +1167,7 @@ func (a *SettingsApiService) ModifyPaymentMethodExecute(r ApiModifyPaymentMethod
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModifyPaymentMethodResponse
+		localVarReturnValue *ModifyPaymentMethodResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.ModifyPaymentMethod")
@@ -1176,8 +1176,8 @@ func (a *SettingsApiService) ModifyPaymentMethodExecute(r ApiModifyPaymentMethod
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/settings/payment_methods/{payment_method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"payment_method_id"+"}", url.PathEscape(parameterToString(r.paymentMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"payment_method_id"+"}", url.PathEscape(parameterValueToString(r.paymentMethodId, "paymentMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1282,7 +1282,7 @@ func (a *SettingsApiService) ModifyVatTypeExecute(r ApiModifyVatTypeRequest) (*M
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModifyVatTypeResponse
+		localVarReturnValue *ModifyVatTypeResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.ModifyVatType")
@@ -1291,8 +1291,8 @@ func (a *SettingsApiService) ModifyVatTypeExecute(r ApiModifyVatTypeRequest) (*M
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/settings/vat_types/{vat_type_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"vat_type_id"+"}", url.PathEscape(parameterToString(r.vatTypeId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"vat_type_id"+"}", url.PathEscape(parameterValueToString(r.vatTypeId, "vatTypeId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

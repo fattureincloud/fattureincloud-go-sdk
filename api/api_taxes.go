@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.24
+API version: 2.0.26
 Contact: info@fattureincloud.it
 */
 
@@ -67,7 +67,7 @@ func (a *TaxesApiService) CreateF24Execute(r ApiCreateF24Request) (*CreateF24Res
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CreateF24Response
+		localVarReturnValue *CreateF24Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesApiService.CreateF24")
@@ -76,7 +76,7 @@ func (a *TaxesApiService) CreateF24Execute(r ApiCreateF24Request) (*CreateF24Res
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/taxes"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -182,8 +182,8 @@ func (a *TaxesApiService) DeleteF24Execute(r ApiDeleteF24Request) (*http.Respons
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/taxes/{document_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterToString(r.documentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -278,8 +278,8 @@ func (a *TaxesApiService) DeleteF24AttachmentExecute(r ApiDeleteF24AttachmentReq
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/taxes/{document_id}/attachment"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterToString(r.documentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -381,7 +381,7 @@ func (a *TaxesApiService) GetF24Execute(r ApiGetF24Request) (*GetF24Response, *h
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetF24Response
+		localVarReturnValue *GetF24Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesApiService.GetF24")
@@ -390,18 +390,18 @@ func (a *TaxesApiService) GetF24Execute(r ApiGetF24Request) (*GetF24Response, *h
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/taxes/{document_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterToString(r.documentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		localVarQueryParams.Add("fields", parameterToString(*r.fields, ""))
+		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "")
 	}
 	if r.fieldset != nil {
-		localVarQueryParams.Add("fieldset", parameterToString(*r.fieldset, ""))
+		parameterAddToQuery(localVarQueryParams, "fieldset", r.fieldset, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -533,7 +533,7 @@ func (a *TaxesApiService) ListF24Execute(r ApiListF24Request) (*ListF24Response,
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListF24Response
+		localVarReturnValue *ListF24Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesApiService.ListF24")
@@ -542,29 +542,29 @@ func (a *TaxesApiService) ListF24Execute(r ApiListF24Request) (*ListF24Response,
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/taxes"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		localVarQueryParams.Add("fields", parameterToString(*r.fields, ""))
+		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "")
 	}
 	if r.fieldset != nil {
-		localVarQueryParams.Add("fieldset", parameterToString(*r.fieldset, ""))
+		parameterAddToQuery(localVarQueryParams, "fieldset", r.fieldset, "")
 	}
 	if r.sort != nil {
-		localVarQueryParams.Add("sort", parameterToString(*r.sort, ""))
+		parameterAddToQuery(localVarQueryParams, "sort", r.sort, "")
 	}
 	if r.page != nil {
-		localVarQueryParams.Add("page", parameterToString(*r.page, ""))
+		parameterAddToQuery(localVarQueryParams, "page", r.page, "")
 	}
 	if r.perPage != nil {
-		localVarQueryParams.Add("per_page", parameterToString(*r.perPage, ""))
+		parameterAddToQuery(localVarQueryParams, "per_page", r.perPage, "")
 	}
 	if r.q != nil {
-		localVarQueryParams.Add("q", parameterToString(*r.q, ""))
+		parameterAddToQuery(localVarQueryParams, "q", r.q, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -664,7 +664,7 @@ func (a *TaxesApiService) ModifyF24Execute(r ApiModifyF24Request) (*ModifyF24Res
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModifyF24Response
+		localVarReturnValue *ModifyF24Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesApiService.ModifyF24")
@@ -673,8 +673,8 @@ func (a *TaxesApiService) ModifyF24Execute(r ApiModifyF24Request) (*ModifyF24Res
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/taxes/{document_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterToString(r.documentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -741,7 +741,7 @@ type ApiUploadF24AttachmentRequest struct {
 	ApiService *TaxesApiService
 	companyId int32
 	filename *string
-	attachment **os.File
+	attachment *os.File
 }
 
 // Name of the file.
@@ -752,7 +752,7 @@ func (r ApiUploadF24AttachmentRequest) Filename(filename string) ApiUploadF24Att
 
 // Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx
 func (r ApiUploadF24AttachmentRequest) Attachment(attachment *os.File) ApiUploadF24AttachmentRequest {
-	r.attachment = &attachment
+	r.attachment = attachment
 	return r
 }
 
@@ -784,7 +784,7 @@ func (a *TaxesApiService) UploadF24AttachmentExecute(r ApiUploadF24AttachmentReq
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *UploadF24AttachmentResponse
+		localVarReturnValue *UploadF24AttachmentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesApiService.UploadF24Attachment")
@@ -793,7 +793,7 @@ func (a *TaxesApiService) UploadF24AttachmentExecute(r ApiUploadF24AttachmentReq
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/taxes/attachment"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -817,7 +817,7 @@ func (a *TaxesApiService) UploadF24AttachmentExecute(r ApiUploadF24AttachmentReq
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.filename != nil {
-		localVarFormParams.Add("filename", parameterToString(*r.filename, ""))
+		parameterAddToQuery(localVarFormParams, "filename", r.filename, "")
 	}
 	var attachmentLocalVarFormFileName string
 	var attachmentLocalVarFileName     string
@@ -825,17 +825,17 @@ func (a *TaxesApiService) UploadF24AttachmentExecute(r ApiUploadF24AttachmentReq
 
 	attachmentLocalVarFormFileName = "attachment"
 
-	var attachmentLocalVarFile *os.File
-	if r.attachment != nil {
-		attachmentLocalVarFile = *r.attachment
-	}
+
+	attachmentLocalVarFile := r.attachment
+
 	if attachmentLocalVarFile != nil {
 		fbs, _ := ioutil.ReadAll(attachmentLocalVarFile)
+
 		attachmentLocalVarFileBytes = fbs
 		attachmentLocalVarFileName = attachmentLocalVarFile.Name()
 		attachmentLocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: attachmentLocalVarFileBytes, fileName: attachmentLocalVarFileName, formFileName: attachmentLocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: attachmentLocalVarFileBytes, fileName: attachmentLocalVarFileName, formFileName: attachmentLocalVarFormFileName})
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

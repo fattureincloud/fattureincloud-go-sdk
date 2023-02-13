@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.24
+API version: 2.0.26
 Contact: info@fattureincloud.it
 */
 
@@ -31,18 +31,6 @@ func (c contextKey) String() string {
 var (
 	// ContextOAuth2 takes an oauth2.TokenSource as authentication for the request.
 	ContextOAuth2 = contextKey("token")
-
-	// ContextBasicAuth takes BasicAuth as authentication for the request.
-	ContextBasicAuth = contextKey("basic")
-
-	// ContextAccessToken takes a string oauth2 access token as authentication for the request.
-	ContextAccessToken = contextKey("accesstoken")
-
-	// ContextAPIKeys takes a string apikey as authentication for the request
-	ContextAPIKeys = contextKey("apiKeys")
-
-	// ContextHttpSignatureAuth takes HttpSignatureAuth as authentication for the request.
-	ContextHttpSignatureAuth = contextKey("httpsignature")
 
 	// ContextServerIndex uses a server configuration from the index.
 	ContextServerIndex = contextKey("serverIndex")
@@ -102,7 +90,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "FattureInCloud/2.0.3/Go-SDK",
+		UserAgent:        "FattureInCloud/2.0.4/Go-SDK",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{

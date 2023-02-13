@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.24
+API version: 2.0.26
 Contact: info@fattureincloud.it
 */
 
@@ -59,7 +59,7 @@ func (a *InfoApiService) ListArchiveCategoriesExecute(r ApiListArchiveCategories
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListArchiveCategoriesResponse
+		localVarReturnValue *ListArchiveCategoriesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListArchiveCategories")
@@ -68,7 +68,7 @@ func (a *InfoApiService) ListArchiveCategoriesExecute(r ApiListArchiveCategories
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/info/archive_categories"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -173,7 +173,7 @@ func (a *InfoApiService) ListCitiesExecute(r ApiListCitiesRequest) (*ListCitiesR
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListCitiesResponse
+		localVarReturnValue *ListCitiesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListCities")
@@ -188,10 +188,10 @@ func (a *InfoApiService) ListCitiesExecute(r ApiListCitiesRequest) (*ListCitiesR
 	localVarFormParams := url.Values{}
 
 	if r.postalCode != nil {
-		localVarQueryParams.Add("postal_code", parameterToString(*r.postalCode, ""))
+		parameterAddToQuery(localVarQueryParams, "postal_code", r.postalCode, "")
 	}
 	if r.city != nil {
-		localVarQueryParams.Add("city", parameterToString(*r.city, ""))
+		parameterAddToQuery(localVarQueryParams, "city", r.city, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -281,7 +281,7 @@ func (a *InfoApiService) ListCostCentersExecute(r ApiListCostCentersRequest) (*L
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListCostCentersResponse
+		localVarReturnValue *ListCostCentersResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListCostCenters")
@@ -290,7 +290,7 @@ func (a *InfoApiService) ListCostCentersExecute(r ApiListCostCentersRequest) (*L
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/info/cost_centers"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -381,7 +381,7 @@ func (a *InfoApiService) ListCountriesExecute(r ApiListCountriesRequest) (*ListC
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListCountriesResponse
+		localVarReturnValue *ListCountriesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListCountries")
@@ -480,7 +480,7 @@ func (a *InfoApiService) ListCurrenciesExecute(r ApiListCurrenciesRequest) (*Lis
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListCurrenciesResponse
+		localVarReturnValue *ListCurrenciesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListCurrencies")
@@ -579,7 +579,7 @@ func (a *InfoApiService) ListDeliveryNotesDefaultCausalsExecute(r ApiListDeliver
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListDeliveryNotesDefaultCausalsResponse
+		localVarReturnValue *ListDeliveryNotesDefaultCausalsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListDeliveryNotesDefaultCausals")
@@ -678,7 +678,7 @@ func (a *InfoApiService) ListDetailedCountriesExecute(r ApiListDetailedCountries
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListDetailedCountriesResponse
+		localVarReturnValue *ListDetailedCountriesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListDetailedCountries")
@@ -777,7 +777,7 @@ func (a *InfoApiService) ListLanguagesExecute(r ApiListLanguagesRequest) (*ListL
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListLanguagesResponse
+		localVarReturnValue *ListLanguagesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListLanguages")
@@ -900,7 +900,7 @@ func (a *InfoApiService) ListPaymentAccountsExecute(r ApiListPaymentAccountsRequ
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListPaymentAccountsResponse
+		localVarReturnValue *ListPaymentAccountsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListPaymentAccounts")
@@ -909,20 +909,20 @@ func (a *InfoApiService) ListPaymentAccountsExecute(r ApiListPaymentAccountsRequ
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/info/payment_accounts"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		localVarQueryParams.Add("fields", parameterToString(*r.fields, ""))
+		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "")
 	}
 	if r.fieldset != nil {
-		localVarQueryParams.Add("fieldset", parameterToString(*r.fieldset, ""))
+		parameterAddToQuery(localVarQueryParams, "fieldset", r.fieldset, "")
 	}
 	if r.sort != nil {
-		localVarQueryParams.Add("sort", parameterToString(*r.sort, ""))
+		parameterAddToQuery(localVarQueryParams, "sort", r.sort, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1033,7 +1033,7 @@ func (a *InfoApiService) ListPaymentMethodsExecute(r ApiListPaymentMethodsReques
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListPaymentMethodsResponse
+		localVarReturnValue *ListPaymentMethodsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListPaymentMethods")
@@ -1042,20 +1042,20 @@ func (a *InfoApiService) ListPaymentMethodsExecute(r ApiListPaymentMethodsReques
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/info/payment_methods"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		localVarQueryParams.Add("fields", parameterToString(*r.fields, ""))
+		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "")
 	}
 	if r.fieldset != nil {
-		localVarQueryParams.Add("fieldset", parameterToString(*r.fieldset, ""))
+		parameterAddToQuery(localVarQueryParams, "fieldset", r.fieldset, "")
 	}
 	if r.sort != nil {
-		localVarQueryParams.Add("sort", parameterToString(*r.sort, ""))
+		parameterAddToQuery(localVarQueryParams, "sort", r.sort, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1151,7 +1151,7 @@ func (a *InfoApiService) ListProductCategoriesExecute(r ApiListProductCategories
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListProductCategoriesResponse
+		localVarReturnValue *ListProductCategoriesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListProductCategories")
@@ -1160,7 +1160,7 @@ func (a *InfoApiService) ListProductCategoriesExecute(r ApiListProductCategories
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/info/product_categories"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1169,7 +1169,7 @@ func (a *InfoApiService) ListProductCategoriesExecute(r ApiListProductCategories
 		return localVarReturnValue, nil, reportError("context is required and must be specified")
 	}
 
-	localVarQueryParams.Add("context", parameterToString(*r.context, ""))
+	parameterAddToQuery(localVarQueryParams, "context", r.context, "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -1258,7 +1258,7 @@ func (a *InfoApiService) ListReceivedDocumentCategoriesExecute(r ApiListReceived
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListReceivedDocumentCategoriesResponse
+		localVarReturnValue *ListReceivedDocumentCategoriesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListReceivedDocumentCategories")
@@ -1267,7 +1267,7 @@ func (a *InfoApiService) ListReceivedDocumentCategoriesExecute(r ApiListReceived
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/info/received_document_categories"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1361,7 +1361,7 @@ func (a *InfoApiService) ListRevenueCentersExecute(r ApiListRevenueCentersReques
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListRevenueCentersResponse
+		localVarReturnValue *ListRevenueCentersResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListRevenueCenters")
@@ -1370,7 +1370,7 @@ func (a *InfoApiService) ListRevenueCentersExecute(r ApiListRevenueCentersReques
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/info/revenue_centers"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1475,7 +1475,7 @@ func (a *InfoApiService) ListTemplatesExecute(r ApiListTemplatesRequest) (*ListT
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListTemplatesResponse
+		localVarReturnValue *ListTemplatesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListTemplates")
@@ -1490,10 +1490,10 @@ func (a *InfoApiService) ListTemplatesExecute(r ApiListTemplatesRequest) (*ListT
 	localVarFormParams := url.Values{}
 
 	if r.type_ != nil {
-		localVarQueryParams.Add("type", parameterToString(*r.type_, ""))
+		parameterAddToQuery(localVarQueryParams, "type", r.type_, "")
 	}
 	if r.byType != nil {
-		localVarQueryParams.Add("by_type", parameterToString(*r.byType, ""))
+		parameterAddToQuery(localVarQueryParams, "by_type", r.byType, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1580,7 +1580,7 @@ func (a *InfoApiService) ListUnitsOfMeasureExecute(r ApiListUnitsOfMeasureReques
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListUnitsOfMeasureResponse
+		localVarReturnValue *ListUnitsOfMeasureResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListUnitsOfMeasure")
@@ -1689,7 +1689,7 @@ func (a *InfoApiService) ListVatTypesExecute(r ApiListVatTypesRequest) (*ListVat
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListVatTypesResponse
+		localVarReturnValue *ListVatTypesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListVatTypes")
@@ -1698,14 +1698,14 @@ func (a *InfoApiService) ListVatTypesExecute(r ApiListVatTypesRequest) (*ListVat
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/info/vat_types"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.fieldset != nil {
-		localVarQueryParams.Add("fieldset", parameterToString(*r.fieldset, ""))
+		parameterAddToQuery(localVarQueryParams, "fieldset", r.fieldset, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.24
+API version: 2.0.26
 Contact: info@fattureincloud.it
 */
 
@@ -67,7 +67,7 @@ func (a *IssuedDocumentsApiService) CreateIssuedDocumentExecute(r ApiCreateIssue
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CreateIssuedDocumentResponse
+		localVarReturnValue *CreateIssuedDocumentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.CreateIssuedDocument")
@@ -76,7 +76,7 @@ func (a *IssuedDocumentsApiService) CreateIssuedDocumentExecute(r ApiCreateIssue
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/issued_documents"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -182,8 +182,8 @@ func (a *IssuedDocumentsApiService) DeleteIssuedDocumentExecute(r ApiDeleteIssue
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/issued_documents/{document_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterToString(r.documentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -278,8 +278,8 @@ func (a *IssuedDocumentsApiService) DeleteIssuedDocumentAttachmentExecute(r ApiD
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/issued_documents/{document_id}/attachment"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterToString(r.documentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -367,7 +367,7 @@ func (a *IssuedDocumentsApiService) GetEmailDataExecute(r ApiGetEmailDataRequest
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetEmailDataResponse
+		localVarReturnValue *GetEmailDataResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.GetEmailData")
@@ -376,8 +376,8 @@ func (a *IssuedDocumentsApiService) GetEmailDataExecute(r ApiGetEmailDataRequest
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/issued_documents/{document_id}/email"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterToString(r.documentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -480,7 +480,7 @@ func (a *IssuedDocumentsApiService) GetExistingIssuedDocumentTotalsExecute(r Api
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetExistingIssuedDocumentTotalsResponse
+		localVarReturnValue *GetExistingIssuedDocumentTotalsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.GetExistingIssuedDocumentTotals")
@@ -489,8 +489,8 @@ func (a *IssuedDocumentsApiService) GetExistingIssuedDocumentTotalsExecute(r Api
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/issued_documents/{document_id}/totals"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterToString(r.documentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -604,7 +604,7 @@ func (a *IssuedDocumentsApiService) GetIssuedDocumentExecute(r ApiGetIssuedDocum
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetIssuedDocumentResponse
+		localVarReturnValue *GetIssuedDocumentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.GetIssuedDocument")
@@ -613,18 +613,18 @@ func (a *IssuedDocumentsApiService) GetIssuedDocumentExecute(r ApiGetIssuedDocum
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/issued_documents/{document_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterToString(r.documentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		localVarQueryParams.Add("fields", parameterToString(*r.fields, ""))
+		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "")
 	}
 	if r.fieldset != nil {
-		localVarQueryParams.Add("fieldset", parameterToString(*r.fieldset, ""))
+		parameterAddToQuery(localVarQueryParams, "fieldset", r.fieldset, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -721,7 +721,7 @@ func (a *IssuedDocumentsApiService) GetIssuedDocumentPreCreateInfoExecute(r ApiG
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetIssuedDocumentPreCreateInfoResponse
+		localVarReturnValue *GetIssuedDocumentPreCreateInfoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.GetIssuedDocumentPreCreateInfo")
@@ -730,7 +730,7 @@ func (a *IssuedDocumentsApiService) GetIssuedDocumentPreCreateInfoExecute(r ApiG
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/issued_documents/info"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -739,7 +739,7 @@ func (a *IssuedDocumentsApiService) GetIssuedDocumentPreCreateInfoExecute(r ApiG
 		return localVarReturnValue, nil, reportError("type_ is required and must be specified")
 	}
 
-	localVarQueryParams.Add("type", parameterToString(*r.type_, ""))
+	parameterAddToQuery(localVarQueryParams, "type", r.type_, "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -834,7 +834,7 @@ func (a *IssuedDocumentsApiService) GetNewIssuedDocumentTotalsExecute(r ApiGetNe
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetNewIssuedDocumentTotalsResponse
+		localVarReturnValue *GetNewIssuedDocumentTotalsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.GetNewIssuedDocumentTotals")
@@ -843,7 +843,7 @@ func (a *IssuedDocumentsApiService) GetNewIssuedDocumentTotalsExecute(r ApiGetNe
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/issued_documents/totals"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -960,7 +960,7 @@ func (a *IssuedDocumentsApiService) JoinIssuedDocumentsExecute(r ApiJoinIssuedDo
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *JoinIssuedDocumentsResponse
+		localVarReturnValue *JoinIssuedDocumentsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.JoinIssuedDocuments")
@@ -969,7 +969,7 @@ func (a *IssuedDocumentsApiService) JoinIssuedDocumentsExecute(r ApiJoinIssuedDo
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/issued_documents/join"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -978,12 +978,12 @@ func (a *IssuedDocumentsApiService) JoinIssuedDocumentsExecute(r ApiJoinIssuedDo
 		return localVarReturnValue, nil, reportError("ids is required and must be specified")
 	}
 
-	localVarQueryParams.Add("ids", parameterToString(*r.ids, ""))
+	parameterAddToQuery(localVarQueryParams, "ids", r.ids, "")
 	if r.group != nil {
-		localVarQueryParams.Add("group", parameterToString(*r.group, ""))
+		parameterAddToQuery(localVarQueryParams, "group", r.group, "")
 	}
 	if r.eInvoice != nil {
-		localVarQueryParams.Add("e_invoice", parameterToString(*r.eInvoice, ""))
+		parameterAddToQuery(localVarQueryParams, "e_invoice", r.eInvoice, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1050,6 +1050,7 @@ type ApiListIssuedDocumentsRequest struct {
 	page *int32
 	perPage *int32
 	q *string
+	inclusive *int32
 }
 
 // The type of the issued document.
@@ -1094,6 +1095,12 @@ func (r ApiListIssuedDocumentsRequest) Q(q string) ApiListIssuedDocumentsRequest
 	return r
 }
 
+// (Only for type &#x3D; delivery_notes) Include invoices delivery notes.
+func (r ApiListIssuedDocumentsRequest) Inclusive(inclusive int32) ApiListIssuedDocumentsRequest {
+	r.inclusive = &inclusive
+	return r
+}
+
 func (r ApiListIssuedDocumentsRequest) Execute() (*ListIssuedDocumentsResponse, *http.Response, error) {
 	return r.ApiService.ListIssuedDocumentsExecute(r)
 }
@@ -1122,7 +1129,7 @@ func (a *IssuedDocumentsApiService) ListIssuedDocumentsExecute(r ApiListIssuedDo
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListIssuedDocumentsResponse
+		localVarReturnValue *ListIssuedDocumentsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.ListIssuedDocuments")
@@ -1131,7 +1138,7 @@ func (a *IssuedDocumentsApiService) ListIssuedDocumentsExecute(r ApiListIssuedDo
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/issued_documents"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1140,24 +1147,27 @@ func (a *IssuedDocumentsApiService) ListIssuedDocumentsExecute(r ApiListIssuedDo
 		return localVarReturnValue, nil, reportError("type_ is required and must be specified")
 	}
 
-	localVarQueryParams.Add("type", parameterToString(*r.type_, ""))
+	parameterAddToQuery(localVarQueryParams, "type", r.type_, "")
 	if r.fields != nil {
-		localVarQueryParams.Add("fields", parameterToString(*r.fields, ""))
+		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "")
 	}
 	if r.fieldset != nil {
-		localVarQueryParams.Add("fieldset", parameterToString(*r.fieldset, ""))
+		parameterAddToQuery(localVarQueryParams, "fieldset", r.fieldset, "")
 	}
 	if r.sort != nil {
-		localVarQueryParams.Add("sort", parameterToString(*r.sort, ""))
+		parameterAddToQuery(localVarQueryParams, "sort", r.sort, "")
 	}
 	if r.page != nil {
-		localVarQueryParams.Add("page", parameterToString(*r.page, ""))
+		parameterAddToQuery(localVarQueryParams, "page", r.page, "")
 	}
 	if r.perPage != nil {
-		localVarQueryParams.Add("per_page", parameterToString(*r.perPage, ""))
+		parameterAddToQuery(localVarQueryParams, "per_page", r.perPage, "")
 	}
 	if r.q != nil {
-		localVarQueryParams.Add("q", parameterToString(*r.q, ""))
+		parameterAddToQuery(localVarQueryParams, "q", r.q, "")
+	}
+	if r.inclusive != nil {
+		parameterAddToQuery(localVarQueryParams, "inclusive", r.inclusive, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1257,7 +1267,7 @@ func (a *IssuedDocumentsApiService) ModifyIssuedDocumentExecute(r ApiModifyIssue
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModifyIssuedDocumentResponse
+		localVarReturnValue *ModifyIssuedDocumentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.ModifyIssuedDocument")
@@ -1266,8 +1276,8 @@ func (a *IssuedDocumentsApiService) ModifyIssuedDocumentExecute(r ApiModifyIssue
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/issued_documents/{document_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterToString(r.documentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1380,8 +1390,8 @@ func (a *IssuedDocumentsApiService) ScheduleEmailExecute(r ApiScheduleEmailReque
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/issued_documents/{document_id}/email"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterToString(r.documentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1496,7 +1506,7 @@ func (a *IssuedDocumentsApiService) TransformIssuedDocumentExecute(r ApiTransfor
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *TransformIssuedDocumentResponse
+		localVarReturnValue *TransformIssuedDocumentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.TransformIssuedDocument")
@@ -1505,7 +1515,7 @@ func (a *IssuedDocumentsApiService) TransformIssuedDocumentExecute(r ApiTransfor
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/issued_documents/transform"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1517,13 +1527,13 @@ func (a *IssuedDocumentsApiService) TransformIssuedDocumentExecute(r ApiTransfor
 		return localVarReturnValue, nil, reportError("newType is required and must be specified")
 	}
 
-	localVarQueryParams.Add("original_document_id", parameterToString(*r.originalDocumentId, ""))
-	localVarQueryParams.Add("new_type", parameterToString(*r.newType, ""))
+	parameterAddToQuery(localVarQueryParams, "original_document_id", r.originalDocumentId, "")
+	parameterAddToQuery(localVarQueryParams, "new_type", r.newType, "")
 	if r.eInvoice != nil {
-		localVarQueryParams.Add("e_invoice", parameterToString(*r.eInvoice, ""))
+		parameterAddToQuery(localVarQueryParams, "e_invoice", r.eInvoice, "")
 	}
 	if r.transformKeepCopy != nil {
-		localVarQueryParams.Add("transform_keep_copy", parameterToString(*r.transformKeepCopy, ""))
+		parameterAddToQuery(localVarQueryParams, "transform_keep_copy", r.transformKeepCopy, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1584,7 +1594,7 @@ type ApiUploadIssuedDocumentAttachmentRequest struct {
 	ApiService *IssuedDocumentsApiService
 	companyId int32
 	filename *string
-	attachment **os.File
+	attachment *os.File
 }
 
 // Name of the file.
@@ -1595,7 +1605,7 @@ func (r ApiUploadIssuedDocumentAttachmentRequest) Filename(filename string) ApiU
 
 // Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx
 func (r ApiUploadIssuedDocumentAttachmentRequest) Attachment(attachment *os.File) ApiUploadIssuedDocumentAttachmentRequest {
-	r.attachment = &attachment
+	r.attachment = attachment
 	return r
 }
 
@@ -1627,7 +1637,7 @@ func (a *IssuedDocumentsApiService) UploadIssuedDocumentAttachmentExecute(r ApiU
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *UploadIssuedDocumentAttachmentResponse
+		localVarReturnValue *UploadIssuedDocumentAttachmentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.UploadIssuedDocumentAttachment")
@@ -1636,7 +1646,7 @@ func (a *IssuedDocumentsApiService) UploadIssuedDocumentAttachmentExecute(r ApiU
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/issued_documents/attachment"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1660,7 +1670,7 @@ func (a *IssuedDocumentsApiService) UploadIssuedDocumentAttachmentExecute(r ApiU
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.filename != nil {
-		localVarFormParams.Add("filename", parameterToString(*r.filename, ""))
+		parameterAddToQuery(localVarFormParams, "filename", r.filename, "")
 	}
 	var attachmentLocalVarFormFileName string
 	var attachmentLocalVarFileName     string
@@ -1668,17 +1678,17 @@ func (a *IssuedDocumentsApiService) UploadIssuedDocumentAttachmentExecute(r ApiU
 
 	attachmentLocalVarFormFileName = "attachment"
 
-	var attachmentLocalVarFile *os.File
-	if r.attachment != nil {
-		attachmentLocalVarFile = *r.attachment
-	}
+
+	attachmentLocalVarFile := r.attachment
+
 	if attachmentLocalVarFile != nil {
 		fbs, _ := ioutil.ReadAll(attachmentLocalVarFile)
+
 		attachmentLocalVarFileBytes = fbs
 		attachmentLocalVarFileName = attachmentLocalVarFile.Name()
 		attachmentLocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: attachmentLocalVarFileBytes, fileName: attachmentLocalVarFileName, formFileName: attachmentLocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: attachmentLocalVarFileBytes, fileName: attachmentLocalVarFileName, formFileName: attachmentLocalVarFormFileName})
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

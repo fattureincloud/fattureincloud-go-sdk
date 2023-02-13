@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.24
+API version: 2.0.26
 Contact: info@fattureincloud.it
 */
 
@@ -66,7 +66,7 @@ func (a *CashbookApiService) CreateCashbookEntryExecute(r ApiCreateCashbookEntry
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CreateCashbookEntryResponse
+		localVarReturnValue *CreateCashbookEntryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CashbookApiService.CreateCashbookEntry")
@@ -75,7 +75,7 @@ func (a *CashbookApiService) CreateCashbookEntryExecute(r ApiCreateCashbookEntry
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/cashbook"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -181,8 +181,8 @@ func (a *CashbookApiService) DeleteCashbookEntryExecute(r ApiDeleteCashbookEntry
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/cashbook/{document_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterToString(r.documentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -284,7 +284,7 @@ func (a *CashbookApiService) GetCashbookEntryExecute(r ApiGetCashbookEntryReques
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetCashbookEntryResponse
+		localVarReturnValue *GetCashbookEntryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CashbookApiService.GetCashbookEntry")
@@ -293,18 +293,18 @@ func (a *CashbookApiService) GetCashbookEntryExecute(r ApiGetCashbookEntryReques
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/cashbook/{document_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterToString(r.documentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		localVarQueryParams.Add("fields", parameterToString(*r.fields, ""))
+		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "")
 	}
 	if r.fieldset != nil {
-		localVarQueryParams.Add("fieldset", parameterToString(*r.fieldset, ""))
+		parameterAddToQuery(localVarQueryParams, "fieldset", r.fieldset, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -429,7 +429,7 @@ func (a *CashbookApiService) ListCashbookEntriesExecute(r ApiListCashbookEntries
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListCashbookEntriesResponse
+		localVarReturnValue *ListCashbookEntriesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CashbookApiService.ListCashbookEntries")
@@ -438,7 +438,7 @@ func (a *CashbookApiService) ListCashbookEntriesExecute(r ApiListCashbookEntries
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/cashbook"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -450,16 +450,16 @@ func (a *CashbookApiService) ListCashbookEntriesExecute(r ApiListCashbookEntries
 		return localVarReturnValue, nil, reportError("dateTo is required and must be specified")
 	}
 
-	localVarQueryParams.Add("date_from", parameterToString(*r.dateFrom, ""))
-	localVarQueryParams.Add("date_to", parameterToString(*r.dateTo, ""))
+	parameterAddToQuery(localVarQueryParams, "date_from", r.dateFrom, "")
+	parameterAddToQuery(localVarQueryParams, "date_to", r.dateTo, "")
 	if r.year != nil {
-		localVarQueryParams.Add("year", parameterToString(*r.year, ""))
+		parameterAddToQuery(localVarQueryParams, "year", r.year, "")
 	}
 	if r.type_ != nil {
-		localVarQueryParams.Add("type", parameterToString(*r.type_, ""))
+		parameterAddToQuery(localVarQueryParams, "type", r.type_, "")
 	}
 	if r.paymentAccountId != nil {
-		localVarQueryParams.Add("payment_account_id", parameterToString(*r.paymentAccountId, ""))
+		parameterAddToQuery(localVarQueryParams, "payment_account_id", r.paymentAccountId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -559,7 +559,7 @@ func (a *CashbookApiService) ModifyCashbookEntryExecute(r ApiModifyCashbookEntry
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModifyCashbookEntryResponse
+		localVarReturnValue *ModifyCashbookEntryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CashbookApiService.ModifyCashbookEntry")
@@ -568,8 +568,8 @@ func (a *CashbookApiService) ModifyCashbookEntryExecute(r ApiModifyCashbookEntry
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/cashbook/{document_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterToString(r.documentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.24
+API version: 2.0.26
 Contact: info@fattureincloud.it
 */
 
@@ -14,6 +14,9 @@ package model
 import (
 	"encoding/json"
 )
+
+// checks if the ReceivedDocumentPaymentsListItemPaymentTerms type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ReceivedDocumentPaymentsListItemPaymentTerms{}
 
 // ReceivedDocumentPaymentsListItemPaymentTerms struct for ReceivedDocumentPaymentsListItemPaymentTerms
 type ReceivedDocumentPaymentsListItemPaymentTerms struct {
@@ -128,6 +131,14 @@ func (o *ReceivedDocumentPaymentsListItemPaymentTerms) UnsetType() {
 }
 
 func (o ReceivedDocumentPaymentsListItemPaymentTerms) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ReceivedDocumentPaymentsListItemPaymentTerms) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Days.IsSet() {
 		toSerialize["days"] = o.Days.Get()
@@ -135,7 +146,7 @@ func (o ReceivedDocumentPaymentsListItemPaymentTerms) MarshalJSON() ([]byte, err
 	if o.Type.IsSet() {
 		toSerialize["type"] = o.Type.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableReceivedDocumentPaymentsListItemPaymentTerms struct {
