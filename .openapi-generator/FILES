@@ -227,6 +227,7 @@ docs/ReceivedDocumentsApi.md
 docs/ScheduleEmailRequest.md
 docs/SendEInvoiceRequest.md
 docs/SendEInvoiceRequestData.md
+docs/SendEInvoiceRequestOptions.md
 docs/SendEInvoiceResponse.md
 docs/SendEInvoiceResponseData.md
 docs/SenderEmail.md
@@ -453,6 +454,7 @@ model_received_document_type.go
 model_schedule_email_request.go
 model_send_e_invoice_request.go
 model_send_e_invoice_request_data.go
+model_send_e_invoice_request_options.go
 model_send_e_invoice_response.go
 model_send_e_invoice_response_data.go
 model_sender_email.go

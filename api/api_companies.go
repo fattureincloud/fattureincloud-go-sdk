@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.24
+API version: 2.0.26
 Contact: info@fattureincloud.it
 */
 
@@ -59,7 +59,7 @@ func (a *CompaniesApiService) GetCompanyInfoExecute(r ApiGetCompanyInfoRequest) 
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetCompanyInfoResponse
+		localVarReturnValue *GetCompanyInfoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CompaniesApiService.GetCompanyInfo")
@@ -68,7 +68,7 @@ func (a *CompaniesApiService) GetCompanyInfoExecute(r ApiGetCompanyInfoRequest) 
 	}
 
 	localVarPath := localBasePath + "/c/{company_id}/company/info"
-	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterToString(r.companyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

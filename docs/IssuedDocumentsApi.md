@@ -709,7 +709,7 @@ Name | Type | Description  | Notes
 
 ## ListIssuedDocuments
 
-> ListIssuedDocumentsResponse ListIssuedDocuments(ctx, companyId).Type_(type_).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
+> ListIssuedDocumentsResponse ListIssuedDocuments(ctx, companyId).Type_(type_).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Inclusive(inclusive).Execute()
 
 List Issued Documents
 
@@ -738,11 +738,12 @@ func main() {
     page := int32(56) // int32 | The page to retrieve. (optional) (default to 1)
     perPage := int32(56) // int32 | The size of the page. (optional) (default to 5)
     q := "q_example" // string | Query for filtering the results. (optional)
+    inclusive := int32(56) // int32 | (Only for type = delivery_notes) Include invoices delivery notes. (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedDocumentsApi.ListIssuedDocuments(auth, companyId).Type_(type_).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
+    resp, r, err := apiClient.IssuedDocumentsApi.ListIssuedDocuments(auth, companyId).Type_(type_).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Inclusive(inclusive).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsApi.ListIssuedDocuments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -775,6 +776,7 @@ Name | Type | Description  | Notes
  **page** | **int32** | The page to retrieve. | [default to 1]
  **perPage** | **int32** | The size of the page. | [default to 5]
  **q** | **string** | Query for filtering the results. | 
+ **inclusive** | **int32** | (Only for type &#x3D; delivery_notes) Include invoices delivery notes. | 
 
 ### Return type
 

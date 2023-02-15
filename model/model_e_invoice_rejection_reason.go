@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.24
+API version: 2.0.26
 Contact: info@fattureincloud.it
 */
 
@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 	"time"
 )
+
+// checks if the EInvoiceRejectionReason type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &EInvoiceRejectionReason{}
 
 // EInvoiceRejectionReason struct for EInvoiceRejectionReason
 type EInvoiceRejectionReason struct {
@@ -268,6 +271,14 @@ func (o *EInvoiceRejectionReason) UnsetDate() {
 }
 
 func (o EInvoiceRejectionReason) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o EInvoiceRejectionReason) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Reason.IsSet() {
 		toSerialize["reason"] = o.Reason.Get()
@@ -284,7 +295,7 @@ func (o EInvoiceRejectionReason) MarshalJSON() ([]byte, error) {
 	if o.Date.IsSet() {
 		toSerialize["date"] = o.Date.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableEInvoiceRejectionReason struct {

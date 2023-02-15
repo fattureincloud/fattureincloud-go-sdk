@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Data** | Pointer to [**NullableSendEInvoiceRequestData**](SendEInvoiceRequestData.md) |  | [optional] 
+**Options** | Pointer to [**NullableSendEInvoiceRequestOptions**](SendEInvoiceRequestOptions.md) |  | [optional] 
 
 ## Methods
 
@@ -60,6 +61,41 @@ HasData returns a boolean if a field has been set.
 `func (o *SendEInvoiceRequest) UnsetData()`
 
 UnsetData ensures that no value is present for Data, not even an explicit nil
+### GetOptions
+
+`func (o *SendEInvoiceRequest) GetOptions() SendEInvoiceRequestOptions`
+
+GetOptions returns the Options field if non-nil, zero value otherwise.
+
+### GetOptionsOk
+
+`func (o *SendEInvoiceRequest) GetOptionsOk() (*SendEInvoiceRequestOptions, bool)`
+
+GetOptionsOk returns a tuple with the Options field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOptions
+
+`func (o *SendEInvoiceRequest) SetOptions(v SendEInvoiceRequestOptions)`
+
+SetOptions sets Options field to given value.
+
+### HasOptions
+
+`func (o *SendEInvoiceRequest) HasOptions() bool`
+
+HasOptions returns a boolean if a field has been set.
+
+### SetOptionsNil
+
+`func (o *SendEInvoiceRequest) SetOptionsNil(b bool)`
+
+ SetOptionsNil sets the value for Options to be an explicit nil
+
+### UnsetOptions
+`func (o *SendEInvoiceRequest) UnsetOptions()`
+
+UnsetOptions ensures that no value is present for Options, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

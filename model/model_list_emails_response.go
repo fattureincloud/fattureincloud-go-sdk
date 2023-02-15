@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.24
+API version: 2.0.26
 Contact: info@fattureincloud.it
 */
 
@@ -14,6 +14,9 @@ package model
 import (
 	"encoding/json"
 )
+
+// checks if the ListEmailsResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ListEmailsResponse{}
 
 // ListEmailsResponse struct for ListEmailsResponse
 type ListEmailsResponse struct {
@@ -577,6 +580,14 @@ func (o *ListEmailsResponse) SetData(v []Email) *ListEmailsResponse {
 }
 
 func (o ListEmailsResponse) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ListEmailsResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.CurrentPage.IsSet() {
 		toSerialize["current_page"] = o.CurrentPage.Get()
@@ -614,7 +625,7 @@ func (o ListEmailsResponse) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Data) {
 		toSerialize["data"] = o.Data
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableListEmailsResponse struct {
