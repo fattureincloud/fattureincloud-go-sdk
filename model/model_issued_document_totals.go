@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -73,7 +73,7 @@ func NewIssuedDocumentTotalsWithDefaults() *IssuedDocumentTotals {
 
 // GetAmountNet returns the AmountNet field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentTotals) GetAmountNet() float32 {
-	if o == nil || isNil(o.AmountNet.Get()) {
+	if o == nil || IsNil(o.AmountNet.Get()) {
 		var ret float32
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *IssuedDocumentTotals) UnsetAmountNet() {
 
 // GetAmountRivalsa returns the AmountRivalsa field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentTotals) GetAmountRivalsa() float32 {
-	if o == nil || isNil(o.AmountRivalsa.Get()) {
+	if o == nil || IsNil(o.AmountRivalsa.Get()) {
 		var ret float32
 		return ret
 	}
@@ -161,7 +161,7 @@ func (o *IssuedDocumentTotals) UnsetAmountRivalsa() {
 
 // GetAmountNetWithRivalsa returns the AmountNetWithRivalsa field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentTotals) GetAmountNetWithRivalsa() float32 {
-	if o == nil || isNil(o.AmountNetWithRivalsa.Get()) {
+	if o == nil || IsNil(o.AmountNetWithRivalsa.Get()) {
 		var ret float32
 		return ret
 	}
@@ -205,7 +205,7 @@ func (o *IssuedDocumentTotals) UnsetAmountNetWithRivalsa() {
 
 // GetAmountCassa returns the AmountCassa field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentTotals) GetAmountCassa() float32 {
-	if o == nil || isNil(o.AmountCassa.Get()) {
+	if o == nil || IsNil(o.AmountCassa.Get()) {
 		var ret float32
 		return ret
 	}
@@ -249,7 +249,7 @@ func (o *IssuedDocumentTotals) UnsetAmountCassa() {
 
 // GetTaxableAmount returns the TaxableAmount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentTotals) GetTaxableAmount() float32 {
-	if o == nil || isNil(o.TaxableAmount.Get()) {
+	if o == nil || IsNil(o.TaxableAmount.Get()) {
 		var ret float32
 		return ret
 	}
@@ -293,7 +293,7 @@ func (o *IssuedDocumentTotals) UnsetTaxableAmount() {
 
 // GetNotTaxableAmount returns the NotTaxableAmount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentTotals) GetNotTaxableAmount() float32 {
-	if o == nil || isNil(o.NotTaxableAmount.Get()) {
+	if o == nil || IsNil(o.NotTaxableAmount.Get()) {
 		var ret float32
 		return ret
 	}
@@ -337,7 +337,7 @@ func (o *IssuedDocumentTotals) UnsetNotTaxableAmount() {
 
 // GetAmountVat returns the AmountVat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentTotals) GetAmountVat() float32 {
-	if o == nil || isNil(o.AmountVat.Get()) {
+	if o == nil || IsNil(o.AmountVat.Get()) {
 		var ret float32
 		return ret
 	}
@@ -381,7 +381,7 @@ func (o *IssuedDocumentTotals) UnsetAmountVat() {
 
 // GetAmountGross returns the AmountGross field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentTotals) GetAmountGross() float32 {
-	if o == nil || isNil(o.AmountGross.Get()) {
+	if o == nil || IsNil(o.AmountGross.Get()) {
 		var ret float32
 		return ret
 	}
@@ -425,7 +425,7 @@ func (o *IssuedDocumentTotals) UnsetAmountGross() {
 
 // GetTaxableAmountWithholdingTax returns the TaxableAmountWithholdingTax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentTotals) GetTaxableAmountWithholdingTax() float32 {
-	if o == nil || isNil(o.TaxableAmountWithholdingTax.Get()) {
+	if o == nil || IsNil(o.TaxableAmountWithholdingTax.Get()) {
 		var ret float32
 		return ret
 	}
@@ -469,7 +469,7 @@ func (o *IssuedDocumentTotals) UnsetTaxableAmountWithholdingTax() {
 
 // GetAmountWithholdingTax returns the AmountWithholdingTax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentTotals) GetAmountWithholdingTax() float32 {
-	if o == nil || isNil(o.AmountWithholdingTax.Get()) {
+	if o == nil || IsNil(o.AmountWithholdingTax.Get()) {
 		var ret float32
 		return ret
 	}
@@ -513,7 +513,7 @@ func (o *IssuedDocumentTotals) UnsetAmountWithholdingTax() {
 
 // GetTaxableAmountOtherWithholdingTax returns the TaxableAmountOtherWithholdingTax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentTotals) GetTaxableAmountOtherWithholdingTax() float32 {
-	if o == nil || isNil(o.TaxableAmountOtherWithholdingTax.Get()) {
+	if o == nil || IsNil(o.TaxableAmountOtherWithholdingTax.Get()) {
 		var ret float32
 		return ret
 	}
@@ -557,7 +557,7 @@ func (o *IssuedDocumentTotals) UnsetTaxableAmountOtherWithholdingTax() {
 
 // GetAmountOtherWithholdingTax returns the AmountOtherWithholdingTax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentTotals) GetAmountOtherWithholdingTax() float32 {
-	if o == nil || isNil(o.AmountOtherWithholdingTax.Get()) {
+	if o == nil || IsNil(o.AmountOtherWithholdingTax.Get()) {
 		var ret float32
 		return ret
 	}
@@ -601,7 +601,7 @@ func (o *IssuedDocumentTotals) UnsetAmountOtherWithholdingTax() {
 
 // GetStampDuty returns the StampDuty field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentTotals) GetStampDuty() float32 {
-	if o == nil || isNil(o.StampDuty.Get()) {
+	if o == nil || IsNil(o.StampDuty.Get()) {
 		var ret float32
 		return ret
 	}
@@ -645,7 +645,7 @@ func (o *IssuedDocumentTotals) UnsetStampDuty() {
 
 // GetAmountDue returns the AmountDue field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentTotals) GetAmountDue() float32 {
-	if o == nil || isNil(o.AmountDue.Get()) {
+	if o == nil || IsNil(o.AmountDue.Get()) {
 		var ret float32
 		return ret
 	}
@@ -689,7 +689,7 @@ func (o *IssuedDocumentTotals) UnsetAmountDue() {
 
 // GetIsEnasarcoMaximalExceeded returns the IsEnasarcoMaximalExceeded field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentTotals) GetIsEnasarcoMaximalExceeded() bool {
-	if o == nil || isNil(o.IsEnasarcoMaximalExceeded.Get()) {
+	if o == nil || IsNil(o.IsEnasarcoMaximalExceeded.Get()) {
 		var ret bool
 		return ret
 	}
@@ -733,7 +733,7 @@ func (o *IssuedDocumentTotals) UnsetIsEnasarcoMaximalExceeded() {
 
 // GetPaymentsSum returns the PaymentsSum field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentTotals) GetPaymentsSum() float32 {
-	if o == nil || isNil(o.PaymentsSum.Get()) {
+	if o == nil || IsNil(o.PaymentsSum.Get()) {
 		var ret float32
 		return ret
 	}
@@ -777,7 +777,7 @@ func (o *IssuedDocumentTotals) UnsetPaymentsSum() {
 
 // GetVatList returns the VatList field value if set, zero value otherwise.
 func (o *IssuedDocumentTotals) GetVatList() map[string]VatItem {
-	if o == nil || isNil(o.VatList) {
+	if o == nil || IsNil(o.VatList) {
 		var ret map[string]VatItem
 		return ret
 	}
@@ -787,7 +787,7 @@ func (o *IssuedDocumentTotals) GetVatList() map[string]VatItem {
 // GetVatListOk returns a tuple with the VatList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IssuedDocumentTotals) GetVatListOk() (map[string]VatItem, bool) {
-	if o == nil || isNil(o.VatList) {
+	if o == nil || IsNil(o.VatList) {
 		return map[string]VatItem{}, false
 	}
 	return o.VatList, true
@@ -795,7 +795,7 @@ func (o *IssuedDocumentTotals) GetVatListOk() (map[string]VatItem, bool) {
 
 // HasVatList returns a boolean if a field has been set.
 func (o *IssuedDocumentTotals) HasVatList() bool {
-	if o != nil && !isNil(o.VatList) {
+	if o != nil && !IsNil(o.VatList) {
 		return true
 	}
 
@@ -866,7 +866,7 @@ func (o IssuedDocumentTotals) ToMap() (map[string]interface{}, error) {
 	if o.PaymentsSum.IsSet() {
 		toSerialize["payments_sum"] = o.PaymentsSum.Get()
 	}
-	if !isNil(o.VatList) {
+	if !IsNil(o.VatList) {
 		toSerialize["vat_list"] = o.VatList
 	}
 	return toSerialize, nil

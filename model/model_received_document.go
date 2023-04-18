@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -23,7 +23,7 @@ type ReceivedDocument struct {
 	// Unique identifier of the document.
 	Id NullableInt32 `json:"id,omitempty"`
 	Type *ReceivedDocumentType `json:"type,omitempty"`
-	Entity NullableReceivedDocumentEntity `json:"entity,omitempty"`
+	Entity *Entity `json:"entity,omitempty"`
 	// Date of the document [If not specified, today date is used].
 	Date NullableString `json:"date,omitempty"`
 	// Document category.
@@ -92,7 +92,7 @@ func NewReceivedDocumentWithDefaults() *ReceivedDocument {
 
 // GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetId() int32 {
-	if o == nil || isNil(o.Id.Get()) {
+	if o == nil || IsNil(o.Id.Get()) {
 		var ret int32
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *ReceivedDocument) UnsetId() {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *ReceivedDocument) GetType() ReceivedDocumentType {
-	if o == nil || isNil(o.Type) {
+	if o == nil || IsNil(o.Type) {
 		var ret ReceivedDocumentType
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *ReceivedDocument) GetType() ReceivedDocumentType {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReceivedDocument) GetTypeOk() (*ReceivedDocumentType, bool) {
-	if o == nil || isNil(o.Type) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return o.Type, true
@@ -154,7 +154,7 @@ func (o *ReceivedDocument) GetTypeOk() (*ReceivedDocumentType, bool) {
 
 // HasType returns a boolean if a field has been set.
 func (o *ReceivedDocument) HasType() bool {
-	if o != nil && !isNil(o.Type) {
+	if o != nil && !IsNil(o.Type) {
 		return true
 	}
 
@@ -167,53 +167,42 @@ func (o *ReceivedDocument) SetType(v ReceivedDocumentType) *ReceivedDocument {
 	return o
 }
 
-// GetEntity returns the Entity field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ReceivedDocument) GetEntity() ReceivedDocumentEntity {
-	if o == nil || isNil(o.Entity.Get()) {
-		var ret ReceivedDocumentEntity
+// GetEntity returns the Entity field value if set, zero value otherwise.
+func (o *ReceivedDocument) GetEntity() Entity {
+	if o == nil || IsNil(o.Entity) {
+		var ret Entity
 		return ret
 	}
-	return *o.Entity.Get()
+	return *o.Entity
 }
 
 // GetEntityOk returns a tuple with the Entity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ReceivedDocument) GetEntityOk() (*ReceivedDocumentEntity, bool) {
-	if o == nil {
+func (o *ReceivedDocument) GetEntityOk() (*Entity, bool) {
+	if o == nil || IsNil(o.Entity) {
 		return nil, false
 	}
-	return o.Entity.Get(), o.Entity.IsSet()
+	return o.Entity, true
 }
 
 // HasEntity returns a boolean if a field has been set.
 func (o *ReceivedDocument) HasEntity() bool {
-	if o != nil && o.Entity.IsSet() {
+	if o != nil && !IsNil(o.Entity) {
 		return true
 	}
 
 	return false
 }
 
-// SetEntity gets a reference to the given NullableReceivedDocumentEntity and assigns it to the Entity field.
-func (o *ReceivedDocument) SetEntity(v ReceivedDocumentEntity) *ReceivedDocument {
-	o.Entity.Set(&v)
+// SetEntity gets a reference to the given Entity and assigns it to the Entity field.
+func (o *ReceivedDocument) SetEntity(v Entity) *ReceivedDocument {
+	o.Entity = &v
 	return o
-}
-// SetEntityNil sets the value for Entity to be an explicit nil
-func (o *ReceivedDocument) SetEntityNil() *ReceivedDocument {
-	o.Entity.Set(nil)
-	return o
-}
-
-// UnsetEntity ensures that no value is present for Entity, not even an explicit nil
-func (o *ReceivedDocument) UnsetEntity() {
-	o.Entity.Unset()
 }
 
 // GetDate returns the Date field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetDate() string {
-	if o == nil || isNil(o.Date.Get()) {
+	if o == nil || IsNil(o.Date.Get()) {
 		var ret string
 		return ret
 	}
@@ -257,7 +246,7 @@ func (o *ReceivedDocument) UnsetDate() {
 
 // GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetCategory() string {
-	if o == nil || isNil(o.Category.Get()) {
+	if o == nil || IsNil(o.Category.Get()) {
 		var ret string
 		return ret
 	}
@@ -301,7 +290,7 @@ func (o *ReceivedDocument) UnsetCategory() {
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetDescription() string {
-	if o == nil || isNil(o.Description.Get()) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
@@ -345,7 +334,7 @@ func (o *ReceivedDocument) UnsetDescription() {
 
 // GetAmountNet returns the AmountNet field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetAmountNet() float32 {
-	if o == nil || isNil(o.AmountNet.Get()) {
+	if o == nil || IsNil(o.AmountNet.Get()) {
 		var ret float32
 		return ret
 	}
@@ -389,7 +378,7 @@ func (o *ReceivedDocument) UnsetAmountNet() {
 
 // GetAmountVat returns the AmountVat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetAmountVat() float32 {
-	if o == nil || isNil(o.AmountVat.Get()) {
+	if o == nil || IsNil(o.AmountVat.Get()) {
 		var ret float32
 		return ret
 	}
@@ -433,7 +422,7 @@ func (o *ReceivedDocument) UnsetAmountVat() {
 
 // GetAmountWithholdingTax returns the AmountWithholdingTax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetAmountWithholdingTax() float32 {
-	if o == nil || isNil(o.AmountWithholdingTax.Get()) {
+	if o == nil || IsNil(o.AmountWithholdingTax.Get()) {
 		var ret float32
 		return ret
 	}
@@ -477,7 +466,7 @@ func (o *ReceivedDocument) UnsetAmountWithholdingTax() {
 
 // GetAmountOtherWithholdingTax returns the AmountOtherWithholdingTax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetAmountOtherWithholdingTax() float32 {
-	if o == nil || isNil(o.AmountOtherWithholdingTax.Get()) {
+	if o == nil || IsNil(o.AmountOtherWithholdingTax.Get()) {
 		var ret float32
 		return ret
 	}
@@ -521,7 +510,7 @@ func (o *ReceivedDocument) UnsetAmountOtherWithholdingTax() {
 
 // GetAmountGross returns the AmountGross field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetAmountGross() float32 {
-	if o == nil || isNil(o.AmountGross.Get()) {
+	if o == nil || IsNil(o.AmountGross.Get()) {
 		var ret float32
 		return ret
 	}
@@ -565,7 +554,7 @@ func (o *ReceivedDocument) UnsetAmountGross() {
 
 // GetAmortization returns the Amortization field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetAmortization() float32 {
-	if o == nil || isNil(o.Amortization.Get()) {
+	if o == nil || IsNil(o.Amortization.Get()) {
 		var ret float32
 		return ret
 	}
@@ -609,7 +598,7 @@ func (o *ReceivedDocument) UnsetAmortization() {
 
 // GetRcCenter returns the RcCenter field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetRcCenter() string {
-	if o == nil || isNil(o.RcCenter.Get()) {
+	if o == nil || IsNil(o.RcCenter.Get()) {
 		var ret string
 		return ret
 	}
@@ -653,7 +642,7 @@ func (o *ReceivedDocument) UnsetRcCenter() {
 
 // GetInvoiceNumber returns the InvoiceNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetInvoiceNumber() string {
-	if o == nil || isNil(o.InvoiceNumber.Get()) {
+	if o == nil || IsNil(o.InvoiceNumber.Get()) {
 		var ret string
 		return ret
 	}
@@ -697,7 +686,7 @@ func (o *ReceivedDocument) UnsetInvoiceNumber() {
 
 // GetIsMarked returns the IsMarked field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetIsMarked() bool {
-	if o == nil || isNil(o.IsMarked.Get()) {
+	if o == nil || IsNil(o.IsMarked.Get()) {
 		var ret bool
 		return ret
 	}
@@ -741,7 +730,7 @@ func (o *ReceivedDocument) UnsetIsMarked() {
 
 // GetIsDetailed returns the IsDetailed field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetIsDetailed() bool {
-	if o == nil || isNil(o.IsDetailed.Get()) {
+	if o == nil || IsNil(o.IsDetailed.Get()) {
 		var ret bool
 		return ret
 	}
@@ -785,7 +774,7 @@ func (o *ReceivedDocument) UnsetIsDetailed() {
 
 // GetEInvoice returns the EInvoice field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetEInvoice() bool {
-	if o == nil || isNil(o.EInvoice.Get()) {
+	if o == nil || IsNil(o.EInvoice.Get()) {
 		var ret bool
 		return ret
 	}
@@ -829,7 +818,7 @@ func (o *ReceivedDocument) UnsetEInvoice() {
 
 // GetNextDueDate returns the NextDueDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetNextDueDate() string {
-	if o == nil || isNil(o.NextDueDate.Get()) {
+	if o == nil || IsNil(o.NextDueDate.Get()) {
 		var ret string
 		return ret
 	}
@@ -873,7 +862,7 @@ func (o *ReceivedDocument) UnsetNextDueDate() {
 
 // GetCurrency returns the Currency field value if set, zero value otherwise.
 func (o *ReceivedDocument) GetCurrency() Currency {
-	if o == nil || isNil(o.Currency) {
+	if o == nil || IsNil(o.Currency) {
 		var ret Currency
 		return ret
 	}
@@ -883,7 +872,7 @@ func (o *ReceivedDocument) GetCurrency() Currency {
 // GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReceivedDocument) GetCurrencyOk() (*Currency, bool) {
-	if o == nil || isNil(o.Currency) {
+	if o == nil || IsNil(o.Currency) {
 		return nil, false
 	}
 	return o.Currency, true
@@ -891,7 +880,7 @@ func (o *ReceivedDocument) GetCurrencyOk() (*Currency, bool) {
 
 // HasCurrency returns a boolean if a field has been set.
 func (o *ReceivedDocument) HasCurrency() bool {
-	if o != nil && !isNil(o.Currency) {
+	if o != nil && !IsNil(o.Currency) {
 		return true
 	}
 
@@ -906,7 +895,7 @@ func (o *ReceivedDocument) SetCurrency(v Currency) *ReceivedDocument {
 
 // GetTaxDeductibility returns the TaxDeductibility field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetTaxDeductibility() float32 {
-	if o == nil || isNil(o.TaxDeductibility.Get()) {
+	if o == nil || IsNil(o.TaxDeductibility.Get()) {
 		var ret float32
 		return ret
 	}
@@ -950,7 +939,7 @@ func (o *ReceivedDocument) UnsetTaxDeductibility() {
 
 // GetVatDeductibility returns the VatDeductibility field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetVatDeductibility() float32 {
-	if o == nil || isNil(o.VatDeductibility.Get()) {
+	if o == nil || IsNil(o.VatDeductibility.Get()) {
 		var ret float32
 		return ret
 	}
@@ -1005,7 +994,7 @@ func (o *ReceivedDocument) GetItemsList() []ReceivedDocumentItemsListItem {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReceivedDocument) GetItemsListOk() ([]ReceivedDocumentItemsListItem, bool) {
-	if o == nil || isNil(o.ItemsList) {
+	if o == nil || IsNil(o.ItemsList) {
 		return nil, false
 	}
 	return o.ItemsList, true
@@ -1013,7 +1002,7 @@ func (o *ReceivedDocument) GetItemsListOk() ([]ReceivedDocumentItemsListItem, bo
 
 // HasItemsList returns a boolean if a field has been set.
 func (o *ReceivedDocument) HasItemsList() bool {
-	if o != nil && isNil(o.ItemsList) {
+	if o != nil && IsNil(o.ItemsList) {
 		return true
 	}
 
@@ -1039,7 +1028,7 @@ func (o *ReceivedDocument) GetPaymentsList() []ReceivedDocumentPaymentsListItem 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReceivedDocument) GetPaymentsListOk() ([]ReceivedDocumentPaymentsListItem, bool) {
-	if o == nil || isNil(o.PaymentsList) {
+	if o == nil || IsNil(o.PaymentsList) {
 		return nil, false
 	}
 	return o.PaymentsList, true
@@ -1047,7 +1036,7 @@ func (o *ReceivedDocument) GetPaymentsListOk() ([]ReceivedDocumentPaymentsListIt
 
 // HasPaymentsList returns a boolean if a field has been set.
 func (o *ReceivedDocument) HasPaymentsList() bool {
-	if o != nil && isNil(o.PaymentsList) {
+	if o != nil && IsNil(o.PaymentsList) {
 		return true
 	}
 
@@ -1062,7 +1051,7 @@ func (o *ReceivedDocument) SetPaymentsList(v []ReceivedDocumentPaymentsListItem)
 
 // GetAttachmentUrl returns the AttachmentUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetAttachmentUrl() string {
-	if o == nil || isNil(o.AttachmentUrl.Get()) {
+	if o == nil || IsNil(o.AttachmentUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -1106,7 +1095,7 @@ func (o *ReceivedDocument) UnsetAttachmentUrl() {
 
 // GetAttachmentPreviewUrl returns the AttachmentPreviewUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetAttachmentPreviewUrl() string {
-	if o == nil || isNil(o.AttachmentPreviewUrl.Get()) {
+	if o == nil || IsNil(o.AttachmentPreviewUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -1150,7 +1139,7 @@ func (o *ReceivedDocument) UnsetAttachmentPreviewUrl() {
 
 // GetAutoCalculate returns the AutoCalculate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetAutoCalculate() bool {
-	if o == nil || isNil(o.AutoCalculate.Get()) {
+	if o == nil || IsNil(o.AutoCalculate.Get()) {
 		var ret bool
 		return ret
 	}
@@ -1194,7 +1183,7 @@ func (o *ReceivedDocument) UnsetAutoCalculate() {
 
 // GetAttachmentToken returns the AttachmentToken field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetAttachmentToken() string {
-	if o == nil || isNil(o.AttachmentToken.Get()) {
+	if o == nil || IsNil(o.AttachmentToken.Get()) {
 		var ret string
 		return ret
 	}
@@ -1238,7 +1227,7 @@ func (o *ReceivedDocument) UnsetAttachmentToken() {
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetCreatedAt() string {
-	if o == nil || isNil(o.CreatedAt.Get()) {
+	if o == nil || IsNil(o.CreatedAt.Get()) {
 		var ret string
 		return ret
 	}
@@ -1282,7 +1271,7 @@ func (o *ReceivedDocument) UnsetCreatedAt() {
 
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocument) GetUpdatedAt() string {
-	if o == nil || isNil(o.UpdatedAt.Get()) {
+	if o == nil || IsNil(o.UpdatedAt.Get()) {
 		var ret string
 		return ret
 	}
@@ -1337,11 +1326,11 @@ func (o ReceivedDocument) ToMap() (map[string]interface{}, error) {
 	if o.Id.IsSet() {
 		toSerialize["id"] = o.Id.Get()
 	}
-	if !isNil(o.Type) {
+	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if o.Entity.IsSet() {
-		toSerialize["entity"] = o.Entity.Get()
+	if !IsNil(o.Entity) {
+		toSerialize["entity"] = o.Entity
 	}
 	if o.Date.IsSet() {
 		toSerialize["date"] = o.Date.Get()
@@ -1388,7 +1377,7 @@ func (o ReceivedDocument) ToMap() (map[string]interface{}, error) {
 	if o.NextDueDate.IsSet() {
 		toSerialize["next_due_date"] = o.NextDueDate.Get()
 	}
-	if !isNil(o.Currency) {
+	if !IsNil(o.Currency) {
 		toSerialize["currency"] = o.Currency
 	}
 	if o.TaxDeductibility.IsSet() {

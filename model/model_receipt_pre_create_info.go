@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -52,7 +52,7 @@ func NewReceiptPreCreateInfoWithDefaults() *ReceiptPreCreateInfo {
 
 // GetNumerations returns the Numerations field value if set, zero value otherwise.
 func (o *ReceiptPreCreateInfo) GetNumerations() map[string]map[string]int32 {
-	if o == nil || isNil(o.Numerations) {
+	if o == nil || IsNil(o.Numerations) {
 		var ret map[string]map[string]int32
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *ReceiptPreCreateInfo) GetNumerations() map[string]map[string]int32 {
 // GetNumerationsOk returns a tuple with the Numerations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReceiptPreCreateInfo) GetNumerationsOk() (map[string]map[string]int32, bool) {
-	if o == nil || isNil(o.Numerations) {
+	if o == nil || IsNil(o.Numerations) {
 		return map[string]map[string]int32{}, false
 	}
 	return o.Numerations, true
@@ -70,7 +70,7 @@ func (o *ReceiptPreCreateInfo) GetNumerationsOk() (map[string]map[string]int32, 
 
 // HasNumerations returns a boolean if a field has been set.
 func (o *ReceiptPreCreateInfo) HasNumerations() bool {
-	if o != nil && !isNil(o.Numerations) {
+	if o != nil && !IsNil(o.Numerations) {
 		return true
 	}
 
@@ -96,7 +96,7 @@ func (o *ReceiptPreCreateInfo) GetNumerationsList() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReceiptPreCreateInfo) GetNumerationsListOk() ([]string, bool) {
-	if o == nil || isNil(o.NumerationsList) {
+	if o == nil || IsNil(o.NumerationsList) {
 		return nil, false
 	}
 	return o.NumerationsList, true
@@ -104,7 +104,7 @@ func (o *ReceiptPreCreateInfo) GetNumerationsListOk() ([]string, bool) {
 
 // HasNumerationsList returns a boolean if a field has been set.
 func (o *ReceiptPreCreateInfo) HasNumerationsList() bool {
-	if o != nil && isNil(o.NumerationsList) {
+	if o != nil && IsNil(o.NumerationsList) {
 		return true
 	}
 
@@ -130,7 +130,7 @@ func (o *ReceiptPreCreateInfo) GetRcCentersList() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReceiptPreCreateInfo) GetRcCentersListOk() ([]string, bool) {
-	if o == nil || isNil(o.RcCentersList) {
+	if o == nil || IsNil(o.RcCentersList) {
 		return nil, false
 	}
 	return o.RcCentersList, true
@@ -138,7 +138,7 @@ func (o *ReceiptPreCreateInfo) GetRcCentersListOk() ([]string, bool) {
 
 // HasRcCentersList returns a boolean if a field has been set.
 func (o *ReceiptPreCreateInfo) HasRcCentersList() bool {
-	if o != nil && isNil(o.RcCentersList) {
+	if o != nil && IsNil(o.RcCentersList) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o *ReceiptPreCreateInfo) GetPaymentAccountsList() []PaymentAccount {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReceiptPreCreateInfo) GetPaymentAccountsListOk() ([]PaymentAccount, bool) {
-	if o == nil || isNil(o.PaymentAccountsList) {
+	if o == nil || IsNil(o.PaymentAccountsList) {
 		return nil, false
 	}
 	return o.PaymentAccountsList, true
@@ -172,7 +172,7 @@ func (o *ReceiptPreCreateInfo) GetPaymentAccountsListOk() ([]PaymentAccount, boo
 
 // HasPaymentAccountsList returns a boolean if a field has been set.
 func (o *ReceiptPreCreateInfo) HasPaymentAccountsList() bool {
-	if o != nil && isNil(o.PaymentAccountsList) {
+	if o != nil && IsNil(o.PaymentAccountsList) {
 		return true
 	}
 
@@ -198,7 +198,7 @@ func (o *ReceiptPreCreateInfo) GetCategoriesList() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReceiptPreCreateInfo) GetCategoriesListOk() ([]string, bool) {
-	if o == nil || isNil(o.CategoriesList) {
+	if o == nil || IsNil(o.CategoriesList) {
 		return nil, false
 	}
 	return o.CategoriesList, true
@@ -206,7 +206,7 @@ func (o *ReceiptPreCreateInfo) GetCategoriesListOk() ([]string, bool) {
 
 // HasCategoriesList returns a boolean if a field has been set.
 func (o *ReceiptPreCreateInfo) HasCategoriesList() bool {
-	if o != nil && isNil(o.CategoriesList) {
+	if o != nil && IsNil(o.CategoriesList) {
 		return true
 	}
 
@@ -232,7 +232,7 @@ func (o *ReceiptPreCreateInfo) GetVatTypesList() []VatType {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReceiptPreCreateInfo) GetVatTypesListOk() ([]VatType, bool) {
-	if o == nil || isNil(o.VatTypesList) {
+	if o == nil || IsNil(o.VatTypesList) {
 		return nil, false
 	}
 	return o.VatTypesList, true
@@ -240,7 +240,7 @@ func (o *ReceiptPreCreateInfo) GetVatTypesListOk() ([]VatType, bool) {
 
 // HasVatTypesList returns a boolean if a field has been set.
 func (o *ReceiptPreCreateInfo) HasVatTypesList() bool {
-	if o != nil && isNil(o.VatTypesList) {
+	if o != nil && IsNil(o.VatTypesList) {
 		return true
 	}
 
@@ -263,7 +263,7 @@ func (o ReceiptPreCreateInfo) MarshalJSON() ([]byte, error) {
 
 func (o ReceiptPreCreateInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Numerations) {
+	if !IsNil(o.Numerations) {
 		toSerialize["numerations"] = o.Numerations
 	}
 	if o.NumerationsList != nil {

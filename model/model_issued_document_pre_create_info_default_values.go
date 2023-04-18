@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -59,7 +59,7 @@ func NewIssuedDocumentPreCreateInfoDefaultValuesWithDefaults() *IssuedDocumentPr
 
 // GetDefaultTemplate returns the DefaultTemplate field value if set, zero value otherwise.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) GetDefaultTemplate() DocumentTemplate {
-	if o == nil || isNil(o.DefaultTemplate) {
+	if o == nil || IsNil(o.DefaultTemplate) {
 		var ret DocumentTemplate
 		return ret
 	}
@@ -69,7 +69,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) GetDefaultTemplate() Document
 // GetDefaultTemplateOk returns a tuple with the DefaultTemplate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) GetDefaultTemplateOk() (*DocumentTemplate, bool) {
-	if o == nil || isNil(o.DefaultTemplate) {
+	if o == nil || IsNil(o.DefaultTemplate) {
 		return nil, false
 	}
 	return o.DefaultTemplate, true
@@ -77,7 +77,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) GetDefaultTemplateOk() (*Docu
 
 // HasDefaultTemplate returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) HasDefaultTemplate() bool {
-	if o != nil && !isNil(o.DefaultTemplate) {
+	if o != nil && !IsNil(o.DefaultTemplate) {
 		return true
 	}
 
@@ -92,7 +92,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) SetDefaultTemplate(v Document
 
 // GetDnTemplate returns the DnTemplate field value if set, zero value otherwise.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) GetDnTemplate() DocumentTemplate {
-	if o == nil || isNil(o.DnTemplate) {
+	if o == nil || IsNil(o.DnTemplate) {
 		var ret DocumentTemplate
 		return ret
 	}
@@ -102,7 +102,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) GetDnTemplate() DocumentTempl
 // GetDnTemplateOk returns a tuple with the DnTemplate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) GetDnTemplateOk() (*DocumentTemplate, bool) {
-	if o == nil || isNil(o.DnTemplate) {
+	if o == nil || IsNil(o.DnTemplate) {
 		return nil, false
 	}
 	return o.DnTemplate, true
@@ -110,7 +110,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) GetDnTemplateOk() (*DocumentT
 
 // HasDnTemplate returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) HasDnTemplate() bool {
-	if o != nil && !isNil(o.DnTemplate) {
+	if o != nil && !IsNil(o.DnTemplate) {
 		return true
 	}
 
@@ -125,7 +125,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) SetDnTemplate(v DocumentTempl
 
 // GetAiTemplate returns the AiTemplate field value if set, zero value otherwise.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) GetAiTemplate() DocumentTemplate {
-	if o == nil || isNil(o.AiTemplate) {
+	if o == nil || IsNil(o.AiTemplate) {
 		var ret DocumentTemplate
 		return ret
 	}
@@ -135,7 +135,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) GetAiTemplate() DocumentTempl
 // GetAiTemplateOk returns a tuple with the AiTemplate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) GetAiTemplateOk() (*DocumentTemplate, bool) {
-	if o == nil || isNil(o.AiTemplate) {
+	if o == nil || IsNil(o.AiTemplate) {
 		return nil, false
 	}
 	return o.AiTemplate, true
@@ -143,7 +143,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) GetAiTemplateOk() (*DocumentT
 
 // HasAiTemplate returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) HasAiTemplate() bool {
-	if o != nil && !isNil(o.AiTemplate) {
+	if o != nil && !IsNil(o.AiTemplate) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) SetAiTemplate(v DocumentTempl
 
 // GetNotes returns the Notes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentPreCreateInfoDefaultValues) GetNotes() string {
-	if o == nil || isNil(o.Notes.Get()) {
+	if o == nil || IsNil(o.Notes.Get()) {
 		var ret string
 		return ret
 	}
@@ -202,7 +202,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) UnsetNotes() {
 
 // GetRivalsa returns the Rivalsa field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentPreCreateInfoDefaultValues) GetRivalsa() float32 {
-	if o == nil || isNil(o.Rivalsa.Get()) {
+	if o == nil || IsNil(o.Rivalsa.Get()) {
 		var ret float32
 		return ret
 	}
@@ -246,7 +246,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) UnsetRivalsa() {
 
 // GetCassa returns the Cassa field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentPreCreateInfoDefaultValues) GetCassa() float32 {
-	if o == nil || isNil(o.Cassa.Get()) {
+	if o == nil || IsNil(o.Cassa.Get()) {
 		var ret float32
 		return ret
 	}
@@ -290,7 +290,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) UnsetCassa() {
 
 // GetWithholdingTax returns the WithholdingTax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentPreCreateInfoDefaultValues) GetWithholdingTax() float32 {
-	if o == nil || isNil(o.WithholdingTax.Get()) {
+	if o == nil || IsNil(o.WithholdingTax.Get()) {
 		var ret float32
 		return ret
 	}
@@ -334,7 +334,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) UnsetWithholdingTax() {
 
 // GetWithholdingTaxTaxable returns the WithholdingTaxTaxable field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentPreCreateInfoDefaultValues) GetWithholdingTaxTaxable() float32 {
-	if o == nil || isNil(o.WithholdingTaxTaxable.Get()) {
+	if o == nil || IsNil(o.WithholdingTaxTaxable.Get()) {
 		var ret float32
 		return ret
 	}
@@ -378,7 +378,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) UnsetWithholdingTaxTaxable() 
 
 // GetOtherWithholdingTax returns the OtherWithholdingTax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentPreCreateInfoDefaultValues) GetOtherWithholdingTax() float32 {
-	if o == nil || isNil(o.OtherWithholdingTax.Get()) {
+	if o == nil || IsNil(o.OtherWithholdingTax.Get()) {
 		var ret float32
 		return ret
 	}
@@ -422,7 +422,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) UnsetOtherWithholdingTax() {
 
 // GetUseGrossPrices returns the UseGrossPrices field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentPreCreateInfoDefaultValues) GetUseGrossPrices() bool {
-	if o == nil || isNil(o.UseGrossPrices.Get()) {
+	if o == nil || IsNil(o.UseGrossPrices.Get()) {
 		var ret bool
 		return ret
 	}
@@ -466,7 +466,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) UnsetUseGrossPrices() {
 
 // GetPaymentMethod returns the PaymentMethod field value if set, zero value otherwise.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) GetPaymentMethod() PaymentMethod {
-	if o == nil || isNil(o.PaymentMethod) {
+	if o == nil || IsNil(o.PaymentMethod) {
 		var ret PaymentMethod
 		return ret
 	}
@@ -476,7 +476,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) GetPaymentMethod() PaymentMet
 // GetPaymentMethodOk returns a tuple with the PaymentMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) GetPaymentMethodOk() (*PaymentMethod, bool) {
-	if o == nil || isNil(o.PaymentMethod) {
+	if o == nil || IsNil(o.PaymentMethod) {
 		return nil, false
 	}
 	return o.PaymentMethod, true
@@ -484,7 +484,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) GetPaymentMethodOk() (*Paymen
 
 // HasPaymentMethod returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) HasPaymentMethod() bool {
-	if o != nil && !isNil(o.PaymentMethod) {
+	if o != nil && !IsNil(o.PaymentMethod) {
 		return true
 	}
 
@@ -507,13 +507,13 @@ func (o IssuedDocumentPreCreateInfoDefaultValues) MarshalJSON() ([]byte, error) 
 
 func (o IssuedDocumentPreCreateInfoDefaultValues) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DefaultTemplate) {
+	if !IsNil(o.DefaultTemplate) {
 		toSerialize["default_template"] = o.DefaultTemplate
 	}
-	if !isNil(o.DnTemplate) {
+	if !IsNil(o.DnTemplate) {
 		toSerialize["dn_template"] = o.DnTemplate
 	}
-	if !isNil(o.AiTemplate) {
+	if !IsNil(o.AiTemplate) {
 		toSerialize["ai_template"] = o.AiTemplate
 	}
 	if o.Notes.IsSet() {
@@ -537,7 +537,7 @@ func (o IssuedDocumentPreCreateInfoDefaultValues) ToMap() (map[string]interface{
 	if o.UseGrossPrices.IsSet() {
 		toSerialize["use_gross_prices"] = o.UseGrossPrices.Get()
 	}
-	if !isNil(o.PaymentMethod) {
+	if !IsNil(o.PaymentMethod) {
 		toSerialize["payment_method"] = o.PaymentMethod
 	}
 	return toSerialize, nil

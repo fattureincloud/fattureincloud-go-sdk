@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -42,7 +42,7 @@ func NewGetNewReceivedDocumentTotalsRequestWithDefaults() *GetNewReceivedDocumen
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *GetNewReceivedDocumentTotalsRequest) GetData() ReceivedDocument {
-	if o == nil || isNil(o.Data) {
+	if o == nil || IsNil(o.Data) {
 		var ret ReceivedDocument
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *GetNewReceivedDocumentTotalsRequest) GetData() ReceivedDocument {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GetNewReceivedDocumentTotalsRequest) GetDataOk() (*ReceivedDocument, bool) {
-	if o == nil || isNil(o.Data) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +60,7 @@ func (o *GetNewReceivedDocumentTotalsRequest) GetDataOk() (*ReceivedDocument, bo
 
 // HasData returns a boolean if a field has been set.
 func (o *GetNewReceivedDocumentTotalsRequest) HasData() bool {
-	if o != nil && !isNil(o.Data) {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -83,7 +83,7 @@ func (o GetNewReceivedDocumentTotalsRequest) MarshalJSON() ([]byte, error) {
 
 func (o GetNewReceivedDocumentTotalsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Data) {
+	if !IsNil(o.Data) {
 		toSerialize["data"] = o.Data
 	}
 	return toSerialize, nil

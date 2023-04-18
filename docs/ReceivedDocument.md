@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **NullableInt32** | Unique identifier of the document. | [optional] 
 **Type** | Pointer to [**ReceivedDocumentType**](ReceivedDocumentType.md) |  | [optional] [default to EXPENSE]
-**Entity** | Pointer to [**NullableReceivedDocumentEntity**](ReceivedDocumentEntity.md) |  | [optional] 
+**Entity** | Pointer to [**Entity**](Entity.md) |  | [optional] 
 **Date** | Pointer to **NullableString** | Date of the document [If not specified, today date is used]. | [optional] 
 **Category** | Pointer to **NullableString** | Document category. | [optional] 
 **Description** | Pointer to **NullableString** | Document description. | [optional] 
@@ -115,20 +115,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetEntity
 
-`func (o *ReceivedDocument) GetEntity() ReceivedDocumentEntity`
+`func (o *ReceivedDocument) GetEntity() Entity`
 
 GetEntity returns the Entity field if non-nil, zero value otherwise.
 
 ### GetEntityOk
 
-`func (o *ReceivedDocument) GetEntityOk() (*ReceivedDocumentEntity, bool)`
+`func (o *ReceivedDocument) GetEntityOk() (*Entity, bool)`
 
 GetEntityOk returns a tuple with the Entity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEntity
 
-`func (o *ReceivedDocument) SetEntity(v ReceivedDocumentEntity)`
+`func (o *ReceivedDocument) SetEntity(v Entity)`
 
 SetEntity sets Entity field to given value.
 
@@ -138,16 +138,6 @@ SetEntity sets Entity field to given value.
 
 HasEntity returns a boolean if a field has been set.
 
-### SetEntityNil
-
-`func (o *ReceivedDocument) SetEntityNil(b bool)`
-
- SetEntityNil sets the value for Entity to be an explicit nil
-
-### UnsetEntity
-`func (o *ReceivedDocument) UnsetEntity()`
-
-UnsetEntity ensures that no value is present for Entity, not even an explicit nil
 ### GetDate
 
 `func (o *ReceivedDocument) GetDate() string`

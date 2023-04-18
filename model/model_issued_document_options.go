@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -51,7 +51,7 @@ func NewIssuedDocumentOptionsWithDefaults() *IssuedDocumentOptions {
 
 // GetFixPayments returns the FixPayments field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentOptions) GetFixPayments() bool {
-	if o == nil || isNil(o.FixPayments.Get()) {
+	if o == nil || IsNil(o.FixPayments.Get()) {
 		var ret bool
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *IssuedDocumentOptions) GetCreateFrom() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IssuedDocumentOptions) GetCreateFromOk() ([]string, bool) {
-	if o == nil || isNil(o.CreateFrom) {
+	if o == nil || IsNil(o.CreateFrom) {
 		return nil, false
 	}
 	return o.CreateFrom, true
@@ -114,7 +114,7 @@ func (o *IssuedDocumentOptions) GetCreateFromOk() ([]string, bool) {
 
 // HasCreateFrom returns a boolean if a field has been set.
 func (o *IssuedDocumentOptions) HasCreateFrom() bool {
-	if o != nil && isNil(o.CreateFrom) {
+	if o != nil && IsNil(o.CreateFrom) {
 		return true
 	}
 
@@ -129,7 +129,7 @@ func (o *IssuedDocumentOptions) SetCreateFrom(v []string) *IssuedDocumentOptions
 
 // GetTransform returns the Transform field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentOptions) GetTransform() bool {
-	if o == nil || isNil(o.Transform.Get()) {
+	if o == nil || IsNil(o.Transform.Get()) {
 		var ret bool
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *IssuedDocumentOptions) UnsetTransform() {
 
 // GetKeepCopy returns the KeepCopy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentOptions) GetKeepCopy() bool {
-	if o == nil || isNil(o.KeepCopy.Get()) {
+	if o == nil || IsNil(o.KeepCopy.Get()) {
 		var ret bool
 		return ret
 	}
@@ -217,7 +217,7 @@ func (o *IssuedDocumentOptions) UnsetKeepCopy() {
 
 // GetJoinType returns the JoinType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentOptions) GetJoinType() string {
-	if o == nil || isNil(o.JoinType.Get()) {
+	if o == nil || IsNil(o.JoinType.Get()) {
 		var ret string
 		return ret
 	}

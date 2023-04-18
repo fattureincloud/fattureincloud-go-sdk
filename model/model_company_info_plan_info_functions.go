@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -59,7 +59,7 @@ func NewCompanyInfoPlanInfoFunctionsWithDefaults() *CompanyInfoPlanInfoFunctions
 
 // GetArchive returns the Archive field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoFunctions) GetArchive() bool {
-	if o == nil || isNil(o.Archive.Get()) {
+	if o == nil || IsNil(o.Archive.Get()) {
 		var ret bool
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *CompanyInfoPlanInfoFunctions) UnsetArchive() {
 
 // GetCerved returns the Cerved field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoFunctions) GetCerved() bool {
-	if o == nil || isNil(o.Cerved.Get()) {
+	if o == nil || IsNil(o.Cerved.Get()) {
 		var ret bool
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *CompanyInfoPlanInfoFunctions) UnsetCerved() {
 
 // GetDocumentAttachments returns the DocumentAttachments field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoFunctions) GetDocumentAttachments() bool {
-	if o == nil || isNil(o.DocumentAttachments.Get()) {
+	if o == nil || IsNil(o.DocumentAttachments.Get()) {
 		var ret bool
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *CompanyInfoPlanInfoFunctions) UnsetDocumentAttachments() {
 
 // GetEInvoice returns the EInvoice field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoFunctions) GetEInvoice() bool {
-	if o == nil || isNil(o.EInvoice.Get()) {
+	if o == nil || IsNil(o.EInvoice.Get()) {
 		var ret bool
 		return ret
 	}
@@ -235,7 +235,7 @@ func (o *CompanyInfoPlanInfoFunctions) UnsetEInvoice() {
 
 // GetGenius returns the Genius field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoFunctions) GetGenius() bool {
-	if o == nil || isNil(o.Genius.Get()) {
+	if o == nil || IsNil(o.Genius.Get()) {
 		var ret bool
 		return ret
 	}
@@ -279,7 +279,7 @@ func (o *CompanyInfoPlanInfoFunctions) UnsetGenius() {
 
 // GetMailTracking returns the MailTracking field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoFunctions) GetMailTracking() bool {
-	if o == nil || isNil(o.MailTracking.Get()) {
+	if o == nil || IsNil(o.MailTracking.Get()) {
 		var ret bool
 		return ret
 	}
@@ -323,7 +323,7 @@ func (o *CompanyInfoPlanInfoFunctions) UnsetMailTracking() {
 
 // GetPaymentNotifications returns the PaymentNotifications field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoFunctions) GetPaymentNotifications() bool {
-	if o == nil || isNil(o.PaymentNotifications.Get()) {
+	if o == nil || IsNil(o.PaymentNotifications.Get()) {
 		var ret bool
 		return ret
 	}
@@ -367,7 +367,7 @@ func (o *CompanyInfoPlanInfoFunctions) UnsetPaymentNotifications() {
 
 // GetPaypal returns the Paypal field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoFunctions) GetPaypal() bool {
-	if o == nil || isNil(o.Paypal.Get()) {
+	if o == nil || IsNil(o.Paypal.Get()) {
 		var ret bool
 		return ret
 	}
@@ -411,7 +411,7 @@ func (o *CompanyInfoPlanInfoFunctions) UnsetPaypal() {
 
 // GetReceipts returns the Receipts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoFunctions) GetReceipts() bool {
-	if o == nil || isNil(o.Receipts.Get()) {
+	if o == nil || IsNil(o.Receipts.Get()) {
 		var ret bool
 		return ret
 	}
@@ -455,7 +455,7 @@ func (o *CompanyInfoPlanInfoFunctions) UnsetReceipts() {
 
 // GetRecurring returns the Recurring field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoFunctions) GetRecurring() bool {
-	if o == nil || isNil(o.Recurring.Get()) {
+	if o == nil || IsNil(o.Recurring.Get()) {
 		var ret bool
 		return ret
 	}
@@ -499,7 +499,7 @@ func (o *CompanyInfoPlanInfoFunctions) UnsetRecurring() {
 
 // GetSmtp returns the Smtp field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoFunctions) GetSmtp() bool {
-	if o == nil || isNil(o.Smtp.Get()) {
+	if o == nil || IsNil(o.Smtp.Get()) {
 		var ret bool
 		return ret
 	}
@@ -543,7 +543,7 @@ func (o *CompanyInfoPlanInfoFunctions) UnsetSmtp() {
 
 // GetSofort returns the Sofort field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoFunctions) GetSofort() bool {
-	if o == nil || isNil(o.Sofort.Get()) {
+	if o == nil || IsNil(o.Sofort.Get()) {
 		var ret bool
 		return ret
 	}
@@ -587,7 +587,7 @@ func (o *CompanyInfoPlanInfoFunctions) UnsetSofort() {
 
 // GetStock returns the Stock field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoFunctions) GetStock() bool {
-	if o == nil || isNil(o.Stock.Get()) {
+	if o == nil || IsNil(o.Stock.Get()) {
 		var ret bool
 		return ret
 	}
@@ -631,7 +631,7 @@ func (o *CompanyInfoPlanInfoFunctions) UnsetStock() {
 
 // GetSubaccounts returns the Subaccounts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoFunctions) GetSubaccounts() bool {
-	if o == nil || isNil(o.Subaccounts.Get()) {
+	if o == nil || IsNil(o.Subaccounts.Get()) {
 		var ret bool
 		return ret
 	}
@@ -675,7 +675,7 @@ func (o *CompanyInfoPlanInfoFunctions) UnsetSubaccounts() {
 
 // GetTesseraSanitaria returns the TesseraSanitaria field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoFunctions) GetTesseraSanitaria() bool {
-	if o == nil || isNil(o.TesseraSanitaria.Get()) {
+	if o == nil || IsNil(o.TesseraSanitaria.Get()) {
 		var ret bool
 		return ret
 	}
@@ -719,7 +719,7 @@ func (o *CompanyInfoPlanInfoFunctions) UnsetTesseraSanitaria() {
 
 // GetTsDigital returns the TsDigital field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoFunctions) GetTsDigital() bool {
-	if o == nil || isNil(o.TsDigital.Get()) {
+	if o == nil || IsNil(o.TsDigital.Get()) {
 		var ret bool
 		return ret
 	}
@@ -763,7 +763,7 @@ func (o *CompanyInfoPlanInfoFunctions) UnsetTsDigital() {
 
 // GetTsInvoiceTrading returns the TsInvoiceTrading field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoFunctions) GetTsInvoiceTrading() bool {
-	if o == nil || isNil(o.TsInvoiceTrading.Get()) {
+	if o == nil || IsNil(o.TsInvoiceTrading.Get()) {
 		var ret bool
 		return ret
 	}
@@ -807,7 +807,7 @@ func (o *CompanyInfoPlanInfoFunctions) UnsetTsInvoiceTrading() {
 
 // GetTsPay returns the TsPay field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoFunctions) GetTsPay() bool {
-	if o == nil || isNil(o.TsPay.Get()) {
+	if o == nil || IsNil(o.TsPay.Get()) {
 		var ret bool
 		return ret
 	}

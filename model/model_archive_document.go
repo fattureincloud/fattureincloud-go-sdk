@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -53,7 +53,7 @@ func NewArchiveDocumentWithDefaults() *ArchiveDocument {
 
 // GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArchiveDocument) GetId() int32 {
-	if o == nil || isNil(o.Id.Get()) {
+	if o == nil || IsNil(o.Id.Get()) {
 		var ret int32
 		return ret
 	}
@@ -97,7 +97,7 @@ func (o *ArchiveDocument) UnsetId() {
 
 // GetDate returns the Date field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArchiveDocument) GetDate() string {
-	if o == nil || isNil(o.Date.Get()) {
+	if o == nil || IsNil(o.Date.Get()) {
 		var ret string
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *ArchiveDocument) UnsetDate() {
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArchiveDocument) GetDescription() string {
-	if o == nil || isNil(o.Description.Get()) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *ArchiveDocument) UnsetDescription() {
 
 // GetAttachmentUrl returns the AttachmentUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArchiveDocument) GetAttachmentUrl() string {
-	if o == nil || isNil(o.AttachmentUrl.Get()) {
+	if o == nil || IsNil(o.AttachmentUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -229,7 +229,7 @@ func (o *ArchiveDocument) UnsetAttachmentUrl() {
 
 // GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArchiveDocument) GetCategory() string {
-	if o == nil || isNil(o.Category.Get()) {
+	if o == nil || IsNil(o.Category.Get()) {
 		var ret string
 		return ret
 	}
@@ -273,7 +273,7 @@ func (o *ArchiveDocument) UnsetCategory() {
 
 // GetAttachmentToken returns the AttachmentToken field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArchiveDocument) GetAttachmentToken() string {
-	if o == nil || isNil(o.AttachmentToken.Get()) {
+	if o == nil || IsNil(o.AttachmentToken.Get()) {
 		var ret string
 		return ret
 	}

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -45,7 +45,7 @@ func NewSendEInvoiceRequestDataWithDefaults() *SendEInvoiceRequestData {
 
 // GetCassaType returns the CassaType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SendEInvoiceRequestData) GetCassaType() string {
-	if o == nil || isNil(o.CassaType.Get()) {
+	if o == nil || IsNil(o.CassaType.Get()) {
 		var ret string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *SendEInvoiceRequestData) UnsetCassaType() {
 
 // GetWithholdingTaxCausal returns the WithholdingTaxCausal field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SendEInvoiceRequestData) GetWithholdingTaxCausal() string {
-	if o == nil || isNil(o.WithholdingTaxCausal.Get()) {
+	if o == nil || IsNil(o.WithholdingTaxCausal.Get()) {
 		var ret string
 		return ret
 	}

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -45,7 +45,7 @@ func NewIssuedDocumentPreCreateInfoExtraDataDefaultValuesWithDefaults() *IssuedD
 
 // GetTsCommunication returns the TsCommunication field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentPreCreateInfoExtraDataDefaultValues) GetTsCommunication() bool {
-	if o == nil || isNil(o.TsCommunication.Get()) {
+	if o == nil || IsNil(o.TsCommunication.Get()) {
 		var ret bool
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *IssuedDocumentPreCreateInfoExtraDataDefaultValues) UnsetTsCommunication
 
 // GetTsTipoSpesa returns the TsTipoSpesa field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentPreCreateInfoExtraDataDefaultValues) GetTsTipoSpesa() string {
-	if o == nil || isNil(o.TsTipoSpesa.Get()) {
+	if o == nil || IsNil(o.TsTipoSpesa.Get()) {
 		var ret string
 		return ret
 	}
@@ -133,7 +133,7 @@ func (o *IssuedDocumentPreCreateInfoExtraDataDefaultValues) UnsetTsTipoSpesa() {
 
 // GetTsFlagTipoSpesa returns the TsFlagTipoSpesa field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentPreCreateInfoExtraDataDefaultValues) GetTsFlagTipoSpesa() int32 {
-	if o == nil || isNil(o.TsFlagTipoSpesa.Get()) {
+	if o == nil || IsNil(o.TsFlagTipoSpesa.Get()) {
 		var ret int32
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *IssuedDocumentPreCreateInfoExtraDataDefaultValues) UnsetTsFlagTipoSpesa
 
 // GetTsPagamentoTracciato returns the TsPagamentoTracciato field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocumentPreCreateInfoExtraDataDefaultValues) GetTsPagamentoTracciato() bool {
-	if o == nil || isNil(o.TsPagamentoTracciato.Get()) {
+	if o == nil || IsNil(o.TsPagamentoTracciato.Get()) {
 		var ret bool
 		return ret
 	}
