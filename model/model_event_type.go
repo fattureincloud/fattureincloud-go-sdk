@@ -29,7 +29,7 @@ var EventTypes = struct {
 	ISSUED_DOCUMENTS_QUOTES_DELETE EventType
 	ISSUED_DOCUMENTS_PROFORMAS_CREATE EventType
 	ISSUED_DOCUMENTS_PROFORMAS_UPDATE EventType
-	ISSUED_DOCUMENTS_PROFORMAS_CREATE EventType
+	ISSUED_DOCUMENTS_PROFORMAS_DELETE EventType
 	ISSUED_DOCUMENTS_RECEIPTS_CREATE EventType
 	ISSUED_DOCUMENTS_RECEIPTS_UPDATE EventType
 	ISSUED_DOCUMENTS_RECEIPTS_DELETE EventType
@@ -89,7 +89,7 @@ var EventTypes = struct {
 	ISSUED_DOCUMENTS_QUOTES_DELETE: "it.fattureincloud.issued_documents.quotes.delete",
 	ISSUED_DOCUMENTS_PROFORMAS_CREATE: "it.fattureincloud.issued_documents.proformas.create",
 	ISSUED_DOCUMENTS_PROFORMAS_UPDATE: "it.fattureincloud.issued_documents.proformas.update",
-	ISSUED_DOCUMENTS_PROFORMAS_CREATE: "it.fattureincloud.issued_documents.proformas.create",
+	ISSUED_DOCUMENTS_PROFORMAS_DELETE: "it.fattureincloud.issued_documents.proformas.delete",
 	ISSUED_DOCUMENTS_RECEIPTS_CREATE: "it.fattureincloud.issued_documents.receipts.create",
 	ISSUED_DOCUMENTS_RECEIPTS_UPDATE: "it.fattureincloud.issued_documents.receipts.update",
 	ISSUED_DOCUMENTS_RECEIPTS_DELETE: "it.fattureincloud.issued_documents.receipts.delete",
@@ -152,7 +152,7 @@ var AllowedEventTypeEnumValues = []EventType{
 	"it.fattureincloud.issued_documents.quotes.delete",
 	"it.fattureincloud.issued_documents.proformas.create",
 	"it.fattureincloud.issued_documents.proformas.update",
-	"it.fattureincloud.issued_documents.proformas.create",
+	"it.fattureincloud.issued_documents.proformas.delete",
 	"it.fattureincloud.issued_documents.receipts.create",
 	"it.fattureincloud.issued_documents.receipts.update",
 	"it.fattureincloud.issued_documents.receipts.delete",
