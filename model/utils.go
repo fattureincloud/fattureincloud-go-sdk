@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -329,8 +329,8 @@ func (v *NullableTime) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
-// isNil checks if an input is nil
-func isNil(i interface{}) bool {
+// IsNil checks if an input is nil
+func IsNil(i interface{}) bool {
 	if i == nil {
 		return true
 	}

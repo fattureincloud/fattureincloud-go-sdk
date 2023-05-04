@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -53,7 +53,7 @@ func NewReceivedDocumentPaymentsListItemWithDefaults() *ReceivedDocumentPayments
 
 // GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentPaymentsListItem) GetId() int32 {
-	if o == nil || isNil(o.Id.Get()) {
+	if o == nil || IsNil(o.Id.Get()) {
 		var ret int32
 		return ret
 	}
@@ -97,7 +97,7 @@ func (o *ReceivedDocumentPaymentsListItem) UnsetId() {
 
 // GetAmount returns the Amount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentPaymentsListItem) GetAmount() float32 {
-	if o == nil || isNil(o.Amount.Get()) {
+	if o == nil || IsNil(o.Amount.Get()) {
 		var ret float32
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *ReceivedDocumentPaymentsListItem) UnsetAmount() {
 
 // GetDueDate returns the DueDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentPaymentsListItem) GetDueDate() string {
-	if o == nil || isNil(o.DueDate.Get()) {
+	if o == nil || IsNil(o.DueDate.Get()) {
 		var ret string
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *ReceivedDocumentPaymentsListItem) UnsetDueDate() {
 
 // GetPaidDate returns the PaidDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentPaymentsListItem) GetPaidDate() string {
-	if o == nil || isNil(o.PaidDate.Get()) {
+	if o == nil || IsNil(o.PaidDate.Get()) {
 		var ret string
 		return ret
 	}
@@ -229,7 +229,7 @@ func (o *ReceivedDocumentPaymentsListItem) UnsetPaidDate() {
 
 // GetPaymentTerms returns the PaymentTerms field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentPaymentsListItem) GetPaymentTerms() ReceivedDocumentPaymentsListItemPaymentTerms {
-	if o == nil || isNil(o.PaymentTerms.Get()) {
+	if o == nil || IsNil(o.PaymentTerms.Get()) {
 		var ret ReceivedDocumentPaymentsListItemPaymentTerms
 		return ret
 	}
@@ -273,7 +273,7 @@ func (o *ReceivedDocumentPaymentsListItem) UnsetPaymentTerms() {
 
 // GetStatus returns the Status field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentPaymentsListItem) GetStatus() string {
-	if o == nil || isNil(o.Status.Get()) {
+	if o == nil || IsNil(o.Status.Get()) {
 		var ret string
 		return ret
 	}
@@ -317,7 +317,7 @@ func (o *ReceivedDocumentPaymentsListItem) UnsetStatus() {
 
 // GetPaymentAccount returns the PaymentAccount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentPaymentsListItem) GetPaymentAccount() PaymentAccount {
-	if o == nil || isNil(o.PaymentAccount.Get()) {
+	if o == nil || IsNil(o.PaymentAccount.Get()) {
 		var ret PaymentAccount
 		return ret
 	}

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -19,7 +19,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 	"mime/multipart"
 	"net/http"
@@ -34,6 +33,7 @@ import (
 	"time"
 	"unicode/utf8"
 	. "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	
 	"golang.org/x/oauth2"
 )
 
@@ -44,7 +44,7 @@ var (
 	queryDescape    = strings.NewReplacer( "%5B", "[", "%5D", "]" )
 )
 
-// APIClient manages communication with the Fatture in Cloud API v2 - API Reference API v2.0.26
+// APIClient manages communication with the Fatture in Cloud API v2 - API Reference API v2.0.27
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
@@ -81,6 +81,8 @@ type APIClient struct {
 	TaxesApi *TaxesApiService
 
 	UserApi *UserApiService
+
+	WebhooksApi *WebhooksApiService
 }
 
 type service struct {
@@ -114,6 +116,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.SuppliersApi = (*SuppliersApiService)(&c.common)
 	c.TaxesApi = (*TaxesApiService)(&c.common)
 	c.UserApi = (*UserApiService)(&c.common)
+	c.WebhooksApi = (*WebhooksApiService)(&c.common)
 
 	return c
 }
@@ -185,9 +188,9 @@ func parameterValueToString( obj interface{}, key string ) string {
 	return fmt.Sprintf("%v", dataMap[key])
 }
 
-// parameterAddToQuery adds the provided object to the url query supporting deep object syntax
-func parameterAddToQuery(queryParams interface{}, keyPrefix string, obj interface{}, collectionType string) {
-	var v = reflect.ValueOf(obj)
+// parameterAddToHeaderOrQuery adds the provided object to the request header or url query
+// supporting deep object syntax
+func parameterAddToHeaderOrQuery(headerOrQueryParams interface{}, keyPrefix string, obj interface{}, collectionType string) {	var v = reflect.ValueOf(obj)
 	var value = ""
 	if v == reflect.ValueOf(nil) {
 		value = "null"
@@ -202,11 +205,11 @@ func parameterAddToQuery(queryParams interface{}, keyPrefix string, obj interfac
 					if err != nil {
 						return
 					}
-					parameterAddToQuery(queryParams, keyPrefix, dataMap, collectionType)
+					parameterAddToHeaderOrQuery(headerOrQueryParams, keyPrefix, dataMap, collectionType)
 					return
 				}
 				if t, ok := obj.(time.Time); ok {
-					parameterAddToQuery(queryParams, keyPrefix, t.Format(time.RFC3339), collectionType)
+					parameterAddToHeaderOrQuery(headerOrQueryParams, keyPrefix, t.Format(time.RFC3339), collectionType)
 					return
 				}
 				value = v.Type().String() + " value"
@@ -218,7 +221,7 @@ func parameterAddToQuery(queryParams interface{}, keyPrefix string, obj interfac
 				var lenIndValue = indValue.Len()
 				for i:=0;i<lenIndValue;i++ {
 					var arrayValue = indValue.Index(i)
-					parameterAddToQuery(queryParams, keyPrefix, arrayValue.Interface(), collectionType)
+					parameterAddToHeaderOrQuery(headerOrQueryParams, keyPrefix, arrayValue.Interface(), collectionType)
 				}
 				return
 
@@ -230,14 +233,14 @@ func parameterAddToQuery(queryParams interface{}, keyPrefix string, obj interfac
 				iter := indValue.MapRange()
 				for iter.Next() {
 					k,v := iter.Key(), iter.Value()
-					parameterAddToQuery(queryParams, fmt.Sprintf("%s[%s]", keyPrefix, k.String()), v.Interface(), collectionType)
+					parameterAddToHeaderOrQuery(headerOrQueryParams, fmt.Sprintf("%s[%s]", keyPrefix, k.String()), v.Interface(), collectionType)
 				}
 				return
 
 			case reflect.Interface:
 				fallthrough
 			case reflect.Ptr:
-				parameterAddToQuery(queryParams, keyPrefix, v.Elem().Interface(), collectionType)
+				parameterAddToHeaderOrQuery(headerOrQueryParams, keyPrefix, v.Elem().Interface(), collectionType)
 				return
 
 			case reflect.Int, reflect.Int8, reflect.Int16,
@@ -257,7 +260,7 @@ func parameterAddToQuery(queryParams interface{}, keyPrefix string, obj interfac
 		}
 	}
 
-	switch valuesMap := queryParams.(type) {
+	switch valuesMap := headerOrQueryParams.(type) {
 		case url.Values:
 			if collectionType == "csv" && valuesMap.Get(keyPrefix) != "" {
 				valuesMap.Set(keyPrefix, valuesMap.Get(keyPrefix) + "," + value)
@@ -482,7 +485,7 @@ func (c *APIClient) decode(v interface{}, b []byte, contentType string) (err err
 		return nil
 	}
 	if f, ok := v.(*os.File); ok {
-		f, err = ioutil.TempFile("", "HttpClientFile")
+		f, err = os.CreateTemp("", "HttpClientFile")
 		if err != nil {
 			return
 		}
@@ -494,7 +497,7 @@ func (c *APIClient) decode(v interface{}, b []byte, contentType string) (err err
 		return
 	}
 	if f, ok := v.(**os.File); ok {
-		*f, err = ioutil.TempFile("", "HttpClientFile")
+		*f, err = os.CreateTemp("", "HttpClientFile")
 		if err != nil {
 			return
 		}

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -45,7 +45,7 @@ func NewCompanyInfoPlanInfoLimitsWithDefaults() *CompanyInfoPlanInfoLimits {
 
 // GetClients returns the Clients field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoLimits) GetClients() int32 {
-	if o == nil || isNil(o.Clients.Get()) {
+	if o == nil || IsNil(o.Clients.Get()) {
 		var ret int32
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *CompanyInfoPlanInfoLimits) UnsetClients() {
 
 // GetSuppliers returns the Suppliers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoLimits) GetSuppliers() int32 {
-	if o == nil || isNil(o.Suppliers.Get()) {
+	if o == nil || IsNil(o.Suppliers.Get()) {
 		var ret int32
 		return ret
 	}
@@ -133,7 +133,7 @@ func (o *CompanyInfoPlanInfoLimits) UnsetSuppliers() {
 
 // GetProducts returns the Products field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoLimits) GetProducts() int32 {
-	if o == nil || isNil(o.Products.Get()) {
+	if o == nil || IsNil(o.Products.Get()) {
 		var ret int32
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *CompanyInfoPlanInfoLimits) UnsetProducts() {
 
 // GetDocuments returns the Documents field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoLimits) GetDocuments() int32 {
-	if o == nil || isNil(o.Documents.Get()) {
+	if o == nil || IsNil(o.Documents.Get()) {
 		var ret int32
 		return ret
 	}

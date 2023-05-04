@@ -42,7 +42,7 @@ func TestCreateReceivedDocument(t *testing.T) {
 	expected := NewReceivedDocument().
 		SetId(1).
 		SetType(ReceivedDocumentTypes.EXPENSE).
-		SetEntity(*NewReceivedDocumentEntity().
+		SetEntity(*NewEntity().
 			SetId(1).
 			SetName("neim")).
 		SetDate("2021-12-25").
@@ -200,7 +200,7 @@ func TestGetReceivedDocument(t *testing.T) {
 	expected := NewReceivedDocument().
 		SetId(1).
 		SetType(ReceivedDocumentTypes.EXPENSE).
-		SetEntity(*NewReceivedDocumentEntity().
+		SetEntity(*NewEntity().
 			SetId(1).
 			SetName("neim")).
 		SetDate("2021-12-25").
@@ -289,7 +289,7 @@ func TestListReceivedDocuments(t *testing.T) {
 	expected := NewReceivedDocument().
 		SetId(1).
 		SetType(ReceivedDocumentTypes.EXPENSE).
-		SetEntity(*NewReceivedDocumentEntity().
+		SetEntity(*NewEntity().
 			SetId(1).
 			SetName("neim")).
 		SetDate("2021-12-25").
@@ -349,7 +349,7 @@ func TestModifyReceivedDocument(t *testing.T) {
 	expected := NewReceivedDocument().
 		SetId(1).
 		SetType(ReceivedDocumentTypes.EXPENSE).
-		SetEntity(*NewReceivedDocumentEntity().
+		SetEntity(*NewEntity().
 			SetId(1).
 			SetName("neim")).
 		SetDate("2021-12-25").

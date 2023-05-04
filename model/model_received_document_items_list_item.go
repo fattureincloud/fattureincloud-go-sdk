@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -60,7 +60,7 @@ func NewReceivedDocumentItemsListItemWithDefaults() *ReceivedDocumentItemsListIt
 
 // GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentItemsListItem) GetId() int32 {
-	if o == nil || isNil(o.Id.Get()) {
+	if o == nil || IsNil(o.Id.Get()) {
 		var ret int32
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *ReceivedDocumentItemsListItem) UnsetId() {
 
 // GetProductId returns the ProductId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentItemsListItem) GetProductId() int32 {
-	if o == nil || isNil(o.ProductId.Get()) {
+	if o == nil || IsNil(o.ProductId.Get()) {
 		var ret int32
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *ReceivedDocumentItemsListItem) UnsetProductId() {
 
 // GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentItemsListItem) GetCode() string {
-	if o == nil || isNil(o.Code.Get()) {
+	if o == nil || IsNil(o.Code.Get()) {
 		var ret string
 		return ret
 	}
@@ -192,7 +192,7 @@ func (o *ReceivedDocumentItemsListItem) UnsetCode() {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentItemsListItem) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -236,7 +236,7 @@ func (o *ReceivedDocumentItemsListItem) UnsetName() {
 
 // GetMeasure returns the Measure field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentItemsListItem) GetMeasure() string {
-	if o == nil || isNil(o.Measure.Get()) {
+	if o == nil || IsNil(o.Measure.Get()) {
 		var ret string
 		return ret
 	}
@@ -280,7 +280,7 @@ func (o *ReceivedDocumentItemsListItem) UnsetMeasure() {
 
 // GetNetPrice returns the NetPrice field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentItemsListItem) GetNetPrice() float32 {
-	if o == nil || isNil(o.NetPrice.Get()) {
+	if o == nil || IsNil(o.NetPrice.Get()) {
 		var ret float32
 		return ret
 	}
@@ -324,7 +324,7 @@ func (o *ReceivedDocumentItemsListItem) UnsetNetPrice() {
 
 // GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentItemsListItem) GetCategory() string {
-	if o == nil || isNil(o.Category.Get()) {
+	if o == nil || IsNil(o.Category.Get()) {
 		var ret string
 		return ret
 	}
@@ -368,7 +368,7 @@ func (o *ReceivedDocumentItemsListItem) UnsetCategory() {
 
 // GetQty returns the Qty field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentItemsListItem) GetQty() float32 {
-	if o == nil || isNil(o.Qty.Get()) {
+	if o == nil || IsNil(o.Qty.Get()) {
 		var ret float32
 		return ret
 	}
@@ -412,7 +412,7 @@ func (o *ReceivedDocumentItemsListItem) UnsetQty() {
 
 // GetVat returns the Vat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentItemsListItem) GetVat() VatType {
-	if o == nil || isNil(o.Vat.Get()) {
+	if o == nil || IsNil(o.Vat.Get()) {
 		var ret VatType
 		return ret
 	}
@@ -456,7 +456,7 @@ func (o *ReceivedDocumentItemsListItem) UnsetVat() {
 
 // GetStock returns the Stock field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentItemsListItem) GetStock() float32 {
-	if o == nil || isNil(o.Stock.Get()) {
+	if o == nil || IsNil(o.Stock.Get()) {
 		var ret float32
 		return ret
 	}

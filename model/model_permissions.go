@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -66,7 +66,7 @@ func NewPermissionsWithDefaults() *Permissions {
 
 // GetFicSituation returns the FicSituation field value if set, zero value otherwise.
 func (o *Permissions) GetFicSituation() PermissionLevel {
-	if o == nil || isNil(o.FicSituation) {
+	if o == nil || IsNil(o.FicSituation) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -76,7 +76,7 @@ func (o *Permissions) GetFicSituation() PermissionLevel {
 // GetFicSituationOk returns a tuple with the FicSituation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetFicSituationOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.FicSituation) {
+	if o == nil || IsNil(o.FicSituation) {
 		return nil, false
 	}
 	return o.FicSituation, true
@@ -84,7 +84,7 @@ func (o *Permissions) GetFicSituationOk() (*PermissionLevel, bool) {
 
 // HasFicSituation returns a boolean if a field has been set.
 func (o *Permissions) HasFicSituation() bool {
-	if o != nil && !isNil(o.FicSituation) {
+	if o != nil && !IsNil(o.FicSituation) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *Permissions) SetFicSituation(v PermissionLevel) *Permissions {
 
 // GetFicClients returns the FicClients field value if set, zero value otherwise.
 func (o *Permissions) GetFicClients() PermissionLevel {
-	if o == nil || isNil(o.FicClients) {
+	if o == nil || IsNil(o.FicClients) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *Permissions) GetFicClients() PermissionLevel {
 // GetFicClientsOk returns a tuple with the FicClients field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetFicClientsOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.FicClients) {
+	if o == nil || IsNil(o.FicClients) {
 		return nil, false
 	}
 	return o.FicClients, true
@@ -117,7 +117,7 @@ func (o *Permissions) GetFicClientsOk() (*PermissionLevel, bool) {
 
 // HasFicClients returns a boolean if a field has been set.
 func (o *Permissions) HasFicClients() bool {
-	if o != nil && !isNil(o.FicClients) {
+	if o != nil && !IsNil(o.FicClients) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *Permissions) SetFicClients(v PermissionLevel) *Permissions {
 
 // GetFicSuppliers returns the FicSuppliers field value if set, zero value otherwise.
 func (o *Permissions) GetFicSuppliers() PermissionLevel {
-	if o == nil || isNil(o.FicSuppliers) {
+	if o == nil || IsNil(o.FicSuppliers) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -142,7 +142,7 @@ func (o *Permissions) GetFicSuppliers() PermissionLevel {
 // GetFicSuppliersOk returns a tuple with the FicSuppliers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetFicSuppliersOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.FicSuppliers) {
+	if o == nil || IsNil(o.FicSuppliers) {
 		return nil, false
 	}
 	return o.FicSuppliers, true
@@ -150,7 +150,7 @@ func (o *Permissions) GetFicSuppliersOk() (*PermissionLevel, bool) {
 
 // HasFicSuppliers returns a boolean if a field has been set.
 func (o *Permissions) HasFicSuppliers() bool {
-	if o != nil && !isNil(o.FicSuppliers) {
+	if o != nil && !IsNil(o.FicSuppliers) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *Permissions) SetFicSuppliers(v PermissionLevel) *Permissions {
 
 // GetFicProducts returns the FicProducts field value if set, zero value otherwise.
 func (o *Permissions) GetFicProducts() PermissionLevel {
-	if o == nil || isNil(o.FicProducts) {
+	if o == nil || IsNil(o.FicProducts) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *Permissions) GetFicProducts() PermissionLevel {
 // GetFicProductsOk returns a tuple with the FicProducts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetFicProductsOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.FicProducts) {
+	if o == nil || IsNil(o.FicProducts) {
 		return nil, false
 	}
 	return o.FicProducts, true
@@ -183,7 +183,7 @@ func (o *Permissions) GetFicProductsOk() (*PermissionLevel, bool) {
 
 // HasFicProducts returns a boolean if a field has been set.
 func (o *Permissions) HasFicProducts() bool {
-	if o != nil && !isNil(o.FicProducts) {
+	if o != nil && !IsNil(o.FicProducts) {
 		return true
 	}
 
@@ -198,7 +198,7 @@ func (o *Permissions) SetFicProducts(v PermissionLevel) *Permissions {
 
 // GetFicIssuedDocuments returns the FicIssuedDocuments field value if set, zero value otherwise.
 func (o *Permissions) GetFicIssuedDocuments() PermissionLevel {
-	if o == nil || isNil(o.FicIssuedDocuments) {
+	if o == nil || IsNil(o.FicIssuedDocuments) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -208,7 +208,7 @@ func (o *Permissions) GetFicIssuedDocuments() PermissionLevel {
 // GetFicIssuedDocumentsOk returns a tuple with the FicIssuedDocuments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetFicIssuedDocumentsOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.FicIssuedDocuments) {
+	if o == nil || IsNil(o.FicIssuedDocuments) {
 		return nil, false
 	}
 	return o.FicIssuedDocuments, true
@@ -216,7 +216,7 @@ func (o *Permissions) GetFicIssuedDocumentsOk() (*PermissionLevel, bool) {
 
 // HasFicIssuedDocuments returns a boolean if a field has been set.
 func (o *Permissions) HasFicIssuedDocuments() bool {
-	if o != nil && !isNil(o.FicIssuedDocuments) {
+	if o != nil && !IsNil(o.FicIssuedDocuments) {
 		return true
 	}
 
@@ -231,7 +231,7 @@ func (o *Permissions) SetFicIssuedDocuments(v PermissionLevel) *Permissions {
 
 // GetFicReceivedDocuments returns the FicReceivedDocuments field value if set, zero value otherwise.
 func (o *Permissions) GetFicReceivedDocuments() PermissionLevel {
-	if o == nil || isNil(o.FicReceivedDocuments) {
+	if o == nil || IsNil(o.FicReceivedDocuments) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -241,7 +241,7 @@ func (o *Permissions) GetFicReceivedDocuments() PermissionLevel {
 // GetFicReceivedDocumentsOk returns a tuple with the FicReceivedDocuments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetFicReceivedDocumentsOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.FicReceivedDocuments) {
+	if o == nil || IsNil(o.FicReceivedDocuments) {
 		return nil, false
 	}
 	return o.FicReceivedDocuments, true
@@ -249,7 +249,7 @@ func (o *Permissions) GetFicReceivedDocumentsOk() (*PermissionLevel, bool) {
 
 // HasFicReceivedDocuments returns a boolean if a field has been set.
 func (o *Permissions) HasFicReceivedDocuments() bool {
-	if o != nil && !isNil(o.FicReceivedDocuments) {
+	if o != nil && !IsNil(o.FicReceivedDocuments) {
 		return true
 	}
 
@@ -264,7 +264,7 @@ func (o *Permissions) SetFicReceivedDocuments(v PermissionLevel) *Permissions {
 
 // GetFicReceipts returns the FicReceipts field value if set, zero value otherwise.
 func (o *Permissions) GetFicReceipts() PermissionLevel {
-	if o == nil || isNil(o.FicReceipts) {
+	if o == nil || IsNil(o.FicReceipts) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -274,7 +274,7 @@ func (o *Permissions) GetFicReceipts() PermissionLevel {
 // GetFicReceiptsOk returns a tuple with the FicReceipts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetFicReceiptsOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.FicReceipts) {
+	if o == nil || IsNil(o.FicReceipts) {
 		return nil, false
 	}
 	return o.FicReceipts, true
@@ -282,7 +282,7 @@ func (o *Permissions) GetFicReceiptsOk() (*PermissionLevel, bool) {
 
 // HasFicReceipts returns a boolean if a field has been set.
 func (o *Permissions) HasFicReceipts() bool {
-	if o != nil && !isNil(o.FicReceipts) {
+	if o != nil && !IsNil(o.FicReceipts) {
 		return true
 	}
 
@@ -297,7 +297,7 @@ func (o *Permissions) SetFicReceipts(v PermissionLevel) *Permissions {
 
 // GetFicCalendar returns the FicCalendar field value if set, zero value otherwise.
 func (o *Permissions) GetFicCalendar() PermissionLevel {
-	if o == nil || isNil(o.FicCalendar) {
+	if o == nil || IsNil(o.FicCalendar) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -307,7 +307,7 @@ func (o *Permissions) GetFicCalendar() PermissionLevel {
 // GetFicCalendarOk returns a tuple with the FicCalendar field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetFicCalendarOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.FicCalendar) {
+	if o == nil || IsNil(o.FicCalendar) {
 		return nil, false
 	}
 	return o.FicCalendar, true
@@ -315,7 +315,7 @@ func (o *Permissions) GetFicCalendarOk() (*PermissionLevel, bool) {
 
 // HasFicCalendar returns a boolean if a field has been set.
 func (o *Permissions) HasFicCalendar() bool {
-	if o != nil && !isNil(o.FicCalendar) {
+	if o != nil && !IsNil(o.FicCalendar) {
 		return true
 	}
 
@@ -330,7 +330,7 @@ func (o *Permissions) SetFicCalendar(v PermissionLevel) *Permissions {
 
 // GetFicArchive returns the FicArchive field value if set, zero value otherwise.
 func (o *Permissions) GetFicArchive() PermissionLevel {
-	if o == nil || isNil(o.FicArchive) {
+	if o == nil || IsNil(o.FicArchive) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -340,7 +340,7 @@ func (o *Permissions) GetFicArchive() PermissionLevel {
 // GetFicArchiveOk returns a tuple with the FicArchive field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetFicArchiveOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.FicArchive) {
+	if o == nil || IsNil(o.FicArchive) {
 		return nil, false
 	}
 	return o.FicArchive, true
@@ -348,7 +348,7 @@ func (o *Permissions) GetFicArchiveOk() (*PermissionLevel, bool) {
 
 // HasFicArchive returns a boolean if a field has been set.
 func (o *Permissions) HasFicArchive() bool {
-	if o != nil && !isNil(o.FicArchive) {
+	if o != nil && !IsNil(o.FicArchive) {
 		return true
 	}
 
@@ -363,7 +363,7 @@ func (o *Permissions) SetFicArchive(v PermissionLevel) *Permissions {
 
 // GetFicTaxes returns the FicTaxes field value if set, zero value otherwise.
 func (o *Permissions) GetFicTaxes() PermissionLevel {
-	if o == nil || isNil(o.FicTaxes) {
+	if o == nil || IsNil(o.FicTaxes) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -373,7 +373,7 @@ func (o *Permissions) GetFicTaxes() PermissionLevel {
 // GetFicTaxesOk returns a tuple with the FicTaxes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetFicTaxesOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.FicTaxes) {
+	if o == nil || IsNil(o.FicTaxes) {
 		return nil, false
 	}
 	return o.FicTaxes, true
@@ -381,7 +381,7 @@ func (o *Permissions) GetFicTaxesOk() (*PermissionLevel, bool) {
 
 // HasFicTaxes returns a boolean if a field has been set.
 func (o *Permissions) HasFicTaxes() bool {
-	if o != nil && !isNil(o.FicTaxes) {
+	if o != nil && !IsNil(o.FicTaxes) {
 		return true
 	}
 
@@ -396,7 +396,7 @@ func (o *Permissions) SetFicTaxes(v PermissionLevel) *Permissions {
 
 // GetFicStock returns the FicStock field value if set, zero value otherwise.
 func (o *Permissions) GetFicStock() PermissionLevel {
-	if o == nil || isNil(o.FicStock) {
+	if o == nil || IsNil(o.FicStock) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -406,7 +406,7 @@ func (o *Permissions) GetFicStock() PermissionLevel {
 // GetFicStockOk returns a tuple with the FicStock field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetFicStockOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.FicStock) {
+	if o == nil || IsNil(o.FicStock) {
 		return nil, false
 	}
 	return o.FicStock, true
@@ -414,7 +414,7 @@ func (o *Permissions) GetFicStockOk() (*PermissionLevel, bool) {
 
 // HasFicStock returns a boolean if a field has been set.
 func (o *Permissions) HasFicStock() bool {
-	if o != nil && !isNil(o.FicStock) {
+	if o != nil && !IsNil(o.FicStock) {
 		return true
 	}
 
@@ -429,7 +429,7 @@ func (o *Permissions) SetFicStock(v PermissionLevel) *Permissions {
 
 // GetFicCashbook returns the FicCashbook field value if set, zero value otherwise.
 func (o *Permissions) GetFicCashbook() PermissionLevel {
-	if o == nil || isNil(o.FicCashbook) {
+	if o == nil || IsNil(o.FicCashbook) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -439,7 +439,7 @@ func (o *Permissions) GetFicCashbook() PermissionLevel {
 // GetFicCashbookOk returns a tuple with the FicCashbook field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetFicCashbookOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.FicCashbook) {
+	if o == nil || IsNil(o.FicCashbook) {
 		return nil, false
 	}
 	return o.FicCashbook, true
@@ -447,7 +447,7 @@ func (o *Permissions) GetFicCashbookOk() (*PermissionLevel, bool) {
 
 // HasFicCashbook returns a boolean if a field has been set.
 func (o *Permissions) HasFicCashbook() bool {
-	if o != nil && !isNil(o.FicCashbook) {
+	if o != nil && !IsNil(o.FicCashbook) {
 		return true
 	}
 
@@ -462,7 +462,7 @@ func (o *Permissions) SetFicCashbook(v PermissionLevel) *Permissions {
 
 // GetFicSettings returns the FicSettings field value if set, zero value otherwise.
 func (o *Permissions) GetFicSettings() PermissionLevel {
-	if o == nil || isNil(o.FicSettings) {
+	if o == nil || IsNil(o.FicSettings) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -472,7 +472,7 @@ func (o *Permissions) GetFicSettings() PermissionLevel {
 // GetFicSettingsOk returns a tuple with the FicSettings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetFicSettingsOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.FicSettings) {
+	if o == nil || IsNil(o.FicSettings) {
 		return nil, false
 	}
 	return o.FicSettings, true
@@ -480,7 +480,7 @@ func (o *Permissions) GetFicSettingsOk() (*PermissionLevel, bool) {
 
 // HasFicSettings returns a boolean if a field has been set.
 func (o *Permissions) HasFicSettings() bool {
-	if o != nil && !isNil(o.FicSettings) {
+	if o != nil && !IsNil(o.FicSettings) {
 		return true
 	}
 
@@ -495,7 +495,7 @@ func (o *Permissions) SetFicSettings(v PermissionLevel) *Permissions {
 
 // GetFicEmails returns the FicEmails field value if set, zero value otherwise.
 func (o *Permissions) GetFicEmails() PermissionLevel {
-	if o == nil || isNil(o.FicEmails) {
+	if o == nil || IsNil(o.FicEmails) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -505,7 +505,7 @@ func (o *Permissions) GetFicEmails() PermissionLevel {
 // GetFicEmailsOk returns a tuple with the FicEmails field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetFicEmailsOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.FicEmails) {
+	if o == nil || IsNil(o.FicEmails) {
 		return nil, false
 	}
 	return o.FicEmails, true
@@ -513,7 +513,7 @@ func (o *Permissions) GetFicEmailsOk() (*PermissionLevel, bool) {
 
 // HasFicEmails returns a boolean if a field has been set.
 func (o *Permissions) HasFicEmails() bool {
-	if o != nil && !isNil(o.FicEmails) {
+	if o != nil && !IsNil(o.FicEmails) {
 		return true
 	}
 
@@ -528,7 +528,7 @@ func (o *Permissions) SetFicEmails(v PermissionLevel) *Permissions {
 
 // GetFicExport returns the FicExport field value if set, zero value otherwise.
 func (o *Permissions) GetFicExport() PermissionLevel {
-	if o == nil || isNil(o.FicExport) {
+	if o == nil || IsNil(o.FicExport) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -538,7 +538,7 @@ func (o *Permissions) GetFicExport() PermissionLevel {
 // GetFicExportOk returns a tuple with the FicExport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetFicExportOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.FicExport) {
+	if o == nil || IsNil(o.FicExport) {
 		return nil, false
 	}
 	return o.FicExport, true
@@ -546,7 +546,7 @@ func (o *Permissions) GetFicExportOk() (*PermissionLevel, bool) {
 
 // HasFicExport returns a boolean if a field has been set.
 func (o *Permissions) HasFicExport() bool {
-	if o != nil && !isNil(o.FicExport) {
+	if o != nil && !IsNil(o.FicExport) {
 		return true
 	}
 
@@ -561,7 +561,7 @@ func (o *Permissions) SetFicExport(v PermissionLevel) *Permissions {
 
 // GetFicImportBankstatements returns the FicImportBankstatements field value if set, zero value otherwise.
 func (o *Permissions) GetFicImportBankstatements() PermissionLevel {
-	if o == nil || isNil(o.FicImportBankstatements) {
+	if o == nil || IsNil(o.FicImportBankstatements) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -571,7 +571,7 @@ func (o *Permissions) GetFicImportBankstatements() PermissionLevel {
 // GetFicImportBankstatementsOk returns a tuple with the FicImportBankstatements field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetFicImportBankstatementsOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.FicImportBankstatements) {
+	if o == nil || IsNil(o.FicImportBankstatements) {
 		return nil, false
 	}
 	return o.FicImportBankstatements, true
@@ -579,7 +579,7 @@ func (o *Permissions) GetFicImportBankstatementsOk() (*PermissionLevel, bool) {
 
 // HasFicImportBankstatements returns a boolean if a field has been set.
 func (o *Permissions) HasFicImportBankstatements() bool {
-	if o != nil && !isNil(o.FicImportBankstatements) {
+	if o != nil && !IsNil(o.FicImportBankstatements) {
 		return true
 	}
 
@@ -594,7 +594,7 @@ func (o *Permissions) SetFicImportBankstatements(v PermissionLevel) *Permissions
 
 // GetFicImportClientsSuppliers returns the FicImportClientsSuppliers field value if set, zero value otherwise.
 func (o *Permissions) GetFicImportClientsSuppliers() PermissionLevel {
-	if o == nil || isNil(o.FicImportClientsSuppliers) {
+	if o == nil || IsNil(o.FicImportClientsSuppliers) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -604,7 +604,7 @@ func (o *Permissions) GetFicImportClientsSuppliers() PermissionLevel {
 // GetFicImportClientsSuppliersOk returns a tuple with the FicImportClientsSuppliers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetFicImportClientsSuppliersOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.FicImportClientsSuppliers) {
+	if o == nil || IsNil(o.FicImportClientsSuppliers) {
 		return nil, false
 	}
 	return o.FicImportClientsSuppliers, true
@@ -612,7 +612,7 @@ func (o *Permissions) GetFicImportClientsSuppliersOk() (*PermissionLevel, bool) 
 
 // HasFicImportClientsSuppliers returns a boolean if a field has been set.
 func (o *Permissions) HasFicImportClientsSuppliers() bool {
-	if o != nil && !isNil(o.FicImportClientsSuppliers) {
+	if o != nil && !IsNil(o.FicImportClientsSuppliers) {
 		return true
 	}
 
@@ -627,7 +627,7 @@ func (o *Permissions) SetFicImportClientsSuppliers(v PermissionLevel) *Permissio
 
 // GetFicImportIssuedDocuments returns the FicImportIssuedDocuments field value if set, zero value otherwise.
 func (o *Permissions) GetFicImportIssuedDocuments() PermissionLevel {
-	if o == nil || isNil(o.FicImportIssuedDocuments) {
+	if o == nil || IsNil(o.FicImportIssuedDocuments) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -637,7 +637,7 @@ func (o *Permissions) GetFicImportIssuedDocuments() PermissionLevel {
 // GetFicImportIssuedDocumentsOk returns a tuple with the FicImportIssuedDocuments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetFicImportIssuedDocumentsOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.FicImportIssuedDocuments) {
+	if o == nil || IsNil(o.FicImportIssuedDocuments) {
 		return nil, false
 	}
 	return o.FicImportIssuedDocuments, true
@@ -645,7 +645,7 @@ func (o *Permissions) GetFicImportIssuedDocumentsOk() (*PermissionLevel, bool) {
 
 // HasFicImportIssuedDocuments returns a boolean if a field has been set.
 func (o *Permissions) HasFicImportIssuedDocuments() bool {
-	if o != nil && !isNil(o.FicImportIssuedDocuments) {
+	if o != nil && !IsNil(o.FicImportIssuedDocuments) {
 		return true
 	}
 
@@ -660,7 +660,7 @@ func (o *Permissions) SetFicImportIssuedDocuments(v PermissionLevel) *Permission
 
 // GetFicImportProducts returns the FicImportProducts field value if set, zero value otherwise.
 func (o *Permissions) GetFicImportProducts() PermissionLevel {
-	if o == nil || isNil(o.FicImportProducts) {
+	if o == nil || IsNil(o.FicImportProducts) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -670,7 +670,7 @@ func (o *Permissions) GetFicImportProducts() PermissionLevel {
 // GetFicImportProductsOk returns a tuple with the FicImportProducts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetFicImportProductsOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.FicImportProducts) {
+	if o == nil || IsNil(o.FicImportProducts) {
 		return nil, false
 	}
 	return o.FicImportProducts, true
@@ -678,7 +678,7 @@ func (o *Permissions) GetFicImportProductsOk() (*PermissionLevel, bool) {
 
 // HasFicImportProducts returns a boolean if a field has been set.
 func (o *Permissions) HasFicImportProducts() bool {
-	if o != nil && !isNil(o.FicImportProducts) {
+	if o != nil && !IsNil(o.FicImportProducts) {
 		return true
 	}
 
@@ -693,7 +693,7 @@ func (o *Permissions) SetFicImportProducts(v PermissionLevel) *Permissions {
 
 // GetFicRecurring returns the FicRecurring field value if set, zero value otherwise.
 func (o *Permissions) GetFicRecurring() PermissionLevel {
-	if o == nil || isNil(o.FicRecurring) {
+	if o == nil || IsNil(o.FicRecurring) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -703,7 +703,7 @@ func (o *Permissions) GetFicRecurring() PermissionLevel {
 // GetFicRecurringOk returns a tuple with the FicRecurring field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetFicRecurringOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.FicRecurring) {
+	if o == nil || IsNil(o.FicRecurring) {
 		return nil, false
 	}
 	return o.FicRecurring, true
@@ -711,7 +711,7 @@ func (o *Permissions) GetFicRecurringOk() (*PermissionLevel, bool) {
 
 // HasFicRecurring returns a boolean if a field has been set.
 func (o *Permissions) HasFicRecurring() bool {
-	if o != nil && !isNil(o.FicRecurring) {
+	if o != nil && !IsNil(o.FicRecurring) {
 		return true
 	}
 
@@ -726,7 +726,7 @@ func (o *Permissions) SetFicRecurring(v PermissionLevel) *Permissions {
 
 // GetFicRiba returns the FicRiba field value if set, zero value otherwise.
 func (o *Permissions) GetFicRiba() PermissionLevel {
-	if o == nil || isNil(o.FicRiba) {
+	if o == nil || IsNil(o.FicRiba) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -736,7 +736,7 @@ func (o *Permissions) GetFicRiba() PermissionLevel {
 // GetFicRibaOk returns a tuple with the FicRiba field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetFicRibaOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.FicRiba) {
+	if o == nil || IsNil(o.FicRiba) {
 		return nil, false
 	}
 	return o.FicRiba, true
@@ -744,7 +744,7 @@ func (o *Permissions) GetFicRibaOk() (*PermissionLevel, bool) {
 
 // HasFicRiba returns a boolean if a field has been set.
 func (o *Permissions) HasFicRiba() bool {
-	if o != nil && !isNil(o.FicRiba) {
+	if o != nil && !IsNil(o.FicRiba) {
 		return true
 	}
 
@@ -759,7 +759,7 @@ func (o *Permissions) SetFicRiba(v PermissionLevel) *Permissions {
 
 // GetDicEmployees returns the DicEmployees field value if set, zero value otherwise.
 func (o *Permissions) GetDicEmployees() PermissionLevel {
-	if o == nil || isNil(o.DicEmployees) {
+	if o == nil || IsNil(o.DicEmployees) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -769,7 +769,7 @@ func (o *Permissions) GetDicEmployees() PermissionLevel {
 // GetDicEmployeesOk returns a tuple with the DicEmployees field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetDicEmployeesOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.DicEmployees) {
+	if o == nil || IsNil(o.DicEmployees) {
 		return nil, false
 	}
 	return o.DicEmployees, true
@@ -777,7 +777,7 @@ func (o *Permissions) GetDicEmployeesOk() (*PermissionLevel, bool) {
 
 // HasDicEmployees returns a boolean if a field has been set.
 func (o *Permissions) HasDicEmployees() bool {
-	if o != nil && !isNil(o.DicEmployees) {
+	if o != nil && !IsNil(o.DicEmployees) {
 		return true
 	}
 
@@ -792,7 +792,7 @@ func (o *Permissions) SetDicEmployees(v PermissionLevel) *Permissions {
 
 // GetDicSettings returns the DicSettings field value if set, zero value otherwise.
 func (o *Permissions) GetDicSettings() PermissionLevel {
-	if o == nil || isNil(o.DicSettings) {
+	if o == nil || IsNil(o.DicSettings) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -802,7 +802,7 @@ func (o *Permissions) GetDicSettings() PermissionLevel {
 // GetDicSettingsOk returns a tuple with the DicSettings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetDicSettingsOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.DicSettings) {
+	if o == nil || IsNil(o.DicSettings) {
 		return nil, false
 	}
 	return o.DicSettings, true
@@ -810,7 +810,7 @@ func (o *Permissions) GetDicSettingsOk() (*PermissionLevel, bool) {
 
 // HasDicSettings returns a boolean if a field has been set.
 func (o *Permissions) HasDicSettings() bool {
-	if o != nil && !isNil(o.DicSettings) {
+	if o != nil && !IsNil(o.DicSettings) {
 		return true
 	}
 
@@ -825,7 +825,7 @@ func (o *Permissions) SetDicSettings(v PermissionLevel) *Permissions {
 
 // GetDicTimesheet returns the DicTimesheet field value if set, zero value otherwise.
 func (o *Permissions) GetDicTimesheet() PermissionLevel {
-	if o == nil || isNil(o.DicTimesheet) {
+	if o == nil || IsNil(o.DicTimesheet) {
 		var ret PermissionLevel
 		return ret
 	}
@@ -835,7 +835,7 @@ func (o *Permissions) GetDicTimesheet() PermissionLevel {
 // GetDicTimesheetOk returns a tuple with the DicTimesheet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Permissions) GetDicTimesheetOk() (*PermissionLevel, bool) {
-	if o == nil || isNil(o.DicTimesheet) {
+	if o == nil || IsNil(o.DicTimesheet) {
 		return nil, false
 	}
 	return o.DicTimesheet, true
@@ -843,7 +843,7 @@ func (o *Permissions) GetDicTimesheetOk() (*PermissionLevel, bool) {
 
 // HasDicTimesheet returns a boolean if a field has been set.
 func (o *Permissions) HasDicTimesheet() bool {
-	if o != nil && !isNil(o.DicTimesheet) {
+	if o != nil && !IsNil(o.DicTimesheet) {
 		return true
 	}
 
@@ -858,7 +858,7 @@ func (o *Permissions) SetDicTimesheet(v PermissionLevel) *Permissions {
 
 // GetFicIssuedDocumentsDetailed returns the FicIssuedDocumentsDetailed field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Permissions) GetFicIssuedDocumentsDetailed() PermissionsFicIssuedDocumentsDetailed {
-	if o == nil || isNil(o.FicIssuedDocumentsDetailed.Get()) {
+	if o == nil || IsNil(o.FicIssuedDocumentsDetailed.Get()) {
 		var ret PermissionsFicIssuedDocumentsDetailed
 		return ret
 	}
@@ -910,76 +910,76 @@ func (o Permissions) MarshalJSON() ([]byte, error) {
 
 func (o Permissions) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.FicSituation) {
+	if !IsNil(o.FicSituation) {
 		toSerialize["fic_situation"] = o.FicSituation
 	}
-	if !isNil(o.FicClients) {
+	if !IsNil(o.FicClients) {
 		toSerialize["fic_clients"] = o.FicClients
 	}
-	if !isNil(o.FicSuppliers) {
+	if !IsNil(o.FicSuppliers) {
 		toSerialize["fic_suppliers"] = o.FicSuppliers
 	}
-	if !isNil(o.FicProducts) {
+	if !IsNil(o.FicProducts) {
 		toSerialize["fic_products"] = o.FicProducts
 	}
-	if !isNil(o.FicIssuedDocuments) {
+	if !IsNil(o.FicIssuedDocuments) {
 		toSerialize["fic_issued_documents"] = o.FicIssuedDocuments
 	}
-	if !isNil(o.FicReceivedDocuments) {
+	if !IsNil(o.FicReceivedDocuments) {
 		toSerialize["fic_received_documents"] = o.FicReceivedDocuments
 	}
-	if !isNil(o.FicReceipts) {
+	if !IsNil(o.FicReceipts) {
 		toSerialize["fic_receipts"] = o.FicReceipts
 	}
-	if !isNil(o.FicCalendar) {
+	if !IsNil(o.FicCalendar) {
 		toSerialize["fic_calendar"] = o.FicCalendar
 	}
-	if !isNil(o.FicArchive) {
+	if !IsNil(o.FicArchive) {
 		toSerialize["fic_archive"] = o.FicArchive
 	}
-	if !isNil(o.FicTaxes) {
+	if !IsNil(o.FicTaxes) {
 		toSerialize["fic_taxes"] = o.FicTaxes
 	}
-	if !isNil(o.FicStock) {
+	if !IsNil(o.FicStock) {
 		toSerialize["fic_stock"] = o.FicStock
 	}
-	if !isNil(o.FicCashbook) {
+	if !IsNil(o.FicCashbook) {
 		toSerialize["fic_cashbook"] = o.FicCashbook
 	}
-	if !isNil(o.FicSettings) {
+	if !IsNil(o.FicSettings) {
 		toSerialize["fic_settings"] = o.FicSettings
 	}
-	if !isNil(o.FicEmails) {
+	if !IsNil(o.FicEmails) {
 		toSerialize["fic_emails"] = o.FicEmails
 	}
-	if !isNil(o.FicExport) {
+	if !IsNil(o.FicExport) {
 		toSerialize["fic_export"] = o.FicExport
 	}
-	if !isNil(o.FicImportBankstatements) {
+	if !IsNil(o.FicImportBankstatements) {
 		toSerialize["fic_import_bankstatements"] = o.FicImportBankstatements
 	}
-	if !isNil(o.FicImportClientsSuppliers) {
+	if !IsNil(o.FicImportClientsSuppliers) {
 		toSerialize["fic_import_clients_suppliers"] = o.FicImportClientsSuppliers
 	}
-	if !isNil(o.FicImportIssuedDocuments) {
+	if !IsNil(o.FicImportIssuedDocuments) {
 		toSerialize["fic_import_issued_documents"] = o.FicImportIssuedDocuments
 	}
-	if !isNil(o.FicImportProducts) {
+	if !IsNil(o.FicImportProducts) {
 		toSerialize["fic_import_products"] = o.FicImportProducts
 	}
-	if !isNil(o.FicRecurring) {
+	if !IsNil(o.FicRecurring) {
 		toSerialize["fic_recurring"] = o.FicRecurring
 	}
-	if !isNil(o.FicRiba) {
+	if !IsNil(o.FicRiba) {
 		toSerialize["fic_riba"] = o.FicRiba
 	}
-	if !isNil(o.DicEmployees) {
+	if !IsNil(o.DicEmployees) {
 		toSerialize["dic_employees"] = o.DicEmployees
 	}
-	if !isNil(o.DicSettings) {
+	if !IsNil(o.DicSettings) {
 		toSerialize["dic_settings"] = o.DicSettings
 	}
-	if !isNil(o.DicTimesheet) {
+	if !IsNil(o.DicTimesheet) {
 		toSerialize["dic_timesheet"] = o.DicTimesheet
 	}
 	if o.FicIssuedDocumentsDetailed.IsSet() {

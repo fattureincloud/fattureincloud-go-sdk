@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -110,9 +110,9 @@ func (a *ReceiptsApiService) CreateReceiptExecute(r ApiCreateReceiptRequest) (*C
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -215,9 +215,9 @@ func (a *ReceiptsApiService) DeleteReceiptExecute(r ApiDeleteReceiptRequest) (*h
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -301,10 +301,10 @@ func (a *ReceiptsApiService) GetReceiptExecute(r ApiGetReceiptRequest) (*GetRece
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
 	}
 	if r.fieldset != nil {
-		parameterAddToQuery(localVarQueryParams, "fieldset", r.fieldset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -333,9 +333,9 @@ func (a *ReceiptsApiService) GetReceiptExecute(r ApiGetReceiptRequest) (*GetRece
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -436,9 +436,9 @@ func (a *ReceiptsApiService) GetReceiptPreCreateInfoExecute(r ApiGetReceiptPreCr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -532,8 +532,8 @@ func (a *ReceiptsApiService) GetReceiptsMonthlyTotalsExecute(r ApiGetReceiptsMon
 		return localVarReturnValue, nil, reportError("year is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "type", r.type_, "")
-	parameterAddToQuery(localVarQueryParams, "year", r.year, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "year", r.year, "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -561,9 +561,9 @@ func (a *ReceiptsApiService) GetReceiptsMonthlyTotalsExecute(r ApiGetReceiptsMon
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -680,22 +680,22 @@ func (a *ReceiptsApiService) ListReceiptsExecute(r ApiListReceiptsRequest) (*Lis
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
 	}
 	if r.fieldset != nil {
-		parameterAddToQuery(localVarQueryParams, "fieldset", r.fieldset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
 	}
 	if r.page != nil {
-		parameterAddToQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
 	}
 	if r.perPage != nil {
-		parameterAddToQuery(localVarQueryParams, "per_page", r.perPage, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
 	}
 	if r.sort != nil {
-		parameterAddToQuery(localVarQueryParams, "sort", r.sort, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "")
 	}
 	if r.q != nil {
-		parameterAddToQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -724,9 +724,9 @@ func (a *ReceiptsApiService) ListReceiptsExecute(r ApiListReceiptsRequest) (*Lis
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -840,9 +840,9 @@ func (a *ReceiptsApiService) ModifyReceiptExecute(r ApiModifyReceiptRequest) (*M
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

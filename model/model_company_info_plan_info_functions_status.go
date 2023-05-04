@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -43,7 +43,7 @@ func NewCompanyInfoPlanInfoFunctionsStatusWithDefaults() *CompanyInfoPlanInfoFun
 
 // GetTsDigital returns the TsDigital field value if set, zero value otherwise.
 func (o *CompanyInfoPlanInfoFunctionsStatus) GetTsDigital() FunctionStatus {
-	if o == nil || isNil(o.TsDigital) {
+	if o == nil || IsNil(o.TsDigital) {
 		var ret FunctionStatus
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *CompanyInfoPlanInfoFunctionsStatus) GetTsDigital() FunctionStatus {
 // GetTsDigitalOk returns a tuple with the TsDigital field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CompanyInfoPlanInfoFunctionsStatus) GetTsDigitalOk() (*FunctionStatus, bool) {
-	if o == nil || isNil(o.TsDigital) {
+	if o == nil || IsNil(o.TsDigital) {
 		return nil, false
 	}
 	return o.TsDigital, true
@@ -61,7 +61,7 @@ func (o *CompanyInfoPlanInfoFunctionsStatus) GetTsDigitalOk() (*FunctionStatus, 
 
 // HasTsDigital returns a boolean if a field has been set.
 func (o *CompanyInfoPlanInfoFunctionsStatus) HasTsDigital() bool {
-	if o != nil && !isNil(o.TsDigital) {
+	if o != nil && !IsNil(o.TsDigital) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *CompanyInfoPlanInfoFunctionsStatus) SetTsDigital(v FunctionStatus) *Com
 
 // GetTsPay returns the TsPay field value if set, zero value otherwise.
 func (o *CompanyInfoPlanInfoFunctionsStatus) GetTsPay() FunctionStatus {
-	if o == nil || isNil(o.TsPay) {
+	if o == nil || IsNil(o.TsPay) {
 		var ret FunctionStatus
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *CompanyInfoPlanInfoFunctionsStatus) GetTsPay() FunctionStatus {
 // GetTsPayOk returns a tuple with the TsPay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CompanyInfoPlanInfoFunctionsStatus) GetTsPayOk() (*FunctionStatus, bool) {
-	if o == nil || isNil(o.TsPay) {
+	if o == nil || IsNil(o.TsPay) {
 		return nil, false
 	}
 	return o.TsPay, true
@@ -94,7 +94,7 @@ func (o *CompanyInfoPlanInfoFunctionsStatus) GetTsPayOk() (*FunctionStatus, bool
 
 // HasTsPay returns a boolean if a field has been set.
 func (o *CompanyInfoPlanInfoFunctionsStatus) HasTsPay() bool {
-	if o != nil && !isNil(o.TsPay) {
+	if o != nil && !IsNil(o.TsPay) {
 		return true
 	}
 
@@ -117,10 +117,10 @@ func (o CompanyInfoPlanInfoFunctionsStatus) MarshalJSON() ([]byte, error) {
 
 func (o CompanyInfoPlanInfoFunctionsStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TsDigital) {
+	if !IsNil(o.TsDigital) {
 		toSerialize["ts_digital"] = o.TsDigital
 	}
-	if !isNil(o.TsPay) {
+	if !IsNil(o.TsPay) {
 		toSerialize["ts_pay"] = o.TsPay
 	}
 	return toSerialize, nil

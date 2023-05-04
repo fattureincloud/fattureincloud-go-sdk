@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -65,7 +65,7 @@ func NewReceiptWithDefaults() *Receipt {
 
 // GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Receipt) GetId() int32 {
-	if o == nil || isNil(o.Id.Get()) {
+	if o == nil || IsNil(o.Id.Get()) {
 		var ret int32
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *Receipt) UnsetId() {
 
 // GetDate returns the Date field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Receipt) GetDate() string {
-	if o == nil || isNil(o.Date.Get()) {
+	if o == nil || IsNil(o.Date.Get()) {
 		var ret string
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *Receipt) UnsetDate() {
 
 // GetNumber returns the Number field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Receipt) GetNumber() float32 {
-	if o == nil || isNil(o.Number.Get()) {
+	if o == nil || IsNil(o.Number.Get()) {
 		var ret float32
 		return ret
 	}
@@ -197,7 +197,7 @@ func (o *Receipt) UnsetNumber() {
 
 // GetNumeration returns the Numeration field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Receipt) GetNumeration() string {
-	if o == nil || isNil(o.Numeration.Get()) {
+	if o == nil || IsNil(o.Numeration.Get()) {
 		var ret string
 		return ret
 	}
@@ -241,7 +241,7 @@ func (o *Receipt) UnsetNumeration() {
 
 // GetAmountNet returns the AmountNet field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Receipt) GetAmountNet() float32 {
-	if o == nil || isNil(o.AmountNet.Get()) {
+	if o == nil || IsNil(o.AmountNet.Get()) {
 		var ret float32
 		return ret
 	}
@@ -285,7 +285,7 @@ func (o *Receipt) UnsetAmountNet() {
 
 // GetAmountVat returns the AmountVat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Receipt) GetAmountVat() float32 {
-	if o == nil || isNil(o.AmountVat.Get()) {
+	if o == nil || IsNil(o.AmountVat.Get()) {
 		var ret float32
 		return ret
 	}
@@ -329,7 +329,7 @@ func (o *Receipt) UnsetAmountVat() {
 
 // GetAmountGross returns the AmountGross field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Receipt) GetAmountGross() float32 {
-	if o == nil || isNil(o.AmountGross.Get()) {
+	if o == nil || IsNil(o.AmountGross.Get()) {
 		var ret float32
 		return ret
 	}
@@ -373,7 +373,7 @@ func (o *Receipt) UnsetAmountGross() {
 
 // GetUseGrossPrices returns the UseGrossPrices field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Receipt) GetUseGrossPrices() bool {
-	if o == nil || isNil(o.UseGrossPrices.Get()) {
+	if o == nil || IsNil(o.UseGrossPrices.Get()) {
 		var ret bool
 		return ret
 	}
@@ -417,7 +417,7 @@ func (o *Receipt) UnsetUseGrossPrices() {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *Receipt) GetType() ReceiptType {
-	if o == nil || isNil(o.Type) {
+	if o == nil || IsNil(o.Type) {
 		var ret ReceiptType
 		return ret
 	}
@@ -427,7 +427,7 @@ func (o *Receipt) GetType() ReceiptType {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Receipt) GetTypeOk() (*ReceiptType, bool) {
-	if o == nil || isNil(o.Type) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return o.Type, true
@@ -435,7 +435,7 @@ func (o *Receipt) GetTypeOk() (*ReceiptType, bool) {
 
 // HasType returns a boolean if a field has been set.
 func (o *Receipt) HasType() bool {
-	if o != nil && !isNil(o.Type) {
+	if o != nil && !IsNil(o.Type) {
 		return true
 	}
 
@@ -450,7 +450,7 @@ func (o *Receipt) SetType(v ReceiptType) *Receipt {
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Receipt) GetDescription() string {
-	if o == nil || isNil(o.Description.Get()) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
@@ -494,7 +494,7 @@ func (o *Receipt) UnsetDescription() {
 
 // GetRcCenter returns the RcCenter field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Receipt) GetRcCenter() string {
-	if o == nil || isNil(o.RcCenter.Get()) {
+	if o == nil || IsNil(o.RcCenter.Get()) {
 		var ret string
 		return ret
 	}
@@ -538,7 +538,7 @@ func (o *Receipt) UnsetRcCenter() {
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Receipt) GetCreatedAt() string {
-	if o == nil || isNil(o.CreatedAt.Get()) {
+	if o == nil || IsNil(o.CreatedAt.Get()) {
 		var ret string
 		return ret
 	}
@@ -582,7 +582,7 @@ func (o *Receipt) UnsetCreatedAt() {
 
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Receipt) GetUpdatedAt() string {
-	if o == nil || isNil(o.UpdatedAt.Get()) {
+	if o == nil || IsNil(o.UpdatedAt.Get()) {
 		var ret string
 		return ret
 	}
@@ -626,7 +626,7 @@ func (o *Receipt) UnsetUpdatedAt() {
 
 // GetPaymentAccount returns the PaymentAccount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Receipt) GetPaymentAccount() PaymentAccount {
-	if o == nil || isNil(o.PaymentAccount.Get()) {
+	if o == nil || IsNil(o.PaymentAccount.Get()) {
 		var ret PaymentAccount
 		return ret
 	}
@@ -681,7 +681,7 @@ func (o *Receipt) GetItemsList() []ReceiptItemsListItem {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Receipt) GetItemsListOk() ([]ReceiptItemsListItem, bool) {
-	if o == nil || isNil(o.ItemsList) {
+	if o == nil || IsNil(o.ItemsList) {
 		return nil, false
 	}
 	return o.ItemsList, true
@@ -689,7 +689,7 @@ func (o *Receipt) GetItemsListOk() ([]ReceiptItemsListItem, bool) {
 
 // HasItemsList returns a boolean if a field has been set.
 func (o *Receipt) HasItemsList() bool {
-	if o != nil && isNil(o.ItemsList) {
+	if o != nil && IsNil(o.ItemsList) {
 		return true
 	}
 
@@ -736,7 +736,7 @@ func (o Receipt) ToMap() (map[string]interface{}, error) {
 	if o.UseGrossPrices.IsSet() {
 		toSerialize["use_gross_prices"] = o.UseGrossPrices.Get()
 	}
-	if !isNil(o.Type) {
+	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
 	if o.Description.IsSet() {

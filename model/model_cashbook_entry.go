@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -58,7 +58,7 @@ func NewCashbookEntryWithDefaults() *CashbookEntry {
 
 // GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CashbookEntry) GetId() string {
-	if o == nil || isNil(o.Id.Get()) {
+	if o == nil || IsNil(o.Id.Get()) {
 		var ret string
 		return ret
 	}
@@ -102,7 +102,7 @@ func (o *CashbookEntry) UnsetId() {
 
 // GetDate returns the Date field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CashbookEntry) GetDate() string {
-	if o == nil || isNil(o.Date.Get()) {
+	if o == nil || IsNil(o.Date.Get()) {
 		var ret string
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *CashbookEntry) UnsetDate() {
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CashbookEntry) GetDescription() string {
-	if o == nil || isNil(o.Description.Get()) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *CashbookEntry) UnsetDescription() {
 
 // GetKind returns the Kind field value if set, zero value otherwise.
 func (o *CashbookEntry) GetKind() CashbookEntryKind {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		var ret CashbookEntryKind
 		return ret
 	}
@@ -200,7 +200,7 @@ func (o *CashbookEntry) GetKind() CashbookEntryKind {
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CashbookEntry) GetKindOk() (*CashbookEntryKind, bool) {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
 	return o.Kind, true
@@ -208,7 +208,7 @@ func (o *CashbookEntry) GetKindOk() (*CashbookEntryKind, bool) {
 
 // HasKind returns a boolean if a field has been set.
 func (o *CashbookEntry) HasKind() bool {
-	if o != nil && !isNil(o.Kind) {
+	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
 
@@ -223,7 +223,7 @@ func (o *CashbookEntry) SetKind(v CashbookEntryKind) *CashbookEntry {
 
 // GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CashbookEntry) GetType() CashbookEntryType {
-	if o == nil || isNil(o.Type.Get()) {
+	if o == nil || IsNil(o.Type.Get()) {
 		var ret CashbookEntryType
 		return ret
 	}
@@ -267,7 +267,7 @@ func (o *CashbookEntry) UnsetType() {
 
 // GetEntityName returns the EntityName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CashbookEntry) GetEntityName() string {
-	if o == nil || isNil(o.EntityName.Get()) {
+	if o == nil || IsNil(o.EntityName.Get()) {
 		var ret string
 		return ret
 	}
@@ -311,7 +311,7 @@ func (o *CashbookEntry) UnsetEntityName() {
 
 // GetDocument returns the Document field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CashbookEntry) GetDocument() CashbookEntryDocument {
-	if o == nil || isNil(o.Document.Get()) {
+	if o == nil || IsNil(o.Document.Get()) {
 		var ret CashbookEntryDocument
 		return ret
 	}
@@ -355,7 +355,7 @@ func (o *CashbookEntry) UnsetDocument() {
 
 // GetAmountIn returns the AmountIn field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CashbookEntry) GetAmountIn() float32 {
-	if o == nil || isNil(o.AmountIn.Get()) {
+	if o == nil || IsNil(o.AmountIn.Get()) {
 		var ret float32
 		return ret
 	}
@@ -399,7 +399,7 @@ func (o *CashbookEntry) UnsetAmountIn() {
 
 // GetPaymentAccountIn returns the PaymentAccountIn field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CashbookEntry) GetPaymentAccountIn() PaymentAccount {
-	if o == nil || isNil(o.PaymentAccountIn.Get()) {
+	if o == nil || IsNil(o.PaymentAccountIn.Get()) {
 		var ret PaymentAccount
 		return ret
 	}
@@ -443,7 +443,7 @@ func (o *CashbookEntry) UnsetPaymentAccountIn() {
 
 // GetAmountOut returns the AmountOut field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CashbookEntry) GetAmountOut() float32 {
-	if o == nil || isNil(o.AmountOut.Get()) {
+	if o == nil || IsNil(o.AmountOut.Get()) {
 		var ret float32
 		return ret
 	}
@@ -487,7 +487,7 @@ func (o *CashbookEntry) UnsetAmountOut() {
 
 // GetPaymentAccountOut returns the PaymentAccountOut field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CashbookEntry) GetPaymentAccountOut() PaymentAccount {
-	if o == nil || isNil(o.PaymentAccountOut.Get()) {
+	if o == nil || IsNil(o.PaymentAccountOut.Get()) {
 		var ret PaymentAccount
 		return ret
 	}
@@ -548,7 +548,7 @@ func (o CashbookEntry) ToMap() (map[string]interface{}, error) {
 	if o.Description.IsSet() {
 		toSerialize["description"] = o.Description.Get()
 	}
-	if !isNil(o.Kind) {
+	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
 	if o.Type.IsSet() {

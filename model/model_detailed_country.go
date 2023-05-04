@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -49,7 +49,7 @@ func NewDetailedCountryWithDefaults() *DetailedCountry {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DetailedCountry) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *DetailedCountry) UnsetName() {
 
 // GetSettingsName returns the SettingsName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DetailedCountry) GetSettingsName() string {
-	if o == nil || isNil(o.SettingsName.Get()) {
+	if o == nil || IsNil(o.SettingsName.Get()) {
 		var ret string
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *DetailedCountry) UnsetSettingsName() {
 
 // GetIso returns the Iso field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DetailedCountry) GetIso() string {
-	if o == nil || isNil(o.Iso.Get()) {
+	if o == nil || IsNil(o.Iso.Get()) {
 		var ret string
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *DetailedCountry) UnsetIso() {
 
 // GetFiscalIso returns the FiscalIso field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DetailedCountry) GetFiscalIso() string {
-	if o == nil || isNil(o.FiscalIso.Get()) {
+	if o == nil || IsNil(o.FiscalIso.Get()) {
 		var ret string
 		return ret
 	}
@@ -225,7 +225,7 @@ func (o *DetailedCountry) UnsetFiscalIso() {
 
 // GetUic returns the Uic field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DetailedCountry) GetUic() string {
-	if o == nil || isNil(o.Uic.Get()) {
+	if o == nil || IsNil(o.Uic.Get()) {
 		var ret string
 		return ret
 	}

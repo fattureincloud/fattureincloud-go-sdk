@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -55,7 +55,7 @@ func NewF24WithDefaults() *F24 {
 
 // GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *F24) GetId() int32 {
-	if o == nil || isNil(o.Id.Get()) {
+	if o == nil || IsNil(o.Id.Get()) {
 		var ret int32
 		return ret
 	}
@@ -99,7 +99,7 @@ func (o *F24) UnsetId() {
 
 // GetDueDate returns the DueDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *F24) GetDueDate() string {
-	if o == nil || isNil(o.DueDate.Get()) {
+	if o == nil || IsNil(o.DueDate.Get()) {
 		var ret string
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *F24) UnsetDueDate() {
 
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *F24) GetStatus() F24Status {
-	if o == nil || isNil(o.Status) {
+	if o == nil || IsNil(o.Status) {
 		var ret F24Status
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *F24) GetStatus() F24Status {
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *F24) GetStatusOk() (*F24Status, bool) {
-	if o == nil || isNil(o.Status) {
+	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
 	return o.Status, true
@@ -161,7 +161,7 @@ func (o *F24) GetStatusOk() (*F24Status, bool) {
 
 // HasStatus returns a boolean if a field has been set.
 func (o *F24) HasStatus() bool {
-	if o != nil && !isNil(o.Status) {
+	if o != nil && !IsNil(o.Status) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *F24) SetStatus(v F24Status) *F24 {
 
 // GetPaymentAccount returns the PaymentAccount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *F24) GetPaymentAccount() PaymentAccount {
-	if o == nil || isNil(o.PaymentAccount.Get()) {
+	if o == nil || IsNil(o.PaymentAccount.Get()) {
 		var ret PaymentAccount
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *F24) UnsetPaymentAccount() {
 
 // GetAmount returns the Amount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *F24) GetAmount() float32 {
-	if o == nil || isNil(o.Amount.Get()) {
+	if o == nil || IsNil(o.Amount.Get()) {
 		var ret float32
 		return ret
 	}
@@ -264,7 +264,7 @@ func (o *F24) UnsetAmount() {
 
 // GetAttachmentUrl returns the AttachmentUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *F24) GetAttachmentUrl() string {
-	if o == nil || isNil(o.AttachmentUrl.Get()) {
+	if o == nil || IsNil(o.AttachmentUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -308,7 +308,7 @@ func (o *F24) UnsetAttachmentUrl() {
 
 // GetAttachmentToken returns the AttachmentToken field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *F24) GetAttachmentToken() string {
-	if o == nil || isNil(o.AttachmentToken.Get()) {
+	if o == nil || IsNil(o.AttachmentToken.Get()) {
 		var ret string
 		return ret
 	}
@@ -352,7 +352,7 @@ func (o *F24) UnsetAttachmentToken() {
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *F24) GetDescription() string {
-	if o == nil || isNil(o.Description.Get()) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
@@ -410,7 +410,7 @@ func (o F24) ToMap() (map[string]interface{}, error) {
 	if o.DueDate.IsSet() {
 		toSerialize["due_date"] = o.DueDate.Get()
 	}
-	if !isNil(o.Status) {
+	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
 	if o.PaymentAccount.IsSet() {

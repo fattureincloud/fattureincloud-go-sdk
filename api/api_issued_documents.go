@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -111,9 +111,9 @@ func (a *IssuedDocumentsApiService) CreateIssuedDocumentExecute(r ApiCreateIssue
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -216,9 +216,9 @@ func (a *IssuedDocumentsApiService) DeleteIssuedDocumentExecute(r ApiDeleteIssue
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -312,9 +312,9 @@ func (a *IssuedDocumentsApiService) DeleteIssuedDocumentAttachmentExecute(r ApiD
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -410,9 +410,9 @@ func (a *IssuedDocumentsApiService) GetEmailDataExecute(r ApiGetEmailDataRequest
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -525,9 +525,9 @@ func (a *IssuedDocumentsApiService) GetExistingIssuedDocumentTotalsExecute(r Api
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -621,10 +621,10 @@ func (a *IssuedDocumentsApiService) GetIssuedDocumentExecute(r ApiGetIssuedDocum
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
 	}
 	if r.fieldset != nil {
-		parameterAddToQuery(localVarQueryParams, "fieldset", r.fieldset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -653,9 +653,9 @@ func (a *IssuedDocumentsApiService) GetIssuedDocumentExecute(r ApiGetIssuedDocum
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -739,7 +739,7 @@ func (a *IssuedDocumentsApiService) GetIssuedDocumentPreCreateInfoExecute(r ApiG
 		return localVarReturnValue, nil, reportError("type_ is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "type", r.type_, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -767,9 +767,9 @@ func (a *IssuedDocumentsApiService) GetIssuedDocumentPreCreateInfoExecute(r ApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -878,9 +878,9 @@ func (a *IssuedDocumentsApiService) GetNewIssuedDocumentTotalsExecute(r ApiGetNe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -978,12 +978,12 @@ func (a *IssuedDocumentsApiService) JoinIssuedDocumentsExecute(r ApiJoinIssuedDo
 		return localVarReturnValue, nil, reportError("ids is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "ids", r.ids, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "ids", r.ids, "")
 	if r.group != nil {
-		parameterAddToQuery(localVarQueryParams, "group", r.group, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "group", r.group, "")
 	}
 	if r.eInvoice != nil {
-		parameterAddToQuery(localVarQueryParams, "e_invoice", r.eInvoice, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "e_invoice", r.eInvoice, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1012,9 +1012,9 @@ func (a *IssuedDocumentsApiService) JoinIssuedDocumentsExecute(r ApiJoinIssuedDo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1147,27 +1147,27 @@ func (a *IssuedDocumentsApiService) ListIssuedDocumentsExecute(r ApiListIssuedDo
 		return localVarReturnValue, nil, reportError("type_ is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "type", r.type_, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "")
 	if r.fields != nil {
-		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
 	}
 	if r.fieldset != nil {
-		parameterAddToQuery(localVarQueryParams, "fieldset", r.fieldset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
 	}
 	if r.sort != nil {
-		parameterAddToQuery(localVarQueryParams, "sort", r.sort, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "")
 	}
 	if r.page != nil {
-		parameterAddToQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
 	}
 	if r.perPage != nil {
-		parameterAddToQuery(localVarQueryParams, "per_page", r.perPage, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
 	}
 	if r.q != nil {
-		parameterAddToQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
 	}
 	if r.inclusive != nil {
-		parameterAddToQuery(localVarQueryParams, "inclusive", r.inclusive, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "inclusive", r.inclusive, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1196,9 +1196,9 @@ func (a *IssuedDocumentsApiService) ListIssuedDocumentsExecute(r ApiListIssuedDo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1312,9 +1312,9 @@ func (a *IssuedDocumentsApiService) ModifyIssuedDocumentExecute(r ApiModifyIssue
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1426,9 +1426,9 @@ func (a *IssuedDocumentsApiService) ScheduleEmailExecute(r ApiScheduleEmailReque
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1527,13 +1527,13 @@ func (a *IssuedDocumentsApiService) TransformIssuedDocumentExecute(r ApiTransfor
 		return localVarReturnValue, nil, reportError("newType is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "original_document_id", r.originalDocumentId, "")
-	parameterAddToQuery(localVarQueryParams, "new_type", r.newType, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "original_document_id", r.originalDocumentId, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "new_type", r.newType, "")
 	if r.eInvoice != nil {
-		parameterAddToQuery(localVarQueryParams, "e_invoice", r.eInvoice, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "e_invoice", r.eInvoice, "")
 	}
 	if r.transformKeepCopy != nil {
-		parameterAddToQuery(localVarQueryParams, "transform_keep_copy", r.transformKeepCopy, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "transform_keep_copy", r.transformKeepCopy, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1562,9 +1562,9 @@ func (a *IssuedDocumentsApiService) TransformIssuedDocumentExecute(r ApiTransfor
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1670,7 +1670,7 @@ func (a *IssuedDocumentsApiService) UploadIssuedDocumentAttachmentExecute(r ApiU
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.filename != nil {
-		parameterAddToQuery(localVarFormParams, "filename", r.filename, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "filename", r.filename, "")
 	}
 	var attachmentLocalVarFormFileName string
 	var attachmentLocalVarFileName     string
@@ -1682,7 +1682,7 @@ func (a *IssuedDocumentsApiService) UploadIssuedDocumentAttachmentExecute(r ApiU
 	attachmentLocalVarFile := r.attachment
 
 	if attachmentLocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(attachmentLocalVarFile)
+		fbs, _ := io.ReadAll(attachmentLocalVarFile)
 
 		attachmentLocalVarFileBytes = fbs
 		attachmentLocalVarFileName = attachmentLocalVarFile.Name()
@@ -1699,9 +1699,9 @@ func (a *IssuedDocumentsApiService) UploadIssuedDocumentAttachmentExecute(r ApiU
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

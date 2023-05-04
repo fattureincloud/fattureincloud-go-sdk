@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -76,7 +76,7 @@ func NewProductWithDefaults() *Product {
 
 // GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Product) GetId() int32 {
-	if o == nil || isNil(o.Id.Get()) {
+	if o == nil || IsNil(o.Id.Get()) {
 		var ret int32
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *Product) UnsetId() {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Product) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -164,7 +164,7 @@ func (o *Product) UnsetName() {
 
 // GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Product) GetCode() string {
-	if o == nil || isNil(o.Code.Get()) {
+	if o == nil || IsNil(o.Code.Get()) {
 		var ret string
 		return ret
 	}
@@ -208,7 +208,7 @@ func (o *Product) UnsetCode() {
 
 // GetNetPrice returns the NetPrice field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Product) GetNetPrice() float32 {
-	if o == nil || isNil(o.NetPrice.Get()) {
+	if o == nil || IsNil(o.NetPrice.Get()) {
 		var ret float32
 		return ret
 	}
@@ -252,7 +252,7 @@ func (o *Product) UnsetNetPrice() {
 
 // GetGrossPrice returns the GrossPrice field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Product) GetGrossPrice() float32 {
-	if o == nil || isNil(o.GrossPrice.Get()) {
+	if o == nil || IsNil(o.GrossPrice.Get()) {
 		var ret float32
 		return ret
 	}
@@ -296,7 +296,7 @@ func (o *Product) UnsetGrossPrice() {
 
 // GetUseGrossPrice returns the UseGrossPrice field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Product) GetUseGrossPrice() bool {
-	if o == nil || isNil(o.UseGrossPrice.Get()) {
+	if o == nil || IsNil(o.UseGrossPrice.Get()) {
 		var ret bool
 		return ret
 	}
@@ -340,7 +340,7 @@ func (o *Product) UnsetUseGrossPrice() {
 
 // GetDefaultVat returns the DefaultVat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Product) GetDefaultVat() VatType {
-	if o == nil || isNil(o.DefaultVat.Get()) {
+	if o == nil || IsNil(o.DefaultVat.Get()) {
 		var ret VatType
 		return ret
 	}
@@ -384,7 +384,7 @@ func (o *Product) UnsetDefaultVat() {
 
 // GetNetCost returns the NetCost field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Product) GetNetCost() float32 {
-	if o == nil || isNil(o.NetCost.Get()) {
+	if o == nil || IsNil(o.NetCost.Get()) {
 		var ret float32
 		return ret
 	}
@@ -428,7 +428,7 @@ func (o *Product) UnsetNetCost() {
 
 // GetMeasure returns the Measure field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Product) GetMeasure() string {
-	if o == nil || isNil(o.Measure.Get()) {
+	if o == nil || IsNil(o.Measure.Get()) {
 		var ret string
 		return ret
 	}
@@ -472,7 +472,7 @@ func (o *Product) UnsetMeasure() {
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Product) GetDescription() string {
-	if o == nil || isNil(o.Description.Get()) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
@@ -516,7 +516,7 @@ func (o *Product) UnsetDescription() {
 
 // GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Product) GetCategory() string {
-	if o == nil || isNil(o.Category.Get()) {
+	if o == nil || IsNil(o.Category.Get()) {
 		var ret string
 		return ret
 	}
@@ -560,7 +560,7 @@ func (o *Product) UnsetCategory() {
 
 // GetNotes returns the Notes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Product) GetNotes() string {
-	if o == nil || isNil(o.Notes.Get()) {
+	if o == nil || IsNil(o.Notes.Get()) {
 		var ret string
 		return ret
 	}
@@ -604,7 +604,7 @@ func (o *Product) UnsetNotes() {
 
 // GetInStock returns the InStock field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Product) GetInStock() bool {
-	if o == nil || isNil(o.InStock.Get()) {
+	if o == nil || IsNil(o.InStock.Get()) {
 		var ret bool
 		return ret
 	}
@@ -648,7 +648,7 @@ func (o *Product) UnsetInStock() {
 
 // GetStockInitial returns the StockInitial field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Product) GetStockInitial() float32 {
-	if o == nil || isNil(o.StockInitial.Get()) {
+	if o == nil || IsNil(o.StockInitial.Get()) {
 		var ret float32
 		return ret
 	}
@@ -692,7 +692,7 @@ func (o *Product) UnsetStockInitial() {
 
 // GetStockCurrent returns the StockCurrent field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Product) GetStockCurrent() float32 {
-	if o == nil || isNil(o.StockCurrent.Get()) {
+	if o == nil || IsNil(o.StockCurrent.Get()) {
 		var ret float32
 		return ret
 	}
@@ -736,7 +736,7 @@ func (o *Product) UnsetStockCurrent() {
 
 // GetAverageCost returns the AverageCost field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Product) GetAverageCost() float32 {
-	if o == nil || isNil(o.AverageCost.Get()) {
+	if o == nil || IsNil(o.AverageCost.Get()) {
 		var ret float32
 		return ret
 	}
@@ -780,7 +780,7 @@ func (o *Product) UnsetAverageCost() {
 
 // GetAveragePrice returns the AveragePrice field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Product) GetAveragePrice() float32 {
-	if o == nil || isNil(o.AveragePrice.Get()) {
+	if o == nil || IsNil(o.AveragePrice.Get()) {
 		var ret float32
 		return ret
 	}
@@ -824,7 +824,7 @@ func (o *Product) UnsetAveragePrice() {
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Product) GetCreatedAt() string {
-	if o == nil || isNil(o.CreatedAt.Get()) {
+	if o == nil || IsNil(o.CreatedAt.Get()) {
 		var ret string
 		return ret
 	}
@@ -868,7 +868,7 @@ func (o *Product) UnsetCreatedAt() {
 
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Product) GetUpdatedAt() string {
-	if o == nil || isNil(o.UpdatedAt.Get()) {
+	if o == nil || IsNil(o.UpdatedAt.Get()) {
 		var ret string
 		return ret
 	}

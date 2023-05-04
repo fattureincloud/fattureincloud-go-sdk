@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -48,7 +48,7 @@ func NewReceivedDocumentInfoWithDefaults() *ReceivedDocumentInfo {
 
 // GetDefaultValues returns the DefaultValues field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentInfo) GetDefaultValues() ReceivedDocumentInfoDefaultValues {
-	if o == nil || isNil(o.DefaultValues.Get()) {
+	if o == nil || IsNil(o.DefaultValues.Get()) {
 		var ret ReceivedDocumentInfoDefaultValues
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *ReceivedDocumentInfo) UnsetDefaultValues() {
 
 // GetItemsDefaultValues returns the ItemsDefaultValues field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReceivedDocumentInfo) GetItemsDefaultValues() ReceivedDocumentInfoItemsDefaultValues {
-	if o == nil || isNil(o.ItemsDefaultValues.Get()) {
+	if o == nil || IsNil(o.ItemsDefaultValues.Get()) {
 		var ret ReceivedDocumentInfoItemsDefaultValues
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *ReceivedDocumentInfo) GetCountriesList() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReceivedDocumentInfo) GetCountriesListOk() ([]string, bool) {
-	if o == nil || isNil(o.CountriesList) {
+	if o == nil || IsNil(o.CountriesList) {
 		return nil, false
 	}
 	return o.CountriesList, true
@@ -155,7 +155,7 @@ func (o *ReceivedDocumentInfo) GetCountriesListOk() ([]string, bool) {
 
 // HasCountriesList returns a boolean if a field has been set.
 func (o *ReceivedDocumentInfo) HasCountriesList() bool {
-	if o != nil && isNil(o.CountriesList) {
+	if o != nil && IsNil(o.CountriesList) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *ReceivedDocumentInfo) GetCurrenciesList() []Currency {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReceivedDocumentInfo) GetCurrenciesListOk() ([]Currency, bool) {
-	if o == nil || isNil(o.CurrenciesList) {
+	if o == nil || IsNil(o.CurrenciesList) {
 		return nil, false
 	}
 	return o.CurrenciesList, true
@@ -189,7 +189,7 @@ func (o *ReceivedDocumentInfo) GetCurrenciesListOk() ([]Currency, bool) {
 
 // HasCurrenciesList returns a boolean if a field has been set.
 func (o *ReceivedDocumentInfo) HasCurrenciesList() bool {
-	if o != nil && isNil(o.CurrenciesList) {
+	if o != nil && IsNil(o.CurrenciesList) {
 		return true
 	}
 
@@ -215,7 +215,7 @@ func (o *ReceivedDocumentInfo) GetCategoriesList() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReceivedDocumentInfo) GetCategoriesListOk() ([]string, bool) {
-	if o == nil || isNil(o.CategoriesList) {
+	if o == nil || IsNil(o.CategoriesList) {
 		return nil, false
 	}
 	return o.CategoriesList, true
@@ -223,7 +223,7 @@ func (o *ReceivedDocumentInfo) GetCategoriesListOk() ([]string, bool) {
 
 // HasCategoriesList returns a boolean if a field has been set.
 func (o *ReceivedDocumentInfo) HasCategoriesList() bool {
-	if o != nil && isNil(o.CategoriesList) {
+	if o != nil && IsNil(o.CategoriesList) {
 		return true
 	}
 
@@ -249,7 +249,7 @@ func (o *ReceivedDocumentInfo) GetPaymentAccountsList() []PaymentAccount {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReceivedDocumentInfo) GetPaymentAccountsListOk() ([]PaymentAccount, bool) {
-	if o == nil || isNil(o.PaymentAccountsList) {
+	if o == nil || IsNil(o.PaymentAccountsList) {
 		return nil, false
 	}
 	return o.PaymentAccountsList, true
@@ -257,7 +257,7 @@ func (o *ReceivedDocumentInfo) GetPaymentAccountsListOk() ([]PaymentAccount, boo
 
 // HasPaymentAccountsList returns a boolean if a field has been set.
 func (o *ReceivedDocumentInfo) HasPaymentAccountsList() bool {
-	if o != nil && isNil(o.PaymentAccountsList) {
+	if o != nil && IsNil(o.PaymentAccountsList) {
 		return true
 	}
 
@@ -283,7 +283,7 @@ func (o *ReceivedDocumentInfo) GetVatTypesList() []VatType {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReceivedDocumentInfo) GetVatTypesListOk() ([]VatType, bool) {
-	if o == nil || isNil(o.VatTypesList) {
+	if o == nil || IsNil(o.VatTypesList) {
 		return nil, false
 	}
 	return o.VatTypesList, true
@@ -291,7 +291,7 @@ func (o *ReceivedDocumentInfo) GetVatTypesListOk() ([]VatType, bool) {
 
 // HasVatTypesList returns a boolean if a field has been set.
 func (o *ReceivedDocumentInfo) HasVatTypesList() bool {
-	if o != nil && isNil(o.VatTypesList) {
+	if o != nil && IsNil(o.VatTypesList) {
 		return true
 	}
 

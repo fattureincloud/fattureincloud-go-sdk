@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.26
+API version: 2.0.27
 Contact: info@fattureincloud.it
 */
 
@@ -109,7 +109,7 @@ func NewClientWithDefaults() *Client {
 
 // GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetId() int32 {
-	if o == nil || isNil(o.Id.Get()) {
+	if o == nil || IsNil(o.Id.Get()) {
 		var ret int32
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *Client) UnsetId() {
 
 // GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetCode() string {
-	if o == nil || isNil(o.Code.Get()) {
+	if o == nil || IsNil(o.Code.Get()) {
 		var ret string
 		return ret
 	}
@@ -197,7 +197,7 @@ func (o *Client) UnsetCode() {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -241,7 +241,7 @@ func (o *Client) UnsetName() {
 
 // GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetType() ClientType {
-	if o == nil || isNil(o.Type.Get()) {
+	if o == nil || IsNil(o.Type.Get()) {
 		var ret ClientType
 		return ret
 	}
@@ -285,7 +285,7 @@ func (o *Client) UnsetType() {
 
 // GetFirstName returns the FirstName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetFirstName() string {
-	if o == nil || isNil(o.FirstName.Get()) {
+	if o == nil || IsNil(o.FirstName.Get()) {
 		var ret string
 		return ret
 	}
@@ -329,7 +329,7 @@ func (o *Client) UnsetFirstName() {
 
 // GetLastName returns the LastName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetLastName() string {
-	if o == nil || isNil(o.LastName.Get()) {
+	if o == nil || IsNil(o.LastName.Get()) {
 		var ret string
 		return ret
 	}
@@ -373,7 +373,7 @@ func (o *Client) UnsetLastName() {
 
 // GetContactPerson returns the ContactPerson field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetContactPerson() string {
-	if o == nil || isNil(o.ContactPerson.Get()) {
+	if o == nil || IsNil(o.ContactPerson.Get()) {
 		var ret string
 		return ret
 	}
@@ -417,7 +417,7 @@ func (o *Client) UnsetContactPerson() {
 
 // GetVatNumber returns the VatNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetVatNumber() string {
-	if o == nil || isNil(o.VatNumber.Get()) {
+	if o == nil || IsNil(o.VatNumber.Get()) {
 		var ret string
 		return ret
 	}
@@ -461,7 +461,7 @@ func (o *Client) UnsetVatNumber() {
 
 // GetTaxCode returns the TaxCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetTaxCode() string {
-	if o == nil || isNil(o.TaxCode.Get()) {
+	if o == nil || IsNil(o.TaxCode.Get()) {
 		var ret string
 		return ret
 	}
@@ -505,7 +505,7 @@ func (o *Client) UnsetTaxCode() {
 
 // GetAddressStreet returns the AddressStreet field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetAddressStreet() string {
-	if o == nil || isNil(o.AddressStreet.Get()) {
+	if o == nil || IsNil(o.AddressStreet.Get()) {
 		var ret string
 		return ret
 	}
@@ -549,7 +549,7 @@ func (o *Client) UnsetAddressStreet() {
 
 // GetAddressPostalCode returns the AddressPostalCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetAddressPostalCode() string {
-	if o == nil || isNil(o.AddressPostalCode.Get()) {
+	if o == nil || IsNil(o.AddressPostalCode.Get()) {
 		var ret string
 		return ret
 	}
@@ -593,7 +593,7 @@ func (o *Client) UnsetAddressPostalCode() {
 
 // GetAddressCity returns the AddressCity field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetAddressCity() string {
-	if o == nil || isNil(o.AddressCity.Get()) {
+	if o == nil || IsNil(o.AddressCity.Get()) {
 		var ret string
 		return ret
 	}
@@ -637,7 +637,7 @@ func (o *Client) UnsetAddressCity() {
 
 // GetAddressProvince returns the AddressProvince field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetAddressProvince() string {
-	if o == nil || isNil(o.AddressProvince.Get()) {
+	if o == nil || IsNil(o.AddressProvince.Get()) {
 		var ret string
 		return ret
 	}
@@ -681,7 +681,7 @@ func (o *Client) UnsetAddressProvince() {
 
 // GetAddressExtra returns the AddressExtra field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetAddressExtra() string {
-	if o == nil || isNil(o.AddressExtra.Get()) {
+	if o == nil || IsNil(o.AddressExtra.Get()) {
 		var ret string
 		return ret
 	}
@@ -725,7 +725,7 @@ func (o *Client) UnsetAddressExtra() {
 
 // GetCountry returns the Country field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetCountry() string {
-	if o == nil || isNil(o.Country.Get()) {
+	if o == nil || IsNil(o.Country.Get()) {
 		var ret string
 		return ret
 	}
@@ -769,7 +769,7 @@ func (o *Client) UnsetCountry() {
 
 // GetEmail returns the Email field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetEmail() string {
-	if o == nil || isNil(o.Email.Get()) {
+	if o == nil || IsNil(o.Email.Get()) {
 		var ret string
 		return ret
 	}
@@ -813,7 +813,7 @@ func (o *Client) UnsetEmail() {
 
 // GetCertifiedEmail returns the CertifiedEmail field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetCertifiedEmail() string {
-	if o == nil || isNil(o.CertifiedEmail.Get()) {
+	if o == nil || IsNil(o.CertifiedEmail.Get()) {
 		var ret string
 		return ret
 	}
@@ -857,7 +857,7 @@ func (o *Client) UnsetCertifiedEmail() {
 
 // GetPhone returns the Phone field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetPhone() string {
-	if o == nil || isNil(o.Phone.Get()) {
+	if o == nil || IsNil(o.Phone.Get()) {
 		var ret string
 		return ret
 	}
@@ -901,7 +901,7 @@ func (o *Client) UnsetPhone() {
 
 // GetFax returns the Fax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetFax() string {
-	if o == nil || isNil(o.Fax.Get()) {
+	if o == nil || IsNil(o.Fax.Get()) {
 		var ret string
 		return ret
 	}
@@ -945,7 +945,7 @@ func (o *Client) UnsetFax() {
 
 // GetNotes returns the Notes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetNotes() string {
-	if o == nil || isNil(o.Notes.Get()) {
+	if o == nil || IsNil(o.Notes.Get()) {
 		var ret string
 		return ret
 	}
@@ -989,7 +989,7 @@ func (o *Client) UnsetNotes() {
 
 // GetDefaultVat returns the DefaultVat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetDefaultVat() VatType {
-	if o == nil || isNil(o.DefaultVat.Get()) {
+	if o == nil || IsNil(o.DefaultVat.Get()) {
 		var ret VatType
 		return ret
 	}
@@ -1033,7 +1033,7 @@ func (o *Client) UnsetDefaultVat() {
 
 // GetDefaultPaymentTerms returns the DefaultPaymentTerms field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetDefaultPaymentTerms() int32 {
-	if o == nil || isNil(o.DefaultPaymentTerms.Get()) {
+	if o == nil || IsNil(o.DefaultPaymentTerms.Get()) {
 		var ret int32
 		return ret
 	}
@@ -1077,7 +1077,7 @@ func (o *Client) UnsetDefaultPaymentTerms() {
 
 // GetDefaultPaymentTermsType returns the DefaultPaymentTermsType field value if set, zero value otherwise.
 func (o *Client) GetDefaultPaymentTermsType() PaymentTermsType {
-	if o == nil || isNil(o.DefaultPaymentTermsType) {
+	if o == nil || IsNil(o.DefaultPaymentTermsType) {
 		var ret PaymentTermsType
 		return ret
 	}
@@ -1087,7 +1087,7 @@ func (o *Client) GetDefaultPaymentTermsType() PaymentTermsType {
 // GetDefaultPaymentTermsTypeOk returns a tuple with the DefaultPaymentTermsType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Client) GetDefaultPaymentTermsTypeOk() (*PaymentTermsType, bool) {
-	if o == nil || isNil(o.DefaultPaymentTermsType) {
+	if o == nil || IsNil(o.DefaultPaymentTermsType) {
 		return nil, false
 	}
 	return o.DefaultPaymentTermsType, true
@@ -1095,7 +1095,7 @@ func (o *Client) GetDefaultPaymentTermsTypeOk() (*PaymentTermsType, bool) {
 
 // HasDefaultPaymentTermsType returns a boolean if a field has been set.
 func (o *Client) HasDefaultPaymentTermsType() bool {
-	if o != nil && !isNil(o.DefaultPaymentTermsType) {
+	if o != nil && !IsNil(o.DefaultPaymentTermsType) {
 		return true
 	}
 
@@ -1110,7 +1110,7 @@ func (o *Client) SetDefaultPaymentTermsType(v PaymentTermsType) *Client {
 
 // GetDefaultPaymentMethod returns the DefaultPaymentMethod field value if set, zero value otherwise.
 func (o *Client) GetDefaultPaymentMethod() PaymentMethod {
-	if o == nil || isNil(o.DefaultPaymentMethod) {
+	if o == nil || IsNil(o.DefaultPaymentMethod) {
 		var ret PaymentMethod
 		return ret
 	}
@@ -1120,7 +1120,7 @@ func (o *Client) GetDefaultPaymentMethod() PaymentMethod {
 // GetDefaultPaymentMethodOk returns a tuple with the DefaultPaymentMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Client) GetDefaultPaymentMethodOk() (*PaymentMethod, bool) {
-	if o == nil || isNil(o.DefaultPaymentMethod) {
+	if o == nil || IsNil(o.DefaultPaymentMethod) {
 		return nil, false
 	}
 	return o.DefaultPaymentMethod, true
@@ -1128,7 +1128,7 @@ func (o *Client) GetDefaultPaymentMethodOk() (*PaymentMethod, bool) {
 
 // HasDefaultPaymentMethod returns a boolean if a field has been set.
 func (o *Client) HasDefaultPaymentMethod() bool {
-	if o != nil && !isNil(o.DefaultPaymentMethod) {
+	if o != nil && !IsNil(o.DefaultPaymentMethod) {
 		return true
 	}
 
@@ -1143,7 +1143,7 @@ func (o *Client) SetDefaultPaymentMethod(v PaymentMethod) *Client {
 
 // GetBankName returns the BankName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetBankName() string {
-	if o == nil || isNil(o.BankName.Get()) {
+	if o == nil || IsNil(o.BankName.Get()) {
 		var ret string
 		return ret
 	}
@@ -1187,7 +1187,7 @@ func (o *Client) UnsetBankName() {
 
 // GetBankIban returns the BankIban field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetBankIban() string {
-	if o == nil || isNil(o.BankIban.Get()) {
+	if o == nil || IsNil(o.BankIban.Get()) {
 		var ret string
 		return ret
 	}
@@ -1231,7 +1231,7 @@ func (o *Client) UnsetBankIban() {
 
 // GetBankSwiftCode returns the BankSwiftCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetBankSwiftCode() string {
-	if o == nil || isNil(o.BankSwiftCode.Get()) {
+	if o == nil || IsNil(o.BankSwiftCode.Get()) {
 		var ret string
 		return ret
 	}
@@ -1275,7 +1275,7 @@ func (o *Client) UnsetBankSwiftCode() {
 
 // GetShippingAddress returns the ShippingAddress field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetShippingAddress() string {
-	if o == nil || isNil(o.ShippingAddress.Get()) {
+	if o == nil || IsNil(o.ShippingAddress.Get()) {
 		var ret string
 		return ret
 	}
@@ -1319,7 +1319,7 @@ func (o *Client) UnsetShippingAddress() {
 
 // GetEInvoice returns the EInvoice field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetEInvoice() bool {
-	if o == nil || isNil(o.EInvoice.Get()) {
+	if o == nil || IsNil(o.EInvoice.Get()) {
 		var ret bool
 		return ret
 	}
@@ -1363,7 +1363,7 @@ func (o *Client) UnsetEInvoice() {
 
 // GetEiCode returns the EiCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetEiCode() string {
-	if o == nil || isNil(o.EiCode.Get()) {
+	if o == nil || IsNil(o.EiCode.Get()) {
 		var ret string
 		return ret
 	}
@@ -1407,7 +1407,7 @@ func (o *Client) UnsetEiCode() {
 
 // GetDiscountHighlight returns the DiscountHighlight field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetDiscountHighlight() bool {
-	if o == nil || isNil(o.DiscountHighlight.Get()) {
+	if o == nil || IsNil(o.DiscountHighlight.Get()) {
 		var ret bool
 		return ret
 	}
@@ -1451,7 +1451,7 @@ func (o *Client) UnsetDiscountHighlight() {
 
 // GetDefaultDiscount returns the DefaultDiscount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetDefaultDiscount() float32 {
-	if o == nil || isNil(o.DefaultDiscount.Get()) {
+	if o == nil || IsNil(o.DefaultDiscount.Get()) {
 		var ret float32
 		return ret
 	}
@@ -1495,7 +1495,7 @@ func (o *Client) UnsetDefaultDiscount() {
 
 // GetHasIntentDeclaration returns the HasIntentDeclaration field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetHasIntentDeclaration() bool {
-	if o == nil || isNil(o.HasIntentDeclaration.Get()) {
+	if o == nil || IsNil(o.HasIntentDeclaration.Get()) {
 		var ret bool
 		return ret
 	}
@@ -1539,7 +1539,7 @@ func (o *Client) UnsetHasIntentDeclaration() {
 
 // GetIntentDeclarationProtocolNumber returns the IntentDeclarationProtocolNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetIntentDeclarationProtocolNumber() string {
-	if o == nil || isNil(o.IntentDeclarationProtocolNumber.Get()) {
+	if o == nil || IsNil(o.IntentDeclarationProtocolNumber.Get()) {
 		var ret string
 		return ret
 	}
@@ -1583,7 +1583,7 @@ func (o *Client) UnsetIntentDeclarationProtocolNumber() {
 
 // GetIntentDeclarationProtocolDate returns the IntentDeclarationProtocolDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetIntentDeclarationProtocolDate() string {
-	if o == nil || isNil(o.IntentDeclarationProtocolDate.Get()) {
+	if o == nil || IsNil(o.IntentDeclarationProtocolDate.Get()) {
 		var ret string
 		return ret
 	}
@@ -1627,7 +1627,7 @@ func (o *Client) UnsetIntentDeclarationProtocolDate() {
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetCreatedAt() string {
-	if o == nil || isNil(o.CreatedAt.Get()) {
+	if o == nil || IsNil(o.CreatedAt.Get()) {
 		var ret string
 		return ret
 	}
@@ -1671,7 +1671,7 @@ func (o *Client) UnsetCreatedAt() {
 
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetUpdatedAt() string {
-	if o == nil || isNil(o.UpdatedAt.Get()) {
+	if o == nil || IsNil(o.UpdatedAt.Get()) {
 		var ret string
 		return ret
 	}
@@ -1789,10 +1789,10 @@ func (o Client) ToMap() (map[string]interface{}, error) {
 	if o.DefaultPaymentTerms.IsSet() {
 		toSerialize["default_payment_terms"] = o.DefaultPaymentTerms.Get()
 	}
-	if !isNil(o.DefaultPaymentTermsType) {
+	if !IsNil(o.DefaultPaymentTermsType) {
 		toSerialize["default_payment_terms_type"] = o.DefaultPaymentTermsType
 	}
-	if !isNil(o.DefaultPaymentMethod) {
+	if !IsNil(o.DefaultPaymentMethod) {
 		toSerialize["default_payment_method"] = o.DefaultPaymentMethod
 	}
 	if o.BankName.IsSet() {
