@@ -39,7 +39,7 @@ jobs:
         name: Trigger Event
         env:
           GIT_OPENAPI_REPO_PATH: '${{ env.GIT_USER_ID }}/${{ env.GIT_OPENAPI_REPO_ID }}'
-        uses: peter-evans/repository-dispatch@v1
+        uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.FATTUREINCLOUD_BOT_TOKEN }}
           repository: ${{ env.GIT_OPENAPI_REPO_PATH }}

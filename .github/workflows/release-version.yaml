@@ -8,7 +8,7 @@ jobs:
 
       - id: checkout
         name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           token: ${{ secrets.FATTUREINCLOUD_BOT_TOKEN }}
       
@@ -63,7 +63,7 @@ jobs:
       - id: create-tag
         name: Create tag
         if: ${{ !env.ACT }}
-        uses: actions/github-script@v3
+        uses: actions/github-script@v6
         with:
           github-token: ${{ github.token }}
           script: |
