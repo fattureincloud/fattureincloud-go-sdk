@@ -18,7 +18,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-var ListWebhooksSubscriptionsResponseJsonStr string = "{\"data\":[{\"id\":\"SUB123\",\"sink\":\"https://endpoint.test\",\"verified\":true,\"types\":[\"it.fattureincloud.cashbook.create\"]},{\"id\":\"SUB12345\",\"sink\":\"https://endpoint.test\",\"verified\":true,\"types\":[\"it.fattureincloud.cashbook.update\"]}]"
+var ListWebhooksSubscriptionsResponseJsonStr string = "{\"data\":[{\"id\":\"SUB123\",\"sink\":\"https://endpoint.test\",\"verified\":true,\"types\":[\"it.fattureincloud.webhooks.cashbook.create\"]},{\"id\":\"SUB12345\",\"sink\":\"https://endpoint.test\",\"verified\":true,\"types\":[\"it.fattureincloud.webhooks.cashbook.update\"]}]"
 
 func TestListWebhooksSubscriptionsResponse(t *testing.T) {
 	obj := NewListWebhooksSubscriptionsResponse()

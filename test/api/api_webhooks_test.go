@@ -26,7 +26,7 @@ import (
 func TestCreateWebhooksSubscription(t *testing.T) {
 	s := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte(`{"data":{"id":"SUB123","sink":"https://endpoint.test","verified":true,"types":["it.fattureincloud.cashbook.create"]},"warnings":["error"]}`))
+		w.Write([]byte(`{"data":{"id":"SUB123","sink":"https://endpoint.test","verified":true,"types":["it.fattureincloud.webhooks.cashbook.create"]},"warnings":["error"]}`))
 	}))
 	defer s.Close()
 
@@ -75,7 +75,7 @@ func TestDeleteWebhooksSubscription(t *testing.T) {
 func TestGetWebhooksSubscription(t *testing.T) {
 	s := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte(`{"data":{"id":"SUB123","sink":"https://endpoint.test","verified":true,"types":["it.fattureincloud.cashbook.create"]}}`))
+		w.Write([]byte(`{"data":{"id":"SUB123","sink":"https://endpoint.test","verified":true,"types":["it.fattureincloud.webhooks.cashbook.create"]}}`))
 	}))
 	defer s.Close()
 
@@ -101,7 +101,7 @@ func TestGetWebhooksSubscription(t *testing.T) {
 func TestListWebhooksSubscriptions(t *testing.T) {
 	s := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte(`{"data":[{"id":"SUB123","sink":"https://endpoint.test","verified":true,"types":["it.fattureincloud.cashbook.create"]},{"id":"SUB12345","sink":"https://endpoint.test","verified":true,"types":["it.fattureincloud.cashbook.update"]}]}`))
+		w.Write([]byte(`{"data":[{"id":"SUB123","sink":"https://endpoint.test","verified":true,"types":["it.fattureincloud.webhooks.cashbook.create"]},{"id":"SUB12345","sink":"https://endpoint.test","verified":true,"types":["it.fattureincloud.webhooks.cashbook.update"]}]}`))
 	}))
 	defer s.Close()
 
@@ -127,7 +127,7 @@ func TestListWebhooksSubscriptions(t *testing.T) {
 func TestModifyWebhooksSubscription(t *testing.T) {
 	s := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte(`{"data":{"id":"SUB123","sink":"https://endpoint.test","verified":true,"types":["it.fattureincloud.cashbook.create"]},"warnings":["error"]}`))
+		w.Write([]byte(`{"data":{"id":"SUB123","sink":"https://endpoint.test","verified":true,"types":["it.fattureincloud.webhooks.cashbook.create"]},"warnings":["error"]}`))
 	}))
 	defer s.Close()
 
