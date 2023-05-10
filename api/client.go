@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.27
+API version: 2.0.28
 Contact: info@fattureincloud.it
 */
 
@@ -44,7 +44,7 @@ var (
 	queryDescape    = strings.NewReplacer( "%5B", "[", "%5D", "]" )
 )
 
-// APIClient manages communication with the Fatture in Cloud API v2 - API Reference API v2.0.27
+// APIClient manages communication with the Fatture in Cloud API v2 - API Reference API v2.0.28
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration

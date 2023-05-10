@@ -18,7 +18,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-var CreateWebhooksSubscriptionRequestJsonStr string = "{\"data\":{\"sink\":\"https://endpoint.test\",\"types\":[\"it.fattureincloud.cashbook.create\"]}}"
+var CreateWebhooksSubscriptionRequestJsonStr string = "{\"data\":{\"sink\":\"https://endpoint.test\",\"types\":[\"it.fattureincloud.webhooks.cashbook.create\"]}}"
 
 func TestCreateWebhooksSubscriptionRequest(t *testing.T) {
 	obj := NewCreateWebhooksSubscriptionRequest()

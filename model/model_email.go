@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.27
+API version: 2.0.28
 Contact: info@fattureincloud.it
 */
 
@@ -22,31 +22,31 @@ var _ MappedNullable = &Email{}
 // Email 
 type Email struct {
 	// Email unique identifier.
-	Id *int32 `json:"id,omitempty"`
+	Id NullableInt32 `json:"id,omitempty"`
 	Status *EmailStatus `json:"status,omitempty"`
 	// Email sent date.
-	SentDate *time.Time `json:"sent_date,omitempty"`
+	SentDate NullableTime `json:"sent_date,omitempty"`
 	// Errors count.
-	ErrorsCount *int32 `json:"errors_count,omitempty"`
+	ErrorsCount NullableInt32 `json:"errors_count,omitempty"`
 	// Error log.
-	ErrorLog *string `json:"error_log,omitempty"`
+	ErrorLog NullableString `json:"error_log,omitempty"`
 	// Sender email.
-	FromEmail *string `json:"from_email,omitempty"`
+	FromEmail NullableString `json:"from_email,omitempty"`
 	// Sender name.
-	FromName *string `json:"from_name,omitempty"`
+	FromName NullableString `json:"from_name,omitempty"`
 	// Recipient email.
-	ToEmail *string `json:"to_email,omitempty"`
+	ToEmail NullableString `json:"to_email,omitempty"`
 	// Receipient email.
-	ToName *string `json:"to_name,omitempty"`
+	ToName NullableString `json:"to_name,omitempty"`
 	// Email subject.
-	Subject *string `json:"subject,omitempty"`
+	Subject NullableString `json:"subject,omitempty"`
 	// Email content.
-	Content *string `json:"content,omitempty"`
-	CopyTo *string `json:"copy_to,omitempty"`
+	Content NullableString `json:"content,omitempty"`
+	CopyTo NullableString `json:"copy_to,omitempty"`
 	RecipientStatus *EmailRecipientStatus `json:"recipient_status,omitempty"`
-	RecipientDate *time.Time `json:"recipient_date,omitempty"`
+	RecipientDate NullableTime `json:"recipient_date,omitempty"`
 	// Email kind.
-	Kind *string `json:"kind,omitempty"`
+	Kind NullableString `json:"kind,omitempty"`
 	// Email attachments.
 	Attachments []EmailAttachment `json:"attachments,omitempty"`
 }
@@ -68,37 +68,48 @@ func NewEmailWithDefaults() *Email {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Email) GetId() int32 {
-	if o == nil || IsNil(o.Id) {
+	if o == nil || IsNil(o.Id.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.Id
+	return *o.Id.Get()
 }
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Email) GetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.Id) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.Id.Get(), o.Id.IsSet()
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *Email) HasId() bool {
-	if o != nil && !IsNil(o.Id) {
+	if o != nil && o.Id.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
+// SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *Email) SetId(v int32) *Email {
-	o.Id = &v
+	o.Id.Set(&v)
 	return o
+}
+// SetIdNil sets the value for Id to be an explicit nil
+func (o *Email) SetIdNil() *Email {
+	o.Id.Set(nil)
+	return o
+}
+
+// UnsetId ensures that no value is present for Id, not even an explicit nil
+func (o *Email) UnsetId() {
+	o.Id.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -134,334 +145,444 @@ func (o *Email) SetStatus(v EmailStatus) *Email {
 	return o
 }
 
-// GetSentDate returns the SentDate field value if set, zero value otherwise.
+// GetSentDate returns the SentDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Email) GetSentDate() time.Time {
-	if o == nil || IsNil(o.SentDate) {
+	if o == nil || IsNil(o.SentDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.SentDate
+	return *o.SentDate.Get()
 }
 
 // GetSentDateOk returns a tuple with the SentDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Email) GetSentDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.SentDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SentDate, true
+	return o.SentDate.Get(), o.SentDate.IsSet()
 }
 
 // HasSentDate returns a boolean if a field has been set.
 func (o *Email) HasSentDate() bool {
-	if o != nil && !IsNil(o.SentDate) {
+	if o != nil && o.SentDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSentDate gets a reference to the given time.Time and assigns it to the SentDate field.
+// SetSentDate gets a reference to the given NullableTime and assigns it to the SentDate field.
 func (o *Email) SetSentDate(v time.Time) *Email {
-	o.SentDate = &v
+	o.SentDate.Set(&v)
+	return o
+}
+// SetSentDateNil sets the value for SentDate to be an explicit nil
+func (o *Email) SetSentDateNil() *Email {
+	o.SentDate.Set(nil)
 	return o
 }
 
-// GetErrorsCount returns the ErrorsCount field value if set, zero value otherwise.
+// UnsetSentDate ensures that no value is present for SentDate, not even an explicit nil
+func (o *Email) UnsetSentDate() {
+	o.SentDate.Unset()
+}
+
+// GetErrorsCount returns the ErrorsCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Email) GetErrorsCount() int32 {
-	if o == nil || IsNil(o.ErrorsCount) {
+	if o == nil || IsNil(o.ErrorsCount.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.ErrorsCount
+	return *o.ErrorsCount.Get()
 }
 
 // GetErrorsCountOk returns a tuple with the ErrorsCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Email) GetErrorsCountOk() (*int32, bool) {
-	if o == nil || IsNil(o.ErrorsCount) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ErrorsCount, true
+	return o.ErrorsCount.Get(), o.ErrorsCount.IsSet()
 }
 
 // HasErrorsCount returns a boolean if a field has been set.
 func (o *Email) HasErrorsCount() bool {
-	if o != nil && !IsNil(o.ErrorsCount) {
+	if o != nil && o.ErrorsCount.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetErrorsCount gets a reference to the given int32 and assigns it to the ErrorsCount field.
+// SetErrorsCount gets a reference to the given NullableInt32 and assigns it to the ErrorsCount field.
 func (o *Email) SetErrorsCount(v int32) *Email {
-	o.ErrorsCount = &v
+	o.ErrorsCount.Set(&v)
+	return o
+}
+// SetErrorsCountNil sets the value for ErrorsCount to be an explicit nil
+func (o *Email) SetErrorsCountNil() *Email {
+	o.ErrorsCount.Set(nil)
 	return o
 }
 
-// GetErrorLog returns the ErrorLog field value if set, zero value otherwise.
+// UnsetErrorsCount ensures that no value is present for ErrorsCount, not even an explicit nil
+func (o *Email) UnsetErrorsCount() {
+	o.ErrorsCount.Unset()
+}
+
+// GetErrorLog returns the ErrorLog field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Email) GetErrorLog() string {
-	if o == nil || IsNil(o.ErrorLog) {
+	if o == nil || IsNil(o.ErrorLog.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ErrorLog
+	return *o.ErrorLog.Get()
 }
 
 // GetErrorLogOk returns a tuple with the ErrorLog field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Email) GetErrorLogOk() (*string, bool) {
-	if o == nil || IsNil(o.ErrorLog) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ErrorLog, true
+	return o.ErrorLog.Get(), o.ErrorLog.IsSet()
 }
 
 // HasErrorLog returns a boolean if a field has been set.
 func (o *Email) HasErrorLog() bool {
-	if o != nil && !IsNil(o.ErrorLog) {
+	if o != nil && o.ErrorLog.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetErrorLog gets a reference to the given string and assigns it to the ErrorLog field.
+// SetErrorLog gets a reference to the given NullableString and assigns it to the ErrorLog field.
 func (o *Email) SetErrorLog(v string) *Email {
-	o.ErrorLog = &v
+	o.ErrorLog.Set(&v)
+	return o
+}
+// SetErrorLogNil sets the value for ErrorLog to be an explicit nil
+func (o *Email) SetErrorLogNil() *Email {
+	o.ErrorLog.Set(nil)
 	return o
 }
 
-// GetFromEmail returns the FromEmail field value if set, zero value otherwise.
+// UnsetErrorLog ensures that no value is present for ErrorLog, not even an explicit nil
+func (o *Email) UnsetErrorLog() {
+	o.ErrorLog.Unset()
+}
+
+// GetFromEmail returns the FromEmail field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Email) GetFromEmail() string {
-	if o == nil || IsNil(o.FromEmail) {
+	if o == nil || IsNil(o.FromEmail.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.FromEmail
+	return *o.FromEmail.Get()
 }
 
 // GetFromEmailOk returns a tuple with the FromEmail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Email) GetFromEmailOk() (*string, bool) {
-	if o == nil || IsNil(o.FromEmail) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FromEmail, true
+	return o.FromEmail.Get(), o.FromEmail.IsSet()
 }
 
 // HasFromEmail returns a boolean if a field has been set.
 func (o *Email) HasFromEmail() bool {
-	if o != nil && !IsNil(o.FromEmail) {
+	if o != nil && o.FromEmail.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFromEmail gets a reference to the given string and assigns it to the FromEmail field.
+// SetFromEmail gets a reference to the given NullableString and assigns it to the FromEmail field.
 func (o *Email) SetFromEmail(v string) *Email {
-	o.FromEmail = &v
+	o.FromEmail.Set(&v)
+	return o
+}
+// SetFromEmailNil sets the value for FromEmail to be an explicit nil
+func (o *Email) SetFromEmailNil() *Email {
+	o.FromEmail.Set(nil)
 	return o
 }
 
-// GetFromName returns the FromName field value if set, zero value otherwise.
+// UnsetFromEmail ensures that no value is present for FromEmail, not even an explicit nil
+func (o *Email) UnsetFromEmail() {
+	o.FromEmail.Unset()
+}
+
+// GetFromName returns the FromName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Email) GetFromName() string {
-	if o == nil || IsNil(o.FromName) {
+	if o == nil || IsNil(o.FromName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.FromName
+	return *o.FromName.Get()
 }
 
 // GetFromNameOk returns a tuple with the FromName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Email) GetFromNameOk() (*string, bool) {
-	if o == nil || IsNil(o.FromName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FromName, true
+	return o.FromName.Get(), o.FromName.IsSet()
 }
 
 // HasFromName returns a boolean if a field has been set.
 func (o *Email) HasFromName() bool {
-	if o != nil && !IsNil(o.FromName) {
+	if o != nil && o.FromName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFromName gets a reference to the given string and assigns it to the FromName field.
+// SetFromName gets a reference to the given NullableString and assigns it to the FromName field.
 func (o *Email) SetFromName(v string) *Email {
-	o.FromName = &v
+	o.FromName.Set(&v)
+	return o
+}
+// SetFromNameNil sets the value for FromName to be an explicit nil
+func (o *Email) SetFromNameNil() *Email {
+	o.FromName.Set(nil)
 	return o
 }
 
-// GetToEmail returns the ToEmail field value if set, zero value otherwise.
+// UnsetFromName ensures that no value is present for FromName, not even an explicit nil
+func (o *Email) UnsetFromName() {
+	o.FromName.Unset()
+}
+
+// GetToEmail returns the ToEmail field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Email) GetToEmail() string {
-	if o == nil || IsNil(o.ToEmail) {
+	if o == nil || IsNil(o.ToEmail.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ToEmail
+	return *o.ToEmail.Get()
 }
 
 // GetToEmailOk returns a tuple with the ToEmail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Email) GetToEmailOk() (*string, bool) {
-	if o == nil || IsNil(o.ToEmail) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ToEmail, true
+	return o.ToEmail.Get(), o.ToEmail.IsSet()
 }
 
 // HasToEmail returns a boolean if a field has been set.
 func (o *Email) HasToEmail() bool {
-	if o != nil && !IsNil(o.ToEmail) {
+	if o != nil && o.ToEmail.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetToEmail gets a reference to the given string and assigns it to the ToEmail field.
+// SetToEmail gets a reference to the given NullableString and assigns it to the ToEmail field.
 func (o *Email) SetToEmail(v string) *Email {
-	o.ToEmail = &v
+	o.ToEmail.Set(&v)
+	return o
+}
+// SetToEmailNil sets the value for ToEmail to be an explicit nil
+func (o *Email) SetToEmailNil() *Email {
+	o.ToEmail.Set(nil)
 	return o
 }
 
-// GetToName returns the ToName field value if set, zero value otherwise.
+// UnsetToEmail ensures that no value is present for ToEmail, not even an explicit nil
+func (o *Email) UnsetToEmail() {
+	o.ToEmail.Unset()
+}
+
+// GetToName returns the ToName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Email) GetToName() string {
-	if o == nil || IsNil(o.ToName) {
+	if o == nil || IsNil(o.ToName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ToName
+	return *o.ToName.Get()
 }
 
 // GetToNameOk returns a tuple with the ToName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Email) GetToNameOk() (*string, bool) {
-	if o == nil || IsNil(o.ToName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ToName, true
+	return o.ToName.Get(), o.ToName.IsSet()
 }
 
 // HasToName returns a boolean if a field has been set.
 func (o *Email) HasToName() bool {
-	if o != nil && !IsNil(o.ToName) {
+	if o != nil && o.ToName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetToName gets a reference to the given string and assigns it to the ToName field.
+// SetToName gets a reference to the given NullableString and assigns it to the ToName field.
 func (o *Email) SetToName(v string) *Email {
-	o.ToName = &v
+	o.ToName.Set(&v)
+	return o
+}
+// SetToNameNil sets the value for ToName to be an explicit nil
+func (o *Email) SetToNameNil() *Email {
+	o.ToName.Set(nil)
 	return o
 }
 
-// GetSubject returns the Subject field value if set, zero value otherwise.
+// UnsetToName ensures that no value is present for ToName, not even an explicit nil
+func (o *Email) UnsetToName() {
+	o.ToName.Unset()
+}
+
+// GetSubject returns the Subject field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Email) GetSubject() string {
-	if o == nil || IsNil(o.Subject) {
+	if o == nil || IsNil(o.Subject.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Subject
+	return *o.Subject.Get()
 }
 
 // GetSubjectOk returns a tuple with the Subject field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Email) GetSubjectOk() (*string, bool) {
-	if o == nil || IsNil(o.Subject) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Subject, true
+	return o.Subject.Get(), o.Subject.IsSet()
 }
 
 // HasSubject returns a boolean if a field has been set.
 func (o *Email) HasSubject() bool {
-	if o != nil && !IsNil(o.Subject) {
+	if o != nil && o.Subject.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSubject gets a reference to the given string and assigns it to the Subject field.
+// SetSubject gets a reference to the given NullableString and assigns it to the Subject field.
 func (o *Email) SetSubject(v string) *Email {
-	o.Subject = &v
+	o.Subject.Set(&v)
+	return o
+}
+// SetSubjectNil sets the value for Subject to be an explicit nil
+func (o *Email) SetSubjectNil() *Email {
+	o.Subject.Set(nil)
 	return o
 }
 
-// GetContent returns the Content field value if set, zero value otherwise.
+// UnsetSubject ensures that no value is present for Subject, not even an explicit nil
+func (o *Email) UnsetSubject() {
+	o.Subject.Unset()
+}
+
+// GetContent returns the Content field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Email) GetContent() string {
-	if o == nil || IsNil(o.Content) {
+	if o == nil || IsNil(o.Content.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Content
+	return *o.Content.Get()
 }
 
 // GetContentOk returns a tuple with the Content field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Email) GetContentOk() (*string, bool) {
-	if o == nil || IsNil(o.Content) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Content, true
+	return o.Content.Get(), o.Content.IsSet()
 }
 
 // HasContent returns a boolean if a field has been set.
 func (o *Email) HasContent() bool {
-	if o != nil && !IsNil(o.Content) {
+	if o != nil && o.Content.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetContent gets a reference to the given string and assigns it to the Content field.
+// SetContent gets a reference to the given NullableString and assigns it to the Content field.
 func (o *Email) SetContent(v string) *Email {
-	o.Content = &v
+	o.Content.Set(&v)
+	return o
+}
+// SetContentNil sets the value for Content to be an explicit nil
+func (o *Email) SetContentNil() *Email {
+	o.Content.Set(nil)
 	return o
 }
 
-// GetCopyTo returns the CopyTo field value if set, zero value otherwise.
+// UnsetContent ensures that no value is present for Content, not even an explicit nil
+func (o *Email) UnsetContent() {
+	o.Content.Unset()
+}
+
+// GetCopyTo returns the CopyTo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Email) GetCopyTo() string {
-	if o == nil || IsNil(o.CopyTo) {
+	if o == nil || IsNil(o.CopyTo.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CopyTo
+	return *o.CopyTo.Get()
 }
 
 // GetCopyToOk returns a tuple with the CopyTo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Email) GetCopyToOk() (*string, bool) {
-	if o == nil || IsNil(o.CopyTo) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CopyTo, true
+	return o.CopyTo.Get(), o.CopyTo.IsSet()
 }
 
 // HasCopyTo returns a boolean if a field has been set.
 func (o *Email) HasCopyTo() bool {
-	if o != nil && !IsNil(o.CopyTo) {
+	if o != nil && o.CopyTo.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCopyTo gets a reference to the given string and assigns it to the CopyTo field.
+// SetCopyTo gets a reference to the given NullableString and assigns it to the CopyTo field.
 func (o *Email) SetCopyTo(v string) *Email {
-	o.CopyTo = &v
+	o.CopyTo.Set(&v)
 	return o
+}
+// SetCopyToNil sets the value for CopyTo to be an explicit nil
+func (o *Email) SetCopyToNil() *Email {
+	o.CopyTo.Set(nil)
+	return o
+}
+
+// UnsetCopyTo ensures that no value is present for CopyTo, not even an explicit nil
+func (o *Email) UnsetCopyTo() {
+	o.CopyTo.Unset()
 }
 
 // GetRecipientStatus returns the RecipientStatus field value if set, zero value otherwise.
@@ -497,75 +618,97 @@ func (o *Email) SetRecipientStatus(v EmailRecipientStatus) *Email {
 	return o
 }
 
-// GetRecipientDate returns the RecipientDate field value if set, zero value otherwise.
+// GetRecipientDate returns the RecipientDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Email) GetRecipientDate() time.Time {
-	if o == nil || IsNil(o.RecipientDate) {
+	if o == nil || IsNil(o.RecipientDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.RecipientDate
+	return *o.RecipientDate.Get()
 }
 
 // GetRecipientDateOk returns a tuple with the RecipientDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Email) GetRecipientDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.RecipientDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RecipientDate, true
+	return o.RecipientDate.Get(), o.RecipientDate.IsSet()
 }
 
 // HasRecipientDate returns a boolean if a field has been set.
 func (o *Email) HasRecipientDate() bool {
-	if o != nil && !IsNil(o.RecipientDate) {
+	if o != nil && o.RecipientDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRecipientDate gets a reference to the given time.Time and assigns it to the RecipientDate field.
+// SetRecipientDate gets a reference to the given NullableTime and assigns it to the RecipientDate field.
 func (o *Email) SetRecipientDate(v time.Time) *Email {
-	o.RecipientDate = &v
+	o.RecipientDate.Set(&v)
+	return o
+}
+// SetRecipientDateNil sets the value for RecipientDate to be an explicit nil
+func (o *Email) SetRecipientDateNil() *Email {
+	o.RecipientDate.Set(nil)
 	return o
 }
 
-// GetKind returns the Kind field value if set, zero value otherwise.
+// UnsetRecipientDate ensures that no value is present for RecipientDate, not even an explicit nil
+func (o *Email) UnsetRecipientDate() {
+	o.RecipientDate.Unset()
+}
+
+// GetKind returns the Kind field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Email) GetKind() string {
-	if o == nil || IsNil(o.Kind) {
+	if o == nil || IsNil(o.Kind.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Kind
+	return *o.Kind.Get()
 }
 
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Email) GetKindOk() (*string, bool) {
-	if o == nil || IsNil(o.Kind) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Kind, true
+	return o.Kind.Get(), o.Kind.IsSet()
 }
 
 // HasKind returns a boolean if a field has been set.
 func (o *Email) HasKind() bool {
-	if o != nil && !IsNil(o.Kind) {
+	if o != nil && o.Kind.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetKind gets a reference to the given string and assigns it to the Kind field.
+// SetKind gets a reference to the given NullableString and assigns it to the Kind field.
 func (o *Email) SetKind(v string) *Email {
-	o.Kind = &v
+	o.Kind.Set(&v)
+	return o
+}
+// SetKindNil sets the value for Kind to be an explicit nil
+func (o *Email) SetKindNil() *Email {
+	o.Kind.Set(nil)
 	return o
 }
 
-// GetAttachments returns the Attachments field value if set, zero value otherwise.
+// UnsetKind ensures that no value is present for Kind, not even an explicit nil
+func (o *Email) UnsetKind() {
+	o.Kind.Unset()
+}
+
+// GetAttachments returns the Attachments field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Email) GetAttachments() []EmailAttachment {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil {
 		var ret []EmailAttachment
 		return ret
 	}
@@ -574,6 +717,7 @@ func (o *Email) GetAttachments() []EmailAttachment {
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Email) GetAttachmentsOk() ([]EmailAttachment, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
@@ -583,7 +727,7 @@ func (o *Email) GetAttachmentsOk() ([]EmailAttachment, bool) {
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *Email) HasAttachments() bool {
-	if o != nil && !IsNil(o.Attachments) {
+	if o != nil && IsNil(o.Attachments) {
 		return true
 	}
 
@@ -606,52 +750,52 @@ func (o Email) MarshalJSON() ([]byte, error) {
 
 func (o Email) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
+	if o.Id.IsSet() {
+		toSerialize["id"] = o.Id.Get()
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.SentDate) {
-		toSerialize["sent_date"] = o.SentDate
+	if o.SentDate.IsSet() {
+		toSerialize["sent_date"] = o.SentDate.Get()
 	}
-	if !IsNil(o.ErrorsCount) {
-		toSerialize["errors_count"] = o.ErrorsCount
+	if o.ErrorsCount.IsSet() {
+		toSerialize["errors_count"] = o.ErrorsCount.Get()
 	}
-	if !IsNil(o.ErrorLog) {
-		toSerialize["error_log"] = o.ErrorLog
+	if o.ErrorLog.IsSet() {
+		toSerialize["error_log"] = o.ErrorLog.Get()
 	}
-	if !IsNil(o.FromEmail) {
-		toSerialize["from_email"] = o.FromEmail
+	if o.FromEmail.IsSet() {
+		toSerialize["from_email"] = o.FromEmail.Get()
 	}
-	if !IsNil(o.FromName) {
-		toSerialize["from_name"] = o.FromName
+	if o.FromName.IsSet() {
+		toSerialize["from_name"] = o.FromName.Get()
 	}
-	if !IsNil(o.ToEmail) {
-		toSerialize["to_email"] = o.ToEmail
+	if o.ToEmail.IsSet() {
+		toSerialize["to_email"] = o.ToEmail.Get()
 	}
-	if !IsNil(o.ToName) {
-		toSerialize["to_name"] = o.ToName
+	if o.ToName.IsSet() {
+		toSerialize["to_name"] = o.ToName.Get()
 	}
-	if !IsNil(o.Subject) {
-		toSerialize["subject"] = o.Subject
+	if o.Subject.IsSet() {
+		toSerialize["subject"] = o.Subject.Get()
 	}
-	if !IsNil(o.Content) {
-		toSerialize["content"] = o.Content
+	if o.Content.IsSet() {
+		toSerialize["content"] = o.Content.Get()
 	}
-	if !IsNil(o.CopyTo) {
-		toSerialize["copy_to"] = o.CopyTo
+	if o.CopyTo.IsSet() {
+		toSerialize["copy_to"] = o.CopyTo.Get()
 	}
 	if !IsNil(o.RecipientStatus) {
 		toSerialize["recipient_status"] = o.RecipientStatus
 	}
-	if !IsNil(o.RecipientDate) {
-		toSerialize["recipient_date"] = o.RecipientDate
+	if o.RecipientDate.IsSet() {
+		toSerialize["recipient_date"] = o.RecipientDate.Get()
 	}
-	if !IsNil(o.Kind) {
-		toSerialize["kind"] = o.Kind
+	if o.Kind.IsSet() {
+		toSerialize["kind"] = o.Kind.Get()
 	}
-	if !IsNil(o.Attachments) {
+	if o.Attachments != nil {
 		toSerialize["attachments"] = o.Attachments
 	}
 	return toSerialize, nil

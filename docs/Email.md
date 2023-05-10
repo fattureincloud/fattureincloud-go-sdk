@@ -4,21 +4,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | Email unique identifier. | [optional] 
+**Id** | Pointer to **NullableInt32** | Email unique identifier. | [optional] 
 **Status** | Pointer to [**EmailStatus**](EmailStatus.md) |  | [optional] 
-**SentDate** | Pointer to **time.Time** | Email sent date. | [optional] 
-**ErrorsCount** | Pointer to **int32** | Errors count. | [optional] 
-**ErrorLog** | Pointer to **string** | Error log. | [optional] 
-**FromEmail** | Pointer to **string** | Sender email. | [optional] 
-**FromName** | Pointer to **string** | Sender name. | [optional] 
-**ToEmail** | Pointer to **string** | Recipient email. | [optional] 
-**ToName** | Pointer to **string** | Receipient email. | [optional] 
-**Subject** | Pointer to **string** | Email subject. | [optional] 
-**Content** | Pointer to **string** | Email content. | [optional] 
-**CopyTo** | Pointer to **string** |  | [optional] 
+**SentDate** | Pointer to **NullableTime** | Email sent date. | [optional] 
+**ErrorsCount** | Pointer to **NullableInt32** | Errors count. | [optional] 
+**ErrorLog** | Pointer to **NullableString** | Error log. | [optional] 
+**FromEmail** | Pointer to **NullableString** | Sender email. | [optional] 
+**FromName** | Pointer to **NullableString** | Sender name. | [optional] 
+**ToEmail** | Pointer to **NullableString** | Recipient email. | [optional] 
+**ToName** | Pointer to **NullableString** | Receipient email. | [optional] 
+**Subject** | Pointer to **NullableString** | Email subject. | [optional] 
+**Content** | Pointer to **NullableString** | Email content. | [optional] 
+**CopyTo** | Pointer to **NullableString** |  | [optional] 
 **RecipientStatus** | Pointer to [**EmailRecipientStatus**](EmailRecipientStatus.md) |  | [optional] 
-**RecipientDate** | Pointer to **time.Time** |  | [optional] 
-**Kind** | Pointer to **string** | Email kind. | [optional] 
+**RecipientDate** | Pointer to **NullableTime** |  | [optional] 
+**Kind** | Pointer to **NullableString** | Email kind. | [optional] 
 **Attachments** | Pointer to [**[]EmailAttachment**](EmailAttachment.md) | Email attachments. | [optional] 
 
 ## Methods
@@ -65,6 +65,16 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
+### SetIdNil
+
+`func (o *Email) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *Email) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetStatus
 
 `func (o *Email) GetStatus() EmailStatus`
@@ -115,6 +125,16 @@ SetSentDate sets SentDate field to given value.
 
 HasSentDate returns a boolean if a field has been set.
 
+### SetSentDateNil
+
+`func (o *Email) SetSentDateNil(b bool)`
+
+ SetSentDateNil sets the value for SentDate to be an explicit nil
+
+### UnsetSentDate
+`func (o *Email) UnsetSentDate()`
+
+UnsetSentDate ensures that no value is present for SentDate, not even an explicit nil
 ### GetErrorsCount
 
 `func (o *Email) GetErrorsCount() int32`
@@ -140,6 +160,16 @@ SetErrorsCount sets ErrorsCount field to given value.
 
 HasErrorsCount returns a boolean if a field has been set.
 
+### SetErrorsCountNil
+
+`func (o *Email) SetErrorsCountNil(b bool)`
+
+ SetErrorsCountNil sets the value for ErrorsCount to be an explicit nil
+
+### UnsetErrorsCount
+`func (o *Email) UnsetErrorsCount()`
+
+UnsetErrorsCount ensures that no value is present for ErrorsCount, not even an explicit nil
 ### GetErrorLog
 
 `func (o *Email) GetErrorLog() string`
@@ -165,6 +195,16 @@ SetErrorLog sets ErrorLog field to given value.
 
 HasErrorLog returns a boolean if a field has been set.
 
+### SetErrorLogNil
+
+`func (o *Email) SetErrorLogNil(b bool)`
+
+ SetErrorLogNil sets the value for ErrorLog to be an explicit nil
+
+### UnsetErrorLog
+`func (o *Email) UnsetErrorLog()`
+
+UnsetErrorLog ensures that no value is present for ErrorLog, not even an explicit nil
 ### GetFromEmail
 
 `func (o *Email) GetFromEmail() string`
@@ -190,6 +230,16 @@ SetFromEmail sets FromEmail field to given value.
 
 HasFromEmail returns a boolean if a field has been set.
 
+### SetFromEmailNil
+
+`func (o *Email) SetFromEmailNil(b bool)`
+
+ SetFromEmailNil sets the value for FromEmail to be an explicit nil
+
+### UnsetFromEmail
+`func (o *Email) UnsetFromEmail()`
+
+UnsetFromEmail ensures that no value is present for FromEmail, not even an explicit nil
 ### GetFromName
 
 `func (o *Email) GetFromName() string`
@@ -215,6 +265,16 @@ SetFromName sets FromName field to given value.
 
 HasFromName returns a boolean if a field has been set.
 
+### SetFromNameNil
+
+`func (o *Email) SetFromNameNil(b bool)`
+
+ SetFromNameNil sets the value for FromName to be an explicit nil
+
+### UnsetFromName
+`func (o *Email) UnsetFromName()`
+
+UnsetFromName ensures that no value is present for FromName, not even an explicit nil
 ### GetToEmail
 
 `func (o *Email) GetToEmail() string`
@@ -240,6 +300,16 @@ SetToEmail sets ToEmail field to given value.
 
 HasToEmail returns a boolean if a field has been set.
 
+### SetToEmailNil
+
+`func (o *Email) SetToEmailNil(b bool)`
+
+ SetToEmailNil sets the value for ToEmail to be an explicit nil
+
+### UnsetToEmail
+`func (o *Email) UnsetToEmail()`
+
+UnsetToEmail ensures that no value is present for ToEmail, not even an explicit nil
 ### GetToName
 
 `func (o *Email) GetToName() string`
@@ -265,6 +335,16 @@ SetToName sets ToName field to given value.
 
 HasToName returns a boolean if a field has been set.
 
+### SetToNameNil
+
+`func (o *Email) SetToNameNil(b bool)`
+
+ SetToNameNil sets the value for ToName to be an explicit nil
+
+### UnsetToName
+`func (o *Email) UnsetToName()`
+
+UnsetToName ensures that no value is present for ToName, not even an explicit nil
 ### GetSubject
 
 `func (o *Email) GetSubject() string`
@@ -290,6 +370,16 @@ SetSubject sets Subject field to given value.
 
 HasSubject returns a boolean if a field has been set.
 
+### SetSubjectNil
+
+`func (o *Email) SetSubjectNil(b bool)`
+
+ SetSubjectNil sets the value for Subject to be an explicit nil
+
+### UnsetSubject
+`func (o *Email) UnsetSubject()`
+
+UnsetSubject ensures that no value is present for Subject, not even an explicit nil
 ### GetContent
 
 `func (o *Email) GetContent() string`
@@ -315,6 +405,16 @@ SetContent sets Content field to given value.
 
 HasContent returns a boolean if a field has been set.
 
+### SetContentNil
+
+`func (o *Email) SetContentNil(b bool)`
+
+ SetContentNil sets the value for Content to be an explicit nil
+
+### UnsetContent
+`func (o *Email) UnsetContent()`
+
+UnsetContent ensures that no value is present for Content, not even an explicit nil
 ### GetCopyTo
 
 `func (o *Email) GetCopyTo() string`
@@ -340,6 +440,16 @@ SetCopyTo sets CopyTo field to given value.
 
 HasCopyTo returns a boolean if a field has been set.
 
+### SetCopyToNil
+
+`func (o *Email) SetCopyToNil(b bool)`
+
+ SetCopyToNil sets the value for CopyTo to be an explicit nil
+
+### UnsetCopyTo
+`func (o *Email) UnsetCopyTo()`
+
+UnsetCopyTo ensures that no value is present for CopyTo, not even an explicit nil
 ### GetRecipientStatus
 
 `func (o *Email) GetRecipientStatus() EmailRecipientStatus`
@@ -390,6 +500,16 @@ SetRecipientDate sets RecipientDate field to given value.
 
 HasRecipientDate returns a boolean if a field has been set.
 
+### SetRecipientDateNil
+
+`func (o *Email) SetRecipientDateNil(b bool)`
+
+ SetRecipientDateNil sets the value for RecipientDate to be an explicit nil
+
+### UnsetRecipientDate
+`func (o *Email) UnsetRecipientDate()`
+
+UnsetRecipientDate ensures that no value is present for RecipientDate, not even an explicit nil
 ### GetKind
 
 `func (o *Email) GetKind() string`
@@ -415,6 +535,16 @@ SetKind sets Kind field to given value.
 
 HasKind returns a boolean if a field has been set.
 
+### SetKindNil
+
+`func (o *Email) SetKindNil(b bool)`
+
+ SetKindNil sets the value for Kind to be an explicit nil
+
+### UnsetKind
+`func (o *Email) UnsetKind()`
+
+UnsetKind ensures that no value is present for Kind, not even an explicit nil
 ### GetAttachments
 
 `func (o *Email) GetAttachments() []EmailAttachment`
@@ -440,6 +570,16 @@ SetAttachments sets Attachments field to given value.
 
 HasAttachments returns a boolean if a field has been set.
 
+### SetAttachmentsNil
+
+`func (o *Email) SetAttachmentsNil(b bool)`
+
+ SetAttachmentsNil sets the value for Attachments to be an explicit nil
+
+### UnsetAttachments
+`func (o *Email) UnsetAttachments()`
+
+UnsetAttachments ensures that no value is present for Attachments, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
