@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Days** | Pointer to **NullableInt32** | The number of days by which the payment must be made. | [optional] 
+**Days** | Pointer to **NullableInt32** | Issued document payment number of days by which the payment must be made | [optional] 
 **Type** | Pointer to [**PaymentTermsType**](PaymentTermsType.md) |  | [optional] [default to STANDARD]
 
 ## Methods

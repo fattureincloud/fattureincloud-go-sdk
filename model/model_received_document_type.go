@@ -16,7 +16,7 @@ import (
 	"fmt"
 )
 
-// ReceivedDocumentType Received document type.
+// ReceivedDocumentType Received document type
 type ReceivedDocumentType string
 
 // List of ReceivedDocumentType

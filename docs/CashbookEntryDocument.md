@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableInt32** | Document unique identifier. | [optional] 
-**Type** | Pointer to **NullableString** | Document type. | [optional] 
-**Path** | Pointer to **NullableString** | Document path. | [optional] 
+**Id** | Pointer to **NullableInt32** | Cashbook related document id | [optional] 
+**Type** | Pointer to **NullableString** | Cashbook related document type | [optional] 
+**Path** | Pointer to **NullableString** | Cashbook related document path | [optional] 
 
 ## Methods
 

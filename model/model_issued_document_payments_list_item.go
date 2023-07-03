@@ -20,17 +20,17 @@ var _ MappedNullable = &IssuedDocumentPaymentsListItem{}
 
 // IssuedDocumentPaymentsListItem struct for IssuedDocumentPaymentsListItem
 type IssuedDocumentPaymentsListItem struct {
-	// Unique identifier.
+	// Issued document payment item id
 	Id NullableInt32 `json:"id,omitempty"`
-	// Due date.
+	// Issued document payment due date
 	DueDate NullableString `json:"due_date,omitempty"`
-	// Payment amount.
+	// Issued document payment amount
 	Amount NullableFloat32 `json:"amount,omitempty"`
 	Status *IssuedDocumentStatus `json:"status,omitempty"`
 	PaymentAccount NullablePaymentAccount `json:"payment_account,omitempty"`
-	// Payment date. [Only if status is paid]
+	// Issued document payment date [Only if status is paid]
 	PaidDate NullableString `json:"paid_date,omitempty"`
-	// Advanced raw attributes for e-invoices.
+	// Issued document payment advanced raw attributes for e-invoices
 	EiRaw map[string]interface{} `json:"ei_raw,omitempty"`
 	PaymentTerms *IssuedDocumentPaymentsListItemPaymentTerms `json:"payment_terms,omitempty"`
 }

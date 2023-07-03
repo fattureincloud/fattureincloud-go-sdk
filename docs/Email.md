@@ -4,22 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableInt32** | Email unique identifier. | [optional] 
+**Id** | Pointer to **NullableInt32** | Email id | [optional] 
 **Status** | Pointer to [**EmailStatus**](EmailStatus.md) |  | [optional] 
-**SentDate** | Pointer to **NullableTime** | Email sent date. | [optional] 
-**ErrorsCount** | Pointer to **NullableInt32** | Errors count. | [optional] 
-**ErrorLog** | Pointer to **NullableString** | Error log. | [optional] 
-**FromEmail** | Pointer to **NullableString** | Sender email. | [optional] 
-**FromName** | Pointer to **NullableString** | Sender name. | [optional] 
-**ToEmail** | Pointer to **NullableString** | Recipient email. | [optional] 
-**ToName** | Pointer to **NullableString** | Receipient email. | [optional] 
-**Subject** | Pointer to **NullableString** | Email subject. | [optional] 
-**Content** | Pointer to **NullableString** | Email content. | [optional] 
-**CopyTo** | Pointer to **NullableString** |  | [optional] 
+**SentDate** | Pointer to **NullableTime** | Email sent date | [optional] 
+**ErrorsCount** | Pointer to **NullableInt32** | Email errors count | [optional] 
+**ErrorLog** | Pointer to **NullableString** | Email errors log | [optional] 
+**FromEmail** | Pointer to **NullableString** | Email sender email | [optional] 
+**FromName** | Pointer to **NullableString** | Email sender name | [optional] 
+**ToEmail** | Pointer to **NullableString** | Email recipient email | [optional] 
+**ToName** | Pointer to **NullableString** | Email receipient name | [optional] 
+**Subject** | Pointer to **NullableString** | Email subject | [optional] 
+**Content** | Pointer to **NullableString** | Email content | [optional] 
+**CopyTo** | Pointer to **NullableString** | Email cc | [optional] 
 **RecipientStatus** | Pointer to [**EmailRecipientStatus**](EmailRecipientStatus.md) |  | [optional] 
-**RecipientDate** | Pointer to **NullableTime** |  | [optional] 
-**Kind** | Pointer to **NullableString** | Email kind. | [optional] 
-**Attachments** | Pointer to [**[]EmailAttachment**](EmailAttachment.md) | Email attachments. | [optional] 
+**RecipientDate** | Pointer to **NullableTime** | Email recipient date | [optional] 
+**Kind** | Pointer to **NullableString** | Email kind | [optional] 
+**Attachments** | Pointer to [**[]EmailAttachment**](EmailAttachment.md) | Email attachments | [optional] 
 
 ## Methods
 

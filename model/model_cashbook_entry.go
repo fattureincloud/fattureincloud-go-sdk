@@ -20,21 +20,21 @@ var _ MappedNullable = &CashbookEntry{}
 
 // CashbookEntry struct for CashbookEntry
 type CashbookEntry struct {
-	// Cashbook unique identifier.
+	// Cashbook id
 	Id NullableString `json:"id,omitempty"`
-	// Cashbook date.
+	// Cashbook date
 	Date NullableString `json:"date,omitempty"`
-	// Cashbook description.
+	// Cashbook description
 	Description NullableString `json:"description,omitempty"`
 	Kind *CashbookEntryKind `json:"kind,omitempty"`
 	Type NullableCashbookEntryType `json:"type,omitempty"`
-	// Entity name.
+	// Cashbook entity name
 	EntityName NullableString `json:"entity_name,omitempty"`
 	Document NullableCashbookEntryDocument `json:"document,omitempty"`
-	// [Only for cashbook entry in] Total amount in.
+	// [Only for cashbook entry in] Cashbook total amount in
 	AmountIn NullableFloat32 `json:"amount_in,omitempty"`
 	PaymentAccountIn NullablePaymentAccount `json:"payment_account_in,omitempty"`
-	// [Only for cashbook entry out] Total amount out.
+	// [Only for cashbook entry out] Cashbook total amount out
 	AmountOut NullableFloat32 `json:"amount_out,omitempty"`
 	PaymentAccountOut NullablePaymentAccount `json:"payment_account_out,omitempty"`
 }

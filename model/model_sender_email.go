@@ -20,9 +20,9 @@ var _ MappedNullable = &SenderEmail{}
 
 // SenderEmail struct for SenderEmail
 type SenderEmail struct {
-	// Id
+	// Sender email id
 	Id NullableInt32 `json:"id,omitempty"`
-	// Email address
+	// Sender email address
 	Email NullableString `json:"email,omitempty"`
 }
 

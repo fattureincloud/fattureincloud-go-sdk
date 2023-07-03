@@ -59,7 +59,7 @@ func (a *InfoApiService) ListArchiveCategoriesExecute(r ApiListArchiveCategories
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListArchiveCategoriesResponse
+		localVarReturnValue  *ListArchiveCategoriesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListArchiveCategories")
@@ -173,7 +173,7 @@ func (a *InfoApiService) ListCitiesExecute(r ApiListCitiesRequest) (*ListCitiesR
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListCitiesResponse
+		localVarReturnValue  *ListCitiesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListCities")
@@ -281,7 +281,7 @@ func (a *InfoApiService) ListCostCentersExecute(r ApiListCostCentersRequest) (*L
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListCostCentersResponse
+		localVarReturnValue  *ListCostCentersResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListCostCenters")
@@ -381,7 +381,7 @@ func (a *InfoApiService) ListCountriesExecute(r ApiListCountriesRequest) (*ListC
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListCountriesResponse
+		localVarReturnValue  *ListCountriesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListCountries")
@@ -480,7 +480,7 @@ func (a *InfoApiService) ListCurrenciesExecute(r ApiListCurrenciesRequest) (*Lis
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListCurrenciesResponse
+		localVarReturnValue  *ListCurrenciesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListCurrencies")
@@ -579,7 +579,7 @@ func (a *InfoApiService) ListDeliveryNotesDefaultCausalsExecute(r ApiListDeliver
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListDeliveryNotesDefaultCausalsResponse
+		localVarReturnValue  *ListDeliveryNotesDefaultCausalsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListDeliveryNotesDefaultCausals")
@@ -678,7 +678,7 @@ func (a *InfoApiService) ListDetailedCountriesExecute(r ApiListDetailedCountries
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListDetailedCountriesResponse
+		localVarReturnValue  *ListDetailedCountriesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListDetailedCountries")
@@ -777,7 +777,7 @@ func (a *InfoApiService) ListLanguagesExecute(r ApiListLanguagesRequest) (*ListL
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListLanguagesResponse
+		localVarReturnValue  *ListLanguagesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListLanguages")
@@ -900,7 +900,7 @@ func (a *InfoApiService) ListPaymentAccountsExecute(r ApiListPaymentAccountsRequ
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListPaymentAccountsResponse
+		localVarReturnValue  *ListPaymentAccountsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListPaymentAccounts")
@@ -1033,7 +1033,7 @@ func (a *InfoApiService) ListPaymentMethodsExecute(r ApiListPaymentMethodsReques
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListPaymentMethodsResponse
+		localVarReturnValue  *ListPaymentMethodsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListPaymentMethods")
@@ -1151,7 +1151,7 @@ func (a *InfoApiService) ListProductCategoriesExecute(r ApiListProductCategories
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListProductCategoriesResponse
+		localVarReturnValue  *ListProductCategoriesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListProductCategories")
@@ -1258,7 +1258,7 @@ func (a *InfoApiService) ListReceivedDocumentCategoriesExecute(r ApiListReceived
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListReceivedDocumentCategoriesResponse
+		localVarReturnValue  *ListReceivedDocumentCategoriesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListReceivedDocumentCategories")
@@ -1361,7 +1361,7 @@ func (a *InfoApiService) ListRevenueCentersExecute(r ApiListRevenueCentersReques
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListRevenueCentersResponse
+		localVarReturnValue  *ListRevenueCentersResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListRevenueCenters")
@@ -1475,7 +1475,7 @@ func (a *InfoApiService) ListTemplatesExecute(r ApiListTemplatesRequest) (*ListT
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListTemplatesResponse
+		localVarReturnValue  *ListTemplatesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListTemplates")
@@ -1580,7 +1580,7 @@ func (a *InfoApiService) ListUnitsOfMeasureExecute(r ApiListUnitsOfMeasureReques
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListUnitsOfMeasureResponse
+		localVarReturnValue  *ListUnitsOfMeasureResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListUnitsOfMeasure")
@@ -1689,7 +1689,7 @@ func (a *InfoApiService) ListVatTypesExecute(r ApiListVatTypesRequest) (*ListVat
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListVatTypesResponse
+		localVarReturnValue  *ListVatTypesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListVatTypes")

@@ -16,7 +16,7 @@ import (
 	"fmt"
 )
 
-// PaymentAccountType Payment account type.
+// PaymentAccountType Payment account type
 type PaymentAccountType string
 
 // List of PaymentAccountType

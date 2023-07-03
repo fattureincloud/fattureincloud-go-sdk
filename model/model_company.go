@@ -18,20 +18,20 @@ import (
 // checks if the Company type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Company{}
 
-// Company 
+// Company struct for Company
 type Company struct {
-	// Company unique identifier.
+	// Company id
 	Id NullableInt32 `json:"id,omitempty"`
-	// Company name.
+	// Company name
 	Name NullableString `json:"name,omitempty"`
 	Type *CompanyType `json:"type,omitempty"`
-	// CompanyAuthentication token for this company. [Only if type=company]
+	// Company authentication token for this company. [Only if type=company]
 	AccessToken NullableString `json:"access_token,omitempty"`
-	// List of controlled companies. [Only if type=accountant]
+	// Company list of controlled companies [Only if type=accountant]
 	ControlledCompanies []ControlledCompany `json:"controlled_companies,omitempty"`
-	// Company connection id.
+	// Company connection id
 	ConnectionId NullableInt32 `json:"connection_id,omitempty"`
-	// Tax code.
+	// Company tax code
 	TaxCode NullableString `json:"tax_code,omitempty"`
 }
 

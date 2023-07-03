@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableInt32** | Unique identifier. | [optional] 
-**ProductId** | Pointer to **NullableInt32** | Unique identifier of the product | [optional] 
-**Code** | Pointer to **NullableString** | Product code. | [optional] 
-**Name** | Pointer to **NullableString** | Product name. | [optional] 
-**Measure** | Pointer to **NullableString** | Product measure. | [optional] 
-**NetPrice** | Pointer to **NullableFloat32** | Product net price. | [optional] 
-**Category** | Pointer to **NullableString** | Product category. | [optional] 
-**Qty** | Pointer to **NullableFloat32** | Product quantity. | [optional] 
+**Id** | Pointer to **NullableInt32** | Received document item id | [optional] 
+**ProductId** | Pointer to **NullableInt32** | Received document product id | [optional] 
+**Code** | Pointer to **NullableString** | Received document item product code | [optional] 
+**Name** | Pointer to **NullableString** | Received document item product name | [optional] 
+**Measure** | Pointer to **NullableString** | Received document item measure | [optional] 
+**NetPrice** | Pointer to **NullableFloat32** | Received document item product net price | [optional] 
+**Category** | Pointer to **NullableString** | Received document item product category | [optional] 
+**Qty** | Pointer to **NullableFloat32** | Received document item quantity | [optional] 
 **Vat** | Pointer to [**NullableVatType**](VatType.md) |  | [optional] 
-**Stock** | Pointer to **NullableFloat32** | Number of items in stock | [optional] 
+**Stock** | Pointer to **NullableFloat32** | Received document item product number of items in stock | [optional] 
 
 ## Methods
 

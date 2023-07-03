@@ -190,7 +190,8 @@ func parameterValueToString( obj interface{}, key string ) string {
 
 // parameterAddToHeaderOrQuery adds the provided object to the request header or url query
 // supporting deep object syntax
-func parameterAddToHeaderOrQuery(headerOrQueryParams interface{}, keyPrefix string, obj interface{}, collectionType string) {	var v = reflect.ValueOf(obj)
+func parameterAddToHeaderOrQuery(headerOrQueryParams interface{}, keyPrefix string, obj interface{}, collectionType string) {
+	var v = reflect.ValueOf(obj)
 	var value = ""
 	if v == reflect.ValueOf(nil) {
 		value = "null"
@@ -468,6 +469,11 @@ func (c *APIClient) prepareRequest(
 			latestToken.SetAuthHeader(localVarRequest)
 		}
 
+		// AccessToken Authentication
+		if auth, ok := ctx.Value(ContextAccessToken).(string); ok {
+			localVarRequest.Header.Add("Authorization", "Bearer "+auth)
+		}
+
 	}
 
 	for header, value := range c.cfg.DefaultHeader {
@@ -698,16 +704,16 @@ func formatErrorMessage(status string, v interface{}) string {
 	str := ""
 	metaValue := reflect.ValueOf(v).Elem()
 
-	field := metaValue.FieldByName("Title")
-	if field != (reflect.Value{}) {
-		str = fmt.Sprintf("%s", field.Interface())
-	}
-
-	field = metaValue.FieldByName("Detail")
-	if field != (reflect.Value{}) {
-		str = fmt.Sprintf("%s (%s)", str, field.Interface())
-	}
-
-	// status title (detail)
+	if metaValue.Kind() == reflect.Struct {
+ 		field := metaValue.FieldByName("Title")
+ 		if field != (reflect.Value{}) {
+ 			str = fmt.Sprintf("%s", field.Interface())
+ 		}
+ 		field = metaValue.FieldByName("Detail")
+ 		if field != (reflect.Value{}) {
+ 			str = fmt.Sprintf("%s (%s)", str, field.Interface())
+ 		}
+ 	}
+	
 	return strings.TrimSpace(fmt.Sprintf("%s %s", status, str))
 }

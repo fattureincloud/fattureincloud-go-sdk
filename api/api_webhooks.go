@@ -66,7 +66,7 @@ func (a *WebhooksApiService) CreateWebhooksSubscriptionExecute(r ApiCreateWebhoo
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *CreateWebhooksSubscriptionResponse
+		localVarReturnValue  *CreateWebhooksSubscriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.CreateWebhooksSubscription")
@@ -270,7 +270,7 @@ func (a *WebhooksApiService) GetWebhooksSubscriptionExecute(r ApiGetWebhooksSubs
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetWebhooksSubscriptionResponse
+		localVarReturnValue  *GetWebhooksSubscriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.GetWebhooksSubscription")
@@ -374,7 +374,7 @@ func (a *WebhooksApiService) ListWebhooksSubscriptionsExecute(r ApiListWebhooksS
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListWebhooksSubscriptionsResponse
+		localVarReturnValue  *ListWebhooksSubscriptionsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.ListWebhooksSubscriptions")
@@ -486,7 +486,7 @@ func (a *WebhooksApiService) ModifyWebhooksSubscriptionExecute(r ApiModifyWebhoo
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ModifyWebhooksSubscriptionResponse
+		localVarReturnValue  *ModifyWebhooksSubscriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.ModifyWebhooksSubscription")

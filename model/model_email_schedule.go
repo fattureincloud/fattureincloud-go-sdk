@@ -20,20 +20,20 @@ var _ MappedNullable = &EmailSchedule{}
 
 // EmailSchedule struct for EmailSchedule
 type EmailSchedule struct {
-	// Sender id. Required if `sender_email` is not specified
+	// Email sender id [required if **sender_email** is not specified]
 	SenderId NullableInt32 `json:"sender_id,omitempty"`
-	// Sender email. Required if `sender_id` is not specified
+	// Email sender address [required if **sender_id** is not specified]
 	SenderEmail NullableString `json:"sender_email,omitempty"`
-	// One or more comma separated recipient emails
+	// Email recipient emails [comma separated]
 	RecipientEmail NullableString `json:"recipient_email,omitempty"`
 	// Email subject
 	Subject NullableString `json:"subject,omitempty"`
 	// Email body [HTML Escaped] [max size 50KiB]
 	Body NullableString `json:"body,omitempty"`
 	Include NullableEmailScheduleInclude `json:"include,omitempty"`
-	// If set to true, documents will be sent as PDF attachments too
+	// Attach the pdf of the document
 	AttachPdf NullableBool `json:"attach_pdf,omitempty"`
-	// If set to true, a copy of the email will be sent to the `cc_email` specified by `Get email data`
+	// Send a copy of the email to the **cc_email** specified by **Get email data**
 	SendCopy NullableBool `json:"send_copy,omitempty"`
 }
 

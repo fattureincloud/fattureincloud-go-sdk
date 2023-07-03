@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableInt32** | Unique identifier. | [optional] 
-**Amount** | Pointer to **NullableFloat32** | Amount of items. | [optional] 
+**Id** | Pointer to **NullableInt32** | Received document payment id | [optional] 
+**Amount** | Pointer to **NullableFloat32** | Received document payment total amount | [optional] 
 **DueDate** | Pointer to **NullableString** | Due date | [optional] 
-**PaidDate** | Pointer to **NullableString** | Paid date | [optional] 
+**PaidDate** | Pointer to **NullableString** | Received document payment paid date | [optional] 
 **PaymentTerms** | Pointer to [**NullableReceivedDocumentPaymentsListItemPaymentTerms**](ReceivedDocumentPaymentsListItemPaymentTerms.md) |  | [optional] 
-**Status** | Pointer to **NullableString** | Payment status. | [optional] 
+**Status** | Pointer to **NullableString** | Received document payment status | [optional] 
 **PaymentAccount** | Pointer to [**NullablePaymentAccount**](PaymentAccount.md) |  | [optional] 
 
 ## Methods

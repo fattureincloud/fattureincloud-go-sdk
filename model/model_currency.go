@@ -18,15 +18,15 @@ import (
 // checks if the Currency type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Currency{}
 
-// Currency 
+// Currency struct for Currency
 type Currency struct {
-	// Currency code.
+	// Currency code
 	Id NullableString `json:"id,omitempty"`
-	// Currency symbol.
+	// Currency symbol
 	Symbol NullableString `json:"symbol,omitempty"`
-	// Currency exchange rate (EUR to this).
+	// Currency exchange rate (EUR to this)
 	ExchangeRate NullableString `json:"exchange_rate,omitempty"`
-	// Currency html code.
+	// Currency html code
 	HtmlSymbol NullableString `json:"html_symbol,omitempty"`
 }
 

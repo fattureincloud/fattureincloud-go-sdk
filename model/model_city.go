@@ -20,11 +20,11 @@ var _ MappedNullable = &City{}
 
 // City struct for City
 type City struct {
-	// City postal code.
+	// City postal code
 	PostalCode NullableString `json:"postal_code,omitempty"`
-	// City name.
+	// City name
 	City NullableString `json:"city,omitempty"`
-	// Province.
+	// City province
 	Province NullableString `json:"province,omitempty"`
 }
 

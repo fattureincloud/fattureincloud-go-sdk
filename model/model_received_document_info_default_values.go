@@ -18,7 +18,7 @@ import (
 // checks if the ReceivedDocumentInfoDefaultValues type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ReceivedDocumentInfoDefaultValues{}
 
-// ReceivedDocumentInfoDefaultValues Default values for the document.
+// ReceivedDocumentInfoDefaultValues Received document default values
 type ReceivedDocumentInfoDefaultValues struct {
 	Detailed NullableBool `json:"detailed,omitempty"`
 }

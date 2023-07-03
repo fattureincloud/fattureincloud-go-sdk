@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RecipientEmail** | Pointer to **NullableString** | Recipient&#39;s email | [optional] 
+**RecipientEmail** | Pointer to **NullableString** | Email recipient | [optional] 
 **DefaultSenderEmail** | Pointer to [**NullableEmailDataDefaultSenderEmail**](EmailDataDefaultSenderEmail.md) |  | [optional] 
 **SenderEmailsList** | Pointer to [**[]SenderEmail**](SenderEmail.md) | List of all emails from which the document can be sent | [optional] 
-**CcEmail** | Pointer to **NullableString** | By default is the logged company email. This is the email address to which a copy will be sent. | [optional] 
+**CcEmail** | Pointer to **NullableString** | Email cc [by default is the logged company email] | [optional] 
 **Subject** | Pointer to **NullableString** | Email subject | [optional] 
 **Body** | Pointer to **NullableString** | Email body | [optional] 
-**DocumentExists** | Pointer to **NullableBool** | If the document is not a delivery note, this flag will be set to true | [optional] 
-**DeliveryNoteExists** | Pointer to **NullableBool** | If the document is a delivery note, this flag will be set to true | [optional] 
-**AttachmentExists** | Pointer to **NullableBool** | If the document has one or more attachments, this flag will be set to true | [optional] 
-**AccompanyingInvoiceExists** | Pointer to **NullableBool** | If an accompanying invoice exists, this flag will be set to true | [optional] 
-**DefaultAttachPdf** | Pointer to **NullableBool** | If a pdf is attached, this flag will be set to true | [optional] 
+**DocumentExists** | Pointer to **NullableBool** | Document exists if it is not a delivery note | [optional] 
+**DeliveryNoteExists** | Pointer to **NullableBool** | Document is a delivery note | [optional] 
+**AttachmentExists** | Pointer to **NullableBool** | Document has attachment | [optional] 
+**AccompanyingInvoiceExists** | Pointer to **NullableBool** | Document has accompanying invoice | [optional] 
+**DefaultAttachPdf** | Pointer to **NullableBool** | Attach document pdf | [optional] 
 
 ## Methods
 

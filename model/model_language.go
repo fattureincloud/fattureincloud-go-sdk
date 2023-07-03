@@ -20,9 +20,9 @@ var _ MappedNullable = &Language{}
 
 // Language struct for Language
 type Language struct {
-	// Language code.
+	// Language code
 	Code NullableString `json:"code,omitempty"`
-	// Language extended name.
+	// Language extended name
 	Name NullableString `json:"name,omitempty"`
 }
 

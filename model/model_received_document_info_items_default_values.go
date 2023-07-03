@@ -18,9 +18,9 @@ import (
 // checks if the ReceivedDocumentInfoItemsDefaultValues type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ReceivedDocumentInfoItemsDefaultValues{}
 
-// ReceivedDocumentInfoItemsDefaultValues Default values for the document items.
+// ReceivedDocumentInfoItemsDefaultValues Received document items default values
 type ReceivedDocumentInfoItemsDefaultValues struct {
-	// Default vat value.
+	// Vat default value
 	Vat NullableFloat32 `json:"vat,omitempty"`
 }
 

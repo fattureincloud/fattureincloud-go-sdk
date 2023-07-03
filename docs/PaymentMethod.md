@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableInt32** | Unique identifier | [optional] 
-**Name** | Pointer to **NullableString** | Name of the payment method | [optional] 
+**Id** | Pointer to **NullableInt32** | Payment method id | [optional] 
+**Name** | Pointer to **NullableString** | Payment method name | [optional] 
 **Type** | Pointer to [**PaymentMethodType**](PaymentMethodType.md) |  | [optional] [default to STANDARD]
-**IsDefault** | Pointer to **NullableBool** | Determines if this is the default payment method. | [optional] 
+**IsDefault** | Pointer to **NullableBool** | Payment method is default | [optional] 
 **DefaultPaymentAccount** | Pointer to [**NullablePaymentAccount**](PaymentAccount.md) |  | [optional] 
-**Details** | Pointer to [**[]PaymentMethodDetails**](PaymentMethodDetails.md) | Method details rows | [optional] 
-**BankIban** | Pointer to **NullableString** | Bank iban | [optional] 
-**BankName** | Pointer to **NullableString** | Bank name | [optional] 
-**BankBeneficiary** | Pointer to **NullableString** | Bank beneficiary | [optional] 
+**Details** | Pointer to [**[]PaymentMethodDetails**](PaymentMethodDetails.md) | Payment method details | [optional] 
+**BankIban** | Pointer to **NullableString** | Payment method bank iban | [optional] 
+**BankName** | Pointer to **NullableString** | Payment method bank name | [optional] 
+**BankBeneficiary** | Pointer to **NullableString** | Payment method bank beneficiary | [optional] 
 **EiPaymentMethod** | Pointer to **NullableString** | E-invoice payment method | [optional] 
 
 ## Methods

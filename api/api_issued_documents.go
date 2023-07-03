@@ -67,7 +67,7 @@ func (a *IssuedDocumentsApiService) CreateIssuedDocumentExecute(r ApiCreateIssue
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *CreateIssuedDocumentResponse
+		localVarReturnValue  *CreateIssuedDocumentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.CreateIssuedDocument")
@@ -367,7 +367,7 @@ func (a *IssuedDocumentsApiService) GetEmailDataExecute(r ApiGetEmailDataRequest
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetEmailDataResponse
+		localVarReturnValue  *GetEmailDataResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.GetEmailData")
@@ -480,7 +480,7 @@ func (a *IssuedDocumentsApiService) GetExistingIssuedDocumentTotalsExecute(r Api
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetExistingIssuedDocumentTotalsResponse
+		localVarReturnValue  *GetExistingIssuedDocumentTotalsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.GetExistingIssuedDocumentTotals")
@@ -604,7 +604,7 @@ func (a *IssuedDocumentsApiService) GetIssuedDocumentExecute(r ApiGetIssuedDocum
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetIssuedDocumentResponse
+		localVarReturnValue  *GetIssuedDocumentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.GetIssuedDocument")
@@ -721,7 +721,7 @@ func (a *IssuedDocumentsApiService) GetIssuedDocumentPreCreateInfoExecute(r ApiG
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetIssuedDocumentPreCreateInfoResponse
+		localVarReturnValue  *GetIssuedDocumentPreCreateInfoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.GetIssuedDocumentPreCreateInfo")
@@ -834,7 +834,7 @@ func (a *IssuedDocumentsApiService) GetNewIssuedDocumentTotalsExecute(r ApiGetNe
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetNewIssuedDocumentTotalsResponse
+		localVarReturnValue  *GetNewIssuedDocumentTotalsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.GetNewIssuedDocumentTotals")
@@ -960,7 +960,7 @@ func (a *IssuedDocumentsApiService) JoinIssuedDocumentsExecute(r ApiJoinIssuedDo
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *JoinIssuedDocumentsResponse
+		localVarReturnValue  *JoinIssuedDocumentsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.JoinIssuedDocuments")
@@ -1129,7 +1129,7 @@ func (a *IssuedDocumentsApiService) ListIssuedDocumentsExecute(r ApiListIssuedDo
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListIssuedDocumentsResponse
+		localVarReturnValue  *ListIssuedDocumentsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.ListIssuedDocuments")
@@ -1267,7 +1267,7 @@ func (a *IssuedDocumentsApiService) ModifyIssuedDocumentExecute(r ApiModifyIssue
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ModifyIssuedDocumentResponse
+		localVarReturnValue  *ModifyIssuedDocumentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.ModifyIssuedDocument")
@@ -1506,7 +1506,7 @@ func (a *IssuedDocumentsApiService) TransformIssuedDocumentExecute(r ApiTransfor
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *TransformIssuedDocumentResponse
+		localVarReturnValue  *TransformIssuedDocumentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.TransformIssuedDocument")
@@ -1597,13 +1597,13 @@ type ApiUploadIssuedDocumentAttachmentRequest struct {
 	attachment *os.File
 }
 
-// Name of the file.
+// Attachment file name
 func (r ApiUploadIssuedDocumentAttachmentRequest) Filename(filename string) ApiUploadIssuedDocumentAttachmentRequest {
 	r.filename = &filename
 	return r
 }
 
-// Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx
+// Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx]
 func (r ApiUploadIssuedDocumentAttachmentRequest) Attachment(attachment *os.File) ApiUploadIssuedDocumentAttachmentRequest {
 	r.attachment = attachment
 	return r
@@ -1637,7 +1637,7 @@ func (a *IssuedDocumentsApiService) UploadIssuedDocumentAttachmentExecute(r ApiU
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *UploadIssuedDocumentAttachmentResponse
+		localVarReturnValue  *UploadIssuedDocumentAttachmentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.UploadIssuedDocumentAttachment")

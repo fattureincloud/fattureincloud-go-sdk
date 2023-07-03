@@ -16,7 +16,7 @@ import (
 	"fmt"
 )
 
-// EmailRecipientStatus Email recipient status.
+// EmailRecipientStatus Email recipient status
 type EmailRecipientStatus string
 
 // List of EmailRecipientStatus

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableInt32** | Unique identifier | [optional] 
-**Name** | Pointer to **NullableString** | Payment account name. | [optional] 
+**Id** | Pointer to **NullableInt32** | Payment account id | [optional] 
+**Name** | Pointer to **NullableString** | Payment account name | [optional] 
 **Type** | Pointer to [**PaymentAccountType**](PaymentAccountType.md) |  | [optional] [default to STANDARD]
-**Iban** | Pointer to **NullableString** | Payment account iban. | [optional] 
-**Sia** | Pointer to **NullableString** | Payment account sia. | [optional] 
-**Cuc** | Pointer to **NullableString** | Payment account cuc. | [optional] 
-**Virtual** | Pointer to **NullableBool** | Determine if the payment method is virtual. | [optional] 
+**Iban** | Pointer to **NullableString** | Payment account iban | [optional] 
+**Sia** | Pointer to **NullableString** | Payment account sia | [optional] 
+**Cuc** | Pointer to **NullableString** | Payment account cuc | [optional] 
+**Virtual** | Pointer to **NullableBool** | Payment method is virtual | [optional] 
 
 ## Methods
 

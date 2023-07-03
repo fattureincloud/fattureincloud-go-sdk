@@ -20,11 +20,11 @@ var _ MappedNullable = &CashbookEntryDocument{}
 
 // CashbookEntryDocument struct for CashbookEntryDocument
 type CashbookEntryDocument struct {
-	// Document unique identifier.
+	// Cashbook related document id
 	Id NullableInt32 `json:"id,omitempty"`
-	// Document type.
+	// Cashbook related document type
 	Type NullableString `json:"type,omitempty"`
-	// Document path.
+	// Cashbook related document path
 	Path NullableString `json:"path,omitempty"`
 }
 

@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableInt32** | Unique identifier | [optional] 
-**Value** | Pointer to **NullableFloat32** | [Read Only] Percentual value. | [optional] 
-**Description** | Pointer to **NullableString** | Short description. | [optional] 
-**Notes** | Pointer to **NullableString** | Long description and notes shown in documents. | [optional] 
-**EInvoice** | Pointer to **NullableBool** | Usable for e-invoices. | [optional] 
-**EiType** | Pointer to **NullableString** | E-invoice type (natura). | [optional] 
-**EiDescription** | Pointer to **NullableString** | E-invoice description. | [optional] 
-**Editable** | Pointer to **NullableBool** | [Read Only] Determine if this vat type is editable. | [optional] [readonly] 
-**IsDisabled** | Pointer to **NullableBool** | Determine if the vat type is disabled. | [optional] 
+**Id** | Pointer to **NullableInt32** | Vat type id | [optional] 
+**Value** | Pointer to **NullableFloat32** | [Read Only] Vat type percentual value | [optional] 
+**Description** | Pointer to **NullableString** | Vat type short description | [optional] 
+**Notes** | Pointer to **NullableString** | Vat type notes shown in documents | [optional] 
+**EInvoice** | Pointer to **NullableBool** | Vat type is usable for e-invoices | [optional] 
+**EiType** | Pointer to **NullableString** | Vat type e-invoice type (natura) | [optional] 
+**EiDescription** | Pointer to **NullableString** | Vat type e-invoice description | [optional] 
+**Editable** | Pointer to **NullableBool** | [Read Only] Is the vat type is editable. | [optional] [readonly] 
+**IsDisabled** | Pointer to **NullableBool** | Is the vat type disabled | [optional] 
 
 ## Methods
 

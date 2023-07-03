@@ -20,16 +20,16 @@ var _ MappedNullable = &ReceivedDocumentPaymentsListItem{}
 
 // ReceivedDocumentPaymentsListItem struct for ReceivedDocumentPaymentsListItem
 type ReceivedDocumentPaymentsListItem struct {
-	// Unique identifier.
+	// Received document payment id
 	Id NullableInt32 `json:"id,omitempty"`
-	// Amount of items.
+	// Received document payment total amount
 	Amount NullableFloat32 `json:"amount,omitempty"`
 	// Due date
 	DueDate NullableString `json:"due_date,omitempty"`
-	// Paid date
+	// Received document payment paid date
 	PaidDate NullableString `json:"paid_date,omitempty"`
 	PaymentTerms NullableReceivedDocumentPaymentsListItemPaymentTerms `json:"payment_terms,omitempty"`
-	// Payment status.
+	// Received document payment status
 	Status NullableString `json:"status,omitempty"`
 	PaymentAccount NullablePaymentAccount `json:"payment_account,omitempty"`
 }

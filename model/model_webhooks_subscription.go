@@ -20,7 +20,7 @@ var _ MappedNullable = &WebhooksSubscription{}
 
 // WebhooksSubscription struct for WebhooksSubscription
 type WebhooksSubscription struct {
-	// Unique identifier
+	// Webhooks subscription id
 	Id NullableString `json:"id,omitempty"`
 	// Webhooks callback uri.
 	Sink NullableString `json:"sink,omitempty"`

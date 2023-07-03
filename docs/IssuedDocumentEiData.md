@@ -6,16 +6,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **VatKind** | Pointer to [**NullableVatKind**](VatKind.md) |  | [optional] 
 **OriginalDocumentType** | Pointer to [**NullableOriginalDocumentType**](OriginalDocumentType.md) |  | [optional] [default to ORDINE]
-**OdNumber** | Pointer to **NullableString** | Original document number. | [optional] 
-**OdDate** | Pointer to **NullableString** | Original document date. | [optional] 
-**Cig** | Pointer to **NullableString** | CIG. | [optional] 
-**Cup** | Pointer to **NullableString** | CUP. | [optional] 
-**PaymentMethod** | Pointer to **NullableString** | Payment method (see https://www.fatturapa.gov.it/export/documenti/fatturapa/v1.2.1/Rappresentazione-tabellare-fattura-ordinaria.pdf for the accepted values of ModalitaPagamento). | [optional] 
-**BankName** | Pointer to **NullableString** | Bank name. | [optional] 
-**BankIban** | Pointer to **NullableString** | IBAN. | [optional] 
-**BankBeneficiary** | Pointer to **NullableString** | Bank beneficiary. | [optional] 
-**InvoiceNumber** | Pointer to **NullableString** | Invoice number. | [optional] 
-**InvoiceDate** | Pointer to **NullableString** | Invoice date. | [optional] 
+**OdNumber** | Pointer to **NullableString** | E-invoice original document number | [optional] 
+**OdDate** | Pointer to **NullableString** | E-invoice original document date | [optional] 
+**Cig** | Pointer to **NullableString** | E-invoice CIG | [optional] 
+**Cup** | Pointer to **NullableString** | E-invoice CUP | [optional] 
+**PaymentMethod** | Pointer to **NullableString** | E-invoice payment method [required for e-invoices](see https://www.fatturapa.gov.it/export/documenti/fatturapa/v1.2.2/Rappresentazione_Tabellare_FattOrdinaria_V1.2.2.pdf for the accepted values of ModalitaPagamento) | [optional] 
+**BankName** | Pointer to **NullableString** | E-invoice bank name | [optional] 
+**BankIban** | Pointer to **NullableString** | E-invoice bank IBAN | [optional] 
+**BankBeneficiary** | Pointer to **NullableString** | E-invoice bank beneficiary | [optional] 
+**InvoiceNumber** | Pointer to **NullableString** | E-invoice invoice number | [optional] 
+**InvoiceDate** | Pointer to **NullableString** | E-invoice invoice date | [optional] 
 
 ## Methods
 

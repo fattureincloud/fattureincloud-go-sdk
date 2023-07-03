@@ -18,29 +18,32 @@ import (
 // checks if the Receipt type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Receipt{}
 
-// Receipt 
+// Receipt struct for Receipt
 type Receipt struct {
-	// Receipt unique identifier.
+	// Receipt id
 	Id NullableInt32 `json:"id,omitempty"`
-	// Receipt date.
+	// Receipt date
 	Date NullableString `json:"date,omitempty"`
-	// Receipt number.
+	// Receipt number
 	Number NullableFloat32 `json:"number,omitempty"`
-	// If it's null or empty string use the default numeration.
+	// Receipt numeration
 	Numeration NullableString `json:"numeration,omitempty"`
-	// Total net amount.
+	// Receipt total net amount
 	AmountNet NullableFloat32 `json:"amount_net,omitempty"`
-	// Total vat amount.
+	// Receipt total vat amount
 	AmountVat NullableFloat32 `json:"amount_vat,omitempty"`
-	// Total gross amount.
+	// Receipt total gross amount
 	AmountGross NullableFloat32 `json:"amount_gross,omitempty"`
+	// Receipt uses gross prices
 	UseGrossPrices NullableBool `json:"use_gross_prices,omitempty"`
 	Type *ReceiptType `json:"type,omitempty"`
-	// Receipt description.
+	// Receipt description
 	Description NullableString `json:"description,omitempty"`
-	// Revenue center.
+	// Receipt revenue center
 	RcCenter NullableString `json:"rc_center,omitempty"`
+	// Receipt creation date
 	CreatedAt NullableString `json:"created_at,omitempty"`
+	// Receipt last update date
 	UpdatedAt NullableString `json:"updated_at,omitempty"`
 	PaymentAccount NullablePaymentAccount `json:"payment_account,omitempty"`
 	ItemsList []ReceiptItemsListItem `json:"items_list,omitempty"`

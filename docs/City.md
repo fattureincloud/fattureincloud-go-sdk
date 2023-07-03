@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PostalCode** | Pointer to **NullableString** | City postal code. | [optional] 
-**City** | Pointer to **NullableString** | City name. | [optional] 
-**Province** | Pointer to **NullableString** | Province. | [optional] 
+**PostalCode** | Pointer to **NullableString** | City postal code | [optional] 
+**City** | Pointer to **NullableString** | City name | [optional] 
+**Province** | Pointer to **NullableString** | City province | [optional] 
 
 ## Methods
 

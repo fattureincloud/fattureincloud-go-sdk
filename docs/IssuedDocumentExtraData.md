@@ -6,17 +6,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ShowSofortButton** | Pointer to **NullableBool** |  | [optional] 
 **MultifattureSent** | Pointer to **NullableInt32** |  | [optional] 
-**TsCommunication** | Pointer to **NullableBool** |  | [optional] 
-**TsFlagTipoSpesa** | Pointer to **NullableFloat32** | 1 &#x3D;&gt; TK (Ticket di pronto soccorso); 2 &#x3D;&gt; SR (Visita in intramoenia) | [optional] 
-**TsPagamentoTracciato** | Pointer to **NullableBool** |  | [optional] 
+**TsCommunication** | Pointer to **NullableBool** | Send issued document to \&quot;Sistema Tessera Sanitaria\&quot; | [optional] 
+**TsFlagTipoSpesa** | Pointer to **NullableFloat32** | Issued document ts \&quot;tipo spesa\&quot; [TK, FC, FV, SV,SP, AD, AS, ECG, SR] | [optional] 
+**TsPagamentoTracciato** | Pointer to **NullableBool** | Issued document ts traced payment | [optional] 
 **TsTipoSpesa** | Pointer to **NullableString** | Can be [ &#39;TK&#39;, &#39;FC&#39;, &#39;FV&#39;, &#39;SV&#39;, &#39;SP&#39;, &#39;AD&#39;, &#39;AS&#39;, &#39;SR&#39;, &#39;CT&#39;, &#39;PI&#39;, &#39;IC&#39;, &#39;AA&#39; ]. Refer to the technical specifications to learn more. | [optional] 
-**TsOpposizione** | Pointer to **NullableBool** |  | [optional] 
-**TsStatus** | Pointer to **NullableInt32** |  | [optional] 
-**TsFileId** | Pointer to **NullableString** |  | [optional] 
-**TsSentDate** | Pointer to **NullableString** |  | [optional] 
-**TsFullAmount** | Pointer to **NullableBool** |  | [optional] 
-**ImportedBy** | Pointer to **NullableString** |  | [optional] 
-**TsSingleSending** | Pointer to **NullableBool** |  | [optional] 
+**TsOpposizione** | Pointer to **NullableBool** | Issued document ts \&quot;opposizione\&quot; | [optional] 
+**TsStatus** | Pointer to **NullableInt32** | Issued document ts status | [optional] 
+**TsFileId** | Pointer to **NullableString** | Issued document ts file id | [optional] 
+**TsSentDate** | Pointer to **NullableString** | Issued document ts sent date | [optional] 
+**TsFullAmount** | Pointer to **NullableBool** | Issued document ts total amount | [optional] 
+**ImportedBy** | Pointer to **NullableString** | Issued document imported by software | [optional] 
 
 ## Methods
 
@@ -457,41 +456,6 @@ HasImportedBy returns a boolean if a field has been set.
 `func (o *IssuedDocumentExtraData) UnsetImportedBy()`
 
 UnsetImportedBy ensures that no value is present for ImportedBy, not even an explicit nil
-### GetTsSingleSending
-
-`func (o *IssuedDocumentExtraData) GetTsSingleSending() bool`
-
-GetTsSingleSending returns the TsSingleSending field if non-nil, zero value otherwise.
-
-### GetTsSingleSendingOk
-
-`func (o *IssuedDocumentExtraData) GetTsSingleSendingOk() (*bool, bool)`
-
-GetTsSingleSendingOk returns a tuple with the TsSingleSending field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTsSingleSending
-
-`func (o *IssuedDocumentExtraData) SetTsSingleSending(v bool)`
-
-SetTsSingleSending sets TsSingleSending field to given value.
-
-### HasTsSingleSending
-
-`func (o *IssuedDocumentExtraData) HasTsSingleSending() bool`
-
-HasTsSingleSending returns a boolean if a field has been set.
-
-### SetTsSingleSendingNil
-
-`func (o *IssuedDocumentExtraData) SetTsSingleSendingNil(b bool)`
-
- SetTsSingleSendingNil sets the value for TsSingleSending to be an explicit nil
-
-### UnsetTsSingleSending
-`func (o *IssuedDocumentExtraData) UnsetTsSingleSending()`
-
-UnsetTsSingleSending ensures that no value is present for TsSingleSending, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

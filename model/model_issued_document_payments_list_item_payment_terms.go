@@ -20,7 +20,7 @@ var _ MappedNullable = &IssuedDocumentPaymentsListItemPaymentTerms{}
 
 // IssuedDocumentPaymentsListItemPaymentTerms struct for IssuedDocumentPaymentsListItemPaymentTerms
 type IssuedDocumentPaymentsListItemPaymentTerms struct {
-	// The number of days by which the payment must be made.
+	// Issued document payment number of days by which the payment must be made
 	Days NullableInt32 `json:"days,omitempty"`
 	Type *PaymentTermsType `json:"type,omitempty"`
 }

@@ -20,17 +20,17 @@ var _ MappedNullable = &ArchiveDocument{}
 
 // ArchiveDocument struct for ArchiveDocument
 type ArchiveDocument struct {
-	// Archive document unique identifier.
+	// Archive document id
 	Id NullableInt32 `json:"id,omitempty"`
-	// Archive document date.
+	// Archive document date
 	Date NullableString `json:"date,omitempty"`
-	// Archive Document description.
+	// Archive Document description
 	Description NullableString `json:"description,omitempty"`
-	// [Temporary] [Read Only] Absolute url of the attached file. Authomatically set if a valid attachment token is passed via POST /archive or PUT /archive/{documentId}.
+	// [Temporary] [Read Only] Archive Document url of the attached file
 	AttachmentUrl NullableString `json:"attachment_url,omitempty"`
-	// Archive document category.
+	// Archive document category
 	Category NullableString `json:"category,omitempty"`
-	// [Write Only]  [Required] Attachment token returned by POST /archive/attachment. Used to attach the file already uploaded.
+	// [Write Only]  [Required] Archive document attachment token returned by POST /archive/attachment
 	AttachmentToken NullableString `json:"attachment_token,omitempty"`
 }
 

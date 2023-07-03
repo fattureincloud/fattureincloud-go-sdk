@@ -16,7 +16,7 @@ import (
 	"fmt"
 )
 
-// ClientType Client type.
+// ClientType Client type
 type ClientType string
 
 // List of ClientType

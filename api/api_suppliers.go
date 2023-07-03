@@ -66,7 +66,7 @@ func (a *SuppliersApiService) CreateSupplierExecute(r ApiCreateSupplierRequest) 
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *CreateSupplierResponse
+		localVarReturnValue  *CreateSupplierResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SuppliersApiService.CreateSupplier")
@@ -284,7 +284,7 @@ func (a *SuppliersApiService) GetSupplierExecute(r ApiGetSupplierRequest) (*GetS
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetSupplierResponse
+		localVarReturnValue  *GetSupplierResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SuppliersApiService.GetSupplier")
@@ -436,7 +436,7 @@ func (a *SuppliersApiService) ListSuppliersExecute(r ApiListSuppliersRequest) (*
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListSuppliersResponse
+		localVarReturnValue  *ListSuppliersResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SuppliersApiService.ListSuppliers")
@@ -567,7 +567,7 @@ func (a *SuppliersApiService) ModifySupplierExecute(r ApiModifySupplierRequest) 
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ModifySupplierResponse
+		localVarReturnValue  *ModifySupplierResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SuppliersApiService.ModifySupplier")

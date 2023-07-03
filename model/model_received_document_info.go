@@ -18,14 +18,19 @@ import (
 // checks if the ReceivedDocumentInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ReceivedDocumentInfo{}
 
-// ReceivedDocumentInfo 
+// ReceivedDocumentInfo struct for ReceivedDocumentInfo
 type ReceivedDocumentInfo struct {
 	DefaultValues NullableReceivedDocumentInfoDefaultValues `json:"default_values,omitempty"`
 	ItemsDefaultValues NullableReceivedDocumentInfoItemsDefaultValues `json:"items_default_values,omitempty"`
+	// Countries list
 	CountriesList []string `json:"countries_list,omitempty"`
+	// Currencies list
 	CurrenciesList []Currency `json:"currencies_list,omitempty"`
+	// Categories list
 	CategoriesList []string `json:"categories_list,omitempty"`
+	// Payments accounts list
 	PaymentAccountsList []PaymentAccount `json:"payment_accounts_list,omitempty"`
+	// Vat types list
 	VatTypesList []VatType `json:"vat_types_list,omitempty"`
 }
 

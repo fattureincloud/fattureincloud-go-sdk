@@ -20,13 +20,15 @@ var _ MappedNullable = &DetailedCountry{}
 
 // DetailedCountry struct for DetailedCountry
 type DetailedCountry struct {
-	// Country name.
+	// Country name
 	Name NullableString `json:"name,omitempty"`
+	// Country settings name
 	SettingsName NullableString `json:"settings_name,omitempty"`
-	// Country iso.
+	// Country iso code
 	Iso NullableString `json:"iso,omitempty"`
+	// Country fiscal iso code
 	FiscalIso NullableString `json:"fiscal_iso,omitempty"`
-	// Country uic.
+	// Country uic
 	Uic NullableString `json:"uic,omitempty"`
 }
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Title** | Pointer to **NullableString** | Details title. | [optional] 
-**Description** | Pointer to **NullableString** | Details description. | [optional] 
+**Title** | Pointer to **NullableString** | Payment method details title | [optional] 
+**Description** | Pointer to **NullableString** | Payment method details description | [optional] 
 
 ## Methods
 

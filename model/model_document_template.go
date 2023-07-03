@@ -20,11 +20,11 @@ var _ MappedNullable = &DocumentTemplate{}
 
 // DocumentTemplate struct for DocumentTemplate
 type DocumentTemplate struct {
-	// Unique identifier.
+	// Template id
 	Id NullableInt32 `json:"id,omitempty"`
-	// Template name.
+	// Template name
 	Name NullableString `json:"name,omitempty"`
-	// Template type.
+	// Template type
 	Type NullableString `json:"type,omitempty"`
 }
 

@@ -18,7 +18,7 @@ import (
 // checks if the IssuedDocumentPreCreateInfoExtraDataDefaultValues type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &IssuedDocumentPreCreateInfoExtraDataDefaultValues{}
 
-// IssuedDocumentPreCreateInfoExtraDataDefaultValues struct for IssuedDocumentPreCreateInfoExtraDataDefaultValues
+// IssuedDocumentPreCreateInfoExtraDataDefaultValues Issued document extra data default values
 type IssuedDocumentPreCreateInfoExtraDataDefaultValues struct {
 	TsCommunication NullableBool `json:"ts_communication,omitempty"`
 	TsTipoSpesa NullableString `json:"ts_tipo_spesa,omitempty"`

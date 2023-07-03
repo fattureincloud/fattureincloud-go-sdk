@@ -20,9 +20,9 @@ var _ MappedNullable = &PaymentMethodDetails{}
 
 // PaymentMethodDetails struct for PaymentMethodDetails
 type PaymentMethodDetails struct {
-	// Details title.
+	// Payment method details title
 	Title NullableString `json:"title,omitempty"`
-	// Details description.
+	// Payment method details description
 	Description NullableString `json:"description,omitempty"`
 }
 

@@ -18,23 +18,30 @@ import (
 // checks if the IssuedDocumentExtraData type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &IssuedDocumentExtraData{}
 
-// IssuedDocumentExtraData Extra data. TS fields follow the technical specifications provided by \"Sistema Tessera Sanitaria\".
+// IssuedDocumentExtraData Issued document extra data [TS fields follow the technical specifications provided by \"Sistema Tessera Sanitaria\"]
 type IssuedDocumentExtraData struct {
 	ShowSofortButton NullableBool `json:"show_sofort_button,omitempty"`
 	MultifattureSent NullableInt32 `json:"multifatture_sent,omitempty"`
+	// Send issued document to \"Sistema Tessera Sanitaria\"
 	TsCommunication NullableBool `json:"ts_communication,omitempty"`
-	// 1 => TK (Ticket di pronto soccorso); 2 => SR (Visita in intramoenia)
+	// Issued document ts \"tipo spesa\" [TK, FC, FV, SV,SP, AD, AS, ECG, SR]
 	TsFlagTipoSpesa NullableFloat32 `json:"ts_flag_tipo_spesa,omitempty"`
+	// Issued document ts traced payment
 	TsPagamentoTracciato NullableBool `json:"ts_pagamento_tracciato,omitempty"`
 	// Can be [ 'TK', 'FC', 'FV', 'SV', 'SP', 'AD', 'AS', 'SR', 'CT', 'PI', 'IC', 'AA' ]. Refer to the technical specifications to learn more.
 	TsTipoSpesa NullableString `json:"ts_tipo_spesa,omitempty"`
+	// Issued document ts \"opposizione\"
 	TsOpposizione NullableBool `json:"ts_opposizione,omitempty"`
+	// Issued document ts status
 	TsStatus NullableInt32 `json:"ts_status,omitempty"`
+	// Issued document ts file id
 	TsFileId NullableString `json:"ts_file_id,omitempty"`
+	// Issued document ts sent date
 	TsSentDate NullableString `json:"ts_sent_date,omitempty"`
+	// Issued document ts total amount
 	TsFullAmount NullableBool `json:"ts_full_amount,omitempty"`
+	// Issued document imported by software
 	ImportedBy NullableString `json:"imported_by,omitempty"`
-	TsSingleSending NullableBool `json:"ts_single_sending,omitempty"`
 }
 
 // NewIssuedDocumentExtraData instantiates a new IssuedDocumentExtraData object
@@ -582,50 +589,6 @@ func (o *IssuedDocumentExtraData) UnsetImportedBy() {
 	o.ImportedBy.Unset()
 }
 
-// GetTsSingleSending returns the TsSingleSending field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IssuedDocumentExtraData) GetTsSingleSending() bool {
-	if o == nil || IsNil(o.TsSingleSending.Get()) {
-		var ret bool
-		return ret
-	}
-	return *o.TsSingleSending.Get()
-}
-
-// GetTsSingleSendingOk returns a tuple with the TsSingleSending field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IssuedDocumentExtraData) GetTsSingleSendingOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.TsSingleSending.Get(), o.TsSingleSending.IsSet()
-}
-
-// HasTsSingleSending returns a boolean if a field has been set.
-func (o *IssuedDocumentExtraData) HasTsSingleSending() bool {
-	if o != nil && o.TsSingleSending.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetTsSingleSending gets a reference to the given NullableBool and assigns it to the TsSingleSending field.
-func (o *IssuedDocumentExtraData) SetTsSingleSending(v bool) *IssuedDocumentExtraData {
-	o.TsSingleSending.Set(&v)
-	return o
-}
-// SetTsSingleSendingNil sets the value for TsSingleSending to be an explicit nil
-func (o *IssuedDocumentExtraData) SetTsSingleSendingNil() *IssuedDocumentExtraData {
-	o.TsSingleSending.Set(nil)
-	return o
-}
-
-// UnsetTsSingleSending ensures that no value is present for TsSingleSending, not even an explicit nil
-func (o *IssuedDocumentExtraData) UnsetTsSingleSending() {
-	o.TsSingleSending.Unset()
-}
-
 func (o IssuedDocumentExtraData) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -671,9 +634,6 @@ func (o IssuedDocumentExtraData) ToMap() (map[string]interface{}, error) {
 	}
 	if o.ImportedBy.IsSet() {
 		toSerialize["imported_by"] = o.ImportedBy.Get()
-	}
-	if o.TsSingleSending.IsSet() {
-		toSerialize["ts_single_sending"] = o.TsSingleSending.Get()
 	}
 	return toSerialize, nil
 }

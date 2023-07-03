@@ -18,13 +18,13 @@ import (
 // checks if the MonthlyTotal type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MonthlyTotal{}
 
-// MonthlyTotal 
+// MonthlyTotal struct for MonthlyTotal
 type MonthlyTotal struct {
-	// Monthly total net amount.
+	// Monthly total net amount
 	Net NullableFloat32 `json:"net,omitempty"`
-	// Monthly total gross amount.
+	// Monthly total gross amount
 	Gross NullableFloat32 `json:"gross,omitempty"`
-	// Monthly total receipt number.
+	// Monthly total receipt number
 	Count NullableFloat32 `json:"count,omitempty"`
 }
 

@@ -737,8 +737,8 @@ import (
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
-    filename := "filename_example" // string | Name of the file. (optional)
-    attachment := os.NewFile(1234, "some_file") // *os.File | Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx (optional)
+    filename := "filename_example" // string | Attachment file name (optional)
+    attachment := os.NewFile(1234, "some_file") // *os.File | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx] (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
@@ -769,8 +769,8 @@ Other parameters are passed through a pointer to a apiUploadReceivedDocumentAtta
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **filename** | **string** | Name of the file. | 
- **attachment** | ***os.File** | Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx | 
+ **filename** | **string** | Attachment file name | 
+ **attachment** | ***os.File** | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx] | 
 
 ### Return type
 

@@ -16,7 +16,7 @@ import (
 	"fmt"
 )
 
-// EntityType Entity type.
+// EntityType Entity type
 type EntityType string
 
 // List of EntityType

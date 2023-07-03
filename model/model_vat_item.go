@@ -20,7 +20,9 @@ var _ MappedNullable = &VatItem{}
 
 // VatItem struct for VatItem
 type VatItem struct {
+	// Vat item net amount
 	AmountNet NullableFloat32 `json:"amount_net,omitempty"`
+	// Vat item vat amount
 	AmountVat NullableFloat32 `json:"amount_vat,omitempty"`
 }
 

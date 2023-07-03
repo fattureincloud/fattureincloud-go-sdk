@@ -67,7 +67,7 @@ func (a *TaxesApiService) CreateF24Execute(r ApiCreateF24Request) (*CreateF24Res
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *CreateF24Response
+		localVarReturnValue  *CreateF24Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesApiService.CreateF24")
@@ -381,7 +381,7 @@ func (a *TaxesApiService) GetF24Execute(r ApiGetF24Request) (*GetF24Response, *h
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetF24Response
+		localVarReturnValue  *GetF24Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesApiService.GetF24")
@@ -533,7 +533,7 @@ func (a *TaxesApiService) ListF24Execute(r ApiListF24Request) (*ListF24Response,
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListF24Response
+		localVarReturnValue  *ListF24Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesApiService.ListF24")
@@ -664,7 +664,7 @@ func (a *TaxesApiService) ModifyF24Execute(r ApiModifyF24Request) (*ModifyF24Res
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ModifyF24Response
+		localVarReturnValue  *ModifyF24Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesApiService.ModifyF24")
@@ -744,13 +744,13 @@ type ApiUploadF24AttachmentRequest struct {
 	attachment *os.File
 }
 
-// Name of the file.
+// Attachment file name
 func (r ApiUploadF24AttachmentRequest) Filename(filename string) ApiUploadF24AttachmentRequest {
 	r.filename = &filename
 	return r
 }
 
-// Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx
+// Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx]
 func (r ApiUploadF24AttachmentRequest) Attachment(attachment *os.File) ApiUploadF24AttachmentRequest {
 	r.attachment = attachment
 	return r
@@ -784,7 +784,7 @@ func (a *TaxesApiService) UploadF24AttachmentExecute(r ApiUploadF24AttachmentReq
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *UploadF24AttachmentResponse
+		localVarReturnValue  *UploadF24AttachmentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesApiService.UploadF24Attachment")

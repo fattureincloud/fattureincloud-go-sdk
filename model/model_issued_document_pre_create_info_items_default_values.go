@@ -18,7 +18,7 @@ import (
 // checks if the IssuedDocumentPreCreateInfoItemsDefaultValues type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &IssuedDocumentPreCreateInfoItemsDefaultValues{}
 
-// IssuedDocumentPreCreateInfoItemsDefaultValues Default values for the document items.
+// IssuedDocumentPreCreateInfoItemsDefaultValues Issued document items default values
 type IssuedDocumentPreCreateInfoItemsDefaultValues struct {
 	Vat NullableVatType `json:"vat,omitempty"`
 }

@@ -65,7 +65,7 @@ func (a *SettingsApiService) CreatePaymentAccountExecute(r ApiCreatePaymentAccou
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *CreatePaymentAccountResponse
+		localVarReturnValue  *CreatePaymentAccountResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.CreatePaymentAccount")
@@ -176,7 +176,7 @@ func (a *SettingsApiService) CreatePaymentMethodExecute(r ApiCreatePaymentMethod
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *CreatePaymentMethodResponse
+		localVarReturnValue  *CreatePaymentMethodResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.CreatePaymentMethod")
@@ -288,7 +288,7 @@ func (a *SettingsApiService) CreateVatTypeExecute(r ApiCreateVatTypeRequest) (*C
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *CreateVatTypeResponse
+		localVarReturnValue  *CreateVatTypeResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.CreateVatType")
@@ -698,7 +698,7 @@ func (a *SettingsApiService) GetPaymentAccountExecute(r ApiGetPaymentAccountRequ
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetPaymentAccountResponse
+		localVarReturnValue  *GetPaymentAccountResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetPaymentAccount")
@@ -825,7 +825,7 @@ func (a *SettingsApiService) GetPaymentMethodExecute(r ApiGetPaymentMethodReques
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetPaymentMethodResponse
+		localVarReturnValue  *GetPaymentMethodResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetPaymentMethod")
@@ -938,7 +938,7 @@ func (a *SettingsApiService) GetVatTypeExecute(r ApiGetVatTypeRequest) (*GetVatT
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetVatTypeResponse
+		localVarReturnValue  *GetVatTypeResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetVatType")
@@ -1051,7 +1051,7 @@ func (a *SettingsApiService) ModifyPaymentAccountExecute(r ApiModifyPaymentAccou
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ModifyPaymentAccountResponse
+		localVarReturnValue  *ModifyPaymentAccountResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.ModifyPaymentAccount")
@@ -1167,7 +1167,7 @@ func (a *SettingsApiService) ModifyPaymentMethodExecute(r ApiModifyPaymentMethod
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ModifyPaymentMethodResponse
+		localVarReturnValue  *ModifyPaymentMethodResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.ModifyPaymentMethod")
@@ -1282,7 +1282,7 @@ func (a *SettingsApiService) ModifyVatTypeExecute(r ApiModifyVatTypeRequest) (*M
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ModifyVatTypeResponse
+		localVarReturnValue  *ModifyVatTypeResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.ModifyVatType")

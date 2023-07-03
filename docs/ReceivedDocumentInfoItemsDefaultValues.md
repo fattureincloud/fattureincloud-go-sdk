@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Vat** | Pointer to **NullableFloat32** | Default vat value. | [optional] 
+**Vat** | Pointer to **NullableFloat32** | Vat default value | [optional] 
 
 ## Methods
 

@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableInt32** | Item unique identifier. | [optional] 
-**AmountNet** | Pointer to **NullableFloat32** | Item total net amount. | [optional] 
-**AmountGross** | Pointer to **NullableFloat32** | Item total gross amount. | [optional] 
-**Category** | Pointer to **NullableString** | Item category. | [optional] 
+**Id** | Pointer to **NullableInt32** | Receipt item id | [optional] 
+**AmountNet** | Pointer to **NullableFloat32** | Receipt item total net amount | [optional] 
+**AmountGross** | Pointer to **NullableFloat32** | Receipt item total gross amount | [optional] 
+**Category** | Pointer to **NullableString** | Receipt item category | [optional] 
 **Vat** | Pointer to [**NullableVatType**](VatType.md) |  | [optional] 
 
 ## Methods

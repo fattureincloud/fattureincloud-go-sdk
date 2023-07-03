@@ -16,7 +16,7 @@ import (
 	"fmt"
 )
 
-// IssuedDocumentType Issued document type.
+// IssuedDocumentType Issued document type
 type IssuedDocumentType string
 
 // List of IssuedDocumentType

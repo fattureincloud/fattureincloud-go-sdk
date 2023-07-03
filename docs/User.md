@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableInt32** | User identifier. | [optional] 
-**Name** | Pointer to **NullableString** | Full name of the user. | [optional] 
-**FirstName** | Pointer to **NullableString** | First name of the user. | [optional] 
-**LastName** | Pointer to **NullableString** | Last name of the user. | [optional] 
-**Email** | Pointer to **NullableString** | Email of the user. | [optional] 
-**Hash** | Pointer to **NullableString** |  | [optional] 
-**Picture** | Pointer to **NullableString** | Picture of the user. | [optional] 
+**Id** | Pointer to **NullableInt32** | User id | [optional] 
+**Name** | Pointer to **NullableString** | User full name | [optional] 
+**FirstName** | Pointer to **NullableString** | User first name | [optional] 
+**LastName** | Pointer to **NullableString** | User last name | [optional] 
+**Email** | Pointer to **NullableString** | User email address | [optional] 
+**Hash** | Pointer to **NullableString** | User hash | [optional] 
+**Picture** | Pointer to **NullableString** | User picture | [optional] 
 
 ## Methods
 

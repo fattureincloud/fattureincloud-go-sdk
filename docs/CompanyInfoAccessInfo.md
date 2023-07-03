@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Role** | Pointer to [**UserCompanyRole**](UserCompanyRole.md) |  | [optional] 
 **Permissions** | Pointer to [**Permissions**](Permissions.md) |  | [optional] 
-**ThroughAccountant** | Pointer to **NullableBool** |  | [optional] 
+**ThroughAccountant** | Pointer to **NullableBool** | Company activated through accountant | [optional] 
 
 ## Methods
 

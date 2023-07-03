@@ -16,7 +16,7 @@ import (
 	"fmt"
 )
 
-// ReceiptType Receipt type.
+// ReceiptType Receipt type
 type ReceiptType string
 
 // List of ReceiptType

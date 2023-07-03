@@ -18,66 +18,66 @@ import (
 // checks if the IssuedDocument type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &IssuedDocument{}
 
-// IssuedDocument 
+// IssuedDocument struct for IssuedDocument
 type IssuedDocument struct {
-	// Unique identifier of the document.
+	// Issued document id
 	Id NullableInt32 `json:"id,omitempty"`
 	Entity *Entity `json:"entity,omitempty"`
 	Type *IssuedDocumentType `json:"type,omitempty"`
-	// Number of the document [If not specified, next number is used]
+	// Issued document number [If not specified, next number is used]
 	Number NullableInt32 `json:"number,omitempty"`
-	// Numeration of the document [Not available if type=delivery_note]
+	// Issued document numeration [Not available if type=delivery_note]
 	Numeration NullableString `json:"numeration,omitempty"`
-	// Date of the document [If not specified, today date is used]
+	// Issued document date [defaults to today's date]
 	Date NullableString `json:"date,omitempty"`
-	// Invoice year.
+	// Issued document year
 	Year NullableInt32 `json:"year,omitempty"`
 	Currency *Currency `json:"currency,omitempty"`
 	Language *Language `json:"language,omitempty"`
-	// Issued document subject.
+	// Issued document subject
 	Subject NullableString `json:"subject,omitempty"`
-	// Issued document visible subject.
+	// Issued document visible subject
 	VisibleSubject NullableString `json:"visible_subject,omitempty"`
-	// Revenue center [or cost center if type=supplier_order].
+	// Issued document revenue center [or cost center if type=supplier_order].
 	RcCenter NullableString `json:"rc_center,omitempty"`
-	// Issued document extra notes.
+	// Issued document extra notes
 	Notes NullableString `json:"notes,omitempty"`
-	// \"Rivalsa INPS\" percentual value
+	// Issued document \"Rivalsa INPS\" percentual value
 	Rivalsa NullableFloat32 `json:"rivalsa,omitempty"`
-	// \"Cassa previdenziale\" percentual value
+	// Issued document \"Cassa previdenziale\" percentual value
 	Cassa NullableFloat32 `json:"cassa,omitempty"`
-	// [Read Only] Cassa amount.
+	// [Read Only] Issued document cassa amount.
 	AmountCassa NullableFloat32 `json:"amount_cassa,omitempty"`
-	// Cassa taxable percentage
+	// Issued document cassa taxable percentage
 	CassaTaxable NullableFloat32 `json:"cassa_taxable,omitempty"`
-	// [Can be set only if cassa_taxable is NULL] Cassa2 taxable amount
+	// [Can be set only if cassa_taxable is NULL] Issued document cassa taxable amount
 	AmountCassaTaxable NullableFloat32 `json:"amount_cassa_taxable,omitempty"`
-	// \"Cassa previdenziale 2\" percentual value
+	// Issued document \"Cassa previdenziale 2\" percentual value
 	Cassa2 NullableFloat32 `json:"cassa2,omitempty"`
-	// [Read Only] Cassa amount.
+	// [Read Only] Issued document cassa2 amount
 	AmountCassa2 NullableFloat32 `json:"amount_cassa2,omitempty"`
-	// Cassa2 taxable percentage
+	// Issued document cassa2 taxable percentage
 	Cassa2Taxable NullableFloat32 `json:"cassa2_taxable,omitempty"`
-	// [Can be set only if cassa2_taxable is NULL] Cassa2 taxable amount
+	// [Can be set only if cassa2_taxable is NULL] Issued document cassa2 taxable amount
 	AmountCassa2Taxable NullableFloat32 `json:"amount_cassa2_taxable,omitempty"`
-	// Global cassa taxable percentage
+	// Issued document global cassa taxable percentage
 	GlobalCassaTaxable NullableFloat32 `json:"global_cassa_taxable,omitempty"`
-	// [Can be set only if global_cassa_taxable is NULL] Global cassa taxable amount
+	// [Can be set only if global_cassa_taxable is NULL] Issued document global cassa taxable amount
 	AmountGlobalCassaTaxable NullableFloat32 `json:"amount_global_cassa_taxable,omitempty"`
-	// Withholding tax (ritenuta d'acconto) percentual value
+	// Issued document withholding tax (ritenuta d'acconto) percentual value
 	WithholdingTax NullableFloat32 `json:"withholding_tax,omitempty"`
-	// Withholding tax taxable (imponibile) percentual value
+	// Issued document withholding tax taxable (imponibile) percentual value
 	WithholdingTaxTaxable NullableFloat32 `json:"withholding_tax_taxable,omitempty"`
-	// Other withholding tax (altra ritenuta) percentual value
+	// Issued document other withholding tax (altra ritenuta) percentual value
 	OtherWithholdingTax NullableFloat32 `json:"other_withholding_tax,omitempty"`
-	// Stamp duty value [0 if not present]
+	// Issued document stamp duty value [0 if not present]
 	StampDuty NullableFloat32 `json:"stamp_duty,omitempty"`
 	PaymentMethod *PaymentMethod `json:"payment_method,omitempty"`
-	// Use split payment
+	// Issued document uses split payment
 	UseSplitPayment NullableBool `json:"use_split_payment,omitempty"`
-	// Use gross prices
+	// Issued document uses gross prices
 	UseGrossPrices NullableBool `json:"use_gross_prices,omitempty"`
-	// Indicates if this is an e-invoice.
+	// Issued document is an e-invoice.
 	EInvoice NullableBool `json:"e_invoice,omitempty"`
 	EiData NullableIssuedDocumentEiData `json:"ei_data,omitempty"`
 	// E-invoice cassa type
@@ -95,84 +95,87 @@ type IssuedDocument struct {
 	Template *DocumentTemplate `json:"template,omitempty"`
 	DeliveryNoteTemplate *DocumentTemplate `json:"delivery_note_template,omitempty"`
 	AccInvTemplate *DocumentTemplate `json:"acc_inv_template,omitempty"`
-	// Horizontal margins.
+	// Issued document PDF horizontal margins
 	HMargins NullableInt32 `json:"h_margins,omitempty"`
-	// Vertical margins.
+	// Issued document PDF vertical margins
 	VMargins NullableInt32 `json:"v_margins,omitempty"`
-	// Shows the expiration dates of the payments on the document.
+	// Show the expiration dates of the payments on the document
 	ShowPayments NullableBool `json:"show_payments,omitempty"`
-	// Show the payment method details on the document.
+	// Show the payment method details on the document
 	ShowPaymentMethod NullableBool `json:"show_payment_method,omitempty"`
 	ShowTotals *ShowTotalsMode `json:"show_totals,omitempty"`
-	// Show paypal button
+	// Show paypal button in the PDF
 	ShowPaypalButton NullableBool `json:"show_paypal_button,omitempty"`
-	// Show notification button
+	// Show notification button in the PDF
 	ShowNotificationButton NullableBool `json:"show_notification_button,omitempty"`
-	// Show ts pay button.
+	// Show ts pay button in the PDF
 	ShowTspayButton NullableBool `json:"show_tspay_button,omitempty"`
+	// Issued document has delivery note
 	DeliveryNote NullableBool `json:"delivery_note,omitempty"`
-	// Attach an accompanying invoice.
+	// Issued document has an accompanying invoice
 	AccompanyingInvoice NullableBool `json:"accompanying_invoice,omitempty"`
-	// Number (for the attached delivery note).
+	// Issued document attached delivery note number
 	DnNumber NullableInt32 `json:"dn_number,omitempty"`
-	// Date (for the attached delivery note).
+	// Issued document attached delivery note date
 	DnDate NullableString `json:"dn_date,omitempty"`
-	// Number of packages (for the attached delivery note).
+	// Issued document attached delivery note number of packages
 	DnAiPackagesNumber NullableString `json:"dn_ai_packages_number,omitempty"`
-	// Weight (for the attached delivery note).
+	// Issued document attached delivery note package weight
 	DnAiWeight NullableString `json:"dn_ai_weight,omitempty"`
-	// Causal (for the attached delivery note).
+	// Issued document attached delivery note causal
 	DnAiCausal NullableString `json:"dn_ai_causal,omitempty"`
-	// Destination (for the attached delivery note).
+	// Issued document attached delivery note destination
 	DnAiDestination NullableString `json:"dn_ai_destination,omitempty"`
-	// Transporter (for the attached delivery note).
+	// Issued document attached delivery note transporter
 	DnAiTransporter NullableString `json:"dn_ai_transporter,omitempty"`
-	// Notes (for the attached delivery note).
+	// Issued document attached delivery note notes
 	DnAiNotes NullableString `json:"dn_ai_notes,omitempty"`
-	// This is true if the document is marked.
+	// Issued document is marked
 	IsMarked NullableBool `json:"is_marked,omitempty"`
-	// [Read Only] Total net amount (competenze).
+	// [Read only] Issued document total net amount
 	AmountNet NullableFloat32 `json:"amount_net,omitempty"`
-	// [Read Only] Total vat amount (IVA).
+	// [Read Only] Issued document total vat amount
 	AmountVat NullableFloat32 `json:"amount_vat,omitempty"`
-	// [Read Only] Total gross amount (totale documento).
+	// [Read Only] Issued document total gross amount
 	AmountGross NullableFloat32 `json:"amount_gross,omitempty"`
-	// Amount due discount
+	// Issued document amount due discount
 	AmountDueDiscount NullableFloat32 `json:"amount_due_discount,omitempty"`
-	// [Read Only] Rivalsa amount.
+	// [Read Only] Issued document rivalsa amount
 	AmountRivalsa NullableFloat32 `json:"amount_rivalsa,omitempty"`
-	// Taxable rivalsa amount
+	// Issued document taxable rivalsa amount
 	AmountRivalsaTaxable NullableFloat32 `json:"amount_rivalsa_taxable,omitempty"`
-	// [Read Only] Withholding tax amount (ritenuta d'acconto).
+	// [Read Only] Issued document withholding tax amount (ritenuta d'acconto).
 	AmountWithholdingTax NullableFloat32 `json:"amount_withholding_tax,omitempty"`
-	// Taxable withholding tax amount
+	// Issued document taxable withholding tax amount
 	AmountWithholdingTaxTaxable NullableFloat32 `json:"amount_withholding_tax_taxable,omitempty"`
-	// [Read Only] Other withholding tax amount (altra ritenuta).
+	// [Read Only] Issued document other withholding tax amount (altra ritenuta)
 	AmountOtherWithholdingTax NullableFloat32 `json:"amount_other_withholding_tax,omitempty"`
-	// Taxable other withholding tax amount
+	// Issued document taxable other withholding tax amount
 	AmountOtherWithholdingTaxTaxable NullableFloat32 `json:"amount_other_withholding_tax_taxable,omitempty"`
-	// Taxable enasarco amount
+	// Issued document taxable enasarco amount
 	AmountEnasarcoTaxable NullableFloat32 `json:"amount_enasarco_taxable,omitempty"`
 	ExtraData NullableIssuedDocumentExtraData `json:"extra_data,omitempty"`
-	// Date when the client/supplier has seen the document.
+	// Issued document seen date
 	SeenDate NullableString `json:"seen_date,omitempty"`
-	// Date of the next not paid payment.
+	// Issued document date of the next not paid payment
 	NextDueDate NullableString `json:"next_due_date,omitempty"`
-	// [Temporary] [Read Only]   Public url of the document PDF file.
+	// [Temporary] [Read Only] Issued document url of the document PDF file
 	Url NullableString `json:"url,omitempty"`
-	// [Temporary] [Read Only]   Public url of the attached delivery note PDF file.
+	// [Temporary] [Read Only] Issued document url of the attached delivery note PDF file
 	DnUrl NullableString `json:"dn_url,omitempty"`
-	// [Temporary] [Read Only]   Public url of the accompanying invoice PDF file.
+	// [Temporary] [Read Only] Issued document url of the accompanying invoice PDF file
 	AiUrl NullableString `json:"ai_url,omitempty"`
-	// [Temporary] [Read Only] Public url of the attached file. Authomatically set if a valid attachment token is passed via POST /issued_documents or PUT /issued_documents/{documentId}.
+	// [Temporary] [Read Only] Issued document url of the attached file
 	AttachmentUrl NullableString `json:"attachment_url,omitempty"`
-	// [Write Only] Attachment token returned by POST /issued_documents/attachment. Used to attach the file already uploaded.
+	// [Write Only] Issued document attachment token returned by POST /issued_documents/attachment
 	AttachmentToken NullableString `json:"attachment_token,omitempty"`
-	// Advanced raw attributes for e-invoices.
+	// Issued document advanced raw attributes for e-invoices
 	EiRaw map[string]interface{} `json:"ei_raw,omitempty"`
-	// [Read only] Status of the e-invoice.   * `attempt` - We are trying to send the invoice, please wait up to 2 hours   * `missing` - The invoice is missing   * `not_sent` - The invoice has yet to be sent   * `sent` - The invoice was sent   * `pending` - The checks for the digital signature and sending are in progress   * `processing` - The SDI is delivering the invoice to the customer   * `error` - An error occurred while handling the invoice, please try to resend it or contact support   * `discarded` - The invoice has been rejected by the SDI, so it must be corrected and re-sent   * `not_delivered` - The SDI was unable to deliver the invoice   * `accepted` - The customer accepted the invoice   * `rejected` - The customer rejected the invoice, so it must be corrected   * `no_response` - A response has not yet been received whithin the deadline, contact the customer to ascertain the status of the invoice   * `manual_accepted` - The customer accepted the invoice   * `manual_rejected` - The customer rejected the invoice 
+	// [Read only] Status of the e-invoice.   * **attempt** - We are trying to send the invoice, please wait up to 2 hours   * **missing** - The invoice is missing   * **not_sent** - The invoice has yet to be sent   * **sent** - The invoice was sent   * **pending** - The checks for the digital signature and sending are in progress   * **processing** - The SDI is delivering the invoice to the customer   * **error** - An error occurred while handling the invoice, please try to resend it or contact support   * **discarded** - The invoice has been rejected by the SDI, so it must be corrected and re-sent   * **not_delivered** - The SDI was unable to deliver the invoice   * **accepted** - The customer accepted the invoice   * **rejected** - The customer rejected the invoice, so it must be corrected   * **no_response** - A response has not yet been received whithin the deadline, contact the customer to ascertain the status of the invoice   * **manual_accepted** - The customer accepted the invoice   * **manual_rejected** - The customer rejected the invoice 
 	EiStatus NullableString `json:"ei_status,omitempty"`
+	// Issued document creation date
 	CreatedAt NullableString `json:"created_at,omitempty"`
+	// Issued document last update date
 	UpdatedAt NullableString `json:"updated_at,omitempty"`
 }
 

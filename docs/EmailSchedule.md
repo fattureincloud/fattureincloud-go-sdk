@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SenderId** | Pointer to **NullableInt32** | Sender id. Required if &#x60;sender_email&#x60; is not specified | [optional] 
-**SenderEmail** | Pointer to **NullableString** | Sender email. Required if &#x60;sender_id&#x60; is not specified | [optional] 
-**RecipientEmail** | Pointer to **NullableString** | One or more comma separated recipient emails | [optional] 
+**SenderId** | Pointer to **NullableInt32** | Email sender id [required if **sender_email** is not specified] | [optional] 
+**SenderEmail** | Pointer to **NullableString** | Email sender address [required if **sender_id** is not specified] | [optional] 
+**RecipientEmail** | Pointer to **NullableString** | Email recipient emails [comma separated] | [optional] 
 **Subject** | Pointer to **NullableString** | Email subject | [optional] 
 **Body** | Pointer to **NullableString** | Email body [HTML Escaped] [max size 50KiB] | [optional] 
 **Include** | Pointer to [**NullableEmailScheduleInclude**](EmailScheduleInclude.md) |  | [optional] 
-**AttachPdf** | Pointer to **NullableBool** | If set to true, documents will be sent as PDF attachments too | [optional] 
-**SendCopy** | Pointer to **NullableBool** | If set to true, a copy of the email will be sent to the &#x60;cc_email&#x60; specified by &#x60;Get email data&#x60; | [optional] 
+**AttachPdf** | Pointer to **NullableBool** | Attach the pdf of the document | [optional] 
+**SendCopy** | Pointer to **NullableBool** | Send a copy of the email to the **cc_email** specified by **Get email data** | [optional] 
 
 ## Methods
 

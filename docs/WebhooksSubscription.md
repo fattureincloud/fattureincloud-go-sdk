@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableString** | Unique identifier | [optional] 
+**Id** | Pointer to **NullableString** | Webhooks subscription id | [optional] 
 **Sink** | Pointer to **NullableString** | Webhooks callback uri. | [optional] 
 **Verified** | Pointer to **NullableBool** | [Read Only] True if the webhooks subscription has been verified. | [optional] 
 **Types** | Pointer to [**[]EventType**](EventType.md) | Webhooks events types. | [optional] 

@@ -25,23 +25,23 @@ type IssuedDocumentPreCreateInfo struct {
 	DefaultValues NullableIssuedDocumentPreCreateInfoDefaultValues `json:"default_values,omitempty"`
 	ExtraDataDefaultValues NullableIssuedDocumentPreCreateInfoExtraDataDefaultValues `json:"extra_data_default_values,omitempty"`
 	ItemsDefaultValues NullableIssuedDocumentPreCreateInfoItemsDefaultValues `json:"items_default_values,omitempty"`
-	// Countries list.
+	// Countries list
 	CountriesList []string `json:"countries_list,omitempty"`
-	// Currencies list.
+	// Currencies list
 	CurrenciesList []Currency `json:"currencies_list,omitempty"`
-	// Document templates list.
+	// Document templates list
 	TemplatesList []DocumentTemplate `json:"templates_list,omitempty"`
-	// Delivery note templates list.
+	// Delivery note templates list
 	DnTemplatesList []DocumentTemplate `json:"dn_templates_list,omitempty"`
-	// Accompanying invoice templates list.
+	// Accompanying invoice templates list
 	AiTemplatesList []DocumentTemplate `json:"ai_templates_list,omitempty"`
-	// Payment methods list.
+	// Payment methods list
 	PaymentMethodsList []PaymentMethod `json:"payment_methods_list,omitempty"`
-	// Payment accounts list.
+	// Payment accounts list
 	PaymentAccountsList []PaymentAccount `json:"payment_accounts_list,omitempty"`
-	// Vat types list.
+	// Vat types list
 	VatTypesList []VatType `json:"vat_types_list,omitempty"`
-	// Languages list.
+	// Languages list
 	LanguagesList []Language `json:"languages_list,omitempty"`
 }
 

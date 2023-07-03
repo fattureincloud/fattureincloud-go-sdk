@@ -16,7 +16,7 @@ import (
 	"fmt"
 )
 
-// CashbookEntryKind Cashbook kind.
+// CashbookEntryKind Cashbook kind
 type CashbookEntryKind string
 
 // List of CashbookEntryKind

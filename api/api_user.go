@@ -55,7 +55,7 @@ func (a *UserApiService) GetUserInfoExecute(r ApiGetUserInfoRequest) (*GetUserIn
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetUserInfoResponse
+		localVarReturnValue  *GetUserInfoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserApiService.GetUserInfo")
@@ -154,7 +154,7 @@ func (a *UserApiService) ListUserCompaniesExecute(r ApiListUserCompaniesRequest)
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListUserCompaniesResponse
+		localVarReturnValue  *ListUserCompaniesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserApiService.ListUserCompanies")

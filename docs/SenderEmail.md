@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableInt32** | Id | [optional] 
-**Email** | Pointer to **NullableString** | Email address | [optional] 
+**Id** | Pointer to **NullableInt32** | Sender email id | [optional] 
+**Email** | Pointer to **NullableString** | Sender email address | [optional] 
 
 ## Methods
 

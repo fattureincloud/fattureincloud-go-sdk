@@ -18,7 +18,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-var ReceivedDocumentPaymentsListItemPaymentTermsJsonStr string = "{\"days\":10,\"type\":\"taip\"}"
+var ReceivedDocumentPaymentsListItemPaymentTermsJsonStr string = "{\"days\":10,\"type\":\"standard\"}"
 
 func TestReceivedDocumentPaymentsListItemPaymentTerms(t *testing.T) {
 	obj := NewReceivedDocumentPaymentsListItemPaymentTerms()

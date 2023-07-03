@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AmountNet** | Pointer to **NullableFloat32** |  | [optional] 
-**AmountVat** | Pointer to **NullableFloat32** |  | [optional] 
+**AmountNet** | Pointer to **NullableFloat32** | Vat item net amount | [optional] 
+**AmountVat** | Pointer to **NullableFloat32** | Vat item vat amount | [optional] 
 
 ## Methods
 

@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **NullableString** | Country name. | [optional] 
-**SettingsName** | Pointer to **NullableString** |  | [optional] 
-**Iso** | Pointer to **NullableString** | Country iso. | [optional] 
-**FiscalIso** | Pointer to **NullableString** |  | [optional] 
-**Uic** | Pointer to **NullableString** | Country uic. | [optional] 
+**Name** | Pointer to **NullableString** | Country name | [optional] 
+**SettingsName** | Pointer to **NullableString** | Country settings name | [optional] 
+**Iso** | Pointer to **NullableString** | Country iso code | [optional] 
+**FiscalIso** | Pointer to **NullableString** | Country fiscal iso code | [optional] 
+**Uic** | Pointer to **NullableString** | Country uic | [optional] 
 
 ## Methods
 

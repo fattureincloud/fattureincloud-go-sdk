@@ -16,7 +16,7 @@ import (
 	"fmt"
 )
 
-// UserCompanyRole Role of the user in this company.
+// UserCompanyRole User company role
 type UserCompanyRole string
 
 // List of UserCompanyRole

@@ -67,7 +67,7 @@ func (a *ReceivedDocumentsApiService) CreateReceivedDocumentExecute(r ApiCreateR
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *CreateReceivedDocumentResponse
+		localVarReturnValue  *CreateReceivedDocumentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsApiService.CreateReceivedDocument")
@@ -374,7 +374,7 @@ func (a *ReceivedDocumentsApiService) GetExistingReceivedDocumentTotalsExecute(r
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetExistingReceivedDocumentTotalsResponse
+		localVarReturnValue  *GetExistingReceivedDocumentTotalsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsApiService.GetExistingReceivedDocumentTotals")
@@ -487,7 +487,7 @@ func (a *ReceivedDocumentsApiService) GetNewReceivedDocumentTotalsExecute(r ApiG
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetNewReceivedDocumentTotalsResponse
+		localVarReturnValue  *GetNewReceivedDocumentTotalsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsApiService.GetNewReceivedDocumentTotals")
@@ -609,7 +609,7 @@ func (a *ReceivedDocumentsApiService) GetReceivedDocumentExecute(r ApiGetReceive
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetReceivedDocumentResponse
+		localVarReturnValue  *GetReceivedDocumentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsApiService.GetReceivedDocument")
@@ -726,7 +726,7 @@ func (a *ReceivedDocumentsApiService) GetReceivedDocumentPreCreateInfoExecute(r 
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetReceivedDocumentPreCreateInfoResponse
+		localVarReturnValue  *GetReceivedDocumentPreCreateInfoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsApiService.GetReceivedDocumentPreCreateInfo")
@@ -882,7 +882,7 @@ func (a *ReceivedDocumentsApiService) ListReceivedDocumentsExecute(r ApiListRece
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListReceivedDocumentsResponse
+		localVarReturnValue  *ListReceivedDocumentsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsApiService.ListReceivedDocuments")
@@ -1017,7 +1017,7 @@ func (a *ReceivedDocumentsApiService) ModifyReceivedDocumentExecute(r ApiModifyR
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ModifyReceivedDocumentResponse
+		localVarReturnValue  *ModifyReceivedDocumentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsApiService.ModifyReceivedDocument")
@@ -1097,13 +1097,13 @@ type ApiUploadReceivedDocumentAttachmentRequest struct {
 	attachment *os.File
 }
 
-// Name of the file.
+// Attachment file name
 func (r ApiUploadReceivedDocumentAttachmentRequest) Filename(filename string) ApiUploadReceivedDocumentAttachmentRequest {
 	r.filename = &filename
 	return r
 }
 
-// Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx
+// Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx]
 func (r ApiUploadReceivedDocumentAttachmentRequest) Attachment(attachment *os.File) ApiUploadReceivedDocumentAttachmentRequest {
 	r.attachment = attachment
 	return r
@@ -1137,7 +1137,7 @@ func (a *ReceivedDocumentsApiService) UploadReceivedDocumentAttachmentExecute(r 
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *UploadReceivedDocumentAttachmentResponse
+		localVarReturnValue  *UploadReceivedDocumentAttachmentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsApiService.UploadReceivedDocumentAttachment")

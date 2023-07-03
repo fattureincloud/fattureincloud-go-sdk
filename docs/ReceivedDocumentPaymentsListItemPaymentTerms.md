@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Days** | Pointer to **NullableInt32** | Number of days. | [optional] 
-**Type** | Pointer to **NullableString** |  | [optional] 
+**Days** | Pointer to **NullableInt32** | Received document payment number of days by which the payment must be made | [optional] 
+**Type** | Pointer to [**PaymentTermsType**](PaymentTermsType.md) |  | [optional] [default to STANDARD]
 
 ## Methods
 
@@ -63,20 +63,20 @@ HasDays returns a boolean if a field has been set.
 UnsetDays ensures that no value is present for Days, not even an explicit nil
 ### GetType
 
-`func (o *ReceivedDocumentPaymentsListItemPaymentTerms) GetType() string`
+`func (o *ReceivedDocumentPaymentsListItemPaymentTerms) GetType() PaymentTermsType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *ReceivedDocumentPaymentsListItemPaymentTerms) GetTypeOk() (*string, bool)`
+`func (o *ReceivedDocumentPaymentsListItemPaymentTerms) GetTypeOk() (*PaymentTermsType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *ReceivedDocumentPaymentsListItemPaymentTerms) SetType(v string)`
+`func (o *ReceivedDocumentPaymentsListItemPaymentTerms) SetType(v PaymentTermsType)`
 
 SetType sets Type field to given value.
 
@@ -86,16 +86,6 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
-### SetTypeNil
-
-`func (o *ReceivedDocumentPaymentsListItemPaymentTerms) SetTypeNil(b bool)`
-
- SetTypeNil sets the value for Type to be an explicit nil
-
-### UnsetType
-`func (o *ReceivedDocumentPaymentsListItemPaymentTerms) UnsetType()`
-
-UnsetType ensures that no value is present for Type, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

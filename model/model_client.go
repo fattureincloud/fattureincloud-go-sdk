@@ -18,73 +18,77 @@ import (
 // checks if the Client type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Client{}
 
-// Client 
+// Client struct for Client
 type Client struct {
-	// Unique identifier
+	// Client id
 	Id NullableInt32 `json:"id,omitempty"`
-	// Client code.
+	// Client code
 	Code NullableString `json:"code,omitempty"`
 	// Client name
 	Name NullableString `json:"name,omitempty"`
 	Type NullableClientType `json:"type,omitempty"`
-	// Client first name.
+	// Client first name
 	FirstName NullableString `json:"first_name,omitempty"`
-	// Client last name.
+	// Client last name
 	LastName NullableString `json:"last_name,omitempty"`
+	// Client contact person
 	ContactPerson NullableString `json:"contact_person,omitempty"`
 	// Client vat number
 	VatNumber NullableString `json:"vat_number,omitempty"`
-	// Client tax code.
+	// Client tax code
 	TaxCode NullableString `json:"tax_code,omitempty"`
-	// Client street address.
+	// Client address street
 	AddressStreet NullableString `json:"address_street,omitempty"`
-	// Client postal code.
+	// Client address postal code
 	AddressPostalCode NullableString `json:"address_postal_code,omitempty"`
-	// Client city.
+	// Client address city
 	AddressCity NullableString `json:"address_city,omitempty"`
-	// Client province.
+	// Client address province
 	AddressProvince NullableString `json:"address_province,omitempty"`
-	// Client address extra info.
+	// Client address extra info
 	AddressExtra NullableString `json:"address_extra,omitempty"`
 	// Client country
 	Country NullableString `json:"country,omitempty"`
-	// Client email.
+	// Client email
 	Email NullableString `json:"email,omitempty"`
-	// Client certified email.
+	// Client certified email
 	CertifiedEmail NullableString `json:"certified_email,omitempty"`
-	// Client phone.
+	// Client phone
 	Phone NullableString `json:"phone,omitempty"`
-	// Client fax.
+	// Client fax
 	Fax NullableString `json:"fax,omitempty"`
-	// Extra notes.
+	// Client extra
 	Notes NullableString `json:"notes,omitempty"`
 	DefaultVat NullableVatType `json:"default_vat,omitempty"`
+	// Client default payment terms
 	DefaultPaymentTerms NullableInt32 `json:"default_payment_terms,omitempty"`
 	DefaultPaymentTermsType *PaymentTermsType `json:"default_payment_terms_type,omitempty"`
 	DefaultPaymentMethod *PaymentMethod `json:"default_payment_method,omitempty"`
-	// Client bank name.
+	// Client bank name
 	BankName NullableString `json:"bank_name,omitempty"`
-	// Client iban.
+	// Client bank iban
 	BankIban NullableString `json:"bank_iban,omitempty"`
-	// Client bank swift code.
+	// Client bank swift code
 	BankSwiftCode NullableString `json:"bank_swift_code,omitempty"`
-	// Client shipping address.
+	// Client shipping address
 	ShippingAddress NullableString `json:"shipping_address,omitempty"`
 	// Use e-invoices for this entity
 	EInvoice NullableBool `json:"e_invoice,omitempty"`
-	// E-invoice code
+	// Client e-invoice code 
 	EiCode NullableString `json:"ei_code,omitempty"`
-	// Discount Highlight.
+	// Highlight Discount
 	DiscountHighlight NullableBool `json:"discount_highlight,omitempty"`
-	// Default discount.
+	// Client default discount
 	DefaultDiscount NullableFloat32 `json:"default_discount,omitempty"`
-	// Has intent declaration.
+	// Client has intent declaration
 	HasIntentDeclaration NullableBool `json:"has_intent_declaration,omitempty"`
-	// Intent declaration protocol number.
+	// Client intent declaration protocol number
 	IntentDeclarationProtocolNumber NullableString `json:"intent_declaration_protocol_number,omitempty"`
-	// Intent declaration protocol date.
+	// Client intent declaration protocol date
 	IntentDeclarationProtocolDate NullableString `json:"intent_declaration_protocol_date,omitempty"`
+	// Client creation date
 	CreatedAt NullableString `json:"created_at,omitempty"`
+	// Client last update date
 	UpdatedAt NullableString `json:"updated_at,omitempty"`
 }
 

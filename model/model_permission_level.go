@@ -16,7 +16,7 @@ import (
 	"fmt"
 )
 
-// PermissionLevel Level of the permission.
+// PermissionLevel Permission level
 type PermissionLevel string
 
 // List of PermissionLevel
