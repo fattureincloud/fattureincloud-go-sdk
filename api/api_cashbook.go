@@ -66,7 +66,7 @@ func (a *CashbookApiService) CreateCashbookEntryExecute(r ApiCreateCashbookEntry
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *CreateCashbookEntryResponse
+		localVarReturnValue  *CreateCashbookEntryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CashbookApiService.CreateCashbookEntry")
@@ -284,7 +284,7 @@ func (a *CashbookApiService) GetCashbookEntryExecute(r ApiGetCashbookEntryReques
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetCashbookEntryResponse
+		localVarReturnValue  *GetCashbookEntryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CashbookApiService.GetCashbookEntry")
@@ -429,7 +429,7 @@ func (a *CashbookApiService) ListCashbookEntriesExecute(r ApiListCashbookEntries
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListCashbookEntriesResponse
+		localVarReturnValue  *ListCashbookEntriesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CashbookApiService.ListCashbookEntries")
@@ -559,7 +559,7 @@ func (a *CashbookApiService) ModifyCashbookEntryExecute(r ApiModifyCashbookEntry
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ModifyCashbookEntryResponse
+		localVarReturnValue  *ModifyCashbookEntryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CashbookApiService.ModifyCashbookEntry")

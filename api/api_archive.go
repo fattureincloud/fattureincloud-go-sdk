@@ -67,7 +67,7 @@ func (a *ArchiveApiService) CreateArchiveDocumentExecute(r ApiCreateArchiveDocum
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *CreateArchiveDocumentResponse
+		localVarReturnValue  *CreateArchiveDocumentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchiveApiService.CreateArchiveDocument")
@@ -285,7 +285,7 @@ func (a *ArchiveApiService) GetArchiveDocumentExecute(r ApiGetArchiveDocumentReq
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetArchiveDocumentResponse
+		localVarReturnValue  *GetArchiveDocumentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchiveApiService.GetArchiveDocument")
@@ -437,7 +437,7 @@ func (a *ArchiveApiService) ListArchiveDocumentsExecute(r ApiListArchiveDocument
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListArchiveDocumentsResponse
+		localVarReturnValue  *ListArchiveDocumentsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchiveApiService.ListArchiveDocuments")
@@ -568,7 +568,7 @@ func (a *ArchiveApiService) ModifyArchiveDocumentExecute(r ApiModifyArchiveDocum
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ModifyArchiveDocumentResponse
+		localVarReturnValue  *ModifyArchiveDocumentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchiveApiService.ModifyArchiveDocument")
@@ -648,13 +648,13 @@ type ApiUploadArchiveDocumentAttachmentRequest struct {
 	attachment *os.File
 }
 
-// Name of the file.
+// Attachment file name
 func (r ApiUploadArchiveDocumentAttachmentRequest) Filename(filename string) ApiUploadArchiveDocumentAttachmentRequest {
 	r.filename = &filename
 	return r
 }
 
-// Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx
+// Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx]
 func (r ApiUploadArchiveDocumentAttachmentRequest) Attachment(attachment *os.File) ApiUploadArchiveDocumentAttachmentRequest {
 	r.attachment = attachment
 	return r
@@ -688,7 +688,7 @@ func (a *ArchiveApiService) UploadArchiveDocumentAttachmentExecute(r ApiUploadAr
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *UploadArchiveAttachmentResponse
+		localVarReturnValue  *UploadArchiveAttachmentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchiveApiService.UploadArchiveDocumentAttachment")

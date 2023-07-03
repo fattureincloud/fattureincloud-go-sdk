@@ -18,25 +18,25 @@ import (
 // checks if the VatType type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &VatType{}
 
-// VatType 
+// VatType struct for VatType
 type VatType struct {
-	// Unique identifier
+	// Vat type id
 	Id NullableInt32 `json:"id,omitempty"`
-	// [Read Only] Percentual value.
+	// [Read Only] Vat type percentual value
 	Value NullableFloat32 `json:"value,omitempty"`
-	// Short description.
+	// Vat type short description
 	Description NullableString `json:"description,omitempty"`
-	// Long description and notes shown in documents.
+	// Vat type notes shown in documents
 	Notes NullableString `json:"notes,omitempty"`
-	// Usable for e-invoices.
+	// Vat type is usable for e-invoices
 	EInvoice NullableBool `json:"e_invoice,omitempty"`
-	// E-invoice type (natura).
+	// Vat type e-invoice type (natura)
 	EiType NullableString `json:"ei_type,omitempty"`
-	// E-invoice description.
+	// Vat type e-invoice description
 	EiDescription NullableString `json:"ei_description,omitempty"`
-	// [Read Only] Determine if this vat type is editable.
+	// [Read Only] Is the vat type is editable.
 	Editable NullableBool `json:"editable,omitempty"`
-	// Determine if the vat type is disabled.
+	// Is the vat type disabled
 	IsDisabled NullableBool `json:"is_disabled,omitempty"`
 }
 

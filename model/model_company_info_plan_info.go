@@ -18,7 +18,7 @@ import (
 // checks if the CompanyInfoPlanInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CompanyInfoPlanInfo{}
 
-// CompanyInfoPlanInfo struct for CompanyInfoPlanInfo
+// CompanyInfoPlanInfo Company plan info
 type CompanyInfoPlanInfo struct {
 	Limits NullableCompanyInfoPlanInfoLimits `json:"limits,omitempty"`
 	Functions NullableCompanyInfoPlanInfoFunctions `json:"functions,omitempty"`

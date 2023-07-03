@@ -18,49 +18,52 @@ import (
 // checks if the Supplier type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Supplier{}
 
-// Supplier 
+// Supplier struct for Supplier
 type Supplier struct {
-	// Unique identifier
+	// Supplier id
 	Id NullableInt32 `json:"id,omitempty"`
-	// Supplier code.
+	// Supplier code
 	Code NullableString `json:"code,omitempty"`
-	// Supplier name.
+	// Supplier name
 	Name NullableString `json:"name,omitempty"`
 	Type NullableSupplierType `json:"type,omitempty"`
-	// Supplier first name.
+	// Supplier first name
 	FirstName NullableString `json:"first_name,omitempty"`
-	// Supplier last name.
+	// Supplier last name
 	LastName NullableString `json:"last_name,omitempty"`
+	// Supplier contact person
 	ContactPerson NullableString `json:"contact_person,omitempty"`
-	// Supplier vat number.
+	// Supplier vat number
 	VatNumber NullableString `json:"vat_number,omitempty"`
-	// Supplier tax code.
+	// Supplier tax code
 	TaxCode NullableString `json:"tax_code,omitempty"`
-	// Supplier street address.
+	// Supplier street address
 	AddressStreet NullableString `json:"address_street,omitempty"`
-	// Supplier postal code.
+	// Supplier postal code
 	AddressPostalCode NullableString `json:"address_postal_code,omitempty"`
-	// Supplier city.
+	// Supplier city
 	AddressCity NullableString `json:"address_city,omitempty"`
-	// Supplier province.
+	// Supplier province
 	AddressProvince NullableString `json:"address_province,omitempty"`
-	// Supplier address extra info.
+	// Supplier address extra info
 	AddressExtra NullableString `json:"address_extra,omitempty"`
-	// Supplier country.
+	// Supplier country
 	Country NullableString `json:"country,omitempty"`
-	// Supplier email.
+	// Supplier email
 	Email NullableString `json:"email,omitempty"`
-	// Supplier certified email.
+	// Supplier certified email
 	CertifiedEmail NullableString `json:"certified_email,omitempty"`
-	// Supplier phone.
+	// Supplier phone
 	Phone NullableString `json:"phone,omitempty"`
-	// Supplier fax.
+	// Supplier fax
 	Fax NullableString `json:"fax,omitempty"`
-	// Supplier extra notes.
+	// Supplier extra notes
 	Notes NullableString `json:"notes,omitempty"`
-	// Supplier bank IBAN.
+	// Supplier bank IBAN
 	BankIban NullableString `json:"bank_iban,omitempty"`
+	// Supplier creation date
 	CreatedAt NullableString `json:"created_at,omitempty"`
+	// Supplier last update date
 	UpdatedAt NullableString `json:"updated_at,omitempty"`
 }
 

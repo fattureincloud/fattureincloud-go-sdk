@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Code** | Pointer to **NullableString** | Language code. | [optional] 
-**Name** | Pointer to **NullableString** | Language extended name. | [optional] 
+**Code** | Pointer to **NullableString** | Language code | [optional] 
+**Name** | Pointer to **NullableString** | Language extended name | [optional] 
 
 ## Methods
 

@@ -18,20 +18,21 @@ import (
 // checks if the User type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &User{}
 
-// User 
+// User struct for User
 type User struct {
-	// User identifier.
+	// User id
 	Id NullableInt32 `json:"id,omitempty"`
-	// Full name of the user.
+	// User full name
 	Name NullableString `json:"name,omitempty"`
-	// First name of the user.
+	// User first name
 	FirstName NullableString `json:"first_name,omitempty"`
-	// Last name of the user.
+	// User last name
 	LastName NullableString `json:"last_name,omitempty"`
-	// Email of the user.
+	// User email address
 	Email NullableString `json:"email,omitempty"`
+	// User hash
 	Hash NullableString `json:"hash,omitempty"`
-	// Picture of the user.
+	// User picture
 	Picture NullableString `json:"picture,omitempty"`
 }
 

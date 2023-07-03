@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Numerations** | Pointer to **map[string]map[string]int32** |  | [optional] 
-**NumerationsList** | Pointer to **[]string** | List of series used in the past. | [optional] 
-**RcCentersList** | Pointer to **[]string** | List of revenue centers used in the past. | [optional] 
-**PaymentAccountsList** | Pointer to [**[]PaymentAccount**](PaymentAccount.md) | User payment accounts list. | [optional] 
-**CategoriesList** | Pointer to **[]string** | List of categories used in the past. | [optional] 
-**VatTypesList** | Pointer to [**[]VatType**](VatType.md) | List of user vat types with the default 22%, 10%, 4% and 0% vats. | [optional] 
+**NumerationsList** | Pointer to **[]string** | Receipt used numerations list | [optional] 
+**RcCentersList** | Pointer to **[]string** | Receipt used revenue centers list | [optional] 
+**PaymentAccountsList** | Pointer to [**[]PaymentAccount**](PaymentAccount.md) | Payment accounts list | [optional] 
+**CategoriesList** | Pointer to **[]string** | Receipt categories list | [optional] 
+**VatTypesList** | Pointer to [**[]VatType**](VatType.md) | Vat types list | [optional] 
 
 ## Methods
 

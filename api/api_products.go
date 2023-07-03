@@ -66,7 +66,7 @@ func (a *ProductsApiService) CreateProductExecute(r ApiCreateProductRequest) (*C
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *CreateProductResponse
+		localVarReturnValue  *CreateProductResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductsApiService.CreateProduct")
@@ -284,7 +284,7 @@ func (a *ProductsApiService) GetProductExecute(r ApiGetProductRequest) (*GetProd
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetProductResponse
+		localVarReturnValue  *GetProductResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductsApiService.GetProduct")
@@ -436,7 +436,7 @@ func (a *ProductsApiService) ListProductsExecute(r ApiListProductsRequest) (*Lis
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListProductsResponse
+		localVarReturnValue  *ListProductsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductsApiService.ListProducts")
@@ -567,7 +567,7 @@ func (a *ProductsApiService) ModifyProductExecute(r ApiModifyProductRequest) (*M
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ModifyProductResponse
+		localVarReturnValue  *ModifyProductResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductsApiService.ModifyProduct")

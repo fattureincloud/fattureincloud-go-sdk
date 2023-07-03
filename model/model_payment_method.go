@@ -20,21 +20,21 @@ var _ MappedNullable = &PaymentMethod{}
 
 // PaymentMethod struct for PaymentMethod
 type PaymentMethod struct {
-	// Unique identifier
+	// Payment method id
 	Id NullableInt32 `json:"id,omitempty"`
-	// Name of the payment method
+	// Payment method name
 	Name NullableString `json:"name,omitempty"`
 	Type *PaymentMethodType `json:"type,omitempty"`
-	// Determines if this is the default payment method.
+	// Payment method is default
 	IsDefault NullableBool `json:"is_default,omitempty"`
 	DefaultPaymentAccount NullablePaymentAccount `json:"default_payment_account,omitempty"`
-	// Method details rows
+	// Payment method details
 	Details []PaymentMethodDetails `json:"details,omitempty"`
-	// Bank iban
+	// Payment method bank iban
 	BankIban NullableString `json:"bank_iban,omitempty"`
-	// Bank name
+	// Payment method bank name
 	BankName NullableString `json:"bank_name,omitempty"`
-	// Bank beneficiary
+	// Payment method bank beneficiary
 	BankBeneficiary NullableString `json:"bank_beneficiary,omitempty"`
 	// E-invoice payment method
 	EiPaymentMethod NullableString `json:"ei_payment_method,omitempty"`

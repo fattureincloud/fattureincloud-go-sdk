@@ -18,29 +18,29 @@ import (
 // checks if the IssuedDocumentEiData type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &IssuedDocumentEiData{}
 
-// IssuedDocumentEiData E-invoice data. [Only if e_invoice=true]
+// IssuedDocumentEiData Issued document e-invoice data [Only if e_invoice=true]
 type IssuedDocumentEiData struct {
 	VatKind NullableVatKind `json:"vat_kind,omitempty"`
 	OriginalDocumentType NullableOriginalDocumentType `json:"original_document_type,omitempty"`
-	// Original document number.
+	// E-invoice original document number
 	OdNumber NullableString `json:"od_number,omitempty"`
-	// Original document date.
+	// E-invoice original document date
 	OdDate NullableString `json:"od_date,omitempty"`
-	// CIG.
+	// E-invoice CIG
 	Cig NullableString `json:"cig,omitempty"`
-	// CUP.
+	// E-invoice CUP
 	Cup NullableString `json:"cup,omitempty"`
-	// Payment method (see https://www.fatturapa.gov.it/export/documenti/fatturapa/v1.2.1/Rappresentazione-tabellare-fattura-ordinaria.pdf for the accepted values of ModalitaPagamento).
+	// E-invoice payment method [required for e-invoices](see https://www.fatturapa.gov.it/export/documenti/fatturapa/v1.2.2/Rappresentazione_Tabellare_FattOrdinaria_V1.2.2.pdf for the accepted values of ModalitaPagamento)
 	PaymentMethod NullableString `json:"payment_method,omitempty"`
-	// Bank name.
+	// E-invoice bank name
 	BankName NullableString `json:"bank_name,omitempty"`
-	// IBAN.
+	// E-invoice bank IBAN
 	BankIban NullableString `json:"bank_iban,omitempty"`
-	// Bank beneficiary.
+	// E-invoice bank beneficiary
 	BankBeneficiary NullableString `json:"bank_beneficiary,omitempty"`
-	// Invoice number.
+	// E-invoice invoice number
 	InvoiceNumber NullableString `json:"invoice_number,omitempty"`
-	// Invoice date.
+	// E-invoice invoice date
 	InvoiceDate NullableString `json:"invoice_date,omitempty"`
 }
 

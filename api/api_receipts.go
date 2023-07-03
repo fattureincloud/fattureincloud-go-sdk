@@ -66,7 +66,7 @@ func (a *ReceiptsApiService) CreateReceiptExecute(r ApiCreateReceiptRequest) (*C
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *CreateReceiptResponse
+		localVarReturnValue  *CreateReceiptResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsApiService.CreateReceipt")
@@ -284,7 +284,7 @@ func (a *ReceiptsApiService) GetReceiptExecute(r ApiGetReceiptRequest) (*GetRece
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetReceiptResponse
+		localVarReturnValue  *GetReceiptResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsApiService.GetReceipt")
@@ -394,7 +394,7 @@ func (a *ReceiptsApiService) GetReceiptPreCreateInfoExecute(r ApiGetReceiptPreCr
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetReceiptPreCreateInfoResponse
+		localVarReturnValue  *GetReceiptPreCreateInfoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsApiService.GetReceiptPreCreateInfo")
@@ -511,7 +511,7 @@ func (a *ReceiptsApiService) GetReceiptsMonthlyTotalsExecute(r ApiGetReceiptsMon
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetReceiptsMonthlyTotalsResponse
+		localVarReturnValue  *GetReceiptsMonthlyTotalsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsApiService.GetReceiptsMonthlyTotals")
@@ -664,7 +664,7 @@ func (a *ReceiptsApiService) ListReceiptsExecute(r ApiListReceiptsRequest) (*Lis
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListReceiptsResponse
+		localVarReturnValue  *ListReceiptsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsApiService.ListReceipts")
@@ -795,7 +795,7 @@ func (a *ReceiptsApiService) ModifyReceiptExecute(r ApiModifyReceiptRequest) (*M
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ModifyReceiptResponse
+		localVarReturnValue  *ModifyReceiptResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsApiService.ModifyReceipt")

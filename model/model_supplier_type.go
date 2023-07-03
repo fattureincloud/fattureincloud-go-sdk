@@ -16,7 +16,7 @@ import (
 	"fmt"
 )
 
-// SupplierType Supplier type.
+// SupplierType Supplier type
 type SupplierType string
 
 // List of SupplierType

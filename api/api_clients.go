@@ -66,7 +66,7 @@ func (a *ClientsApiService) CreateClientExecute(r ApiCreateClientRequest) (*Crea
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *CreateClientResponse
+		localVarReturnValue  *CreateClientResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.CreateClient")
@@ -284,7 +284,7 @@ func (a *ClientsApiService) GetClientExecute(r ApiGetClientRequest) (*GetClientR
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetClientResponse
+		localVarReturnValue  *GetClientResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetClient")
@@ -436,7 +436,7 @@ func (a *ClientsApiService) ListClientsExecute(r ApiListClientsRequest) (*ListCl
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListClientsResponse
+		localVarReturnValue  *ListClientsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.ListClients")
@@ -567,7 +567,7 @@ func (a *ClientsApiService) ModifyClientExecute(r ApiModifyClientRequest) (*Modi
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ModifyClientResponse
+		localVarReturnValue  *ModifyClientResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.ModifyClient")

@@ -16,7 +16,7 @@ import (
 	"fmt"
 )
 
-// OriginalDocumentType Type of document followed by the the current invoice.
+// OriginalDocumentType Issued document original document type
 type OriginalDocumentType string
 
 // List of OriginalDocumentType

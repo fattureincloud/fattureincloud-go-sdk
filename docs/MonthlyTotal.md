@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Net** | Pointer to **NullableFloat32** | Monthly total net amount. | [optional] 
-**Gross** | Pointer to **NullableFloat32** | Monthly total gross amount. | [optional] 
-**Count** | Pointer to **NullableFloat32** | Monthly total receipt number. | [optional] 
+**Net** | Pointer to **NullableFloat32** | Monthly total net amount | [optional] 
+**Gross** | Pointer to **NullableFloat32** | Monthly total gross amount | [optional] 
+**Count** | Pointer to **NullableFloat32** | Monthly total receipt number | [optional] 
 
 ## Methods
 

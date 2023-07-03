@@ -18,18 +18,18 @@ import (
 // checks if the ReceiptPreCreateInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ReceiptPreCreateInfo{}
 
-// ReceiptPreCreateInfo 
+// ReceiptPreCreateInfo struct for ReceiptPreCreateInfo
 type ReceiptPreCreateInfo struct {
 	Numerations map[string]map[string]int32 `json:"numerations,omitempty"`
-	// List of series used in the past.
+	// Receipt used numerations list
 	NumerationsList []string `json:"numerations_list,omitempty"`
-	// List of revenue centers used in the past.
+	// Receipt used revenue centers list
 	RcCentersList []string `json:"rc_centers_list,omitempty"`
-	// User payment accounts list.
+	// Payment accounts list
 	PaymentAccountsList []PaymentAccount `json:"payment_accounts_list,omitempty"`
-	// List of categories used in the past.
+	// Receipt categories list
 	CategoriesList []string `json:"categories_list,omitempty"`
-	// List of user vat types with the default 22%, 10%, 4% and 0% vats.
+	// Vat types list
 	VatTypesList []VatType `json:"vat_types_list,omitempty"`
 }
 

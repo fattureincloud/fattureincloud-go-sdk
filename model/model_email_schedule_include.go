@@ -20,13 +20,13 @@ var _ MappedNullable = &EmailScheduleInclude{}
 
 // EmailScheduleInclude struct for EmailScheduleInclude
 type EmailScheduleInclude struct {
-	// If set to true, the email will have a button to view the document
+	// Include a button to view the document
 	Document NullableBool `json:"document,omitempty"`
-	// If set to true, the email will have a button to view the delivery note
+	// Include a button to view the delivery note
 	DeliveryNote NullableBool `json:"delivery_note,omitempty"`
-	// If set to true, the email will have a button to view the attachment
+	// Include a button to view the attachment
 	Attachment NullableBool `json:"attachment,omitempty"`
-	// If set to true, the email will have a button to view the accompanying invoice
+	// Include a button to view the accompanying invoice
 	AccompanyingInvoice NullableBool `json:"accompanying_invoice,omitempty"`
 }
 

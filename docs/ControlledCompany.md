@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableInt32** | Company unique identifier. | [optional] 
-**Name** | Pointer to **NullableString** | Company name. | [optional] 
+**Id** | Pointer to **NullableInt32** | Controlled company id | [optional] 
+**Name** | Pointer to **NullableString** | Controlled company id | [optional] 
 **Type** | Pointer to [**CompanyType**](CompanyType.md) |  | [optional] 
-**AccessToken** | Pointer to **NullableString** | CompanyAuthentication token for this company. [Only if type&#x3D;company] | [optional] 
-**ConnectionId** | Pointer to **NullableFloat32** | Company connection id. | [optional] 
-**TaxCode** | Pointer to **NullableString** | Tax code. | [optional] 
+**AccessToken** | Pointer to **NullableString** | Controlled company access token Only if type&#x3D;company] | [optional] 
+**ConnectionId** | Pointer to **NullableFloat32** | Controlled company connection id | [optional] 
+**TaxCode** | Pointer to **NullableString** | Controlled company tax code | [optional] 
 
 ## Methods
 

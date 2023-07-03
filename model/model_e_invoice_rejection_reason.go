@@ -21,15 +21,15 @@ var _ MappedNullable = &EInvoiceRejectionReason{}
 
 // EInvoiceRejectionReason struct for EInvoiceRejectionReason
 type EInvoiceRejectionReason struct {
-	// Rejection reason.
+	// E-invoice rejection reason
 	Reason NullableString `json:"reason,omitempty"`
-	// E-invoice status.
+	// E-invoice status
 	EiStatus NullableString `json:"ei_status,omitempty"`
 	// Error solution.
 	Solution NullableString `json:"solution,omitempty"`
-	// Error code.
+	// E-invoice rejection error code
 	Code NullableString `json:"code,omitempty"`
-	// Rejection date.
+	// E-invoice rejection date
 	Date NullableTime `json:"date,omitempty"`
 }
 

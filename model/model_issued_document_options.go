@@ -24,7 +24,7 @@ type IssuedDocumentOptions struct {
 	FixPayments NullableBool `json:"fix_payments,omitempty"`
 	// Original documents ids [only for join/transform]
 	CreateFrom []string `json:"create_from,omitempty"`
-	// Tranform a document. [only for transform]
+	// Tranform a document [only for transform]
 	Transform NullableBool `json:"transform,omitempty"`
 	// Keep original document [only for transform]
 	KeepCopy NullableBool `json:"keep_copy,omitempty"`

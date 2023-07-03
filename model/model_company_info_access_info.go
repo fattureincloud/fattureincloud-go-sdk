@@ -22,6 +22,7 @@ var _ MappedNullable = &CompanyInfoAccessInfo{}
 type CompanyInfoAccessInfo struct {
 	Role *UserCompanyRole `json:"role,omitempty"`
 	Permissions *Permissions `json:"permissions,omitempty"`
+	// Company activated through accountant
 	ThroughAccountant NullableBool `json:"through_accountant,omitempty"`
 }
 

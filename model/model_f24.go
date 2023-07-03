@@ -20,19 +20,19 @@ var _ MappedNullable = &F24{}
 
 // F24 struct for F24
 type F24 struct {
-	// Unique F24 identifier.
+	// F24 id
 	Id NullableInt32 `json:"id,omitempty"`
-	// Due date.
+	// F24 due date
 	DueDate NullableString `json:"due_date,omitempty"`
 	Status *F24Status `json:"status,omitempty"`
 	PaymentAccount NullablePaymentAccount `json:"payment_account,omitempty"`
-	// Taxes amount.
+	// F24 amount
 	Amount NullableFloat32 `json:"amount,omitempty"`
-	// [Temporary] [Read Only] Absolute url of the attached file. Authomatically set if a valid attachment token is passed via POST /taxes or PUT /taxes/{documentId}.
+	// [Temporary] [Read Only] F24 url of the attached file
 	AttachmentUrl NullableString `json:"attachment_url,omitempty"`
-	// [Write Only] Attachment token returned by POST /taxes/attachment. Used to attach the file already uploaded.
+	// [Write Only]  F24 attachment token returned by POST /taxes/attachment
 	AttachmentToken NullableString `json:"attachment_token,omitempty"`
-	// Name or brief description.
+	// F24 description
 	Description NullableString `json:"description,omitempty"`
 }
 

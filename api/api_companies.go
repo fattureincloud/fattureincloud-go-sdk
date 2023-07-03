@@ -59,7 +59,7 @@ func (a *CompaniesApiService) GetCompanyInfoExecute(r ApiGetCompanyInfoRequest) 
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetCompanyInfoResponse
+		localVarReturnValue  *GetCompanyInfoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CompaniesApiService.GetCompanyInfo")

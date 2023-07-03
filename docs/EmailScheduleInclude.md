@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Document** | Pointer to **NullableBool** | If set to true, the email will have a button to view the document | [optional] 
-**DeliveryNote** | Pointer to **NullableBool** | If set to true, the email will have a button to view the delivery note | [optional] 
-**Attachment** | Pointer to **NullableBool** | If set to true, the email will have a button to view the attachment | [optional] 
-**AccompanyingInvoice** | Pointer to **NullableBool** | If set to true, the email will have a button to view the accompanying invoice | [optional] 
+**Document** | Pointer to **NullableBool** | Include a button to view the document | [optional] 
+**DeliveryNote** | Pointer to **NullableBool** | Include a button to view the delivery note | [optional] 
+**Attachment** | Pointer to **NullableBool** | Include a button to view the attachment | [optional] 
+**AccompanyingInvoice** | Pointer to **NullableBool** | Include a button to view the accompanying invoice | [optional] 
 
 ## Methods
 

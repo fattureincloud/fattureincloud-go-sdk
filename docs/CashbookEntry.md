@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableString** | Cashbook unique identifier. | [optional] 
-**Date** | Pointer to **NullableString** | Cashbook date. | [optional] 
-**Description** | Pointer to **NullableString** | Cashbook description. | [optional] 
+**Id** | Pointer to **NullableString** | Cashbook id | [optional] 
+**Date** | Pointer to **NullableString** | Cashbook date | [optional] 
+**Description** | Pointer to **NullableString** | Cashbook description | [optional] 
 **Kind** | Pointer to [**CashbookEntryKind**](CashbookEntryKind.md) |  | [optional] 
 **Type** | Pointer to [**NullableCashbookEntryType**](CashbookEntryType.md) |  | [optional] 
-**EntityName** | Pointer to **NullableString** | Entity name. | [optional] 
+**EntityName** | Pointer to **NullableString** | Cashbook entity name | [optional] 
 **Document** | Pointer to [**NullableCashbookEntryDocument**](CashbookEntryDocument.md) |  | [optional] 
-**AmountIn** | Pointer to **NullableFloat32** | [Only for cashbook entry in] Total amount in. | [optional] 
+**AmountIn** | Pointer to **NullableFloat32** | [Only for cashbook entry in] Cashbook total amount in | [optional] 
 **PaymentAccountIn** | Pointer to [**NullablePaymentAccount**](PaymentAccount.md) |  | [optional] 
-**AmountOut** | Pointer to **NullableFloat32** | [Only for cashbook entry out] Total amount out. | [optional] 
+**AmountOut** | Pointer to **NullableFloat32** | [Only for cashbook entry out] Cashbook total amount out | [optional] 
 **PaymentAccountOut** | Pointer to [**NullablePaymentAccount**](PaymentAccount.md) |  | [optional] 
 
 ## Methods

@@ -16,7 +16,7 @@ import (
 	"fmt"
 )
 
-// PaymentTermsType Payment terms Type.
+// PaymentTermsType Payment terms type
 type PaymentTermsType string
 
 // List of PaymentTermsType

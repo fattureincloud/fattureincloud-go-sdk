@@ -16,7 +16,7 @@ import (
 	"fmt"
 )
 
-// PaymentMethodType Method type.
+// PaymentMethodType Payment method type
 type PaymentMethodType string
 
 // List of PaymentMethodType

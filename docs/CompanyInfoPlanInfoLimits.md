@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Clients** | Pointer to **NullableInt32** |  | [optional] 
-**Suppliers** | Pointer to **NullableInt32** |  | [optional] 
-**Products** | Pointer to **NullableInt32** |  | [optional] 
-**Documents** | Pointer to **NullableInt32** |  | [optional] 
+**Clients** | Pointer to **NullableInt32** | Company plan clients limits | [optional] 
+**Suppliers** | Pointer to **NullableInt32** | Company plan suppliers limits | [optional] 
+**Products** | Pointer to **NullableInt32** | Company plan products limits | [optional] 
+**Documents** | Pointer to **NullableInt32** | Company plan documents limits | [optional] 
 
 ## Methods
 

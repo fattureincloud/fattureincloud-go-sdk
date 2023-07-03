@@ -18,20 +18,20 @@ import (
 // checks if the PaymentAccount type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PaymentAccount{}
 
-// PaymentAccount 
+// PaymentAccount struct for PaymentAccount
 type PaymentAccount struct {
-	// Unique identifier
+	// Payment account id
 	Id NullableInt32 `json:"id,omitempty"`
-	// Payment account name.
+	// Payment account name
 	Name NullableString `json:"name,omitempty"`
 	Type *PaymentAccountType `json:"type,omitempty"`
-	// Payment account iban.
+	// Payment account iban
 	Iban NullableString `json:"iban,omitempty"`
-	// Payment account sia.
+	// Payment account sia
 	Sia NullableString `json:"sia,omitempty"`
-	// Payment account cuc.
+	// Payment account cuc
 	Cuc NullableString `json:"cuc,omitempty"`
-	// Determine if the payment method is virtual.
+	// Payment method is virtual
 	Virtual NullableBool `json:"virtual,omitempty"`
 }
 

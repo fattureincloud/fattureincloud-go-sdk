@@ -32,6 +32,9 @@ var (
 	// ContextOAuth2 takes an oauth2.TokenSource as authentication for the request.
 	ContextOAuth2 = contextKey("token")
 
+	// ContextAccessToken takes a string oauth2 access token as authentication for the request.
+	ContextAccessToken = contextKey("accesstoken")
+
 	// ContextServerIndex uses a server configuration from the index.
 	ContextServerIndex = contextKey("serverIndex")
 
@@ -90,7 +93,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "FattureInCloud/2.0.6/Go-SDK",
+		UserAgent:        "FattureInCloud/2.0.7/Go-SDK",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{

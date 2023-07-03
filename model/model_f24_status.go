@@ -16,7 +16,7 @@ import (
 	"fmt"
 )
 
-// F24Status Tax status.
+// F24Status F24 status
 type F24Status string
 
 // List of F24Status

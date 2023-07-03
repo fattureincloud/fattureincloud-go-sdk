@@ -18,20 +18,20 @@ import (
 // checks if the CompanyInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CompanyInfo{}
 
-// CompanyInfo 
+// CompanyInfo struct for CompanyInfo
 type CompanyInfo struct {
-	// Company unique identifier.
+	// Company id
 	Id NullableInt32 `json:"id,omitempty"`
-	// Company name.
+	// Company name
 	Name NullableString `json:"name,omitempty"`
-	// Company email.
+	// Company email
 	Email NullableString `json:"email,omitempty"`
 	Type *CompanyType `json:"type,omitempty"`
 	AccessInfo NullableCompanyInfoAccessInfo `json:"access_info,omitempty"`
 	PlanInfo NullableCompanyInfoPlanInfo `json:"plan_info,omitempty"`
-	// Accountant unique identifier.
+	// Company accountant id
 	AccountantId NullableInt32 `json:"accountant_id,omitempty"`
-	// Determine if the logged account is an accountant.
+	// Is the logged account an accountant.
 	IsAccountant NullableBool `json:"is_accountant,omitempty"`
 }
 

@@ -18,21 +18,21 @@ import (
 // checks if the ReceivedDocumentTotals type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ReceivedDocumentTotals{}
 
-// ReceivedDocumentTotals 
+// ReceivedDocumentTotals struct for ReceivedDocumentTotals
 type ReceivedDocumentTotals struct {
-	// Total net amount.
+	// Received document total net amount
 	AmountNet NullableFloat32 `json:"amount_net,omitempty"`
-	// Total vat amount.
+	// Received document total vat amount
 	AmountVat NullableFloat32 `json:"amount_vat,omitempty"`
-	// Total gross amount.
+	// Received document total gross amount
 	AmountGross NullableFloat32 `json:"amount_gross,omitempty"`
-	// Total withholding tax amount.
+	// Received document withholding tax amount
 	AmountWithholdingTax NullableFloat32 `json:"amount_withholding_tax,omitempty"`
-	// Total other withholding tax amount.
+	// Received document other withholding tax amount
 	AmountOtherWithholdingTax NullableFloat32 `json:"amount_other_withholding_tax,omitempty"`
-	// Total amount due.
+	// Received document total amount due
 	AmountDue NullableFloat32 `json:"amount_due,omitempty"`
-	// Payments sum.
+	// Received document payments sum
 	PaymentsSum NullableFloat32 `json:"payments_sum,omitempty"`
 }
 

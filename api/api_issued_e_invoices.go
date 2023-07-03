@@ -62,7 +62,7 @@ func (a *IssuedEInvoicesApiService) GetEInvoiceRejectionReasonExecute(r ApiGetEI
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *GetEInvoiceRejectionReasonResponse
+		localVarReturnValue  *GetEInvoiceRejectionReasonResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedEInvoicesApiService.GetEInvoiceRejectionReason")
@@ -176,7 +176,7 @@ func (a *IssuedEInvoicesApiService) GetEInvoiceXmlExecute(r ApiGetEInvoiceXmlReq
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue string
+		localVarReturnValue  string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedEInvoicesApiService.GetEInvoiceXml")
@@ -293,7 +293,7 @@ func (a *IssuedEInvoicesApiService) SendEInvoiceExecute(r ApiSendEInvoiceRequest
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *SendEInvoiceResponse
+		localVarReturnValue  *SendEInvoiceResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedEInvoicesApiService.SendEInvoice")
@@ -402,7 +402,7 @@ func (a *IssuedEInvoicesApiService) VerifyEInvoiceXmlExecute(r ApiVerifyEInvoice
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *VerifyEInvoiceXmlResponse
+		localVarReturnValue  *VerifyEInvoiceXmlResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedEInvoicesApiService.VerifyEInvoiceXml")

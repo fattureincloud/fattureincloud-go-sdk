@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **FixPayments** | Pointer to **NullableBool** | Fixes your last payment amount to match your document total | [optional] 
 **CreateFrom** | Pointer to **[]string** | Original documents ids [only for join/transform] | [optional] 
-**Transform** | Pointer to **NullableBool** | Tranform a document. [only for transform] | [optional] 
+**Transform** | Pointer to **NullableBool** | Tranform a document [only for transform] | [optional] 
 **KeepCopy** | Pointer to **NullableBool** | Keep original document [only for transform] | [optional] 
 **JoinType** | Pointer to **NullableString** | Join type [only for join] | [optional] 
 

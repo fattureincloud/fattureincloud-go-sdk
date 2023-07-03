@@ -20,54 +20,58 @@ var _ MappedNullable = &ReceivedDocument{}
 
 // ReceivedDocument struct for ReceivedDocument
 type ReceivedDocument struct {
-	// Unique identifier of the document.
+	// Received document id
 	Id NullableInt32 `json:"id,omitempty"`
 	Type *ReceivedDocumentType `json:"type,omitempty"`
 	Entity *Entity `json:"entity,omitempty"`
-	// Date of the document [If not specified, today date is used].
+	// Received document date [defaults to today's date]
 	Date NullableString `json:"date,omitempty"`
-	// Document category.
+	// Received document category
 	Category NullableString `json:"category,omitempty"`
-	// Document description.
+	// Received document description
 	Description NullableString `json:"description,omitempty"`
-	// Total net amount.
+	// Received document total net amount
 	AmountNet NullableFloat32 `json:"amount_net,omitempty"`
-	// Total vat amount.
+	// Received document total vat amount
 	AmountVat NullableFloat32 `json:"amount_vat,omitempty"`
-	// Withholding tax amount.
+	// Received document withholding tax amount
 	AmountWithholdingTax NullableFloat32 `json:"amount_withholding_tax,omitempty"`
-	// Other withholding tax amount.
+	// Received document other withholding tax amount
 	AmountOtherWithholdingTax NullableFloat32 `json:"amount_other_withholding_tax,omitempty"`
-	// [Read Only] Total gross amount.
+	// [Read Only] Received document total gross amount
 	AmountGross NullableFloat32 `json:"amount_gross,omitempty"`
-	// Amortization value
+	// Received document amortization value
 	Amortization NullableFloat32 `json:"amortization,omitempty"`
-	// Revenue center.
+	// Received document revenue center
 	RcCenter NullableString `json:"rc_center,omitempty"`
-	// Invoice number
+	// Received document invoice number
 	InvoiceNumber NullableString `json:"invoice_number,omitempty"`
+	// Received document is marked
 	IsMarked NullableBool `json:"is_marked,omitempty"`
+	// Received document has items
 	IsDetailed NullableBool `json:"is_detailed,omitempty"`
-	// [Read Only] Indicates if this is an e-invoice.
+	// [Read Only] Received document is an e-invoice
 	EInvoice NullableBool `json:"e_invoice,omitempty"`
-	// [Read Only] Next due date.
+	// [Read Only] Received document date of the next not paid payment
 	NextDueDate NullableString `json:"next_due_date,omitempty"`
 	Currency *Currency `json:"currency,omitempty"`
-	// Tax deducibility percentage.
+	// Received document tax deducibility percentage
 	TaxDeductibility NullableFloat32 `json:"tax_deductibility,omitempty"`
-	// Vat deducibility percentage.
+	// Received document vat deducibility percentage
 	VatDeductibility NullableFloat32 `json:"vat_deductibility,omitempty"`
 	ItemsList []ReceivedDocumentItemsListItem `json:"items_list,omitempty"`
 	PaymentsList []ReceivedDocumentPaymentsListItem `json:"payments_list,omitempty"`
-	// [Temporary] [Read Only]  Public url of the attached file. Authomatically set if a valid attachment token is passed via POST /received_documents or PUT /received_documents/{documentId}.
+	// [Temporary] [Read Only] Received document url of the attached file
 	AttachmentUrl NullableString `json:"attachment_url,omitempty"`
-	// [Temporary] [Read Only]  Attachment preview url.
+	// [Temporary] [Read Only] Received document url of the attachment preview
 	AttachmentPreviewUrl NullableString `json:"attachment_preview_url,omitempty"`
-	// If set to false total items amount and total payments amount can be different.
+	// Received document total items amount and total payments amount can differ if this field is set to false
 	AutoCalculate NullableBool `json:"auto_calculate,omitempty"`
-	// Uploaded attachement token.
+	// [Write Only] Received document attachment token returned by POST /received_documents/attachment
 	AttachmentToken NullableString `json:"attachment_token,omitempty"`
+	// Received document creation date
 	CreatedAt NullableString `json:"created_at,omitempty"`
+	// Received document last update date
 	UpdatedAt NullableString `json:"updated_at,omitempty"`
 }
 

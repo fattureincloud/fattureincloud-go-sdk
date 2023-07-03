@@ -16,7 +16,7 @@ import (
 	"fmt"
 )
 
-// VatKind Vat kind (esigibilità IVA).
+// VatKind Vat kind [esigibilità IVA]
 type VatKind string
 
 // List of VatKind

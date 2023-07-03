@@ -16,7 +16,7 @@ import (
 	"fmt"
 )
 
-// CompanyType Company type.
+// CompanyType Company type
 type CompanyType string
 
 // List of CompanyType

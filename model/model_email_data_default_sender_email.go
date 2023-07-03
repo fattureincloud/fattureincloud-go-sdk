@@ -18,11 +18,11 @@ import (
 // checks if the EmailDataDefaultSenderEmail type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &EmailDataDefaultSenderEmail{}
 
-// EmailDataDefaultSenderEmail Default sender email. (Other emails can be found in `sender_emails_list`)
+// EmailDataDefaultSenderEmail Default sender email. (Other emails can be found in **sender_emails_list**)
 type EmailDataDefaultSenderEmail struct {
-	// Id
+	// Default sender email id
 	Id NullableInt32 `json:"id,omitempty"`
-	// Email address
+	// Default sender email address
 	Email NullableString `json:"email,omitempty"`
 }
 

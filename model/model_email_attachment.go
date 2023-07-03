@@ -20,9 +20,9 @@ var _ MappedNullable = &EmailAttachment{}
 
 // EmailAttachment struct for EmailAttachment
 type EmailAttachment struct {
-	// Email attachment filename.
+	// Email attachment filename
 	Filename *string `json:"filename,omitempty"`
-	// Email attachment url.
+	// Email attachment url
 	Url *string `json:"url,omitempty"`
 }
 

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AmountNet** | Pointer to **NullableFloat32** | Total net amount. | [optional] 
-**AmountVat** | Pointer to **NullableFloat32** | Total vat amount. | [optional] 
-**AmountGross** | Pointer to **NullableFloat32** | Total gross amount. | [optional] 
-**AmountWithholdingTax** | Pointer to **NullableFloat32** | Total withholding tax amount. | [optional] 
-**AmountOtherWithholdingTax** | Pointer to **NullableFloat32** | Total other withholding tax amount. | [optional] 
-**AmountDue** | Pointer to **NullableFloat32** | Total amount due. | [optional] 
-**PaymentsSum** | Pointer to **NullableFloat32** | Payments sum. | [optional] 
+**AmountNet** | Pointer to **NullableFloat32** | Received document total net amount | [optional] 
+**AmountVat** | Pointer to **NullableFloat32** | Received document total vat amount | [optional] 
+**AmountGross** | Pointer to **NullableFloat32** | Received document total gross amount | [optional] 
+**AmountWithholdingTax** | Pointer to **NullableFloat32** | Received document withholding tax amount | [optional] 
+**AmountOtherWithholdingTax** | Pointer to **NullableFloat32** | Received document other withholding tax amount | [optional] 
+**AmountDue** | Pointer to **NullableFloat32** | Received document total amount due | [optional] 
+**PaymentsSum** | Pointer to **NullableFloat32** | Received document payments sum | [optional] 
 
 ## Methods
 

@@ -19,35 +19,37 @@ import (
 // checks if the Email type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Email{}
 
-// Email 
+// Email struct for Email
 type Email struct {
-	// Email unique identifier.
+	// Email id
 	Id NullableInt32 `json:"id,omitempty"`
 	Status *EmailStatus `json:"status,omitempty"`
-	// Email sent date.
+	// Email sent date
 	SentDate NullableTime `json:"sent_date,omitempty"`
-	// Errors count.
+	// Email errors count
 	ErrorsCount NullableInt32 `json:"errors_count,omitempty"`
-	// Error log.
+	// Email errors log
 	ErrorLog NullableString `json:"error_log,omitempty"`
-	// Sender email.
+	// Email sender email
 	FromEmail NullableString `json:"from_email,omitempty"`
-	// Sender name.
+	// Email sender name
 	FromName NullableString `json:"from_name,omitempty"`
-	// Recipient email.
+	// Email recipient email
 	ToEmail NullableString `json:"to_email,omitempty"`
-	// Receipient email.
+	// Email receipient name
 	ToName NullableString `json:"to_name,omitempty"`
-	// Email subject.
+	// Email subject
 	Subject NullableString `json:"subject,omitempty"`
-	// Email content.
+	// Email content
 	Content NullableString `json:"content,omitempty"`
+	// Email cc
 	CopyTo NullableString `json:"copy_to,omitempty"`
 	RecipientStatus *EmailRecipientStatus `json:"recipient_status,omitempty"`
+	// Email recipient date
 	RecipientDate NullableTime `json:"recipient_date,omitempty"`
-	// Email kind.
+	// Email kind
 	Kind NullableString `json:"kind,omitempty"`
-	// Email attachments.
+	// Email attachments
 	Attachments []EmailAttachment `json:"attachments,omitempty"`
 }
 

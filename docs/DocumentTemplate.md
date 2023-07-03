@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableInt32** | Unique identifier. | [optional] 
-**Name** | Pointer to **NullableString** | Template name. | [optional] 
-**Type** | Pointer to **NullableString** | Template type. | [optional] 
+**Id** | Pointer to **NullableInt32** | Template id | [optional] 
+**Name** | Pointer to **NullableString** | Template name | [optional] 
+**Type** | Pointer to **NullableString** | Template type | [optional] 
 
 ## Methods
 

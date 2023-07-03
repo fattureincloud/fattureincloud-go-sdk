@@ -4,42 +4,42 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableInt32** | Unique identifier | [optional] 
-**Code** | Pointer to **NullableString** | Code. | [optional] 
-**Name** | Pointer to **NullableString** | Name | [optional] 
+**Id** | Pointer to **NullableInt32** | Entity id | [optional] 
+**Code** | Pointer to **NullableString** | Entity code | [optional] 
+**Name** | Pointer to **NullableString** | Entity name | [optional] 
 **Type** | Pointer to [**NullableEntityType**](EntityType.md) |  | [optional] 
-**FirstName** | Pointer to **NullableString** | First name. | [optional] 
-**LastName** | Pointer to **NullableString** | Last name. | [optional] 
-**ContactPerson** | Pointer to **NullableString** |  | [optional] 
-**VatNumber** | Pointer to **NullableString** | Vat number | [optional] 
-**TaxCode** | Pointer to **NullableString** | Tax code. | [optional] 
-**AddressStreet** | Pointer to **NullableString** | Street address. | [optional] 
-**AddressPostalCode** | Pointer to **NullableString** | Postal code. | [optional] 
-**AddressCity** | Pointer to **NullableString** | City. | [optional] 
-**AddressProvince** | Pointer to **NullableString** | Province. | [optional] 
-**AddressExtra** | Pointer to **NullableString** | Address extra info. | [optional] 
-**Country** | Pointer to **NullableString** | Country | [optional] 
-**CountryIso** | Pointer to **NullableString** | Country Iso | [optional] 
-**Email** | Pointer to **NullableString** | Email. | [optional] 
-**CertifiedEmail** | Pointer to **NullableString** | Certified email. | [optional] 
-**Phone** | Pointer to **NullableString** | Phone. | [optional] 
-**Fax** | Pointer to **NullableString** | Fax. | [optional] 
-**Notes** | Pointer to **NullableString** | Extra notes. | [optional] 
+**FirstName** | Pointer to **NullableString** | Entity first name | [optional] 
+**LastName** | Pointer to **NullableString** | Entity last name | [optional] 
+**ContactPerson** | Pointer to **NullableString** | Entity contact person | [optional] 
+**VatNumber** | Pointer to **NullableString** | Entity vat number | [optional] 
+**TaxCode** | Pointer to **NullableString** | Entity tax code | [optional] 
+**AddressStreet** | Pointer to **NullableString** | Entitity address street | [optional] 
+**AddressPostalCode** | Pointer to **NullableString** | Entity address postal code | [optional] 
+**AddressCity** | Pointer to **NullableString** | Entity address city | [optional] 
+**AddressProvince** | Pointer to **NullableString** | Entity address province | [optional] 
+**AddressExtra** | Pointer to **NullableString** | Entity address extra info | [optional] 
+**Country** | Pointer to **NullableString** | Entity country | [optional] 
+**CountryIso** | Pointer to **NullableString** | Entity country iso code | [optional] 
+**Email** | Pointer to **NullableString** | Entity email | [optional] 
+**CertifiedEmail** | Pointer to **NullableString** | Entity certified email | [optional] 
+**Phone** | Pointer to **NullableString** | Entity phone | [optional] 
+**Fax** | Pointer to **NullableString** | Entity fax | [optional] 
+**Notes** | Pointer to **NullableString** | Entity extra | [optional] 
+**DefaultPaymentTerms** | Pointer to **NullableInt32** | [Only for client] Client default payment terms | [optional] 
 **DefaultVat** | Pointer to [**NullableVatType**](VatType.md) |  | [optional] 
-**DefaultPaymentTerms** | Pointer to **NullableInt32** | [Only for client] Default payment terms. | [optional] 
 **DefaultPaymentTermsType** | Pointer to [**PaymentTermsType**](PaymentTermsType.md) |  | [optional] [default to STANDARD]
 **DefaultPaymentMethod** | Pointer to [**PaymentMethod**](PaymentMethod.md) |  | [optional] 
-**BankName** | Pointer to **NullableString** | [Only for client] Bank name. | [optional] 
-**BankIban** | Pointer to **NullableString** | [Only for client] Iban. | [optional] 
-**BankSwiftCode** | Pointer to **NullableString** | [Only for client] Bank swift code. | [optional] 
-**ShippingAddress** | Pointer to **NullableString** | [Only for client] Shipping address. | [optional] 
+**BankName** | Pointer to **NullableString** | [Only for client] Client bank name | [optional] 
+**BankIban** | Pointer to **NullableString** | [Only for client] Client bank iban | [optional] 
+**BankSwiftCode** | Pointer to **NullableString** | [Only for client] Client bank swift code | [optional] 
+**ShippingAddress** | Pointer to **NullableString** | [Only for client] Client Shipping address | [optional] 
 **EInvoice** | Pointer to **NullableBool** | [Only for client] Use e-invoices. | [optional] 
 **EiCode** | Pointer to **NullableString** | [Only for client] E-invoices code. | [optional] 
 **HasIntentDeclaration** | Pointer to **NullableBool** | [Only for client] Has intent declaration. | [optional] 
-**IntentDeclarationProtocolNumber** | Pointer to **NullableString** | [Only for client] Intent declaration protocol number. | [optional] 
-**IntentDeclarationProtocolDate** | Pointer to **NullableString** | [Only for client] Intent declaration protocol date. | [optional] 
-**CreatedAt** | Pointer to **NullableString** |  | [optional] 
-**UpdatedAt** | Pointer to **NullableString** |  | [optional] 
+**IntentDeclarationProtocolNumber** | Pointer to **NullableString** | [Only for client] Client intent declaration protocol number | [optional] 
+**IntentDeclarationProtocolDate** | Pointer to **NullableString** | [Only for client] Client intent declaration protocol date | [optional] 
+**CreatedAt** | Pointer to **NullableString** | Entity creation date | [optional] 
+**UpdatedAt** | Pointer to **NullableString** | Entity last update date | [optional] 
 
 ## Methods
 
@@ -795,41 +795,6 @@ HasNotes returns a boolean if a field has been set.
 `func (o *Entity) UnsetNotes()`
 
 UnsetNotes ensures that no value is present for Notes, not even an explicit nil
-### GetDefaultVat
-
-`func (o *Entity) GetDefaultVat() VatType`
-
-GetDefaultVat returns the DefaultVat field if non-nil, zero value otherwise.
-
-### GetDefaultVatOk
-
-`func (o *Entity) GetDefaultVatOk() (*VatType, bool)`
-
-GetDefaultVatOk returns a tuple with the DefaultVat field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDefaultVat
-
-`func (o *Entity) SetDefaultVat(v VatType)`
-
-SetDefaultVat sets DefaultVat field to given value.
-
-### HasDefaultVat
-
-`func (o *Entity) HasDefaultVat() bool`
-
-HasDefaultVat returns a boolean if a field has been set.
-
-### SetDefaultVatNil
-
-`func (o *Entity) SetDefaultVatNil(b bool)`
-
- SetDefaultVatNil sets the value for DefaultVat to be an explicit nil
-
-### UnsetDefaultVat
-`func (o *Entity) UnsetDefaultVat()`
-
-UnsetDefaultVat ensures that no value is present for DefaultVat, not even an explicit nil
 ### GetDefaultPaymentTerms
 
 `func (o *Entity) GetDefaultPaymentTerms() int32`
@@ -865,6 +830,41 @@ HasDefaultPaymentTerms returns a boolean if a field has been set.
 `func (o *Entity) UnsetDefaultPaymentTerms()`
 
 UnsetDefaultPaymentTerms ensures that no value is present for DefaultPaymentTerms, not even an explicit nil
+### GetDefaultVat
+
+`func (o *Entity) GetDefaultVat() VatType`
+
+GetDefaultVat returns the DefaultVat field if non-nil, zero value otherwise.
+
+### GetDefaultVatOk
+
+`func (o *Entity) GetDefaultVatOk() (*VatType, bool)`
+
+GetDefaultVatOk returns a tuple with the DefaultVat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultVat
+
+`func (o *Entity) SetDefaultVat(v VatType)`
+
+SetDefaultVat sets DefaultVat field to given value.
+
+### HasDefaultVat
+
+`func (o *Entity) HasDefaultVat() bool`
+
+HasDefaultVat returns a boolean if a field has been set.
+
+### SetDefaultVatNil
+
+`func (o *Entity) SetDefaultVatNil(b bool)`
+
+ SetDefaultVatNil sets the value for DefaultVat to be an explicit nil
+
+### UnsetDefaultVat
+`func (o *Entity) UnsetDefaultVat()`
+
+UnsetDefaultVat ensures that no value is present for DefaultVat, not even an explicit nil
 ### GetDefaultPaymentTermsType
 
 `func (o *Entity) GetDefaultPaymentTermsType() PaymentTermsType`

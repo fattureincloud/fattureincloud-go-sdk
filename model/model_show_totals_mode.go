@@ -16,7 +16,7 @@ import (
 	"fmt"
 )
 
-// ShowTotalsMode Totals mode.
+// ShowTotalsMode Show totals mode
 type ShowTotalsMode string
 
 // List of ShowTotalsMode

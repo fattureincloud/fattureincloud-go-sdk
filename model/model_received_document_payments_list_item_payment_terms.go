@@ -20,9 +20,9 @@ var _ MappedNullable = &ReceivedDocumentPaymentsListItemPaymentTerms{}
 
 // ReceivedDocumentPaymentsListItemPaymentTerms struct for ReceivedDocumentPaymentsListItemPaymentTerms
 type ReceivedDocumentPaymentsListItemPaymentTerms struct {
-	// Number of days.
+	// Received document payment number of days by which the payment must be made
 	Days NullableInt32 `json:"days,omitempty"`
-	Type NullableString `json:"type,omitempty"`
+	Type *PaymentTermsType `json:"type,omitempty"`
 }
 
 // NewReceivedDocumentPaymentsListItemPaymentTerms instantiates a new ReceivedDocumentPaymentsListItemPaymentTerms object
@@ -39,6 +39,8 @@ func NewReceivedDocumentPaymentsListItemPaymentTerms() *ReceivedDocumentPayments
 // but it doesn't guarantee that properties required by API are set
 func NewReceivedDocumentPaymentsListItemPaymentTermsWithDefaults() *ReceivedDocumentPaymentsListItemPaymentTerms {
 	this := ReceivedDocumentPaymentsListItemPaymentTerms{}
+	var type_ PaymentTermsType = PaymentTermsTypes.STANDARD
+	this.Type = &type_
 	return &this
 }
 
@@ -86,48 +88,37 @@ func (o *ReceivedDocumentPaymentsListItemPaymentTerms) UnsetDays() {
 	o.Days.Unset()
 }
 
-// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ReceivedDocumentPaymentsListItemPaymentTerms) GetType() string {
-	if o == nil || IsNil(o.Type.Get()) {
-		var ret string
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *ReceivedDocumentPaymentsListItemPaymentTerms) GetType() PaymentTermsType {
+	if o == nil || IsNil(o.Type) {
+		var ret PaymentTermsType
 		return ret
 	}
-	return *o.Type.Get()
+	return *o.Type
 }
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ReceivedDocumentPaymentsListItemPaymentTerms) GetTypeOk() (*string, bool) {
-	if o == nil {
+func (o *ReceivedDocumentPaymentsListItemPaymentTerms) GetTypeOk() (*PaymentTermsType, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
-	return o.Type.Get(), o.Type.IsSet()
+	return o.Type, true
 }
 
 // HasType returns a boolean if a field has been set.
 func (o *ReceivedDocumentPaymentsListItemPaymentTerms) HasType() bool {
-	if o != nil && o.Type.IsSet() {
+	if o != nil && !IsNil(o.Type) {
 		return true
 	}
 
 	return false
 }
 
-// SetType gets a reference to the given NullableString and assigns it to the Type field.
-func (o *ReceivedDocumentPaymentsListItemPaymentTerms) SetType(v string) *ReceivedDocumentPaymentsListItemPaymentTerms {
-	o.Type.Set(&v)
+// SetType gets a reference to the given PaymentTermsType and assigns it to the Type field.
+func (o *ReceivedDocumentPaymentsListItemPaymentTerms) SetType(v PaymentTermsType) *ReceivedDocumentPaymentsListItemPaymentTerms {
+	o.Type = &v
 	return o
-}
-// SetTypeNil sets the value for Type to be an explicit nil
-func (o *ReceivedDocumentPaymentsListItemPaymentTerms) SetTypeNil() *ReceivedDocumentPaymentsListItemPaymentTerms {
-	o.Type.Set(nil)
-	return o
-}
-
-// UnsetType ensures that no value is present for Type, not even an explicit nil
-func (o *ReceivedDocumentPaymentsListItemPaymentTerms) UnsetType() {
-	o.Type.Unset()
 }
 
 func (o ReceivedDocumentPaymentsListItemPaymentTerms) MarshalJSON() ([]byte, error) {
@@ -143,8 +134,8 @@ func (o ReceivedDocumentPaymentsListItemPaymentTerms) ToMap() (map[string]interf
 	if o.Days.IsSet() {
 		toSerialize["days"] = o.Days.Get()
 	}
-	if o.Type.IsSet() {
-		toSerialize["type"] = o.Type.Get()
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
 	}
 	return toSerialize, nil
 }

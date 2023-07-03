@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableInt32** | Company unique identifier. | [optional] 
-**Name** | Pointer to **NullableString** | Company name. | [optional] 
-**Email** | Pointer to **NullableString** | Company email. | [optional] 
+**Id** | Pointer to **NullableInt32** | Company id | [optional] 
+**Name** | Pointer to **NullableString** | Company name | [optional] 
+**Email** | Pointer to **NullableString** | Company email | [optional] 
 **Type** | Pointer to [**CompanyType**](CompanyType.md) |  | [optional] 
 **AccessInfo** | Pointer to [**NullableCompanyInfoAccessInfo**](CompanyInfoAccessInfo.md) |  | [optional] 
 **PlanInfo** | Pointer to [**NullableCompanyInfoPlanInfo**](CompanyInfoPlanInfo.md) |  | [optional] 
-**AccountantId** | Pointer to **NullableInt32** | Accountant unique identifier. | [optional] 
-**IsAccountant** | Pointer to **NullableBool** | Determine if the logged account is an accountant. | [optional] 
+**AccountantId** | Pointer to **NullableInt32** | Company accountant id | [optional] 
+**IsAccountant** | Pointer to **NullableBool** | Is the logged account an accountant. | [optional] 
 
 ## Methods
 

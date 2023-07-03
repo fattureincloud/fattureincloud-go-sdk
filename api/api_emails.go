@@ -59,7 +59,7 @@ func (a *EmailsApiService) ListEmailsExecute(r ApiListEmailsRequest) (*ListEmail
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue *ListEmailsResponse
+		localVarReturnValue  *ListEmailsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EmailsApiService.ListEmails")

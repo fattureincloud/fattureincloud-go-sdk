@@ -20,40 +20,42 @@ var _ MappedNullable = &Product{}
 
 // Product struct for Product
 type Product struct {
-	// Unique identifier.
+	// Product id
 	Id NullableInt32 `json:"id,omitempty"`
-	// Product name.
+	// Product name
 	Name NullableString `json:"name,omitempty"`
-	// Product code.
+	// Product code
 	Code NullableString `json:"code,omitempty"`
-	// Net sale price (used if use_gross_price is false, otherwise it's competed automatically).
+	// Product net price
 	NetPrice NullableFloat32 `json:"net_price,omitempty"`
-	// Gross sale price (used if use_gross_price is false, otherwise it's competed automatically).
+	// Product gross price
 	GrossPrice NullableFloat32 `json:"gross_price,omitempty"`
-	// Determine which price to use for calculations.
+	// Product uses gross prices
 	UseGrossPrice NullableBool `json:"use_gross_price,omitempty"`
 	DefaultVat NullableVatType `json:"default_vat,omitempty"`
-	// Net cost of the product (used for received documents).
+	// Product net cost
 	NetCost NullableFloat32 `json:"net_cost,omitempty"`
-	// Unit of measure.
+	// Product measure
 	Measure NullableString `json:"measure,omitempty"`
-	// Product description.
+	// Product description
 	Description NullableString `json:"description,omitempty"`
-	// Product category.
+	// Product category
 	Category NullableString `json:"category,omitempty"`
-	// Extra notes.
+	// Product extra notes
 	Notes NullableString `json:"notes,omitempty"`
-	// Determine if the product is in stock.
+	// Product has stock
 	InStock NullableBool `json:"in_stock,omitempty"`
-	// Product initial stock.
+	// Product initial stock
 	StockInitial NullableFloat32 `json:"stock_initial,omitempty"`
-	// [Read Only] Product current stock.
+	// [Read Only] Product current stock
 	StockCurrent NullableFloat32 `json:"stock_current,omitempty"`
-	// Product average cost.
+	// Product average cost
 	AverageCost NullableFloat32 `json:"average_cost,omitempty"`
-	// Product average price.
+	// Product average price
 	AveragePrice NullableFloat32 `json:"average_price,omitempty"`
+	// Product creation date
 	CreatedAt NullableString `json:"created_at,omitempty"`
+	// Product last update date
 	UpdatedAt NullableString `json:"updated_at,omitempty"`
 }
 

@@ -20,36 +20,40 @@ var _ MappedNullable = &IssuedDocumentItemsListItem{}
 
 // IssuedDocumentItemsListItem struct for IssuedDocumentItemsListItem
 type IssuedDocumentItemsListItem struct {
-	// Unique identifier.
+	// Issued document item id
 	Id NullableInt32 `json:"id,omitempty"`
-	// Unique identifier of the product.
+	// Issued document item product id
 	ProductId NullableInt32 `json:"product_id,omitempty"`
-	// Product code.
+	// Issued document item product code
 	Code NullableString `json:"code,omitempty"`
-	// Product name.
+	// Issued document item product name
 	Name NullableString `json:"name,omitempty"`
-	// Product category
+	// Issued document item product category
 	Category NullableString `json:"category,omitempty"`
-	// Product description.
+	// Issued document product description
 	Description NullableString `json:"description,omitempty"`
-	// Items quantity,
+	// Issued document item quantity
 	Qty NullableFloat32 `json:"qty,omitempty"`
-	// Item measure.
+	// Issued document item measure
 	Measure NullableString `json:"measure,omitempty"`
-	// Net price.
+	// Issued document item net price
 	NetPrice NullableFloat32 `json:"net_price,omitempty"`
-	// Gross price.
+	// Issued document item gross price
 	GrossPrice NullableFloat32 `json:"gross_price,omitempty"`
 	Vat NullableVatType `json:"vat,omitempty"`
+	// Issued document item is not taxable
 	NotTaxable NullableBool `json:"not_taxable,omitempty"`
-	// Apply withholding taxes, rivalsa and cassa.
+	// Issued document item apply withholding taxes, rivalsa and cassa
 	ApplyWithholdingTaxes NullableBool `json:"apply_withholding_taxes,omitempty"`
-	// Discount percentual value.
+	// Issued document item discount percentual value
 	Discount NullableFloat32 `json:"discount,omitempty"`
+	// Issued document item highlight discount
 	DiscountHighlight NullableBool `json:"discount_highlight,omitempty"`
+	// Issued document item add in delivery note
 	InDn NullableBool `json:"in_dn,omitempty"`
+	// Issued document item move stock
 	Stock NullableBool `json:"stock,omitempty"`
-	// Advanced raw attributes for e-invoices.
+	// Issued document advanced raw attributes for e-invoices
 	EiRaw map[string]interface{} `json:"ei_raw,omitempty"`
 }
 

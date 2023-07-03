@@ -18,11 +18,15 @@ import (
 // checks if the CompanyInfoPlanInfoLimits type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CompanyInfoPlanInfoLimits{}
 
-// CompanyInfoPlanInfoLimits Limits for this company.
+// CompanyInfoPlanInfoLimits Company plan limits
 type CompanyInfoPlanInfoLimits struct {
+	// Company plan clients limits
 	Clients NullableInt32 `json:"clients,omitempty"`
+	// Company plan suppliers limits
 	Suppliers NullableInt32 `json:"suppliers,omitempty"`
+	// Company plan products limits
 	Products NullableInt32 `json:"products,omitempty"`
+	// Company plan documents limits
 	Documents NullableInt32 `json:"documents,omitempty"`
 }
 

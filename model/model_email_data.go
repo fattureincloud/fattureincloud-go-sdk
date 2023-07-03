@@ -18,28 +18,28 @@ import (
 // checks if the EmailData type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &EmailData{}
 
-// EmailData 
+// EmailData struct for EmailData
 type EmailData struct {
-	// Recipient's email
+	// Email recipient
 	RecipientEmail NullableString `json:"recipient_email,omitempty"`
 	DefaultSenderEmail NullableEmailDataDefaultSenderEmail `json:"default_sender_email,omitempty"`
 	// List of all emails from which the document can be sent
 	SenderEmailsList []SenderEmail `json:"sender_emails_list,omitempty"`
-	// By default is the logged company email. This is the email address to which a copy will be sent.
+	// Email cc [by default is the logged company email]
 	CcEmail NullableString `json:"cc_email,omitempty"`
 	// Email subject
 	Subject NullableString `json:"subject,omitempty"`
 	// Email body
 	Body NullableString `json:"body,omitempty"`
-	// If the document is not a delivery note, this flag will be set to true
+	// Document exists if it is not a delivery note
 	DocumentExists NullableBool `json:"document_exists,omitempty"`
-	// If the document is a delivery note, this flag will be set to true
+	// Document is a delivery note
 	DeliveryNoteExists NullableBool `json:"delivery_note_exists,omitempty"`
-	// If the document has one or more attachments, this flag will be set to true
+	// Document has attachment
 	AttachmentExists NullableBool `json:"attachment_exists,omitempty"`
-	// If an accompanying invoice exists, this flag will be set to true
+	// Document has accompanying invoice
 	AccompanyingInvoiceExists NullableBool `json:"accompanying_invoice_exists,omitempty"`
-	// If a pdf is attached, this flag will be set to true
+	// Attach document pdf
 	DefaultAttachPdf NullableBool `json:"default_attach_pdf,omitempty"`
 }
 

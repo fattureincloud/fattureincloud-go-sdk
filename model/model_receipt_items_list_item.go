@@ -20,13 +20,13 @@ var _ MappedNullable = &ReceiptItemsListItem{}
 
 // ReceiptItemsListItem struct for ReceiptItemsListItem
 type ReceiptItemsListItem struct {
-	// Item unique identifier.
+	// Receipt item id
 	Id NullableInt32 `json:"id,omitempty"`
-	// Item total net amount.
+	// Receipt item total net amount
 	AmountNet NullableFloat32 `json:"amount_net,omitempty"`
-	// Item total gross amount.
+	// Receipt item total gross amount
 	AmountGross NullableFloat32 `json:"amount_gross,omitempty"`
-	// Item category.
+	// Receipt item category
 	Category NullableString `json:"category,omitempty"`
 	Vat NullableVatType `json:"vat,omitempty"`
 }

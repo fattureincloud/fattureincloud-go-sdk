@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableString** | Currency code. | [optional] 
-**Symbol** | Pointer to **NullableString** | Currency symbol. | [optional] 
-**ExchangeRate** | Pointer to **NullableString** | Currency exchange rate (EUR to this). | [optional] 
-**HtmlSymbol** | Pointer to **NullableString** | Currency html code. | [optional] 
+**Id** | Pointer to **NullableString** | Currency code | [optional] 
+**Symbol** | Pointer to **NullableString** | Currency symbol | [optional] 
+**ExchangeRate** | Pointer to **NullableString** | Currency exchange rate (EUR to this) | [optional] 
+**HtmlSymbol** | Pointer to **NullableString** | Currency html code | [optional] 
 
 ## Methods
 

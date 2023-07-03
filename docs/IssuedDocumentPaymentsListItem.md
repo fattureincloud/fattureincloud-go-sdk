@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableInt32** | Unique identifier. | [optional] 
-**DueDate** | Pointer to **NullableString** | Due date. | [optional] 
-**Amount** | Pointer to **NullableFloat32** | Payment amount. | [optional] 
+**Id** | Pointer to **NullableInt32** | Issued document payment item id | [optional] 
+**DueDate** | Pointer to **NullableString** | Issued document payment due date | [optional] 
+**Amount** | Pointer to **NullableFloat32** | Issued document payment amount | [optional] 
 **Status** | Pointer to [**IssuedDocumentStatus**](IssuedDocumentStatus.md) |  | [optional] [default to NOT_PAID]
 **PaymentAccount** | Pointer to [**NullablePaymentAccount**](PaymentAccount.md) |  | [optional] 
-**PaidDate** | Pointer to **NullableString** | Payment date. [Only if status is paid] | [optional] 
-**EiRaw** | Pointer to **map[string]interface{}** | Advanced raw attributes for e-invoices. | [optional] 
+**PaidDate** | Pointer to **NullableString** | Issued document payment date [Only if status is paid] | [optional] 
+**EiRaw** | Pointer to **map[string]interface{}** | Issued document payment advanced raw attributes for e-invoices | [optional] 
 **PaymentTerms** | Pointer to [**IssuedDocumentPaymentsListItemPaymentTerms**](IssuedDocumentPaymentsListItemPaymentTerms.md) |  | [optional] 
 
 ## Methods

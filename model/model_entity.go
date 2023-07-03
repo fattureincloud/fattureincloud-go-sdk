@@ -18,60 +18,61 @@ import (
 // checks if the Entity type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Entity{}
 
-// Entity 
+// Entity struct for Entity
 type Entity struct {
-	// Unique identifier
+	// Entity id
 	Id NullableInt32 `json:"id,omitempty"`
-	// Code.
+	// Entity code
 	Code NullableString `json:"code,omitempty"`
-	// Name
+	// Entity name
 	Name NullableString `json:"name,omitempty"`
 	Type NullableEntityType `json:"type,omitempty"`
-	// First name.
+	// Entity first name
 	FirstName NullableString `json:"first_name,omitempty"`
-	// Last name.
+	// Entity last name
 	LastName NullableString `json:"last_name,omitempty"`
+	// Entity contact person
 	ContactPerson NullableString `json:"contact_person,omitempty"`
-	// Vat number
+	// Entity vat number
 	VatNumber NullableString `json:"vat_number,omitempty"`
-	// Tax code.
+	// Entity tax code
 	TaxCode NullableString `json:"tax_code,omitempty"`
-	// Street address.
+	// Entitity address street
 	AddressStreet NullableString `json:"address_street,omitempty"`
-	// Postal code.
+	// Entity address postal code
 	AddressPostalCode NullableString `json:"address_postal_code,omitempty"`
-	// City.
+	// Entity address city
 	AddressCity NullableString `json:"address_city,omitempty"`
-	// Province.
+	// Entity address province
 	AddressProvince NullableString `json:"address_province,omitempty"`
-	// Address extra info.
+	// Entity address extra info
 	AddressExtra NullableString `json:"address_extra,omitempty"`
-	// Country
+	// Entity country
 	Country NullableString `json:"country,omitempty"`
-	// Country Iso
+	// Entity country iso code
 	CountryIso NullableString `json:"country_iso,omitempty"`
-	// Email.
+	// Entity email
 	Email NullableString `json:"email,omitempty"`
-	// Certified email.
+	// Entity certified email
 	CertifiedEmail NullableString `json:"certified_email,omitempty"`
-	// Phone.
+	// Entity phone
 	Phone NullableString `json:"phone,omitempty"`
-	// Fax.
+	// Entity fax
 	Fax NullableString `json:"fax,omitempty"`
-	// Extra notes.
+	// Entity extra
 	Notes NullableString `json:"notes,omitempty"`
-	DefaultVat NullableVatType `json:"default_vat,omitempty"`
-	// [Only for client] Default payment terms.
+	// [Only for client] Client default payment terms
 	DefaultPaymentTerms NullableInt32 `json:"default_payment_terms,omitempty"`
+	DefaultVat NullableVatType `json:"default_vat,omitempty"`
 	DefaultPaymentTermsType *PaymentTermsType `json:"default_payment_terms_type,omitempty"`
 	DefaultPaymentMethod *PaymentMethod `json:"default_payment_method,omitempty"`
-	// [Only for client] Bank name.
+	// [Only for client] Client bank name
 	BankName NullableString `json:"bank_name,omitempty"`
-	// [Only for client] Iban.
+	// [Only for client] Client bank iban
 	BankIban NullableString `json:"bank_iban,omitempty"`
-	// [Only for client] Bank swift code.
+	// [Only for client] Client bank swift code
 	BankSwiftCode NullableString `json:"bank_swift_code,omitempty"`
-	// [Only for client] Shipping address.
+	// [Only for client] Client Shipping address
 	ShippingAddress NullableString `json:"shipping_address,omitempty"`
 	// [Only for client] Use e-invoices.
 	EInvoice NullableBool `json:"e_invoice,omitempty"`
@@ -79,11 +80,13 @@ type Entity struct {
 	EiCode NullableString `json:"ei_code,omitempty"`
 	// [Only for client] Has intent declaration.
 	HasIntentDeclaration NullableBool `json:"has_intent_declaration,omitempty"`
-	// [Only for client] Intent declaration protocol number.
+	// [Only for client] Client intent declaration protocol number
 	IntentDeclarationProtocolNumber NullableString `json:"intent_declaration_protocol_number,omitempty"`
-	// [Only for client] Intent declaration protocol date.
+	// [Only for client] Client intent declaration protocol date
 	IntentDeclarationProtocolDate NullableString `json:"intent_declaration_protocol_date,omitempty"`
+	// Entity creation date
 	CreatedAt NullableString `json:"created_at,omitempty"`
+	// Entity last update date
 	UpdatedAt NullableString `json:"updated_at,omitempty"`
 }
 
@@ -1030,50 +1033,6 @@ func (o *Entity) UnsetNotes() {
 	o.Notes.Unset()
 }
 
-// GetDefaultVat returns the DefaultVat field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Entity) GetDefaultVat() VatType {
-	if o == nil || IsNil(o.DefaultVat.Get()) {
-		var ret VatType
-		return ret
-	}
-	return *o.DefaultVat.Get()
-}
-
-// GetDefaultVatOk returns a tuple with the DefaultVat field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Entity) GetDefaultVatOk() (*VatType, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.DefaultVat.Get(), o.DefaultVat.IsSet()
-}
-
-// HasDefaultVat returns a boolean if a field has been set.
-func (o *Entity) HasDefaultVat() bool {
-	if o != nil && o.DefaultVat.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetDefaultVat gets a reference to the given NullableVatType and assigns it to the DefaultVat field.
-func (o *Entity) SetDefaultVat(v VatType) *Entity {
-	o.DefaultVat.Set(&v)
-	return o
-}
-// SetDefaultVatNil sets the value for DefaultVat to be an explicit nil
-func (o *Entity) SetDefaultVatNil() *Entity {
-	o.DefaultVat.Set(nil)
-	return o
-}
-
-// UnsetDefaultVat ensures that no value is present for DefaultVat, not even an explicit nil
-func (o *Entity) UnsetDefaultVat() {
-	o.DefaultVat.Unset()
-}
-
 // GetDefaultPaymentTerms returns the DefaultPaymentTerms field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Entity) GetDefaultPaymentTerms() int32 {
 	if o == nil || IsNil(o.DefaultPaymentTerms.Get()) {
@@ -1116,6 +1075,50 @@ func (o *Entity) SetDefaultPaymentTermsNil() *Entity {
 // UnsetDefaultPaymentTerms ensures that no value is present for DefaultPaymentTerms, not even an explicit nil
 func (o *Entity) UnsetDefaultPaymentTerms() {
 	o.DefaultPaymentTerms.Unset()
+}
+
+// GetDefaultVat returns the DefaultVat field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Entity) GetDefaultVat() VatType {
+	if o == nil || IsNil(o.DefaultVat.Get()) {
+		var ret VatType
+		return ret
+	}
+	return *o.DefaultVat.Get()
+}
+
+// GetDefaultVatOk returns a tuple with the DefaultVat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Entity) GetDefaultVatOk() (*VatType, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.DefaultVat.Get(), o.DefaultVat.IsSet()
+}
+
+// HasDefaultVat returns a boolean if a field has been set.
+func (o *Entity) HasDefaultVat() bool {
+	if o != nil && o.DefaultVat.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultVat gets a reference to the given NullableVatType and assigns it to the DefaultVat field.
+func (o *Entity) SetDefaultVat(v VatType) *Entity {
+	o.DefaultVat.Set(&v)
+	return o
+}
+// SetDefaultVatNil sets the value for DefaultVat to be an explicit nil
+func (o *Entity) SetDefaultVatNil() *Entity {
+	o.DefaultVat.Set(nil)
+	return o
+}
+
+// UnsetDefaultVat ensures that no value is present for DefaultVat, not even an explicit nil
+func (o *Entity) UnsetDefaultVat() {
+	o.DefaultVat.Unset()
 }
 
 // GetDefaultPaymentTermsType returns the DefaultPaymentTermsType field value if set, zero value otherwise.
@@ -1741,11 +1744,11 @@ func (o Entity) ToMap() (map[string]interface{}, error) {
 	if o.Notes.IsSet() {
 		toSerialize["notes"] = o.Notes.Get()
 	}
-	if o.DefaultVat.IsSet() {
-		toSerialize["default_vat"] = o.DefaultVat.Get()
-	}
 	if o.DefaultPaymentTerms.IsSet() {
 		toSerialize["default_payment_terms"] = o.DefaultPaymentTerms.Get()
+	}
+	if o.DefaultVat.IsSet() {
+		toSerialize["default_vat"] = o.DefaultVat.Get()
 	}
 	if !IsNil(o.DefaultPaymentTermsType) {
 		toSerialize["default_payment_terms_type"] = o.DefaultPaymentTermsType

@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DefaultValues** | Pointer to [**NullableReceivedDocumentInfoDefaultValues**](ReceivedDocumentInfoDefaultValues.md) |  | [optional] 
 **ItemsDefaultValues** | Pointer to [**NullableReceivedDocumentInfoItemsDefaultValues**](ReceivedDocumentInfoItemsDefaultValues.md) |  | [optional] 
-**CountriesList** | Pointer to **[]string** |  | [optional] 
-**CurrenciesList** | Pointer to [**[]Currency**](Currency.md) |  | [optional] 
-**CategoriesList** | Pointer to **[]string** |  | [optional] 
-**PaymentAccountsList** | Pointer to [**[]PaymentAccount**](PaymentAccount.md) |  | [optional] 
-**VatTypesList** | Pointer to [**[]VatType**](VatType.md) |  | [optional] 
+**CountriesList** | Pointer to **[]string** | Countries list | [optional] 
+**CurrenciesList** | Pointer to [**[]Currency**](Currency.md) | Currencies list | [optional] 
+**CategoriesList** | Pointer to **[]string** | Categories list | [optional] 
+**PaymentAccountsList** | Pointer to [**[]PaymentAccount**](PaymentAccount.md) | Payments accounts list | [optional] 
+**VatTypesList** | Pointer to [**[]VatType**](VatType.md) | Vat types list | [optional] 
 
 ## Methods
 

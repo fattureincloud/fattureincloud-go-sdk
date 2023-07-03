@@ -20,24 +20,24 @@ var _ MappedNullable = &ReceivedDocumentItemsListItem{}
 
 // ReceivedDocumentItemsListItem struct for ReceivedDocumentItemsListItem
 type ReceivedDocumentItemsListItem struct {
-	// Unique identifier.
+	// Received document item id
 	Id NullableInt32 `json:"id,omitempty"`
-	// Unique identifier of the product
+	// Received document product id
 	ProductId NullableInt32 `json:"product_id,omitempty"`
-	// Product code.
+	// Received document item product code
 	Code NullableString `json:"code,omitempty"`
-	// Product name.
+	// Received document item product name
 	Name NullableString `json:"name,omitempty"`
-	// Product measure.
+	// Received document item measure
 	Measure NullableString `json:"measure,omitempty"`
-	// Product net price.
+	// Received document item product net price
 	NetPrice NullableFloat32 `json:"net_price,omitempty"`
-	// Product category.
+	// Received document item product category
 	Category NullableString `json:"category,omitempty"`
-	// Product quantity.
+	// Received document item quantity
 	Qty NullableFloat32 `json:"qty,omitempty"`
 	Vat NullableVatType `json:"vat,omitempty"`
-	// Number of items in stock
+	// Received document item product number of items in stock
 	Stock NullableFloat32 `json:"stock,omitempty"`
 }
 

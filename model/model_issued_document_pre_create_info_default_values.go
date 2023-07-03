@@ -18,7 +18,7 @@ import (
 // checks if the IssuedDocumentPreCreateInfoDefaultValues type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &IssuedDocumentPreCreateInfoDefaultValues{}
 
-// IssuedDocumentPreCreateInfoDefaultValues Default values for the document.
+// IssuedDocumentPreCreateInfoDefaultValues Issued document default values
 type IssuedDocumentPreCreateInfoDefaultValues struct {
 	DefaultTemplate *DocumentTemplate `json:"default_template,omitempty"`
 	DnTemplate *DocumentTemplate `json:"dn_template,omitempty"`

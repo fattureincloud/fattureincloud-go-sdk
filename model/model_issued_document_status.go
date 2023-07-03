@@ -16,7 +16,7 @@ import (
 	"fmt"
 )
 
-// IssuedDocumentStatus Payment status.
+// IssuedDocumentStatus Issued document status
 type IssuedDocumentStatus string
 
 // List of IssuedDocumentStatus

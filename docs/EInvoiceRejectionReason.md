@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Reason** | Pointer to **NullableString** | Rejection reason. | [optional] 
-**EiStatus** | Pointer to **NullableString** | E-invoice status. | [optional] 
+**Reason** | Pointer to **NullableString** | E-invoice rejection reason | [optional] 
+**EiStatus** | Pointer to **NullableString** | E-invoice status | [optional] 
 **Solution** | Pointer to **NullableString** | Error solution. | [optional] 
-**Code** | Pointer to **NullableString** | Error code. | [optional] 
-**Date** | Pointer to **NullableTime** | Rejection date. | [optional] 
+**Code** | Pointer to **NullableString** | E-invoice rejection error code | [optional] 
+**Date** | Pointer to **NullableTime** | E-invoice rejection date | [optional] 
 
 ## Methods
 

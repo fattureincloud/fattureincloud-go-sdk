@@ -20,36 +20,37 @@ var _ MappedNullable = &IssuedDocumentTotals{}
 
 // IssuedDocumentTotals struct for IssuedDocumentTotals
 type IssuedDocumentTotals struct {
-	// Total net amount.
+	// Issued document total net amount
 	AmountNet NullableFloat32 `json:"amount_net,omitempty"`
-	// Rivalsa amount.
+	// Issued document rivalsa amount
 	AmountRivalsa NullableFloat32 `json:"amount_rivalsa,omitempty"`
-	// Net amount with rivalsa.
+	// Issued document net amount with rivalsa
 	AmountNetWithRivalsa NullableFloat32 `json:"amount_net_with_rivalsa,omitempty"`
-	// Cassa amount.
+	// Issued document cassa amount
 	AmountCassa NullableFloat32 `json:"amount_cassa,omitempty"`
-	// Taxable amount.
+	// Issued document taxable amount
 	TaxableAmount NullableFloat32 `json:"taxable_amount,omitempty"`
-	// Not taxable amount.
+	// Issued document not taxable amount
 	NotTaxableAmount NullableFloat32 `json:"not_taxable_amount,omitempty"`
-	// Total vat amount.
+	// Issued document total vat amount
 	AmountVat NullableFloat32 `json:"amount_vat,omitempty"`
-	// Total grosas amount.
+	// Issued document total gross amount
 	AmountGross NullableFloat32 `json:"amount_gross,omitempty"`
-	// Taxable withholding tax amount.
+	// Issued document Taxable withholding tax amount
 	TaxableAmountWithholdingTax NullableFloat32 `json:"taxable_amount_withholding_tax,omitempty"`
-	// Withholding tax amount.
+	// Issued document withholding tax amount
 	AmountWithholdingTax NullableFloat32 `json:"amount_withholding_tax,omitempty"`
-	// Other withholding tax taxable amount.
+	// Issued document other withholding tax taxable amount
 	TaxableAmountOtherWithholdingTax NullableFloat32 `json:"taxable_amount_other_withholding_tax,omitempty"`
-	// Other withholding tax amount.
+	// Issued document other withholding tax amount
 	AmountOtherWithholdingTax NullableFloat32 `json:"amount_other_withholding_tax,omitempty"`
-	// Stamp duty value [0 if not present].
+	// Issued document stamp duty value [0 if not present].
 	StampDuty NullableFloat32 `json:"stamp_duty,omitempty"`
-	// Total amount due.
+	// Issued document total amount due
 	AmountDue NullableFloat32 `json:"amount_due,omitempty"`
+	// Is enasarco maximal excedeed
 	IsEnasarcoMaximalExceeded NullableBool `json:"is_enasarco_maximal_exceeded,omitempty"`
-	// Payments sum.
+	// Issued document payments sum
 	PaymentsSum NullableFloat32 `json:"payments_sum,omitempty"`
 	VatList map[string]VatItem `json:"vat_list,omitempty"`
 }

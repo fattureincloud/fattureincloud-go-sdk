@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Filename** | Pointer to **string** | Email attachment filename. | [optional] 
-**Url** | Pointer to **string** | Email attachment url. | [optional] 
+**Filename** | Pointer to **string** | Email attachment filename | [optional] 
+**Url** | Pointer to **string** | Email attachment url | [optional] 
 
 ## Methods
 
