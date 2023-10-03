@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.28
+API version: 2.0.30
 Contact: info@fattureincloud.it
 */
 
@@ -22,12 +22,12 @@ import (
 )
 
 
-// ClientsApiService ClientsApi service
-type ClientsApiService service
+// ClientsAPIService ClientsAPI service
+type ClientsAPIService service
 
 type ApiCreateClientRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	companyId int32
 	createClientRequest *CreateClientRequest
 }
@@ -51,7 +51,7 @@ Creates a new client.
  @param companyId The ID of the company.
  @return ApiCreateClientRequest
 */
-func (a *ClientsApiService) CreateClient(ctx context.Context, companyId int32) ApiCreateClientRequest {
+func (a *ClientsAPIService) CreateClient(ctx context.Context, companyId int32) ApiCreateClientRequest {
 	return ApiCreateClientRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -61,7 +61,7 @@ func (a *ClientsApiService) CreateClient(ctx context.Context, companyId int32) A
 
 // Execute executes the request
 //  @return CreateClientResponse
-func (a *ClientsApiService) CreateClientExecute(r ApiCreateClientRequest) (*CreateClientResponse, *http.Response, error) {
+func (a *ClientsAPIService) CreateClientExecute(r ApiCreateClientRequest) (*CreateClientResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -69,7 +69,7 @@ func (a *ClientsApiService) CreateClientExecute(r ApiCreateClientRequest) (*Crea
 		localVarReturnValue  *CreateClientResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.CreateClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.CreateClient")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -139,7 +139,7 @@ func (a *ClientsApiService) CreateClientExecute(r ApiCreateClientRequest) (*Crea
 
 type ApiDeleteClientRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	companyId int32
 	clientId int32
 }
@@ -158,7 +158,7 @@ Deletes the specified client.
  @param clientId The ID of the client.
  @return ApiDeleteClientRequest
 */
-func (a *ClientsApiService) DeleteClient(ctx context.Context, companyId int32, clientId int32) ApiDeleteClientRequest {
+func (a *ClientsAPIService) DeleteClient(ctx context.Context, companyId int32, clientId int32) ApiDeleteClientRequest {
 	return ApiDeleteClientRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -168,14 +168,14 @@ func (a *ClientsApiService) DeleteClient(ctx context.Context, companyId int32, c
 }
 
 // Execute executes the request
-func (a *ClientsApiService) DeleteClientExecute(r ApiDeleteClientRequest) (*http.Response, error) {
+func (a *ClientsAPIService) DeleteClientExecute(r ApiDeleteClientRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.DeleteClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.DeleteClient")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -235,7 +235,7 @@ func (a *ClientsApiService) DeleteClientExecute(r ApiDeleteClientRequest) (*http
 
 type ApiGetClientRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	companyId int32
 	clientId int32
 	fields *string
@@ -268,7 +268,7 @@ Gets the specified client.
  @param clientId The ID of the client.
  @return ApiGetClientRequest
 */
-func (a *ClientsApiService) GetClient(ctx context.Context, companyId int32, clientId int32) ApiGetClientRequest {
+func (a *ClientsAPIService) GetClient(ctx context.Context, companyId int32, clientId int32) ApiGetClientRequest {
 	return ApiGetClientRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -279,7 +279,7 @@ func (a *ClientsApiService) GetClient(ctx context.Context, companyId int32, clie
 
 // Execute executes the request
 //  @return GetClientResponse
-func (a *ClientsApiService) GetClientExecute(r ApiGetClientRequest) (*GetClientResponse, *http.Response, error) {
+func (a *ClientsAPIService) GetClientExecute(r ApiGetClientRequest) (*GetClientResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -287,7 +287,7 @@ func (a *ClientsApiService) GetClientExecute(r ApiGetClientRequest) (*GetClientR
 		localVarReturnValue  *GetClientResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetClient")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -303,8 +303,10 @@ func (a *ClientsApiService) GetClientExecute(r ApiGetClientRequest) (*GetClientR
 	if r.fields != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
 	}
+	}
 	if r.fieldset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
+	}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -362,7 +364,7 @@ func (a *ClientsApiService) GetClientExecute(r ApiGetClientRequest) (*GetClientR
 
 type ApiListClientsRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	companyId int32
 	fields *string
 	fieldset *string
@@ -421,7 +423,7 @@ Lists the clients.
  @param companyId The ID of the company.
  @return ApiListClientsRequest
 */
-func (a *ClientsApiService) ListClients(ctx context.Context, companyId int32) ApiListClientsRequest {
+func (a *ClientsAPIService) ListClients(ctx context.Context, companyId int32) ApiListClientsRequest {
 	return ApiListClientsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -431,7 +433,7 @@ func (a *ClientsApiService) ListClients(ctx context.Context, companyId int32) Ap
 
 // Execute executes the request
 //  @return ListClientsResponse
-func (a *ClientsApiService) ListClientsExecute(r ApiListClientsRequest) (*ListClientsResponse, *http.Response, error) {
+func (a *ClientsAPIService) ListClientsExecute(r ApiListClientsRequest) (*ListClientsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -439,7 +441,7 @@ func (a *ClientsApiService) ListClientsExecute(r ApiListClientsRequest) (*ListCl
 		localVarReturnValue  *ListClientsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.ListClients")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.ListClients")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -454,20 +456,32 @@ func (a *ClientsApiService) ListClientsExecute(r ApiListClientsRequest) (*ListCl
 	if r.fields != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
 	}
+	}
 	if r.fieldset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
+	}
 	}
 	if r.sort != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "")
 	}
+	}
 	if r.page != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
 	}
+	} else {
+ 		var defaultValue int32 = 1
+ 		r.page = &defaultValue
+ 	}
 	if r.perPage != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
 	}
+	} else {
+ 		var defaultValue int32 = 5
+ 		r.perPage = &defaultValue
+ 	}
 	if r.q != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+	}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -525,7 +539,7 @@ func (a *ClientsApiService) ListClientsExecute(r ApiListClientsRequest) (*ListCl
 
 type ApiModifyClientRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	companyId int32
 	clientId int32
 	modifyClientRequest *ModifyClientRequest
@@ -551,7 +565,7 @@ Modifies the specified client.
  @param clientId The ID of the client.
  @return ApiModifyClientRequest
 */
-func (a *ClientsApiService) ModifyClient(ctx context.Context, companyId int32, clientId int32) ApiModifyClientRequest {
+func (a *ClientsAPIService) ModifyClient(ctx context.Context, companyId int32, clientId int32) ApiModifyClientRequest {
 	return ApiModifyClientRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -562,7 +576,7 @@ func (a *ClientsApiService) ModifyClient(ctx context.Context, companyId int32, c
 
 // Execute executes the request
 //  @return ModifyClientResponse
-func (a *ClientsApiService) ModifyClientExecute(r ApiModifyClientRequest) (*ModifyClientResponse, *http.Response, error) {
+func (a *ClientsAPIService) ModifyClientExecute(r ApiModifyClientRequest) (*ModifyClientResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -570,7 +584,7 @@ func (a *ClientsApiService) ModifyClientExecute(r ApiModifyClientRequest) (*Modi
 		localVarReturnValue  *ModifyClientResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.ModifyClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.ModifyClient")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

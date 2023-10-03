@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.28
+API version: 2.0.30
 Contact: info@fattureincloud.it
 */
 
@@ -28,6 +28,7 @@ type WebhooksSubscription struct {
 	Verified NullableBool `json:"verified,omitempty"`
 	// Webhooks events types.
 	Types []EventType `json:"types,omitempty"`
+	Config *WebhooksSubscriptionConfig `json:"config,omitempty"`
 }
 
 // NewWebhooksSubscription instantiates a new WebhooksSubscription object
@@ -213,6 +214,39 @@ func (o *WebhooksSubscription) SetTypes(v []EventType) *WebhooksSubscription {
 	return o
 }
 
+// GetConfig returns the Config field value if set, zero value otherwise.
+func (o *WebhooksSubscription) GetConfig() WebhooksSubscriptionConfig {
+	if o == nil || IsNil(o.Config) {
+		var ret WebhooksSubscriptionConfig
+		return ret
+	}
+	return *o.Config
+}
+
+// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WebhooksSubscription) GetConfigOk() (*WebhooksSubscriptionConfig, bool) {
+	if o == nil || IsNil(o.Config) {
+		return nil, false
+	}
+	return o.Config, true
+}
+
+// HasConfig returns a boolean if a field has been set.
+func (o *WebhooksSubscription) HasConfig() bool {
+	if o != nil && !IsNil(o.Config) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfig gets a reference to the given WebhooksSubscriptionConfig and assigns it to the Config field.
+func (o *WebhooksSubscription) SetConfig(v WebhooksSubscriptionConfig) *WebhooksSubscription {
+	o.Config = &v
+	return o
+}
+
 func (o WebhooksSubscription) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -234,6 +268,9 @@ func (o WebhooksSubscription) ToMap() (map[string]interface{}, error) {
 	}
 	if o.Types != nil {
 		toSerialize["types"] = o.Types
+	}
+	if !IsNil(o.Config) {
+		toSerialize["config"] = o.Config
 	}
 	return toSerialize, nil
 }

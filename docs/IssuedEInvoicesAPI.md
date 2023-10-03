@@ -1,13 +1,13 @@
-# \IssuedEInvoicesApi
+# \IssuedEInvoicesAPI
 
 All URIs are relative to *https://api-v2.fattureincloud.it*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetEInvoiceRejectionReason**](IssuedEInvoicesApi.md#GetEInvoiceRejectionReason) | **Get** /c/{company_id}/issued_documents/{document_id}/e_invoice/error_reason | Get e-invoice rejection reason
-[**GetEInvoiceXml**](IssuedEInvoicesApi.md#GetEInvoiceXml) | **Get** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml | Get e-invoice XML
-[**SendEInvoice**](IssuedEInvoicesApi.md#SendEInvoice) | **Post** /c/{company_id}/issued_documents/{document_id}/e_invoice/send | Send the e-invoice
-[**VerifyEInvoiceXml**](IssuedEInvoicesApi.md#VerifyEInvoiceXml) | **Get** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml_verify | Verify e-invoice XML
+[**GetEInvoiceRejectionReason**](IssuedEInvoicesAPI.md#GetEInvoiceRejectionReason) | **Get** /c/{company_id}/issued_documents/{document_id}/e_invoice/error_reason | Get E-Invoice Rejection Reason
+[**GetEInvoiceXml**](IssuedEInvoicesAPI.md#GetEInvoiceXml) | **Get** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml | Get E-Invoice XML
+[**SendEInvoice**](IssuedEInvoicesAPI.md#SendEInvoice) | **Post** /c/{company_id}/issued_documents/{document_id}/e_invoice/send | Send E-Invoice
+[**VerifyEInvoiceXml**](IssuedEInvoicesAPI.md#VerifyEInvoiceXml) | **Get** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml_verify | Verify E-Invoice XML
 
 
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 > GetEInvoiceRejectionReasonResponse GetEInvoiceRejectionReason(ctx, companyId, documentId).Execute()
 
-Get e-invoice rejection reason
+Get E-Invoice Rejection Reason
 
 
 
@@ -40,9 +40,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedEInvoicesApi.GetEInvoiceRejectionReason(auth, companyId, documentId).Execute()
+    resp, r, err := apiClient.IssuedEInvoicesAPI.GetEInvoiceRejectionReason(auth, companyId, documentId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedEInvoicesApi.GetEInvoiceRejectionReason``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IssuedEInvoicesAPI.GetEInvoiceRejectionReason``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetEInvoiceRejectionReason`: GetEInvoiceRejectionReasonResponse
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 > string GetEInvoiceXml(ctx, companyId, documentId).IncludeAttachment(includeAttachment).Execute()
 
-Get e-invoice XML
+Get E-Invoice XML
 
 
 
@@ -117,9 +117,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedEInvoicesApi.GetEInvoiceXml(auth, companyId, documentId).IncludeAttachment(includeAttachment).Execute()
+    resp, r, err := apiClient.IssuedEInvoicesAPI.GetEInvoiceXml(auth, companyId, documentId).IncludeAttachment(includeAttachment).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedEInvoicesApi.GetEInvoiceXml``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IssuedEInvoicesAPI.GetEInvoiceXml``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetEInvoiceXml`: string
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 > SendEInvoiceResponse SendEInvoice(ctx, companyId, documentId).SendEInvoiceRequest(sendEInvoiceRequest).Execute()
 
-Send the e-invoice
+Send E-Invoice
 
 
 
@@ -195,9 +195,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedEInvoicesApi.SendEInvoice(auth, companyId, documentId).SendEInvoiceRequest(sendEInvoiceRequest).Execute()
+    resp, r, err := apiClient.IssuedEInvoicesAPI.SendEInvoice(auth, companyId, documentId).SendEInvoiceRequest(sendEInvoiceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedEInvoicesApi.SendEInvoice``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IssuedEInvoicesAPI.SendEInvoice``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `SendEInvoice`: SendEInvoiceResponse
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 > VerifyEInvoiceXmlResponse VerifyEInvoiceXml(ctx, companyId, documentId).Execute()
 
-Verify e-invoice XML
+Verify E-Invoice XML
 
 
 
@@ -272,9 +272,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedEInvoicesApi.VerifyEInvoiceXml(auth, companyId, documentId).Execute()
+    resp, r, err := apiClient.IssuedEInvoicesAPI.VerifyEInvoiceXml(auth, companyId, documentId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedEInvoicesApi.VerifyEInvoiceXml``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IssuedEInvoicesAPI.VerifyEInvoiceXml``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VerifyEInvoiceXml`: VerifyEInvoiceXmlResponse

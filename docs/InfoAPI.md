@@ -1,25 +1,25 @@
-# \InfoApi
+# \InfoAPI
 
 All URIs are relative to *https://api-v2.fattureincloud.it*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListArchiveCategories**](InfoApi.md#ListArchiveCategories) | **Get** /c/{company_id}/info/archive_categories | List Archive Categories
-[**ListCities**](InfoApi.md#ListCities) | **Get** /info/cities | List Cities
-[**ListCostCenters**](InfoApi.md#ListCostCenters) | **Get** /c/{company_id}/info/cost_centers | List Cost Centers
-[**ListCountries**](InfoApi.md#ListCountries) | **Get** /info/countries | List Countries
-[**ListCurrencies**](InfoApi.md#ListCurrencies) | **Get** /info/currencies | List Currencies
-[**ListDeliveryNotesDefaultCausals**](InfoApi.md#ListDeliveryNotesDefaultCausals) | **Get** /info/dn_causals | List Delivery Notes Default Causals
-[**ListDetailedCountries**](InfoApi.md#ListDetailedCountries) | **Get** /info/detailed_countries | List Detailed Countries
-[**ListLanguages**](InfoApi.md#ListLanguages) | **Get** /info/languages | List Languages
-[**ListPaymentAccounts**](InfoApi.md#ListPaymentAccounts) | **Get** /c/{company_id}/info/payment_accounts | List Payment Accounts
-[**ListPaymentMethods**](InfoApi.md#ListPaymentMethods) | **Get** /c/{company_id}/info/payment_methods | List Payment Methods
-[**ListProductCategories**](InfoApi.md#ListProductCategories) | **Get** /c/{company_id}/info/product_categories | List Product Categories
-[**ListReceivedDocumentCategories**](InfoApi.md#ListReceivedDocumentCategories) | **Get** /c/{company_id}/info/received_document_categories | List Received Document Categories
-[**ListRevenueCenters**](InfoApi.md#ListRevenueCenters) | **Get** /c/{company_id}/info/revenue_centers | List Revenue Centers
-[**ListTemplates**](InfoApi.md#ListTemplates) | **Get** /info/templates | List Templates
-[**ListUnitsOfMeasure**](InfoApi.md#ListUnitsOfMeasure) | **Get** /info/measures | List Units of Measure
-[**ListVatTypes**](InfoApi.md#ListVatTypes) | **Get** /c/{company_id}/info/vat_types | List Vat Types
+[**ListArchiveCategories**](InfoAPI.md#ListArchiveCategories) | **Get** /c/{company_id}/info/archive_categories | List Archive Categories
+[**ListCities**](InfoAPI.md#ListCities) | **Get** /info/cities | List Cities
+[**ListCostCenters**](InfoAPI.md#ListCostCenters) | **Get** /c/{company_id}/info/cost_centers | List Cost Centers
+[**ListCountries**](InfoAPI.md#ListCountries) | **Get** /info/countries | List Countries
+[**ListCurrencies**](InfoAPI.md#ListCurrencies) | **Get** /info/currencies | List Currencies
+[**ListDeliveryNotesDefaultCausals**](InfoAPI.md#ListDeliveryNotesDefaultCausals) | **Get** /info/dn_causals | List Delivery Notes Default Causals
+[**ListDetailedCountries**](InfoAPI.md#ListDetailedCountries) | **Get** /info/detailed_countries | List Detailed Countries
+[**ListLanguages**](InfoAPI.md#ListLanguages) | **Get** /info/languages | List Languages
+[**ListPaymentAccounts**](InfoAPI.md#ListPaymentAccounts) | **Get** /c/{company_id}/info/payment_accounts | List Payment Accounts
+[**ListPaymentMethods**](InfoAPI.md#ListPaymentMethods) | **Get** /c/{company_id}/info/payment_methods | List Payment Methods
+[**ListProductCategories**](InfoAPI.md#ListProductCategories) | **Get** /c/{company_id}/info/product_categories | List Product Categories
+[**ListReceivedDocumentCategories**](InfoAPI.md#ListReceivedDocumentCategories) | **Get** /c/{company_id}/info/received_document_categories | List Received Document Categories
+[**ListRevenueCenters**](InfoAPI.md#ListRevenueCenters) | **Get** /c/{company_id}/info/revenue_centers | List Revenue Centers
+[**ListTemplates**](InfoAPI.md#ListTemplates) | **Get** /info/templates | List Templates
+[**ListUnitsOfMeasure**](InfoAPI.md#ListUnitsOfMeasure) | **Get** /info/measures | List Units of Measure
+[**ListVatTypes**](InfoAPI.md#ListVatTypes) | **Get** /c/{company_id}/info/vat_types | List Vat Types
 
 
 
@@ -51,9 +51,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.InfoApi.ListArchiveCategories(auth, companyId).Execute()
+    resp, r, err := apiClient.InfoAPI.ListArchiveCategories(auth, companyId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListArchiveCategories``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `InfoAPI.ListArchiveCategories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListArchiveCategories`: ListArchiveCategoriesResponse
@@ -125,9 +125,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.InfoApi.ListCities(auth).PostalCode(postalCode).City(city).Execute()
+    resp, r, err := apiClient.InfoAPI.ListCities(auth).PostalCode(postalCode).City(city).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListCities``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `InfoAPI.ListCities``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListCities`: ListCitiesResponse
@@ -195,9 +195,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.InfoApi.ListCostCenters(auth, companyId).Execute()
+    resp, r, err := apiClient.InfoAPI.ListCostCenters(auth, companyId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListCostCenters``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `InfoAPI.ListCostCenters``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListCostCenters`: ListCostCentersResponse
@@ -267,9 +267,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.InfoApi.ListCountries(auth).Execute()
+    resp, r, err := apiClient.InfoAPI.ListCountries(auth).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListCountries``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `InfoAPI.ListCountries``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListCountries`: ListCountriesResponse
@@ -331,9 +331,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.InfoApi.ListCurrencies(auth).Execute()
+    resp, r, err := apiClient.InfoAPI.ListCurrencies(auth).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListCurrencies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `InfoAPI.ListCurrencies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListCurrencies`: ListCurrenciesResponse
@@ -395,9 +395,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.InfoApi.ListDeliveryNotesDefaultCausals(auth).Execute()
+    resp, r, err := apiClient.InfoAPI.ListDeliveryNotesDefaultCausals(auth).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListDeliveryNotesDefaultCausals``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `InfoAPI.ListDeliveryNotesDefaultCausals``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListDeliveryNotesDefaultCausals`: ListDeliveryNotesDefaultCausalsResponse
@@ -459,9 +459,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.InfoApi.ListDetailedCountries(auth).Execute()
+    resp, r, err := apiClient.InfoAPI.ListDetailedCountries(auth).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListDetailedCountries``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `InfoAPI.ListDetailedCountries``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListDetailedCountries`: ListDetailedCountriesResponse
@@ -523,9 +523,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.InfoApi.ListLanguages(auth).Execute()
+    resp, r, err := apiClient.InfoAPI.ListLanguages(auth).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListLanguages``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `InfoAPI.ListLanguages``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListLanguages`: ListLanguagesResponse
@@ -591,9 +591,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.InfoApi.ListPaymentAccounts(auth, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Execute()
+    resp, r, err := apiClient.InfoAPI.ListPaymentAccounts(auth, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListPaymentAccounts``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `InfoAPI.ListPaymentAccounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListPaymentAccounts`: ListPaymentAccountsResponse
@@ -670,9 +670,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.InfoApi.ListPaymentMethods(auth, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Execute()
+    resp, r, err := apiClient.InfoAPI.ListPaymentMethods(auth, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListPaymentMethods``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `InfoAPI.ListPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListPaymentMethods`: ListPaymentMethodsResponse
@@ -742,14 +742,14 @@ import (
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
-    context := "context_example" // string | 
+    context := "context_example" // string | Categories resource type.
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.InfoApi.ListProductCategories(auth, companyId).Context(context).Execute()
+    resp, r, err := apiClient.InfoAPI.ListProductCategories(auth, companyId).Context(context).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListProductCategories``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `InfoAPI.ListProductCategories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListProductCategories`: ListProductCategoriesResponse
@@ -773,7 +773,7 @@ Other parameters are passed through a pointer to a apiListProductCategoriesReque
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **context** | **string** |  | 
+ **context** | **string** | Categories resource type. | 
 
 ### Return type
 
@@ -821,9 +821,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.InfoApi.ListReceivedDocumentCategories(auth, companyId).Execute()
+    resp, r, err := apiClient.InfoAPI.ListReceivedDocumentCategories(auth, companyId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListReceivedDocumentCategories``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `InfoAPI.ListReceivedDocumentCategories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListReceivedDocumentCategories`: ListReceivedDocumentCategoriesResponse
@@ -894,9 +894,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.InfoApi.ListRevenueCenters(auth, companyId).Execute()
+    resp, r, err := apiClient.InfoAPI.ListRevenueCenters(auth, companyId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListRevenueCenters``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `InfoAPI.ListRevenueCenters``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListRevenueCenters`: ListRevenueCentersResponse
@@ -968,9 +968,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.InfoApi.ListTemplates(auth).Type_(type_).ByType(byType).Execute()
+    resp, r, err := apiClient.InfoAPI.ListTemplates(auth).Type_(type_).ByType(byType).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListTemplates``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `InfoAPI.ListTemplates``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListTemplates`: ListTemplatesResponse
@@ -1037,9 +1037,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.InfoApi.ListUnitsOfMeasure(auth).Execute()
+    resp, r, err := apiClient.InfoAPI.ListUnitsOfMeasure(auth).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListUnitsOfMeasure``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `InfoAPI.ListUnitsOfMeasure``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListUnitsOfMeasure`: ListUnitsOfMeasureResponse
@@ -1103,9 +1103,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.InfoApi.ListVatTypes(auth, companyId).Fieldset(fieldset).Execute()
+    resp, r, err := apiClient.InfoAPI.ListVatTypes(auth, companyId).Fieldset(fieldset).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InfoApi.ListVatTypes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `InfoAPI.ListVatTypes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListVatTypes`: ListVatTypesResponse

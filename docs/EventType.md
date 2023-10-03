@@ -99,6 +99,8 @@
 
 * `PRODUCTS_DELETE` (value: `"it.fattureincloud.webhooks.products.delete"`)
 
+* `PRODUCTS_STOCK_UPDATE` (value: `"it.fattureincloud.webhooks.products.stock_update"`)
+
 * `ENTITIES_CLIENTS_CREATE` (value: `"it.fattureincloud.webhooks.entities.clients.create"`)
 
 * `ENTITIES_CLIENTS_UPDATE` (value: `"it.fattureincloud.webhooks.entities.clients.update"`)
@@ -117,9 +119,9 @@
 
 * `ENTITIES_ALL_DELETE` (value: `"it.fattureincloud.webhooks.entities.all.delete"`)
 
-* `ISSUED_DOCUMENTS_E_INVOICES` (value: `"it.fattureincloud.webhooks.issued_documents.e_invoices"`)
+* `ISSUED_DOCUMENTS_E_INVOICES_STATUS_UPDATE` (value: `"it.fattureincloud.webhooks.issued_documents.e_invoices.status_update"`)
 
-* `RECEIVED_DOCUMENTS_E_INVOICES` (value: `"it.fattureincloud.webhooks.received_documents.e_invoices"`)
+* `RECEIVED_DOCUMENTS_E_INVOICES_STATUS_UPDATE` (value: `"it.fattureincloud.webhooks.received_documents.e_invoices.status_update"`)
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

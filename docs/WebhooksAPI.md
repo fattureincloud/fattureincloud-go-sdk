@@ -1,14 +1,14 @@
-# \WebhooksApi
+# \WebhooksAPI
 
 All URIs are relative to *https://api-v2.fattureincloud.it*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateWebhooksSubscription**](WebhooksApi.md#CreateWebhooksSubscription) | **Post** /c/{company_id}/subscriptions | Create a Webhook Subscription
-[**DeleteWebhooksSubscription**](WebhooksApi.md#DeleteWebhooksSubscription) | **Delete** /c/{company_id}/subscriptions/{subscription_id} | Delete Webhooks Subscription
-[**GetWebhooksSubscription**](WebhooksApi.md#GetWebhooksSubscription) | **Get** /c/{company_id}/subscriptions/{subscription_id} | Get Webhooks Subscription
-[**ListWebhooksSubscriptions**](WebhooksApi.md#ListWebhooksSubscriptions) | **Get** /c/{company_id}/subscriptions | List Webhooks Subscriptions
-[**ModifyWebhooksSubscription**](WebhooksApi.md#ModifyWebhooksSubscription) | **Put** /c/{company_id}/subscriptions/{subscription_id} | Modify Webhooks Subscription
+[**CreateWebhooksSubscription**](WebhooksAPI.md#CreateWebhooksSubscription) | **Post** /c/{company_id}/subscriptions | Create a Webhook Subscription
+[**DeleteWebhooksSubscription**](WebhooksAPI.md#DeleteWebhooksSubscription) | **Delete** /c/{company_id}/subscriptions/{subscription_id} | Delete Webhooks Subscription
+[**GetWebhooksSubscription**](WebhooksAPI.md#GetWebhooksSubscription) | **Get** /c/{company_id}/subscriptions/{subscription_id} | Get Webhooks Subscription
+[**ListWebhooksSubscriptions**](WebhooksAPI.md#ListWebhooksSubscriptions) | **Get** /c/{company_id}/subscriptions | List Webhooks Subscriptions
+[**ModifyWebhooksSubscription**](WebhooksAPI.md#ModifyWebhooksSubscription) | **Put** /c/{company_id}/subscriptions/{subscription_id} | Modify Webhooks Subscription
 
 
 
@@ -41,9 +41,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.CreateWebhooksSubscription(auth, companyId).CreateWebhooksSubscriptionRequest(createWebhooksSubscriptionRequest).Execute()
+    resp, r, err := apiClient.WebhooksAPI.CreateWebhooksSubscription(auth, companyId).CreateWebhooksSubscriptionRequest(createWebhooksSubscriptionRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.CreateWebhooksSubscription``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.CreateWebhooksSubscription``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateWebhooksSubscription`: CreateWebhooksSubscriptionResponse
@@ -116,9 +116,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.DeleteWebhooksSubscription(auth, companyId, subscriptionId).Execute()
+    resp, r, err := apiClient.WebhooksAPI.DeleteWebhooksSubscription(auth, companyId, subscriptionId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.DeleteWebhooksSubscription``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.DeleteWebhooksSubscription``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -190,9 +190,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.GetWebhooksSubscription(auth, companyId, subscriptionId).Execute()
+    resp, r, err := apiClient.WebhooksAPI.GetWebhooksSubscription(auth, companyId, subscriptionId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.GetWebhooksSubscription``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.GetWebhooksSubscription``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetWebhooksSubscription`: GetWebhooksSubscriptionResponse
@@ -265,9 +265,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.ListWebhooksSubscriptions(auth, companyId).Execute()
+    resp, r, err := apiClient.WebhooksAPI.ListWebhooksSubscriptions(auth, companyId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.ListWebhooksSubscriptions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.ListWebhooksSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListWebhooksSubscriptions`: ListWebhooksSubscriptionsResponse
@@ -340,9 +340,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.ModifyWebhooksSubscription(auth, companyId, subscriptionId).ModifyWebhooksSubscriptionRequest(modifyWebhooksSubscriptionRequest).Execute()
+    resp, r, err := apiClient.WebhooksAPI.ModifyWebhooksSubscription(auth, companyId, subscriptionId).ModifyWebhooksSubscriptionRequest(modifyWebhooksSubscriptionRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.ModifyWebhooksSubscription``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.ModifyWebhooksSubscription``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ModifyWebhooksSubscription`: ModifyWebhooksSubscriptionResponse

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.28
+API version: 2.0.30
 Contact: info@fattureincloud.it
 */
 
@@ -41,6 +41,8 @@ type IssuedDocumentPaymentsListItem struct {
 // will change when the set of required properties is changed
 func NewIssuedDocumentPaymentsListItem() *IssuedDocumentPaymentsListItem {
 	this := IssuedDocumentPaymentsListItem{}
+	var status IssuedDocumentStatus = NOT_PAID
+	this.Status = &status
 	return &this
 }
 

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.28
+API version: 2.0.30
 Contact: info@fattureincloud.it
 */
 
@@ -23,12 +23,12 @@ import (
 )
 
 
-// TaxesApiService TaxesApi service
-type TaxesApiService service
+// TaxesAPIService TaxesAPI service
+type TaxesAPIService service
 
 type ApiCreateF24Request struct {
 	ctx context.Context
-	ApiService *TaxesApiService
+	ApiService *TaxesAPIService
 	companyId int32
 	createF24Request *CreateF24Request
 }
@@ -52,7 +52,7 @@ Creates a new F24.
  @param companyId The ID of the company.
  @return ApiCreateF24Request
 */
-func (a *TaxesApiService) CreateF24(ctx context.Context, companyId int32) ApiCreateF24Request {
+func (a *TaxesAPIService) CreateF24(ctx context.Context, companyId int32) ApiCreateF24Request {
 	return ApiCreateF24Request{
 		ApiService: a,
 		ctx: ctx,
@@ -62,7 +62,7 @@ func (a *TaxesApiService) CreateF24(ctx context.Context, companyId int32) ApiCre
 
 // Execute executes the request
 //  @return CreateF24Response
-func (a *TaxesApiService) CreateF24Execute(r ApiCreateF24Request) (*CreateF24Response, *http.Response, error) {
+func (a *TaxesAPIService) CreateF24Execute(r ApiCreateF24Request) (*CreateF24Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -70,7 +70,7 @@ func (a *TaxesApiService) CreateF24Execute(r ApiCreateF24Request) (*CreateF24Res
 		localVarReturnValue  *CreateF24Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesApiService.CreateF24")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesAPIService.CreateF24")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,7 +140,7 @@ func (a *TaxesApiService) CreateF24Execute(r ApiCreateF24Request) (*CreateF24Res
 
 type ApiDeleteF24Request struct {
 	ctx context.Context
-	ApiService *TaxesApiService
+	ApiService *TaxesAPIService
 	companyId int32
 	documentId int32
 }
@@ -159,7 +159,7 @@ Removes the specified F24.
  @param documentId The ID of the document.
  @return ApiDeleteF24Request
 */
-func (a *TaxesApiService) DeleteF24(ctx context.Context, companyId int32, documentId int32) ApiDeleteF24Request {
+func (a *TaxesAPIService) DeleteF24(ctx context.Context, companyId int32, documentId int32) ApiDeleteF24Request {
 	return ApiDeleteF24Request{
 		ApiService: a,
 		ctx: ctx,
@@ -169,14 +169,14 @@ func (a *TaxesApiService) DeleteF24(ctx context.Context, companyId int32, docume
 }
 
 // Execute executes the request
-func (a *TaxesApiService) DeleteF24Execute(r ApiDeleteF24Request) (*http.Response, error) {
+func (a *TaxesAPIService) DeleteF24Execute(r ApiDeleteF24Request) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesApiService.DeleteF24")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesAPIService.DeleteF24")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -236,7 +236,7 @@ func (a *TaxesApiService) DeleteF24Execute(r ApiDeleteF24Request) (*http.Respons
 
 type ApiDeleteF24AttachmentRequest struct {
 	ctx context.Context
-	ApiService *TaxesApiService
+	ApiService *TaxesAPIService
 	companyId int32
 	documentId int32
 }
@@ -255,7 +255,7 @@ Removes the attachment of the specified F24.
  @param documentId The ID of the document.
  @return ApiDeleteF24AttachmentRequest
 */
-func (a *TaxesApiService) DeleteF24Attachment(ctx context.Context, companyId int32, documentId int32) ApiDeleteF24AttachmentRequest {
+func (a *TaxesAPIService) DeleteF24Attachment(ctx context.Context, companyId int32, documentId int32) ApiDeleteF24AttachmentRequest {
 	return ApiDeleteF24AttachmentRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -265,14 +265,14 @@ func (a *TaxesApiService) DeleteF24Attachment(ctx context.Context, companyId int
 }
 
 // Execute executes the request
-func (a *TaxesApiService) DeleteF24AttachmentExecute(r ApiDeleteF24AttachmentRequest) (*http.Response, error) {
+func (a *TaxesAPIService) DeleteF24AttachmentExecute(r ApiDeleteF24AttachmentRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesApiService.DeleteF24Attachment")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesAPIService.DeleteF24Attachment")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -332,7 +332,7 @@ func (a *TaxesApiService) DeleteF24AttachmentExecute(r ApiDeleteF24AttachmentReq
 
 type ApiGetF24Request struct {
 	ctx context.Context
-	ApiService *TaxesApiService
+	ApiService *TaxesAPIService
 	companyId int32
 	documentId int32
 	fields *string
@@ -365,7 +365,7 @@ Gets the specified F24.
  @param documentId The ID of the document.
  @return ApiGetF24Request
 */
-func (a *TaxesApiService) GetF24(ctx context.Context, companyId int32, documentId int32) ApiGetF24Request {
+func (a *TaxesAPIService) GetF24(ctx context.Context, companyId int32, documentId int32) ApiGetF24Request {
 	return ApiGetF24Request{
 		ApiService: a,
 		ctx: ctx,
@@ -376,7 +376,7 @@ func (a *TaxesApiService) GetF24(ctx context.Context, companyId int32, documentI
 
 // Execute executes the request
 //  @return GetF24Response
-func (a *TaxesApiService) GetF24Execute(r ApiGetF24Request) (*GetF24Response, *http.Response, error) {
+func (a *TaxesAPIService) GetF24Execute(r ApiGetF24Request) (*GetF24Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -384,7 +384,7 @@ func (a *TaxesApiService) GetF24Execute(r ApiGetF24Request) (*GetF24Response, *h
 		localVarReturnValue  *GetF24Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesApiService.GetF24")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesAPIService.GetF24")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -400,8 +400,10 @@ func (a *TaxesApiService) GetF24Execute(r ApiGetF24Request) (*GetF24Response, *h
 	if r.fields != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
 	}
+	}
 	if r.fieldset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
+	}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -459,7 +461,7 @@ func (a *TaxesApiService) GetF24Execute(r ApiGetF24Request) (*GetF24Response, *h
 
 type ApiListF24Request struct {
 	ctx context.Context
-	ApiService *TaxesApiService
+	ApiService *TaxesAPIService
 	companyId int32
 	fields *string
 	fieldset *string
@@ -518,7 +520,7 @@ Lists the F24s.
  @param companyId The ID of the company.
  @return ApiListF24Request
 */
-func (a *TaxesApiService) ListF24(ctx context.Context, companyId int32) ApiListF24Request {
+func (a *TaxesAPIService) ListF24(ctx context.Context, companyId int32) ApiListF24Request {
 	return ApiListF24Request{
 		ApiService: a,
 		ctx: ctx,
@@ -528,7 +530,7 @@ func (a *TaxesApiService) ListF24(ctx context.Context, companyId int32) ApiListF
 
 // Execute executes the request
 //  @return ListF24Response
-func (a *TaxesApiService) ListF24Execute(r ApiListF24Request) (*ListF24Response, *http.Response, error) {
+func (a *TaxesAPIService) ListF24Execute(r ApiListF24Request) (*ListF24Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -536,7 +538,7 @@ func (a *TaxesApiService) ListF24Execute(r ApiListF24Request) (*ListF24Response,
 		localVarReturnValue  *ListF24Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesApiService.ListF24")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesAPIService.ListF24")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -551,20 +553,32 @@ func (a *TaxesApiService) ListF24Execute(r ApiListF24Request) (*ListF24Response,
 	if r.fields != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
 	}
+	}
 	if r.fieldset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
+	}
 	}
 	if r.sort != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "")
 	}
+	}
 	if r.page != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
 	}
+	} else {
+ 		var defaultValue int32 = 1
+ 		r.page = &defaultValue
+ 	}
 	if r.perPage != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
 	}
+	} else {
+ 		var defaultValue int32 = 5
+ 		r.perPage = &defaultValue
+ 	}
 	if r.q != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+	}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -622,7 +636,7 @@ func (a *TaxesApiService) ListF24Execute(r ApiListF24Request) (*ListF24Response,
 
 type ApiModifyF24Request struct {
 	ctx context.Context
-	ApiService *TaxesApiService
+	ApiService *TaxesAPIService
 	companyId int32
 	documentId int32
 	modifyF24Request *ModifyF24Request
@@ -648,7 +662,7 @@ Modifies the specified F24.
  @param documentId The ID of the document.
  @return ApiModifyF24Request
 */
-func (a *TaxesApiService) ModifyF24(ctx context.Context, companyId int32, documentId int32) ApiModifyF24Request {
+func (a *TaxesAPIService) ModifyF24(ctx context.Context, companyId int32, documentId int32) ApiModifyF24Request {
 	return ApiModifyF24Request{
 		ApiService: a,
 		ctx: ctx,
@@ -659,7 +673,7 @@ func (a *TaxesApiService) ModifyF24(ctx context.Context, companyId int32, docume
 
 // Execute executes the request
 //  @return ModifyF24Response
-func (a *TaxesApiService) ModifyF24Execute(r ApiModifyF24Request) (*ModifyF24Response, *http.Response, error) {
+func (a *TaxesAPIService) ModifyF24Execute(r ApiModifyF24Request) (*ModifyF24Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -667,7 +681,7 @@ func (a *TaxesApiService) ModifyF24Execute(r ApiModifyF24Request) (*ModifyF24Res
 		localVarReturnValue  *ModifyF24Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesApiService.ModifyF24")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesAPIService.ModifyF24")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -738,7 +752,7 @@ func (a *TaxesApiService) ModifyF24Execute(r ApiModifyF24Request) (*ModifyF24Res
 
 type ApiUploadF24AttachmentRequest struct {
 	ctx context.Context
-	ApiService *TaxesApiService
+	ApiService *TaxesAPIService
 	companyId int32
 	filename *string
 	attachment *os.File
@@ -769,7 +783,7 @@ Uploads an attachment destined to a F24. The actual association between the docu
  @param companyId The ID of the company.
  @return ApiUploadF24AttachmentRequest
 */
-func (a *TaxesApiService) UploadF24Attachment(ctx context.Context, companyId int32) ApiUploadF24AttachmentRequest {
+func (a *TaxesAPIService) UploadF24Attachment(ctx context.Context, companyId int32) ApiUploadF24AttachmentRequest {
 	return ApiUploadF24AttachmentRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -779,7 +793,7 @@ func (a *TaxesApiService) UploadF24Attachment(ctx context.Context, companyId int
 
 // Execute executes the request
 //  @return UploadF24AttachmentResponse
-func (a *TaxesApiService) UploadF24AttachmentExecute(r ApiUploadF24AttachmentRequest) (*UploadF24AttachmentResponse, *http.Response, error) {
+func (a *TaxesAPIService) UploadF24AttachmentExecute(r ApiUploadF24AttachmentRequest) (*UploadF24AttachmentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -787,7 +801,7 @@ func (a *TaxesApiService) UploadF24AttachmentExecute(r ApiUploadF24AttachmentReq
 		localVarReturnValue  *UploadF24AttachmentResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesApiService.UploadF24Attachment")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxesAPIService.UploadF24Attachment")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

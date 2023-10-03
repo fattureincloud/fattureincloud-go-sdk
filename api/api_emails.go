@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.28
+API version: 2.0.30
 Contact: info@fattureincloud.it
 */
 
@@ -22,12 +22,12 @@ import (
 )
 
 
-// EmailsApiService EmailsApi service
-type EmailsApiService service
+// EmailsAPIService EmailsAPI service
+type EmailsAPIService service
 
 type ApiListEmailsRequest struct {
 	ctx context.Context
-	ApiService *EmailsApiService
+	ApiService *EmailsAPIService
 	companyId int32
 }
 
@@ -36,7 +36,7 @@ func (r ApiListEmailsRequest) Execute() (*ListEmailsResponse, *http.Response, er
 }
 
 /*
-ListEmails List emails
+ListEmails List Emails
 
 List Emails.
 
@@ -44,7 +44,7 @@ List Emails.
  @param companyId The ID of the company.
  @return ApiListEmailsRequest
 */
-func (a *EmailsApiService) ListEmails(ctx context.Context, companyId int32) ApiListEmailsRequest {
+func (a *EmailsAPIService) ListEmails(ctx context.Context, companyId int32) ApiListEmailsRequest {
 	return ApiListEmailsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -54,7 +54,7 @@ func (a *EmailsApiService) ListEmails(ctx context.Context, companyId int32) ApiL
 
 // Execute executes the request
 //  @return ListEmailsResponse
-func (a *EmailsApiService) ListEmailsExecute(r ApiListEmailsRequest) (*ListEmailsResponse, *http.Response, error) {
+func (a *EmailsAPIService) ListEmailsExecute(r ApiListEmailsRequest) (*ListEmailsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -62,7 +62,7 @@ func (a *EmailsApiService) ListEmailsExecute(r ApiListEmailsRequest) (*ListEmail
 		localVarReturnValue  *ListEmailsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EmailsApiService.ListEmails")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EmailsAPIService.ListEmails")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

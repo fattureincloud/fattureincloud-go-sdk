@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.28
+API version: 2.0.30
 Contact: info@fattureincloud.it
 */
 
@@ -22,12 +22,12 @@ import (
 )
 
 
-// WebhooksApiService WebhooksApi service
-type WebhooksApiService service
+// WebhooksAPIService WebhooksAPI service
+type WebhooksAPIService service
 
 type ApiCreateWebhooksSubscriptionRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	companyId int32
 	createWebhooksSubscriptionRequest *CreateWebhooksSubscriptionRequest
 }
@@ -51,7 +51,7 @@ Register some webhooks Subscriptions.
  @param companyId The ID of the company.
  @return ApiCreateWebhooksSubscriptionRequest
 */
-func (a *WebhooksApiService) CreateWebhooksSubscription(ctx context.Context, companyId int32) ApiCreateWebhooksSubscriptionRequest {
+func (a *WebhooksAPIService) CreateWebhooksSubscription(ctx context.Context, companyId int32) ApiCreateWebhooksSubscriptionRequest {
 	return ApiCreateWebhooksSubscriptionRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -61,7 +61,7 @@ func (a *WebhooksApiService) CreateWebhooksSubscription(ctx context.Context, com
 
 // Execute executes the request
 //  @return CreateWebhooksSubscriptionResponse
-func (a *WebhooksApiService) CreateWebhooksSubscriptionExecute(r ApiCreateWebhooksSubscriptionRequest) (*CreateWebhooksSubscriptionResponse, *http.Response, error) {
+func (a *WebhooksAPIService) CreateWebhooksSubscriptionExecute(r ApiCreateWebhooksSubscriptionRequest) (*CreateWebhooksSubscriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -69,7 +69,7 @@ func (a *WebhooksApiService) CreateWebhooksSubscriptionExecute(r ApiCreateWebhoo
 		localVarReturnValue  *CreateWebhooksSubscriptionResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.CreateWebhooksSubscription")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.CreateWebhooksSubscription")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -139,7 +139,7 @@ func (a *WebhooksApiService) CreateWebhooksSubscriptionExecute(r ApiCreateWebhoo
 
 type ApiDeleteWebhooksSubscriptionRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	companyId int32
 	subscriptionId string
 }
@@ -158,7 +158,7 @@ Delete a webhooks subscription.
  @param subscriptionId The ID of the subscription.
  @return ApiDeleteWebhooksSubscriptionRequest
 */
-func (a *WebhooksApiService) DeleteWebhooksSubscription(ctx context.Context, companyId int32, subscriptionId string) ApiDeleteWebhooksSubscriptionRequest {
+func (a *WebhooksAPIService) DeleteWebhooksSubscription(ctx context.Context, companyId int32, subscriptionId string) ApiDeleteWebhooksSubscriptionRequest {
 	return ApiDeleteWebhooksSubscriptionRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -168,14 +168,14 @@ func (a *WebhooksApiService) DeleteWebhooksSubscription(ctx context.Context, com
 }
 
 // Execute executes the request
-func (a *WebhooksApiService) DeleteWebhooksSubscriptionExecute(r ApiDeleteWebhooksSubscriptionRequest) (*http.Response, error) {
+func (a *WebhooksAPIService) DeleteWebhooksSubscriptionExecute(r ApiDeleteWebhooksSubscriptionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.DeleteWebhooksSubscription")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.DeleteWebhooksSubscription")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -235,7 +235,7 @@ func (a *WebhooksApiService) DeleteWebhooksSubscriptionExecute(r ApiDeleteWebhoo
 
 type ApiGetWebhooksSubscriptionRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	companyId int32
 	subscriptionId string
 }
@@ -254,7 +254,7 @@ Get a webhooks subscription.
  @param subscriptionId The ID of the subscription.
  @return ApiGetWebhooksSubscriptionRequest
 */
-func (a *WebhooksApiService) GetWebhooksSubscription(ctx context.Context, companyId int32, subscriptionId string) ApiGetWebhooksSubscriptionRequest {
+func (a *WebhooksAPIService) GetWebhooksSubscription(ctx context.Context, companyId int32, subscriptionId string) ApiGetWebhooksSubscriptionRequest {
 	return ApiGetWebhooksSubscriptionRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -265,7 +265,7 @@ func (a *WebhooksApiService) GetWebhooksSubscription(ctx context.Context, compan
 
 // Execute executes the request
 //  @return GetWebhooksSubscriptionResponse
-func (a *WebhooksApiService) GetWebhooksSubscriptionExecute(r ApiGetWebhooksSubscriptionRequest) (*GetWebhooksSubscriptionResponse, *http.Response, error) {
+func (a *WebhooksAPIService) GetWebhooksSubscriptionExecute(r ApiGetWebhooksSubscriptionRequest) (*GetWebhooksSubscriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -273,7 +273,7 @@ func (a *WebhooksApiService) GetWebhooksSubscriptionExecute(r ApiGetWebhooksSubs
 		localVarReturnValue  *GetWebhooksSubscriptionResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.GetWebhooksSubscription")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.GetWebhooksSubscription")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -342,7 +342,7 @@ func (a *WebhooksApiService) GetWebhooksSubscriptionExecute(r ApiGetWebhooksSubs
 
 type ApiListWebhooksSubscriptionsRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	companyId int32
 }
 
@@ -359,7 +359,7 @@ List active webhooks subscriptions.
  @param companyId The ID of the company.
  @return ApiListWebhooksSubscriptionsRequest
 */
-func (a *WebhooksApiService) ListWebhooksSubscriptions(ctx context.Context, companyId int32) ApiListWebhooksSubscriptionsRequest {
+func (a *WebhooksAPIService) ListWebhooksSubscriptions(ctx context.Context, companyId int32) ApiListWebhooksSubscriptionsRequest {
 	return ApiListWebhooksSubscriptionsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -369,7 +369,7 @@ func (a *WebhooksApiService) ListWebhooksSubscriptions(ctx context.Context, comp
 
 // Execute executes the request
 //  @return ListWebhooksSubscriptionsResponse
-func (a *WebhooksApiService) ListWebhooksSubscriptionsExecute(r ApiListWebhooksSubscriptionsRequest) (*ListWebhooksSubscriptionsResponse, *http.Response, error) {
+func (a *WebhooksAPIService) ListWebhooksSubscriptionsExecute(r ApiListWebhooksSubscriptionsRequest) (*ListWebhooksSubscriptionsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -377,7 +377,7 @@ func (a *WebhooksApiService) ListWebhooksSubscriptionsExecute(r ApiListWebhooksS
 		localVarReturnValue  *ListWebhooksSubscriptionsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.ListWebhooksSubscriptions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.ListWebhooksSubscriptions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -445,7 +445,7 @@ func (a *WebhooksApiService) ListWebhooksSubscriptionsExecute(r ApiListWebhooksS
 
 type ApiModifyWebhooksSubscriptionRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	companyId int32
 	subscriptionId string
 	modifyWebhooksSubscriptionRequest *ModifyWebhooksSubscriptionRequest
@@ -470,7 +470,7 @@ Edit a webhooks subscription.
  @param subscriptionId The ID of the subscription.
  @return ApiModifyWebhooksSubscriptionRequest
 */
-func (a *WebhooksApiService) ModifyWebhooksSubscription(ctx context.Context, companyId int32, subscriptionId string) ApiModifyWebhooksSubscriptionRequest {
+func (a *WebhooksAPIService) ModifyWebhooksSubscription(ctx context.Context, companyId int32, subscriptionId string) ApiModifyWebhooksSubscriptionRequest {
 	return ApiModifyWebhooksSubscriptionRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -481,7 +481,7 @@ func (a *WebhooksApiService) ModifyWebhooksSubscription(ctx context.Context, com
 
 // Execute executes the request
 //  @return ModifyWebhooksSubscriptionResponse
-func (a *WebhooksApiService) ModifyWebhooksSubscriptionExecute(r ApiModifyWebhooksSubscriptionRequest) (*ModifyWebhooksSubscriptionResponse, *http.Response, error) {
+func (a *WebhooksAPIService) ModifyWebhooksSubscriptionExecute(r ApiModifyWebhooksSubscriptionRequest) (*ModifyWebhooksSubscriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -489,7 +489,7 @@ func (a *WebhooksApiService) ModifyWebhooksSubscriptionExecute(r ApiModifyWebhoo
 		localVarReturnValue  *ModifyWebhooksSubscriptionResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.ModifyWebhooksSubscription")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.ModifyWebhooksSubscription")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

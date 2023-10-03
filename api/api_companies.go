@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.28
+API version: 2.0.30
 Contact: info@fattureincloud.it
 */
 
@@ -22,12 +22,12 @@ import (
 )
 
 
-// CompaniesApiService CompaniesApi service
-type CompaniesApiService service
+// CompaniesAPIService CompaniesAPI service
+type CompaniesAPIService service
 
 type ApiGetCompanyInfoRequest struct {
 	ctx context.Context
-	ApiService *CompaniesApiService
+	ApiService *CompaniesAPIService
 	companyId int32
 }
 
@@ -44,7 +44,7 @@ Gets the company detailed info.
  @param companyId The ID of the company.
  @return ApiGetCompanyInfoRequest
 */
-func (a *CompaniesApiService) GetCompanyInfo(ctx context.Context, companyId int32) ApiGetCompanyInfoRequest {
+func (a *CompaniesAPIService) GetCompanyInfo(ctx context.Context, companyId int32) ApiGetCompanyInfoRequest {
 	return ApiGetCompanyInfoRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -54,7 +54,7 @@ func (a *CompaniesApiService) GetCompanyInfo(ctx context.Context, companyId int3
 
 // Execute executes the request
 //  @return GetCompanyInfoResponse
-func (a *CompaniesApiService) GetCompanyInfoExecute(r ApiGetCompanyInfoRequest) (*GetCompanyInfoResponse, *http.Response, error) {
+func (a *CompaniesAPIService) GetCompanyInfoExecute(r ApiGetCompanyInfoRequest) (*GetCompanyInfoResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -62,7 +62,7 @@ func (a *CompaniesApiService) GetCompanyInfoExecute(r ApiGetCompanyInfoRequest) 
 		localVarReturnValue  *GetCompanyInfoResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CompaniesApiService.GetCompanyInfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CompaniesAPIService.GetCompanyInfo")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

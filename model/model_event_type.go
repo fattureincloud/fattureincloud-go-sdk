@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.28
+API version: 2.0.30
 Contact: info@fattureincloud.it
 */
 
@@ -69,6 +69,7 @@ var EventTypes = struct {
 	PRODUCTS_CREATE EventType
 	PRODUCTS_UPDATE EventType
 	PRODUCTS_DELETE EventType
+	PRODUCTS_STOCK_UPDATE EventType
 	ENTITIES_CLIENTS_CREATE EventType
 	ENTITIES_CLIENTS_UPDATE EventType
 	ENTITIES_CLIENTS_DELETE EventType
@@ -78,8 +79,8 @@ var EventTypes = struct {
 	ENTITIES_ALL_CREATE EventType
 	ENTITIES_ALL_UPDATE EventType
 	ENTITIES_ALL_DELETE EventType
-	ISSUED_DOCUMENTS_E_INVOICES EventType
-	RECEIVED_DOCUMENTS_E_INVOICES EventType
+	ISSUED_DOCUMENTS_E_INVOICES_STATUS_UPDATE EventType
+	RECEIVED_DOCUMENTS_E_INVOICES_STATUS_UPDATE EventType
 } {
 	ISSUED_DOCUMENTS_INVOICES_CREATE: "it.fattureincloud.webhooks.issued_documents.invoices.create",
 	ISSUED_DOCUMENTS_INVOICES_UPDATE: "it.fattureincloud.webhooks.issued_documents.invoices.update",
@@ -129,6 +130,7 @@ var EventTypes = struct {
 	PRODUCTS_CREATE: "it.fattureincloud.webhooks.products.create",
 	PRODUCTS_UPDATE: "it.fattureincloud.webhooks.products.update",
 	PRODUCTS_DELETE: "it.fattureincloud.webhooks.products.delete",
+	PRODUCTS_STOCK_UPDATE: "it.fattureincloud.webhooks.products.stock_update",
 	ENTITIES_CLIENTS_CREATE: "it.fattureincloud.webhooks.entities.clients.create",
 	ENTITIES_CLIENTS_UPDATE: "it.fattureincloud.webhooks.entities.clients.update",
 	ENTITIES_CLIENTS_DELETE: "it.fattureincloud.webhooks.entities.clients.delete",
@@ -138,8 +140,8 @@ var EventTypes = struct {
 	ENTITIES_ALL_CREATE: "it.fattureincloud.webhooks.entities.all.create",
 	ENTITIES_ALL_UPDATE: "it.fattureincloud.webhooks.entities.all.update",
 	ENTITIES_ALL_DELETE: "it.fattureincloud.webhooks.entities.all.delete",
-	ISSUED_DOCUMENTS_E_INVOICES: "it.fattureincloud.webhooks.issued_documents.e_invoices",
-	RECEIVED_DOCUMENTS_E_INVOICES: "it.fattureincloud.webhooks.received_documents.e_invoices",
+	ISSUED_DOCUMENTS_E_INVOICES_STATUS_UPDATE: "it.fattureincloud.webhooks.issued_documents.e_invoices.status_update",
+	RECEIVED_DOCUMENTS_E_INVOICES_STATUS_UPDATE: "it.fattureincloud.webhooks.received_documents.e_invoices.status_update",
 }
 
 // All allowed values of EventType enum
@@ -192,6 +194,7 @@ var AllowedEventTypeEnumValues = []EventType{
 	"it.fattureincloud.webhooks.products.create",
 	"it.fattureincloud.webhooks.products.update",
 	"it.fattureincloud.webhooks.products.delete",
+	"it.fattureincloud.webhooks.products.stock_update",
 	"it.fattureincloud.webhooks.entities.clients.create",
 	"it.fattureincloud.webhooks.entities.clients.update",
 	"it.fattureincloud.webhooks.entities.clients.delete",
@@ -201,8 +204,8 @@ var AllowedEventTypeEnumValues = []EventType{
 	"it.fattureincloud.webhooks.entities.all.create",
 	"it.fattureincloud.webhooks.entities.all.update",
 	"it.fattureincloud.webhooks.entities.all.delete",
-	"it.fattureincloud.webhooks.issued_documents.e_invoices",
-	"it.fattureincloud.webhooks.received_documents.e_invoices",
+	"it.fattureincloud.webhooks.issued_documents.e_invoices.status_update",
+	"it.fattureincloud.webhooks.received_documents.e_invoices.status_update",
 }
 
 func (v *EventType) UnmarshalJSON(src []byte) error {

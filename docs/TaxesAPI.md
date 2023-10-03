@@ -1,22 +1,24 @@
-# \ClientsApi
+# \TaxesAPI
 
 All URIs are relative to *https://api-v2.fattureincloud.it*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateClient**](ClientsApi.md#CreateClient) | **Post** /c/{company_id}/entities/clients | Create Client
-[**DeleteClient**](ClientsApi.md#DeleteClient) | **Delete** /c/{company_id}/entities/clients/{client_id} | Delete Client
-[**GetClient**](ClientsApi.md#GetClient) | **Get** /c/{company_id}/entities/clients/{client_id} | Get Client
-[**ListClients**](ClientsApi.md#ListClients) | **Get** /c/{company_id}/entities/clients | List Clients
-[**ModifyClient**](ClientsApi.md#ModifyClient) | **Put** /c/{company_id}/entities/clients/{client_id} | Modify Client
+[**CreateF24**](TaxesAPI.md#CreateF24) | **Post** /c/{company_id}/taxes | Create F24
+[**DeleteF24**](TaxesAPI.md#DeleteF24) | **Delete** /c/{company_id}/taxes/{document_id} | Delete F24
+[**DeleteF24Attachment**](TaxesAPI.md#DeleteF24Attachment) | **Delete** /c/{company_id}/taxes/{document_id}/attachment | Delete F24 Attachment
+[**GetF24**](TaxesAPI.md#GetF24) | **Get** /c/{company_id}/taxes/{document_id} | Get F24
+[**ListF24**](TaxesAPI.md#ListF24) | **Get** /c/{company_id}/taxes | List F24
+[**ModifyF24**](TaxesAPI.md#ModifyF24) | **Put** /c/{company_id}/taxes/{document_id} | Modify F24
+[**UploadF24Attachment**](TaxesAPI.md#UploadF24Attachment) | **Post** /c/{company_id}/taxes/attachment | Upload F24 Attachment
 
 
 
-## CreateClient
+## CreateF24
 
-> CreateClientResponse CreateClient(ctx, companyId).CreateClientRequest(createClientRequest).Execute()
+> CreateF24Response CreateF24(ctx, companyId).CreateF24Request(createF24Request).Execute()
 
-Create Client
+Create F24
 
 
 
@@ -36,17 +38,17 @@ import (
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
-    createClientRequest := *fattureincloud.NewCreateClientRequest() // CreateClientRequest | The client to create (optional)
+    createF24Request := *fattureincloud.NewCreateF24Request() // CreateF24Request | The F24 to create (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ClientsApi.CreateClient(auth, companyId).CreateClientRequest(createClientRequest).Execute()
+    resp, r, err := apiClient.TaxesAPI.CreateF24(auth, companyId).CreateF24Request(createF24Request).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ClientsApi.CreateClient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TaxesAPI.CreateF24``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateClient`: CreateClientResponse
+    // response from `CreateF24`: CreateF24Response
     json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
@@ -61,17 +63,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateClientRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateF24Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createClientRequest** | [**CreateClientRequest**](CreateClientRequest.md) | The client to create | 
+ **createF24Request** | [**CreateF24Request**](CreateF24Request.md) | The F24 to create | 
 
 ### Return type
 
-[**CreateClientResponse**](CreateClientResponse.md)
+[**CreateF24Response**](CreateF24Response.md)
 
 ### Authorization
 
@@ -87,11 +89,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteClient
+## DeleteF24
 
-> DeleteClient(ctx, companyId, clientId).Execute()
+> DeleteF24(ctx, companyId, documentId).Execute()
 
-Delete Client
+Delete F24
 
 
 
@@ -111,14 +113,14 @@ import (
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
-    clientId := int32(56) // int32 | The ID of the client.
+    documentId := int32(56) // int32 | The ID of the document.
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ClientsApi.DeleteClient(auth, companyId, clientId).Execute()
+    resp, r, err := apiClient.TaxesAPI.DeleteF24(auth, companyId, documentId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ClientsApi.DeleteClient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TaxesAPI.DeleteF24``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -131,11 +133,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **companyId** | **int32** | The ID of the company. | 
-**clientId** | **int32** | The ID of the client. | 
+**documentId** | **int32** | The ID of the document. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteClientRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteF24Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -161,11 +163,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetClient
+## DeleteF24Attachment
 
-> GetClientResponse GetClient(ctx, companyId, clientId).Fields(fields).Fieldset(fieldset).Execute()
+> DeleteF24Attachment(ctx, companyId, documentId).Execute()
 
-Get Client
+Delete F24 Attachment
 
 
 
@@ -185,19 +187,93 @@ import (
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
-    clientId := int32(56) // int32 | The ID of the client.
+    documentId := int32(56) // int32 | The ID of the document.
+
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
+    resp, r, err := apiClient.TaxesAPI.DeleteF24Attachment(auth, companyId, documentId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `TaxesAPI.DeleteF24Attachment``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**companyId** | **int32** | The ID of the company. | 
+**documentId** | **int32** | The ID of the document. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteF24AttachmentRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetF24
+
+> GetF24Response GetF24(ctx, companyId, documentId).Fields(fields).Fieldset(fieldset).Execute()
+
+Get F24
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "encoding/json"
+    "fmt"
+    "os"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+)
+
+func main() {
+    companyId := int32(12345) // int32 | The ID of the company.
+    documentId := int32(56) // int32 | The ID of the document.
     fields := "fields_example" // string | List of comma-separated fields. (optional)
     fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ClientsApi.GetClient(auth, companyId, clientId).Fields(fields).Fieldset(fieldset).Execute()
+    resp, r, err := apiClient.TaxesAPI.GetF24(auth, companyId, documentId).Fields(fields).Fieldset(fieldset).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ClientsApi.GetClient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TaxesAPI.GetF24``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetClient`: GetClientResponse
+    // response from `GetF24`: GetF24Response
     json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
@@ -209,11 +285,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **companyId** | **int32** | The ID of the company. | 
-**clientId** | **int32** | The ID of the client. | 
+**documentId** | **int32** | The ID of the document. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetClientRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetF24Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -225,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetClientResponse**](GetClientResponse.md)
+[**GetF24Response**](GetF24Response.md)
 
 ### Authorization
 
@@ -241,11 +317,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListClients
+## ListF24
 
-> ListClientsResponse ListClients(ctx, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
+> ListF24Response ListF24(ctx, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
 
-List Clients
+List F24
 
 
 
@@ -275,12 +351,12 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ClientsApi.ListClients(auth, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
+    resp, r, err := apiClient.TaxesAPI.ListF24(auth, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ClientsApi.ListClients``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TaxesAPI.ListF24``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListClients`: ListClientsResponse
+    // response from `ListF24`: ListF24Response
     json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
@@ -295,7 +371,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListClientsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListF24Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -310,7 +386,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListClientsResponse**](ListClientsResponse.md)
+[**ListF24Response**](ListF24Response.md)
 
 ### Authorization
 
@@ -326,11 +402,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ModifyClient
+## ModifyF24
 
-> ModifyClientResponse ModifyClient(ctx, companyId, clientId).ModifyClientRequest(modifyClientRequest).Execute()
+> ModifyF24Response ModifyF24(ctx, companyId, documentId).ModifyF24Request(modifyF24Request).Execute()
 
-Modify Client
+Modify F24
 
 
 
@@ -350,18 +426,18 @@ import (
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
-    clientId := int32(56) // int32 | The ID of the client.
-    modifyClientRequest := *fattureincloud.NewModifyClientRequest() // ModifyClientRequest | The modified Client. First level parameters are managed in delta mode. (optional)
+    documentId := int32(56) // int32 | The ID of the document.
+    modifyF24Request := *fattureincloud.NewModifyF24Request() // ModifyF24Request | The F24 (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ClientsApi.ModifyClient(auth, companyId, clientId).ModifyClientRequest(modifyClientRequest).Execute()
+    resp, r, err := apiClient.TaxesAPI.ModifyF24(auth, companyId, documentId).ModifyF24Request(modifyF24Request).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ClientsApi.ModifyClient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TaxesAPI.ModifyF24``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ModifyClient`: ModifyClientResponse
+    // response from `ModifyF24`: ModifyF24Response
     json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
@@ -373,22 +449,22 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **companyId** | **int32** | The ID of the company. | 
-**clientId** | **int32** | The ID of the client. | 
+**documentId** | **int32** | The ID of the document. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiModifyClientRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiModifyF24Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **modifyClientRequest** | [**ModifyClientRequest**](ModifyClientRequest.md) | The modified Client. First level parameters are managed in delta mode. | 
+ **modifyF24Request** | [**ModifyF24Request**](ModifyF24Request.md) | The F24 | 
 
 ### Return type
 
-[**ModifyClientResponse**](ModifyClientResponse.md)
+[**ModifyF24Response**](ModifyF24Response.md)
 
 ### Authorization
 
@@ -397,6 +473,83 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UploadF24Attachment
+
+> UploadF24AttachmentResponse UploadF24Attachment(ctx, companyId).Filename(filename).Attachment(attachment).Execute()
+
+Upload F24 Attachment
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "encoding/json"
+    "fmt"
+    "os"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+)
+
+func main() {
+    companyId := int32(12345) // int32 | The ID of the company.
+    filename := "filename_example" // string | Attachment file name (optional)
+    attachment := os.NewFile(1234, "some_file") // *os.File | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx] (optional)
+
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
+    resp, r, err := apiClient.TaxesAPI.UploadF24Attachment(auth, companyId).Filename(filename).Attachment(attachment).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `TaxesAPI.UploadF24Attachment``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UploadF24Attachment`: UploadF24AttachmentResponse
+    json.NewEncoder(os.Stdout).Encode(resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**companyId** | **int32** | The ID of the company. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUploadF24AttachmentRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **filename** | **string** | Attachment file name | 
+ **attachment** | ***os.File** | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx] | 
+
+### Return type
+
+[**UploadF24AttachmentResponse**](UploadF24AttachmentResponse.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: multipart/form-data
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
