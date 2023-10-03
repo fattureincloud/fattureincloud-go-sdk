@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.28
+API version: 2.0.30
 Contact: info@fattureincloud.it
 */
 
@@ -173,6 +173,8 @@ type IssuedDocument struct {
 	EiRaw map[string]interface{} `json:"ei_raw,omitempty"`
 	// [Read only] Status of the e-invoice.   * **attempt** - We are trying to send the invoice, please wait up to 2 hours   * **missing** - The invoice is missing   * **not_sent** - The invoice has yet to be sent   * **sent** - The invoice was sent   * **pending** - The checks for the digital signature and sending are in progress   * **processing** - The SDI is delivering the invoice to the customer   * **error** - An error occurred while handling the invoice, please try to resend it or contact support   * **discarded** - The invoice has been rejected by the SDI, so it must be corrected and re-sent   * **not_delivered** - The SDI was unable to deliver the invoice   * **accepted** - The customer accepted the invoice   * **rejected** - The customer rejected the invoice, so it must be corrected   * **no_response** - A response has not yet been received whithin the deadline, contact the customer to ascertain the status of the invoice   * **manual_accepted** - The customer accepted the invoice   * **manual_rejected** - The customer rejected the invoice 
 	EiStatus NullableString `json:"ei_status,omitempty"`
+	// Issued Document can't be edited
+	Locked NullableBool `json:"locked,omitempty"`
 	// Issued document creation date
 	CreatedAt NullableString `json:"created_at,omitempty"`
 	// Issued document last update date
@@ -185,6 +187,10 @@ type IssuedDocument struct {
 // will change when the set of required properties is changed
 func NewIssuedDocument() *IssuedDocument {
 	this := IssuedDocument{}
+	var type_ IssuedDocumentType = INVOICE
+	this.Type = &type_
+	var showTotals ShowTotalsMode = ALL
+	this.ShowTotals = &showTotals
 	return &this
 }
 
@@ -3723,6 +3729,50 @@ func (o *IssuedDocument) UnsetEiStatus() {
 	o.EiStatus.Unset()
 }
 
+// GetLocked returns the Locked field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *IssuedDocument) GetLocked() bool {
+	if o == nil || IsNil(o.Locked.Get()) {
+		var ret bool
+		return ret
+	}
+	return *o.Locked.Get()
+}
+
+// GetLockedOk returns a tuple with the Locked field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *IssuedDocument) GetLockedOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Locked.Get(), o.Locked.IsSet()
+}
+
+// HasLocked returns a boolean if a field has been set.
+func (o *IssuedDocument) HasLocked() bool {
+	if o != nil && o.Locked.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetLocked gets a reference to the given NullableBool and assigns it to the Locked field.
+func (o *IssuedDocument) SetLocked(v bool) *IssuedDocument {
+	o.Locked.Set(&v)
+	return o
+}
+// SetLockedNil sets the value for Locked to be an explicit nil
+func (o *IssuedDocument) SetLockedNil() *IssuedDocument {
+	o.Locked.Set(nil)
+	return o
+}
+
+// UnsetLocked ensures that no value is present for Locked, not even an explicit nil
+func (o *IssuedDocument) UnsetLocked() {
+	o.Locked.Unset()
+}
+
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocument) GetCreatedAt() string {
 	if o == nil || IsNil(o.CreatedAt.Get()) {
@@ -4069,6 +4119,9 @@ func (o IssuedDocument) ToMap() (map[string]interface{}, error) {
 	}
 	if o.EiStatus.IsSet() {
 		toSerialize["ei_status"] = o.EiStatus.Get()
+	}
+	if o.Locked.IsSet() {
+		toSerialize["locked"] = o.Locked.Get()
 	}
 	if o.CreatedAt.IsSet() {
 		toSerialize["created_at"] = o.CreatedAt.Get()

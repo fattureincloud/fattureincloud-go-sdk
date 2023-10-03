@@ -1,23 +1,22 @@
-# \ArchiveApi
+# \SuppliersAPI
 
 All URIs are relative to *https://api-v2.fattureincloud.it*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateArchiveDocument**](ArchiveApi.md#CreateArchiveDocument) | **Post** /c/{company_id}/archive | Create Archive Document
-[**DeleteArchiveDocument**](ArchiveApi.md#DeleteArchiveDocument) | **Delete** /c/{company_id}/archive/{document_id} | Delete Archive Document
-[**GetArchiveDocument**](ArchiveApi.md#GetArchiveDocument) | **Get** /c/{company_id}/archive/{document_id} | Get Archive Document
-[**ListArchiveDocuments**](ArchiveApi.md#ListArchiveDocuments) | **Get** /c/{company_id}/archive | List Archive Documents
-[**ModifyArchiveDocument**](ArchiveApi.md#ModifyArchiveDocument) | **Put** /c/{company_id}/archive/{document_id} | Modify Archive Document
-[**UploadArchiveDocumentAttachment**](ArchiveApi.md#UploadArchiveDocumentAttachment) | **Post** /c/{company_id}/archive/attachment | Upload Archive Document Attachment
+[**CreateSupplier**](SuppliersAPI.md#CreateSupplier) | **Post** /c/{company_id}/entities/suppliers | Create Supplier
+[**DeleteSupplier**](SuppliersAPI.md#DeleteSupplier) | **Delete** /c/{company_id}/entities/suppliers/{supplier_id} | Delete Supplier
+[**GetSupplier**](SuppliersAPI.md#GetSupplier) | **Get** /c/{company_id}/entities/suppliers/{supplier_id} | Get Supplier
+[**ListSuppliers**](SuppliersAPI.md#ListSuppliers) | **Get** /c/{company_id}/entities/suppliers | List Suppliers
+[**ModifySupplier**](SuppliersAPI.md#ModifySupplier) | **Put** /c/{company_id}/entities/suppliers/{supplier_id} | Modify Supplier
 
 
 
-## CreateArchiveDocument
+## CreateSupplier
 
-> CreateArchiveDocumentResponse CreateArchiveDocument(ctx, companyId).CreateArchiveDocumentRequest(createArchiveDocumentRequest).Execute()
+> CreateSupplierResponse CreateSupplier(ctx, companyId).CreateSupplierRequest(createSupplierRequest).Execute()
 
-Create Archive Document
+Create Supplier
 
 
 
@@ -37,17 +36,17 @@ import (
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
-    createArchiveDocumentRequest := *fattureincloud.NewCreateArchiveDocumentRequest() // CreateArchiveDocumentRequest | The Archive Document. (optional)
+    createSupplierRequest := *fattureincloud.NewCreateSupplierRequest() // CreateSupplierRequest | The supplier to create (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArchiveApi.CreateArchiveDocument(auth, companyId).CreateArchiveDocumentRequest(createArchiveDocumentRequest).Execute()
+    resp, r, err := apiClient.SuppliersAPI.CreateSupplier(auth, companyId).CreateSupplierRequest(createSupplierRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ArchiveApi.CreateArchiveDocument``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SuppliersAPI.CreateSupplier``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateArchiveDocument`: CreateArchiveDocumentResponse
+    // response from `CreateSupplier`: CreateSupplierResponse
     json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
@@ -62,17 +61,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateArchiveDocumentRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateSupplierRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createArchiveDocumentRequest** | [**CreateArchiveDocumentRequest**](CreateArchiveDocumentRequest.md) | The Archive Document. | 
+ **createSupplierRequest** | [**CreateSupplierRequest**](CreateSupplierRequest.md) | The supplier to create | 
 
 ### Return type
 
-[**CreateArchiveDocumentResponse**](CreateArchiveDocumentResponse.md)
+[**CreateSupplierResponse**](CreateSupplierResponse.md)
 
 ### Authorization
 
@@ -88,11 +87,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteArchiveDocument
+## DeleteSupplier
 
-> DeleteArchiveDocument(ctx, companyId, documentId).Execute()
+> DeleteSupplier(ctx, companyId, supplierId).Execute()
 
-Delete Archive Document
+Delete Supplier
 
 
 
@@ -112,14 +111,14 @@ import (
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
-    documentId := int32(56) // int32 | The ID of the document.
+    supplierId := int32(56) // int32 | The ID of the supplier.
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArchiveApi.DeleteArchiveDocument(auth, companyId, documentId).Execute()
+    resp, r, err := apiClient.SuppliersAPI.DeleteSupplier(auth, companyId, supplierId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ArchiveApi.DeleteArchiveDocument``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SuppliersAPI.DeleteSupplier``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -132,11 +131,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **companyId** | **int32** | The ID of the company. | 
-**documentId** | **int32** | The ID of the document. | 
+**supplierId** | **int32** | The ID of the supplier. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteArchiveDocumentRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteSupplierRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -162,11 +161,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetArchiveDocument
+## GetSupplier
 
-> GetArchiveDocumentResponse GetArchiveDocument(ctx, companyId, documentId).Fields(fields).Fieldset(fieldset).Execute()
+> GetSupplierResponse GetSupplier(ctx, companyId, supplierId).Fields(fields).Fieldset(fieldset).Execute()
 
-Get Archive Document
+Get Supplier
 
 
 
@@ -186,19 +185,19 @@ import (
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
-    documentId := int32(56) // int32 | The ID of the document.
+    supplierId := int32(56) // int32 | The ID of the supplier.
     fields := "fields_example" // string | List of comma-separated fields. (optional)
     fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArchiveApi.GetArchiveDocument(auth, companyId, documentId).Fields(fields).Fieldset(fieldset).Execute()
+    resp, r, err := apiClient.SuppliersAPI.GetSupplier(auth, companyId, supplierId).Fields(fields).Fieldset(fieldset).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ArchiveApi.GetArchiveDocument``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SuppliersAPI.GetSupplier``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetArchiveDocument`: GetArchiveDocumentResponse
+    // response from `GetSupplier`: GetSupplierResponse
     json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
@@ -210,11 +209,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **companyId** | **int32** | The ID of the company. | 
-**documentId** | **int32** | The ID of the document. | 
+**supplierId** | **int32** | The ID of the supplier. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetArchiveDocumentRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetSupplierRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -226,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetArchiveDocumentResponse**](GetArchiveDocumentResponse.md)
+[**GetSupplierResponse**](GetSupplierResponse.md)
 
 ### Authorization
 
@@ -242,11 +241,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListArchiveDocuments
+## ListSuppliers
 
-> ListArchiveDocumentsResponse ListArchiveDocuments(ctx, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
+> ListSuppliersResponse ListSuppliers(ctx, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
 
-List Archive Documents
+List Suppliers
 
 
 
@@ -276,12 +275,12 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArchiveApi.ListArchiveDocuments(auth, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
+    resp, r, err := apiClient.SuppliersAPI.ListSuppliers(auth, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ArchiveApi.ListArchiveDocuments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SuppliersAPI.ListSuppliers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListArchiveDocuments`: ListArchiveDocumentsResponse
+    // response from `ListSuppliers`: ListSuppliersResponse
     json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
@@ -296,7 +295,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListArchiveDocumentsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListSuppliersRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -311,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListArchiveDocumentsResponse**](ListArchiveDocumentsResponse.md)
+[**ListSuppliersResponse**](ListSuppliersResponse.md)
 
 ### Authorization
 
@@ -327,11 +326,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ModifyArchiveDocument
+## ModifySupplier
 
-> ModifyArchiveDocumentResponse ModifyArchiveDocument(ctx, companyId, documentId).ModifyArchiveDocumentRequest(modifyArchiveDocumentRequest).Execute()
+> ModifySupplierResponse ModifySupplier(ctx, companyId, supplierId).ModifySupplierRequest(modifySupplierRequest).Execute()
 
-Modify Archive Document
+Modify Supplier
 
 
 
@@ -351,18 +350,18 @@ import (
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
-    documentId := int32(56) // int32 | The ID of the document.
-    modifyArchiveDocumentRequest := *fattureincloud.NewModifyArchiveDocumentRequest() // ModifyArchiveDocumentRequest | Modified Archive Document (optional)
+    supplierId := int32(56) // int32 | The ID of the supplier.
+    modifySupplierRequest := *fattureincloud.NewModifySupplierRequest() // ModifySupplierRequest | The modified Supplier. First level parameters are managed in delta mode. (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArchiveApi.ModifyArchiveDocument(auth, companyId, documentId).ModifyArchiveDocumentRequest(modifyArchiveDocumentRequest).Execute()
+    resp, r, err := apiClient.SuppliersAPI.ModifySupplier(auth, companyId, supplierId).ModifySupplierRequest(modifySupplierRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ArchiveApi.ModifyArchiveDocument``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SuppliersAPI.ModifySupplier``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ModifyArchiveDocument`: ModifyArchiveDocumentResponse
+    // response from `ModifySupplier`: ModifySupplierResponse
     json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
@@ -374,22 +373,22 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **companyId** | **int32** | The ID of the company. | 
-**documentId** | **int32** | The ID of the document. | 
+**supplierId** | **int32** | The ID of the supplier. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiModifyArchiveDocumentRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiModifySupplierRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **modifyArchiveDocumentRequest** | [**ModifyArchiveDocumentRequest**](ModifyArchiveDocumentRequest.md) | Modified Archive Document | 
+ **modifySupplierRequest** | [**ModifySupplierRequest**](ModifySupplierRequest.md) | The modified Supplier. First level parameters are managed in delta mode. | 
 
 ### Return type
 
-[**ModifyArchiveDocumentResponse**](ModifyArchiveDocumentResponse.md)
+[**ModifySupplierResponse**](ModifySupplierResponse.md)
 
 ### Authorization
 
@@ -398,83 +397,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## UploadArchiveDocumentAttachment
-
-> UploadArchiveAttachmentResponse UploadArchiveDocumentAttachment(ctx, companyId).Filename(filename).Attachment(attachment).Execute()
-
-Upload Archive Document Attachment
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
-)
-
-func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    filename := "filename_example" // string | Attachment file name (optional)
-    attachment := os.NewFile(1234, "some_file") // *os.File | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx] (optional)
-
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArchiveApi.UploadArchiveDocumentAttachment(auth, companyId).Filename(filename).Attachment(attachment).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ArchiveApi.UploadArchiveDocumentAttachment``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UploadArchiveDocumentAttachment`: UploadArchiveAttachmentResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**companyId** | **int32** | The ID of the company. | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiUploadArchiveDocumentAttachmentRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **filename** | **string** | Attachment file name | 
- **attachment** | ***os.File** | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx] | 
-
-### Return type
-
-[**UploadArchiveAttachmentResponse**](UploadArchiveAttachmentResponse.md)
-
-### Authorization
-
-[OAuth2AuthenticationCodeFlow](../README.md#OAuth2AuthenticationCodeFlow)
-
-### HTTP request headers
-
-- **Content-Type**: multipart/form-data
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

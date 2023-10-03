@@ -1,22 +1,22 @@
-# \CashbookApi
+# \ProductsAPI
 
 All URIs are relative to *https://api-v2.fattureincloud.it*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateCashbookEntry**](CashbookApi.md#CreateCashbookEntry) | **Post** /c/{company_id}/cashbook | Create Cashbook Entry
-[**DeleteCashbookEntry**](CashbookApi.md#DeleteCashbookEntry) | **Delete** /c/{company_id}/cashbook/{document_id} | Delete Cashbook Entry
-[**GetCashbookEntry**](CashbookApi.md#GetCashbookEntry) | **Get** /c/{company_id}/cashbook/{document_id} | Get Cashbook Entry
-[**ListCashbookEntries**](CashbookApi.md#ListCashbookEntries) | **Get** /c/{company_id}/cashbook | List Cashbook Entries
-[**ModifyCashbookEntry**](CashbookApi.md#ModifyCashbookEntry) | **Put** /c/{company_id}/cashbook/{document_id} | Modify Cashbook Entry
+[**CreateProduct**](ProductsAPI.md#CreateProduct) | **Post** /c/{company_id}/products | Create Product
+[**DeleteProduct**](ProductsAPI.md#DeleteProduct) | **Delete** /c/{company_id}/products/{product_id} | Delete Product
+[**GetProduct**](ProductsAPI.md#GetProduct) | **Get** /c/{company_id}/products/{product_id} | Get Product
+[**ListProducts**](ProductsAPI.md#ListProducts) | **Get** /c/{company_id}/products | List Products
+[**ModifyProduct**](ProductsAPI.md#ModifyProduct) | **Put** /c/{company_id}/products/{product_id} | Modify Product
 
 
 
-## CreateCashbookEntry
+## CreateProduct
 
-> CreateCashbookEntryResponse CreateCashbookEntry(ctx, companyId).CreateCashbookEntryRequest(createCashbookEntryRequest).Execute()
+> CreateProductResponse CreateProduct(ctx, companyId).CreateProductRequest(createProductRequest).Execute()
 
-Create Cashbook Entry
+Create Product
 
 
 
@@ -36,17 +36,17 @@ import (
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
-    createCashbookEntryRequest := *fattureincloud.NewCreateCashbookEntryRequest() // CreateCashbookEntryRequest | Cashbook entry.  (optional)
+    createProductRequest := *fattureincloud.NewCreateProductRequest() // CreateProductRequest |  (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.CashbookApi.CreateCashbookEntry(auth, companyId).CreateCashbookEntryRequest(createCashbookEntryRequest).Execute()
+    resp, r, err := apiClient.ProductsAPI.CreateProduct(auth, companyId).CreateProductRequest(createProductRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CashbookApi.CreateCashbookEntry``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductsAPI.CreateProduct``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateCashbookEntry`: CreateCashbookEntryResponse
+    // response from `CreateProduct`: CreateProductResponse
     json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
@@ -61,17 +61,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateCashbookEntryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateProductRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createCashbookEntryRequest** | [**CreateCashbookEntryRequest**](CreateCashbookEntryRequest.md) | Cashbook entry.  | 
+ **createProductRequest** | [**CreateProductRequest**](CreateProductRequest.md) |  | 
 
 ### Return type
 
-[**CreateCashbookEntryResponse**](CreateCashbookEntryResponse.md)
+[**CreateProductResponse**](CreateProductResponse.md)
 
 ### Authorization
 
@@ -87,11 +87,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteCashbookEntry
+## DeleteProduct
 
-> DeleteCashbookEntry(ctx, companyId, documentId).Execute()
+> DeleteProduct(ctx, companyId, productId).Execute()
 
-Delete Cashbook Entry
+Delete Product
 
 
 
@@ -111,14 +111,14 @@ import (
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
-    documentId := "documentId_example" // string | The ID of the document.
+    productId := int32(56) // int32 | The ID of the product.
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.CashbookApi.DeleteCashbookEntry(auth, companyId, documentId).Execute()
+    resp, r, err := apiClient.ProductsAPI.DeleteProduct(auth, companyId, productId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CashbookApi.DeleteCashbookEntry``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductsAPI.DeleteProduct``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -131,11 +131,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **companyId** | **int32** | The ID of the company. | 
-**documentId** | **string** | The ID of the document. | 
+**productId** | **int32** | The ID of the product. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteCashbookEntryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteProductRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -161,11 +161,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetCashbookEntry
+## GetProduct
 
-> GetCashbookEntryResponse GetCashbookEntry(ctx, companyId, documentId).Fields(fields).Fieldset(fieldset).Execute()
+> GetProductResponse GetProduct(ctx, companyId, productId).Fields(fields).Fieldset(fieldset).Execute()
 
-Get Cashbook Entry
+Get Product
 
 
 
@@ -185,19 +185,19 @@ import (
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
-    documentId := "documentId_example" // string | The ID of the document.
+    productId := int32(56) // int32 | The ID of the product.
     fields := "fields_example" // string | List of comma-separated fields. (optional)
     fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.CashbookApi.GetCashbookEntry(auth, companyId, documentId).Fields(fields).Fieldset(fieldset).Execute()
+    resp, r, err := apiClient.ProductsAPI.GetProduct(auth, companyId, productId).Fields(fields).Fieldset(fieldset).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CashbookApi.GetCashbookEntry``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductsAPI.GetProduct``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetCashbookEntry`: GetCashbookEntryResponse
+    // response from `GetProduct`: GetProductResponse
     json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
@@ -209,11 +209,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **companyId** | **int32** | The ID of the company. | 
-**documentId** | **string** | The ID of the document. | 
+**productId** | **int32** | The ID of the product. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetCashbookEntryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetProductRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetCashbookEntryResponse**](GetCashbookEntryResponse.md)
+[**GetProductResponse**](GetProductResponse.md)
 
 ### Authorization
 
@@ -241,11 +241,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListCashbookEntries
+## ListProducts
 
-> ListCashbookEntriesResponse ListCashbookEntries(ctx, companyId).DateFrom(dateFrom).DateTo(dateTo).Year(year).Type_(type_).PaymentAccountId(paymentAccountId).Execute()
+> ListProductsResponse ListProducts(ctx, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
 
-List Cashbook Entries
+List Products
 
 
 
@@ -265,21 +265,22 @@ import (
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
-    dateFrom := "dateFrom_example" // string | Start date.
-    dateTo := "dateTo_example" // string | End date.
-    year := int32(56) // int32 | Filter cashbook by year. (optional)
-    type_ := "type__example" // string | Filter cashbook by type. (optional)
-    paymentAccountId := int32(56) // int32 | Filter by payment account. (optional)
+    fields := "fields_example" // string | List of comma-separated fields. (optional)
+    fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
+    sort := "sort_example" // string | List of comma-separated fields for result sorting (minus for desc sorting). (optional)
+    page := int32(56) // int32 | The page to retrieve. (optional) (default to 1)
+    perPage := int32(56) // int32 | The size of the page. (optional) (default to 5)
+    q := "q_example" // string | Query for filtering the results. (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.CashbookApi.ListCashbookEntries(auth, companyId).DateFrom(dateFrom).DateTo(dateTo).Year(year).Type_(type_).PaymentAccountId(paymentAccountId).Execute()
+    resp, r, err := apiClient.ProductsAPI.ListProducts(auth, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CashbookApi.ListCashbookEntries``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductsAPI.ListProducts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListCashbookEntries`: ListCashbookEntriesResponse
+    // response from `ListProducts`: ListProductsResponse
     json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
@@ -294,21 +295,22 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListCashbookEntriesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListProductsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **dateFrom** | **string** | Start date. | 
- **dateTo** | **string** | End date. | 
- **year** | **int32** | Filter cashbook by year. | 
- **type_** | **string** | Filter cashbook by type. | 
- **paymentAccountId** | **int32** | Filter by payment account. | 
+ **fields** | **string** | List of comma-separated fields. | 
+ **fieldset** | **string** | Name of the fieldset. | 
+ **sort** | **string** | List of comma-separated fields for result sorting (minus for desc sorting). | 
+ **page** | **int32** | The page to retrieve. | [default to 1]
+ **perPage** | **int32** | The size of the page. | [default to 5]
+ **q** | **string** | Query for filtering the results. | 
 
 ### Return type
 
-[**ListCashbookEntriesResponse**](ListCashbookEntriesResponse.md)
+[**ListProductsResponse**](ListProductsResponse.md)
 
 ### Authorization
 
@@ -324,11 +326,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ModifyCashbookEntry
+## ModifyProduct
 
-> ModifyCashbookEntryResponse ModifyCashbookEntry(ctx, companyId, documentId).ModifyCashbookEntryRequest(modifyCashbookEntryRequest).Execute()
+> ModifyProductResponse ModifyProduct(ctx, companyId, productId).ModifyProductRequest(modifyProductRequest).Execute()
 
-Modify Cashbook Entry
+Modify Product
 
 
 
@@ -348,18 +350,18 @@ import (
 
 func main() {
     companyId := int32(12345) // int32 | The ID of the company.
-    documentId := "documentId_example" // string | The ID of the document.
-    modifyCashbookEntryRequest := *fattureincloud.NewModifyCashbookEntryRequest() // ModifyCashbookEntryRequest | Cashbook Entry (optional)
+    productId := int32(56) // int32 | The ID of the product.
+    modifyProductRequest := *fattureincloud.NewModifyProductRequest() // ModifyProductRequest | Modified product details. (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.CashbookApi.ModifyCashbookEntry(auth, companyId, documentId).ModifyCashbookEntryRequest(modifyCashbookEntryRequest).Execute()
+    resp, r, err := apiClient.ProductsAPI.ModifyProduct(auth, companyId, productId).ModifyProductRequest(modifyProductRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CashbookApi.ModifyCashbookEntry``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductsAPI.ModifyProduct``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ModifyCashbookEntry`: ModifyCashbookEntryResponse
+    // response from `ModifyProduct`: ModifyProductResponse
     json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
@@ -371,22 +373,22 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **companyId** | **int32** | The ID of the company. | 
-**documentId** | **string** | The ID of the document. | 
+**productId** | **int32** | The ID of the product. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiModifyCashbookEntryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiModifyProductRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **modifyCashbookEntryRequest** | [**ModifyCashbookEntryRequest**](ModifyCashbookEntryRequest.md) | Cashbook Entry | 
+ **modifyProductRequest** | [**ModifyProductRequest**](ModifyProductRequest.md) | Modified product details. | 
 
 ### Return type
 
-[**ModifyCashbookEntryResponse**](ModifyCashbookEntryResponse.md)
+[**ModifyProductResponse**](ModifyProductResponse.md)
 
 ### Authorization
 

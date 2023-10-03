@@ -1,21 +1,21 @@
-# \SettingsApi
+# \SettingsAPI
 
 All URIs are relative to *https://api-v2.fattureincloud.it*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreatePaymentAccount**](SettingsApi.md#CreatePaymentAccount) | **Post** /c/{company_id}/settings/payment_accounts | Create Payment Account
-[**CreatePaymentMethod**](SettingsApi.md#CreatePaymentMethod) | **Post** /c/{company_id}/settings/payment_methods | Create Payment Method
-[**CreateVatType**](SettingsApi.md#CreateVatType) | **Post** /c/{company_id}/settings/vat_types | Create Vat Type
-[**DeletePaymentAccount**](SettingsApi.md#DeletePaymentAccount) | **Delete** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Delete Payment Account
-[**DeletePaymentMethod**](SettingsApi.md#DeletePaymentMethod) | **Delete** /c/{company_id}/settings/payment_methods/{payment_method_id} | Delete Payment Method
-[**DeleteVatType**](SettingsApi.md#DeleteVatType) | **Delete** /c/{company_id}/settings/vat_types/{vat_type_id} | Delete Vat Type
-[**GetPaymentAccount**](SettingsApi.md#GetPaymentAccount) | **Get** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Get Payment Account
-[**GetPaymentMethod**](SettingsApi.md#GetPaymentMethod) | **Get** /c/{company_id}/settings/payment_methods/{payment_method_id} | Get Payment Method
-[**GetVatType**](SettingsApi.md#GetVatType) | **Get** /c/{company_id}/settings/vat_types/{vat_type_id} | Get Vat Type
-[**ModifyPaymentAccount**](SettingsApi.md#ModifyPaymentAccount) | **Put** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Modify Payment Account
-[**ModifyPaymentMethod**](SettingsApi.md#ModifyPaymentMethod) | **Put** /c/{company_id}/settings/payment_methods/{payment_method_id} | Modify Payment Method
-[**ModifyVatType**](SettingsApi.md#ModifyVatType) | **Put** /c/{company_id}/settings/vat_types/{vat_type_id} | Modify Vat Type
+[**CreatePaymentAccount**](SettingsAPI.md#CreatePaymentAccount) | **Post** /c/{company_id}/settings/payment_accounts | Create Payment Account
+[**CreatePaymentMethod**](SettingsAPI.md#CreatePaymentMethod) | **Post** /c/{company_id}/settings/payment_methods | Create Payment Method
+[**CreateVatType**](SettingsAPI.md#CreateVatType) | **Post** /c/{company_id}/settings/vat_types | Create Vat Type
+[**DeletePaymentAccount**](SettingsAPI.md#DeletePaymentAccount) | **Delete** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Delete Payment Account
+[**DeletePaymentMethod**](SettingsAPI.md#DeletePaymentMethod) | **Delete** /c/{company_id}/settings/payment_methods/{payment_method_id} | Delete Payment Method
+[**DeleteVatType**](SettingsAPI.md#DeleteVatType) | **Delete** /c/{company_id}/settings/vat_types/{vat_type_id} | Delete Vat Type
+[**GetPaymentAccount**](SettingsAPI.md#GetPaymentAccount) | **Get** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Get Payment Account
+[**GetPaymentMethod**](SettingsAPI.md#GetPaymentMethod) | **Get** /c/{company_id}/settings/payment_methods/{payment_method_id} | Get Payment Method
+[**GetVatType**](SettingsAPI.md#GetVatType) | **Get** /c/{company_id}/settings/vat_types/{vat_type_id} | Get Vat Type
+[**ModifyPaymentAccount**](SettingsAPI.md#ModifyPaymentAccount) | **Put** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Modify Payment Account
+[**ModifyPaymentMethod**](SettingsAPI.md#ModifyPaymentMethod) | **Put** /c/{company_id}/settings/payment_methods/{payment_method_id} | Modify Payment Method
+[**ModifyVatType**](SettingsAPI.md#ModifyVatType) | **Put** /c/{company_id}/settings/vat_types/{vat_type_id} | Modify Vat Type
 
 
 
@@ -48,9 +48,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsApi.CreatePaymentAccount(auth, companyId).CreatePaymentAccountRequest(createPaymentAccountRequest).Execute()
+    resp, r, err := apiClient.SettingsAPI.CreatePaymentAccount(auth, companyId).CreatePaymentAccountRequest(createPaymentAccountRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsApi.CreatePaymentAccount``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.CreatePaymentAccount``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreatePaymentAccount`: CreatePaymentAccountResponse
@@ -123,9 +123,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsApi.CreatePaymentMethod(auth, companyId).CreatePaymentMethodRequest(createPaymentMethodRequest).Execute()
+    resp, r, err := apiClient.SettingsAPI.CreatePaymentMethod(auth, companyId).CreatePaymentMethodRequest(createPaymentMethodRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsApi.CreatePaymentMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.CreatePaymentMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreatePaymentMethod`: CreatePaymentMethodResponse
@@ -198,9 +198,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsApi.CreateVatType(auth, companyId).CreateVatTypeRequest(createVatTypeRequest).Execute()
+    resp, r, err := apiClient.SettingsAPI.CreateVatType(auth, companyId).CreateVatTypeRequest(createVatTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsApi.CreateVatType``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.CreateVatType``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateVatType`: CreateVatTypeResponse
@@ -273,9 +273,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsApi.DeletePaymentAccount(auth, companyId, paymentAccountId).Execute()
+    resp, r, err := apiClient.SettingsAPI.DeletePaymentAccount(auth, companyId, paymentAccountId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsApi.DeletePaymentAccount``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.DeletePaymentAccount``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -347,9 +347,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsApi.DeletePaymentMethod(auth, companyId, paymentMethodId).Execute()
+    resp, r, err := apiClient.SettingsAPI.DeletePaymentMethod(auth, companyId, paymentMethodId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsApi.DeletePaymentMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.DeletePaymentMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -421,9 +421,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsApi.DeleteVatType(auth, companyId, vatTypeId).Execute()
+    resp, r, err := apiClient.SettingsAPI.DeleteVatType(auth, companyId, vatTypeId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsApi.DeleteVatType``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.DeleteVatType``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -497,9 +497,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsApi.GetPaymentAccount(auth, companyId, paymentAccountId).Fields(fields).Fieldset(fieldset).Execute()
+    resp, r, err := apiClient.SettingsAPI.GetPaymentAccount(auth, companyId, paymentAccountId).Fields(fields).Fieldset(fieldset).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsApi.GetPaymentAccount``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.GetPaymentAccount``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPaymentAccount`: GetPaymentAccountResponse
@@ -577,9 +577,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsApi.GetPaymentMethod(auth, companyId, paymentMethodId).Fields(fields).Fieldset(fieldset).Execute()
+    resp, r, err := apiClient.SettingsAPI.GetPaymentMethod(auth, companyId, paymentMethodId).Fields(fields).Fieldset(fieldset).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsApi.GetPaymentMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.GetPaymentMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPaymentMethod`: GetPaymentMethodResponse
@@ -655,9 +655,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsApi.GetVatType(auth, companyId, vatTypeId).Execute()
+    resp, r, err := apiClient.SettingsAPI.GetVatType(auth, companyId, vatTypeId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsApi.GetVatType``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.GetVatType``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetVatType`: GetVatTypeResponse
@@ -732,9 +732,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsApi.ModifyPaymentAccount(auth, companyId, paymentAccountId).ModifyPaymentAccountRequest(modifyPaymentAccountRequest).Execute()
+    resp, r, err := apiClient.SettingsAPI.ModifyPaymentAccount(auth, companyId, paymentAccountId).ModifyPaymentAccountRequest(modifyPaymentAccountRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsApi.ModifyPaymentAccount``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.ModifyPaymentAccount``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ModifyPaymentAccount`: ModifyPaymentAccountResponse
@@ -810,9 +810,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsApi.ModifyPaymentMethod(auth, companyId, paymentMethodId).ModifyPaymentMethodRequest(modifyPaymentMethodRequest).Execute()
+    resp, r, err := apiClient.SettingsAPI.ModifyPaymentMethod(auth, companyId, paymentMethodId).ModifyPaymentMethodRequest(modifyPaymentMethodRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsApi.ModifyPaymentMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.ModifyPaymentMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ModifyPaymentMethod`: ModifyPaymentMethodResponse
@@ -888,9 +888,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsApi.ModifyVatType(auth, companyId, vatTypeId).ModifyVatTypeRequest(modifyVatTypeRequest).Execute()
+    resp, r, err := apiClient.SettingsAPI.ModifyVatType(auth, companyId, vatTypeId).ModifyVatTypeRequest(modifyVatTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsApi.ModifyVatType``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.ModifyVatType``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ModifyVatType`: ModifyVatTypeResponse

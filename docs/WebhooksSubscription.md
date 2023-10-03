@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Sink** | Pointer to **NullableString** | Webhooks callback uri. | [optional] 
 **Verified** | Pointer to **NullableBool** | [Read Only] True if the webhooks subscription has been verified. | [optional] 
 **Types** | Pointer to [**[]EventType**](EventType.md) | Webhooks events types. | [optional] 
+**Config** | Pointer to [**WebhooksSubscriptionConfig**](WebhooksSubscriptionConfig.md) |  | [optional] 
 
 ## Methods
 
@@ -168,6 +169,31 @@ HasTypes returns a boolean if a field has been set.
 `func (o *WebhooksSubscription) UnsetTypes()`
 
 UnsetTypes ensures that no value is present for Types, not even an explicit nil
+### GetConfig
+
+`func (o *WebhooksSubscription) GetConfig() WebhooksSubscriptionConfig`
+
+GetConfig returns the Config field if non-nil, zero value otherwise.
+
+### GetConfigOk
+
+`func (o *WebhooksSubscription) GetConfigOk() (*WebhooksSubscriptionConfig, bool)`
+
+GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfig
+
+`func (o *WebhooksSubscription) SetConfig(v WebhooksSubscriptionConfig)`
+
+SetConfig sets Config field to given value.
+
+### HasConfig
+
+`func (o *WebhooksSubscription) HasConfig() bool`
+
+HasConfig returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

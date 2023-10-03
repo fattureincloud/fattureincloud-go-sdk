@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.28
+API version: 2.0.30
 Contact: info@fattureincloud.it
 */
 
@@ -22,12 +22,12 @@ import (
 )
 
 
-// SettingsApiService SettingsApi service
-type SettingsApiService service
+// SettingsAPIService SettingsAPI service
+type SettingsAPIService service
 
 type ApiCreatePaymentAccountRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	companyId int32
 	createPaymentAccountRequest *CreatePaymentAccountRequest
 }
@@ -50,7 +50,7 @@ Creates a new payment account.
  @param companyId The ID of the company.
  @return ApiCreatePaymentAccountRequest
 */
-func (a *SettingsApiService) CreatePaymentAccount(ctx context.Context, companyId int32) ApiCreatePaymentAccountRequest {
+func (a *SettingsAPIService) CreatePaymentAccount(ctx context.Context, companyId int32) ApiCreatePaymentAccountRequest {
 	return ApiCreatePaymentAccountRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -60,7 +60,7 @@ func (a *SettingsApiService) CreatePaymentAccount(ctx context.Context, companyId
 
 // Execute executes the request
 //  @return CreatePaymentAccountResponse
-func (a *SettingsApiService) CreatePaymentAccountExecute(r ApiCreatePaymentAccountRequest) (*CreatePaymentAccountResponse, *http.Response, error) {
+func (a *SettingsAPIService) CreatePaymentAccountExecute(r ApiCreatePaymentAccountRequest) (*CreatePaymentAccountResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -68,7 +68,7 @@ func (a *SettingsApiService) CreatePaymentAccountExecute(r ApiCreatePaymentAccou
 		localVarReturnValue  *CreatePaymentAccountResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.CreatePaymentAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.CreatePaymentAccount")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -138,7 +138,7 @@ func (a *SettingsApiService) CreatePaymentAccountExecute(r ApiCreatePaymentAccou
 
 type ApiCreatePaymentMethodRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	companyId int32
 	createPaymentMethodRequest *CreatePaymentMethodRequest
 }
@@ -161,7 +161,7 @@ Creates a new payment method.
  @param companyId The ID of the company.
  @return ApiCreatePaymentMethodRequest
 */
-func (a *SettingsApiService) CreatePaymentMethod(ctx context.Context, companyId int32) ApiCreatePaymentMethodRequest {
+func (a *SettingsAPIService) CreatePaymentMethod(ctx context.Context, companyId int32) ApiCreatePaymentMethodRequest {
 	return ApiCreatePaymentMethodRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -171,7 +171,7 @@ func (a *SettingsApiService) CreatePaymentMethod(ctx context.Context, companyId 
 
 // Execute executes the request
 //  @return CreatePaymentMethodResponse
-func (a *SettingsApiService) CreatePaymentMethodExecute(r ApiCreatePaymentMethodRequest) (*CreatePaymentMethodResponse, *http.Response, error) {
+func (a *SettingsAPIService) CreatePaymentMethodExecute(r ApiCreatePaymentMethodRequest) (*CreatePaymentMethodResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -179,7 +179,7 @@ func (a *SettingsApiService) CreatePaymentMethodExecute(r ApiCreatePaymentMethod
 		localVarReturnValue  *CreatePaymentMethodResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.CreatePaymentMethod")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.CreatePaymentMethod")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -249,7 +249,7 @@ func (a *SettingsApiService) CreatePaymentMethodExecute(r ApiCreatePaymentMethod
 
 type ApiCreateVatTypeRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	companyId int32
 	createVatTypeRequest *CreateVatTypeRequest
 }
@@ -273,7 +273,7 @@ Creates a vat type.
  @param companyId The ID of the company.
  @return ApiCreateVatTypeRequest
 */
-func (a *SettingsApiService) CreateVatType(ctx context.Context, companyId int32) ApiCreateVatTypeRequest {
+func (a *SettingsAPIService) CreateVatType(ctx context.Context, companyId int32) ApiCreateVatTypeRequest {
 	return ApiCreateVatTypeRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -283,7 +283,7 @@ func (a *SettingsApiService) CreateVatType(ctx context.Context, companyId int32)
 
 // Execute executes the request
 //  @return CreateVatTypeResponse
-func (a *SettingsApiService) CreateVatTypeExecute(r ApiCreateVatTypeRequest) (*CreateVatTypeResponse, *http.Response, error) {
+func (a *SettingsAPIService) CreateVatTypeExecute(r ApiCreateVatTypeRequest) (*CreateVatTypeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -291,7 +291,7 @@ func (a *SettingsApiService) CreateVatTypeExecute(r ApiCreateVatTypeRequest) (*C
 		localVarReturnValue  *CreateVatTypeResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.CreateVatType")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.CreateVatType")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -361,7 +361,7 @@ func (a *SettingsApiService) CreateVatTypeExecute(r ApiCreateVatTypeRequest) (*C
 
 type ApiDeletePaymentAccountRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	companyId int32
 	paymentAccountId int32
 }
@@ -380,7 +380,7 @@ Deletes the specified payment account.
  @param paymentAccountId The Referred Payment Account Id.
  @return ApiDeletePaymentAccountRequest
 */
-func (a *SettingsApiService) DeletePaymentAccount(ctx context.Context, companyId int32, paymentAccountId int32) ApiDeletePaymentAccountRequest {
+func (a *SettingsAPIService) DeletePaymentAccount(ctx context.Context, companyId int32, paymentAccountId int32) ApiDeletePaymentAccountRequest {
 	return ApiDeletePaymentAccountRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -390,14 +390,14 @@ func (a *SettingsApiService) DeletePaymentAccount(ctx context.Context, companyId
 }
 
 // Execute executes the request
-func (a *SettingsApiService) DeletePaymentAccountExecute(r ApiDeletePaymentAccountRequest) (*http.Response, error) {
+func (a *SettingsAPIService) DeletePaymentAccountExecute(r ApiDeletePaymentAccountRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.DeletePaymentAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.DeletePaymentAccount")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -457,7 +457,7 @@ func (a *SettingsApiService) DeletePaymentAccountExecute(r ApiDeletePaymentAccou
 
 type ApiDeletePaymentMethodRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	companyId int32
 	paymentMethodId int32
 }
@@ -476,7 +476,7 @@ Deletes the specified payment method.
  @param paymentMethodId The Referred Payment Method Id.
  @return ApiDeletePaymentMethodRequest
 */
-func (a *SettingsApiService) DeletePaymentMethod(ctx context.Context, companyId int32, paymentMethodId int32) ApiDeletePaymentMethodRequest {
+func (a *SettingsAPIService) DeletePaymentMethod(ctx context.Context, companyId int32, paymentMethodId int32) ApiDeletePaymentMethodRequest {
 	return ApiDeletePaymentMethodRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -486,14 +486,14 @@ func (a *SettingsApiService) DeletePaymentMethod(ctx context.Context, companyId 
 }
 
 // Execute executes the request
-func (a *SettingsApiService) DeletePaymentMethodExecute(r ApiDeletePaymentMethodRequest) (*http.Response, error) {
+func (a *SettingsAPIService) DeletePaymentMethodExecute(r ApiDeletePaymentMethodRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.DeletePaymentMethod")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.DeletePaymentMethod")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -553,7 +553,7 @@ func (a *SettingsApiService) DeletePaymentMethodExecute(r ApiDeletePaymentMethod
 
 type ApiDeleteVatTypeRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	companyId int32
 	vatTypeId int32
 }
@@ -572,7 +572,7 @@ Deletes the specified vat type.
  @param vatTypeId The Referred Vat Type Id.
  @return ApiDeleteVatTypeRequest
 */
-func (a *SettingsApiService) DeleteVatType(ctx context.Context, companyId int32, vatTypeId int32) ApiDeleteVatTypeRequest {
+func (a *SettingsAPIService) DeleteVatType(ctx context.Context, companyId int32, vatTypeId int32) ApiDeleteVatTypeRequest {
 	return ApiDeleteVatTypeRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -582,14 +582,14 @@ func (a *SettingsApiService) DeleteVatType(ctx context.Context, companyId int32,
 }
 
 // Execute executes the request
-func (a *SettingsApiService) DeleteVatTypeExecute(r ApiDeleteVatTypeRequest) (*http.Response, error) {
+func (a *SettingsAPIService) DeleteVatTypeExecute(r ApiDeleteVatTypeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.DeleteVatType")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.DeleteVatType")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -649,7 +649,7 @@ func (a *SettingsApiService) DeleteVatTypeExecute(r ApiDeleteVatTypeRequest) (*h
 
 type ApiGetPaymentAccountRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	companyId int32
 	paymentAccountId int32
 	fields *string
@@ -682,7 +682,7 @@ Gets the specified payment account.
  @param paymentAccountId The Referred Payment Account Id.
  @return ApiGetPaymentAccountRequest
 */
-func (a *SettingsApiService) GetPaymentAccount(ctx context.Context, companyId int32, paymentAccountId int32) ApiGetPaymentAccountRequest {
+func (a *SettingsAPIService) GetPaymentAccount(ctx context.Context, companyId int32, paymentAccountId int32) ApiGetPaymentAccountRequest {
 	return ApiGetPaymentAccountRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -693,7 +693,7 @@ func (a *SettingsApiService) GetPaymentAccount(ctx context.Context, companyId in
 
 // Execute executes the request
 //  @return GetPaymentAccountResponse
-func (a *SettingsApiService) GetPaymentAccountExecute(r ApiGetPaymentAccountRequest) (*GetPaymentAccountResponse, *http.Response, error) {
+func (a *SettingsAPIService) GetPaymentAccountExecute(r ApiGetPaymentAccountRequest) (*GetPaymentAccountResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -701,7 +701,7 @@ func (a *SettingsApiService) GetPaymentAccountExecute(r ApiGetPaymentAccountRequ
 		localVarReturnValue  *GetPaymentAccountResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetPaymentAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.GetPaymentAccount")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -717,8 +717,10 @@ func (a *SettingsApiService) GetPaymentAccountExecute(r ApiGetPaymentAccountRequ
 	if r.fields != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
 	}
+	}
 	if r.fieldset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
+	}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -776,7 +778,7 @@ func (a *SettingsApiService) GetPaymentAccountExecute(r ApiGetPaymentAccountRequ
 
 type ApiGetPaymentMethodRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	companyId int32
 	paymentMethodId int32
 	fields *string
@@ -809,7 +811,7 @@ Gets the specified payment method.
  @param paymentMethodId The Referred Payment Method Id.
  @return ApiGetPaymentMethodRequest
 */
-func (a *SettingsApiService) GetPaymentMethod(ctx context.Context, companyId int32, paymentMethodId int32) ApiGetPaymentMethodRequest {
+func (a *SettingsAPIService) GetPaymentMethod(ctx context.Context, companyId int32, paymentMethodId int32) ApiGetPaymentMethodRequest {
 	return ApiGetPaymentMethodRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -820,7 +822,7 @@ func (a *SettingsApiService) GetPaymentMethod(ctx context.Context, companyId int
 
 // Execute executes the request
 //  @return GetPaymentMethodResponse
-func (a *SettingsApiService) GetPaymentMethodExecute(r ApiGetPaymentMethodRequest) (*GetPaymentMethodResponse, *http.Response, error) {
+func (a *SettingsAPIService) GetPaymentMethodExecute(r ApiGetPaymentMethodRequest) (*GetPaymentMethodResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -828,7 +830,7 @@ func (a *SettingsApiService) GetPaymentMethodExecute(r ApiGetPaymentMethodReques
 		localVarReturnValue  *GetPaymentMethodResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetPaymentMethod")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.GetPaymentMethod")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -844,8 +846,10 @@ func (a *SettingsApiService) GetPaymentMethodExecute(r ApiGetPaymentMethodReques
 	if r.fields != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
 	}
+	}
 	if r.fieldset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
+	}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -903,7 +907,7 @@ func (a *SettingsApiService) GetPaymentMethodExecute(r ApiGetPaymentMethodReques
 
 type ApiGetVatTypeRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	companyId int32
 	vatTypeId int32
 }
@@ -922,7 +926,7 @@ Gets the specified vat type.
  @param vatTypeId The Referred Vat Type Id.
  @return ApiGetVatTypeRequest
 */
-func (a *SettingsApiService) GetVatType(ctx context.Context, companyId int32, vatTypeId int32) ApiGetVatTypeRequest {
+func (a *SettingsAPIService) GetVatType(ctx context.Context, companyId int32, vatTypeId int32) ApiGetVatTypeRequest {
 	return ApiGetVatTypeRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -933,7 +937,7 @@ func (a *SettingsApiService) GetVatType(ctx context.Context, companyId int32, va
 
 // Execute executes the request
 //  @return GetVatTypeResponse
-func (a *SettingsApiService) GetVatTypeExecute(r ApiGetVatTypeRequest) (*GetVatTypeResponse, *http.Response, error) {
+func (a *SettingsAPIService) GetVatTypeExecute(r ApiGetVatTypeRequest) (*GetVatTypeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -941,7 +945,7 @@ func (a *SettingsApiService) GetVatTypeExecute(r ApiGetVatTypeRequest) (*GetVatT
 		localVarReturnValue  *GetVatTypeResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetVatType")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.GetVatType")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1010,7 +1014,7 @@ func (a *SettingsApiService) GetVatTypeExecute(r ApiGetVatTypeRequest) (*GetVatT
 
 type ApiModifyPaymentAccountRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	companyId int32
 	paymentAccountId int32
 	modifyPaymentAccountRequest *ModifyPaymentAccountRequest
@@ -1035,7 +1039,7 @@ Modifies the specified payment account.
  @param paymentAccountId The Referred Payment Account Id.
  @return ApiModifyPaymentAccountRequest
 */
-func (a *SettingsApiService) ModifyPaymentAccount(ctx context.Context, companyId int32, paymentAccountId int32) ApiModifyPaymentAccountRequest {
+func (a *SettingsAPIService) ModifyPaymentAccount(ctx context.Context, companyId int32, paymentAccountId int32) ApiModifyPaymentAccountRequest {
 	return ApiModifyPaymentAccountRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1046,7 +1050,7 @@ func (a *SettingsApiService) ModifyPaymentAccount(ctx context.Context, companyId
 
 // Execute executes the request
 //  @return ModifyPaymentAccountResponse
-func (a *SettingsApiService) ModifyPaymentAccountExecute(r ApiModifyPaymentAccountRequest) (*ModifyPaymentAccountResponse, *http.Response, error) {
+func (a *SettingsAPIService) ModifyPaymentAccountExecute(r ApiModifyPaymentAccountRequest) (*ModifyPaymentAccountResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1054,7 +1058,7 @@ func (a *SettingsApiService) ModifyPaymentAccountExecute(r ApiModifyPaymentAccou
 		localVarReturnValue  *ModifyPaymentAccountResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.ModifyPaymentAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.ModifyPaymentAccount")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1125,7 +1129,7 @@ func (a *SettingsApiService) ModifyPaymentAccountExecute(r ApiModifyPaymentAccou
 
 type ApiModifyPaymentMethodRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	companyId int32
 	paymentMethodId int32
 	modifyPaymentMethodRequest *ModifyPaymentMethodRequest
@@ -1151,7 +1155,7 @@ Modifies the specified payment method.
  @param paymentMethodId The Referred Payment Method Id.
  @return ApiModifyPaymentMethodRequest
 */
-func (a *SettingsApiService) ModifyPaymentMethod(ctx context.Context, companyId int32, paymentMethodId int32) ApiModifyPaymentMethodRequest {
+func (a *SettingsAPIService) ModifyPaymentMethod(ctx context.Context, companyId int32, paymentMethodId int32) ApiModifyPaymentMethodRequest {
 	return ApiModifyPaymentMethodRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1162,7 +1166,7 @@ func (a *SettingsApiService) ModifyPaymentMethod(ctx context.Context, companyId 
 
 // Execute executes the request
 //  @return ModifyPaymentMethodResponse
-func (a *SettingsApiService) ModifyPaymentMethodExecute(r ApiModifyPaymentMethodRequest) (*ModifyPaymentMethodResponse, *http.Response, error) {
+func (a *SettingsAPIService) ModifyPaymentMethodExecute(r ApiModifyPaymentMethodRequest) (*ModifyPaymentMethodResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1170,7 +1174,7 @@ func (a *SettingsApiService) ModifyPaymentMethodExecute(r ApiModifyPaymentMethod
 		localVarReturnValue  *ModifyPaymentMethodResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.ModifyPaymentMethod")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.ModifyPaymentMethod")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1241,7 +1245,7 @@ func (a *SettingsApiService) ModifyPaymentMethodExecute(r ApiModifyPaymentMethod
 
 type ApiModifyVatTypeRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	companyId int32
 	vatTypeId int32
 	modifyVatTypeRequest *ModifyVatTypeRequest
@@ -1266,7 +1270,7 @@ Modifies the specified vat type.
  @param vatTypeId The Referred Vat Type Id.
  @return ApiModifyVatTypeRequest
 */
-func (a *SettingsApiService) ModifyVatType(ctx context.Context, companyId int32, vatTypeId int32) ApiModifyVatTypeRequest {
+func (a *SettingsAPIService) ModifyVatType(ctx context.Context, companyId int32, vatTypeId int32) ApiModifyVatTypeRequest {
 	return ApiModifyVatTypeRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1277,7 +1281,7 @@ func (a *SettingsApiService) ModifyVatType(ctx context.Context, companyId int32,
 
 // Execute executes the request
 //  @return ModifyVatTypeResponse
-func (a *SettingsApiService) ModifyVatTypeExecute(r ApiModifyVatTypeRequest) (*ModifyVatTypeResponse, *http.Response, error) {
+func (a *SettingsAPIService) ModifyVatTypeExecute(r ApiModifyVatTypeRequest) (*ModifyVatTypeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1285,7 +1289,7 @@ func (a *SettingsApiService) ModifyVatTypeExecute(r ApiModifyVatTypeRequest) (*M
 		localVarReturnValue  *ModifyVatTypeResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.ModifyVatType")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.ModifyVatType")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
