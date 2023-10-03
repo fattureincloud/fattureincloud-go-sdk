@@ -36,7 +36,7 @@ func TestGetCompanyInfo(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.CompaniesApi.GetCompanyInfo(context.Background(), 2).Execute()
+	actual, _, err := apiClient.CompaniesAPI.GetCompanyInfo(context.Background(), 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewCompanyInfo().

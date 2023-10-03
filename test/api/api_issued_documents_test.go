@@ -38,7 +38,7 @@ func TestCreateIssuedDocument(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.IssuedDocumentsApi.CreateIssuedDocument(context.Background(), 2).CreateIssuedDocumentRequest(*NewCreateIssuedDocumentRequest()).Execute()
+	actual, _, err := apiClient.IssuedDocumentsAPI.CreateIssuedDocument(context.Background(), 2).CreateIssuedDocumentRequest(*NewCreateIssuedDocumentRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewIssuedDocument().
@@ -143,7 +143,7 @@ func TestDeleteIssuedDocument(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	resp, err := apiClient.IssuedDocumentsApi.DeleteIssuedDocument(context.Background(), 2, 2).Execute()
+	resp, err := apiClient.IssuedDocumentsAPI.DeleteIssuedDocument(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.Equal(t, 200, resp.StatusCode)
@@ -163,7 +163,7 @@ func TestDeleteIssuedDocumentAttachment(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	resp, err := apiClient.IssuedDocumentsApi.DeleteIssuedDocumentAttachment(context.Background(), 2, 2).Execute()
+	resp, err := apiClient.IssuedDocumentsAPI.DeleteIssuedDocumentAttachment(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.Equal(t, 200, resp.StatusCode)
@@ -183,7 +183,7 @@ func TestGetEmailData(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.IssuedDocumentsApi.GetEmailData(context.Background(), 2, 2).Execute()
+	actual, _, err := apiClient.IssuedDocumentsAPI.GetEmailData(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewEmailData().
@@ -224,7 +224,7 @@ func TestGetExistingIssuedDocumentTotals(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.IssuedDocumentsApi.GetExistingIssuedDocumentTotals(context.Background(), 2, 2).GetExistingIssuedDocumentTotalsRequest(*NewGetExistingIssuedDocumentTotalsRequest()).Execute()
+	actual, _, err := apiClient.IssuedDocumentsAPI.GetExistingIssuedDocumentTotals(context.Background(), 2, 2).GetExistingIssuedDocumentTotalsRequest(*NewGetExistingIssuedDocumentTotalsRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewIssuedDocumentTotals().
@@ -253,7 +253,7 @@ func TestGetIssuedDocument(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.IssuedDocumentsApi.GetIssuedDocument(context.Background(), 2, 2).Execute()
+	actual, _, err := apiClient.IssuedDocumentsAPI.GetIssuedDocument(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewIssuedDocument().
@@ -358,7 +358,7 @@ func TestGetIssuedDocumentPreCreateInfo(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.IssuedDocumentsApi.GetIssuedDocumentPreCreateInfo(context.Background(), 2).Type_("invoice").Execute()
+	actual, _, err := apiClient.IssuedDocumentsAPI.GetIssuedDocumentPreCreateInfo(context.Background(), 2).Type_("invoice").Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewIssuedDocumentPreCreateInfo().
@@ -409,7 +409,7 @@ func TestGetNewIssuedDocumentTotals(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.IssuedDocumentsApi.GetNewIssuedDocumentTotals(context.Background(), 2).GetNewIssuedDocumentTotalsRequest(*NewGetNewIssuedDocumentTotalsRequest()).Execute()
+	actual, _, err := apiClient.IssuedDocumentsAPI.GetNewIssuedDocumentTotals(context.Background(), 2).GetNewIssuedDocumentTotalsRequest(*NewGetNewIssuedDocumentTotalsRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewIssuedDocumentTotals().
@@ -438,7 +438,7 @@ func TestListIssuedDocuments(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.IssuedDocumentsApi.ListIssuedDocuments(context.Background(), 2).Type_("invoice").Execute()
+	actual, _, err := apiClient.IssuedDocumentsAPI.ListIssuedDocuments(context.Background(), 2).Type_("invoice").Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewIssuedDocument().
@@ -543,7 +543,7 @@ func TestModifyIssuedDocument(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.IssuedDocumentsApi.ModifyIssuedDocument(context.Background(), 2, 2).ModifyIssuedDocumentRequest(*NewModifyIssuedDocumentRequest()).Execute()
+	actual, _, err := apiClient.IssuedDocumentsAPI.ModifyIssuedDocument(context.Background(), 2, 2).ModifyIssuedDocumentRequest(*NewModifyIssuedDocumentRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewIssuedDocument().
@@ -648,7 +648,7 @@ func TestScheduleEmail(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	resp, err := apiClient.IssuedDocumentsApi.ScheduleEmail(context.Background(), 2, 2).ScheduleEmailRequest(*NewScheduleEmailRequest()).Execute()
+	resp, err := apiClient.IssuedDocumentsAPI.ScheduleEmail(context.Background(), 2, 2).ScheduleEmailRequest(*NewScheduleEmailRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.Equal(t, 200, resp.StatusCode)
@@ -668,7 +668,7 @@ func TestUploadIssuedDocumentAttachment(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	_, resp, err := apiClient.IssuedDocumentsApi.UploadIssuedDocumentAttachment(context.Background(), 2).Filename("filename").Execute()
+	_, resp, err := apiClient.IssuedDocumentsAPI.UploadIssuedDocumentAttachment(context.Background(), 2).Filename("filename").Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.Equal(t, 200, resp.StatusCode)
@@ -688,7 +688,7 @@ func TestTransformIssuedDocument(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.IssuedDocumentsApi.TransformIssuedDocument(context.Background(), 2).OriginalDocumentId(12345).NewType("proforma").Execute()
+	actual, _, err := apiClient.IssuedDocumentsAPI.TransformIssuedDocument(context.Background(), 2).OriginalDocumentId(12345).NewType("proforma").Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewTransformIssuedDocumentResponse().
@@ -721,7 +721,7 @@ func TestJoinIssuedDocuments(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.IssuedDocumentsApi.JoinIssuedDocuments(context.Background(), 2).Ids("2332,876").Execute()
+	actual, _, err := apiClient.IssuedDocumentsAPI.JoinIssuedDocuments(context.Background(), 2).Ids("2332,876").Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewJoinIssuedDocumentsResponse().

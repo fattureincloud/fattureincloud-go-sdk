@@ -31,8 +31,6 @@ type ReceivedDocumentPaymentsListItemPaymentTerms struct {
 // will change when the set of required properties is changed
 func NewReceivedDocumentPaymentsListItemPaymentTerms() *ReceivedDocumentPaymentsListItemPaymentTerms {
 	this := ReceivedDocumentPaymentsListItemPaymentTerms{}
-	var type_ PaymentTermsType = STANDARD
-	this.Type = &type_
 	return &this
 }
 

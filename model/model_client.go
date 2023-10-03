@@ -100,8 +100,6 @@ type Client struct {
 // will change when the set of required properties is changed
 func NewClient() *Client {
 	this := Client{}
-	var defaultPaymentTermsType PaymentTermsType = STANDARD
-	this.DefaultPaymentTermsType = &defaultPaymentTermsType
 	return &this
 }
 

@@ -303,10 +303,8 @@ func (a *ReceiptsAPIService) GetReceiptExecute(r ApiGetReceiptRequest) (*GetRece
 	if r.fields != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
 	}
-	}
 	if r.fieldset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
-	}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -684,21 +682,17 @@ func (a *ReceiptsAPIService) ListReceiptsExecute(r ApiListReceiptsRequest) (*Lis
 	if r.fields != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
 	}
-	}
 	if r.fieldset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
 	}
-	}
 	if r.page != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
-	}
 	} else {
  		var defaultValue int32 = 1
  		r.page = &defaultValue
  	}
 	if r.perPage != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
-	}
 	} else {
  		var defaultValue int32 = 5
  		r.perPage = &defaultValue
@@ -706,10 +700,8 @@ func (a *ReceiptsAPIService) ListReceiptsExecute(r ApiListReceiptsRequest) (*Lis
 	if r.sort != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "")
 	}
-	}
 	if r.q != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
-	}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

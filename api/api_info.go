@@ -190,10 +190,8 @@ func (a *InfoAPIService) ListCitiesExecute(r ApiListCitiesRequest) (*ListCitiesR
 	if r.postalCode != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "postal_code", r.postalCode, "")
 	}
-	}
 	if r.city != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "city", r.city, "")
-	}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -920,14 +918,11 @@ func (a *InfoAPIService) ListPaymentAccountsExecute(r ApiListPaymentAccountsRequ
 	if r.fields != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
 	}
-	}
 	if r.fieldset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
 	}
-	}
 	if r.sort != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "")
-	}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1056,14 +1051,11 @@ func (a *InfoAPIService) ListPaymentMethodsExecute(r ApiListPaymentMethodsReques
 	if r.fields != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
 	}
-	}
 	if r.fieldset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
 	}
-	}
 	if r.sort != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "")
-	}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1500,14 +1492,12 @@ func (a *InfoAPIService) ListTemplatesExecute(r ApiListTemplatesRequest) (*ListT
 
 	if r.type_ != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "")
-	}
 	} else {
  		var defaultValue string = "all"
  		r.type_ = &defaultValue
  	}
 	if r.byType != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "by_type", r.byType, "")
-	}
 	} else {
  		var defaultValue bool = false
  		r.byType = &defaultValue
@@ -1723,7 +1713,6 @@ func (a *InfoAPIService) ListVatTypesExecute(r ApiListVatTypesRequest) (*ListVat
 
 	if r.fieldset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
-	}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

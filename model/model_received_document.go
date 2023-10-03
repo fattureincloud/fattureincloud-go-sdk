@@ -83,8 +83,6 @@ type ReceivedDocument struct {
 // will change when the set of required properties is changed
 func NewReceivedDocument() *ReceivedDocument {
 	this := ReceivedDocument{}
-	var type_ ReceivedDocumentType = EXPENSE
-	this.Type = &type_
 	return &this
 }
 

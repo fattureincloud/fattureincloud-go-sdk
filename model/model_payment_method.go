@@ -46,8 +46,6 @@ type PaymentMethod struct {
 // will change when the set of required properties is changed
 func NewPaymentMethod() *PaymentMethod {
 	this := PaymentMethod{}
-	var type_ PaymentMethodType = STANDARD
-	this.Type = &type_
 	return &this
 }
 

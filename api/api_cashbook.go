@@ -303,10 +303,8 @@ func (a *CashbookAPIService) GetCashbookEntryExecute(r ApiGetCashbookEntryReques
 	if r.fields != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
 	}
-	}
 	if r.fieldset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
-	}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -457,14 +455,11 @@ func (a *CashbookAPIService) ListCashbookEntriesExecute(r ApiListCashbookEntries
 	if r.year != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "year", r.year, "")
 	}
-	}
 	if r.type_ != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "")
 	}
-	}
 	if r.paymentAccountId != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "payment_account_id", r.paymentAccountId, "")
-	}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

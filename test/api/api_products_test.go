@@ -36,7 +36,7 @@ func TestCreateProduct(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ProductsApi.CreateProduct(context.Background(), 2).CreateProductRequest(*NewCreateProductRequest()).Execute()
+	actual, _, err := apiClient.ProductsAPI.CreateProduct(context.Background(), 2).CreateProductRequest(*NewCreateProductRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewProduct().
@@ -76,7 +76,7 @@ func TestDeleteProduct(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	resp, err := apiClient.ProductsApi.DeleteProduct(context.Background(), 2, 2).Execute()
+	resp, err := apiClient.ProductsAPI.DeleteProduct(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.Equal(t, 200, resp.StatusCode)
@@ -96,7 +96,7 @@ func TestGetProduct(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ProductsApi.GetProduct(context.Background(), 2, 2).Execute()
+	actual, _, err := apiClient.ProductsAPI.GetProduct(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewProduct().
@@ -136,7 +136,7 @@ func TestListProducts(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ProductsApi.ListProducts(context.Background(), 2).Execute()
+	actual, _, err := apiClient.ProductsAPI.ListProducts(context.Background(), 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewProduct().
@@ -176,7 +176,7 @@ func TestModifyProduct(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ProductsApi.ModifyProduct(context.Background(), 2, 2).ModifyProductRequest(*NewModifyProductRequest()).Execute()
+	actual, _, err := apiClient.ProductsAPI.ModifyProduct(context.Background(), 2, 2).ModifyProductRequest(*NewModifyProductRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewProduct().

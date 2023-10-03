@@ -717,10 +717,8 @@ func (a *SettingsAPIService) GetPaymentAccountExecute(r ApiGetPaymentAccountRequ
 	if r.fields != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
 	}
-	}
 	if r.fieldset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
-	}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -846,10 +844,8 @@ func (a *SettingsAPIService) GetPaymentMethodExecute(r ApiGetPaymentMethodReques
 	if r.fields != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
 	}
-	}
 	if r.fieldset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
-	}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

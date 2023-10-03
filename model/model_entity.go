@@ -96,8 +96,6 @@ type Entity struct {
 // will change when the set of required properties is changed
 func NewEntity() *Entity {
 	this := Entity{}
-	var defaultPaymentTermsType PaymentTermsType = STANDARD
-	this.DefaultPaymentTermsType = &defaultPaymentTermsType
 	return &this
 }
 

@@ -41,8 +41,6 @@ type IssuedDocumentPaymentsListItem struct {
 // will change when the set of required properties is changed
 func NewIssuedDocumentPaymentsListItem() *IssuedDocumentPaymentsListItem {
 	this := IssuedDocumentPaymentsListItem{}
-	var status IssuedDocumentStatus = NOT_PAID
-	this.Status = &status
 	return &this
 }
 

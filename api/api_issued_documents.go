@@ -623,10 +623,8 @@ func (a *IssuedDocumentsAPIService) GetIssuedDocumentExecute(r ApiGetIssuedDocum
 	if r.fields != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
 	}
-	}
 	if r.fieldset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
-	}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -984,10 +982,8 @@ func (a *IssuedDocumentsAPIService) JoinIssuedDocumentsExecute(r ApiJoinIssuedDo
 	if r.group != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "group", r.group, "")
 	}
-	}
 	if r.eInvoice != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "e_invoice", r.eInvoice, "")
-	}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1155,25 +1151,20 @@ func (a *IssuedDocumentsAPIService) ListIssuedDocumentsExecute(r ApiListIssuedDo
 	if r.fields != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
 	}
-	}
 	if r.fieldset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
-	}
 	}
 	if r.sort != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "")
 	}
-	}
 	if r.page != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
-	}
 	} else {
  		var defaultValue int32 = 1
  		r.page = &defaultValue
  	}
 	if r.perPage != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
-	}
 	} else {
  		var defaultValue int32 = 5
  		r.perPage = &defaultValue
@@ -1181,10 +1172,8 @@ func (a *IssuedDocumentsAPIService) ListIssuedDocumentsExecute(r ApiListIssuedDo
 	if r.q != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
 	}
-	}
 	if r.inclusive != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "inclusive", r.inclusive, "")
-	}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1549,10 +1538,8 @@ func (a *IssuedDocumentsAPIService) TransformIssuedDocumentExecute(r ApiTransfor
 	if r.eInvoice != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "e_invoice", r.eInvoice, "")
 	}
-	}
 	if r.transformKeepCopy != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "transform_keep_copy", r.transformKeepCopy, "")
-	}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

@@ -16,9 +16,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestEventType(t *testing.T) {
-	assert.Equal(t, "it.fattureincloud.webhooks.issued_documents.invoices.create", string(EventTypes.ISSUED_DOCUMENTS_INVOICES_CREATE))
-	assert.Equal(t, "it.fattureincloud.webhooks.cashbook.create", string(EventTypes.CASHBOOK_CREATE))
-	assert.Equal(t, "it.fattureincloud.webhooks.entities.all.update", string(EventTypes.ENTITIES_ALL_UPDATE))
-	assert.Equal(t, "it.fattureincloud.webhooks.products.delete", string(EventTypes.PRODUCTS_DELETE))
+func TestWebhooksSubscriptionMapping(t *testing.T) {
+	assert.Equal(t, "binary", string(WebhooksSubscriptionMappings.BINARY))
+	assert.Equal(t, "structured", string(WebhooksSubscriptionMappings.STRUCTURED))
 }

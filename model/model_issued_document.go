@@ -187,10 +187,6 @@ type IssuedDocument struct {
 // will change when the set of required properties is changed
 func NewIssuedDocument() *IssuedDocument {
 	this := IssuedDocument{}
-	var type_ IssuedDocumentType = INVOICE
-	this.Type = &type_
-	var showTotals ShowTotalsMode = ALL
-	this.ShowTotals = &showTotals
 	return &this
 }
 

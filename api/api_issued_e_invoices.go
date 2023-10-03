@@ -195,7 +195,6 @@ func (a *IssuedEInvoicesAPIService) GetEInvoiceXmlExecute(r ApiGetEInvoiceXmlReq
 	if r.includeAttachment != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "include_attachment", r.includeAttachment, "")
 	}
-	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

@@ -36,7 +36,7 @@ func TestCreatePaymentAccount(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.SettingsApi.CreatePaymentAccount(context.Background(), 2).CreatePaymentAccountRequest(*NewCreatePaymentAccountRequest()).Execute()
+	actual, _, err := apiClient.SettingsAPI.CreatePaymentAccount(context.Background(), 2).CreatePaymentAccountRequest(*NewCreatePaymentAccountRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewPaymentAccount().
@@ -65,7 +65,7 @@ func TestCreatePaymentMethod(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.SettingsApi.CreatePaymentMethod(context.Background(), 2).CreatePaymentMethodRequest(*NewCreatePaymentMethodRequest()).Execute()
+	actual, _, err := apiClient.SettingsAPI.CreatePaymentMethod(context.Background(), 2).CreatePaymentMethodRequest(*NewCreatePaymentMethodRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewPaymentMethod().
@@ -101,7 +101,7 @@ func TestCreateVatType(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.SettingsApi.CreateVatType(context.Background(), 2).CreateVatTypeRequest(*NewCreateVatTypeRequest()).Execute()
+	actual, _, err := apiClient.SettingsAPI.CreateVatType(context.Background(), 2).CreateVatTypeRequest(*NewCreateVatTypeRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewVatType().
@@ -131,7 +131,7 @@ func TestDeletePaymentAccount(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	resp, err := apiClient.SettingsApi.DeletePaymentAccount(context.Background(), 2, 2).Execute()
+	resp, err := apiClient.SettingsAPI.DeletePaymentAccount(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.Equal(t, 200, resp.StatusCode)
@@ -151,7 +151,7 @@ func TestDeletePaymentMethod(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	resp, err := apiClient.SettingsApi.DeletePaymentMethod(context.Background(), 2, 2).Execute()
+	resp, err := apiClient.SettingsAPI.DeletePaymentMethod(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.Equal(t, 200, resp.StatusCode)
@@ -171,7 +171,7 @@ func TestDeleteVatType(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	resp, err := apiClient.SettingsApi.DeleteVatType(context.Background(), 2, 2).Execute()
+	resp, err := apiClient.SettingsAPI.DeleteVatType(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.Equal(t, 200, resp.StatusCode)
@@ -191,7 +191,7 @@ func TestGetPaymentAccount(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.SettingsApi.GetPaymentAccount(context.Background(), 2, 2).Execute()
+	actual, _, err := apiClient.SettingsAPI.GetPaymentAccount(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewPaymentAccount().
@@ -220,7 +220,7 @@ func TestGetPaymentMethod(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.SettingsApi.GetPaymentMethod(context.Background(), 2, 2).Execute()
+	actual, _, err := apiClient.SettingsAPI.GetPaymentMethod(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewPaymentMethod().
@@ -256,7 +256,7 @@ func TestGetVatType(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.SettingsApi.GetVatType(context.Background(), 2, 2).Execute()
+	actual, _, err := apiClient.SettingsAPI.GetVatType(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewVatType().
@@ -286,7 +286,7 @@ func TestModifyPaymentAccount(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.SettingsApi.ModifyPaymentAccount(context.Background(), 2, 2).ModifyPaymentAccountRequest(*NewModifyPaymentAccountRequest()).Execute()
+	actual, _, err := apiClient.SettingsAPI.ModifyPaymentAccount(context.Background(), 2, 2).ModifyPaymentAccountRequest(*NewModifyPaymentAccountRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewPaymentAccount().
@@ -315,7 +315,7 @@ func TestModifyPaymentMethod(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.SettingsApi.ModifyPaymentMethod(context.Background(), 2, 2).ModifyPaymentMethodRequest(*NewModifyPaymentMethodRequest()).Execute()
+	actual, _, err := apiClient.SettingsAPI.ModifyPaymentMethod(context.Background(), 2, 2).ModifyPaymentMethodRequest(*NewModifyPaymentMethodRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewPaymentMethod().
@@ -351,7 +351,7 @@ func TestModifyVatType(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.SettingsApi.ModifyVatType(context.Background(), 2, 2).ModifyVatTypeRequest(*NewModifyVatTypeRequest()).Execute()
+	actual, _, err := apiClient.SettingsAPI.ModifyVatType(context.Background(), 2, 2).ModifyVatTypeRequest(*NewModifyVatTypeRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewVatType().

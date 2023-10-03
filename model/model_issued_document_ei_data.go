@@ -50,8 +50,6 @@ type IssuedDocumentEiData struct {
 // will change when the set of required properties is changed
 func NewIssuedDocumentEiData() *IssuedDocumentEiData {
 	this := IssuedDocumentEiData{}
-	var originalDocumentType OriginalDocumentType = ORDINE
-	this.OriginalDocumentType = *NewNullableOriginalDocumentType(&originalDocumentType)
 	return &this
 }
 

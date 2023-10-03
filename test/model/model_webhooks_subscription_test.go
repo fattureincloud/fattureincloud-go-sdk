@@ -18,7 +18,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-var WebhooksSubscriptionJsonStr string = "{\"id\":\"SUB123\",\"sink\":\"https://endpoint.test\",\"verified\":true,\"types\":[\"it.fattureincloud.webhooks.cashbook.create\"]}"
+var WebhooksSubscriptionJsonStr string = "{\"id\":\"SUB123\",\"sink\":\"https://endpoint.test\",\"verified\":true,\"types\":[\"it.fattureincloud.webhooks.cashbook.create\"],\"config\":{\"mapping\":\"binary\"}}"
 
 func TestWebhooksSubscription(t *testing.T) {
 	obj := NewWebhooksSubscription()
@@ -36,4 +36,6 @@ func TestWebhooksSubscription(t *testing.T) {
 	assert.True(t, reflect.DeepEqual(obj.GetVerified(), newObj.GetVerified()))
 	newObj.SetTypes(obj.GetTypes())
 	assert.True(t, reflect.DeepEqual(obj.GetTypes(), newObj.GetTypes()))
+	newObj.SetConfig(obj.GetConfig())
+	assert.True(t, reflect.DeepEqual(obj.GetConfig(), newObj.GetConfig()))
 }
