@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.28
+API version: 2.0.30
 Contact: info@fattureincloud.it
 */
 
@@ -22,12 +22,12 @@ import (
 )
 
 
-// ProductsApiService ProductsApi service
-type ProductsApiService service
+// ProductsAPIService ProductsAPI service
+type ProductsAPIService service
 
 type ApiCreateProductRequest struct {
 	ctx context.Context
-	ApiService *ProductsApiService
+	ApiService *ProductsAPIService
 	companyId int32
 	createProductRequest *CreateProductRequest
 }
@@ -51,7 +51,7 @@ Creates a new product.
  @param companyId The ID of the company.
  @return ApiCreateProductRequest
 */
-func (a *ProductsApiService) CreateProduct(ctx context.Context, companyId int32) ApiCreateProductRequest {
+func (a *ProductsAPIService) CreateProduct(ctx context.Context, companyId int32) ApiCreateProductRequest {
 	return ApiCreateProductRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -61,7 +61,7 @@ func (a *ProductsApiService) CreateProduct(ctx context.Context, companyId int32)
 
 // Execute executes the request
 //  @return CreateProductResponse
-func (a *ProductsApiService) CreateProductExecute(r ApiCreateProductRequest) (*CreateProductResponse, *http.Response, error) {
+func (a *ProductsAPIService) CreateProductExecute(r ApiCreateProductRequest) (*CreateProductResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -69,7 +69,7 @@ func (a *ProductsApiService) CreateProductExecute(r ApiCreateProductRequest) (*C
 		localVarReturnValue  *CreateProductResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductsApiService.CreateProduct")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductsAPIService.CreateProduct")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -139,7 +139,7 @@ func (a *ProductsApiService) CreateProductExecute(r ApiCreateProductRequest) (*C
 
 type ApiDeleteProductRequest struct {
 	ctx context.Context
-	ApiService *ProductsApiService
+	ApiService *ProductsAPIService
 	companyId int32
 	productId int32
 }
@@ -158,7 +158,7 @@ Deletes the specified product.
  @param productId The ID of the product.
  @return ApiDeleteProductRequest
 */
-func (a *ProductsApiService) DeleteProduct(ctx context.Context, companyId int32, productId int32) ApiDeleteProductRequest {
+func (a *ProductsAPIService) DeleteProduct(ctx context.Context, companyId int32, productId int32) ApiDeleteProductRequest {
 	return ApiDeleteProductRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -168,14 +168,14 @@ func (a *ProductsApiService) DeleteProduct(ctx context.Context, companyId int32,
 }
 
 // Execute executes the request
-func (a *ProductsApiService) DeleteProductExecute(r ApiDeleteProductRequest) (*http.Response, error) {
+func (a *ProductsAPIService) DeleteProductExecute(r ApiDeleteProductRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductsApiService.DeleteProduct")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductsAPIService.DeleteProduct")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -235,7 +235,7 @@ func (a *ProductsApiService) DeleteProductExecute(r ApiDeleteProductRequest) (*h
 
 type ApiGetProductRequest struct {
 	ctx context.Context
-	ApiService *ProductsApiService
+	ApiService *ProductsAPIService
 	companyId int32
 	productId int32
 	fields *string
@@ -268,7 +268,7 @@ Gets the specified product.
  @param productId The ID of the product.
  @return ApiGetProductRequest
 */
-func (a *ProductsApiService) GetProduct(ctx context.Context, companyId int32, productId int32) ApiGetProductRequest {
+func (a *ProductsAPIService) GetProduct(ctx context.Context, companyId int32, productId int32) ApiGetProductRequest {
 	return ApiGetProductRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -279,7 +279,7 @@ func (a *ProductsApiService) GetProduct(ctx context.Context, companyId int32, pr
 
 // Execute executes the request
 //  @return GetProductResponse
-func (a *ProductsApiService) GetProductExecute(r ApiGetProductRequest) (*GetProductResponse, *http.Response, error) {
+func (a *ProductsAPIService) GetProductExecute(r ApiGetProductRequest) (*GetProductResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -287,7 +287,7 @@ func (a *ProductsApiService) GetProductExecute(r ApiGetProductRequest) (*GetProd
 		localVarReturnValue  *GetProductResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductsApiService.GetProduct")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductsAPIService.GetProduct")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -362,7 +362,7 @@ func (a *ProductsApiService) GetProductExecute(r ApiGetProductRequest) (*GetProd
 
 type ApiListProductsRequest struct {
 	ctx context.Context
-	ApiService *ProductsApiService
+	ApiService *ProductsAPIService
 	companyId int32
 	fields *string
 	fieldset *string
@@ -421,7 +421,7 @@ Lists the products.
  @param companyId The ID of the company.
  @return ApiListProductsRequest
 */
-func (a *ProductsApiService) ListProducts(ctx context.Context, companyId int32) ApiListProductsRequest {
+func (a *ProductsAPIService) ListProducts(ctx context.Context, companyId int32) ApiListProductsRequest {
 	return ApiListProductsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -431,7 +431,7 @@ func (a *ProductsApiService) ListProducts(ctx context.Context, companyId int32) 
 
 // Execute executes the request
 //  @return ListProductsResponse
-func (a *ProductsApiService) ListProductsExecute(r ApiListProductsRequest) (*ListProductsResponse, *http.Response, error) {
+func (a *ProductsAPIService) ListProductsExecute(r ApiListProductsRequest) (*ListProductsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -439,7 +439,7 @@ func (a *ProductsApiService) ListProductsExecute(r ApiListProductsRequest) (*Lis
 		localVarReturnValue  *ListProductsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductsApiService.ListProducts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductsAPIService.ListProducts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -462,10 +462,16 @@ func (a *ProductsApiService) ListProductsExecute(r ApiListProductsRequest) (*Lis
 	}
 	if r.page != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
-	}
+	} else {
+ 		var defaultValue int32 = 1
+ 		r.page = &defaultValue
+ 	}
 	if r.perPage != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
-	}
+	} else {
+ 		var defaultValue int32 = 5
+ 		r.perPage = &defaultValue
+ 	}
 	if r.q != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
 	}
@@ -525,7 +531,7 @@ func (a *ProductsApiService) ListProductsExecute(r ApiListProductsRequest) (*Lis
 
 type ApiModifyProductRequest struct {
 	ctx context.Context
-	ApiService *ProductsApiService
+	ApiService *ProductsAPIService
 	companyId int32
 	productId int32
 	modifyProductRequest *ModifyProductRequest
@@ -551,7 +557,7 @@ Modifies the specified product.
  @param productId The ID of the product.
  @return ApiModifyProductRequest
 */
-func (a *ProductsApiService) ModifyProduct(ctx context.Context, companyId int32, productId int32) ApiModifyProductRequest {
+func (a *ProductsAPIService) ModifyProduct(ctx context.Context, companyId int32, productId int32) ApiModifyProductRequest {
 	return ApiModifyProductRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -562,7 +568,7 @@ func (a *ProductsApiService) ModifyProduct(ctx context.Context, companyId int32,
 
 // Execute executes the request
 //  @return ModifyProductResponse
-func (a *ProductsApiService) ModifyProductExecute(r ApiModifyProductRequest) (*ModifyProductResponse, *http.Response, error) {
+func (a *ProductsAPIService) ModifyProductExecute(r ApiModifyProductRequest) (*ModifyProductResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -570,7 +576,7 @@ func (a *ProductsApiService) ModifyProductExecute(r ApiModifyProductRequest) (*M
 		localVarReturnValue  *ModifyProductResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductsApiService.ModifyProduct")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductsAPIService.ModifyProduct")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

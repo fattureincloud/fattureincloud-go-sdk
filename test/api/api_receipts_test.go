@@ -36,7 +36,7 @@ func TestCreateReceipt(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ReceiptsApi.CreateReceipt(context.Background(), 2).CreateReceiptRequest(*NewCreateReceiptRequest()).Execute()
+	actual, _, err := apiClient.ReceiptsAPI.CreateReceipt(context.Background(), 2).CreateReceiptRequest(*NewCreateReceiptRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewReceipt().
@@ -73,7 +73,7 @@ func TestDeleteReceipt(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	resp, err := apiClient.ReceiptsApi.DeleteReceipt(context.Background(), 2, 2).Execute()
+	resp, err := apiClient.ReceiptsAPI.DeleteReceipt(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.Equal(t, 200, resp.StatusCode)
@@ -93,7 +93,7 @@ func TestGetReceipt(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ReceiptsApi.GetReceipt(context.Background(), 2, 2).Execute()
+	actual, _, err := apiClient.ReceiptsAPI.GetReceipt(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewReceipt().
@@ -130,7 +130,7 @@ func TestGetReceiptPreCreateInfo(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ReceiptsApi.GetReceiptPreCreateInfo(context.Background(), 2).Execute()
+	actual, _, err := apiClient.ReceiptsAPI.GetReceiptPreCreateInfo(context.Background(), 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewReceiptPreCreateInfo().
@@ -158,7 +158,7 @@ func TestGetReceiptsMonthlyTotals(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ReceiptsApi.GetReceiptsMonthlyTotals(context.Background(), 2).Type_("issued_document").Year("2022").Execute()
+	actual, _, err := apiClient.ReceiptsAPI.GetReceiptsMonthlyTotals(context.Background(), 2).Type_("issued_document").Year("2022").Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewMonthlyTotal().
@@ -183,7 +183,7 @@ func TestListReceipts(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ReceiptsApi.ListReceipts(context.Background(), 2).Execute()
+	actual, _, err := apiClient.ReceiptsAPI.ListReceipts(context.Background(), 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewReceipt().
@@ -220,7 +220,7 @@ func TestModifyReceipt(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ReceiptsApi.ModifyReceipt(context.Background(), 2, 2).ModifyReceiptRequest(*NewModifyReceiptRequest()).Execute()
+	actual, _, err := apiClient.ReceiptsAPI.ModifyReceipt(context.Background(), 2, 2).ModifyReceiptRequest(*NewModifyReceiptRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewReceipt().

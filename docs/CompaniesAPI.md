@@ -1,10 +1,10 @@
-# \CompaniesApi
+# \CompaniesAPI
 
 All URIs are relative to *https://api-v2.fattureincloud.it*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetCompanyInfo**](CompaniesApi.md#GetCompanyInfo) | **Get** /c/{company_id}/company/info | Get Company Info
+[**GetCompanyInfo**](CompaniesAPI.md#GetCompanyInfo) | **Get** /c/{company_id}/company/info | Get Company Info
 
 
 
@@ -36,9 +36,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.CompaniesApi.GetCompanyInfo(auth, companyId).Execute()
+    resp, r, err := apiClient.CompaniesAPI.GetCompanyInfo(auth, companyId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CompaniesApi.GetCompanyInfo``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CompaniesAPI.GetCompanyInfo``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetCompanyInfo`: GetCompanyInfoResponse

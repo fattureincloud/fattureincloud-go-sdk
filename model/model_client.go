@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.28
+API version: 2.0.30
 Contact: info@fattureincloud.it
 */
 
@@ -49,6 +49,8 @@ type Client struct {
 	AddressExtra NullableString `json:"address_extra,omitempty"`
 	// Client country
 	Country NullableString `json:"country,omitempty"`
+	// Client country iso code
+	CountryIso NullableString `json:"country_iso,omitempty"`
 	// Client email
 	Email NullableString `json:"email,omitempty"`
 	// Client certified email
@@ -769,6 +771,50 @@ func (o *Client) SetCountryNil() *Client {
 // UnsetCountry ensures that no value is present for Country, not even an explicit nil
 func (o *Client) UnsetCountry() {
 	o.Country.Unset()
+}
+
+// GetCountryIso returns the CountryIso field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Client) GetCountryIso() string {
+	if o == nil || IsNil(o.CountryIso.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.CountryIso.Get()
+}
+
+// GetCountryIsoOk returns a tuple with the CountryIso field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Client) GetCountryIsoOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.CountryIso.Get(), o.CountryIso.IsSet()
+}
+
+// HasCountryIso returns a boolean if a field has been set.
+func (o *Client) HasCountryIso() bool {
+	if o != nil && o.CountryIso.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCountryIso gets a reference to the given NullableString and assigns it to the CountryIso field.
+func (o *Client) SetCountryIso(v string) *Client {
+	o.CountryIso.Set(&v)
+	return o
+}
+// SetCountryIsoNil sets the value for CountryIso to be an explicit nil
+func (o *Client) SetCountryIsoNil() *Client {
+	o.CountryIso.Set(nil)
+	return o
+}
+
+// UnsetCountryIso ensures that no value is present for CountryIso, not even an explicit nil
+func (o *Client) UnsetCountryIso() {
+	o.CountryIso.Unset()
 }
 
 // GetEmail returns the Email field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1771,6 +1817,9 @@ func (o Client) ToMap() (map[string]interface{}, error) {
 	}
 	if o.Country.IsSet() {
 		toSerialize["country"] = o.Country.Get()
+	}
+	if o.CountryIso.IsSet() {
+		toSerialize["country_iso"] = o.CountryIso.Get()
 	}
 	if o.Email.IsSet() {
 		toSerialize["email"] = o.Email.Get()

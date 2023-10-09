@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.28
+API version: 2.0.30
 Contact: info@fattureincloud.it
 */
 
@@ -22,12 +22,12 @@ import (
 )
 
 
-// SuppliersApiService SuppliersApi service
-type SuppliersApiService service
+// SuppliersAPIService SuppliersAPI service
+type SuppliersAPIService service
 
 type ApiCreateSupplierRequest struct {
 	ctx context.Context
-	ApiService *SuppliersApiService
+	ApiService *SuppliersAPIService
 	companyId int32
 	createSupplierRequest *CreateSupplierRequest
 }
@@ -51,7 +51,7 @@ Creates a new supplier.
  @param companyId The ID of the company.
  @return ApiCreateSupplierRequest
 */
-func (a *SuppliersApiService) CreateSupplier(ctx context.Context, companyId int32) ApiCreateSupplierRequest {
+func (a *SuppliersAPIService) CreateSupplier(ctx context.Context, companyId int32) ApiCreateSupplierRequest {
 	return ApiCreateSupplierRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -61,7 +61,7 @@ func (a *SuppliersApiService) CreateSupplier(ctx context.Context, companyId int3
 
 // Execute executes the request
 //  @return CreateSupplierResponse
-func (a *SuppliersApiService) CreateSupplierExecute(r ApiCreateSupplierRequest) (*CreateSupplierResponse, *http.Response, error) {
+func (a *SuppliersAPIService) CreateSupplierExecute(r ApiCreateSupplierRequest) (*CreateSupplierResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -69,7 +69,7 @@ func (a *SuppliersApiService) CreateSupplierExecute(r ApiCreateSupplierRequest) 
 		localVarReturnValue  *CreateSupplierResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SuppliersApiService.CreateSupplier")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SuppliersAPIService.CreateSupplier")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -139,7 +139,7 @@ func (a *SuppliersApiService) CreateSupplierExecute(r ApiCreateSupplierRequest) 
 
 type ApiDeleteSupplierRequest struct {
 	ctx context.Context
-	ApiService *SuppliersApiService
+	ApiService *SuppliersAPIService
 	companyId int32
 	supplierId int32
 }
@@ -158,7 +158,7 @@ Deletes the specified supplier.
  @param supplierId The ID of the supplier.
  @return ApiDeleteSupplierRequest
 */
-func (a *SuppliersApiService) DeleteSupplier(ctx context.Context, companyId int32, supplierId int32) ApiDeleteSupplierRequest {
+func (a *SuppliersAPIService) DeleteSupplier(ctx context.Context, companyId int32, supplierId int32) ApiDeleteSupplierRequest {
 	return ApiDeleteSupplierRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -168,14 +168,14 @@ func (a *SuppliersApiService) DeleteSupplier(ctx context.Context, companyId int3
 }
 
 // Execute executes the request
-func (a *SuppliersApiService) DeleteSupplierExecute(r ApiDeleteSupplierRequest) (*http.Response, error) {
+func (a *SuppliersAPIService) DeleteSupplierExecute(r ApiDeleteSupplierRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SuppliersApiService.DeleteSupplier")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SuppliersAPIService.DeleteSupplier")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -235,7 +235,7 @@ func (a *SuppliersApiService) DeleteSupplierExecute(r ApiDeleteSupplierRequest) 
 
 type ApiGetSupplierRequest struct {
 	ctx context.Context
-	ApiService *SuppliersApiService
+	ApiService *SuppliersAPIService
 	companyId int32
 	supplierId int32
 	fields *string
@@ -268,7 +268,7 @@ Gets the specified supplier.
  @param supplierId The ID of the supplier.
  @return ApiGetSupplierRequest
 */
-func (a *SuppliersApiService) GetSupplier(ctx context.Context, companyId int32, supplierId int32) ApiGetSupplierRequest {
+func (a *SuppliersAPIService) GetSupplier(ctx context.Context, companyId int32, supplierId int32) ApiGetSupplierRequest {
 	return ApiGetSupplierRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -279,7 +279,7 @@ func (a *SuppliersApiService) GetSupplier(ctx context.Context, companyId int32, 
 
 // Execute executes the request
 //  @return GetSupplierResponse
-func (a *SuppliersApiService) GetSupplierExecute(r ApiGetSupplierRequest) (*GetSupplierResponse, *http.Response, error) {
+func (a *SuppliersAPIService) GetSupplierExecute(r ApiGetSupplierRequest) (*GetSupplierResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -287,7 +287,7 @@ func (a *SuppliersApiService) GetSupplierExecute(r ApiGetSupplierRequest) (*GetS
 		localVarReturnValue  *GetSupplierResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SuppliersApiService.GetSupplier")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SuppliersAPIService.GetSupplier")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -362,7 +362,7 @@ func (a *SuppliersApiService) GetSupplierExecute(r ApiGetSupplierRequest) (*GetS
 
 type ApiListSuppliersRequest struct {
 	ctx context.Context
-	ApiService *SuppliersApiService
+	ApiService *SuppliersAPIService
 	companyId int32
 	fields *string
 	fieldset *string
@@ -421,7 +421,7 @@ Lists the suppliers.
  @param companyId The ID of the company.
  @return ApiListSuppliersRequest
 */
-func (a *SuppliersApiService) ListSuppliers(ctx context.Context, companyId int32) ApiListSuppliersRequest {
+func (a *SuppliersAPIService) ListSuppliers(ctx context.Context, companyId int32) ApiListSuppliersRequest {
 	return ApiListSuppliersRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -431,7 +431,7 @@ func (a *SuppliersApiService) ListSuppliers(ctx context.Context, companyId int32
 
 // Execute executes the request
 //  @return ListSuppliersResponse
-func (a *SuppliersApiService) ListSuppliersExecute(r ApiListSuppliersRequest) (*ListSuppliersResponse, *http.Response, error) {
+func (a *SuppliersAPIService) ListSuppliersExecute(r ApiListSuppliersRequest) (*ListSuppliersResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -439,7 +439,7 @@ func (a *SuppliersApiService) ListSuppliersExecute(r ApiListSuppliersRequest) (*
 		localVarReturnValue  *ListSuppliersResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SuppliersApiService.ListSuppliers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SuppliersAPIService.ListSuppliers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -462,10 +462,16 @@ func (a *SuppliersApiService) ListSuppliersExecute(r ApiListSuppliersRequest) (*
 	}
 	if r.page != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
-	}
+	} else {
+ 		var defaultValue int32 = 1
+ 		r.page = &defaultValue
+ 	}
 	if r.perPage != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
-	}
+	} else {
+ 		var defaultValue int32 = 5
+ 		r.perPage = &defaultValue
+ 	}
 	if r.q != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
 	}
@@ -525,7 +531,7 @@ func (a *SuppliersApiService) ListSuppliersExecute(r ApiListSuppliersRequest) (*
 
 type ApiModifySupplierRequest struct {
 	ctx context.Context
-	ApiService *SuppliersApiService
+	ApiService *SuppliersAPIService
 	companyId int32
 	supplierId int32
 	modifySupplierRequest *ModifySupplierRequest
@@ -551,7 +557,7 @@ Modifies the specified supplier.
  @param supplierId The ID of the supplier.
  @return ApiModifySupplierRequest
 */
-func (a *SuppliersApiService) ModifySupplier(ctx context.Context, companyId int32, supplierId int32) ApiModifySupplierRequest {
+func (a *SuppliersAPIService) ModifySupplier(ctx context.Context, companyId int32, supplierId int32) ApiModifySupplierRequest {
 	return ApiModifySupplierRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -562,7 +568,7 @@ func (a *SuppliersApiService) ModifySupplier(ctx context.Context, companyId int3
 
 // Execute executes the request
 //  @return ModifySupplierResponse
-func (a *SuppliersApiService) ModifySupplierExecute(r ApiModifySupplierRequest) (*ModifySupplierResponse, *http.Response, error) {
+func (a *SuppliersAPIService) ModifySupplierExecute(r ApiModifySupplierRequest) (*ModifySupplierResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -570,7 +576,7 @@ func (a *SuppliersApiService) ModifySupplierExecute(r ApiModifySupplierRequest) 
 		localVarReturnValue  *ModifySupplierResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SuppliersApiService.ModifySupplier")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SuppliersAPIService.ModifySupplier")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

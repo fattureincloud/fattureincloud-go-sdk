@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.28
+API version: 2.0.30
 Contact: info@fattureincloud.it
 */
 
@@ -23,12 +23,12 @@ import (
 )
 
 
-// ReceivedDocumentsApiService ReceivedDocumentsApi service
-type ReceivedDocumentsApiService service
+// ReceivedDocumentsAPIService ReceivedDocumentsAPI service
+type ReceivedDocumentsAPIService service
 
 type ApiCreateReceivedDocumentRequest struct {
 	ctx context.Context
-	ApiService *ReceivedDocumentsApiService
+	ApiService *ReceivedDocumentsAPIService
 	companyId int32
 	createReceivedDocumentRequest *CreateReceivedDocumentRequest
 }
@@ -52,7 +52,7 @@ Creates a new document.
  @param companyId The ID of the company.
  @return ApiCreateReceivedDocumentRequest
 */
-func (a *ReceivedDocumentsApiService) CreateReceivedDocument(ctx context.Context, companyId int32) ApiCreateReceivedDocumentRequest {
+func (a *ReceivedDocumentsAPIService) CreateReceivedDocument(ctx context.Context, companyId int32) ApiCreateReceivedDocumentRequest {
 	return ApiCreateReceivedDocumentRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -62,7 +62,7 @@ func (a *ReceivedDocumentsApiService) CreateReceivedDocument(ctx context.Context
 
 // Execute executes the request
 //  @return CreateReceivedDocumentResponse
-func (a *ReceivedDocumentsApiService) CreateReceivedDocumentExecute(r ApiCreateReceivedDocumentRequest) (*CreateReceivedDocumentResponse, *http.Response, error) {
+func (a *ReceivedDocumentsAPIService) CreateReceivedDocumentExecute(r ApiCreateReceivedDocumentRequest) (*CreateReceivedDocumentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -70,7 +70,7 @@ func (a *ReceivedDocumentsApiService) CreateReceivedDocumentExecute(r ApiCreateR
 		localVarReturnValue  *CreateReceivedDocumentResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsApiService.CreateReceivedDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.CreateReceivedDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,7 +140,7 @@ func (a *ReceivedDocumentsApiService) CreateReceivedDocumentExecute(r ApiCreateR
 
 type ApiDeleteReceivedDocumentRequest struct {
 	ctx context.Context
-	ApiService *ReceivedDocumentsApiService
+	ApiService *ReceivedDocumentsAPIService
 	companyId int32
 	documentId int32
 }
@@ -159,7 +159,7 @@ Deletes the specified document.
  @param documentId The ID of the document.
  @return ApiDeleteReceivedDocumentRequest
 */
-func (a *ReceivedDocumentsApiService) DeleteReceivedDocument(ctx context.Context, companyId int32, documentId int32) ApiDeleteReceivedDocumentRequest {
+func (a *ReceivedDocumentsAPIService) DeleteReceivedDocument(ctx context.Context, companyId int32, documentId int32) ApiDeleteReceivedDocumentRequest {
 	return ApiDeleteReceivedDocumentRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -169,14 +169,14 @@ func (a *ReceivedDocumentsApiService) DeleteReceivedDocument(ctx context.Context
 }
 
 // Execute executes the request
-func (a *ReceivedDocumentsApiService) DeleteReceivedDocumentExecute(r ApiDeleteReceivedDocumentRequest) (*http.Response, error) {
+func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentExecute(r ApiDeleteReceivedDocumentRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsApiService.DeleteReceivedDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.DeleteReceivedDocument")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -236,7 +236,7 @@ func (a *ReceivedDocumentsApiService) DeleteReceivedDocumentExecute(r ApiDeleteR
 
 type ApiDeleteReceivedDocumentAttachmentRequest struct {
 	ctx context.Context
-	ApiService *ReceivedDocumentsApiService
+	ApiService *ReceivedDocumentsAPIService
 	companyId int32
 	documentId int32
 }
@@ -255,7 +255,7 @@ Removes the attachment of the specified document.
  @param documentId The ID of the document.
  @return ApiDeleteReceivedDocumentAttachmentRequest
 */
-func (a *ReceivedDocumentsApiService) DeleteReceivedDocumentAttachment(ctx context.Context, companyId int32, documentId int32) ApiDeleteReceivedDocumentAttachmentRequest {
+func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentAttachment(ctx context.Context, companyId int32, documentId int32) ApiDeleteReceivedDocumentAttachmentRequest {
 	return ApiDeleteReceivedDocumentAttachmentRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -265,14 +265,14 @@ func (a *ReceivedDocumentsApiService) DeleteReceivedDocumentAttachment(ctx conte
 }
 
 // Execute executes the request
-func (a *ReceivedDocumentsApiService) DeleteReceivedDocumentAttachmentExecute(r ApiDeleteReceivedDocumentAttachmentRequest) (*http.Response, error) {
+func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentAttachmentExecute(r ApiDeleteReceivedDocumentAttachmentRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsApiService.DeleteReceivedDocumentAttachment")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.DeleteReceivedDocumentAttachment")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -332,7 +332,7 @@ func (a *ReceivedDocumentsApiService) DeleteReceivedDocumentAttachmentExecute(r 
 
 type ApiGetExistingReceivedDocumentTotalsRequest struct {
 	ctx context.Context
-	ApiService *ReceivedDocumentsApiService
+	ApiService *ReceivedDocumentsAPIService
 	companyId int32
 	documentId int32
 	getExistingReceivedDocumentTotalsRequest *GetExistingReceivedDocumentTotalsRequest
@@ -358,7 +358,7 @@ Returns the totals for the specified document.
  @param documentId The ID of the document.
  @return ApiGetExistingReceivedDocumentTotalsRequest
 */
-func (a *ReceivedDocumentsApiService) GetExistingReceivedDocumentTotals(ctx context.Context, companyId int32, documentId int32) ApiGetExistingReceivedDocumentTotalsRequest {
+func (a *ReceivedDocumentsAPIService) GetExistingReceivedDocumentTotals(ctx context.Context, companyId int32, documentId int32) ApiGetExistingReceivedDocumentTotalsRequest {
 	return ApiGetExistingReceivedDocumentTotalsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -369,7 +369,7 @@ func (a *ReceivedDocumentsApiService) GetExistingReceivedDocumentTotals(ctx cont
 
 // Execute executes the request
 //  @return GetExistingReceivedDocumentTotalsResponse
-func (a *ReceivedDocumentsApiService) GetExistingReceivedDocumentTotalsExecute(r ApiGetExistingReceivedDocumentTotalsRequest) (*GetExistingReceivedDocumentTotalsResponse, *http.Response, error) {
+func (a *ReceivedDocumentsAPIService) GetExistingReceivedDocumentTotalsExecute(r ApiGetExistingReceivedDocumentTotalsRequest) (*GetExistingReceivedDocumentTotalsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -377,7 +377,7 @@ func (a *ReceivedDocumentsApiService) GetExistingReceivedDocumentTotalsExecute(r
 		localVarReturnValue  *GetExistingReceivedDocumentTotalsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsApiService.GetExistingReceivedDocumentTotals")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.GetExistingReceivedDocumentTotals")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -448,7 +448,7 @@ func (a *ReceivedDocumentsApiService) GetExistingReceivedDocumentTotalsExecute(r
 
 type ApiGetNewReceivedDocumentTotalsRequest struct {
 	ctx context.Context
-	ApiService *ReceivedDocumentsApiService
+	ApiService *ReceivedDocumentsAPIService
 	companyId int32
 	getNewReceivedDocumentTotalsRequest *GetNewReceivedDocumentTotalsRequest
 }
@@ -472,7 +472,7 @@ Returns the totals for a new document.
  @param companyId The ID of the company.
  @return ApiGetNewReceivedDocumentTotalsRequest
 */
-func (a *ReceivedDocumentsApiService) GetNewReceivedDocumentTotals(ctx context.Context, companyId int32) ApiGetNewReceivedDocumentTotalsRequest {
+func (a *ReceivedDocumentsAPIService) GetNewReceivedDocumentTotals(ctx context.Context, companyId int32) ApiGetNewReceivedDocumentTotalsRequest {
 	return ApiGetNewReceivedDocumentTotalsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -482,7 +482,7 @@ func (a *ReceivedDocumentsApiService) GetNewReceivedDocumentTotals(ctx context.C
 
 // Execute executes the request
 //  @return GetNewReceivedDocumentTotalsResponse
-func (a *ReceivedDocumentsApiService) GetNewReceivedDocumentTotalsExecute(r ApiGetNewReceivedDocumentTotalsRequest) (*GetNewReceivedDocumentTotalsResponse, *http.Response, error) {
+func (a *ReceivedDocumentsAPIService) GetNewReceivedDocumentTotalsExecute(r ApiGetNewReceivedDocumentTotalsRequest) (*GetNewReceivedDocumentTotalsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -490,7 +490,7 @@ func (a *ReceivedDocumentsApiService) GetNewReceivedDocumentTotalsExecute(r ApiG
 		localVarReturnValue  *GetNewReceivedDocumentTotalsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsApiService.GetNewReceivedDocumentTotals")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.GetNewReceivedDocumentTotals")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -560,7 +560,7 @@ func (a *ReceivedDocumentsApiService) GetNewReceivedDocumentTotalsExecute(r ApiG
 
 type ApiGetReceivedDocumentRequest struct {
 	ctx context.Context
-	ApiService *ReceivedDocumentsApiService
+	ApiService *ReceivedDocumentsAPIService
 	companyId int32
 	documentId int32
 	fields *string
@@ -593,7 +593,7 @@ Gets the specified document.
  @param documentId The ID of the document.
  @return ApiGetReceivedDocumentRequest
 */
-func (a *ReceivedDocumentsApiService) GetReceivedDocument(ctx context.Context, companyId int32, documentId int32) ApiGetReceivedDocumentRequest {
+func (a *ReceivedDocumentsAPIService) GetReceivedDocument(ctx context.Context, companyId int32, documentId int32) ApiGetReceivedDocumentRequest {
 	return ApiGetReceivedDocumentRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -604,7 +604,7 @@ func (a *ReceivedDocumentsApiService) GetReceivedDocument(ctx context.Context, c
 
 // Execute executes the request
 //  @return GetReceivedDocumentResponse
-func (a *ReceivedDocumentsApiService) GetReceivedDocumentExecute(r ApiGetReceivedDocumentRequest) (*GetReceivedDocumentResponse, *http.Response, error) {
+func (a *ReceivedDocumentsAPIService) GetReceivedDocumentExecute(r ApiGetReceivedDocumentRequest) (*GetReceivedDocumentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -612,7 +612,7 @@ func (a *ReceivedDocumentsApiService) GetReceivedDocumentExecute(r ApiGetReceive
 		localVarReturnValue  *GetReceivedDocumentResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsApiService.GetReceivedDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.GetReceivedDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -687,7 +687,7 @@ func (a *ReceivedDocumentsApiService) GetReceivedDocumentExecute(r ApiGetReceive
 
 type ApiGetReceivedDocumentPreCreateInfoRequest struct {
 	ctx context.Context
-	ApiService *ReceivedDocumentsApiService
+	ApiService *ReceivedDocumentsAPIService
 	companyId int32
 	type_ *string
 }
@@ -711,7 +711,7 @@ Retrieves the information useful while creating a new document.
  @param companyId The ID of the company.
  @return ApiGetReceivedDocumentPreCreateInfoRequest
 */
-func (a *ReceivedDocumentsApiService) GetReceivedDocumentPreCreateInfo(ctx context.Context, companyId int32) ApiGetReceivedDocumentPreCreateInfoRequest {
+func (a *ReceivedDocumentsAPIService) GetReceivedDocumentPreCreateInfo(ctx context.Context, companyId int32) ApiGetReceivedDocumentPreCreateInfoRequest {
 	return ApiGetReceivedDocumentPreCreateInfoRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -721,7 +721,7 @@ func (a *ReceivedDocumentsApiService) GetReceivedDocumentPreCreateInfo(ctx conte
 
 // Execute executes the request
 //  @return GetReceivedDocumentPreCreateInfoResponse
-func (a *ReceivedDocumentsApiService) GetReceivedDocumentPreCreateInfoExecute(r ApiGetReceivedDocumentPreCreateInfoRequest) (*GetReceivedDocumentPreCreateInfoResponse, *http.Response, error) {
+func (a *ReceivedDocumentsAPIService) GetReceivedDocumentPreCreateInfoExecute(r ApiGetReceivedDocumentPreCreateInfoRequest) (*GetReceivedDocumentPreCreateInfoResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -729,7 +729,7 @@ func (a *ReceivedDocumentsApiService) GetReceivedDocumentPreCreateInfoExecute(r 
 		localVarReturnValue  *GetReceivedDocumentPreCreateInfoResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsApiService.GetReceivedDocumentPreCreateInfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.GetReceivedDocumentPreCreateInfo")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -801,7 +801,7 @@ func (a *ReceivedDocumentsApiService) GetReceivedDocumentPreCreateInfoExecute(r 
 
 type ApiListReceivedDocumentsRequest struct {
 	ctx context.Context
-	ApiService *ReceivedDocumentsApiService
+	ApiService *ReceivedDocumentsAPIService
 	companyId int32
 	type_ *string
 	fields *string
@@ -867,7 +867,7 @@ Lists the received documents.
  @param companyId The ID of the company.
  @return ApiListReceivedDocumentsRequest
 */
-func (a *ReceivedDocumentsApiService) ListReceivedDocuments(ctx context.Context, companyId int32) ApiListReceivedDocumentsRequest {
+func (a *ReceivedDocumentsAPIService) ListReceivedDocuments(ctx context.Context, companyId int32) ApiListReceivedDocumentsRequest {
 	return ApiListReceivedDocumentsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -877,7 +877,7 @@ func (a *ReceivedDocumentsApiService) ListReceivedDocuments(ctx context.Context,
 
 // Execute executes the request
 //  @return ListReceivedDocumentsResponse
-func (a *ReceivedDocumentsApiService) ListReceivedDocumentsExecute(r ApiListReceivedDocumentsRequest) (*ListReceivedDocumentsResponse, *http.Response, error) {
+func (a *ReceivedDocumentsAPIService) ListReceivedDocumentsExecute(r ApiListReceivedDocumentsRequest) (*ListReceivedDocumentsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -885,7 +885,7 @@ func (a *ReceivedDocumentsApiService) ListReceivedDocumentsExecute(r ApiListRece
 		localVarReturnValue  *ListReceivedDocumentsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsApiService.ListReceivedDocuments")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.ListReceivedDocuments")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -912,10 +912,16 @@ func (a *ReceivedDocumentsApiService) ListReceivedDocumentsExecute(r ApiListRece
 	}
 	if r.page != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
-	}
+	} else {
+ 		var defaultValue int32 = 1
+ 		r.page = &defaultValue
+ 	}
 	if r.perPage != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
-	}
+	} else {
+ 		var defaultValue int32 = 5
+ 		r.perPage = &defaultValue
+ 	}
 	if r.q != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
 	}
@@ -975,7 +981,7 @@ func (a *ReceivedDocumentsApiService) ListReceivedDocumentsExecute(r ApiListRece
 
 type ApiModifyReceivedDocumentRequest struct {
 	ctx context.Context
-	ApiService *ReceivedDocumentsApiService
+	ApiService *ReceivedDocumentsAPIService
 	companyId int32
 	documentId int32
 	modifyReceivedDocumentRequest *ModifyReceivedDocumentRequest
@@ -1001,7 +1007,7 @@ Modifies the specified document.
  @param documentId The ID of the document.
  @return ApiModifyReceivedDocumentRequest
 */
-func (a *ReceivedDocumentsApiService) ModifyReceivedDocument(ctx context.Context, companyId int32, documentId int32) ApiModifyReceivedDocumentRequest {
+func (a *ReceivedDocumentsAPIService) ModifyReceivedDocument(ctx context.Context, companyId int32, documentId int32) ApiModifyReceivedDocumentRequest {
 	return ApiModifyReceivedDocumentRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1012,7 +1018,7 @@ func (a *ReceivedDocumentsApiService) ModifyReceivedDocument(ctx context.Context
 
 // Execute executes the request
 //  @return ModifyReceivedDocumentResponse
-func (a *ReceivedDocumentsApiService) ModifyReceivedDocumentExecute(r ApiModifyReceivedDocumentRequest) (*ModifyReceivedDocumentResponse, *http.Response, error) {
+func (a *ReceivedDocumentsAPIService) ModifyReceivedDocumentExecute(r ApiModifyReceivedDocumentRequest) (*ModifyReceivedDocumentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1020,7 +1026,7 @@ func (a *ReceivedDocumentsApiService) ModifyReceivedDocumentExecute(r ApiModifyR
 		localVarReturnValue  *ModifyReceivedDocumentResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsApiService.ModifyReceivedDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.ModifyReceivedDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1091,7 +1097,7 @@ func (a *ReceivedDocumentsApiService) ModifyReceivedDocumentExecute(r ApiModifyR
 
 type ApiUploadReceivedDocumentAttachmentRequest struct {
 	ctx context.Context
-	ApiService *ReceivedDocumentsApiService
+	ApiService *ReceivedDocumentsAPIService
 	companyId int32
 	filename *string
 	attachment *os.File
@@ -1122,7 +1128,7 @@ Uploads an attachment destined to a received document. The actual association be
  @param companyId The ID of the company.
  @return ApiUploadReceivedDocumentAttachmentRequest
 */
-func (a *ReceivedDocumentsApiService) UploadReceivedDocumentAttachment(ctx context.Context, companyId int32) ApiUploadReceivedDocumentAttachmentRequest {
+func (a *ReceivedDocumentsAPIService) UploadReceivedDocumentAttachment(ctx context.Context, companyId int32) ApiUploadReceivedDocumentAttachmentRequest {
 	return ApiUploadReceivedDocumentAttachmentRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1132,7 +1138,7 @@ func (a *ReceivedDocumentsApiService) UploadReceivedDocumentAttachment(ctx conte
 
 // Execute executes the request
 //  @return UploadReceivedDocumentAttachmentResponse
-func (a *ReceivedDocumentsApiService) UploadReceivedDocumentAttachmentExecute(r ApiUploadReceivedDocumentAttachmentRequest) (*UploadReceivedDocumentAttachmentResponse, *http.Response, error) {
+func (a *ReceivedDocumentsAPIService) UploadReceivedDocumentAttachmentExecute(r ApiUploadReceivedDocumentAttachmentRequest) (*UploadReceivedDocumentAttachmentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1140,7 +1146,7 @@ func (a *ReceivedDocumentsApiService) UploadReceivedDocumentAttachmentExecute(r 
 		localVarReturnValue  *UploadReceivedDocumentAttachmentResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsApiService.UploadReceivedDocumentAttachment")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.UploadReceivedDocumentAttachment")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

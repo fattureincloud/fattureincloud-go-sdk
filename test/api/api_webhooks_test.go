@@ -37,7 +37,7 @@ func TestCreateWebhooksSubscription(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.WebhooksApi.CreateWebhooksSubscription(context.Background(), 2).CreateWebhooksSubscriptionRequest(*NewCreateWebhooksSubscriptionRequest()).Execute()
+	actual, _, err := apiClient.WebhooksAPI.CreateWebhooksSubscription(context.Background(), 2).CreateWebhooksSubscriptionRequest(*NewCreateWebhooksSubscriptionRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewWebhooksSubscription().
@@ -66,7 +66,7 @@ func TestDeleteWebhooksSubscription(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, err := apiClient.WebhooksApi.DeleteWebhooksSubscription(context.Background(), 2, "SUB123").Execute()
+	actual, err := apiClient.WebhooksAPI.DeleteWebhooksSubscription(context.Background(), 2, "SUB123").Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.Equal(t, 200, actual.StatusCode)
@@ -86,7 +86,7 @@ func TestGetWebhooksSubscription(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.WebhooksApi.GetWebhooksSubscription(context.Background(), 2, "SUB123").Execute()
+	actual, _, err := apiClient.WebhooksAPI.GetWebhooksSubscription(context.Background(), 2, "SUB123").Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewWebhooksSubscription().
@@ -112,7 +112,7 @@ func TestListWebhooksSubscriptions(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.WebhooksApi.ListWebhooksSubscriptions(context.Background(), 2).Execute()
+	actual, _, err := apiClient.WebhooksAPI.ListWebhooksSubscriptions(context.Background(), 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewWebhooksSubscription().
@@ -138,7 +138,7 @@ func TestModifyWebhooksSubscription(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.WebhooksApi.ModifyWebhooksSubscription(context.Background(), 2, "SUB123").ModifyWebhooksSubscriptionRequest(*NewModifyWebhooksSubscriptionRequest()).Execute()
+	actual, _, err := apiClient.WebhooksAPI.ModifyWebhooksSubscription(context.Background(), 2, "SUB123").ModifyWebhooksSubscriptionRequest(*NewModifyWebhooksSubscriptionRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewWebhooksSubscription().

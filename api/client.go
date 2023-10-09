@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.28
+API version: 2.0.30
 Contact: info@fattureincloud.it
 */
 
@@ -44,7 +44,7 @@ var (
 	queryDescape    = strings.NewReplacer( "%5B", "[", "%5D", "]" )
 )
 
-// APIClient manages communication with the Fatture in Cloud API v2 - API Reference API v2.0.28
+// APIClient manages communication with the Fatture in Cloud API v2 - API Reference API v2.0.30
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
@@ -52,37 +52,37 @@ type APIClient struct {
 
 	// API Services
 
-	ArchiveApi *ArchiveApiService
+	ArchiveAPI *ArchiveAPIService
 
-	CashbookApi *CashbookApiService
+	CashbookAPI *CashbookAPIService
 
-	ClientsApi *ClientsApiService
+	ClientsAPI *ClientsAPIService
 
-	CompaniesApi *CompaniesApiService
+	CompaniesAPI *CompaniesAPIService
 
-	EmailsApi *EmailsApiService
+	EmailsAPI *EmailsAPIService
 
-	InfoApi *InfoApiService
+	InfoAPI *InfoAPIService
 
-	IssuedDocumentsApi *IssuedDocumentsApiService
+	IssuedDocumentsAPI *IssuedDocumentsAPIService
 
-	IssuedEInvoicesApi *IssuedEInvoicesApiService
+	IssuedEInvoicesAPI *IssuedEInvoicesAPIService
 
-	ProductsApi *ProductsApiService
+	ProductsAPI *ProductsAPIService
 
-	ReceiptsApi *ReceiptsApiService
+	ReceiptsAPI *ReceiptsAPIService
 
-	ReceivedDocumentsApi *ReceivedDocumentsApiService
+	ReceivedDocumentsAPI *ReceivedDocumentsAPIService
 
-	SettingsApi *SettingsApiService
+	SettingsAPI *SettingsAPIService
 
-	SuppliersApi *SuppliersApiService
+	SuppliersAPI *SuppliersAPIService
 
-	TaxesApi *TaxesApiService
+	TaxesAPI *TaxesAPIService
 
-	UserApi *UserApiService
+	UserAPI *UserAPIService
 
-	WebhooksApi *WebhooksApiService
+	WebhooksAPI *WebhooksAPIService
 }
 
 type service struct {
@@ -101,22 +101,22 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
-	c.ArchiveApi = (*ArchiveApiService)(&c.common)
-	c.CashbookApi = (*CashbookApiService)(&c.common)
-	c.ClientsApi = (*ClientsApiService)(&c.common)
-	c.CompaniesApi = (*CompaniesApiService)(&c.common)
-	c.EmailsApi = (*EmailsApiService)(&c.common)
-	c.InfoApi = (*InfoApiService)(&c.common)
-	c.IssuedDocumentsApi = (*IssuedDocumentsApiService)(&c.common)
-	c.IssuedEInvoicesApi = (*IssuedEInvoicesApiService)(&c.common)
-	c.ProductsApi = (*ProductsApiService)(&c.common)
-	c.ReceiptsApi = (*ReceiptsApiService)(&c.common)
-	c.ReceivedDocumentsApi = (*ReceivedDocumentsApiService)(&c.common)
-	c.SettingsApi = (*SettingsApiService)(&c.common)
-	c.SuppliersApi = (*SuppliersApiService)(&c.common)
-	c.TaxesApi = (*TaxesApiService)(&c.common)
-	c.UserApi = (*UserApiService)(&c.common)
-	c.WebhooksApi = (*WebhooksApiService)(&c.common)
+	c.ArchiveAPI = (*ArchiveAPIService)(&c.common)
+	c.CashbookAPI = (*CashbookAPIService)(&c.common)
+	c.ClientsAPI = (*ClientsAPIService)(&c.common)
+	c.CompaniesAPI = (*CompaniesAPIService)(&c.common)
+	c.EmailsAPI = (*EmailsAPIService)(&c.common)
+	c.InfoAPI = (*InfoAPIService)(&c.common)
+	c.IssuedDocumentsAPI = (*IssuedDocumentsAPIService)(&c.common)
+	c.IssuedEInvoicesAPI = (*IssuedEInvoicesAPIService)(&c.common)
+	c.ProductsAPI = (*ProductsAPIService)(&c.common)
+	c.ReceiptsAPI = (*ReceiptsAPIService)(&c.common)
+	c.ReceivedDocumentsAPI = (*ReceivedDocumentsAPIService)(&c.common)
+	c.SettingsAPI = (*SettingsAPIService)(&c.common)
+	c.SuppliersAPI = (*SuppliersAPIService)(&c.common)
+	c.TaxesAPI = (*TaxesAPIService)(&c.common)
+	c.UserAPI = (*UserAPIService)(&c.common)
+	c.WebhooksAPI = (*WebhooksAPIService)(&c.common)
 
 	return c
 }
@@ -588,7 +588,11 @@ func setBody(body interface{}, contentType string) (bodyBuf *bytes.Buffer, err e
 	} else if jsonCheck.MatchString(contentType) {
 		err = json.NewEncoder(bodyBuf).Encode(body)
 	} else if xmlCheck.MatchString(contentType) {
-		err = xml.NewEncoder(bodyBuf).Encode(body)
+		var bs []byte
+ 		bs, err = xml.Marshal(body)
+ 		if err == nil {
+ 			bodyBuf.Write(bs)
+ 		}
 	}
 
 	if err != nil {
@@ -705,15 +709,16 @@ func formatErrorMessage(status string, v interface{}) string {
 	metaValue := reflect.ValueOf(v).Elem()
 
 	if metaValue.Kind() == reflect.Struct {
- 		field := metaValue.FieldByName("Title")
- 		if field != (reflect.Value{}) {
- 			str = fmt.Sprintf("%s", field.Interface())
- 		}
- 		field = metaValue.FieldByName("Detail")
- 		if field != (reflect.Value{}) {
- 			str = fmt.Sprintf("%s (%s)", str, field.Interface())
- 		}
- 	}
+		field := metaValue.FieldByName("Title")
+		if field != (reflect.Value{}) {
+			str = fmt.Sprintf("%s", field.Interface())
+		}
+		
+		field = metaValue.FieldByName("Detail")
+		if field != (reflect.Value{}) {
+			str = fmt.Sprintf("%s (%s)", str, field.Interface())
+		}
+	}
 	
 	return strings.TrimSpace(fmt.Sprintf("%s %s", status, str))
 }

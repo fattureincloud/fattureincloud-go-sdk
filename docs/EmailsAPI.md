@@ -1,10 +1,10 @@
-# \EmailsApi
+# \EmailsAPI
 
 All URIs are relative to *https://api-v2.fattureincloud.it*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListEmails**](EmailsApi.md#ListEmails) | **Get** /c/{company_id}/emails | List emails
+[**ListEmails**](EmailsAPI.md#ListEmails) | **Get** /c/{company_id}/emails | List Emails
 
 
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 > ListEmailsResponse ListEmails(ctx, companyId).Execute()
 
-List emails
+List Emails
 
 
 
@@ -36,9 +36,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.EmailsApi.ListEmails(auth, companyId).Execute()
+    resp, r, err := apiClient.EmailsAPI.ListEmails(auth, companyId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EmailsApi.ListEmails``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EmailsAPI.ListEmails``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListEmails`: ListEmailsResponse

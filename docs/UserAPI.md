@@ -1,11 +1,11 @@
-# \UserApi
+# \UserAPI
 
 All URIs are relative to *https://api-v2.fattureincloud.it*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetUserInfo**](UserApi.md#GetUserInfo) | **Get** /user/info | Get User Info
-[**ListUserCompanies**](UserApi.md#ListUserCompanies) | **Get** /user/companies | List User Companies
+[**GetUserInfo**](UserAPI.md#GetUserInfo) | **Get** /user/info | Get User Info
+[**ListUserCompanies**](UserAPI.md#ListUserCompanies) | **Get** /user/companies | List User Companies
 
 
 
@@ -36,9 +36,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserApi.GetUserInfo(auth).Execute()
+    resp, r, err := apiClient.UserAPI.GetUserInfo(auth).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserApi.GetUserInfo``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UserAPI.GetUserInfo``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetUserInfo`: GetUserInfoResponse
@@ -100,9 +100,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserApi.ListUserCompanies(auth).Execute()
+    resp, r, err := apiClient.UserAPI.ListUserCompanies(auth).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserApi.ListUserCompanies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UserAPI.ListUserCompanies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListUserCompanies`: ListUserCompaniesResponse

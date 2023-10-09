@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.28
+API version: 2.0.30
 Contact: info@fattureincloud.it
 */
 
@@ -21,12 +21,12 @@ import (
 )
 
 
-// UserApiService UserApi service
-type UserApiService service
+// UserAPIService UserAPI service
+type UserAPIService service
 
 type ApiGetUserInfoRequest struct {
 	ctx context.Context
-	ApiService *UserApiService
+	ApiService *UserAPIService
 }
 
 func (r ApiGetUserInfoRequest) Execute() (*GetUserInfoResponse, *http.Response, error) {
@@ -41,7 +41,7 @@ Gets the current user's info.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetUserInfoRequest
 */
-func (a *UserApiService) GetUserInfo(ctx context.Context) ApiGetUserInfoRequest {
+func (a *UserAPIService) GetUserInfo(ctx context.Context) ApiGetUserInfoRequest {
 	return ApiGetUserInfoRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -50,7 +50,7 @@ func (a *UserApiService) GetUserInfo(ctx context.Context) ApiGetUserInfoRequest 
 
 // Execute executes the request
 //  @return GetUserInfoResponse
-func (a *UserApiService) GetUserInfoExecute(r ApiGetUserInfoRequest) (*GetUserInfoResponse, *http.Response, error) {
+func (a *UserAPIService) GetUserInfoExecute(r ApiGetUserInfoRequest) (*GetUserInfoResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -58,7 +58,7 @@ func (a *UserApiService) GetUserInfoExecute(r ApiGetUserInfoRequest) (*GetUserIn
 		localVarReturnValue  *GetUserInfoResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserApiService.GetUserInfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.GetUserInfo")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -125,7 +125,7 @@ func (a *UserApiService) GetUserInfoExecute(r ApiGetUserInfoRequest) (*GetUserIn
 
 type ApiListUserCompaniesRequest struct {
 	ctx context.Context
-	ApiService *UserApiService
+	ApiService *UserAPIService
 }
 
 func (r ApiListUserCompaniesRequest) Execute() (*ListUserCompaniesResponse, *http.Response, error) {
@@ -140,7 +140,7 @@ Lists the companies controlled by the current user.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListUserCompaniesRequest
 */
-func (a *UserApiService) ListUserCompanies(ctx context.Context) ApiListUserCompaniesRequest {
+func (a *UserAPIService) ListUserCompanies(ctx context.Context) ApiListUserCompaniesRequest {
 	return ApiListUserCompaniesRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -149,7 +149,7 @@ func (a *UserApiService) ListUserCompanies(ctx context.Context) ApiListUserCompa
 
 // Execute executes the request
 //  @return ListUserCompaniesResponse
-func (a *UserApiService) ListUserCompaniesExecute(r ApiListUserCompaniesRequest) (*ListUserCompaniesResponse, *http.Response, error) {
+func (a *UserAPIService) ListUserCompaniesExecute(r ApiListUserCompaniesRequest) (*ListUserCompaniesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -157,7 +157,7 @@ func (a *UserApiService) ListUserCompaniesExecute(r ApiListUserCompaniesRequest)
 		localVarReturnValue  *ListUserCompaniesResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserApiService.ListUserCompanies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.ListUserCompanies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -36,7 +36,7 @@ func TestCreateReceivedDocument(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ReceivedDocumentsApi.CreateReceivedDocument(context.Background(), 2).CreateReceivedDocumentRequest(*NewCreateReceivedDocumentRequest()).Execute()
+	actual, _, err := apiClient.ReceivedDocumentsAPI.CreateReceivedDocument(context.Background(), 2).CreateReceivedDocumentRequest(*NewCreateReceivedDocumentRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewReceivedDocument().
@@ -96,7 +96,7 @@ func TestDeleteReceivedDocument(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	resp, err := apiClient.ReceivedDocumentsApi.DeleteReceivedDocument(context.Background(), 2, 2).Execute()
+	resp, err := apiClient.ReceivedDocumentsAPI.DeleteReceivedDocument(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.Equal(t, 200, resp.StatusCode)
@@ -116,7 +116,7 @@ func TestDeleteReceivedDocumentAttachment(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	resp, err := apiClient.ReceivedDocumentsApi.DeleteReceivedDocumentAttachment(context.Background(), 2, 2).Execute()
+	resp, err := apiClient.ReceivedDocumentsAPI.DeleteReceivedDocumentAttachment(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.Equal(t, 200, resp.StatusCode)
@@ -136,7 +136,7 @@ func TestGetExistingReceivedDocumentTotals(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ReceivedDocumentsApi.GetExistingReceivedDocumentTotals(context.Background(), 2, 2).GetExistingReceivedDocumentTotalsRequest(*NewGetExistingReceivedDocumentTotalsRequest()).Execute()
+	actual, _, err := apiClient.ReceivedDocumentsAPI.GetExistingReceivedDocumentTotals(context.Background(), 2, 2).GetExistingReceivedDocumentTotalsRequest(*NewGetExistingReceivedDocumentTotalsRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewReceivedDocumentTotals().
@@ -165,7 +165,7 @@ func TestGetNewReceivedDocumentTotals(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ReceivedDocumentsApi.GetNewReceivedDocumentTotals(context.Background(), 2).GetNewReceivedDocumentTotalsRequest(*NewGetNewReceivedDocumentTotalsRequest()).Execute()
+	actual, _, err := apiClient.ReceivedDocumentsAPI.GetNewReceivedDocumentTotals(context.Background(), 2).GetNewReceivedDocumentTotalsRequest(*NewGetNewReceivedDocumentTotalsRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewReceivedDocumentTotals().
@@ -194,7 +194,7 @@ func TestGetReceivedDocument(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ReceivedDocumentsApi.GetReceivedDocument(context.Background(), 2, 2).Execute()
+	actual, _, err := apiClient.ReceivedDocumentsAPI.GetReceivedDocument(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewReceivedDocument().
@@ -254,7 +254,7 @@ func TestGetReceivedDocumentPreCreateInfo(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ReceivedDocumentsApi.GetReceivedDocumentPreCreateInfo(context.Background(), 2).Type_("expense").Execute()
+	actual, _, err := apiClient.ReceivedDocumentsAPI.GetReceivedDocumentPreCreateInfo(context.Background(), 2).Type_("expense").Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewReceivedDocumentInfo().
@@ -283,7 +283,7 @@ func TestListReceivedDocuments(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ReceivedDocumentsApi.ListReceivedDocuments(context.Background(), 2).Type_("expense").Execute()
+	actual, _, err := apiClient.ReceivedDocumentsAPI.ListReceivedDocuments(context.Background(), 2).Type_("expense").Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewReceivedDocument().
@@ -343,7 +343,7 @@ func TestModifyReceivedDocument(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ReceivedDocumentsApi.ModifyReceivedDocument(context.Background(), 2, 2).ModifyReceivedDocumentRequest(*NewModifyReceivedDocumentRequest()).Execute()
+	actual, _, err := apiClient.ReceivedDocumentsAPI.ModifyReceivedDocument(context.Background(), 2, 2).ModifyReceivedDocumentRequest(*NewModifyReceivedDocumentRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewReceivedDocument().
@@ -403,7 +403,7 @@ func TestUploadReceivedDocumentAttachment(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	_, resp, err := apiClient.ReceivedDocumentsApi.UploadReceivedDocumentAttachment(context.Background(), 2).Filename("filename").Execute()
+	_, resp, err := apiClient.ReceivedDocumentsAPI.UploadReceivedDocumentAttachment(context.Background(), 2).Filename("filename").Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.Equal(t, 200, resp.StatusCode)

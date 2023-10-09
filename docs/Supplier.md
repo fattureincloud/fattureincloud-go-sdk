@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **AddressProvince** | Pointer to **NullableString** | Supplier province | [optional] 
 **AddressExtra** | Pointer to **NullableString** | Supplier address extra info | [optional] 
 **Country** | Pointer to **NullableString** | Supplier country | [optional] 
+**CountryIso** | Pointer to **NullableString** | Supplier country iso code | [optional] 
 **Email** | Pointer to **NullableString** | Supplier email | [optional] 
 **CertifiedEmail** | Pointer to **NullableString** | Supplier certified email | [optional] 
 **Phone** | Pointer to **NullableString** | Supplier phone | [optional] 
@@ -572,6 +573,41 @@ HasCountry returns a boolean if a field has been set.
 `func (o *Supplier) UnsetCountry()`
 
 UnsetCountry ensures that no value is present for Country, not even an explicit nil
+### GetCountryIso
+
+`func (o *Supplier) GetCountryIso() string`
+
+GetCountryIso returns the CountryIso field if non-nil, zero value otherwise.
+
+### GetCountryIsoOk
+
+`func (o *Supplier) GetCountryIsoOk() (*string, bool)`
+
+GetCountryIsoOk returns a tuple with the CountryIso field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCountryIso
+
+`func (o *Supplier) SetCountryIso(v string)`
+
+SetCountryIso sets CountryIso field to given value.
+
+### HasCountryIso
+
+`func (o *Supplier) HasCountryIso() bool`
+
+HasCountryIso returns a boolean if a field has been set.
+
+### SetCountryIsoNil
+
+`func (o *Supplier) SetCountryIsoNil(b bool)`
+
+ SetCountryIsoNil sets the value for CountryIso to be an explicit nil
+
+### UnsetCountryIso
+`func (o *Supplier) UnsetCountryIso()`
+
+UnsetCountryIso ensures that no value is present for CountryIso, not even an explicit nil
 ### GetEmail
 
 `func (o *Supplier) GetEmail() string`

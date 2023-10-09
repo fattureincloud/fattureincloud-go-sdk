@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.28
+API version: 2.0.30
 Contact: info@fattureincloud.it
 */
 
@@ -22,12 +22,12 @@ import (
 )
 
 
-// CashbookApiService CashbookApi service
-type CashbookApiService service
+// CashbookAPIService CashbookAPI service
+type CashbookAPIService service
 
 type ApiCreateCashbookEntryRequest struct {
 	ctx context.Context
-	ApiService *CashbookApiService
+	ApiService *CashbookAPIService
 	companyId int32
 	createCashbookEntryRequest *CreateCashbookEntryRequest
 }
@@ -51,7 +51,7 @@ Creates a new cashbook entry.
  @param companyId The ID of the company.
  @return ApiCreateCashbookEntryRequest
 */
-func (a *CashbookApiService) CreateCashbookEntry(ctx context.Context, companyId int32) ApiCreateCashbookEntryRequest {
+func (a *CashbookAPIService) CreateCashbookEntry(ctx context.Context, companyId int32) ApiCreateCashbookEntryRequest {
 	return ApiCreateCashbookEntryRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -61,7 +61,7 @@ func (a *CashbookApiService) CreateCashbookEntry(ctx context.Context, companyId 
 
 // Execute executes the request
 //  @return CreateCashbookEntryResponse
-func (a *CashbookApiService) CreateCashbookEntryExecute(r ApiCreateCashbookEntryRequest) (*CreateCashbookEntryResponse, *http.Response, error) {
+func (a *CashbookAPIService) CreateCashbookEntryExecute(r ApiCreateCashbookEntryRequest) (*CreateCashbookEntryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -69,7 +69,7 @@ func (a *CashbookApiService) CreateCashbookEntryExecute(r ApiCreateCashbookEntry
 		localVarReturnValue  *CreateCashbookEntryResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CashbookApiService.CreateCashbookEntry")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CashbookAPIService.CreateCashbookEntry")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -139,7 +139,7 @@ func (a *CashbookApiService) CreateCashbookEntryExecute(r ApiCreateCashbookEntry
 
 type ApiDeleteCashbookEntryRequest struct {
 	ctx context.Context
-	ApiService *CashbookApiService
+	ApiService *CashbookAPIService
 	companyId int32
 	documentId string
 }
@@ -158,7 +158,7 @@ Deletes the specified cashbook entry.
  @param documentId The ID of the document.
  @return ApiDeleteCashbookEntryRequest
 */
-func (a *CashbookApiService) DeleteCashbookEntry(ctx context.Context, companyId int32, documentId string) ApiDeleteCashbookEntryRequest {
+func (a *CashbookAPIService) DeleteCashbookEntry(ctx context.Context, companyId int32, documentId string) ApiDeleteCashbookEntryRequest {
 	return ApiDeleteCashbookEntryRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -168,14 +168,14 @@ func (a *CashbookApiService) DeleteCashbookEntry(ctx context.Context, companyId 
 }
 
 // Execute executes the request
-func (a *CashbookApiService) DeleteCashbookEntryExecute(r ApiDeleteCashbookEntryRequest) (*http.Response, error) {
+func (a *CashbookAPIService) DeleteCashbookEntryExecute(r ApiDeleteCashbookEntryRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CashbookApiService.DeleteCashbookEntry")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CashbookAPIService.DeleteCashbookEntry")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -235,7 +235,7 @@ func (a *CashbookApiService) DeleteCashbookEntryExecute(r ApiDeleteCashbookEntry
 
 type ApiGetCashbookEntryRequest struct {
 	ctx context.Context
-	ApiService *CashbookApiService
+	ApiService *CashbookAPIService
 	companyId int32
 	documentId string
 	fields *string
@@ -268,7 +268,7 @@ Gets the specified cashbook entry.
  @param documentId The ID of the document.
  @return ApiGetCashbookEntryRequest
 */
-func (a *CashbookApiService) GetCashbookEntry(ctx context.Context, companyId int32, documentId string) ApiGetCashbookEntryRequest {
+func (a *CashbookAPIService) GetCashbookEntry(ctx context.Context, companyId int32, documentId string) ApiGetCashbookEntryRequest {
 	return ApiGetCashbookEntryRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -279,7 +279,7 @@ func (a *CashbookApiService) GetCashbookEntry(ctx context.Context, companyId int
 
 // Execute executes the request
 //  @return GetCashbookEntryResponse
-func (a *CashbookApiService) GetCashbookEntryExecute(r ApiGetCashbookEntryRequest) (*GetCashbookEntryResponse, *http.Response, error) {
+func (a *CashbookAPIService) GetCashbookEntryExecute(r ApiGetCashbookEntryRequest) (*GetCashbookEntryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -287,7 +287,7 @@ func (a *CashbookApiService) GetCashbookEntryExecute(r ApiGetCashbookEntryReques
 		localVarReturnValue  *GetCashbookEntryResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CashbookApiService.GetCashbookEntry")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CashbookAPIService.GetCashbookEntry")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -362,7 +362,7 @@ func (a *CashbookApiService) GetCashbookEntryExecute(r ApiGetCashbookEntryReques
 
 type ApiListCashbookEntriesRequest struct {
 	ctx context.Context
-	ApiService *CashbookApiService
+	ApiService *CashbookAPIService
 	companyId int32
 	dateFrom *string
 	dateTo *string
@@ -414,7 +414,7 @@ Lists the cashbook entries.
  @param companyId The ID of the company.
  @return ApiListCashbookEntriesRequest
 */
-func (a *CashbookApiService) ListCashbookEntries(ctx context.Context, companyId int32) ApiListCashbookEntriesRequest {
+func (a *CashbookAPIService) ListCashbookEntries(ctx context.Context, companyId int32) ApiListCashbookEntriesRequest {
 	return ApiListCashbookEntriesRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -424,7 +424,7 @@ func (a *CashbookApiService) ListCashbookEntries(ctx context.Context, companyId 
 
 // Execute executes the request
 //  @return ListCashbookEntriesResponse
-func (a *CashbookApiService) ListCashbookEntriesExecute(r ApiListCashbookEntriesRequest) (*ListCashbookEntriesResponse, *http.Response, error) {
+func (a *CashbookAPIService) ListCashbookEntriesExecute(r ApiListCashbookEntriesRequest) (*ListCashbookEntriesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -432,7 +432,7 @@ func (a *CashbookApiService) ListCashbookEntriesExecute(r ApiListCashbookEntries
 		localVarReturnValue  *ListCashbookEntriesResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CashbookApiService.ListCashbookEntries")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CashbookAPIService.ListCashbookEntries")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -517,7 +517,7 @@ func (a *CashbookApiService) ListCashbookEntriesExecute(r ApiListCashbookEntries
 
 type ApiModifyCashbookEntryRequest struct {
 	ctx context.Context
-	ApiService *CashbookApiService
+	ApiService *CashbookAPIService
 	companyId int32
 	documentId string
 	modifyCashbookEntryRequest *ModifyCashbookEntryRequest
@@ -543,7 +543,7 @@ Modifies the specified cashbook entry.
  @param documentId The ID of the document.
  @return ApiModifyCashbookEntryRequest
 */
-func (a *CashbookApiService) ModifyCashbookEntry(ctx context.Context, companyId int32, documentId string) ApiModifyCashbookEntryRequest {
+func (a *CashbookAPIService) ModifyCashbookEntry(ctx context.Context, companyId int32, documentId string) ApiModifyCashbookEntryRequest {
 	return ApiModifyCashbookEntryRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -554,7 +554,7 @@ func (a *CashbookApiService) ModifyCashbookEntry(ctx context.Context, companyId 
 
 // Execute executes the request
 //  @return ModifyCashbookEntryResponse
-func (a *CashbookApiService) ModifyCashbookEntryExecute(r ApiModifyCashbookEntryRequest) (*ModifyCashbookEntryResponse, *http.Response, error) {
+func (a *CashbookAPIService) ModifyCashbookEntryExecute(r ApiModifyCashbookEntryRequest) (*ModifyCashbookEntryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -562,7 +562,7 @@ func (a *CashbookApiService) ModifyCashbookEntryExecute(r ApiModifyCashbookEntry
 		localVarReturnValue  *ModifyCashbookEntryResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CashbookApiService.ModifyCashbookEntry")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CashbookAPIService.ModifyCashbookEntry")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

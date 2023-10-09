@@ -36,7 +36,7 @@ func TestCreateSupplier(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.SuppliersApi.CreateSupplier(context.Background(), 2).CreateSupplierRequest(*NewCreateSupplierRequest()).Execute()
+	actual, _, err := apiClient.SuppliersAPI.CreateSupplier(context.Background(), 2).CreateSupplierRequest(*NewCreateSupplierRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewSupplier().
@@ -80,7 +80,7 @@ func TestDeleteSupplier(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	resp, err := apiClient.SuppliersApi.DeleteSupplier(context.Background(), 2, 2).Execute()
+	resp, err := apiClient.SuppliersAPI.DeleteSupplier(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.Equal(t, 200, resp.StatusCode)
@@ -100,7 +100,7 @@ func TestGetSupplier(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.SuppliersApi.GetSupplier(context.Background(), 2, 2).Execute()
+	actual, _, err := apiClient.SuppliersAPI.GetSupplier(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewSupplier().
@@ -144,7 +144,7 @@ func TestListSuppliers(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.SuppliersApi.ListSuppliers(context.Background(), 2).Execute()
+	actual, _, err := apiClient.SuppliersAPI.ListSuppliers(context.Background(), 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewSupplier().
@@ -188,7 +188,7 @@ func TestModifySupplier(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.SuppliersApi.ModifySupplier(context.Background(), 2, 2).ModifySupplierRequest(*NewModifySupplierRequest()).Execute()
+	actual, _, err := apiClient.SuppliersAPI.ModifySupplier(context.Background(), 2, 2).ModifySupplierRequest(*NewModifySupplierRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewSupplier().

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.28
+API version: 2.0.30
 Contact: info@fattureincloud.it
 */
 
@@ -22,12 +22,12 @@ import (
 )
 
 
-// InfoApiService InfoApi service
-type InfoApiService service
+// InfoAPIService InfoAPI service
+type InfoAPIService service
 
 type ApiListArchiveCategoriesRequest struct {
 	ctx context.Context
-	ApiService *InfoApiService
+	ApiService *InfoAPIService
 	companyId int32
 }
 
@@ -44,7 +44,7 @@ Lists the archive categories.
  @param companyId The ID of the company.
  @return ApiListArchiveCategoriesRequest
 */
-func (a *InfoApiService) ListArchiveCategories(ctx context.Context, companyId int32) ApiListArchiveCategoriesRequest {
+func (a *InfoAPIService) ListArchiveCategories(ctx context.Context, companyId int32) ApiListArchiveCategoriesRequest {
 	return ApiListArchiveCategoriesRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -54,7 +54,7 @@ func (a *InfoApiService) ListArchiveCategories(ctx context.Context, companyId in
 
 // Execute executes the request
 //  @return ListArchiveCategoriesResponse
-func (a *InfoApiService) ListArchiveCategoriesExecute(r ApiListArchiveCategoriesRequest) (*ListArchiveCategoriesResponse, *http.Response, error) {
+func (a *InfoAPIService) ListArchiveCategoriesExecute(r ApiListArchiveCategoriesRequest) (*ListArchiveCategoriesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -62,7 +62,7 @@ func (a *InfoApiService) ListArchiveCategoriesExecute(r ApiListArchiveCategories
 		localVarReturnValue  *ListArchiveCategoriesResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListArchiveCategories")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoAPIService.ListArchiveCategories")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -130,7 +130,7 @@ func (a *InfoApiService) ListArchiveCategoriesExecute(r ApiListArchiveCategories
 
 type ApiListCitiesRequest struct {
 	ctx context.Context
-	ApiService *InfoApiService
+	ApiService *InfoAPIService
 	postalCode *string
 	city *string
 }
@@ -159,7 +159,7 @@ Lists the Italian cities.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListCitiesRequest
 */
-func (a *InfoApiService) ListCities(ctx context.Context) ApiListCitiesRequest {
+func (a *InfoAPIService) ListCities(ctx context.Context) ApiListCitiesRequest {
 	return ApiListCitiesRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -168,7 +168,7 @@ func (a *InfoApiService) ListCities(ctx context.Context) ApiListCitiesRequest {
 
 // Execute executes the request
 //  @return ListCitiesResponse
-func (a *InfoApiService) ListCitiesExecute(r ApiListCitiesRequest) (*ListCitiesResponse, *http.Response, error) {
+func (a *InfoAPIService) ListCitiesExecute(r ApiListCitiesRequest) (*ListCitiesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -176,7 +176,7 @@ func (a *InfoApiService) ListCitiesExecute(r ApiListCitiesRequest) (*ListCitiesR
 		localVarReturnValue  *ListCitiesResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListCities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoAPIService.ListCities")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -249,7 +249,7 @@ func (a *InfoApiService) ListCitiesExecute(r ApiListCitiesRequest) (*ListCitiesR
 
 type ApiListCostCentersRequest struct {
 	ctx context.Context
-	ApiService *InfoApiService
+	ApiService *InfoAPIService
 	companyId int32
 }
 
@@ -266,7 +266,7 @@ Lists the cost centers.
  @param companyId The ID of the company.
  @return ApiListCostCentersRequest
 */
-func (a *InfoApiService) ListCostCenters(ctx context.Context, companyId int32) ApiListCostCentersRequest {
+func (a *InfoAPIService) ListCostCenters(ctx context.Context, companyId int32) ApiListCostCentersRequest {
 	return ApiListCostCentersRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -276,7 +276,7 @@ func (a *InfoApiService) ListCostCenters(ctx context.Context, companyId int32) A
 
 // Execute executes the request
 //  @return ListCostCentersResponse
-func (a *InfoApiService) ListCostCentersExecute(r ApiListCostCentersRequest) (*ListCostCentersResponse, *http.Response, error) {
+func (a *InfoAPIService) ListCostCentersExecute(r ApiListCostCentersRequest) (*ListCostCentersResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -284,7 +284,7 @@ func (a *InfoApiService) ListCostCentersExecute(r ApiListCostCentersRequest) (*L
 		localVarReturnValue  *ListCostCentersResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListCostCenters")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoAPIService.ListCostCenters")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -352,7 +352,7 @@ func (a *InfoApiService) ListCostCentersExecute(r ApiListCostCentersRequest) (*L
 
 type ApiListCountriesRequest struct {
 	ctx context.Context
-	ApiService *InfoApiService
+	ApiService *InfoAPIService
 }
 
 func (r ApiListCountriesRequest) Execute() (*ListCountriesResponse, *http.Response, error) {
@@ -367,7 +367,7 @@ Lists the supported countries.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListCountriesRequest
 */
-func (a *InfoApiService) ListCountries(ctx context.Context) ApiListCountriesRequest {
+func (a *InfoAPIService) ListCountries(ctx context.Context) ApiListCountriesRequest {
 	return ApiListCountriesRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -376,7 +376,7 @@ func (a *InfoApiService) ListCountries(ctx context.Context) ApiListCountriesRequ
 
 // Execute executes the request
 //  @return ListCountriesResponse
-func (a *InfoApiService) ListCountriesExecute(r ApiListCountriesRequest) (*ListCountriesResponse, *http.Response, error) {
+func (a *InfoAPIService) ListCountriesExecute(r ApiListCountriesRequest) (*ListCountriesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -384,7 +384,7 @@ func (a *InfoApiService) ListCountriesExecute(r ApiListCountriesRequest) (*ListC
 		localVarReturnValue  *ListCountriesResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListCountries")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoAPIService.ListCountries")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -451,7 +451,7 @@ func (a *InfoApiService) ListCountriesExecute(r ApiListCountriesRequest) (*ListC
 
 type ApiListCurrenciesRequest struct {
 	ctx context.Context
-	ApiService *InfoApiService
+	ApiService *InfoAPIService
 }
 
 func (r ApiListCurrenciesRequest) Execute() (*ListCurrenciesResponse, *http.Response, error) {
@@ -466,7 +466,7 @@ Lists the supported currencies.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListCurrenciesRequest
 */
-func (a *InfoApiService) ListCurrencies(ctx context.Context) ApiListCurrenciesRequest {
+func (a *InfoAPIService) ListCurrencies(ctx context.Context) ApiListCurrenciesRequest {
 	return ApiListCurrenciesRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -475,7 +475,7 @@ func (a *InfoApiService) ListCurrencies(ctx context.Context) ApiListCurrenciesRe
 
 // Execute executes the request
 //  @return ListCurrenciesResponse
-func (a *InfoApiService) ListCurrenciesExecute(r ApiListCurrenciesRequest) (*ListCurrenciesResponse, *http.Response, error) {
+func (a *InfoAPIService) ListCurrenciesExecute(r ApiListCurrenciesRequest) (*ListCurrenciesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -483,7 +483,7 @@ func (a *InfoApiService) ListCurrenciesExecute(r ApiListCurrenciesRequest) (*Lis
 		localVarReturnValue  *ListCurrenciesResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListCurrencies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoAPIService.ListCurrencies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -550,7 +550,7 @@ func (a *InfoApiService) ListCurrenciesExecute(r ApiListCurrenciesRequest) (*Lis
 
 type ApiListDeliveryNotesDefaultCausalsRequest struct {
 	ctx context.Context
-	ApiService *InfoApiService
+	ApiService *InfoAPIService
 }
 
 func (r ApiListDeliveryNotesDefaultCausalsRequest) Execute() (*ListDeliveryNotesDefaultCausalsResponse, *http.Response, error) {
@@ -565,7 +565,7 @@ Lists the delivery note default causals.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListDeliveryNotesDefaultCausalsRequest
 */
-func (a *InfoApiService) ListDeliveryNotesDefaultCausals(ctx context.Context) ApiListDeliveryNotesDefaultCausalsRequest {
+func (a *InfoAPIService) ListDeliveryNotesDefaultCausals(ctx context.Context) ApiListDeliveryNotesDefaultCausalsRequest {
 	return ApiListDeliveryNotesDefaultCausalsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -574,7 +574,7 @@ func (a *InfoApiService) ListDeliveryNotesDefaultCausals(ctx context.Context) Ap
 
 // Execute executes the request
 //  @return ListDeliveryNotesDefaultCausalsResponse
-func (a *InfoApiService) ListDeliveryNotesDefaultCausalsExecute(r ApiListDeliveryNotesDefaultCausalsRequest) (*ListDeliveryNotesDefaultCausalsResponse, *http.Response, error) {
+func (a *InfoAPIService) ListDeliveryNotesDefaultCausalsExecute(r ApiListDeliveryNotesDefaultCausalsRequest) (*ListDeliveryNotesDefaultCausalsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -582,7 +582,7 @@ func (a *InfoApiService) ListDeliveryNotesDefaultCausalsExecute(r ApiListDeliver
 		localVarReturnValue  *ListDeliveryNotesDefaultCausalsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListDeliveryNotesDefaultCausals")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoAPIService.ListDeliveryNotesDefaultCausals")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -649,7 +649,7 @@ func (a *InfoApiService) ListDeliveryNotesDefaultCausalsExecute(r ApiListDeliver
 
 type ApiListDetailedCountriesRequest struct {
 	ctx context.Context
-	ApiService *InfoApiService
+	ApiService *InfoAPIService
 }
 
 func (r ApiListDetailedCountriesRequest) Execute() (*ListDetailedCountriesResponse, *http.Response, error) {
@@ -664,7 +664,7 @@ Lists the supported countries.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListDetailedCountriesRequest
 */
-func (a *InfoApiService) ListDetailedCountries(ctx context.Context) ApiListDetailedCountriesRequest {
+func (a *InfoAPIService) ListDetailedCountries(ctx context.Context) ApiListDetailedCountriesRequest {
 	return ApiListDetailedCountriesRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -673,7 +673,7 @@ func (a *InfoApiService) ListDetailedCountries(ctx context.Context) ApiListDetai
 
 // Execute executes the request
 //  @return ListDetailedCountriesResponse
-func (a *InfoApiService) ListDetailedCountriesExecute(r ApiListDetailedCountriesRequest) (*ListDetailedCountriesResponse, *http.Response, error) {
+func (a *InfoAPIService) ListDetailedCountriesExecute(r ApiListDetailedCountriesRequest) (*ListDetailedCountriesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -681,7 +681,7 @@ func (a *InfoApiService) ListDetailedCountriesExecute(r ApiListDetailedCountries
 		localVarReturnValue  *ListDetailedCountriesResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListDetailedCountries")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoAPIService.ListDetailedCountries")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -748,7 +748,7 @@ func (a *InfoApiService) ListDetailedCountriesExecute(r ApiListDetailedCountries
 
 type ApiListLanguagesRequest struct {
 	ctx context.Context
-	ApiService *InfoApiService
+	ApiService *InfoAPIService
 }
 
 func (r ApiListLanguagesRequest) Execute() (*ListLanguagesResponse, *http.Response, error) {
@@ -763,7 +763,7 @@ Lists the supported languages.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListLanguagesRequest
 */
-func (a *InfoApiService) ListLanguages(ctx context.Context) ApiListLanguagesRequest {
+func (a *InfoAPIService) ListLanguages(ctx context.Context) ApiListLanguagesRequest {
 	return ApiListLanguagesRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -772,7 +772,7 @@ func (a *InfoApiService) ListLanguages(ctx context.Context) ApiListLanguagesRequ
 
 // Execute executes the request
 //  @return ListLanguagesResponse
-func (a *InfoApiService) ListLanguagesExecute(r ApiListLanguagesRequest) (*ListLanguagesResponse, *http.Response, error) {
+func (a *InfoAPIService) ListLanguagesExecute(r ApiListLanguagesRequest) (*ListLanguagesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -780,7 +780,7 @@ func (a *InfoApiService) ListLanguagesExecute(r ApiListLanguagesRequest) (*ListL
 		localVarReturnValue  *ListLanguagesResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListLanguages")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoAPIService.ListLanguages")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -847,7 +847,7 @@ func (a *InfoApiService) ListLanguagesExecute(r ApiListLanguagesRequest) (*ListL
 
 type ApiListPaymentAccountsRequest struct {
 	ctx context.Context
-	ApiService *InfoApiService
+	ApiService *InfoAPIService
 	companyId int32
 	fields *string
 	fieldset *string
@@ -885,7 +885,7 @@ Lists the available payment accounts.
  @param companyId The ID of the company.
  @return ApiListPaymentAccountsRequest
 */
-func (a *InfoApiService) ListPaymentAccounts(ctx context.Context, companyId int32) ApiListPaymentAccountsRequest {
+func (a *InfoAPIService) ListPaymentAccounts(ctx context.Context, companyId int32) ApiListPaymentAccountsRequest {
 	return ApiListPaymentAccountsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -895,7 +895,7 @@ func (a *InfoApiService) ListPaymentAccounts(ctx context.Context, companyId int3
 
 // Execute executes the request
 //  @return ListPaymentAccountsResponse
-func (a *InfoApiService) ListPaymentAccountsExecute(r ApiListPaymentAccountsRequest) (*ListPaymentAccountsResponse, *http.Response, error) {
+func (a *InfoAPIService) ListPaymentAccountsExecute(r ApiListPaymentAccountsRequest) (*ListPaymentAccountsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -903,7 +903,7 @@ func (a *InfoApiService) ListPaymentAccountsExecute(r ApiListPaymentAccountsRequ
 		localVarReturnValue  *ListPaymentAccountsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListPaymentAccounts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoAPIService.ListPaymentAccounts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -980,7 +980,7 @@ func (a *InfoApiService) ListPaymentAccountsExecute(r ApiListPaymentAccountsRequ
 
 type ApiListPaymentMethodsRequest struct {
 	ctx context.Context
-	ApiService *InfoApiService
+	ApiService *InfoAPIService
 	companyId int32
 	fields *string
 	fieldset *string
@@ -1018,7 +1018,7 @@ Lists the available payment methods.
  @param companyId The ID of the company.
  @return ApiListPaymentMethodsRequest
 */
-func (a *InfoApiService) ListPaymentMethods(ctx context.Context, companyId int32) ApiListPaymentMethodsRequest {
+func (a *InfoAPIService) ListPaymentMethods(ctx context.Context, companyId int32) ApiListPaymentMethodsRequest {
 	return ApiListPaymentMethodsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1028,7 +1028,7 @@ func (a *InfoApiService) ListPaymentMethods(ctx context.Context, companyId int32
 
 // Execute executes the request
 //  @return ListPaymentMethodsResponse
-func (a *InfoApiService) ListPaymentMethodsExecute(r ApiListPaymentMethodsRequest) (*ListPaymentMethodsResponse, *http.Response, error) {
+func (a *InfoAPIService) ListPaymentMethodsExecute(r ApiListPaymentMethodsRequest) (*ListPaymentMethodsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1036,7 +1036,7 @@ func (a *InfoApiService) ListPaymentMethodsExecute(r ApiListPaymentMethodsReques
 		localVarReturnValue  *ListPaymentMethodsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListPaymentMethods")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoAPIService.ListPaymentMethods")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1113,11 +1113,12 @@ func (a *InfoApiService) ListPaymentMethodsExecute(r ApiListPaymentMethodsReques
 
 type ApiListProductCategoriesRequest struct {
 	ctx context.Context
-	ApiService *InfoApiService
+	ApiService *InfoAPIService
 	companyId int32
 	context *string
 }
 
+// Categories resource type.
 func (r ApiListProductCategoriesRequest) Context(context string) ApiListProductCategoriesRequest {
 	r.context = &context
 	return r
@@ -1136,7 +1137,7 @@ Lists the product categories.
  @param companyId The ID of the company.
  @return ApiListProductCategoriesRequest
 */
-func (a *InfoApiService) ListProductCategories(ctx context.Context, companyId int32) ApiListProductCategoriesRequest {
+func (a *InfoAPIService) ListProductCategories(ctx context.Context, companyId int32) ApiListProductCategoriesRequest {
 	return ApiListProductCategoriesRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1146,7 +1147,7 @@ func (a *InfoApiService) ListProductCategories(ctx context.Context, companyId in
 
 // Execute executes the request
 //  @return ListProductCategoriesResponse
-func (a *InfoApiService) ListProductCategoriesExecute(r ApiListProductCategoriesRequest) (*ListProductCategoriesResponse, *http.Response, error) {
+func (a *InfoAPIService) ListProductCategoriesExecute(r ApiListProductCategoriesRequest) (*ListProductCategoriesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1154,7 +1155,7 @@ func (a *InfoApiService) ListProductCategoriesExecute(r ApiListProductCategories
 		localVarReturnValue  *ListProductCategoriesResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListProductCategories")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoAPIService.ListProductCategories")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1226,7 +1227,7 @@ func (a *InfoApiService) ListProductCategoriesExecute(r ApiListProductCategories
 
 type ApiListReceivedDocumentCategoriesRequest struct {
 	ctx context.Context
-	ApiService *InfoApiService
+	ApiService *InfoAPIService
 	companyId int32
 }
 
@@ -1243,7 +1244,7 @@ Lists the received document categories.
  @param companyId The ID of the company.
  @return ApiListReceivedDocumentCategoriesRequest
 */
-func (a *InfoApiService) ListReceivedDocumentCategories(ctx context.Context, companyId int32) ApiListReceivedDocumentCategoriesRequest {
+func (a *InfoAPIService) ListReceivedDocumentCategories(ctx context.Context, companyId int32) ApiListReceivedDocumentCategoriesRequest {
 	return ApiListReceivedDocumentCategoriesRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1253,7 +1254,7 @@ func (a *InfoApiService) ListReceivedDocumentCategories(ctx context.Context, com
 
 // Execute executes the request
 //  @return ListReceivedDocumentCategoriesResponse
-func (a *InfoApiService) ListReceivedDocumentCategoriesExecute(r ApiListReceivedDocumentCategoriesRequest) (*ListReceivedDocumentCategoriesResponse, *http.Response, error) {
+func (a *InfoAPIService) ListReceivedDocumentCategoriesExecute(r ApiListReceivedDocumentCategoriesRequest) (*ListReceivedDocumentCategoriesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1261,7 +1262,7 @@ func (a *InfoApiService) ListReceivedDocumentCategoriesExecute(r ApiListReceived
 		localVarReturnValue  *ListReceivedDocumentCategoriesResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListReceivedDocumentCategories")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoAPIService.ListReceivedDocumentCategories")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1329,7 +1330,7 @@ func (a *InfoApiService) ListReceivedDocumentCategoriesExecute(r ApiListReceived
 
 type ApiListRevenueCentersRequest struct {
 	ctx context.Context
-	ApiService *InfoApiService
+	ApiService *InfoAPIService
 	companyId int32
 }
 
@@ -1346,7 +1347,7 @@ Lists the revenue centers.
  @param companyId The ID of the company.
  @return ApiListRevenueCentersRequest
 */
-func (a *InfoApiService) ListRevenueCenters(ctx context.Context, companyId int32) ApiListRevenueCentersRequest {
+func (a *InfoAPIService) ListRevenueCenters(ctx context.Context, companyId int32) ApiListRevenueCentersRequest {
 	return ApiListRevenueCentersRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1356,7 +1357,7 @@ func (a *InfoApiService) ListRevenueCenters(ctx context.Context, companyId int32
 
 // Execute executes the request
 //  @return ListRevenueCentersResponse
-func (a *InfoApiService) ListRevenueCentersExecute(r ApiListRevenueCentersRequest) (*ListRevenueCentersResponse, *http.Response, error) {
+func (a *InfoAPIService) ListRevenueCentersExecute(r ApiListRevenueCentersRequest) (*ListRevenueCentersResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1364,7 +1365,7 @@ func (a *InfoApiService) ListRevenueCentersExecute(r ApiListRevenueCentersReques
 		localVarReturnValue  *ListRevenueCentersResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListRevenueCenters")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoAPIService.ListRevenueCenters")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1432,7 +1433,7 @@ func (a *InfoApiService) ListRevenueCentersExecute(r ApiListRevenueCentersReques
 
 type ApiListTemplatesRequest struct {
 	ctx context.Context
-	ApiService *InfoApiService
+	ApiService *InfoAPIService
 	type_ *string
 	byType *bool
 }
@@ -1461,7 +1462,7 @@ Lists the available templates.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListTemplatesRequest
 */
-func (a *InfoApiService) ListTemplates(ctx context.Context) ApiListTemplatesRequest {
+func (a *InfoAPIService) ListTemplates(ctx context.Context) ApiListTemplatesRequest {
 	return ApiListTemplatesRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1470,7 +1471,7 @@ func (a *InfoApiService) ListTemplates(ctx context.Context) ApiListTemplatesRequ
 
 // Execute executes the request
 //  @return ListTemplatesResponse
-func (a *InfoApiService) ListTemplatesExecute(r ApiListTemplatesRequest) (*ListTemplatesResponse, *http.Response, error) {
+func (a *InfoAPIService) ListTemplatesExecute(r ApiListTemplatesRequest) (*ListTemplatesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1478,7 +1479,7 @@ func (a *InfoApiService) ListTemplatesExecute(r ApiListTemplatesRequest) (*ListT
 		localVarReturnValue  *ListTemplatesResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListTemplates")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoAPIService.ListTemplates")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1491,10 +1492,16 @@ func (a *InfoApiService) ListTemplatesExecute(r ApiListTemplatesRequest) (*ListT
 
 	if r.type_ != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "")
-	}
+	} else {
+ 		var defaultValue string = "all"
+ 		r.type_ = &defaultValue
+ 	}
 	if r.byType != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "by_type", r.byType, "")
-	}
+	} else {
+ 		var defaultValue bool = false
+ 		r.byType = &defaultValue
+ 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -1551,7 +1558,7 @@ func (a *InfoApiService) ListTemplatesExecute(r ApiListTemplatesRequest) (*ListT
 
 type ApiListUnitsOfMeasureRequest struct {
 	ctx context.Context
-	ApiService *InfoApiService
+	ApiService *InfoAPIService
 }
 
 func (r ApiListUnitsOfMeasureRequest) Execute() (*ListUnitsOfMeasureResponse, *http.Response, error) {
@@ -1566,7 +1573,7 @@ Lists the units of measure.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListUnitsOfMeasureRequest
 */
-func (a *InfoApiService) ListUnitsOfMeasure(ctx context.Context) ApiListUnitsOfMeasureRequest {
+func (a *InfoAPIService) ListUnitsOfMeasure(ctx context.Context) ApiListUnitsOfMeasureRequest {
 	return ApiListUnitsOfMeasureRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1575,7 +1582,7 @@ func (a *InfoApiService) ListUnitsOfMeasure(ctx context.Context) ApiListUnitsOfM
 
 // Execute executes the request
 //  @return ListUnitsOfMeasureResponse
-func (a *InfoApiService) ListUnitsOfMeasureExecute(r ApiListUnitsOfMeasureRequest) (*ListUnitsOfMeasureResponse, *http.Response, error) {
+func (a *InfoAPIService) ListUnitsOfMeasureExecute(r ApiListUnitsOfMeasureRequest) (*ListUnitsOfMeasureResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1583,7 +1590,7 @@ func (a *InfoApiService) ListUnitsOfMeasureExecute(r ApiListUnitsOfMeasureReques
 		localVarReturnValue  *ListUnitsOfMeasureResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListUnitsOfMeasure")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoAPIService.ListUnitsOfMeasure")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1650,7 +1657,7 @@ func (a *InfoApiService) ListUnitsOfMeasureExecute(r ApiListUnitsOfMeasureReques
 
 type ApiListVatTypesRequest struct {
 	ctx context.Context
-	ApiService *InfoApiService
+	ApiService *InfoAPIService
 	companyId int32
 	fieldset *string
 }
@@ -1674,7 +1681,7 @@ Lists the available vat types.
  @param companyId The ID of the company.
  @return ApiListVatTypesRequest
 */
-func (a *InfoApiService) ListVatTypes(ctx context.Context, companyId int32) ApiListVatTypesRequest {
+func (a *InfoAPIService) ListVatTypes(ctx context.Context, companyId int32) ApiListVatTypesRequest {
 	return ApiListVatTypesRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1684,7 +1691,7 @@ func (a *InfoApiService) ListVatTypes(ctx context.Context, companyId int32) ApiL
 
 // Execute executes the request
 //  @return ListVatTypesResponse
-func (a *InfoApiService) ListVatTypesExecute(r ApiListVatTypesRequest) (*ListVatTypesResponse, *http.Response, error) {
+func (a *InfoAPIService) ListVatTypesExecute(r ApiListVatTypesRequest) (*ListVatTypesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1692,7 +1699,7 @@ func (a *InfoApiService) ListVatTypesExecute(r ApiListVatTypesRequest) (*ListVat
 		localVarReturnValue  *ListVatTypesResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoApiService.ListVatTypes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfoAPIService.ListVatTypes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

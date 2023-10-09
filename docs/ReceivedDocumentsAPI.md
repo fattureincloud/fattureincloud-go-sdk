@@ -1,19 +1,19 @@
-# \ReceivedDocumentsApi
+# \ReceivedDocumentsAPI
 
 All URIs are relative to *https://api-v2.fattureincloud.it*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateReceivedDocument**](ReceivedDocumentsApi.md#CreateReceivedDocument) | **Post** /c/{company_id}/received_documents | Create Received Document
-[**DeleteReceivedDocument**](ReceivedDocumentsApi.md#DeleteReceivedDocument) | **Delete** /c/{company_id}/received_documents/{document_id} | Delete Received Document
-[**DeleteReceivedDocumentAttachment**](ReceivedDocumentsApi.md#DeleteReceivedDocumentAttachment) | **Delete** /c/{company_id}/received_documents/{document_id}/attachment | Delete Received Document Attachment
-[**GetExistingReceivedDocumentTotals**](ReceivedDocumentsApi.md#GetExistingReceivedDocumentTotals) | **Post** /c/{company_id}/received_documents/{document_id}/totals | Get Existing Received Document Totals
-[**GetNewReceivedDocumentTotals**](ReceivedDocumentsApi.md#GetNewReceivedDocumentTotals) | **Post** /c/{company_id}/received_documents/totals | Get New Received Document Totals
-[**GetReceivedDocument**](ReceivedDocumentsApi.md#GetReceivedDocument) | **Get** /c/{company_id}/received_documents/{document_id} | Get Received Document
-[**GetReceivedDocumentPreCreateInfo**](ReceivedDocumentsApi.md#GetReceivedDocumentPreCreateInfo) | **Get** /c/{company_id}/received_documents/info | Get Received Document Pre-Create Info
-[**ListReceivedDocuments**](ReceivedDocumentsApi.md#ListReceivedDocuments) | **Get** /c/{company_id}/received_documents | List Received Documents
-[**ModifyReceivedDocument**](ReceivedDocumentsApi.md#ModifyReceivedDocument) | **Put** /c/{company_id}/received_documents/{document_id} | Modify Received Document
-[**UploadReceivedDocumentAttachment**](ReceivedDocumentsApi.md#UploadReceivedDocumentAttachment) | **Post** /c/{company_id}/received_documents/attachment | Upload Received Document Attachment
+[**CreateReceivedDocument**](ReceivedDocumentsAPI.md#CreateReceivedDocument) | **Post** /c/{company_id}/received_documents | Create Received Document
+[**DeleteReceivedDocument**](ReceivedDocumentsAPI.md#DeleteReceivedDocument) | **Delete** /c/{company_id}/received_documents/{document_id} | Delete Received Document
+[**DeleteReceivedDocumentAttachment**](ReceivedDocumentsAPI.md#DeleteReceivedDocumentAttachment) | **Delete** /c/{company_id}/received_documents/{document_id}/attachment | Delete Received Document Attachment
+[**GetExistingReceivedDocumentTotals**](ReceivedDocumentsAPI.md#GetExistingReceivedDocumentTotals) | **Post** /c/{company_id}/received_documents/{document_id}/totals | Get Existing Received Document Totals
+[**GetNewReceivedDocumentTotals**](ReceivedDocumentsAPI.md#GetNewReceivedDocumentTotals) | **Post** /c/{company_id}/received_documents/totals | Get New Received Document Totals
+[**GetReceivedDocument**](ReceivedDocumentsAPI.md#GetReceivedDocument) | **Get** /c/{company_id}/received_documents/{document_id} | Get Received Document
+[**GetReceivedDocumentPreCreateInfo**](ReceivedDocumentsAPI.md#GetReceivedDocumentPreCreateInfo) | **Get** /c/{company_id}/received_documents/info | Get Received Document Pre-Create Info
+[**ListReceivedDocuments**](ReceivedDocumentsAPI.md#ListReceivedDocuments) | **Get** /c/{company_id}/received_documents | List Received Documents
+[**ModifyReceivedDocument**](ReceivedDocumentsAPI.md#ModifyReceivedDocument) | **Put** /c/{company_id}/received_documents/{document_id} | Modify Received Document
+[**UploadReceivedDocumentAttachment**](ReceivedDocumentsAPI.md#UploadReceivedDocumentAttachment) | **Post** /c/{company_id}/received_documents/attachment | Upload Received Document Attachment
 
 
 
@@ -46,9 +46,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReceivedDocumentsApi.CreateReceivedDocument(auth, companyId).CreateReceivedDocumentRequest(createReceivedDocumentRequest).Execute()
+    resp, r, err := apiClient.ReceivedDocumentsAPI.CreateReceivedDocument(auth, companyId).CreateReceivedDocumentRequest(createReceivedDocumentRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsApi.CreateReceivedDocument``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsAPI.CreateReceivedDocument``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateReceivedDocument`: CreateReceivedDocumentResponse
@@ -121,9 +121,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReceivedDocumentsApi.DeleteReceivedDocument(auth, companyId, documentId).Execute()
+    resp, r, err := apiClient.ReceivedDocumentsAPI.DeleteReceivedDocument(auth, companyId, documentId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsApi.DeleteReceivedDocument``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsAPI.DeleteReceivedDocument``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -195,9 +195,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReceivedDocumentsApi.DeleteReceivedDocumentAttachment(auth, companyId, documentId).Execute()
+    resp, r, err := apiClient.ReceivedDocumentsAPI.DeleteReceivedDocumentAttachment(auth, companyId, documentId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsApi.DeleteReceivedDocumentAttachment``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsAPI.DeleteReceivedDocumentAttachment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -270,9 +270,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReceivedDocumentsApi.GetExistingReceivedDocumentTotals(auth, companyId, documentId).GetExistingReceivedDocumentTotalsRequest(getExistingReceivedDocumentTotalsRequest).Execute()
+    resp, r, err := apiClient.ReceivedDocumentsAPI.GetExistingReceivedDocumentTotals(auth, companyId, documentId).GetExistingReceivedDocumentTotalsRequest(getExistingReceivedDocumentTotalsRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsApi.GetExistingReceivedDocumentTotals``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsAPI.GetExistingReceivedDocumentTotals``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetExistingReceivedDocumentTotals`: GetExistingReceivedDocumentTotalsResponse
@@ -347,9 +347,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReceivedDocumentsApi.GetNewReceivedDocumentTotals(auth, companyId).GetNewReceivedDocumentTotalsRequest(getNewReceivedDocumentTotalsRequest).Execute()
+    resp, r, err := apiClient.ReceivedDocumentsAPI.GetNewReceivedDocumentTotals(auth, companyId).GetNewReceivedDocumentTotalsRequest(getNewReceivedDocumentTotalsRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsApi.GetNewReceivedDocumentTotals``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsAPI.GetNewReceivedDocumentTotals``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetNewReceivedDocumentTotals`: GetNewReceivedDocumentTotalsResponse
@@ -424,9 +424,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReceivedDocumentsApi.GetReceivedDocument(auth, companyId, documentId).Fields(fields).Fieldset(fieldset).Execute()
+    resp, r, err := apiClient.ReceivedDocumentsAPI.GetReceivedDocument(auth, companyId, documentId).Fields(fields).Fieldset(fieldset).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsApi.GetReceivedDocument``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsAPI.GetReceivedDocument``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetReceivedDocument`: GetReceivedDocumentResponse
@@ -502,9 +502,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReceivedDocumentsApi.GetReceivedDocumentPreCreateInfo(auth, companyId).Type_(type_).Execute()
+    resp, r, err := apiClient.ReceivedDocumentsAPI.GetReceivedDocumentPreCreateInfo(auth, companyId).Type_(type_).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsApi.GetReceivedDocumentPreCreateInfo``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsAPI.GetReceivedDocumentPreCreateInfo``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetReceivedDocumentPreCreateInfo`: GetReceivedDocumentPreCreateInfoResponse
@@ -583,9 +583,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReceivedDocumentsApi.ListReceivedDocuments(auth, companyId).Type_(type_).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
+    resp, r, err := apiClient.ReceivedDocumentsAPI.ListReceivedDocuments(auth, companyId).Type_(type_).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsApi.ListReceivedDocuments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsAPI.ListReceivedDocuments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListReceivedDocuments`: ListReceivedDocumentsResponse
@@ -665,9 +665,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReceivedDocumentsApi.ModifyReceivedDocument(auth, companyId, documentId).ModifyReceivedDocumentRequest(modifyReceivedDocumentRequest).Execute()
+    resp, r, err := apiClient.ReceivedDocumentsAPI.ModifyReceivedDocument(auth, companyId, documentId).ModifyReceivedDocumentRequest(modifyReceivedDocumentRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsApi.ModifyReceivedDocument``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsAPI.ModifyReceivedDocument``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ModifyReceivedDocument`: ModifyReceivedDocumentResponse
@@ -743,9 +743,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReceivedDocumentsApi.UploadReceivedDocumentAttachment(auth, companyId).Filename(filename).Attachment(attachment).Execute()
+    resp, r, err := apiClient.ReceivedDocumentsAPI.UploadReceivedDocumentAttachment(auth, companyId).Filename(filename).Attachment(attachment).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsApi.UploadReceivedDocumentAttachment``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReceivedDocumentsAPI.UploadReceivedDocumentAttachment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UploadReceivedDocumentAttachment`: UploadReceivedDocumentAttachmentResponse

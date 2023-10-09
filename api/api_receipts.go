@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.28
+API version: 2.0.30
 Contact: info@fattureincloud.it
 */
 
@@ -22,12 +22,12 @@ import (
 )
 
 
-// ReceiptsApiService ReceiptsApi service
-type ReceiptsApiService service
+// ReceiptsAPIService ReceiptsAPI service
+type ReceiptsAPIService service
 
 type ApiCreateReceiptRequest struct {
 	ctx context.Context
-	ApiService *ReceiptsApiService
+	ApiService *ReceiptsAPIService
 	companyId int32
 	createReceiptRequest *CreateReceiptRequest
 }
@@ -51,7 +51,7 @@ Creates a new receipt.
  @param companyId The ID of the company.
  @return ApiCreateReceiptRequest
 */
-func (a *ReceiptsApiService) CreateReceipt(ctx context.Context, companyId int32) ApiCreateReceiptRequest {
+func (a *ReceiptsAPIService) CreateReceipt(ctx context.Context, companyId int32) ApiCreateReceiptRequest {
 	return ApiCreateReceiptRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -61,7 +61,7 @@ func (a *ReceiptsApiService) CreateReceipt(ctx context.Context, companyId int32)
 
 // Execute executes the request
 //  @return CreateReceiptResponse
-func (a *ReceiptsApiService) CreateReceiptExecute(r ApiCreateReceiptRequest) (*CreateReceiptResponse, *http.Response, error) {
+func (a *ReceiptsAPIService) CreateReceiptExecute(r ApiCreateReceiptRequest) (*CreateReceiptResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -69,7 +69,7 @@ func (a *ReceiptsApiService) CreateReceiptExecute(r ApiCreateReceiptRequest) (*C
 		localVarReturnValue  *CreateReceiptResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsApiService.CreateReceipt")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsAPIService.CreateReceipt")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -139,7 +139,7 @@ func (a *ReceiptsApiService) CreateReceiptExecute(r ApiCreateReceiptRequest) (*C
 
 type ApiDeleteReceiptRequest struct {
 	ctx context.Context
-	ApiService *ReceiptsApiService
+	ApiService *ReceiptsAPIService
 	companyId int32
 	documentId int32
 }
@@ -158,7 +158,7 @@ Deletes the specified receipt.
  @param documentId The ID of the document.
  @return ApiDeleteReceiptRequest
 */
-func (a *ReceiptsApiService) DeleteReceipt(ctx context.Context, companyId int32, documentId int32) ApiDeleteReceiptRequest {
+func (a *ReceiptsAPIService) DeleteReceipt(ctx context.Context, companyId int32, documentId int32) ApiDeleteReceiptRequest {
 	return ApiDeleteReceiptRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -168,14 +168,14 @@ func (a *ReceiptsApiService) DeleteReceipt(ctx context.Context, companyId int32,
 }
 
 // Execute executes the request
-func (a *ReceiptsApiService) DeleteReceiptExecute(r ApiDeleteReceiptRequest) (*http.Response, error) {
+func (a *ReceiptsAPIService) DeleteReceiptExecute(r ApiDeleteReceiptRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsApiService.DeleteReceipt")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsAPIService.DeleteReceipt")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -235,7 +235,7 @@ func (a *ReceiptsApiService) DeleteReceiptExecute(r ApiDeleteReceiptRequest) (*h
 
 type ApiGetReceiptRequest struct {
 	ctx context.Context
-	ApiService *ReceiptsApiService
+	ApiService *ReceiptsAPIService
 	companyId int32
 	documentId int32
 	fields *string
@@ -268,7 +268,7 @@ Gets the specified receipt.
  @param documentId The ID of the document.
  @return ApiGetReceiptRequest
 */
-func (a *ReceiptsApiService) GetReceipt(ctx context.Context, companyId int32, documentId int32) ApiGetReceiptRequest {
+func (a *ReceiptsAPIService) GetReceipt(ctx context.Context, companyId int32, documentId int32) ApiGetReceiptRequest {
 	return ApiGetReceiptRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -279,7 +279,7 @@ func (a *ReceiptsApiService) GetReceipt(ctx context.Context, companyId int32, do
 
 // Execute executes the request
 //  @return GetReceiptResponse
-func (a *ReceiptsApiService) GetReceiptExecute(r ApiGetReceiptRequest) (*GetReceiptResponse, *http.Response, error) {
+func (a *ReceiptsAPIService) GetReceiptExecute(r ApiGetReceiptRequest) (*GetReceiptResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -287,7 +287,7 @@ func (a *ReceiptsApiService) GetReceiptExecute(r ApiGetReceiptRequest) (*GetRece
 		localVarReturnValue  *GetReceiptResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsApiService.GetReceipt")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsAPIService.GetReceipt")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -362,7 +362,7 @@ func (a *ReceiptsApiService) GetReceiptExecute(r ApiGetReceiptRequest) (*GetRece
 
 type ApiGetReceiptPreCreateInfoRequest struct {
 	ctx context.Context
-	ApiService *ReceiptsApiService
+	ApiService *ReceiptsAPIService
 	companyId int32
 }
 
@@ -379,7 +379,7 @@ Retrieves the information useful while creating a new receipt.
  @param companyId The ID of the company.
  @return ApiGetReceiptPreCreateInfoRequest
 */
-func (a *ReceiptsApiService) GetReceiptPreCreateInfo(ctx context.Context, companyId int32) ApiGetReceiptPreCreateInfoRequest {
+func (a *ReceiptsAPIService) GetReceiptPreCreateInfo(ctx context.Context, companyId int32) ApiGetReceiptPreCreateInfoRequest {
 	return ApiGetReceiptPreCreateInfoRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -389,7 +389,7 @@ func (a *ReceiptsApiService) GetReceiptPreCreateInfo(ctx context.Context, compan
 
 // Execute executes the request
 //  @return GetReceiptPreCreateInfoResponse
-func (a *ReceiptsApiService) GetReceiptPreCreateInfoExecute(r ApiGetReceiptPreCreateInfoRequest) (*GetReceiptPreCreateInfoResponse, *http.Response, error) {
+func (a *ReceiptsAPIService) GetReceiptPreCreateInfoExecute(r ApiGetReceiptPreCreateInfoRequest) (*GetReceiptPreCreateInfoResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -397,7 +397,7 @@ func (a *ReceiptsApiService) GetReceiptPreCreateInfoExecute(r ApiGetReceiptPreCr
 		localVarReturnValue  *GetReceiptPreCreateInfoResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsApiService.GetReceiptPreCreateInfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsAPIService.GetReceiptPreCreateInfo")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -465,7 +465,7 @@ func (a *ReceiptsApiService) GetReceiptPreCreateInfoExecute(r ApiGetReceiptPreCr
 
 type ApiGetReceiptsMonthlyTotalsRequest struct {
 	ctx context.Context
-	ApiService *ReceiptsApiService
+	ApiService *ReceiptsAPIService
 	companyId int32
 	type_ *string
 	year *string
@@ -496,7 +496,7 @@ Returns the monthly totals by year and receipt type.
  @param companyId The ID of the company.
  @return ApiGetReceiptsMonthlyTotalsRequest
 */
-func (a *ReceiptsApiService) GetReceiptsMonthlyTotals(ctx context.Context, companyId int32) ApiGetReceiptsMonthlyTotalsRequest {
+func (a *ReceiptsAPIService) GetReceiptsMonthlyTotals(ctx context.Context, companyId int32) ApiGetReceiptsMonthlyTotalsRequest {
 	return ApiGetReceiptsMonthlyTotalsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -506,7 +506,7 @@ func (a *ReceiptsApiService) GetReceiptsMonthlyTotals(ctx context.Context, compa
 
 // Execute executes the request
 //  @return GetReceiptsMonthlyTotalsResponse
-func (a *ReceiptsApiService) GetReceiptsMonthlyTotalsExecute(r ApiGetReceiptsMonthlyTotalsRequest) (*GetReceiptsMonthlyTotalsResponse, *http.Response, error) {
+func (a *ReceiptsAPIService) GetReceiptsMonthlyTotalsExecute(r ApiGetReceiptsMonthlyTotalsRequest) (*GetReceiptsMonthlyTotalsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -514,7 +514,7 @@ func (a *ReceiptsApiService) GetReceiptsMonthlyTotalsExecute(r ApiGetReceiptsMon
 		localVarReturnValue  *GetReceiptsMonthlyTotalsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsApiService.GetReceiptsMonthlyTotals")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsAPIService.GetReceiptsMonthlyTotals")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -590,7 +590,7 @@ func (a *ReceiptsApiService) GetReceiptsMonthlyTotalsExecute(r ApiGetReceiptsMon
 
 type ApiListReceiptsRequest struct {
 	ctx context.Context
-	ApiService *ReceiptsApiService
+	ApiService *ReceiptsAPIService
 	companyId int32
 	fields *string
 	fieldset *string
@@ -649,7 +649,7 @@ Lists the receipts.
  @param companyId The ID of the company.
  @return ApiListReceiptsRequest
 */
-func (a *ReceiptsApiService) ListReceipts(ctx context.Context, companyId int32) ApiListReceiptsRequest {
+func (a *ReceiptsAPIService) ListReceipts(ctx context.Context, companyId int32) ApiListReceiptsRequest {
 	return ApiListReceiptsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -659,7 +659,7 @@ func (a *ReceiptsApiService) ListReceipts(ctx context.Context, companyId int32) 
 
 // Execute executes the request
 //  @return ListReceiptsResponse
-func (a *ReceiptsApiService) ListReceiptsExecute(r ApiListReceiptsRequest) (*ListReceiptsResponse, *http.Response, error) {
+func (a *ReceiptsAPIService) ListReceiptsExecute(r ApiListReceiptsRequest) (*ListReceiptsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -667,7 +667,7 @@ func (a *ReceiptsApiService) ListReceiptsExecute(r ApiListReceiptsRequest) (*Lis
 		localVarReturnValue  *ListReceiptsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsApiService.ListReceipts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsAPIService.ListReceipts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -687,10 +687,16 @@ func (a *ReceiptsApiService) ListReceiptsExecute(r ApiListReceiptsRequest) (*Lis
 	}
 	if r.page != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
-	}
+	} else {
+ 		var defaultValue int32 = 1
+ 		r.page = &defaultValue
+ 	}
 	if r.perPage != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
-	}
+	} else {
+ 		var defaultValue int32 = 5
+ 		r.perPage = &defaultValue
+ 	}
 	if r.sort != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "")
 	}
@@ -753,7 +759,7 @@ func (a *ReceiptsApiService) ListReceiptsExecute(r ApiListReceiptsRequest) (*Lis
 
 type ApiModifyReceiptRequest struct {
 	ctx context.Context
-	ApiService *ReceiptsApiService
+	ApiService *ReceiptsAPIService
 	companyId int32
 	documentId int32
 	modifyReceiptRequest *ModifyReceiptRequest
@@ -779,7 +785,7 @@ Modifies the specified receipt.
  @param documentId The ID of the document.
  @return ApiModifyReceiptRequest
 */
-func (a *ReceiptsApiService) ModifyReceipt(ctx context.Context, companyId int32, documentId int32) ApiModifyReceiptRequest {
+func (a *ReceiptsAPIService) ModifyReceipt(ctx context.Context, companyId int32, documentId int32) ApiModifyReceiptRequest {
 	return ApiModifyReceiptRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -790,7 +796,7 @@ func (a *ReceiptsApiService) ModifyReceipt(ctx context.Context, companyId int32,
 
 // Execute executes the request
 //  @return ModifyReceiptResponse
-func (a *ReceiptsApiService) ModifyReceiptExecute(r ApiModifyReceiptRequest) (*ModifyReceiptResponse, *http.Response, error) {
+func (a *ReceiptsAPIService) ModifyReceiptExecute(r ApiModifyReceiptRequest) (*ModifyReceiptResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -798,7 +804,7 @@ func (a *ReceiptsApiService) ModifyReceiptExecute(r ApiModifyReceiptRequest) (*M
 		localVarReturnValue  *ModifyReceiptResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsApiService.ModifyReceipt")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsAPIService.ModifyReceipt")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

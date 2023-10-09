@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.28
+API version: 2.0.30
 Contact: info@fattureincloud.it
 */
 
@@ -23,12 +23,12 @@ import (
 )
 
 
-// IssuedDocumentsApiService IssuedDocumentsApi service
-type IssuedDocumentsApiService service
+// IssuedDocumentsAPIService IssuedDocumentsAPI service
+type IssuedDocumentsAPIService service
 
 type ApiCreateIssuedDocumentRequest struct {
 	ctx context.Context
-	ApiService *IssuedDocumentsApiService
+	ApiService *IssuedDocumentsAPIService
 	companyId int32
 	createIssuedDocumentRequest *CreateIssuedDocumentRequest
 }
@@ -52,7 +52,7 @@ Creates a new document.
  @param companyId The ID of the company.
  @return ApiCreateIssuedDocumentRequest
 */
-func (a *IssuedDocumentsApiService) CreateIssuedDocument(ctx context.Context, companyId int32) ApiCreateIssuedDocumentRequest {
+func (a *IssuedDocumentsAPIService) CreateIssuedDocument(ctx context.Context, companyId int32) ApiCreateIssuedDocumentRequest {
 	return ApiCreateIssuedDocumentRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -62,7 +62,7 @@ func (a *IssuedDocumentsApiService) CreateIssuedDocument(ctx context.Context, co
 
 // Execute executes the request
 //  @return CreateIssuedDocumentResponse
-func (a *IssuedDocumentsApiService) CreateIssuedDocumentExecute(r ApiCreateIssuedDocumentRequest) (*CreateIssuedDocumentResponse, *http.Response, error) {
+func (a *IssuedDocumentsAPIService) CreateIssuedDocumentExecute(r ApiCreateIssuedDocumentRequest) (*CreateIssuedDocumentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -70,7 +70,7 @@ func (a *IssuedDocumentsApiService) CreateIssuedDocumentExecute(r ApiCreateIssue
 		localVarReturnValue  *CreateIssuedDocumentResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.CreateIssuedDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsAPIService.CreateIssuedDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,7 +140,7 @@ func (a *IssuedDocumentsApiService) CreateIssuedDocumentExecute(r ApiCreateIssue
 
 type ApiDeleteIssuedDocumentRequest struct {
 	ctx context.Context
-	ApiService *IssuedDocumentsApiService
+	ApiService *IssuedDocumentsAPIService
 	companyId int32
 	documentId int32
 }
@@ -159,7 +159,7 @@ Deletes the specified document.
  @param documentId The ID of the document.
  @return ApiDeleteIssuedDocumentRequest
 */
-func (a *IssuedDocumentsApiService) DeleteIssuedDocument(ctx context.Context, companyId int32, documentId int32) ApiDeleteIssuedDocumentRequest {
+func (a *IssuedDocumentsAPIService) DeleteIssuedDocument(ctx context.Context, companyId int32, documentId int32) ApiDeleteIssuedDocumentRequest {
 	return ApiDeleteIssuedDocumentRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -169,14 +169,14 @@ func (a *IssuedDocumentsApiService) DeleteIssuedDocument(ctx context.Context, co
 }
 
 // Execute executes the request
-func (a *IssuedDocumentsApiService) DeleteIssuedDocumentExecute(r ApiDeleteIssuedDocumentRequest) (*http.Response, error) {
+func (a *IssuedDocumentsAPIService) DeleteIssuedDocumentExecute(r ApiDeleteIssuedDocumentRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.DeleteIssuedDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsAPIService.DeleteIssuedDocument")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -236,7 +236,7 @@ func (a *IssuedDocumentsApiService) DeleteIssuedDocumentExecute(r ApiDeleteIssue
 
 type ApiDeleteIssuedDocumentAttachmentRequest struct {
 	ctx context.Context
-	ApiService *IssuedDocumentsApiService
+	ApiService *IssuedDocumentsAPIService
 	companyId int32
 	documentId int32
 }
@@ -255,7 +255,7 @@ Removes the attachment of the specified document.
  @param documentId The ID of the document.
  @return ApiDeleteIssuedDocumentAttachmentRequest
 */
-func (a *IssuedDocumentsApiService) DeleteIssuedDocumentAttachment(ctx context.Context, companyId int32, documentId int32) ApiDeleteIssuedDocumentAttachmentRequest {
+func (a *IssuedDocumentsAPIService) DeleteIssuedDocumentAttachment(ctx context.Context, companyId int32, documentId int32) ApiDeleteIssuedDocumentAttachmentRequest {
 	return ApiDeleteIssuedDocumentAttachmentRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -265,14 +265,14 @@ func (a *IssuedDocumentsApiService) DeleteIssuedDocumentAttachment(ctx context.C
 }
 
 // Execute executes the request
-func (a *IssuedDocumentsApiService) DeleteIssuedDocumentAttachmentExecute(r ApiDeleteIssuedDocumentAttachmentRequest) (*http.Response, error) {
+func (a *IssuedDocumentsAPIService) DeleteIssuedDocumentAttachmentExecute(r ApiDeleteIssuedDocumentAttachmentRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.DeleteIssuedDocumentAttachment")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsAPIService.DeleteIssuedDocumentAttachment")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -332,7 +332,7 @@ func (a *IssuedDocumentsApiService) DeleteIssuedDocumentAttachmentExecute(r ApiD
 
 type ApiGetEmailDataRequest struct {
 	ctx context.Context
-	ApiService *IssuedDocumentsApiService
+	ApiService *IssuedDocumentsAPIService
 	companyId int32
 	documentId int32
 }
@@ -351,7 +351,7 @@ Gets the pre-compiled email details.
  @param documentId The ID of the document.
  @return ApiGetEmailDataRequest
 */
-func (a *IssuedDocumentsApiService) GetEmailData(ctx context.Context, companyId int32, documentId int32) ApiGetEmailDataRequest {
+func (a *IssuedDocumentsAPIService) GetEmailData(ctx context.Context, companyId int32, documentId int32) ApiGetEmailDataRequest {
 	return ApiGetEmailDataRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -362,7 +362,7 @@ func (a *IssuedDocumentsApiService) GetEmailData(ctx context.Context, companyId 
 
 // Execute executes the request
 //  @return GetEmailDataResponse
-func (a *IssuedDocumentsApiService) GetEmailDataExecute(r ApiGetEmailDataRequest) (*GetEmailDataResponse, *http.Response, error) {
+func (a *IssuedDocumentsAPIService) GetEmailDataExecute(r ApiGetEmailDataRequest) (*GetEmailDataResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -370,7 +370,7 @@ func (a *IssuedDocumentsApiService) GetEmailDataExecute(r ApiGetEmailDataRequest
 		localVarReturnValue  *GetEmailDataResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.GetEmailData")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsAPIService.GetEmailData")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -439,7 +439,7 @@ func (a *IssuedDocumentsApiService) GetEmailDataExecute(r ApiGetEmailDataRequest
 
 type ApiGetExistingIssuedDocumentTotalsRequest struct {
 	ctx context.Context
-	ApiService *IssuedDocumentsApiService
+	ApiService *IssuedDocumentsAPIService
 	companyId int32
 	documentId int32
 	getExistingIssuedDocumentTotalsRequest *GetExistingIssuedDocumentTotalsRequest
@@ -464,7 +464,7 @@ Returns the totals for a specified document.
  @param documentId The ID of the document.
  @return ApiGetExistingIssuedDocumentTotalsRequest
 */
-func (a *IssuedDocumentsApiService) GetExistingIssuedDocumentTotals(ctx context.Context, companyId int32, documentId int32) ApiGetExistingIssuedDocumentTotalsRequest {
+func (a *IssuedDocumentsAPIService) GetExistingIssuedDocumentTotals(ctx context.Context, companyId int32, documentId int32) ApiGetExistingIssuedDocumentTotalsRequest {
 	return ApiGetExistingIssuedDocumentTotalsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -475,7 +475,7 @@ func (a *IssuedDocumentsApiService) GetExistingIssuedDocumentTotals(ctx context.
 
 // Execute executes the request
 //  @return GetExistingIssuedDocumentTotalsResponse
-func (a *IssuedDocumentsApiService) GetExistingIssuedDocumentTotalsExecute(r ApiGetExistingIssuedDocumentTotalsRequest) (*GetExistingIssuedDocumentTotalsResponse, *http.Response, error) {
+func (a *IssuedDocumentsAPIService) GetExistingIssuedDocumentTotalsExecute(r ApiGetExistingIssuedDocumentTotalsRequest) (*GetExistingIssuedDocumentTotalsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -483,7 +483,7 @@ func (a *IssuedDocumentsApiService) GetExistingIssuedDocumentTotalsExecute(r Api
 		localVarReturnValue  *GetExistingIssuedDocumentTotalsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.GetExistingIssuedDocumentTotals")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsAPIService.GetExistingIssuedDocumentTotals")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -554,7 +554,7 @@ func (a *IssuedDocumentsApiService) GetExistingIssuedDocumentTotalsExecute(r Api
 
 type ApiGetIssuedDocumentRequest struct {
 	ctx context.Context
-	ApiService *IssuedDocumentsApiService
+	ApiService *IssuedDocumentsAPIService
 	companyId int32
 	documentId int32
 	fields *string
@@ -588,7 +588,7 @@ Gets the specified document.
  @param documentId The ID of the document.
  @return ApiGetIssuedDocumentRequest
 */
-func (a *IssuedDocumentsApiService) GetIssuedDocument(ctx context.Context, companyId int32, documentId int32) ApiGetIssuedDocumentRequest {
+func (a *IssuedDocumentsAPIService) GetIssuedDocument(ctx context.Context, companyId int32, documentId int32) ApiGetIssuedDocumentRequest {
 	return ApiGetIssuedDocumentRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -599,7 +599,7 @@ func (a *IssuedDocumentsApiService) GetIssuedDocument(ctx context.Context, compa
 
 // Execute executes the request
 //  @return GetIssuedDocumentResponse
-func (a *IssuedDocumentsApiService) GetIssuedDocumentExecute(r ApiGetIssuedDocumentRequest) (*GetIssuedDocumentResponse, *http.Response, error) {
+func (a *IssuedDocumentsAPIService) GetIssuedDocumentExecute(r ApiGetIssuedDocumentRequest) (*GetIssuedDocumentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -607,7 +607,7 @@ func (a *IssuedDocumentsApiService) GetIssuedDocumentExecute(r ApiGetIssuedDocum
 		localVarReturnValue  *GetIssuedDocumentResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.GetIssuedDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsAPIService.GetIssuedDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -682,7 +682,7 @@ func (a *IssuedDocumentsApiService) GetIssuedDocumentExecute(r ApiGetIssuedDocum
 
 type ApiGetIssuedDocumentPreCreateInfoRequest struct {
 	ctx context.Context
-	ApiService *IssuedDocumentsApiService
+	ApiService *IssuedDocumentsAPIService
 	companyId int32
 	type_ *string
 }
@@ -698,7 +698,7 @@ func (r ApiGetIssuedDocumentPreCreateInfoRequest) Execute() (*GetIssuedDocumentP
 }
 
 /*
-GetIssuedDocumentPreCreateInfo Get Issued Document Pre-create info
+GetIssuedDocumentPreCreateInfo Get Issued Document Pre-Create Info
 
 Retrieves the information useful while creating a new document.
 
@@ -706,7 +706,7 @@ Retrieves the information useful while creating a new document.
  @param companyId The ID of the company.
  @return ApiGetIssuedDocumentPreCreateInfoRequest
 */
-func (a *IssuedDocumentsApiService) GetIssuedDocumentPreCreateInfo(ctx context.Context, companyId int32) ApiGetIssuedDocumentPreCreateInfoRequest {
+func (a *IssuedDocumentsAPIService) GetIssuedDocumentPreCreateInfo(ctx context.Context, companyId int32) ApiGetIssuedDocumentPreCreateInfoRequest {
 	return ApiGetIssuedDocumentPreCreateInfoRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -716,7 +716,7 @@ func (a *IssuedDocumentsApiService) GetIssuedDocumentPreCreateInfo(ctx context.C
 
 // Execute executes the request
 //  @return GetIssuedDocumentPreCreateInfoResponse
-func (a *IssuedDocumentsApiService) GetIssuedDocumentPreCreateInfoExecute(r ApiGetIssuedDocumentPreCreateInfoRequest) (*GetIssuedDocumentPreCreateInfoResponse, *http.Response, error) {
+func (a *IssuedDocumentsAPIService) GetIssuedDocumentPreCreateInfoExecute(r ApiGetIssuedDocumentPreCreateInfoRequest) (*GetIssuedDocumentPreCreateInfoResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -724,7 +724,7 @@ func (a *IssuedDocumentsApiService) GetIssuedDocumentPreCreateInfoExecute(r ApiG
 		localVarReturnValue  *GetIssuedDocumentPreCreateInfoResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.GetIssuedDocumentPreCreateInfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsAPIService.GetIssuedDocumentPreCreateInfo")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -796,7 +796,7 @@ func (a *IssuedDocumentsApiService) GetIssuedDocumentPreCreateInfoExecute(r ApiG
 
 type ApiGetNewIssuedDocumentTotalsRequest struct {
 	ctx context.Context
-	ApiService *IssuedDocumentsApiService
+	ApiService *IssuedDocumentsAPIService
 	companyId int32
 	getNewIssuedDocumentTotalsRequest *GetNewIssuedDocumentTotalsRequest
 }
@@ -819,7 +819,7 @@ Returns the totals for a new document.
  @param companyId The ID of the company.
  @return ApiGetNewIssuedDocumentTotalsRequest
 */
-func (a *IssuedDocumentsApiService) GetNewIssuedDocumentTotals(ctx context.Context, companyId int32) ApiGetNewIssuedDocumentTotalsRequest {
+func (a *IssuedDocumentsAPIService) GetNewIssuedDocumentTotals(ctx context.Context, companyId int32) ApiGetNewIssuedDocumentTotalsRequest {
 	return ApiGetNewIssuedDocumentTotalsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -829,7 +829,7 @@ func (a *IssuedDocumentsApiService) GetNewIssuedDocumentTotals(ctx context.Conte
 
 // Execute executes the request
 //  @return GetNewIssuedDocumentTotalsResponse
-func (a *IssuedDocumentsApiService) GetNewIssuedDocumentTotalsExecute(r ApiGetNewIssuedDocumentTotalsRequest) (*GetNewIssuedDocumentTotalsResponse, *http.Response, error) {
+func (a *IssuedDocumentsAPIService) GetNewIssuedDocumentTotalsExecute(r ApiGetNewIssuedDocumentTotalsRequest) (*GetNewIssuedDocumentTotalsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -837,7 +837,7 @@ func (a *IssuedDocumentsApiService) GetNewIssuedDocumentTotalsExecute(r ApiGetNe
 		localVarReturnValue  *GetNewIssuedDocumentTotalsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.GetNewIssuedDocumentTotals")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsAPIService.GetNewIssuedDocumentTotals")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -907,7 +907,7 @@ func (a *IssuedDocumentsApiService) GetNewIssuedDocumentTotalsExecute(r ApiGetNe
 
 type ApiJoinIssuedDocumentsRequest struct {
 	ctx context.Context
-	ApiService *IssuedDocumentsApiService
+	ApiService *IssuedDocumentsAPIService
 	companyId int32
 	ids *string
 	group *int32
@@ -937,7 +937,7 @@ func (r ApiJoinIssuedDocumentsRequest) Execute() (*JoinIssuedDocumentsResponse, 
 }
 
 /*
-JoinIssuedDocuments Join issued documents
+JoinIssuedDocuments Join Issued Documents
 
 Joins issued documents.
 
@@ -945,7 +945,7 @@ Joins issued documents.
  @param companyId The ID of the company.
  @return ApiJoinIssuedDocumentsRequest
 */
-func (a *IssuedDocumentsApiService) JoinIssuedDocuments(ctx context.Context, companyId int32) ApiJoinIssuedDocumentsRequest {
+func (a *IssuedDocumentsAPIService) JoinIssuedDocuments(ctx context.Context, companyId int32) ApiJoinIssuedDocumentsRequest {
 	return ApiJoinIssuedDocumentsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -955,7 +955,7 @@ func (a *IssuedDocumentsApiService) JoinIssuedDocuments(ctx context.Context, com
 
 // Execute executes the request
 //  @return JoinIssuedDocumentsResponse
-func (a *IssuedDocumentsApiService) JoinIssuedDocumentsExecute(r ApiJoinIssuedDocumentsRequest) (*JoinIssuedDocumentsResponse, *http.Response, error) {
+func (a *IssuedDocumentsAPIService) JoinIssuedDocumentsExecute(r ApiJoinIssuedDocumentsRequest) (*JoinIssuedDocumentsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -963,7 +963,7 @@ func (a *IssuedDocumentsApiService) JoinIssuedDocumentsExecute(r ApiJoinIssuedDo
 		localVarReturnValue  *JoinIssuedDocumentsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.JoinIssuedDocuments")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsAPIService.JoinIssuedDocuments")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1041,7 +1041,7 @@ func (a *IssuedDocumentsApiService) JoinIssuedDocumentsExecute(r ApiJoinIssuedDo
 
 type ApiListIssuedDocumentsRequest struct {
 	ctx context.Context
-	ApiService *IssuedDocumentsApiService
+	ApiService *IssuedDocumentsAPIService
 	companyId int32
 	type_ *string
 	fields *string
@@ -1114,7 +1114,7 @@ Lists the issued documents.
  @param companyId The ID of the company.
  @return ApiListIssuedDocumentsRequest
 */
-func (a *IssuedDocumentsApiService) ListIssuedDocuments(ctx context.Context, companyId int32) ApiListIssuedDocumentsRequest {
+func (a *IssuedDocumentsAPIService) ListIssuedDocuments(ctx context.Context, companyId int32) ApiListIssuedDocumentsRequest {
 	return ApiListIssuedDocumentsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1124,7 +1124,7 @@ func (a *IssuedDocumentsApiService) ListIssuedDocuments(ctx context.Context, com
 
 // Execute executes the request
 //  @return ListIssuedDocumentsResponse
-func (a *IssuedDocumentsApiService) ListIssuedDocumentsExecute(r ApiListIssuedDocumentsRequest) (*ListIssuedDocumentsResponse, *http.Response, error) {
+func (a *IssuedDocumentsAPIService) ListIssuedDocumentsExecute(r ApiListIssuedDocumentsRequest) (*ListIssuedDocumentsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1132,7 +1132,7 @@ func (a *IssuedDocumentsApiService) ListIssuedDocumentsExecute(r ApiListIssuedDo
 		localVarReturnValue  *ListIssuedDocumentsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.ListIssuedDocuments")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsAPIService.ListIssuedDocuments")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1159,10 +1159,16 @@ func (a *IssuedDocumentsApiService) ListIssuedDocumentsExecute(r ApiListIssuedDo
 	}
 	if r.page != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
-	}
+	} else {
+ 		var defaultValue int32 = 1
+ 		r.page = &defaultValue
+ 	}
 	if r.perPage != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
-	}
+	} else {
+ 		var defaultValue int32 = 5
+ 		r.perPage = &defaultValue
+ 	}
 	if r.q != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
 	}
@@ -1225,7 +1231,7 @@ func (a *IssuedDocumentsApiService) ListIssuedDocumentsExecute(r ApiListIssuedDo
 
 type ApiModifyIssuedDocumentRequest struct {
 	ctx context.Context
-	ApiService *IssuedDocumentsApiService
+	ApiService *IssuedDocumentsAPIService
 	companyId int32
 	documentId int32
 	modifyIssuedDocumentRequest *ModifyIssuedDocumentRequest
@@ -1251,7 +1257,7 @@ Modifies the specified document.
  @param documentId The ID of the document.
  @return ApiModifyIssuedDocumentRequest
 */
-func (a *IssuedDocumentsApiService) ModifyIssuedDocument(ctx context.Context, companyId int32, documentId int32) ApiModifyIssuedDocumentRequest {
+func (a *IssuedDocumentsAPIService) ModifyIssuedDocument(ctx context.Context, companyId int32, documentId int32) ApiModifyIssuedDocumentRequest {
 	return ApiModifyIssuedDocumentRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1262,7 +1268,7 @@ func (a *IssuedDocumentsApiService) ModifyIssuedDocument(ctx context.Context, co
 
 // Execute executes the request
 //  @return ModifyIssuedDocumentResponse
-func (a *IssuedDocumentsApiService) ModifyIssuedDocumentExecute(r ApiModifyIssuedDocumentRequest) (*ModifyIssuedDocumentResponse, *http.Response, error) {
+func (a *IssuedDocumentsAPIService) ModifyIssuedDocumentExecute(r ApiModifyIssuedDocumentRequest) (*ModifyIssuedDocumentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1270,7 +1276,7 @@ func (a *IssuedDocumentsApiService) ModifyIssuedDocumentExecute(r ApiModifyIssue
 		localVarReturnValue  *ModifyIssuedDocumentResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.ModifyIssuedDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsAPIService.ModifyIssuedDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1341,7 +1347,7 @@ func (a *IssuedDocumentsApiService) ModifyIssuedDocumentExecute(r ApiModifyIssue
 
 type ApiScheduleEmailRequest struct {
 	ctx context.Context
-	ApiService *IssuedDocumentsApiService
+	ApiService *IssuedDocumentsAPIService
 	companyId int32
 	documentId int32
 	scheduleEmailRequest *ScheduleEmailRequest
@@ -1367,7 +1373,7 @@ Schedules the sending of a document by email.
  @param documentId The ID of the document.
  @return ApiScheduleEmailRequest
 */
-func (a *IssuedDocumentsApiService) ScheduleEmail(ctx context.Context, companyId int32, documentId int32) ApiScheduleEmailRequest {
+func (a *IssuedDocumentsAPIService) ScheduleEmail(ctx context.Context, companyId int32, documentId int32) ApiScheduleEmailRequest {
 	return ApiScheduleEmailRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1377,14 +1383,14 @@ func (a *IssuedDocumentsApiService) ScheduleEmail(ctx context.Context, companyId
 }
 
 // Execute executes the request
-func (a *IssuedDocumentsApiService) ScheduleEmailExecute(r ApiScheduleEmailRequest) (*http.Response, error) {
+func (a *IssuedDocumentsAPIService) ScheduleEmailExecute(r ApiScheduleEmailRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.ScheduleEmail")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsAPIService.ScheduleEmail")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1446,7 +1452,7 @@ func (a *IssuedDocumentsApiService) ScheduleEmailExecute(r ApiScheduleEmailReque
 
 type ApiTransformIssuedDocumentRequest struct {
 	ctx context.Context
-	ApiService *IssuedDocumentsApiService
+	ApiService *IssuedDocumentsAPIService
 	companyId int32
 	originalDocumentId *int32
 	newType *string
@@ -1483,7 +1489,7 @@ func (r ApiTransformIssuedDocumentRequest) Execute() (*TransformIssuedDocumentRe
 }
 
 /*
-TransformIssuedDocument Transform issued document
+TransformIssuedDocument Transform Issued Document
 
 Transforms the document.
 
@@ -1491,7 +1497,7 @@ Transforms the document.
  @param companyId The ID of the company.
  @return ApiTransformIssuedDocumentRequest
 */
-func (a *IssuedDocumentsApiService) TransformIssuedDocument(ctx context.Context, companyId int32) ApiTransformIssuedDocumentRequest {
+func (a *IssuedDocumentsAPIService) TransformIssuedDocument(ctx context.Context, companyId int32) ApiTransformIssuedDocumentRequest {
 	return ApiTransformIssuedDocumentRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1501,7 +1507,7 @@ func (a *IssuedDocumentsApiService) TransformIssuedDocument(ctx context.Context,
 
 // Execute executes the request
 //  @return TransformIssuedDocumentResponse
-func (a *IssuedDocumentsApiService) TransformIssuedDocumentExecute(r ApiTransformIssuedDocumentRequest) (*TransformIssuedDocumentResponse, *http.Response, error) {
+func (a *IssuedDocumentsAPIService) TransformIssuedDocumentExecute(r ApiTransformIssuedDocumentRequest) (*TransformIssuedDocumentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1509,7 +1515,7 @@ func (a *IssuedDocumentsApiService) TransformIssuedDocumentExecute(r ApiTransfor
 		localVarReturnValue  *TransformIssuedDocumentResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.TransformIssuedDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsAPIService.TransformIssuedDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1591,7 +1597,7 @@ func (a *IssuedDocumentsApiService) TransformIssuedDocumentExecute(r ApiTransfor
 
 type ApiUploadIssuedDocumentAttachmentRequest struct {
 	ctx context.Context
-	ApiService *IssuedDocumentsApiService
+	ApiService *IssuedDocumentsAPIService
 	companyId int32
 	filename *string
 	attachment *os.File
@@ -1622,7 +1628,7 @@ Uploads an attachment destined to an issued document. The actual association bet
  @param companyId The ID of the company.
  @return ApiUploadIssuedDocumentAttachmentRequest
 */
-func (a *IssuedDocumentsApiService) UploadIssuedDocumentAttachment(ctx context.Context, companyId int32) ApiUploadIssuedDocumentAttachmentRequest {
+func (a *IssuedDocumentsAPIService) UploadIssuedDocumentAttachment(ctx context.Context, companyId int32) ApiUploadIssuedDocumentAttachmentRequest {
 	return ApiUploadIssuedDocumentAttachmentRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1632,7 +1638,7 @@ func (a *IssuedDocumentsApiService) UploadIssuedDocumentAttachment(ctx context.C
 
 // Execute executes the request
 //  @return UploadIssuedDocumentAttachmentResponse
-func (a *IssuedDocumentsApiService) UploadIssuedDocumentAttachmentExecute(r ApiUploadIssuedDocumentAttachmentRequest) (*UploadIssuedDocumentAttachmentResponse, *http.Response, error) {
+func (a *IssuedDocumentsAPIService) UploadIssuedDocumentAttachmentExecute(r ApiUploadIssuedDocumentAttachmentRequest) (*UploadIssuedDocumentAttachmentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1640,7 +1646,7 @@ func (a *IssuedDocumentsApiService) UploadIssuedDocumentAttachmentExecute(r ApiU
 		localVarReturnValue  *UploadIssuedDocumentAttachmentResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsApiService.UploadIssuedDocumentAttachment")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsAPIService.UploadIssuedDocumentAttachment")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -37,7 +37,7 @@ func TestGetEInvoiceRejectionReason(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.IssuedEInvoicesApi.GetEInvoiceRejectionReason(context.Background(), 2, 2).Execute()
+	actual, _, err := apiClient.IssuedEInvoicesAPI.GetEInvoiceRejectionReason(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewEInvoiceRejectionReason().
@@ -61,7 +61,7 @@ func TestGetEInvoiceXml(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.IssuedEInvoicesApi.GetEInvoiceXml(context.Background(), 2, 2).IncludeAttachment(true).Execute()
+	actual, _, err := apiClient.IssuedEInvoicesAPI.GetEInvoiceXml(context.Background(), 2, 2).IncludeAttachment(true).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.True(t, reflect.DeepEqual("<xml-fattura>fields</xml-fattura>", actual))
@@ -81,7 +81,7 @@ func TestSendEInvoice(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.IssuedEInvoicesApi.SendEInvoice(context.Background(), 2, 2).SendEInvoiceRequest(*NewSendEInvoiceRequest()).Execute()
+	actual, _, err := apiClient.IssuedEInvoicesAPI.SendEInvoice(context.Background(), 2, 2).SendEInvoiceRequest(*NewSendEInvoiceRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewSendEInvoiceResponseData().SetName("neim").SetDate("2021-12-31")
@@ -103,7 +103,7 @@ func TestVerifyEInvoiceXml(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.IssuedEInvoicesApi.VerifyEInvoiceXml(context.Background(), 2, 2).Execute()
+	actual, _, err := apiClient.IssuedEInvoicesAPI.VerifyEInvoiceXml(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewVerifyEInvoiceXmlResponseData().SetSuccess(true)

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.28
+API version: 2.0.30
 Contact: info@fattureincloud.it
 */
 
@@ -23,12 +23,12 @@ import (
 )
 
 
-// ArchiveApiService ArchiveApi service
-type ArchiveApiService service
+// ArchiveAPIService ArchiveAPI service
+type ArchiveAPIService service
 
 type ApiCreateArchiveDocumentRequest struct {
 	ctx context.Context
-	ApiService *ArchiveApiService
+	ApiService *ArchiveAPIService
 	companyId int32
 	createArchiveDocumentRequest *CreateArchiveDocumentRequest
 }
@@ -52,7 +52,7 @@ Creates a new archive document.
  @param companyId The ID of the company.
  @return ApiCreateArchiveDocumentRequest
 */
-func (a *ArchiveApiService) CreateArchiveDocument(ctx context.Context, companyId int32) ApiCreateArchiveDocumentRequest {
+func (a *ArchiveAPIService) CreateArchiveDocument(ctx context.Context, companyId int32) ApiCreateArchiveDocumentRequest {
 	return ApiCreateArchiveDocumentRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -62,7 +62,7 @@ func (a *ArchiveApiService) CreateArchiveDocument(ctx context.Context, companyId
 
 // Execute executes the request
 //  @return CreateArchiveDocumentResponse
-func (a *ArchiveApiService) CreateArchiveDocumentExecute(r ApiCreateArchiveDocumentRequest) (*CreateArchiveDocumentResponse, *http.Response, error) {
+func (a *ArchiveAPIService) CreateArchiveDocumentExecute(r ApiCreateArchiveDocumentRequest) (*CreateArchiveDocumentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -70,7 +70,7 @@ func (a *ArchiveApiService) CreateArchiveDocumentExecute(r ApiCreateArchiveDocum
 		localVarReturnValue  *CreateArchiveDocumentResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchiveApiService.CreateArchiveDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchiveAPIService.CreateArchiveDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,7 +140,7 @@ func (a *ArchiveApiService) CreateArchiveDocumentExecute(r ApiCreateArchiveDocum
 
 type ApiDeleteArchiveDocumentRequest struct {
 	ctx context.Context
-	ApiService *ArchiveApiService
+	ApiService *ArchiveAPIService
 	companyId int32
 	documentId int32
 }
@@ -159,7 +159,7 @@ Deletes the specified archive document.
  @param documentId The ID of the document.
  @return ApiDeleteArchiveDocumentRequest
 */
-func (a *ArchiveApiService) DeleteArchiveDocument(ctx context.Context, companyId int32, documentId int32) ApiDeleteArchiveDocumentRequest {
+func (a *ArchiveAPIService) DeleteArchiveDocument(ctx context.Context, companyId int32, documentId int32) ApiDeleteArchiveDocumentRequest {
 	return ApiDeleteArchiveDocumentRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -169,14 +169,14 @@ func (a *ArchiveApiService) DeleteArchiveDocument(ctx context.Context, companyId
 }
 
 // Execute executes the request
-func (a *ArchiveApiService) DeleteArchiveDocumentExecute(r ApiDeleteArchiveDocumentRequest) (*http.Response, error) {
+func (a *ArchiveAPIService) DeleteArchiveDocumentExecute(r ApiDeleteArchiveDocumentRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchiveApiService.DeleteArchiveDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchiveAPIService.DeleteArchiveDocument")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -236,7 +236,7 @@ func (a *ArchiveApiService) DeleteArchiveDocumentExecute(r ApiDeleteArchiveDocum
 
 type ApiGetArchiveDocumentRequest struct {
 	ctx context.Context
-	ApiService *ArchiveApiService
+	ApiService *ArchiveAPIService
 	companyId int32
 	documentId int32
 	fields *string
@@ -269,7 +269,7 @@ Gets the specified archive document.
  @param documentId The ID of the document.
  @return ApiGetArchiveDocumentRequest
 */
-func (a *ArchiveApiService) GetArchiveDocument(ctx context.Context, companyId int32, documentId int32) ApiGetArchiveDocumentRequest {
+func (a *ArchiveAPIService) GetArchiveDocument(ctx context.Context, companyId int32, documentId int32) ApiGetArchiveDocumentRequest {
 	return ApiGetArchiveDocumentRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -280,7 +280,7 @@ func (a *ArchiveApiService) GetArchiveDocument(ctx context.Context, companyId in
 
 // Execute executes the request
 //  @return GetArchiveDocumentResponse
-func (a *ArchiveApiService) GetArchiveDocumentExecute(r ApiGetArchiveDocumentRequest) (*GetArchiveDocumentResponse, *http.Response, error) {
+func (a *ArchiveAPIService) GetArchiveDocumentExecute(r ApiGetArchiveDocumentRequest) (*GetArchiveDocumentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -288,7 +288,7 @@ func (a *ArchiveApiService) GetArchiveDocumentExecute(r ApiGetArchiveDocumentReq
 		localVarReturnValue  *GetArchiveDocumentResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchiveApiService.GetArchiveDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchiveAPIService.GetArchiveDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -363,7 +363,7 @@ func (a *ArchiveApiService) GetArchiveDocumentExecute(r ApiGetArchiveDocumentReq
 
 type ApiListArchiveDocumentsRequest struct {
 	ctx context.Context
-	ApiService *ArchiveApiService
+	ApiService *ArchiveAPIService
 	companyId int32
 	fields *string
 	fieldset *string
@@ -422,7 +422,7 @@ Lists the archive documents.
  @param companyId The ID of the company.
  @return ApiListArchiveDocumentsRequest
 */
-func (a *ArchiveApiService) ListArchiveDocuments(ctx context.Context, companyId int32) ApiListArchiveDocumentsRequest {
+func (a *ArchiveAPIService) ListArchiveDocuments(ctx context.Context, companyId int32) ApiListArchiveDocumentsRequest {
 	return ApiListArchiveDocumentsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -432,7 +432,7 @@ func (a *ArchiveApiService) ListArchiveDocuments(ctx context.Context, companyId 
 
 // Execute executes the request
 //  @return ListArchiveDocumentsResponse
-func (a *ArchiveApiService) ListArchiveDocumentsExecute(r ApiListArchiveDocumentsRequest) (*ListArchiveDocumentsResponse, *http.Response, error) {
+func (a *ArchiveAPIService) ListArchiveDocumentsExecute(r ApiListArchiveDocumentsRequest) (*ListArchiveDocumentsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -440,7 +440,7 @@ func (a *ArchiveApiService) ListArchiveDocumentsExecute(r ApiListArchiveDocument
 		localVarReturnValue  *ListArchiveDocumentsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchiveApiService.ListArchiveDocuments")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchiveAPIService.ListArchiveDocuments")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -463,10 +463,16 @@ func (a *ArchiveApiService) ListArchiveDocumentsExecute(r ApiListArchiveDocument
 	}
 	if r.page != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
-	}
+	} else {
+ 		var defaultValue int32 = 1
+ 		r.page = &defaultValue
+ 	}
 	if r.perPage != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
-	}
+	} else {
+ 		var defaultValue int32 = 5
+ 		r.perPage = &defaultValue
+ 	}
 	if r.q != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
 	}
@@ -526,7 +532,7 @@ func (a *ArchiveApiService) ListArchiveDocumentsExecute(r ApiListArchiveDocument
 
 type ApiModifyArchiveDocumentRequest struct {
 	ctx context.Context
-	ApiService *ArchiveApiService
+	ApiService *ArchiveAPIService
 	companyId int32
 	documentId int32
 	modifyArchiveDocumentRequest *ModifyArchiveDocumentRequest
@@ -552,7 +558,7 @@ Modifies the specified archive document.
  @param documentId The ID of the document.
  @return ApiModifyArchiveDocumentRequest
 */
-func (a *ArchiveApiService) ModifyArchiveDocument(ctx context.Context, companyId int32, documentId int32) ApiModifyArchiveDocumentRequest {
+func (a *ArchiveAPIService) ModifyArchiveDocument(ctx context.Context, companyId int32, documentId int32) ApiModifyArchiveDocumentRequest {
 	return ApiModifyArchiveDocumentRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -563,7 +569,7 @@ func (a *ArchiveApiService) ModifyArchiveDocument(ctx context.Context, companyId
 
 // Execute executes the request
 //  @return ModifyArchiveDocumentResponse
-func (a *ArchiveApiService) ModifyArchiveDocumentExecute(r ApiModifyArchiveDocumentRequest) (*ModifyArchiveDocumentResponse, *http.Response, error) {
+func (a *ArchiveAPIService) ModifyArchiveDocumentExecute(r ApiModifyArchiveDocumentRequest) (*ModifyArchiveDocumentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -571,7 +577,7 @@ func (a *ArchiveApiService) ModifyArchiveDocumentExecute(r ApiModifyArchiveDocum
 		localVarReturnValue  *ModifyArchiveDocumentResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchiveApiService.ModifyArchiveDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchiveAPIService.ModifyArchiveDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -642,7 +648,7 @@ func (a *ArchiveApiService) ModifyArchiveDocumentExecute(r ApiModifyArchiveDocum
 
 type ApiUploadArchiveDocumentAttachmentRequest struct {
 	ctx context.Context
-	ApiService *ArchiveApiService
+	ApiService *ArchiveAPIService
 	companyId int32
 	filename *string
 	attachment *os.File
@@ -673,7 +679,7 @@ Uploads an attachment destined to an archive document. The actual association be
  @param companyId The ID of the company.
  @return ApiUploadArchiveDocumentAttachmentRequest
 */
-func (a *ArchiveApiService) UploadArchiveDocumentAttachment(ctx context.Context, companyId int32) ApiUploadArchiveDocumentAttachmentRequest {
+func (a *ArchiveAPIService) UploadArchiveDocumentAttachment(ctx context.Context, companyId int32) ApiUploadArchiveDocumentAttachmentRequest {
 	return ApiUploadArchiveDocumentAttachmentRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -683,7 +689,7 @@ func (a *ArchiveApiService) UploadArchiveDocumentAttachment(ctx context.Context,
 
 // Execute executes the request
 //  @return UploadArchiveAttachmentResponse
-func (a *ArchiveApiService) UploadArchiveDocumentAttachmentExecute(r ApiUploadArchiveDocumentAttachmentRequest) (*UploadArchiveAttachmentResponse, *http.Response, error) {
+func (a *ArchiveAPIService) UploadArchiveDocumentAttachmentExecute(r ApiUploadArchiveDocumentAttachmentRequest) (*UploadArchiveAttachmentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -691,7 +697,7 @@ func (a *ArchiveApiService) UploadArchiveDocumentAttachmentExecute(r ApiUploadAr
 		localVarReturnValue  *UploadArchiveAttachmentResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchiveApiService.UploadArchiveDocumentAttachment")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchiveAPIService.UploadArchiveDocumentAttachment")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

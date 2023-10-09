@@ -16,7 +16,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestEventTypeResponse(t *testing.T) {
+func TestEventType(t *testing.T) {
 	assert.Equal(t, "it.fattureincloud.webhooks.issued_documents.invoices.create", string(EventTypes.ISSUED_DOCUMENTS_INVOICES_CREATE))
 	assert.Equal(t, "it.fattureincloud.webhooks.cashbook.create", string(EventTypes.CASHBOOK_CREATE))
 	assert.Equal(t, "it.fattureincloud.webhooks.entities.all.update", string(EventTypes.ENTITIES_ALL_UPDATE))

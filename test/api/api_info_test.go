@@ -36,7 +36,7 @@ func TestListArchiveCategories(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.InfoApi.ListArchiveCategories(context.Background(), 2).Execute()
+	actual, _, err := apiClient.InfoAPI.ListArchiveCategories(context.Background(), 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 	expected := []string{"cat5", "cat6"}
 
@@ -57,7 +57,7 @@ func TestListCities(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.InfoApi.ListCities(context.Background()).Execute()
+	actual, _, err := apiClient.InfoAPI.ListCities(context.Background()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewCity().
@@ -82,7 +82,7 @@ func TestListCostCenters(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.InfoApi.ListCostCenters(context.Background(), 2).Execute()
+	actual, _, err := apiClient.InfoAPI.ListCostCenters(context.Background(), 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := []string{"bg", "mi"}
@@ -104,7 +104,7 @@ func TestListCountries(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.InfoApi.ListCountries(context.Background()).Execute()
+	actual, _, err := apiClient.InfoAPI.ListCountries(context.Background()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := []string{"italia", "albania"}
@@ -126,7 +126,7 @@ func TestListCurrencies(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.InfoApi.ListCurrencies(context.Background()).Execute()
+	actual, _, err := apiClient.InfoAPI.ListCurrencies(context.Background()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewCurrency().
@@ -152,7 +152,7 @@ func TestListDeliveryNotesDefaultCausals(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.InfoApi.ListDeliveryNotesDefaultCausals(context.Background()).Execute()
+	actual, _, err := apiClient.InfoAPI.ListDeliveryNotesDefaultCausals(context.Background()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := []string{"causal1", "causal2"}
@@ -174,7 +174,7 @@ func TestListDetailedCountries(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.InfoApi.ListDetailedCountries(context.Background()).Execute()
+	actual, _, err := apiClient.InfoAPI.ListDetailedCountries(context.Background()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewDetailedCountry().
@@ -200,7 +200,7 @@ func TestListLanguages(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.InfoApi.ListLanguages(context.Background()).Execute()
+	actual, _, err := apiClient.InfoAPI.ListLanguages(context.Background()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewLanguage().
@@ -224,7 +224,7 @@ func TestListPaymentAccounts(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.InfoApi.ListPaymentAccounts(context.Background(), 2).Execute()
+	actual, _, err := apiClient.InfoAPI.ListPaymentAccounts(context.Background(), 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewPaymentAccount().
@@ -253,7 +253,7 @@ func TestListPaymentMethods(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.InfoApi.ListPaymentMethods(context.Background(), 2).Execute()
+	actual, _, err := apiClient.InfoAPI.ListPaymentMethods(context.Background(), 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewPaymentMethod().
@@ -289,7 +289,7 @@ func TestListProductCategories(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.InfoApi.ListProductCategories(context.Background(), 2).Context("asd").Execute()
+	actual, _, err := apiClient.InfoAPI.ListProductCategories(context.Background(), 2).Context("asd").Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := []string{"cat5", "cat6"}
@@ -311,7 +311,7 @@ func TestListReceivedDocumentCategories(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.InfoApi.ListReceivedDocumentCategories(context.Background(), 2).Execute()
+	actual, _, err := apiClient.InfoAPI.ListReceivedDocumentCategories(context.Background(), 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := []string{"cat5", "cat6"}
@@ -333,7 +333,7 @@ func TestListRevenueCenters(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.InfoApi.ListRevenueCenters(context.Background(), 2).Execute()
+	actual, _, err := apiClient.InfoAPI.ListRevenueCenters(context.Background(), 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := []string{"bg", "mi"}
@@ -355,7 +355,7 @@ func TestListTemplates(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.InfoApi.ListTemplates(context.Background()).Execute()
+	actual, _, err := apiClient.InfoAPI.ListTemplates(context.Background()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewDocumentTemplate().
@@ -380,7 +380,7 @@ func TestListUnitsOfMeasure(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.InfoApi.ListUnitsOfMeasure(context.Background()).Execute()
+	actual, _, err := apiClient.InfoAPI.ListUnitsOfMeasure(context.Background()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := []string{"kg", "km"}
@@ -402,7 +402,7 @@ func TestListVatTypes(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.InfoApi.ListVatTypes(context.Background(), 2).Execute()
+	actual, _, err := apiClient.InfoAPI.ListVatTypes(context.Background(), 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewVatType().

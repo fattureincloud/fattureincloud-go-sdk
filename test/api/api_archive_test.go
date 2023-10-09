@@ -36,7 +36,7 @@ func TestCreateArchiveDocument(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ArchiveApi.CreateArchiveDocument(context.Background(), 2).CreateArchiveDocumentRequest(*NewCreateArchiveDocumentRequest()).Execute()
+	actual, _, err := apiClient.ArchiveAPI.CreateArchiveDocument(context.Background(), 2).CreateArchiveDocumentRequest(*NewCreateArchiveDocumentRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewArchiveDocument().
@@ -63,7 +63,7 @@ func TestDeleteArchiveDocument(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, err := apiClient.ArchiveApi.DeleteArchiveDocument(context.Background(), 2, 2).Execute()
+	actual, err := apiClient.ArchiveAPI.DeleteArchiveDocument(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.Equal(t, 200, actual.StatusCode)
@@ -83,7 +83,7 @@ func TestGetArchiveDocument(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ArchiveApi.GetArchiveDocument(context.Background(), 2, 2).Execute()
+	actual, _, err := apiClient.ArchiveAPI.GetArchiveDocument(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewArchiveDocument().
@@ -110,7 +110,7 @@ func TestListArchiveDocuments(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ArchiveApi.ListArchiveDocuments(context.Background(), 2).Execute()
+	actual, _, err := apiClient.ArchiveAPI.ListArchiveDocuments(context.Background(), 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewArchiveDocument().
@@ -137,7 +137,7 @@ func TestModifyArchiveDocument(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ArchiveApi.ModifyArchiveDocument(context.Background(), 2, 2).ModifyArchiveDocumentRequest(*NewModifyArchiveDocumentRequest()).Execute()
+	actual, _, err := apiClient.ArchiveAPI.ModifyArchiveDocument(context.Background(), 2, 2).ModifyArchiveDocumentRequest(*NewModifyArchiveDocumentRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewArchiveDocument().
@@ -163,7 +163,7 @@ func TestUploadArchiveDocumentAttachment(t *testing.T) {
 	configuration.Host = serverURL.Host
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
-	_, resp, err := apiClient.ArchiveApi.UploadArchiveDocumentAttachment(context.Background(), 2).Filename("filename").Execute()
+	_, resp, err := apiClient.ArchiveAPI.UploadArchiveDocumentAttachment(context.Background(), 2).Filename("filename").Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.Equal(t, 200, resp.StatusCode)

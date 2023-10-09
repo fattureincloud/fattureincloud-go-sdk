@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **OdDate** | Pointer to **NullableString** | E-invoice original document date | [optional] 
 **Cig** | Pointer to **NullableString** | E-invoice CIG | [optional] 
 **Cup** | Pointer to **NullableString** | E-invoice CUP | [optional] 
-**PaymentMethod** | Pointer to **NullableString** | E-invoice payment method [required for e-invoices](see https://www.fatturapa.gov.it/export/documenti/fatturapa/v1.2.2/Rappresentazione_Tabellare_FattOrdinaria_V1.2.2.pdf for the accepted values of ModalitaPagamento) | [optional] 
+**PaymentMethod** | Pointer to **NullableString** | E-invoice payment method [required for e-invoices] (see [here](https://www.fatturapa.gov.it/export/documenti/fatturapa/v1.2.2/Rappresentazione_Tabellare_FattOrdinaria_V1.2.2.pdf) for the accepted values of ModalitaPagamento) | [optional] 
 **BankName** | Pointer to **NullableString** | E-invoice bank name | [optional] 
 **BankIban** | Pointer to **NullableString** | E-invoice bank IBAN | [optional] 
 **BankBeneficiary** | Pointer to **NullableString** | E-invoice bank beneficiary | [optional] 

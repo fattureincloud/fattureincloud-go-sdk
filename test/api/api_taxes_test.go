@@ -36,7 +36,7 @@ func TestCreateF24(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.TaxesApi.CreateF24(context.Background(), 2).CreateF24Request(*NewCreateF24Request()).Execute()
+	actual, _, err := apiClient.TaxesAPI.CreateF24(context.Background(), 2).CreateF24Request(*NewCreateF24Request()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewF24().
@@ -68,7 +68,7 @@ func TestDeleteF24(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	resp, err := apiClient.TaxesApi.DeleteF24(context.Background(), 2, 2).Execute()
+	resp, err := apiClient.TaxesAPI.DeleteF24(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.Equal(t, 200, resp.StatusCode)
@@ -88,7 +88,7 @@ func TestDeleteF24Attachment(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	resp, err := apiClient.TaxesApi.DeleteF24Attachment(context.Background(), 2, 2).Execute()
+	resp, err := apiClient.TaxesAPI.DeleteF24Attachment(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.Equal(t, 200, resp.StatusCode)
@@ -108,7 +108,7 @@ func TestGetF24(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.TaxesApi.GetF24(context.Background(), 2, 2).Execute()
+	actual, _, err := apiClient.TaxesAPI.GetF24(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewF24().
@@ -140,7 +140,7 @@ func TestListF24(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.TaxesApi.ListF24(context.Background(), 2).Execute()
+	actual, _, err := apiClient.TaxesAPI.ListF24(context.Background(), 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewF24().
@@ -172,7 +172,7 @@ func TestModifyF24(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.TaxesApi.ModifyF24(context.Background(), 2, 2).ModifyF24Request(*NewModifyF24Request()).Execute()
+	actual, _, err := apiClient.TaxesAPI.ModifyF24(context.Background(), 2, 2).ModifyF24Request(*NewModifyF24Request()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewF24().
@@ -204,7 +204,7 @@ func TestUploadF24Attachment(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	_, resp, err := apiClient.TaxesApi.UploadF24Attachment(context.Background(), 2).Filename("filename").Execute()
+	_, resp, err := apiClient.TaxesAPI.UploadF24Attachment(context.Background(), 2).Filename("filename").Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.Equal(t, 200, resp.StatusCode)

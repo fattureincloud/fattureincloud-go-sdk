@@ -36,7 +36,7 @@ func TestCreateCashbookEntry(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.CashbookApi.CreateCashbookEntry(context.Background(), 2).CreateCashbookEntryRequest(*NewCreateCashbookEntryRequest()).Execute()
+	actual, _, err := apiClient.CashbookAPI.CreateCashbookEntry(context.Background(), 2).CreateCashbookEntryRequest(*NewCreateCashbookEntryRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewCashbookEntry().
@@ -86,7 +86,7 @@ func TestDeleteCashbookEntry(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	resp, err := apiClient.CashbookApi.DeleteCashbookEntry(context.Background(), 2, "2").Execute()
+	resp, err := apiClient.CashbookAPI.DeleteCashbookEntry(context.Background(), 2, "2").Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.Equal(t, 200, resp.StatusCode)
@@ -106,7 +106,7 @@ func TestGetCashbookEntry(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.CashbookApi.GetCashbookEntry(context.Background(), 2, "2").Execute()
+	actual, _, err := apiClient.CashbookAPI.GetCashbookEntry(context.Background(), 2, "2").Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewCashbookEntry().
@@ -156,7 +156,7 @@ func TestListCashbookEntries(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.CashbookApi.ListCashbookEntries(context.Background(), 2).DateFrom("2020-10-10").DateTo("2022-10-10").Execute()
+	actual, _, err := apiClient.CashbookAPI.ListCashbookEntries(context.Background(), 2).DateFrom("2020-10-10").DateTo("2022-10-10").Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewCashbookEntry().
@@ -206,7 +206,7 @@ func TestModifyCashbookEntry(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.CashbookApi.ModifyCashbookEntry(context.Background(), 2, "2").ModifyCashbookEntryRequest(*NewModifyCashbookEntryRequest()).Execute()
+	actual, _, err := apiClient.CashbookAPI.ModifyCashbookEntry(context.Background(), 2, "2").ModifyCashbookEntryRequest(*NewModifyCashbookEntryRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewCashbookEntry().

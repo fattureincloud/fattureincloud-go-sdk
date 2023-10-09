@@ -1,16 +1,16 @@
-# \ReceiptsApi
+# \ReceiptsAPI
 
 All URIs are relative to *https://api-v2.fattureincloud.it*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateReceipt**](ReceiptsApi.md#CreateReceipt) | **Post** /c/{company_id}/receipts | Create Receipt
-[**DeleteReceipt**](ReceiptsApi.md#DeleteReceipt) | **Delete** /c/{company_id}/receipts/{document_id} | Delete Receipt
-[**GetReceipt**](ReceiptsApi.md#GetReceipt) | **Get** /c/{company_id}/receipts/{document_id} | Get Receipt
-[**GetReceiptPreCreateInfo**](ReceiptsApi.md#GetReceiptPreCreateInfo) | **Get** /c/{company_id}/receipts/info | Get Receipt Pre-Create Info
-[**GetReceiptsMonthlyTotals**](ReceiptsApi.md#GetReceiptsMonthlyTotals) | **Get** /c/{company_id}/receipts/monthly_totals | Get Receipts Monthly Totals
-[**ListReceipts**](ReceiptsApi.md#ListReceipts) | **Get** /c/{company_id}/receipts | List Receipts
-[**ModifyReceipt**](ReceiptsApi.md#ModifyReceipt) | **Put** /c/{company_id}/receipts/{document_id} | Modify Receipt
+[**CreateReceipt**](ReceiptsAPI.md#CreateReceipt) | **Post** /c/{company_id}/receipts | Create Receipt
+[**DeleteReceipt**](ReceiptsAPI.md#DeleteReceipt) | **Delete** /c/{company_id}/receipts/{document_id} | Delete Receipt
+[**GetReceipt**](ReceiptsAPI.md#GetReceipt) | **Get** /c/{company_id}/receipts/{document_id} | Get Receipt
+[**GetReceiptPreCreateInfo**](ReceiptsAPI.md#GetReceiptPreCreateInfo) | **Get** /c/{company_id}/receipts/info | Get Receipt Pre-Create Info
+[**GetReceiptsMonthlyTotals**](ReceiptsAPI.md#GetReceiptsMonthlyTotals) | **Get** /c/{company_id}/receipts/monthly_totals | Get Receipts Monthly Totals
+[**ListReceipts**](ReceiptsAPI.md#ListReceipts) | **Get** /c/{company_id}/receipts | List Receipts
+[**ModifyReceipt**](ReceiptsAPI.md#ModifyReceipt) | **Put** /c/{company_id}/receipts/{document_id} | Modify Receipt
 
 
 
@@ -43,9 +43,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReceiptsApi.CreateReceipt(auth, companyId).CreateReceiptRequest(createReceiptRequest).Execute()
+    resp, r, err := apiClient.ReceiptsAPI.CreateReceipt(auth, companyId).CreateReceiptRequest(createReceiptRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsApi.CreateReceipt``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsAPI.CreateReceipt``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateReceipt`: CreateReceiptResponse
@@ -118,9 +118,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReceiptsApi.DeleteReceipt(auth, companyId, documentId).Execute()
+    resp, r, err := apiClient.ReceiptsAPI.DeleteReceipt(auth, companyId, documentId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsApi.DeleteReceipt``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsAPI.DeleteReceipt``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -194,9 +194,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReceiptsApi.GetReceipt(auth, companyId, documentId).Fields(fields).Fieldset(fieldset).Execute()
+    resp, r, err := apiClient.ReceiptsAPI.GetReceipt(auth, companyId, documentId).Fields(fields).Fieldset(fieldset).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsApi.GetReceipt``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsAPI.GetReceipt``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetReceipt`: GetReceiptResponse
@@ -271,9 +271,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReceiptsApi.GetReceiptPreCreateInfo(auth, companyId).Execute()
+    resp, r, err := apiClient.ReceiptsAPI.GetReceiptPreCreateInfo(auth, companyId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsApi.GetReceiptPreCreateInfo``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsAPI.GetReceiptPreCreateInfo``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetReceiptPreCreateInfo`: GetReceiptPreCreateInfoResponse
@@ -346,9 +346,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReceiptsApi.GetReceiptsMonthlyTotals(auth, companyId).Type_(type_).Year(year).Execute()
+    resp, r, err := apiClient.ReceiptsAPI.GetReceiptsMonthlyTotals(auth, companyId).Type_(type_).Year(year).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsApi.GetReceiptsMonthlyTotals``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsAPI.GetReceiptsMonthlyTotals``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetReceiptsMonthlyTotals`: GetReceiptsMonthlyTotalsResponse
@@ -427,9 +427,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReceiptsApi.ListReceipts(auth, companyId).Fields(fields).Fieldset(fieldset).Page(page).PerPage(perPage).Sort(sort).Q(q).Execute()
+    resp, r, err := apiClient.ReceiptsAPI.ListReceipts(auth, companyId).Fields(fields).Fieldset(fieldset).Page(page).PerPage(perPage).Sort(sort).Q(q).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsApi.ListReceipts``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsAPI.ListReceipts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListReceipts`: ListReceiptsResponse
@@ -508,9 +508,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReceiptsApi.ModifyReceipt(auth, companyId, documentId).ModifyReceiptRequest(modifyReceiptRequest).Execute()
+    resp, r, err := apiClient.ReceiptsAPI.ModifyReceipt(auth, companyId, documentId).ModifyReceiptRequest(modifyReceiptRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsApi.ModifyReceipt``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsAPI.ModifyReceipt``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ModifyReceipt`: ModifyReceiptResponse

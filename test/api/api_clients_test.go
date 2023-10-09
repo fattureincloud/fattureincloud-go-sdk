@@ -36,7 +36,7 @@ func TestCreateClient(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ClientsApi.CreateClient(context.Background(), 2).CreateClientRequest(*NewCreateClientRequest()).Execute()
+	actual, _, err := apiClient.ClientsAPI.CreateClient(context.Background(), 2).CreateClientRequest(*NewCreateClientRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewClient().
@@ -96,7 +96,7 @@ func TestDeleteClient(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	resp, err := apiClient.ClientsApi.DeleteClient(context.Background(), 2, 2).Execute()
+	resp, err := apiClient.ClientsAPI.DeleteClient(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	assert.Equal(t, 200, resp.StatusCode)
@@ -116,7 +116,7 @@ func TestGetClient(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ClientsApi.GetClient(context.Background(), 2, 2).Execute()
+	actual, _, err := apiClient.ClientsAPI.GetClient(context.Background(), 2, 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewClient().
@@ -176,7 +176,7 @@ func TestListClients(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ClientsApi.ListClients(context.Background(), 2).Execute()
+	actual, _, err := apiClient.ClientsAPI.ListClients(context.Background(), 2).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewClient().
@@ -236,7 +236,7 @@ func TestModifyClient(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.ClientsApi.ModifyClient(context.Background(), 2, 2).ModifyClientRequest(*NewModifyClientRequest()).Execute()
+	actual, _, err := apiClient.ClientsAPI.ModifyClient(context.Background(), 2, 2).ModifyClientRequest(*NewModifyClientRequest()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewClient().

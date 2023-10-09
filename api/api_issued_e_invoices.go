@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.28
+API version: 2.0.30
 Contact: info@fattureincloud.it
 */
 
@@ -22,12 +22,12 @@ import (
 )
 
 
-// IssuedEInvoicesApiService IssuedEInvoicesApi service
-type IssuedEInvoicesApiService service
+// IssuedEInvoicesAPIService IssuedEInvoicesAPI service
+type IssuedEInvoicesAPIService service
 
 type ApiGetEInvoiceRejectionReasonRequest struct {
 	ctx context.Context
-	ApiService *IssuedEInvoicesApiService
+	ApiService *IssuedEInvoicesAPIService
 	companyId int32
 	documentId int32
 }
@@ -37,7 +37,7 @@ func (r ApiGetEInvoiceRejectionReasonRequest) Execute() (*GetEInvoiceRejectionRe
 }
 
 /*
-GetEInvoiceRejectionReason Get e-invoice rejection reason
+GetEInvoiceRejectionReason Get E-Invoice Rejection Reason
 
 Get e-invoice rejection reason
 
@@ -46,7 +46,7 @@ Get e-invoice rejection reason
  @param documentId The ID of the document.
  @return ApiGetEInvoiceRejectionReasonRequest
 */
-func (a *IssuedEInvoicesApiService) GetEInvoiceRejectionReason(ctx context.Context, companyId int32, documentId int32) ApiGetEInvoiceRejectionReasonRequest {
+func (a *IssuedEInvoicesAPIService) GetEInvoiceRejectionReason(ctx context.Context, companyId int32, documentId int32) ApiGetEInvoiceRejectionReasonRequest {
 	return ApiGetEInvoiceRejectionReasonRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -57,7 +57,7 @@ func (a *IssuedEInvoicesApiService) GetEInvoiceRejectionReason(ctx context.Conte
 
 // Execute executes the request
 //  @return GetEInvoiceRejectionReasonResponse
-func (a *IssuedEInvoicesApiService) GetEInvoiceRejectionReasonExecute(r ApiGetEInvoiceRejectionReasonRequest) (*GetEInvoiceRejectionReasonResponse, *http.Response, error) {
+func (a *IssuedEInvoicesAPIService) GetEInvoiceRejectionReasonExecute(r ApiGetEInvoiceRejectionReasonRequest) (*GetEInvoiceRejectionReasonResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -65,7 +65,7 @@ func (a *IssuedEInvoicesApiService) GetEInvoiceRejectionReasonExecute(r ApiGetEI
 		localVarReturnValue  *GetEInvoiceRejectionReasonResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedEInvoicesApiService.GetEInvoiceRejectionReason")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedEInvoicesAPIService.GetEInvoiceRejectionReason")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *IssuedEInvoicesApiService) GetEInvoiceRejectionReasonExecute(r ApiGetEI
 
 type ApiGetEInvoiceXmlRequest struct {
 	ctx context.Context
-	ApiService *IssuedEInvoicesApiService
+	ApiService *IssuedEInvoicesAPIService
 	companyId int32
 	documentId int32
 	includeAttachment *bool
@@ -151,7 +151,7 @@ func (r ApiGetEInvoiceXmlRequest) Execute() (string, *http.Response, error) {
 }
 
 /*
-GetEInvoiceXml Get e-invoice XML
+GetEInvoiceXml Get E-Invoice XML
 
 Downloads the e-invoice in XML format.
 
@@ -160,7 +160,7 @@ Downloads the e-invoice in XML format.
  @param documentId The ID of the document.
  @return ApiGetEInvoiceXmlRequest
 */
-func (a *IssuedEInvoicesApiService) GetEInvoiceXml(ctx context.Context, companyId int32, documentId int32) ApiGetEInvoiceXmlRequest {
+func (a *IssuedEInvoicesAPIService) GetEInvoiceXml(ctx context.Context, companyId int32, documentId int32) ApiGetEInvoiceXmlRequest {
 	return ApiGetEInvoiceXmlRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -171,7 +171,7 @@ func (a *IssuedEInvoicesApiService) GetEInvoiceXml(ctx context.Context, companyI
 
 // Execute executes the request
 //  @return string
-func (a *IssuedEInvoicesApiService) GetEInvoiceXmlExecute(r ApiGetEInvoiceXmlRequest) (string, *http.Response, error) {
+func (a *IssuedEInvoicesAPIService) GetEInvoiceXmlExecute(r ApiGetEInvoiceXmlRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -179,7 +179,7 @@ func (a *IssuedEInvoicesApiService) GetEInvoiceXmlExecute(r ApiGetEInvoiceXmlReq
 		localVarReturnValue  string
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedEInvoicesApiService.GetEInvoiceXml")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedEInvoicesAPIService.GetEInvoiceXml")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -251,7 +251,7 @@ func (a *IssuedEInvoicesApiService) GetEInvoiceXmlExecute(r ApiGetEInvoiceXmlReq
 
 type ApiSendEInvoiceRequest struct {
 	ctx context.Context
-	ApiService *IssuedEInvoicesApiService
+	ApiService *IssuedEInvoicesAPIService
 	companyId int32
 	documentId int32
 	sendEInvoiceRequest *SendEInvoiceRequest
@@ -268,7 +268,7 @@ func (r ApiSendEInvoiceRequest) Execute() (*SendEInvoiceResponse, *http.Response
 }
 
 /*
-SendEInvoice Send the e-invoice
+SendEInvoice Send E-Invoice
 
 Sends the e-invoice to SDI.
 
@@ -277,7 +277,7 @@ Sends the e-invoice to SDI.
  @param documentId The ID of the document.
  @return ApiSendEInvoiceRequest
 */
-func (a *IssuedEInvoicesApiService) SendEInvoice(ctx context.Context, companyId int32, documentId int32) ApiSendEInvoiceRequest {
+func (a *IssuedEInvoicesAPIService) SendEInvoice(ctx context.Context, companyId int32, documentId int32) ApiSendEInvoiceRequest {
 	return ApiSendEInvoiceRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -288,7 +288,7 @@ func (a *IssuedEInvoicesApiService) SendEInvoice(ctx context.Context, companyId 
 
 // Execute executes the request
 //  @return SendEInvoiceResponse
-func (a *IssuedEInvoicesApiService) SendEInvoiceExecute(r ApiSendEInvoiceRequest) (*SendEInvoiceResponse, *http.Response, error) {
+func (a *IssuedEInvoicesAPIService) SendEInvoiceExecute(r ApiSendEInvoiceRequest) (*SendEInvoiceResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -296,7 +296,7 @@ func (a *IssuedEInvoicesApiService) SendEInvoiceExecute(r ApiSendEInvoiceRequest
 		localVarReturnValue  *SendEInvoiceResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedEInvoicesApiService.SendEInvoice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedEInvoicesAPIService.SendEInvoice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -367,7 +367,7 @@ func (a *IssuedEInvoicesApiService) SendEInvoiceExecute(r ApiSendEInvoiceRequest
 
 type ApiVerifyEInvoiceXmlRequest struct {
 	ctx context.Context
-	ApiService *IssuedEInvoicesApiService
+	ApiService *IssuedEInvoicesAPIService
 	companyId int32
 	documentId int32
 }
@@ -377,7 +377,7 @@ func (r ApiVerifyEInvoiceXmlRequest) Execute() (*VerifyEInvoiceXmlResponse, *htt
 }
 
 /*
-VerifyEInvoiceXml Verify e-invoice XML
+VerifyEInvoiceXml Verify E-Invoice XML
 
 Verifies the e-invoice XML format. Checks if all of the mandatory fields are filled and compliant to the right format.
 
@@ -386,7 +386,7 @@ Verifies the e-invoice XML format. Checks if all of the mandatory fields are fil
  @param documentId The ID of the document.
  @return ApiVerifyEInvoiceXmlRequest
 */
-func (a *IssuedEInvoicesApiService) VerifyEInvoiceXml(ctx context.Context, companyId int32, documentId int32) ApiVerifyEInvoiceXmlRequest {
+func (a *IssuedEInvoicesAPIService) VerifyEInvoiceXml(ctx context.Context, companyId int32, documentId int32) ApiVerifyEInvoiceXmlRequest {
 	return ApiVerifyEInvoiceXmlRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -397,7 +397,7 @@ func (a *IssuedEInvoicesApiService) VerifyEInvoiceXml(ctx context.Context, compa
 
 // Execute executes the request
 //  @return VerifyEInvoiceXmlResponse
-func (a *IssuedEInvoicesApiService) VerifyEInvoiceXmlExecute(r ApiVerifyEInvoiceXmlRequest) (*VerifyEInvoiceXmlResponse, *http.Response, error) {
+func (a *IssuedEInvoicesAPIService) VerifyEInvoiceXmlExecute(r ApiVerifyEInvoiceXmlRequest) (*VerifyEInvoiceXmlResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -405,7 +405,7 @@ func (a *IssuedEInvoicesApiService) VerifyEInvoiceXmlExecute(r ApiVerifyEInvoice
 		localVarReturnValue  *VerifyEInvoiceXmlResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedEInvoicesApiService.VerifyEInvoiceXml")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedEInvoicesAPIService.VerifyEInvoiceXml")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -1,23 +1,23 @@
-# \IssuedDocumentsApi
+# \IssuedDocumentsAPI
 
 All URIs are relative to *https://api-v2.fattureincloud.it*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateIssuedDocument**](IssuedDocumentsApi.md#CreateIssuedDocument) | **Post** /c/{company_id}/issued_documents | Create Issued Document
-[**DeleteIssuedDocument**](IssuedDocumentsApi.md#DeleteIssuedDocument) | **Delete** /c/{company_id}/issued_documents/{document_id} | Delete Issued Document
-[**DeleteIssuedDocumentAttachment**](IssuedDocumentsApi.md#DeleteIssuedDocumentAttachment) | **Delete** /c/{company_id}/issued_documents/{document_id}/attachment | Delete Issued Document Attachment
-[**GetEmailData**](IssuedDocumentsApi.md#GetEmailData) | **Get** /c/{company_id}/issued_documents/{document_id}/email | Get Email Data
-[**GetExistingIssuedDocumentTotals**](IssuedDocumentsApi.md#GetExistingIssuedDocumentTotals) | **Post** /c/{company_id}/issued_documents/{document_id}/totals | Get Existing Issued Document Totals
-[**GetIssuedDocument**](IssuedDocumentsApi.md#GetIssuedDocument) | **Get** /c/{company_id}/issued_documents/{document_id} | Get Issued Document
-[**GetIssuedDocumentPreCreateInfo**](IssuedDocumentsApi.md#GetIssuedDocumentPreCreateInfo) | **Get** /c/{company_id}/issued_documents/info | Get Issued Document Pre-create info
-[**GetNewIssuedDocumentTotals**](IssuedDocumentsApi.md#GetNewIssuedDocumentTotals) | **Post** /c/{company_id}/issued_documents/totals | Get New Issued Document Totals
-[**JoinIssuedDocuments**](IssuedDocumentsApi.md#JoinIssuedDocuments) | **Get** /c/{company_id}/issued_documents/join | Join issued documents
-[**ListIssuedDocuments**](IssuedDocumentsApi.md#ListIssuedDocuments) | **Get** /c/{company_id}/issued_documents | List Issued Documents
-[**ModifyIssuedDocument**](IssuedDocumentsApi.md#ModifyIssuedDocument) | **Put** /c/{company_id}/issued_documents/{document_id} | Modify Issued Document
-[**ScheduleEmail**](IssuedDocumentsApi.md#ScheduleEmail) | **Post** /c/{company_id}/issued_documents/{document_id}/email | Schedule Email
-[**TransformIssuedDocument**](IssuedDocumentsApi.md#TransformIssuedDocument) | **Get** /c/{company_id}/issued_documents/transform | Transform issued document
-[**UploadIssuedDocumentAttachment**](IssuedDocumentsApi.md#UploadIssuedDocumentAttachment) | **Post** /c/{company_id}/issued_documents/attachment | Upload Issued Document Attachment
+[**CreateIssuedDocument**](IssuedDocumentsAPI.md#CreateIssuedDocument) | **Post** /c/{company_id}/issued_documents | Create Issued Document
+[**DeleteIssuedDocument**](IssuedDocumentsAPI.md#DeleteIssuedDocument) | **Delete** /c/{company_id}/issued_documents/{document_id} | Delete Issued Document
+[**DeleteIssuedDocumentAttachment**](IssuedDocumentsAPI.md#DeleteIssuedDocumentAttachment) | **Delete** /c/{company_id}/issued_documents/{document_id}/attachment | Delete Issued Document Attachment
+[**GetEmailData**](IssuedDocumentsAPI.md#GetEmailData) | **Get** /c/{company_id}/issued_documents/{document_id}/email | Get Email Data
+[**GetExistingIssuedDocumentTotals**](IssuedDocumentsAPI.md#GetExistingIssuedDocumentTotals) | **Post** /c/{company_id}/issued_documents/{document_id}/totals | Get Existing Issued Document Totals
+[**GetIssuedDocument**](IssuedDocumentsAPI.md#GetIssuedDocument) | **Get** /c/{company_id}/issued_documents/{document_id} | Get Issued Document
+[**GetIssuedDocumentPreCreateInfo**](IssuedDocumentsAPI.md#GetIssuedDocumentPreCreateInfo) | **Get** /c/{company_id}/issued_documents/info | Get Issued Document Pre-Create Info
+[**GetNewIssuedDocumentTotals**](IssuedDocumentsAPI.md#GetNewIssuedDocumentTotals) | **Post** /c/{company_id}/issued_documents/totals | Get New Issued Document Totals
+[**JoinIssuedDocuments**](IssuedDocumentsAPI.md#JoinIssuedDocuments) | **Get** /c/{company_id}/issued_documents/join | Join Issued Documents
+[**ListIssuedDocuments**](IssuedDocumentsAPI.md#ListIssuedDocuments) | **Get** /c/{company_id}/issued_documents | List Issued Documents
+[**ModifyIssuedDocument**](IssuedDocumentsAPI.md#ModifyIssuedDocument) | **Put** /c/{company_id}/issued_documents/{document_id} | Modify Issued Document
+[**ScheduleEmail**](IssuedDocumentsAPI.md#ScheduleEmail) | **Post** /c/{company_id}/issued_documents/{document_id}/email | Schedule Email
+[**TransformIssuedDocument**](IssuedDocumentsAPI.md#TransformIssuedDocument) | **Get** /c/{company_id}/issued_documents/transform | Transform Issued Document
+[**UploadIssuedDocumentAttachment**](IssuedDocumentsAPI.md#UploadIssuedDocumentAttachment) | **Post** /c/{company_id}/issued_documents/attachment | Upload Issued Document Attachment
 
 
 
@@ -50,9 +50,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedDocumentsApi.CreateIssuedDocument(auth, companyId).CreateIssuedDocumentRequest(createIssuedDocumentRequest).Execute()
+    resp, r, err := apiClient.IssuedDocumentsAPI.CreateIssuedDocument(auth, companyId).CreateIssuedDocumentRequest(createIssuedDocumentRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsApi.CreateIssuedDocument``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.CreateIssuedDocument``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateIssuedDocument`: CreateIssuedDocumentResponse
@@ -125,9 +125,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedDocumentsApi.DeleteIssuedDocument(auth, companyId, documentId).Execute()
+    resp, r, err := apiClient.IssuedDocumentsAPI.DeleteIssuedDocument(auth, companyId, documentId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsApi.DeleteIssuedDocument``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.DeleteIssuedDocument``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -199,9 +199,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedDocumentsApi.DeleteIssuedDocumentAttachment(auth, companyId, documentId).Execute()
+    resp, r, err := apiClient.IssuedDocumentsAPI.DeleteIssuedDocumentAttachment(auth, companyId, documentId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsApi.DeleteIssuedDocumentAttachment``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.DeleteIssuedDocumentAttachment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -273,9 +273,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedDocumentsApi.GetEmailData(auth, companyId, documentId).Execute()
+    resp, r, err := apiClient.IssuedDocumentsAPI.GetEmailData(auth, companyId, documentId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsApi.GetEmailData``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.GetEmailData``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetEmailData`: GetEmailDataResponse
@@ -350,9 +350,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedDocumentsApi.GetExistingIssuedDocumentTotals(auth, companyId, documentId).GetExistingIssuedDocumentTotalsRequest(getExistingIssuedDocumentTotalsRequest).Execute()
+    resp, r, err := apiClient.IssuedDocumentsAPI.GetExistingIssuedDocumentTotals(auth, companyId, documentId).GetExistingIssuedDocumentTotalsRequest(getExistingIssuedDocumentTotalsRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsApi.GetExistingIssuedDocumentTotals``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.GetExistingIssuedDocumentTotals``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetExistingIssuedDocumentTotals`: GetExistingIssuedDocumentTotalsResponse
@@ -429,9 +429,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedDocumentsApi.GetIssuedDocument(auth, companyId, documentId).Fields(fields).Fieldset(fieldset).Execute()
+    resp, r, err := apiClient.IssuedDocumentsAPI.GetIssuedDocument(auth, companyId, documentId).Fields(fields).Fieldset(fieldset).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsApi.GetIssuedDocument``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.GetIssuedDocument``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetIssuedDocument`: GetIssuedDocumentResponse
@@ -482,7 +482,7 @@ Name | Type | Description  | Notes
 
 > GetIssuedDocumentPreCreateInfoResponse GetIssuedDocumentPreCreateInfo(ctx, companyId).Type_(type_).Execute()
 
-Get Issued Document Pre-create info
+Get Issued Document Pre-Create Info
 
 
 
@@ -507,9 +507,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedDocumentsApi.GetIssuedDocumentPreCreateInfo(auth, companyId).Type_(type_).Execute()
+    resp, r, err := apiClient.IssuedDocumentsAPI.GetIssuedDocumentPreCreateInfo(auth, companyId).Type_(type_).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsApi.GetIssuedDocumentPreCreateInfo``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.GetIssuedDocumentPreCreateInfo``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetIssuedDocumentPreCreateInfo`: GetIssuedDocumentPreCreateInfoResponse
@@ -582,9 +582,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedDocumentsApi.GetNewIssuedDocumentTotals(auth, companyId).GetNewIssuedDocumentTotalsRequest(getNewIssuedDocumentTotalsRequest).Execute()
+    resp, r, err := apiClient.IssuedDocumentsAPI.GetNewIssuedDocumentTotals(auth, companyId).GetNewIssuedDocumentTotalsRequest(getNewIssuedDocumentTotalsRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsApi.GetNewIssuedDocumentTotals``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.GetNewIssuedDocumentTotals``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetNewIssuedDocumentTotals`: GetNewIssuedDocumentTotalsResponse
@@ -632,7 +632,7 @@ Name | Type | Description  | Notes
 
 > JoinIssuedDocumentsResponse JoinIssuedDocuments(ctx, companyId).Ids(ids).Group(group).EInvoice(eInvoice).Execute()
 
-Join issued documents
+Join Issued Documents
 
 
 
@@ -659,9 +659,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedDocumentsApi.JoinIssuedDocuments(auth, companyId).Ids(ids).Group(group).EInvoice(eInvoice).Execute()
+    resp, r, err := apiClient.IssuedDocumentsAPI.JoinIssuedDocuments(auth, companyId).Ids(ids).Group(group).EInvoice(eInvoice).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsApi.JoinIssuedDocuments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.JoinIssuedDocuments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `JoinIssuedDocuments`: JoinIssuedDocumentsResponse
@@ -743,9 +743,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedDocumentsApi.ListIssuedDocuments(auth, companyId).Type_(type_).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Inclusive(inclusive).Execute()
+    resp, r, err := apiClient.IssuedDocumentsAPI.ListIssuedDocuments(auth, companyId).Type_(type_).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Inclusive(inclusive).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsApi.ListIssuedDocuments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.ListIssuedDocuments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListIssuedDocuments`: ListIssuedDocumentsResponse
@@ -826,9 +826,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedDocumentsApi.ModifyIssuedDocument(auth, companyId, documentId).ModifyIssuedDocumentRequest(modifyIssuedDocumentRequest).Execute()
+    resp, r, err := apiClient.IssuedDocumentsAPI.ModifyIssuedDocument(auth, companyId, documentId).ModifyIssuedDocumentRequest(modifyIssuedDocumentRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsApi.ModifyIssuedDocument``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.ModifyIssuedDocument``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ModifyIssuedDocument`: ModifyIssuedDocumentResponse
@@ -904,9 +904,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedDocumentsApi.ScheduleEmail(auth, companyId, documentId).ScheduleEmailRequest(scheduleEmailRequest).Execute()
+    resp, r, err := apiClient.IssuedDocumentsAPI.ScheduleEmail(auth, companyId, documentId).ScheduleEmailRequest(scheduleEmailRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsApi.ScheduleEmail``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.ScheduleEmail``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -954,7 +954,7 @@ Name | Type | Description  | Notes
 
 > TransformIssuedDocumentResponse TransformIssuedDocument(ctx, companyId).OriginalDocumentId(originalDocumentId).NewType(newType).EInvoice(eInvoice).TransformKeepCopy(transformKeepCopy).Execute()
 
-Transform issued document
+Transform Issued Document
 
 
 
@@ -982,9 +982,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedDocumentsApi.TransformIssuedDocument(auth, companyId).OriginalDocumentId(originalDocumentId).NewType(newType).EInvoice(eInvoice).TransformKeepCopy(transformKeepCopy).Execute()
+    resp, r, err := apiClient.IssuedDocumentsAPI.TransformIssuedDocument(auth, companyId).OriginalDocumentId(originalDocumentId).NewType(newType).EInvoice(eInvoice).TransformKeepCopy(transformKeepCopy).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsApi.TransformIssuedDocument``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.TransformIssuedDocument``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TransformIssuedDocument`: TransformIssuedDocumentResponse
@@ -1061,9 +1061,9 @@ func main() {
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedDocumentsApi.UploadIssuedDocumentAttachment(auth, companyId).Filename(filename).Attachment(attachment).Execute()
+    resp, r, err := apiClient.IssuedDocumentsAPI.UploadIssuedDocumentAttachment(auth, companyId).Filename(filename).Attachment(attachment).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsApi.UploadIssuedDocumentAttachment``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.UploadIssuedDocumentAttachment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UploadIssuedDocumentAttachment`: UploadIssuedDocumentAttachmentResponse

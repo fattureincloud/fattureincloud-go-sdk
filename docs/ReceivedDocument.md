@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **AttachmentPreviewUrl** | Pointer to **NullableString** | [Temporary] [Read Only] Received document url of the attachment preview | [optional] [readonly] 
 **AutoCalculate** | Pointer to **NullableBool** | Received document total items amount and total payments amount can differ if this field is set to false | [optional] 
 **AttachmentToken** | Pointer to **NullableString** | [Write Only] Received document attachment token returned by POST /received_documents/attachment | [optional] 
+**Locked** | Pointer to **NullableBool** | Received Document can&#39;t be edited | [optional] 
 **CreatedAt** | Pointer to **NullableString** | Received document creation date | [optional] 
 **UpdatedAt** | Pointer to **NullableString** | Received document last update date | [optional] 
 
@@ -968,6 +969,41 @@ HasAttachmentToken returns a boolean if a field has been set.
 `func (o *ReceivedDocument) UnsetAttachmentToken()`
 
 UnsetAttachmentToken ensures that no value is present for AttachmentToken, not even an explicit nil
+### GetLocked
+
+`func (o *ReceivedDocument) GetLocked() bool`
+
+GetLocked returns the Locked field if non-nil, zero value otherwise.
+
+### GetLockedOk
+
+`func (o *ReceivedDocument) GetLockedOk() (*bool, bool)`
+
+GetLockedOk returns a tuple with the Locked field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLocked
+
+`func (o *ReceivedDocument) SetLocked(v bool)`
+
+SetLocked sets Locked field to given value.
+
+### HasLocked
+
+`func (o *ReceivedDocument) HasLocked() bool`
+
+HasLocked returns a boolean if a field has been set.
+
+### SetLockedNil
+
+`func (o *ReceivedDocument) SetLockedNil(b bool)`
+
+ SetLockedNil sets the value for Locked to be an explicit nil
+
+### UnsetLocked
+`func (o *ReceivedDocument) UnsetLocked()`
+
+UnsetLocked ensures that no value is present for Locked, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *ReceivedDocument) GetCreatedAt() string`
