@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.30
+API version: 2.0.31
 Contact: info@fattureincloud.it
 */
 
@@ -1493,15 +1493,15 @@ func (a *InfoAPIService) ListTemplatesExecute(r ApiListTemplatesRequest) (*ListT
 	if r.type_ != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "")
 	} else {
- 		var defaultValue string = "all"
- 		r.type_ = &defaultValue
- 	}
+		var defaultValue string = "all"
+		r.type_ = &defaultValue
+	}
 	if r.byType != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "by_type", r.byType, "")
 	} else {
- 		var defaultValue bool = false
- 		r.byType = &defaultValue
- 	}
+		var defaultValue bool = false
+		r.byType = &defaultValue
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

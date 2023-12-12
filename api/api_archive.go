@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.30
+API version: 2.0.31
 Contact: info@fattureincloud.it
 */
 
@@ -464,15 +464,15 @@ func (a *ArchiveAPIService) ListArchiveDocumentsExecute(r ApiListArchiveDocument
 	if r.page != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
 	} else {
- 		var defaultValue int32 = 1
- 		r.page = &defaultValue
- 	}
+		var defaultValue int32 = 1
+		r.page = &defaultValue
+	}
 	if r.perPage != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
 	} else {
- 		var defaultValue int32 = 5
- 		r.perPage = &defaultValue
- 	}
+		var defaultValue int32 = 5
+		r.perPage = &defaultValue
+	}
 	if r.q != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
 	}
@@ -734,8 +734,6 @@ func (a *ArchiveAPIService) UploadArchiveDocumentAttachmentExecute(r ApiUploadAr
 	var attachmentLocalVarFileBytes    []byte
 
 	attachmentLocalVarFormFileName = "attachment"
-
-
 	attachmentLocalVarFile := r.attachment
 
 	if attachmentLocalVarFile != nil {
