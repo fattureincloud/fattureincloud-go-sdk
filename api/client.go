@@ -32,7 +32,7 @@ import (
 	"strings"
 	"time"
 	"unicode/utf8"
-. "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	. "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 
 	"golang.org/x/oauth2"
 )

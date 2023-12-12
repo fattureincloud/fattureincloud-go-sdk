@@ -17,7 +17,7 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-. "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	. "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 
