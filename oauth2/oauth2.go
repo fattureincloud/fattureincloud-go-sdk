@@ -5,22 +5,30 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
 // OAuth2
-type OAuth2AuthorizationCodeManager struct {
+type OAuth2Manager struct {
 	// Client id
 	clientId string
+	// Base uri
+	baseUri string
+}
+
+type OAuth2AuthorizationCodeManager struct {
+	OAuth2Manager
 	// Client secret
 	clientSecret string
 	// Redirect uri
 	redirectUri string
-	// Base uri
-	baseUri string
+}
+
+type OAuth2DeviceCodeManager struct {
+	OAuth2Manager
 }
 
 // OAuth2AuthorizationCodeParams
@@ -31,8 +39,8 @@ type OAuth2AuthorizationCodeParams struct {
 	AuthorizationCode string
 }
 
-// OAuth2AuthorizationCodeTokenResponse
-type OAuth2AuthorizationCodeTokenResponse struct {
+// OAuth2TokenResponse
+type OAuth2TokenResponse struct {
 	// Token Type
 	TokenType string `json:"token_type,omitempty"`
 	// Access Token
@@ -43,12 +51,36 @@ type OAuth2AuthorizationCodeTokenResponse struct {
 	ExpiresIn int `json:"expires_in,omitempty"`
 }
 
+// OAuth2DeviceCodeResponse
+type OAuth2DeviceCodeResponse struct {
+	// Device Code
+	DeviceCode string `json:"device_code,omitempty"`
+	// User Code
+	UserCode string `json:"user_code,omitempty"`
+	// Scope
+	Scope map[string]string `json:"scope,omitempty"`
+	// Verification URI
+	VerificationUri string `json:"verification_uri,omitempty"`
+	// Interval
+	Interval int `json:"interval,omitempty"`
+	// Expiration time
+	ExpiresIn int `json:"expires_in,omitempty"`
+}
+
 // Initialize a new instance of the OAuth2AuthorizationCodeManager class
 func NewOAuth2AuthorizationCodeManager(clientId string, clientSecret string, redirecUri string) *OAuth2AuthorizationCodeManager {
 	this := OAuth2AuthorizationCodeManager{}
 	this.clientId = clientId
 	this.clientSecret = clientSecret
 	this.redirectUri = redirecUri
+	this.baseUri = "https://api-v2.fattureincloud.it"
+	return &this
+}
+
+// Initialize a new instance of the OAuth2DeviceCodeManager class
+func NewOAuth2DeviceCodeManager(clientId string) *OAuth2DeviceCodeManager {
+	this := OAuth2DeviceCodeManager{}
+	this.clientId = clientId
 	this.baseUri = "https://api-v2.fattureincloud.it"
 	return &this
 }
@@ -137,7 +169,7 @@ func (o *OAuth2AuthorizationCodeManager) GetParamsFromUrl(uri string) (*OAuth2Au
 }
 
 // Retrieve the access token.
-func (o *OAuth2AuthorizationCodeManager) FetchToken(code string) (*OAuth2AuthorizationCodeTokenResponse, error) {
+func (o *OAuth2AuthorizationCodeManager) FetchToken(code string) (*OAuth2TokenResponse, error) {
 	tokenUri := fmt.Sprintf("%s/oauth/token", o.baseUri)
 	data := map[string]string{
 		"grant_type":    "authorization_code",
@@ -154,7 +186,7 @@ func (o *OAuth2AuthorizationCodeManager) FetchToken(code string) (*OAuth2Authori
 		return nil, err
 	}
 
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
 	}
@@ -162,7 +194,7 @@ func (o *OAuth2AuthorizationCodeManager) FetchToken(code string) (*OAuth2Authori
 	if resp.StatusCode != 200 {
 		return nil, errors.New(string(body))
 	}
-	res := OAuth2AuthorizationCodeTokenResponse{}
+	res := OAuth2TokenResponse{}
 	json.Unmarshal(body, &res)
 
 	return &res, nil
@@ -170,7 +202,7 @@ func (o *OAuth2AuthorizationCodeManager) FetchToken(code string) (*OAuth2Authori
 }
 
 // Refresh the access token.
-func (o *OAuth2AuthorizationCodeManager) RefreshToken(refreshToken string) (*OAuth2AuthorizationCodeTokenResponse, error) {
+func (o *OAuth2AuthorizationCodeManager) RefreshToken(refreshToken string) (*OAuth2TokenResponse, error) {
 	tokenUri := fmt.Sprintf("%s/oauth/token", o.baseUri)
 	data := map[string]string{
 		"grant_type":    "refresh_token",
@@ -186,7 +218,7 @@ func (o *OAuth2AuthorizationCodeManager) RefreshToken(refreshToken string) (*OAu
 		return nil, err
 	}
 
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
 	}
@@ -194,7 +226,123 @@ func (o *OAuth2AuthorizationCodeManager) RefreshToken(refreshToken string) (*OAu
 	if resp.StatusCode != 200 {
 		return nil, errors.New(string(body))
 	}
-	res := OAuth2AuthorizationCodeTokenResponse{}
+	res := OAuth2TokenResponse{}
+	json.Unmarshal(body, &res)
+
+	return &res, nil
+
+}
+
+// Sets ClientId
+func (o *OAuth2DeviceCodeManager) SetClientId(v string) *OAuth2DeviceCodeManager {
+	o.clientId = v
+	return o
+}
+
+// Gets ClientId
+func (o *OAuth2DeviceCodeManager) GetClientId() string {
+	return o.clientId
+}
+
+// Sets BaseUri
+func (o *OAuth2DeviceCodeManager) SetBaseUri(v string) *OAuth2DeviceCodeManager {
+	o.baseUri = v
+	return o
+}
+
+// Gets BaseUri
+func (o *OAuth2DeviceCodeManager) GetBaseUri() string {
+	return o.baseUri
+}
+
+// Retrieve the access token.
+func (o *OAuth2DeviceCodeManager) GetDeviceCode(scopes []Scope) (*OAuth2DeviceCodeResponse, error) {
+	scopesString := getScopesString(scopes)
+
+	tokenUri := fmt.Sprintf("%s/oauth/device", o.baseUri)
+	data := map[string]string{
+		"client_id": o.clientId,
+		"scope":     scopesString,
+	}
+
+	reqBody, _ := json.Marshal(data)
+	resp, err := http.Post(tokenUri, "application/json", bytes.NewBuffer(reqBody))
+
+	if err != nil {
+		return nil, err
+	}
+
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+
+	if resp.StatusCode != 200 {
+		return nil, errors.New(string(body))
+	}
+	res := OAuth2DeviceCodeResponse{}
+	json.Unmarshal(body, &res)
+
+	return &res, nil
+
+}
+
+// Retrieve the access token.
+func (o *OAuth2DeviceCodeManager) FetchToken(code string) (*OAuth2TokenResponse, error) {
+	tokenUri := fmt.Sprintf("%s/oauth/token", o.baseUri)
+	data := map[string]string{
+		"grant_type":  "urn:ietf:params:oauth:grant-type:device_code",
+		"client_id":   o.clientId,
+		"device_code": code,
+	}
+
+	reqBody, _ := json.Marshal(data)
+	resp, err := http.Post(tokenUri, "application/json", bytes.NewBuffer(reqBody))
+
+	if err != nil {
+		return nil, err
+	}
+
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+
+	if resp.StatusCode != 200 {
+		return nil, errors.New(string(body))
+	}
+	res := OAuth2TokenResponse{}
+	json.Unmarshal(body, &res)
+
+	return &res, nil
+
+}
+
+// Refresh the access token.
+func (o *OAuth2DeviceCodeManager) RefreshToken(refreshToken string) (*OAuth2TokenResponse, error) {
+	tokenUri := fmt.Sprintf("%s/oauth/token", o.baseUri)
+	data := map[string]string{
+		"grant_type":    "refresh_token",
+		"client_id":     o.clientId,
+		"refresh_token": refreshToken,
+	}
+
+	reqBody, _ := json.Marshal(data)
+	resp, err := http.Post(tokenUri, "application/json", bytes.NewBuffer(reqBody))
+
+	if err != nil {
+		return nil, err
+	}
+
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+
+	if resp.StatusCode != 200 {
+		return nil, errors.New(string(body))
+	}
+	res := OAuth2TokenResponse{}
 	json.Unmarshal(body, &res)
 
 	return &res, nil

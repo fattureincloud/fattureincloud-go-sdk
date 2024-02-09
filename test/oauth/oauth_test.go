@@ -8,11 +8,16 @@ import (
 )
 
 var auth = oauth.NewOAuth2AuthorizationCodeManager("CLIENT_ID", "CLIENT_SECRET", "http://localhost:8000/redirect")
+var dev = oauth.NewOAuth2DeviceCodeManager("CLIENT_ID")
 
 func TestOAuth2AuthorizationCodeManager(t *testing.T) {
 	assert.Equal(t, auth.GetClientId(), "CLIENT_ID")
 	assert.Equal(t, auth.GetClientSecret(), "CLIENT_SECRET")
 	assert.Equal(t, auth.GetRedirectUri(), "http://localhost:8000/redirect")
+}
+
+func TestOAuth2DeviceCodeManager(t *testing.T) {
+	assert.Equal(t, dev.GetClientId(), "CLIENT_ID")
 }
 
 func TestOAuth2AuthorizationCodeParams(t *testing.T) {
