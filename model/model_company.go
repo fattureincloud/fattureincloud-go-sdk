@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.31
+API version: 2.0.32
 Contact: info@fattureincloud.it
 */
 
@@ -29,6 +29,8 @@ type Company struct {
 	AccessToken NullableString `json:"access_token,omitempty"`
 	// Company list of controlled companies [Only if type=accountant]
 	ControlledCompanies []ControlledCompany `json:"controlled_companies,omitempty"`
+	FicLicenseExpire NullableString `json:"fic_license_expire,omitempty"`
+	FicPlan *FattureInCloudPlanType `json:"fic_plan,omitempty"`
 	// Company connection id
 	ConnectionId NullableInt32 `json:"connection_id,omitempty"`
 	// Company tax code
@@ -251,6 +253,83 @@ func (o *Company) SetControlledCompanies(v []ControlledCompany) *Company {
 	return o
 }
 
+// GetFicLicenseExpire returns the FicLicenseExpire field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Company) GetFicLicenseExpire() string {
+	if o == nil || IsNil(o.FicLicenseExpire.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.FicLicenseExpire.Get()
+}
+
+// GetFicLicenseExpireOk returns a tuple with the FicLicenseExpire field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Company) GetFicLicenseExpireOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.FicLicenseExpire.Get(), o.FicLicenseExpire.IsSet()
+}
+
+// HasFicLicenseExpire returns a boolean if a field has been set.
+func (o *Company) HasFicLicenseExpire() bool {
+	if o != nil && o.FicLicenseExpire.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetFicLicenseExpire gets a reference to the given NullableString and assigns it to the FicLicenseExpire field.
+func (o *Company) SetFicLicenseExpire(v string) *Company {
+	o.FicLicenseExpire.Set(&v)
+	return o
+}
+// SetFicLicenseExpireNil sets the value for FicLicenseExpire to be an explicit nil
+func (o *Company) SetFicLicenseExpireNil() *Company {
+	o.FicLicenseExpire.Set(nil)
+	return o
+}
+
+// UnsetFicLicenseExpire ensures that no value is present for FicLicenseExpire, not even an explicit nil
+func (o *Company) UnsetFicLicenseExpire() {
+	o.FicLicenseExpire.Unset()
+}
+
+// GetFicPlan returns the FicPlan field value if set, zero value otherwise.
+func (o *Company) GetFicPlan() FattureInCloudPlanType {
+	if o == nil || IsNil(o.FicPlan) {
+		var ret FattureInCloudPlanType
+		return ret
+	}
+	return *o.FicPlan
+}
+
+// GetFicPlanOk returns a tuple with the FicPlan field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Company) GetFicPlanOk() (*FattureInCloudPlanType, bool) {
+	if o == nil || IsNil(o.FicPlan) {
+		return nil, false
+	}
+	return o.FicPlan, true
+}
+
+// HasFicPlan returns a boolean if a field has been set.
+func (o *Company) HasFicPlan() bool {
+	if o != nil && !IsNil(o.FicPlan) {
+		return true
+	}
+
+	return false
+}
+
+// SetFicPlan gets a reference to the given FattureInCloudPlanType and assigns it to the FicPlan field.
+func (o *Company) SetFicPlan(v FattureInCloudPlanType) *Company {
+	o.FicPlan = &v
+	return o
+}
+
 // GetConnectionId returns the ConnectionId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Company) GetConnectionId() int32 {
 	if o == nil || IsNil(o.ConnectionId.Get()) {
@@ -363,6 +442,12 @@ func (o Company) ToMap() (map[string]interface{}, error) {
 	}
 	if o.ControlledCompanies != nil {
 		toSerialize["controlled_companies"] = o.ControlledCompanies
+	}
+	if o.FicLicenseExpire.IsSet() {
+		toSerialize["fic_license_expire"] = o.FicLicenseExpire.Get()
+	}
+	if !IsNil(o.FicPlan) {
+		toSerialize["fic_plan"] = o.FicPlan
 	}
 	if o.ConnectionId.IsSet() {
 		toSerialize["connection_id"] = o.ConnectionId.Get()

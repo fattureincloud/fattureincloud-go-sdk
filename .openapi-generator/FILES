@@ -39,6 +39,7 @@ docs/CompanyInfoPlanInfo.md
 docs/CompanyInfoPlanInfoFunctions.md
 docs/CompanyInfoPlanInfoFunctionsStatus.md
 docs/CompanyInfoPlanInfoLimits.md
+docs/CompanyPlanUsage.md
 docs/CompanyType.md
 docs/ControlledCompany.md
 docs/CreateArchiveDocumentRequest.md
@@ -85,11 +86,13 @@ docs/EntityType.md
 docs/EventType.md
 docs/F24.md
 docs/F24Status.md
+docs/FattureInCloudPlanType.md
 docs/FunctionStatus.md
 docs/GetArchiveDocumentResponse.md
 docs/GetCashbookEntryResponse.md
 docs/GetClientResponse.md
 docs/GetCompanyInfoResponse.md
+docs/GetCompanyPlanUsageResponse.md
 docs/GetEInvoiceRejectionReasonResponse.md
 docs/GetEmailDataResponse.md
 docs/GetExistingIssuedDocumentTotalsRequest.md
@@ -283,6 +286,7 @@ model_company_info_plan_info.go
 model_company_info_plan_info_functions.go
 model_company_info_plan_info_functions_status.go
 model_company_info_plan_info_limits.go
+model_company_plan_usage.go
 model_company_type.go
 model_controlled_company.go
 model_create_archive_document_request.go
@@ -328,11 +332,13 @@ model_entity_type.go
 model_event_type.go
 model_f24.go
 model_f24_status.go
+model_fatture_in_cloud_plan_type.go
 model_function_status.go
 model_get_archive_document_response.go
 model_get_cashbook_entry_response.go
 model_get_client_response.go
 model_get_company_info_response.go
+model_get_company_plan_usage_response.go
 model_get_e_invoice_rejection_reason_response.go
 model_get_email_data_response.go
 model_get_existing_issued_document_totals_request.go
