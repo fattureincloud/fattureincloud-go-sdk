@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **Type** | Pointer to [**CompanyType**](CompanyType.md) |  | [optional] 
 **AccessToken** | Pointer to **NullableString** | Company authentication token for this company. [Only if type&#x3D;company] | [optional] 
 **ControlledCompanies** | Pointer to [**[]ControlledCompany**](ControlledCompany.md) | Company list of controlled companies [Only if type&#x3D;accountant] | [optional] 
+**FicLicenseExpire** | Pointer to **NullableString** |  | [optional] 
+**FicPlan** | Pointer to [**FattureInCloudPlanType**](FattureInCloudPlanType.md) |  | [optional] 
 **ConnectionId** | Pointer to **NullableInt32** | Company connection id | [optional] 
 **TaxCode** | Pointer to **NullableString** | Company tax code | [optional] 
 
@@ -196,6 +198,66 @@ HasControlledCompanies returns a boolean if a field has been set.
 `func (o *Company) UnsetControlledCompanies()`
 
 UnsetControlledCompanies ensures that no value is present for ControlledCompanies, not even an explicit nil
+### GetFicLicenseExpire
+
+`func (o *Company) GetFicLicenseExpire() string`
+
+GetFicLicenseExpire returns the FicLicenseExpire field if non-nil, zero value otherwise.
+
+### GetFicLicenseExpireOk
+
+`func (o *Company) GetFicLicenseExpireOk() (*string, bool)`
+
+GetFicLicenseExpireOk returns a tuple with the FicLicenseExpire field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFicLicenseExpire
+
+`func (o *Company) SetFicLicenseExpire(v string)`
+
+SetFicLicenseExpire sets FicLicenseExpire field to given value.
+
+### HasFicLicenseExpire
+
+`func (o *Company) HasFicLicenseExpire() bool`
+
+HasFicLicenseExpire returns a boolean if a field has been set.
+
+### SetFicLicenseExpireNil
+
+`func (o *Company) SetFicLicenseExpireNil(b bool)`
+
+ SetFicLicenseExpireNil sets the value for FicLicenseExpire to be an explicit nil
+
+### UnsetFicLicenseExpire
+`func (o *Company) UnsetFicLicenseExpire()`
+
+UnsetFicLicenseExpire ensures that no value is present for FicLicenseExpire, not even an explicit nil
+### GetFicPlan
+
+`func (o *Company) GetFicPlan() FattureInCloudPlanType`
+
+GetFicPlan returns the FicPlan field if non-nil, zero value otherwise.
+
+### GetFicPlanOk
+
+`func (o *Company) GetFicPlanOk() (*FattureInCloudPlanType, bool)`
+
+GetFicPlanOk returns a tuple with the FicPlan field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFicPlan
+
+`func (o *Company) SetFicPlan(v FattureInCloudPlanType)`
+
+SetFicPlan sets FicPlan field to given value.
+
+### HasFicPlan
+
+`func (o *Company) HasFicPlan() bool`
+
+HasFicPlan returns a boolean if a field has been set.
+
 ### GetConnectionId
 
 `func (o *Company) GetConnectionId() int32`
