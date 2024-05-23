@@ -18,7 +18,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-var CompanyJsonStr string = "{\"id\":5,\"name\":\"Azienda 1\",\"type\":\"company\",\"access_token\":\"ABCDEF\",\"controlled_companies\":[],\"connection_id\":94817,\"tax_code\":\"SLVMTT50A01F205L\",\"fic_plan\":\"standard\",\"fic_license_expire\":\"2024-10-10\"}"
+var CompanyJsonStr string = "{\"id\":5,\"name\":\"Azienda 1\",\"type\":\"company\",\"access_token\":\"ABCDEF\",\"controlled_companies\":[],\"connection_id\":94817,\"tax_code\":\"SLVMTT50A01F205L\",\"vat_number\":\"IT1235657345A\",\"fic_plan\":\"standard\",\"fic_license_expire\":\"2024-10-10\"}"
 
 func TestCompany(t *testing.T) {
 	obj := NewCompany()
@@ -42,6 +42,8 @@ func TestCompany(t *testing.T) {
 	assert.True(t, reflect.DeepEqual(obj.GetConnectionId(), newObj.GetConnectionId()))
 	newObj.SetTaxCode(obj.GetTaxCode())
 	assert.True(t, reflect.DeepEqual(obj.GetTaxCode(), newObj.GetTaxCode()))
+	newObj.SetVatNumber(obj.GetVatNumber())
+	assert.True(t, reflect.DeepEqual(obj.GetVatNumber(), newObj.GetVatNumber()))
 	newObj.SetFicPlan(obj.GetFicPlan())
 	assert.True(t, reflect.DeepEqual(obj.GetFicPlan(), newObj.GetFicPlan()))
 	newObj.SetFicLicenseExpire(obj.GetFicLicenseExpire())
