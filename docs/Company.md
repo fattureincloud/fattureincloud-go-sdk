@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **FicPlan** | Pointer to [**FattureInCloudPlanType**](FattureInCloudPlanType.md) |  | [optional] 
 **ConnectionId** | Pointer to **NullableInt32** | Company connection id | [optional] 
 **TaxCode** | Pointer to **NullableString** | Company tax code | [optional] 
+**VatNumber** | Pointer to **NullableString** | Company vat number | [optional] 
 
 ## Methods
 
@@ -328,6 +329,41 @@ HasTaxCode returns a boolean if a field has been set.
 `func (o *Company) UnsetTaxCode()`
 
 UnsetTaxCode ensures that no value is present for TaxCode, not even an explicit nil
+### GetVatNumber
+
+`func (o *Company) GetVatNumber() string`
+
+GetVatNumber returns the VatNumber field if non-nil, zero value otherwise.
+
+### GetVatNumberOk
+
+`func (o *Company) GetVatNumberOk() (*string, bool)`
+
+GetVatNumberOk returns a tuple with the VatNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVatNumber
+
+`func (o *Company) SetVatNumber(v string)`
+
+SetVatNumber sets VatNumber field to given value.
+
+### HasVatNumber
+
+`func (o *Company) HasVatNumber() bool`
+
+HasVatNumber returns a boolean if a field has been set.
+
+### SetVatNumberNil
+
+`func (o *Company) SetVatNumberNil(b bool)`
+
+ SetVatNumberNil sets the value for VatNumber to be an explicit nil
+
+### UnsetVatNumber
+`func (o *Company) UnsetVatNumber()`
+
+UnsetVatNumber ensures that no value is present for VatNumber, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

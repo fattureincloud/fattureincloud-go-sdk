@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.32
+API version: 2.0.33
 Contact: info@fattureincloud.it
 */
 
@@ -104,7 +104,7 @@ func (o *ReceiptPreCreateInfo) GetNumerationsListOk() ([]string, bool) {
 
 // HasNumerationsList returns a boolean if a field has been set.
 func (o *ReceiptPreCreateInfo) HasNumerationsList() bool {
-	if o != nil && IsNil(o.NumerationsList) {
+	if o != nil && !IsNil(o.NumerationsList) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *ReceiptPreCreateInfo) GetRcCentersListOk() ([]string, bool) {
 
 // HasRcCentersList returns a boolean if a field has been set.
 func (o *ReceiptPreCreateInfo) HasRcCentersList() bool {
-	if o != nil && IsNil(o.RcCentersList) {
+	if o != nil && !IsNil(o.RcCentersList) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *ReceiptPreCreateInfo) GetPaymentAccountsListOk() ([]PaymentAccount, boo
 
 // HasPaymentAccountsList returns a boolean if a field has been set.
 func (o *ReceiptPreCreateInfo) HasPaymentAccountsList() bool {
-	if o != nil && IsNil(o.PaymentAccountsList) {
+	if o != nil && !IsNil(o.PaymentAccountsList) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *ReceiptPreCreateInfo) GetCategoriesListOk() ([]string, bool) {
 
 // HasCategoriesList returns a boolean if a field has been set.
 func (o *ReceiptPreCreateInfo) HasCategoriesList() bool {
-	if o != nil && IsNil(o.CategoriesList) {
+	if o != nil && !IsNil(o.CategoriesList) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *ReceiptPreCreateInfo) GetVatTypesListOk() ([]VatType, bool) {
 
 // HasVatTypesList returns a boolean if a field has been set.
 func (o *ReceiptPreCreateInfo) HasVatTypesList() bool {
-	if o != nil && IsNil(o.VatTypesList) {
+	if o != nil && !IsNil(o.VatTypesList) {
 		return true
 	}
 

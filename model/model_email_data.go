@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.32
+API version: 2.0.33
 Contact: info@fattureincloud.it
 */
 
@@ -169,7 +169,7 @@ func (o *EmailData) GetSenderEmailsListOk() ([]SenderEmail, bool) {
 
 // HasSenderEmailsList returns a boolean if a field has been set.
 func (o *EmailData) HasSenderEmailsList() bool {
-	if o != nil && IsNil(o.SenderEmailsList) {
+	if o != nil && !IsNil(o.SenderEmailsList) {
 		return true
 	}
 

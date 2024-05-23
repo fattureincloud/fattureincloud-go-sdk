@@ -52,7 +52,6 @@ Name | Type | Description | Notes
 **ShowPayments** | Pointer to **NullableBool** | Show the expiration dates of the payments on the document | [optional] 
 **ShowPaymentMethod** | Pointer to **NullableBool** | Show the payment method details on the document | [optional] 
 **ShowTotals** | Pointer to [**ShowTotalsMode**](ShowTotalsMode.md) |  | [optional] [default to ALL]
-**ShowPaypalButton** | Pointer to **NullableBool** | Show paypal button in the PDF | [optional] 
 **ShowNotificationButton** | Pointer to **NullableBool** | Show notification button in the PDF | [optional] 
 **ShowTspayButton** | Pointer to **NullableBool** | Show ts pay button in the PDF | [optional] 
 **DeliveryNote** | Pointer to **NullableBool** | Issued document has delivery note | [optional] 
@@ -1700,41 +1699,6 @@ SetShowTotals sets ShowTotals field to given value.
 
 HasShowTotals returns a boolean if a field has been set.
 
-### GetShowPaypalButton
-
-`func (o *IssuedDocument) GetShowPaypalButton() bool`
-
-GetShowPaypalButton returns the ShowPaypalButton field if non-nil, zero value otherwise.
-
-### GetShowPaypalButtonOk
-
-`func (o *IssuedDocument) GetShowPaypalButtonOk() (*bool, bool)`
-
-GetShowPaypalButtonOk returns a tuple with the ShowPaypalButton field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetShowPaypalButton
-
-`func (o *IssuedDocument) SetShowPaypalButton(v bool)`
-
-SetShowPaypalButton sets ShowPaypalButton field to given value.
-
-### HasShowPaypalButton
-
-`func (o *IssuedDocument) HasShowPaypalButton() bool`
-
-HasShowPaypalButton returns a boolean if a field has been set.
-
-### SetShowPaypalButtonNil
-
-`func (o *IssuedDocument) SetShowPaypalButtonNil(b bool)`
-
- SetShowPaypalButtonNil sets the value for ShowPaypalButton to be an explicit nil
-
-### UnsetShowPaypalButton
-`func (o *IssuedDocument) UnsetShowPaypalButton()`
-
-UnsetShowPaypalButton ensures that no value is present for ShowPaypalButton, not even an explicit nil
 ### GetShowNotificationButton
 
 `func (o *IssuedDocument) GetShowNotificationButton() bool`
