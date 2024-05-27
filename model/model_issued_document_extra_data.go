@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.32
+API version: 2.0.33
 Contact: info@fattureincloud.it
 */
 
@@ -20,7 +20,6 @@ var _ MappedNullable = &IssuedDocumentExtraData{}
 
 // IssuedDocumentExtraData Issued document extra data [TS fields follow the technical specifications provided by \"Sistema Tessera Sanitaria\"]
 type IssuedDocumentExtraData struct {
-	ShowSofortButton NullableBool `json:"show_sofort_button,omitempty"`
 	MultifattureSent NullableInt32 `json:"multifatture_sent,omitempty"`
 	// Send issued document to \"Sistema Tessera Sanitaria\"
 	TsCommunication NullableBool `json:"ts_communication,omitempty"`
@@ -59,50 +58,6 @@ func NewIssuedDocumentExtraData() *IssuedDocumentExtraData {
 func NewIssuedDocumentExtraDataWithDefaults() *IssuedDocumentExtraData {
 	this := IssuedDocumentExtraData{}
 	return &this
-}
-
-// GetShowSofortButton returns the ShowSofortButton field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IssuedDocumentExtraData) GetShowSofortButton() bool {
-	if o == nil || IsNil(o.ShowSofortButton.Get()) {
-		var ret bool
-		return ret
-	}
-	return *o.ShowSofortButton.Get()
-}
-
-// GetShowSofortButtonOk returns a tuple with the ShowSofortButton field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IssuedDocumentExtraData) GetShowSofortButtonOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.ShowSofortButton.Get(), o.ShowSofortButton.IsSet()
-}
-
-// HasShowSofortButton returns a boolean if a field has been set.
-func (o *IssuedDocumentExtraData) HasShowSofortButton() bool {
-	if o != nil && o.ShowSofortButton.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetShowSofortButton gets a reference to the given NullableBool and assigns it to the ShowSofortButton field.
-func (o *IssuedDocumentExtraData) SetShowSofortButton(v bool) *IssuedDocumentExtraData {
-	o.ShowSofortButton.Set(&v)
-	return o
-}
-// SetShowSofortButtonNil sets the value for ShowSofortButton to be an explicit nil
-func (o *IssuedDocumentExtraData) SetShowSofortButtonNil() *IssuedDocumentExtraData {
-	o.ShowSofortButton.Set(nil)
-	return o
-}
-
-// UnsetShowSofortButton ensures that no value is present for ShowSofortButton, not even an explicit nil
-func (o *IssuedDocumentExtraData) UnsetShowSofortButton() {
-	o.ShowSofortButton.Unset()
 }
 
 // GetMultifattureSent returns the MultifattureSent field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -599,9 +554,6 @@ func (o IssuedDocumentExtraData) MarshalJSON() ([]byte, error) {
 
 func (o IssuedDocumentExtraData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ShowSofortButton.IsSet() {
-		toSerialize["show_sofort_button"] = o.ShowSofortButton.Get()
-	}
 	if o.MultifattureSent.IsSet() {
 		toSerialize["multifatture_sent"] = o.MultifattureSent.Get()
 	}

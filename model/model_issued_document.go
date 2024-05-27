@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.32
+API version: 2.0.33
 Contact: info@fattureincloud.it
 */
 
@@ -104,8 +104,6 @@ type IssuedDocument struct {
 	// Show the payment method details on the document
 	ShowPaymentMethod NullableBool `json:"show_payment_method,omitempty"`
 	ShowTotals *ShowTotalsMode `json:"show_totals,omitempty"`
-	// Show paypal button in the PDF
-	ShowPaypalButton NullableBool `json:"show_paypal_button,omitempty"`
 	// Show notification button in the PDF
 	ShowNotificationButton NullableBool `json:"show_notification_button,omitempty"`
 	// Show ts pay button in the PDF
@@ -1840,7 +1838,7 @@ func (o *IssuedDocument) GetItemsListOk() ([]IssuedDocumentItemsListItem, bool) 
 
 // HasItemsList returns a boolean if a field has been set.
 func (o *IssuedDocument) HasItemsList() bool {
-	if o != nil && IsNil(o.ItemsList) {
+	if o != nil && !IsNil(o.ItemsList) {
 		return true
 	}
 
@@ -1874,7 +1872,7 @@ func (o *IssuedDocument) GetPaymentsListOk() ([]IssuedDocumentPaymentsListItem, 
 
 // HasPaymentsList returns a boolean if a field has been set.
 func (o *IssuedDocument) HasPaymentsList() bool {
-	if o != nil && IsNil(o.PaymentsList) {
+	if o != nil && !IsNil(o.PaymentsList) {
 		return true
 	}
 
@@ -2193,50 +2191,6 @@ func (o *IssuedDocument) HasShowTotals() bool {
 func (o *IssuedDocument) SetShowTotals(v ShowTotalsMode) *IssuedDocument {
 	o.ShowTotals = &v
 	return o
-}
-
-// GetShowPaypalButton returns the ShowPaypalButton field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IssuedDocument) GetShowPaypalButton() bool {
-	if o == nil || IsNil(o.ShowPaypalButton.Get()) {
-		var ret bool
-		return ret
-	}
-	return *o.ShowPaypalButton.Get()
-}
-
-// GetShowPaypalButtonOk returns a tuple with the ShowPaypalButton field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IssuedDocument) GetShowPaypalButtonOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.ShowPaypalButton.Get(), o.ShowPaypalButton.IsSet()
-}
-
-// HasShowPaypalButton returns a boolean if a field has been set.
-func (o *IssuedDocument) HasShowPaypalButton() bool {
-	if o != nil && o.ShowPaypalButton.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetShowPaypalButton gets a reference to the given NullableBool and assigns it to the ShowPaypalButton field.
-func (o *IssuedDocument) SetShowPaypalButton(v bool) *IssuedDocument {
-	o.ShowPaypalButton.Set(&v)
-	return o
-}
-// SetShowPaypalButtonNil sets the value for ShowPaypalButton to be an explicit nil
-func (o *IssuedDocument) SetShowPaypalButtonNil() *IssuedDocument {
-	o.ShowPaypalButton.Set(nil)
-	return o
-}
-
-// UnsetShowPaypalButton ensures that no value is present for ShowPaypalButton, not even an explicit nil
-func (o *IssuedDocument) UnsetShowPaypalButton() {
-	o.ShowPaypalButton.Unset()
 }
 
 // GetShowNotificationButton returns the ShowNotificationButton field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -3668,7 +3622,7 @@ func (o *IssuedDocument) GetEiRawOk() (map[string]interface{}, bool) {
 
 // HasEiRaw returns a boolean if a field has been set.
 func (o *IssuedDocument) HasEiRaw() bool {
-	if o != nil && IsNil(o.EiRaw) {
+	if o != nil && !IsNil(o.EiRaw) {
 		return true
 	}
 
@@ -4010,9 +3964,6 @@ func (o IssuedDocument) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ShowTotals) {
 		toSerialize["show_totals"] = o.ShowTotals
-	}
-	if o.ShowPaypalButton.IsSet() {
-		toSerialize["show_paypal_button"] = o.ShowPaypalButton.Get()
 	}
 	if o.ShowNotificationButton.IsSet() {
 		toSerialize["show_notification_button"] = o.ShowNotificationButton.Get()

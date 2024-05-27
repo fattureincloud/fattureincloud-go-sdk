@@ -18,7 +18,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-var IssuedDocumentExtraDataJsonStr string = "{\"show_sofort_button\":true,\"multifatture_sent\":5,\"ts_communication\":true,\"ts_flag_tipo_spesa\":2,\"ts_pagamento_tracciato\":true,\"ts_tipo_spesa\":\"TK\",\"ts_opposizione\":true,\"ts_status\":5,\"ts_file_id\":\"str\",\"ts_sent_date\":\"2021-12-25\",\"ts_full_amount\":true,\"imported_by\":\"me\"}"
+var IssuedDocumentExtraDataJsonStr string = "{\"multifatture_sent\":5,\"ts_communication\":true,\"ts_flag_tipo_spesa\":2,\"ts_pagamento_tracciato\":true,\"ts_tipo_spesa\":\"TK\",\"ts_opposizione\":true,\"ts_status\":5,\"ts_file_id\":\"str\",\"ts_sent_date\":\"2021-12-25\",\"ts_full_amount\":true,\"imported_by\":\"me\"}"
 
 func TestIssuedDocumentExtraData(t *testing.T) {
 	obj := NewIssuedDocumentExtraData()
@@ -28,8 +28,6 @@ func TestIssuedDocumentExtraData(t *testing.T) {
 	assert.JSONEq(t, IssuedDocumentExtraDataJsonStr, string(jsonStr2), "they should be equal")
 
 	newObj := NewIssuedDocumentExtraData()
-	newObj.SetShowSofortButton(obj.GetShowSofortButton())
-	assert.True(t, reflect.DeepEqual(obj.GetShowSofortButton(), newObj.GetShowSofortButton()))
 	newObj.SetMultifattureSent(obj.GetMultifattureSent())
 	assert.True(t, reflect.DeepEqual(obj.GetMultifattureSent(), newObj.GetMultifattureSent()))
 	newObj.SetTsCommunication(obj.GetTsCommunication())

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ShowSofortButton** | Pointer to **NullableBool** |  | [optional] 
 **MultifattureSent** | Pointer to **NullableInt32** |  | [optional] 
 **TsCommunication** | Pointer to **NullableBool** | Send issued document to \&quot;Sistema Tessera Sanitaria\&quot; | [optional] 
 **TsFlagTipoSpesa** | Pointer to **NullableFloat32** | Issued document ts \&quot;tipo spesa\&quot; [TK, FC, FV, SV,SP, AD, AS, ECG, SR] | [optional] 
@@ -36,41 +35,6 @@ NewIssuedDocumentExtraDataWithDefaults instantiates a new IssuedDocumentExtraDat
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetShowSofortButton
-
-`func (o *IssuedDocumentExtraData) GetShowSofortButton() bool`
-
-GetShowSofortButton returns the ShowSofortButton field if non-nil, zero value otherwise.
-
-### GetShowSofortButtonOk
-
-`func (o *IssuedDocumentExtraData) GetShowSofortButtonOk() (*bool, bool)`
-
-GetShowSofortButtonOk returns a tuple with the ShowSofortButton field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetShowSofortButton
-
-`func (o *IssuedDocumentExtraData) SetShowSofortButton(v bool)`
-
-SetShowSofortButton sets ShowSofortButton field to given value.
-
-### HasShowSofortButton
-
-`func (o *IssuedDocumentExtraData) HasShowSofortButton() bool`
-
-HasShowSofortButton returns a boolean if a field has been set.
-
-### SetShowSofortButtonNil
-
-`func (o *IssuedDocumentExtraData) SetShowSofortButtonNil(b bool)`
-
- SetShowSofortButtonNil sets the value for ShowSofortButton to be an explicit nil
-
-### UnsetShowSofortButton
-`func (o *IssuedDocumentExtraData) UnsetShowSofortButton()`
-
-UnsetShowSofortButton ensures that no value is present for ShowSofortButton, not even an explicit nil
 ### GetMultifattureSent
 
 `func (o *IssuedDocumentExtraData) GetMultifattureSent() int32`

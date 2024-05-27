@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.32
+API version: 2.0.33
 Contact: info@fattureincloud.it
 */
 
@@ -160,7 +160,7 @@ func (o *ReceivedDocumentInfo) GetCountriesListOk() ([]string, bool) {
 
 // HasCountriesList returns a boolean if a field has been set.
 func (o *ReceivedDocumentInfo) HasCountriesList() bool {
-	if o != nil && IsNil(o.CountriesList) {
+	if o != nil && !IsNil(o.CountriesList) {
 		return true
 	}
 
@@ -194,7 +194,7 @@ func (o *ReceivedDocumentInfo) GetCurrenciesListOk() ([]Currency, bool) {
 
 // HasCurrenciesList returns a boolean if a field has been set.
 func (o *ReceivedDocumentInfo) HasCurrenciesList() bool {
-	if o != nil && IsNil(o.CurrenciesList) {
+	if o != nil && !IsNil(o.CurrenciesList) {
 		return true
 	}
 
@@ -228,7 +228,7 @@ func (o *ReceivedDocumentInfo) GetCategoriesListOk() ([]string, bool) {
 
 // HasCategoriesList returns a boolean if a field has been set.
 func (o *ReceivedDocumentInfo) HasCategoriesList() bool {
-	if o != nil && IsNil(o.CategoriesList) {
+	if o != nil && !IsNil(o.CategoriesList) {
 		return true
 	}
 
@@ -262,7 +262,7 @@ func (o *ReceivedDocumentInfo) GetPaymentAccountsListOk() ([]PaymentAccount, boo
 
 // HasPaymentAccountsList returns a boolean if a field has been set.
 func (o *ReceivedDocumentInfo) HasPaymentAccountsList() bool {
-	if o != nil && IsNil(o.PaymentAccountsList) {
+	if o != nil && !IsNil(o.PaymentAccountsList) {
 		return true
 	}
 
@@ -296,7 +296,7 @@ func (o *ReceivedDocumentInfo) GetVatTypesListOk() ([]VatType, bool) {
 
 // HasVatTypesList returns a boolean if a field has been set.
 func (o *ReceivedDocumentInfo) HasVatTypesList() bool {
-	if o != nil && IsNil(o.VatTypesList) {
+	if o != nil && !IsNil(o.VatTypesList) {
 		return true
 	}
 

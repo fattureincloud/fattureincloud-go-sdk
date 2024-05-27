@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.0.32
+API version: 2.0.33
 Contact: info@fattureincloud.it
 */
 
@@ -281,7 +281,7 @@ func (o *IssuedDocumentPreCreateInfo) GetCountriesListOk() ([]string, bool) {
 
 // HasCountriesList returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfo) HasCountriesList() bool {
-	if o != nil && IsNil(o.CountriesList) {
+	if o != nil && !IsNil(o.CountriesList) {
 		return true
 	}
 
@@ -315,7 +315,7 @@ func (o *IssuedDocumentPreCreateInfo) GetCurrenciesListOk() ([]Currency, bool) {
 
 // HasCurrenciesList returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfo) HasCurrenciesList() bool {
-	if o != nil && IsNil(o.CurrenciesList) {
+	if o != nil && !IsNil(o.CurrenciesList) {
 		return true
 	}
 
@@ -349,7 +349,7 @@ func (o *IssuedDocumentPreCreateInfo) GetTemplatesListOk() ([]DocumentTemplate, 
 
 // HasTemplatesList returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfo) HasTemplatesList() bool {
-	if o != nil && IsNil(o.TemplatesList) {
+	if o != nil && !IsNil(o.TemplatesList) {
 		return true
 	}
 
@@ -383,7 +383,7 @@ func (o *IssuedDocumentPreCreateInfo) GetDnTemplatesListOk() ([]DocumentTemplate
 
 // HasDnTemplatesList returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfo) HasDnTemplatesList() bool {
-	if o != nil && IsNil(o.DnTemplatesList) {
+	if o != nil && !IsNil(o.DnTemplatesList) {
 		return true
 	}
 
@@ -417,7 +417,7 @@ func (o *IssuedDocumentPreCreateInfo) GetAiTemplatesListOk() ([]DocumentTemplate
 
 // HasAiTemplatesList returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfo) HasAiTemplatesList() bool {
-	if o != nil && IsNil(o.AiTemplatesList) {
+	if o != nil && !IsNil(o.AiTemplatesList) {
 		return true
 	}
 
@@ -451,7 +451,7 @@ func (o *IssuedDocumentPreCreateInfo) GetPaymentMethodsListOk() ([]PaymentMethod
 
 // HasPaymentMethodsList returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfo) HasPaymentMethodsList() bool {
-	if o != nil && IsNil(o.PaymentMethodsList) {
+	if o != nil && !IsNil(o.PaymentMethodsList) {
 		return true
 	}
 
@@ -485,7 +485,7 @@ func (o *IssuedDocumentPreCreateInfo) GetPaymentAccountsListOk() ([]PaymentAccou
 
 // HasPaymentAccountsList returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfo) HasPaymentAccountsList() bool {
-	if o != nil && IsNil(o.PaymentAccountsList) {
+	if o != nil && !IsNil(o.PaymentAccountsList) {
 		return true
 	}
 
@@ -519,7 +519,7 @@ func (o *IssuedDocumentPreCreateInfo) GetVatTypesListOk() ([]VatType, bool) {
 
 // HasVatTypesList returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfo) HasVatTypesList() bool {
-	if o != nil && IsNil(o.VatTypesList) {
+	if o != nil && !IsNil(o.VatTypesList) {
 		return true
 	}
 
@@ -553,7 +553,7 @@ func (o *IssuedDocumentPreCreateInfo) GetLanguagesListOk() ([]Language, bool) {
 
 // HasLanguagesList returns a boolean if a field has been set.
 func (o *IssuedDocumentPreCreateInfo) HasLanguagesList() bool {
-	if o != nil && IsNil(o.LanguagesList) {
+	if o != nil && !IsNil(o.LanguagesList) {
 		return true
 	}
 

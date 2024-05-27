@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **VatKind** | Pointer to [**NullableVatKind**](VatKind.md) |  | [optional] 
-**OriginalDocumentType** | Pointer to [**NullableOriginalDocumentType**](OriginalDocumentType.md) |  | [optional] [default to ORDINE]
+**OriginalDocumentType** | Pointer to [**NullableOriginalDocumentType**](OriginalDocumentType.md) |  | [optional] 
 **OdNumber** | Pointer to **NullableString** | E-invoice original document number | [optional] 
 **OdDate** | Pointer to **NullableString** | E-invoice original document date | [optional] 
 **Cig** | Pointer to **NullableString** | E-invoice CIG | [optional] 
