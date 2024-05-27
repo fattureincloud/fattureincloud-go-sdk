@@ -109,7 +109,6 @@ func TestCreateIssuedDocument(t *testing.T) {
 		SetShowPayments(true).
 		SetShowPaymentMethod(false).
 		SetShowTotals(ShowTotalsModes.ALL).
-		SetShowPaypalButton(true).
 		SetShowNotificationButton(false).
 		SetShowTspayButton(false).
 		SetDeliveryNote(false).
@@ -324,7 +323,6 @@ func TestGetIssuedDocument(t *testing.T) {
 		SetShowPayments(true).
 		SetShowPaymentMethod(false).
 		SetShowTotals(ShowTotalsModes.ALL).
-		SetShowPaypalButton(true).
 		SetShowNotificationButton(false).
 		SetShowTspayButton(false).
 		SetDeliveryNote(false).
@@ -509,7 +507,6 @@ func TestListIssuedDocuments(t *testing.T) {
 		SetShowPayments(true).
 		SetShowPaymentMethod(false).
 		SetShowTotals(ShowTotalsModes.ALL).
-		SetShowPaypalButton(true).
 		SetShowNotificationButton(false).
 		SetShowTspayButton(false).
 		SetDeliveryNote(false).
@@ -614,7 +611,6 @@ func TestModifyIssuedDocument(t *testing.T) {
 		SetShowPayments(true).
 		SetShowPaymentMethod(false).
 		SetShowTotals(ShowTotalsModes.ALL).
-		SetShowPaypalButton(true).
 		SetShowNotificationButton(false).
 		SetShowTspayButton(false).
 		SetDeliveryNote(false).
