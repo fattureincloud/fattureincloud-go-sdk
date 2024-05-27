@@ -28,8 +28,6 @@ func TestIssuedDocumentExtraData(t *testing.T) {
 	assert.JSONEq(t, IssuedDocumentExtraDataJsonStr, string(jsonStr2), "they should be equal")
 
 	newObj := NewIssuedDocumentExtraData()
-	newObj.SetShowSofortButton(obj.GetShowSofortButton())
-	assert.True(t, reflect.DeepEqual(obj.GetShowSofortButton(), newObj.GetShowSofortButton()))
 	newObj.SetMultifattureSent(obj.GetMultifattureSent())
 	assert.True(t, reflect.DeepEqual(obj.GetMultifattureSent(), newObj.GetMultifattureSent()))
 	newObj.SetTsCommunication(obj.GetTsCommunication())

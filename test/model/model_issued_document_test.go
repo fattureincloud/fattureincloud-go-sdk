@@ -124,8 +124,6 @@ func TestIssuedDocument(t *testing.T) {
 	assert.True(t, reflect.DeepEqual(obj.GetShowPaymentMethod(), newObj.GetShowPaymentMethod()))
 	newObj.SetShowTotals(obj.GetShowTotals())
 	assert.True(t, reflect.DeepEqual(obj.GetShowTotals(), newObj.GetShowTotals()))
-	newObj.SetShowPaypalButton(obj.GetShowPaypalButton())
-	assert.True(t, reflect.DeepEqual(obj.GetShowPaypalButton(), newObj.GetShowPaypalButton()))
 	newObj.SetShowNotificationButton(obj.GetShowNotificationButton())
 	assert.True(t, reflect.DeepEqual(obj.GetShowNotificationButton(), newObj.GetShowNotificationButton()))
 	newObj.SetShowTspayButton(obj.GetShowTspayButton())
