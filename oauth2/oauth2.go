@@ -67,6 +67,12 @@ type OAuth2DeviceCodeResponse struct {
 	ExpiresIn int `json:"expires_in,omitempty"`
 }
 
+// Device code response wrapping
+type DataDeviceCode struct {
+	// Data
+	Data OAuth2DeviceCodeResponse `json:"data,omitempty"`
+}
+
 // Initialize a new instance of the OAuth2AuthorizationCodeManager class
 func NewOAuth2AuthorizationCodeManager(clientId string, clientSecret string, redirecUri string) *OAuth2AuthorizationCodeManager {
 	this := OAuth2AuthorizationCodeManager{}
@@ -280,10 +286,10 @@ func (o *OAuth2DeviceCodeManager) GetDeviceCode(scopes []Scope) (*OAuth2DeviceCo
 	if resp.StatusCode != 200 {
 		return nil, errors.New(string(body))
 	}
-	res := OAuth2DeviceCodeResponse{}
+	res := DataDeviceCode{}
 	json.Unmarshal(body, &res)
 
-	return &res, nil
+	return &res.Data, nil
 
 }
 
