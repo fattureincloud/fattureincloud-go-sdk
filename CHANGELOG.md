@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 2.1.0 (2024-06-17)
+
+
+### Features
+
+* added device code manager ([bff7315](https://github.com/fattureincloud/fattureincloud-go-sdk/commit/bff7315e58021cb8c598065045558b4dbe012e3d))
+
 ### 2.0.11 (2024-05-27)
 
 ### 2.0.10 (2024-03-06)
