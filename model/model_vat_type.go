@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -38,6 +38,8 @@ type VatType struct {
 	Editable NullableBool `json:"editable,omitempty"`
 	// Is the vat type disabled
 	IsDisabled NullableBool `json:"is_disabled,omitempty"`
+	// If the vat type is default
+	Default NullableBool `json:"default,omitempty"`
 }
 
 // NewVatType instantiates a new VatType object
@@ -453,6 +455,50 @@ func (o *VatType) UnsetIsDisabled() {
 	o.IsDisabled.Unset()
 }
 
+// GetDefault returns the Default field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *VatType) GetDefault() bool {
+	if o == nil || IsNil(o.Default.Get()) {
+		var ret bool
+		return ret
+	}
+	return *o.Default.Get()
+}
+
+// GetDefaultOk returns a tuple with the Default field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *VatType) GetDefaultOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Default.Get(), o.Default.IsSet()
+}
+
+// HasDefault returns a boolean if a field has been set.
+func (o *VatType) HasDefault() bool {
+	if o != nil && o.Default.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDefault gets a reference to the given NullableBool and assigns it to the Default field.
+func (o *VatType) SetDefault(v bool) *VatType {
+	o.Default.Set(&v)
+	return o
+}
+// SetDefaultNil sets the value for Default to be an explicit nil
+func (o *VatType) SetDefaultNil() *VatType {
+	o.Default.Set(nil)
+	return o
+}
+
+// UnsetDefault ensures that no value is present for Default, not even an explicit nil
+func (o *VatType) UnsetDefault() {
+	o.Default.Unset()
+}
+
 func (o VatType) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -489,6 +535,9 @@ func (o VatType) ToMap() (map[string]interface{}, error) {
 	}
 	if o.IsDisabled.IsSet() {
 		toSerialize["is_disabled"] = o.IsDisabled.Get()
+	}
+	if o.Default.IsSet() {
+		toSerialize["default"] = o.Default.Get()
 	}
 	return toSerialize, nil
 }

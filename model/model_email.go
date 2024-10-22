@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -25,7 +25,7 @@ type Email struct {
 	Id NullableInt32 `json:"id,omitempty"`
 	Status *EmailStatus `json:"status,omitempty"`
 	// Email sent date
-	SentDate NullableTime `json:"sent_date,omitempty"`
+	SentDate NullableString `json:"sent_date,omitempty"`
 	// Email errors count
 	ErrorsCount NullableInt32 `json:"errors_count,omitempty"`
 	// Email errors log
@@ -148,9 +148,9 @@ func (o *Email) SetStatus(v EmailStatus) *Email {
 }
 
 // GetSentDate returns the SentDate field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Email) GetSentDate() time.Time {
+func (o *Email) GetSentDate() string {
 	if o == nil || IsNil(o.SentDate.Get()) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.SentDate.Get()
@@ -159,7 +159,7 @@ func (o *Email) GetSentDate() time.Time {
 // GetSentDateOk returns a tuple with the SentDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Email) GetSentDateOk() (*time.Time, bool) {
+func (o *Email) GetSentDateOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -175,8 +175,8 @@ func (o *Email) HasSentDate() bool {
 	return false
 }
 
-// SetSentDate gets a reference to the given NullableTime and assigns it to the SentDate field.
-func (o *Email) SetSentDate(v time.Time) *Email {
+// SetSentDate gets a reference to the given NullableString and assigns it to the SentDate field.
+func (o *Email) SetSentDate(v string) *Email {
 	o.SentDate.Set(&v)
 	return o
 }
