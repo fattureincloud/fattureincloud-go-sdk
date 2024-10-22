@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -911,7 +911,7 @@ type ApiJoinIssuedDocumentsRequest struct {
 	companyId int32
 	ids *string
 	group *int32
-	eInvoice *int32
+	parameter *string
 }
 
 // Ids of the documents.
@@ -926,9 +926,9 @@ func (r ApiJoinIssuedDocumentsRequest) Group(group int32) ApiJoinIssuedDocuments
 	return r
 }
 
-// New document e_invoice.
-func (r ApiJoinIssuedDocumentsRequest) EInvoice(eInvoice int32) ApiJoinIssuedDocumentsRequest {
-	r.eInvoice = &eInvoice
+// Type of the parameters to be joined
+func (r ApiJoinIssuedDocumentsRequest) Parameter(parameter string) ApiJoinIssuedDocumentsRequest {
+	r.parameter = &parameter
 	return r
 }
 
@@ -982,8 +982,8 @@ func (a *IssuedDocumentsAPIService) JoinIssuedDocumentsExecute(r ApiJoinIssuedDo
 	if r.group != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "group", r.group, "")
 	}
-	if r.eInvoice != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "e_invoice", r.eInvoice, "")
+	if r.parameter != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "parameter", r.parameter, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1456,6 +1456,7 @@ type ApiTransformIssuedDocumentRequest struct {
 	companyId int32
 	originalDocumentId *int32
 	newType *string
+	parameter *string
 	eInvoice *int32
 	transformKeepCopy *int32
 }
@@ -1469,6 +1470,12 @@ func (r ApiTransformIssuedDocumentRequest) OriginalDocumentId(originalDocumentId
 // New document type.
 func (r ApiTransformIssuedDocumentRequest) NewType(newType string) ApiTransformIssuedDocumentRequest {
 	r.newType = &newType
+	return r
+}
+
+// Old document type.
+func (r ApiTransformIssuedDocumentRequest) Parameter(parameter string) ApiTransformIssuedDocumentRequest {
+	r.parameter = &parameter
 	return r
 }
 
@@ -1535,6 +1542,9 @@ func (a *IssuedDocumentsAPIService) TransformIssuedDocumentExecute(r ApiTransfor
 
 	parameterAddToHeaderOrQuery(localVarQueryParams, "original_document_id", r.originalDocumentId, "")
 	parameterAddToHeaderOrQuery(localVarQueryParams, "new_type", r.newType, "")
+	if r.parameter != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "parameter", r.parameter, "")
+	}
 	if r.eInvoice != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "e_invoice", r.eInvoice, "")
 	}

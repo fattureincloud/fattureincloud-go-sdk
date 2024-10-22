@@ -630,7 +630,7 @@ Name | Type | Description  | Notes
 
 ## JoinIssuedDocuments
 
-> JoinIssuedDocumentsResponse JoinIssuedDocuments(ctx, companyId).Ids(ids).Group(group).EInvoice(eInvoice).Execute()
+> JoinIssuedDocumentsResponse JoinIssuedDocuments(ctx, companyId).Ids(ids).Group(group).Parameter(parameter).Execute()
 
 Join Issued Documents
 
@@ -654,12 +654,12 @@ func main() {
     companyId := int32(12345) // int32 | The ID of the company.
     ids := "1,2,3,4" // string | Ids of the documents.
     group := int32(56) // int32 | Group items. (optional)
-    eInvoice := int32(56) // int32 | New document e_invoice. (optional)
+    parameter := "delivery_notes, orders, quotes, work_reports" // string | Type of the parameters to be joined (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedDocumentsAPI.JoinIssuedDocuments(auth, companyId).Ids(ids).Group(group).EInvoice(eInvoice).Execute()
+    resp, r, err := apiClient.IssuedDocumentsAPI.JoinIssuedDocuments(auth, companyId).Ids(ids).Group(group).Parameter(parameter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.JoinIssuedDocuments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -687,7 +687,7 @@ Name | Type | Description  | Notes
 
  **ids** | **string** | Ids of the documents. | 
  **group** | **int32** | Group items. | 
- **eInvoice** | **int32** | New document e_invoice. | 
+ **parameter** | **string** | Type of the parameters to be joined | 
 
 ### Return type
 
@@ -952,7 +952,7 @@ Name | Type | Description  | Notes
 
 ## TransformIssuedDocument
 
-> TransformIssuedDocumentResponse TransformIssuedDocument(ctx, companyId).OriginalDocumentId(originalDocumentId).NewType(newType).EInvoice(eInvoice).TransformKeepCopy(transformKeepCopy).Execute()
+> TransformIssuedDocumentResponse TransformIssuedDocument(ctx, companyId).OriginalDocumentId(originalDocumentId).NewType(newType).Parameter(parameter).EInvoice(eInvoice).TransformKeepCopy(transformKeepCopy).Execute()
 
 Transform Issued Document
 
@@ -976,13 +976,14 @@ func main() {
     companyId := int32(12345) // int32 | The ID of the company.
     originalDocumentId := int32(56) // int32 | Original document id.
     newType := "newType_example" // string | New document type.
+    parameter := "parameter_example" // string | Old document type. (optional)
     eInvoice := int32(56) // int32 | New document e_invoice. (optional)
     transformKeepCopy := int32(56) // int32 | Keep the old document. (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedDocumentsAPI.TransformIssuedDocument(auth, companyId).OriginalDocumentId(originalDocumentId).NewType(newType).EInvoice(eInvoice).TransformKeepCopy(transformKeepCopy).Execute()
+    resp, r, err := apiClient.IssuedDocumentsAPI.TransformIssuedDocument(auth, companyId).OriginalDocumentId(originalDocumentId).NewType(newType).Parameter(parameter).EInvoice(eInvoice).TransformKeepCopy(transformKeepCopy).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.TransformIssuedDocument``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1010,6 +1011,7 @@ Name | Type | Description  | Notes
 
  **originalDocumentId** | **int32** | Original document id. | 
  **newType** | **string** | New document type. | 
+ **parameter** | **string** | Old document type. | 
  **eInvoice** | **int32** | New document e_invoice. | 
  **transformKeepCopy** | **int32** | Keep the old document. | 
 

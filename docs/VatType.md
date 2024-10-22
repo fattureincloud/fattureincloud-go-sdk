@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **EiDescription** | Pointer to **NullableString** | Vat type e-invoice description | [optional] 
 **Editable** | Pointer to **NullableBool** | [Read Only] Is the vat type is editable. | [optional] [readonly] 
 **IsDisabled** | Pointer to **NullableBool** | Is the vat type disabled | [optional] 
+**Default** | Pointer to **NullableBool** | If the vat type is default | [optional] 
 
 ## Methods
 
@@ -348,6 +349,41 @@ HasIsDisabled returns a boolean if a field has been set.
 `func (o *VatType) UnsetIsDisabled()`
 
 UnsetIsDisabled ensures that no value is present for IsDisabled, not even an explicit nil
+### GetDefault
+
+`func (o *VatType) GetDefault() bool`
+
+GetDefault returns the Default field if non-nil, zero value otherwise.
+
+### GetDefaultOk
+
+`func (o *VatType) GetDefaultOk() (*bool, bool)`
+
+GetDefaultOk returns a tuple with the Default field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefault
+
+`func (o *VatType) SetDefault(v bool)`
+
+SetDefault sets Default field to given value.
+
+### HasDefault
+
+`func (o *VatType) HasDefault() bool`
+
+HasDefault returns a boolean if a field has been set.
+
+### SetDefaultNil
+
+`func (o *VatType) SetDefaultNil(b bool)`
+
+ SetDefaultNil sets the value for Default to be an explicit nil
+
+### UnsetDefault
+`func (o *VatType) UnsetDefault()`
+
+UnsetDefault ensures that no value is present for Default, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
