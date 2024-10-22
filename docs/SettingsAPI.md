@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**DeleteVatType**](SettingsAPI.md#DeleteVatType) | **Delete** /c/{company_id}/settings/vat_types/{vat_type_id} | Delete Vat Type
 [**GetPaymentAccount**](SettingsAPI.md#GetPaymentAccount) | **Get** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Get Payment Account
 [**GetPaymentMethod**](SettingsAPI.md#GetPaymentMethod) | **Get** /c/{company_id}/settings/payment_methods/{payment_method_id} | Get Payment Method
+[**GetTaxProfile**](SettingsAPI.md#GetTaxProfile) | **Get** /c/{company_id}/settings/tax_profile | Get Tax Profile
 [**GetVatType**](SettingsAPI.md#GetVatType) | **Get** /c/{company_id}/settings/vat_types/{vat_type_id} | Get Vat Type
 [**ModifyPaymentAccount**](SettingsAPI.md#ModifyPaymentAccount) | **Put** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Modify Payment Account
 [**ModifyPaymentMethod**](SettingsAPI.md#ModifyPaymentMethod) | **Put** /c/{company_id}/settings/payment_methods/{payment_method_id} | Modify Payment Method
@@ -611,6 +612,79 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetPaymentMethodResponse**](GetPaymentMethodResponse.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetTaxProfile
+
+> GetTaxProfileResponse GetTaxProfile(ctx, companyId).Execute()
+
+Get Tax Profile
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "encoding/json"
+    "fmt"
+    "os"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+)
+
+func main() {
+    companyId := int32(12345) // int32 | The ID of the company.
+
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
+    resp, r, err := apiClient.SettingsAPI.GetTaxProfile(auth, companyId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.GetTaxProfile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetTaxProfile`: GetTaxProfileResponse
+    json.NewEncoder(os.Stdout).Encode(resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**companyId** | **int32** | The ID of the company. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetTaxProfileRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetTaxProfileResponse**](GetTaxProfileResponse.md)
 
 ### Authorization
 
