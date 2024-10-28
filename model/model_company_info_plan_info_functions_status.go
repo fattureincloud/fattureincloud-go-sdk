@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &CompanyInfoPlanInfoFunctionsStatus{}
 
 // CompanyInfoPlanInfoFunctionsStatus struct for CompanyInfoPlanInfoFunctionsStatus
 type CompanyInfoPlanInfoFunctionsStatus struct {
-	TsDigital *FunctionStatus `json:"ts_digital,omitempty"`
-	TsPay *FunctionStatus `json:"ts_pay,omitempty"`
+TsDigital *FunctionStatus `json:"ts_digital,omitempty"`
+TsPay *FunctionStatus `json:"ts_pay,omitempty"`
 }
 
 // NewCompanyInfoPlanInfoFunctionsStatus instantiates a new CompanyInfoPlanInfoFunctionsStatus object
@@ -71,7 +71,7 @@ func (o *CompanyInfoPlanInfoFunctionsStatus) HasTsDigital() bool {
 // SetTsDigital gets a reference to the given FunctionStatus and assigns it to the TsDigital field.
 func (o *CompanyInfoPlanInfoFunctionsStatus) SetTsDigital(v FunctionStatus) *CompanyInfoPlanInfoFunctionsStatus {
 	o.TsDigital = &v
-	return o
+        return o
 }
 
 // GetTsPay returns the TsPay field value if set, zero value otherwise.
@@ -104,7 +104,7 @@ func (o *CompanyInfoPlanInfoFunctionsStatus) HasTsPay() bool {
 // SetTsPay gets a reference to the given FunctionStatus and assigns it to the TsPay field.
 func (o *CompanyInfoPlanInfoFunctionsStatus) SetTsPay(v FunctionStatus) *CompanyInfoPlanInfoFunctionsStatus {
 	o.TsPay = &v
-	return o
+        return o
 }
 
 func (o CompanyInfoPlanInfoFunctionsStatus) MarshalJSON() ([]byte, error) {

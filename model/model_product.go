@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -21,42 +21,42 @@ var _ MappedNullable = &Product{}
 // Product struct for Product
 type Product struct {
 	// Product id
-	Id NullableInt32 `json:"id,omitempty"`
+Id NullableInt32 `json:"id,omitempty"`
 	// Product name
-	Name NullableString `json:"name,omitempty"`
+Name NullableString `json:"name,omitempty"`
 	// Product code
-	Code NullableString `json:"code,omitempty"`
+Code NullableString `json:"code,omitempty"`
 	// Product net price
-	NetPrice NullableFloat32 `json:"net_price,omitempty"`
+NetPrice NullableFloat32 `json:"net_price,omitempty"`
 	// Product gross price
-	GrossPrice NullableFloat32 `json:"gross_price,omitempty"`
+GrossPrice NullableFloat32 `json:"gross_price,omitempty"`
 	// Product uses gross prices
-	UseGrossPrice NullableBool `json:"use_gross_price,omitempty"`
-	DefaultVat NullableVatType `json:"default_vat,omitempty"`
+UseGrossPrice NullableBool `json:"use_gross_price,omitempty"`
+DefaultVat NullableVatType `json:"default_vat,omitempty"`
 	// Product net cost
-	NetCost NullableFloat32 `json:"net_cost,omitempty"`
+NetCost NullableFloat32 `json:"net_cost,omitempty"`
 	// Product measure
-	Measure NullableString `json:"measure,omitempty"`
+Measure NullableString `json:"measure,omitempty"`
 	// Product description
-	Description NullableString `json:"description,omitempty"`
+Description NullableString `json:"description,omitempty"`
 	// Product category
-	Category NullableString `json:"category,omitempty"`
+Category NullableString `json:"category,omitempty"`
 	// Product extra notes
-	Notes NullableString `json:"notes,omitempty"`
+Notes NullableString `json:"notes,omitempty"`
 	// Product has stock
-	InStock NullableBool `json:"in_stock,omitempty"`
+InStock NullableBool `json:"in_stock,omitempty"`
 	// Product initial stock
-	StockInitial NullableFloat32 `json:"stock_initial,omitempty"`
+StockInitial NullableFloat32 `json:"stock_initial,omitempty"`
 	// [Read Only] Product current stock
-	StockCurrent NullableFloat32 `json:"stock_current,omitempty"`
+StockCurrent NullableFloat32 `json:"stock_current,omitempty"`
 	// Product average cost
-	AverageCost NullableFloat32 `json:"average_cost,omitempty"`
+AverageCost NullableFloat32 `json:"average_cost,omitempty"`
 	// Product average price
-	AveragePrice NullableFloat32 `json:"average_price,omitempty"`
+AveragePrice NullableFloat32 `json:"average_price,omitempty"`
 	// Product creation date
-	CreatedAt NullableString `json:"created_at,omitempty"`
+CreatedAt NullableString `json:"created_at,omitempty"`
 	// Product last update date
-	UpdatedAt NullableString `json:"updated_at,omitempty"`
+UpdatedAt NullableString `json:"updated_at,omitempty"`
 }
 
 // NewProduct instantiates a new Product object
@@ -107,12 +107,12 @@ func (o *Product) HasId() bool {
 // SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *Product) SetId(v int32) *Product {
 	o.Id.Set(&v)
-	return o
+        return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *Product) SetIdNil() *Product {
 	o.Id.Set(nil)
-	return o
+    return o
 }
 
 // UnsetId ensures that no value is present for Id, not even an explicit nil
@@ -151,12 +151,12 @@ func (o *Product) HasName() bool {
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *Product) SetName(v string) *Product {
 	o.Name.Set(&v)
-	return o
+        return o
 }
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *Product) SetNameNil() *Product {
 	o.Name.Set(nil)
-	return o
+    return o
 }
 
 // UnsetName ensures that no value is present for Name, not even an explicit nil
@@ -195,12 +195,12 @@ func (o *Product) HasCode() bool {
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *Product) SetCode(v string) *Product {
 	o.Code.Set(&v)
-	return o
+        return o
 }
 // SetCodeNil sets the value for Code to be an explicit nil
 func (o *Product) SetCodeNil() *Product {
 	o.Code.Set(nil)
-	return o
+    return o
 }
 
 // UnsetCode ensures that no value is present for Code, not even an explicit nil
@@ -239,12 +239,12 @@ func (o *Product) HasNetPrice() bool {
 // SetNetPrice gets a reference to the given NullableFloat32 and assigns it to the NetPrice field.
 func (o *Product) SetNetPrice(v float32) *Product {
 	o.NetPrice.Set(&v)
-	return o
+        return o
 }
 // SetNetPriceNil sets the value for NetPrice to be an explicit nil
 func (o *Product) SetNetPriceNil() *Product {
 	o.NetPrice.Set(nil)
-	return o
+    return o
 }
 
 // UnsetNetPrice ensures that no value is present for NetPrice, not even an explicit nil
@@ -283,12 +283,12 @@ func (o *Product) HasGrossPrice() bool {
 // SetGrossPrice gets a reference to the given NullableFloat32 and assigns it to the GrossPrice field.
 func (o *Product) SetGrossPrice(v float32) *Product {
 	o.GrossPrice.Set(&v)
-	return o
+        return o
 }
 // SetGrossPriceNil sets the value for GrossPrice to be an explicit nil
 func (o *Product) SetGrossPriceNil() *Product {
 	o.GrossPrice.Set(nil)
-	return o
+    return o
 }
 
 // UnsetGrossPrice ensures that no value is present for GrossPrice, not even an explicit nil
@@ -327,12 +327,12 @@ func (o *Product) HasUseGrossPrice() bool {
 // SetUseGrossPrice gets a reference to the given NullableBool and assigns it to the UseGrossPrice field.
 func (o *Product) SetUseGrossPrice(v bool) *Product {
 	o.UseGrossPrice.Set(&v)
-	return o
+        return o
 }
 // SetUseGrossPriceNil sets the value for UseGrossPrice to be an explicit nil
 func (o *Product) SetUseGrossPriceNil() *Product {
 	o.UseGrossPrice.Set(nil)
-	return o
+    return o
 }
 
 // UnsetUseGrossPrice ensures that no value is present for UseGrossPrice, not even an explicit nil
@@ -371,12 +371,12 @@ func (o *Product) HasDefaultVat() bool {
 // SetDefaultVat gets a reference to the given NullableVatType and assigns it to the DefaultVat field.
 func (o *Product) SetDefaultVat(v VatType) *Product {
 	o.DefaultVat.Set(&v)
-	return o
+        return o
 }
 // SetDefaultVatNil sets the value for DefaultVat to be an explicit nil
 func (o *Product) SetDefaultVatNil() *Product {
 	o.DefaultVat.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDefaultVat ensures that no value is present for DefaultVat, not even an explicit nil
@@ -415,12 +415,12 @@ func (o *Product) HasNetCost() bool {
 // SetNetCost gets a reference to the given NullableFloat32 and assigns it to the NetCost field.
 func (o *Product) SetNetCost(v float32) *Product {
 	o.NetCost.Set(&v)
-	return o
+        return o
 }
 // SetNetCostNil sets the value for NetCost to be an explicit nil
 func (o *Product) SetNetCostNil() *Product {
 	o.NetCost.Set(nil)
-	return o
+    return o
 }
 
 // UnsetNetCost ensures that no value is present for NetCost, not even an explicit nil
@@ -459,12 +459,12 @@ func (o *Product) HasMeasure() bool {
 // SetMeasure gets a reference to the given NullableString and assigns it to the Measure field.
 func (o *Product) SetMeasure(v string) *Product {
 	o.Measure.Set(&v)
-	return o
+        return o
 }
 // SetMeasureNil sets the value for Measure to be an explicit nil
 func (o *Product) SetMeasureNil() *Product {
 	o.Measure.Set(nil)
-	return o
+    return o
 }
 
 // UnsetMeasure ensures that no value is present for Measure, not even an explicit nil
@@ -503,12 +503,12 @@ func (o *Product) HasDescription() bool {
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *Product) SetDescription(v string) *Product {
 	o.Description.Set(&v)
-	return o
+        return o
 }
 // SetDescriptionNil sets the value for Description to be an explicit nil
 func (o *Product) SetDescriptionNil() *Product {
 	o.Description.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDescription ensures that no value is present for Description, not even an explicit nil
@@ -547,12 +547,12 @@ func (o *Product) HasCategory() bool {
 // SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *Product) SetCategory(v string) *Product {
 	o.Category.Set(&v)
-	return o
+        return o
 }
 // SetCategoryNil sets the value for Category to be an explicit nil
 func (o *Product) SetCategoryNil() *Product {
 	o.Category.Set(nil)
-	return o
+    return o
 }
 
 // UnsetCategory ensures that no value is present for Category, not even an explicit nil
@@ -591,12 +591,12 @@ func (o *Product) HasNotes() bool {
 // SetNotes gets a reference to the given NullableString and assigns it to the Notes field.
 func (o *Product) SetNotes(v string) *Product {
 	o.Notes.Set(&v)
-	return o
+        return o
 }
 // SetNotesNil sets the value for Notes to be an explicit nil
 func (o *Product) SetNotesNil() *Product {
 	o.Notes.Set(nil)
-	return o
+    return o
 }
 
 // UnsetNotes ensures that no value is present for Notes, not even an explicit nil
@@ -635,12 +635,12 @@ func (o *Product) HasInStock() bool {
 // SetInStock gets a reference to the given NullableBool and assigns it to the InStock field.
 func (o *Product) SetInStock(v bool) *Product {
 	o.InStock.Set(&v)
-	return o
+        return o
 }
 // SetInStockNil sets the value for InStock to be an explicit nil
 func (o *Product) SetInStockNil() *Product {
 	o.InStock.Set(nil)
-	return o
+    return o
 }
 
 // UnsetInStock ensures that no value is present for InStock, not even an explicit nil
@@ -679,12 +679,12 @@ func (o *Product) HasStockInitial() bool {
 // SetStockInitial gets a reference to the given NullableFloat32 and assigns it to the StockInitial field.
 func (o *Product) SetStockInitial(v float32) *Product {
 	o.StockInitial.Set(&v)
-	return o
+        return o
 }
 // SetStockInitialNil sets the value for StockInitial to be an explicit nil
 func (o *Product) SetStockInitialNil() *Product {
 	o.StockInitial.Set(nil)
-	return o
+    return o
 }
 
 // UnsetStockInitial ensures that no value is present for StockInitial, not even an explicit nil
@@ -723,12 +723,12 @@ func (o *Product) HasStockCurrent() bool {
 // SetStockCurrent gets a reference to the given NullableFloat32 and assigns it to the StockCurrent field.
 func (o *Product) SetStockCurrent(v float32) *Product {
 	o.StockCurrent.Set(&v)
-	return o
+        return o
 }
 // SetStockCurrentNil sets the value for StockCurrent to be an explicit nil
 func (o *Product) SetStockCurrentNil() *Product {
 	o.StockCurrent.Set(nil)
-	return o
+    return o
 }
 
 // UnsetStockCurrent ensures that no value is present for StockCurrent, not even an explicit nil
@@ -767,12 +767,12 @@ func (o *Product) HasAverageCost() bool {
 // SetAverageCost gets a reference to the given NullableFloat32 and assigns it to the AverageCost field.
 func (o *Product) SetAverageCost(v float32) *Product {
 	o.AverageCost.Set(&v)
-	return o
+        return o
 }
 // SetAverageCostNil sets the value for AverageCost to be an explicit nil
 func (o *Product) SetAverageCostNil() *Product {
 	o.AverageCost.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAverageCost ensures that no value is present for AverageCost, not even an explicit nil
@@ -811,12 +811,12 @@ func (o *Product) HasAveragePrice() bool {
 // SetAveragePrice gets a reference to the given NullableFloat32 and assigns it to the AveragePrice field.
 func (o *Product) SetAveragePrice(v float32) *Product {
 	o.AveragePrice.Set(&v)
-	return o
+        return o
 }
 // SetAveragePriceNil sets the value for AveragePrice to be an explicit nil
 func (o *Product) SetAveragePriceNil() *Product {
 	o.AveragePrice.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAveragePrice ensures that no value is present for AveragePrice, not even an explicit nil
@@ -855,12 +855,12 @@ func (o *Product) HasCreatedAt() bool {
 // SetCreatedAt gets a reference to the given NullableString and assigns it to the CreatedAt field.
 func (o *Product) SetCreatedAt(v string) *Product {
 	o.CreatedAt.Set(&v)
-	return o
+        return o
 }
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *Product) SetCreatedAtNil() *Product {
 	o.CreatedAt.Set(nil)
-	return o
+    return o
 }
 
 // UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
@@ -899,12 +899,12 @@ func (o *Product) HasUpdatedAt() bool {
 // SetUpdatedAt gets a reference to the given NullableString and assigns it to the UpdatedAt field.
 func (o *Product) SetUpdatedAt(v string) *Product {
 	o.UpdatedAt.Set(&v)
-	return o
+        return o
 }
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *Product) SetUpdatedAtNil() *Product {
 	o.UpdatedAt.Set(nil)
-	return o
+    return o
 }
 
 // UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil

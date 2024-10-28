@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -21,60 +21,60 @@ var _ MappedNullable = &ReceivedDocument{}
 // ReceivedDocument struct for ReceivedDocument
 type ReceivedDocument struct {
 	// Received document id
-	Id NullableInt32 `json:"id,omitempty"`
-	Type *ReceivedDocumentType `json:"type,omitempty"`
-	Entity *Entity `json:"entity,omitempty"`
+Id NullableInt32 `json:"id,omitempty"`
+Type *ReceivedDocumentType `json:"type,omitempty"`
+Entity *Entity `json:"entity,omitempty"`
 	// Received document date [defaults to today's date]
-	Date NullableString `json:"date,omitempty"`
+Date NullableString `json:"date,omitempty"`
 	// Received document category
-	Category NullableString `json:"category,omitempty"`
+Category NullableString `json:"category,omitempty"`
 	// Received document description
-	Description NullableString `json:"description,omitempty"`
+Description NullableString `json:"description,omitempty"`
 	// Received document total net amount
-	AmountNet NullableFloat32 `json:"amount_net,omitempty"`
+AmountNet NullableFloat32 `json:"amount_net,omitempty"`
 	// Received document total vat amount
-	AmountVat NullableFloat32 `json:"amount_vat,omitempty"`
+AmountVat NullableFloat32 `json:"amount_vat,omitempty"`
 	// Received document withholding tax amount
-	AmountWithholdingTax NullableFloat32 `json:"amount_withholding_tax,omitempty"`
+AmountWithholdingTax NullableFloat32 `json:"amount_withholding_tax,omitempty"`
 	// Received document other withholding tax amount
-	AmountOtherWithholdingTax NullableFloat32 `json:"amount_other_withholding_tax,omitempty"`
+AmountOtherWithholdingTax NullableFloat32 `json:"amount_other_withholding_tax,omitempty"`
 	// [Read Only] Received document total gross amount
-	AmountGross NullableFloat32 `json:"amount_gross,omitempty"`
+AmountGross NullableFloat32 `json:"amount_gross,omitempty"`
 	// Received document amortization value
-	Amortization NullableFloat32 `json:"amortization,omitempty"`
+Amortization NullableFloat32 `json:"amortization,omitempty"`
 	// Received document revenue center
-	RcCenter NullableString `json:"rc_center,omitempty"`
+RcCenter NullableString `json:"rc_center,omitempty"`
 	// Received document invoice number
-	InvoiceNumber NullableString `json:"invoice_number,omitempty"`
+InvoiceNumber NullableString `json:"invoice_number,omitempty"`
 	// Received document is marked
-	IsMarked NullableBool `json:"is_marked,omitempty"`
+IsMarked NullableBool `json:"is_marked,omitempty"`
 	// Received document has items
-	IsDetailed NullableBool `json:"is_detailed,omitempty"`
+IsDetailed NullableBool `json:"is_detailed,omitempty"`
 	// [Read Only] Received document is an e-invoice
-	EInvoice NullableBool `json:"e_invoice,omitempty"`
+EInvoice NullableBool `json:"e_invoice,omitempty"`
 	// [Read Only] Received document date of the next not paid payment
-	NextDueDate NullableString `json:"next_due_date,omitempty"`
-	Currency *Currency `json:"currency,omitempty"`
+NextDueDate NullableString `json:"next_due_date,omitempty"`
+Currency *Currency `json:"currency,omitempty"`
 	// Received document tax deducibility percentage
-	TaxDeductibility NullableFloat32 `json:"tax_deductibility,omitempty"`
+TaxDeductibility NullableFloat32 `json:"tax_deductibility,omitempty"`
 	// Received document vat deducibility percentage
-	VatDeductibility NullableFloat32 `json:"vat_deductibility,omitempty"`
-	ItemsList []ReceivedDocumentItemsListItem `json:"items_list,omitempty"`
-	PaymentsList []ReceivedDocumentPaymentsListItem `json:"payments_list,omitempty"`
+VatDeductibility NullableFloat32 `json:"vat_deductibility,omitempty"`
+ItemsList []ReceivedDocumentItemsListItem `json:"items_list,omitempty"`
+PaymentsList []ReceivedDocumentPaymentsListItem `json:"payments_list,omitempty"`
 	// [Temporary] [Read Only] Received document url of the attached file
-	AttachmentUrl NullableString `json:"attachment_url,omitempty"`
+AttachmentUrl NullableString `json:"attachment_url,omitempty"`
 	// [Temporary] [Read Only] Received document url of the attachment preview
-	AttachmentPreviewUrl NullableString `json:"attachment_preview_url,omitempty"`
+AttachmentPreviewUrl NullableString `json:"attachment_preview_url,omitempty"`
 	// Received document total items amount and total payments amount can differ if this field is set to false
-	AutoCalculate NullableBool `json:"auto_calculate,omitempty"`
+AutoCalculate NullableBool `json:"auto_calculate,omitempty"`
 	// [Write Only] Received document attachment token returned by POST /received_documents/attachment
-	AttachmentToken NullableString `json:"attachment_token,omitempty"`
+AttachmentToken NullableString `json:"attachment_token,omitempty"`
 	// Received Document can't be edited
-	Locked NullableBool `json:"locked,omitempty"`
+Locked NullableBool `json:"locked,omitempty"`
 	// Received document creation date
-	CreatedAt NullableString `json:"created_at,omitempty"`
+CreatedAt NullableString `json:"created_at,omitempty"`
 	// Received document last update date
-	UpdatedAt NullableString `json:"updated_at,omitempty"`
+UpdatedAt NullableString `json:"updated_at,omitempty"`
 }
 
 // NewReceivedDocument instantiates a new ReceivedDocument object
@@ -127,12 +127,12 @@ func (o *ReceivedDocument) HasId() bool {
 // SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *ReceivedDocument) SetId(v int32) *ReceivedDocument {
 	o.Id.Set(&v)
-	return o
+        return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *ReceivedDocument) SetIdNil() *ReceivedDocument {
 	o.Id.Set(nil)
-	return o
+    return o
 }
 
 // UnsetId ensures that no value is present for Id, not even an explicit nil
@@ -170,7 +170,7 @@ func (o *ReceivedDocument) HasType() bool {
 // SetType gets a reference to the given ReceivedDocumentType and assigns it to the Type field.
 func (o *ReceivedDocument) SetType(v ReceivedDocumentType) *ReceivedDocument {
 	o.Type = &v
-	return o
+        return o
 }
 
 // GetEntity returns the Entity field value if set, zero value otherwise.
@@ -203,7 +203,7 @@ func (o *ReceivedDocument) HasEntity() bool {
 // SetEntity gets a reference to the given Entity and assigns it to the Entity field.
 func (o *ReceivedDocument) SetEntity(v Entity) *ReceivedDocument {
 	o.Entity = &v
-	return o
+        return o
 }
 
 // GetDate returns the Date field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -237,12 +237,12 @@ func (o *ReceivedDocument) HasDate() bool {
 // SetDate gets a reference to the given NullableString and assigns it to the Date field.
 func (o *ReceivedDocument) SetDate(v string) *ReceivedDocument {
 	o.Date.Set(&v)
-	return o
+        return o
 }
 // SetDateNil sets the value for Date to be an explicit nil
 func (o *ReceivedDocument) SetDateNil() *ReceivedDocument {
 	o.Date.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDate ensures that no value is present for Date, not even an explicit nil
@@ -281,12 +281,12 @@ func (o *ReceivedDocument) HasCategory() bool {
 // SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *ReceivedDocument) SetCategory(v string) *ReceivedDocument {
 	o.Category.Set(&v)
-	return o
+        return o
 }
 // SetCategoryNil sets the value for Category to be an explicit nil
 func (o *ReceivedDocument) SetCategoryNil() *ReceivedDocument {
 	o.Category.Set(nil)
-	return o
+    return o
 }
 
 // UnsetCategory ensures that no value is present for Category, not even an explicit nil
@@ -325,12 +325,12 @@ func (o *ReceivedDocument) HasDescription() bool {
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ReceivedDocument) SetDescription(v string) *ReceivedDocument {
 	o.Description.Set(&v)
-	return o
+        return o
 }
 // SetDescriptionNil sets the value for Description to be an explicit nil
 func (o *ReceivedDocument) SetDescriptionNil() *ReceivedDocument {
 	o.Description.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDescription ensures that no value is present for Description, not even an explicit nil
@@ -369,12 +369,12 @@ func (o *ReceivedDocument) HasAmountNet() bool {
 // SetAmountNet gets a reference to the given NullableFloat32 and assigns it to the AmountNet field.
 func (o *ReceivedDocument) SetAmountNet(v float32) *ReceivedDocument {
 	o.AmountNet.Set(&v)
-	return o
+        return o
 }
 // SetAmountNetNil sets the value for AmountNet to be an explicit nil
 func (o *ReceivedDocument) SetAmountNetNil() *ReceivedDocument {
 	o.AmountNet.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountNet ensures that no value is present for AmountNet, not even an explicit nil
@@ -413,12 +413,12 @@ func (o *ReceivedDocument) HasAmountVat() bool {
 // SetAmountVat gets a reference to the given NullableFloat32 and assigns it to the AmountVat field.
 func (o *ReceivedDocument) SetAmountVat(v float32) *ReceivedDocument {
 	o.AmountVat.Set(&v)
-	return o
+        return o
 }
 // SetAmountVatNil sets the value for AmountVat to be an explicit nil
 func (o *ReceivedDocument) SetAmountVatNil() *ReceivedDocument {
 	o.AmountVat.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountVat ensures that no value is present for AmountVat, not even an explicit nil
@@ -457,12 +457,12 @@ func (o *ReceivedDocument) HasAmountWithholdingTax() bool {
 // SetAmountWithholdingTax gets a reference to the given NullableFloat32 and assigns it to the AmountWithholdingTax field.
 func (o *ReceivedDocument) SetAmountWithholdingTax(v float32) *ReceivedDocument {
 	o.AmountWithholdingTax.Set(&v)
-	return o
+        return o
 }
 // SetAmountWithholdingTaxNil sets the value for AmountWithholdingTax to be an explicit nil
 func (o *ReceivedDocument) SetAmountWithholdingTaxNil() *ReceivedDocument {
 	o.AmountWithholdingTax.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountWithholdingTax ensures that no value is present for AmountWithholdingTax, not even an explicit nil
@@ -501,12 +501,12 @@ func (o *ReceivedDocument) HasAmountOtherWithholdingTax() bool {
 // SetAmountOtherWithholdingTax gets a reference to the given NullableFloat32 and assigns it to the AmountOtherWithholdingTax field.
 func (o *ReceivedDocument) SetAmountOtherWithholdingTax(v float32) *ReceivedDocument {
 	o.AmountOtherWithholdingTax.Set(&v)
-	return o
+        return o
 }
 // SetAmountOtherWithholdingTaxNil sets the value for AmountOtherWithholdingTax to be an explicit nil
 func (o *ReceivedDocument) SetAmountOtherWithholdingTaxNil() *ReceivedDocument {
 	o.AmountOtherWithholdingTax.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountOtherWithholdingTax ensures that no value is present for AmountOtherWithholdingTax, not even an explicit nil
@@ -545,12 +545,12 @@ func (o *ReceivedDocument) HasAmountGross() bool {
 // SetAmountGross gets a reference to the given NullableFloat32 and assigns it to the AmountGross field.
 func (o *ReceivedDocument) SetAmountGross(v float32) *ReceivedDocument {
 	o.AmountGross.Set(&v)
-	return o
+        return o
 }
 // SetAmountGrossNil sets the value for AmountGross to be an explicit nil
 func (o *ReceivedDocument) SetAmountGrossNil() *ReceivedDocument {
 	o.AmountGross.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountGross ensures that no value is present for AmountGross, not even an explicit nil
@@ -589,12 +589,12 @@ func (o *ReceivedDocument) HasAmortization() bool {
 // SetAmortization gets a reference to the given NullableFloat32 and assigns it to the Amortization field.
 func (o *ReceivedDocument) SetAmortization(v float32) *ReceivedDocument {
 	o.Amortization.Set(&v)
-	return o
+        return o
 }
 // SetAmortizationNil sets the value for Amortization to be an explicit nil
 func (o *ReceivedDocument) SetAmortizationNil() *ReceivedDocument {
 	o.Amortization.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmortization ensures that no value is present for Amortization, not even an explicit nil
@@ -633,12 +633,12 @@ func (o *ReceivedDocument) HasRcCenter() bool {
 // SetRcCenter gets a reference to the given NullableString and assigns it to the RcCenter field.
 func (o *ReceivedDocument) SetRcCenter(v string) *ReceivedDocument {
 	o.RcCenter.Set(&v)
-	return o
+        return o
 }
 // SetRcCenterNil sets the value for RcCenter to be an explicit nil
 func (o *ReceivedDocument) SetRcCenterNil() *ReceivedDocument {
 	o.RcCenter.Set(nil)
-	return o
+    return o
 }
 
 // UnsetRcCenter ensures that no value is present for RcCenter, not even an explicit nil
@@ -677,12 +677,12 @@ func (o *ReceivedDocument) HasInvoiceNumber() bool {
 // SetInvoiceNumber gets a reference to the given NullableString and assigns it to the InvoiceNumber field.
 func (o *ReceivedDocument) SetInvoiceNumber(v string) *ReceivedDocument {
 	o.InvoiceNumber.Set(&v)
-	return o
+        return o
 }
 // SetInvoiceNumberNil sets the value for InvoiceNumber to be an explicit nil
 func (o *ReceivedDocument) SetInvoiceNumberNil() *ReceivedDocument {
 	o.InvoiceNumber.Set(nil)
-	return o
+    return o
 }
 
 // UnsetInvoiceNumber ensures that no value is present for InvoiceNumber, not even an explicit nil
@@ -721,12 +721,12 @@ func (o *ReceivedDocument) HasIsMarked() bool {
 // SetIsMarked gets a reference to the given NullableBool and assigns it to the IsMarked field.
 func (o *ReceivedDocument) SetIsMarked(v bool) *ReceivedDocument {
 	o.IsMarked.Set(&v)
-	return o
+        return o
 }
 // SetIsMarkedNil sets the value for IsMarked to be an explicit nil
 func (o *ReceivedDocument) SetIsMarkedNil() *ReceivedDocument {
 	o.IsMarked.Set(nil)
-	return o
+    return o
 }
 
 // UnsetIsMarked ensures that no value is present for IsMarked, not even an explicit nil
@@ -765,12 +765,12 @@ func (o *ReceivedDocument) HasIsDetailed() bool {
 // SetIsDetailed gets a reference to the given NullableBool and assigns it to the IsDetailed field.
 func (o *ReceivedDocument) SetIsDetailed(v bool) *ReceivedDocument {
 	o.IsDetailed.Set(&v)
-	return o
+        return o
 }
 // SetIsDetailedNil sets the value for IsDetailed to be an explicit nil
 func (o *ReceivedDocument) SetIsDetailedNil() *ReceivedDocument {
 	o.IsDetailed.Set(nil)
-	return o
+    return o
 }
 
 // UnsetIsDetailed ensures that no value is present for IsDetailed, not even an explicit nil
@@ -809,12 +809,12 @@ func (o *ReceivedDocument) HasEInvoice() bool {
 // SetEInvoice gets a reference to the given NullableBool and assigns it to the EInvoice field.
 func (o *ReceivedDocument) SetEInvoice(v bool) *ReceivedDocument {
 	o.EInvoice.Set(&v)
-	return o
+        return o
 }
 // SetEInvoiceNil sets the value for EInvoice to be an explicit nil
 func (o *ReceivedDocument) SetEInvoiceNil() *ReceivedDocument {
 	o.EInvoice.Set(nil)
-	return o
+    return o
 }
 
 // UnsetEInvoice ensures that no value is present for EInvoice, not even an explicit nil
@@ -853,12 +853,12 @@ func (o *ReceivedDocument) HasNextDueDate() bool {
 // SetNextDueDate gets a reference to the given NullableString and assigns it to the NextDueDate field.
 func (o *ReceivedDocument) SetNextDueDate(v string) *ReceivedDocument {
 	o.NextDueDate.Set(&v)
-	return o
+        return o
 }
 // SetNextDueDateNil sets the value for NextDueDate to be an explicit nil
 func (o *ReceivedDocument) SetNextDueDateNil() *ReceivedDocument {
 	o.NextDueDate.Set(nil)
-	return o
+    return o
 }
 
 // UnsetNextDueDate ensures that no value is present for NextDueDate, not even an explicit nil
@@ -896,7 +896,7 @@ func (o *ReceivedDocument) HasCurrency() bool {
 // SetCurrency gets a reference to the given Currency and assigns it to the Currency field.
 func (o *ReceivedDocument) SetCurrency(v Currency) *ReceivedDocument {
 	o.Currency = &v
-	return o
+        return o
 }
 
 // GetTaxDeductibility returns the TaxDeductibility field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -930,12 +930,12 @@ func (o *ReceivedDocument) HasTaxDeductibility() bool {
 // SetTaxDeductibility gets a reference to the given NullableFloat32 and assigns it to the TaxDeductibility field.
 func (o *ReceivedDocument) SetTaxDeductibility(v float32) *ReceivedDocument {
 	o.TaxDeductibility.Set(&v)
-	return o
+        return o
 }
 // SetTaxDeductibilityNil sets the value for TaxDeductibility to be an explicit nil
 func (o *ReceivedDocument) SetTaxDeductibilityNil() *ReceivedDocument {
 	o.TaxDeductibility.Set(nil)
-	return o
+    return o
 }
 
 // UnsetTaxDeductibility ensures that no value is present for TaxDeductibility, not even an explicit nil
@@ -974,12 +974,12 @@ func (o *ReceivedDocument) HasVatDeductibility() bool {
 // SetVatDeductibility gets a reference to the given NullableFloat32 and assigns it to the VatDeductibility field.
 func (o *ReceivedDocument) SetVatDeductibility(v float32) *ReceivedDocument {
 	o.VatDeductibility.Set(&v)
-	return o
+        return o
 }
 // SetVatDeductibilityNil sets the value for VatDeductibility to be an explicit nil
 func (o *ReceivedDocument) SetVatDeductibilityNil() *ReceivedDocument {
 	o.VatDeductibility.Set(nil)
-	return o
+    return o
 }
 
 // UnsetVatDeductibility ensures that no value is present for VatDeductibility, not even an explicit nil
@@ -1018,7 +1018,7 @@ func (o *ReceivedDocument) HasItemsList() bool {
 // SetItemsList gets a reference to the given []ReceivedDocumentItemsListItem and assigns it to the ItemsList field.
 func (o *ReceivedDocument) SetItemsList(v []ReceivedDocumentItemsListItem) *ReceivedDocument {
 	o.ItemsList = v
-	return o
+        return o
 }
 
 // GetPaymentsList returns the PaymentsList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1052,7 +1052,7 @@ func (o *ReceivedDocument) HasPaymentsList() bool {
 // SetPaymentsList gets a reference to the given []ReceivedDocumentPaymentsListItem and assigns it to the PaymentsList field.
 func (o *ReceivedDocument) SetPaymentsList(v []ReceivedDocumentPaymentsListItem) *ReceivedDocument {
 	o.PaymentsList = v
-	return o
+        return o
 }
 
 // GetAttachmentUrl returns the AttachmentUrl field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1086,12 +1086,12 @@ func (o *ReceivedDocument) HasAttachmentUrl() bool {
 // SetAttachmentUrl gets a reference to the given NullableString and assigns it to the AttachmentUrl field.
 func (o *ReceivedDocument) SetAttachmentUrl(v string) *ReceivedDocument {
 	o.AttachmentUrl.Set(&v)
-	return o
+        return o
 }
 // SetAttachmentUrlNil sets the value for AttachmentUrl to be an explicit nil
 func (o *ReceivedDocument) SetAttachmentUrlNil() *ReceivedDocument {
 	o.AttachmentUrl.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAttachmentUrl ensures that no value is present for AttachmentUrl, not even an explicit nil
@@ -1130,12 +1130,12 @@ func (o *ReceivedDocument) HasAttachmentPreviewUrl() bool {
 // SetAttachmentPreviewUrl gets a reference to the given NullableString and assigns it to the AttachmentPreviewUrl field.
 func (o *ReceivedDocument) SetAttachmentPreviewUrl(v string) *ReceivedDocument {
 	o.AttachmentPreviewUrl.Set(&v)
-	return o
+        return o
 }
 // SetAttachmentPreviewUrlNil sets the value for AttachmentPreviewUrl to be an explicit nil
 func (o *ReceivedDocument) SetAttachmentPreviewUrlNil() *ReceivedDocument {
 	o.AttachmentPreviewUrl.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAttachmentPreviewUrl ensures that no value is present for AttachmentPreviewUrl, not even an explicit nil
@@ -1174,12 +1174,12 @@ func (o *ReceivedDocument) HasAutoCalculate() bool {
 // SetAutoCalculate gets a reference to the given NullableBool and assigns it to the AutoCalculate field.
 func (o *ReceivedDocument) SetAutoCalculate(v bool) *ReceivedDocument {
 	o.AutoCalculate.Set(&v)
-	return o
+        return o
 }
 // SetAutoCalculateNil sets the value for AutoCalculate to be an explicit nil
 func (o *ReceivedDocument) SetAutoCalculateNil() *ReceivedDocument {
 	o.AutoCalculate.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAutoCalculate ensures that no value is present for AutoCalculate, not even an explicit nil
@@ -1218,12 +1218,12 @@ func (o *ReceivedDocument) HasAttachmentToken() bool {
 // SetAttachmentToken gets a reference to the given NullableString and assigns it to the AttachmentToken field.
 func (o *ReceivedDocument) SetAttachmentToken(v string) *ReceivedDocument {
 	o.AttachmentToken.Set(&v)
-	return o
+        return o
 }
 // SetAttachmentTokenNil sets the value for AttachmentToken to be an explicit nil
 func (o *ReceivedDocument) SetAttachmentTokenNil() *ReceivedDocument {
 	o.AttachmentToken.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAttachmentToken ensures that no value is present for AttachmentToken, not even an explicit nil
@@ -1262,12 +1262,12 @@ func (o *ReceivedDocument) HasLocked() bool {
 // SetLocked gets a reference to the given NullableBool and assigns it to the Locked field.
 func (o *ReceivedDocument) SetLocked(v bool) *ReceivedDocument {
 	o.Locked.Set(&v)
-	return o
+        return o
 }
 // SetLockedNil sets the value for Locked to be an explicit nil
 func (o *ReceivedDocument) SetLockedNil() *ReceivedDocument {
 	o.Locked.Set(nil)
-	return o
+    return o
 }
 
 // UnsetLocked ensures that no value is present for Locked, not even an explicit nil
@@ -1306,12 +1306,12 @@ func (o *ReceivedDocument) HasCreatedAt() bool {
 // SetCreatedAt gets a reference to the given NullableString and assigns it to the CreatedAt field.
 func (o *ReceivedDocument) SetCreatedAt(v string) *ReceivedDocument {
 	o.CreatedAt.Set(&v)
-	return o
+        return o
 }
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *ReceivedDocument) SetCreatedAtNil() *ReceivedDocument {
 	o.CreatedAt.Set(nil)
-	return o
+    return o
 }
 
 // UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
@@ -1350,12 +1350,12 @@ func (o *ReceivedDocument) HasUpdatedAt() bool {
 // SetUpdatedAt gets a reference to the given NullableString and assigns it to the UpdatedAt field.
 func (o *ReceivedDocument) SetUpdatedAt(v string) *ReceivedDocument {
 	o.UpdatedAt.Set(&v)
-	return o
+        return o
 }
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *ReceivedDocument) SetUpdatedAtNil() *ReceivedDocument {
 	o.UpdatedAt.Set(nil)
-	return o
+    return o
 }
 
 // UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil

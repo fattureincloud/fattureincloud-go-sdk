@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &GetUserInfoResponseEmailConfirmationState{}
 
 // GetUserInfoResponseEmailConfirmationState struct for GetUserInfoResponseEmailConfirmationState
 type GetUserInfoResponseEmailConfirmationState struct {
-	NeedConfirmation NullableBool `json:"need_confirmation,omitempty"`
+NeedConfirmation NullableBool `json:"need_confirmation,omitempty"`
 }
 
 // NewGetUserInfoResponseEmailConfirmationState instantiates a new GetUserInfoResponseEmailConfirmationState object
@@ -71,12 +71,12 @@ func (o *GetUserInfoResponseEmailConfirmationState) HasNeedConfirmation() bool {
 // SetNeedConfirmation gets a reference to the given NullableBool and assigns it to the NeedConfirmation field.
 func (o *GetUserInfoResponseEmailConfirmationState) SetNeedConfirmation(v bool) *GetUserInfoResponseEmailConfirmationState {
 	o.NeedConfirmation.Set(&v)
-	return o
+        return o
 }
 // SetNeedConfirmationNil sets the value for NeedConfirmation to be an explicit nil
 func (o *GetUserInfoResponseEmailConfirmationState) SetNeedConfirmationNil() *GetUserInfoResponseEmailConfirmationState {
 	o.NeedConfirmation.Set(nil)
-	return o
+    return o
 }
 
 // UnsetNeedConfirmation ensures that no value is present for NeedConfirmation, not even an explicit nil

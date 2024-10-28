@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -21,9 +21,9 @@ var _ MappedNullable = &EmailAttachment{}
 // EmailAttachment struct for EmailAttachment
 type EmailAttachment struct {
 	// Email attachment filename
-	Filename *string `json:"filename,omitempty"`
+Filename *string `json:"filename,omitempty"`
 	// Email attachment url
-	Url *string `json:"url,omitempty"`
+Url *string `json:"url,omitempty"`
 }
 
 // NewEmailAttachment instantiates a new EmailAttachment object
@@ -73,7 +73,7 @@ func (o *EmailAttachment) HasFilename() bool {
 // SetFilename gets a reference to the given string and assigns it to the Filename field.
 func (o *EmailAttachment) SetFilename(v string) *EmailAttachment {
 	o.Filename = &v
-	return o
+        return o
 }
 
 // GetUrl returns the Url field value if set, zero value otherwise.
@@ -106,7 +106,7 @@ func (o *EmailAttachment) HasUrl() bool {
 // SetUrl gets a reference to the given string and assigns it to the Url field.
 func (o *EmailAttachment) SetUrl(v string) *EmailAttachment {
 	o.Url = &v
-	return o
+        return o
 }
 
 func (o EmailAttachment) MarshalJSON() ([]byte, error) {

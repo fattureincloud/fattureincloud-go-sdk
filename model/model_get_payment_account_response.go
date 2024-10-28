@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &GetPaymentAccountResponse{}
 
 // GetPaymentAccountResponse struct for GetPaymentAccountResponse
 type GetPaymentAccountResponse struct {
-	Data NullablePaymentAccount `json:"data,omitempty"`
+Data NullablePaymentAccount `json:"data,omitempty"`
 }
 
 // NewGetPaymentAccountResponse instantiates a new GetPaymentAccountResponse object
@@ -71,12 +71,12 @@ func (o *GetPaymentAccountResponse) HasData() bool {
 // SetData gets a reference to the given NullablePaymentAccount and assigns it to the Data field.
 func (o *GetPaymentAccountResponse) SetData(v PaymentAccount) *GetPaymentAccountResponse {
 	o.Data.Set(&v)
-	return o
+        return o
 }
 // SetDataNil sets the value for Data to be an explicit nil
 func (o *GetPaymentAccountResponse) SetDataNil() *GetPaymentAccountResponse {
 	o.Data.Set(nil)
-	return o
+    return o
 }
 
 // UnsetData ensures that no value is present for Data, not even an explicit nil

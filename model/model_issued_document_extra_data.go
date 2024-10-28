@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -20,27 +20,27 @@ var _ MappedNullable = &IssuedDocumentExtraData{}
 
 // IssuedDocumentExtraData Issued document extra data [TS fields follow the technical specifications provided by \"Sistema Tessera Sanitaria\"]
 type IssuedDocumentExtraData struct {
-	MultifattureSent NullableInt32 `json:"multifatture_sent,omitempty"`
+MultifattureSent NullableInt32 `json:"multifatture_sent,omitempty"`
 	// Send issued document to \"Sistema Tessera Sanitaria\"
-	TsCommunication NullableBool `json:"ts_communication,omitempty"`
+TsCommunication NullableBool `json:"ts_communication,omitempty"`
 	// Issued document ts \"tipo spesa\" [TK, FC, FV, SV,SP, AD, AS, ECG, SR]
-	TsFlagTipoSpesa NullableFloat32 `json:"ts_flag_tipo_spesa,omitempty"`
+TsFlagTipoSpesa NullableFloat32 `json:"ts_flag_tipo_spesa,omitempty"`
 	// Issued document ts traced payment
-	TsPagamentoTracciato NullableBool `json:"ts_pagamento_tracciato,omitempty"`
+TsPagamentoTracciato NullableBool `json:"ts_pagamento_tracciato,omitempty"`
 	// Can be [ 'TK', 'FC', 'FV', 'SV', 'SP', 'AD', 'AS', 'SR', 'CT', 'PI', 'IC', 'AA' ]. Refer to the technical specifications to learn more.
-	TsTipoSpesa NullableString `json:"ts_tipo_spesa,omitempty"`
+TsTipoSpesa NullableString `json:"ts_tipo_spesa,omitempty"`
 	// Issued document ts \"opposizione\"
-	TsOpposizione NullableBool `json:"ts_opposizione,omitempty"`
+TsOpposizione NullableBool `json:"ts_opposizione,omitempty"`
 	// Issued document ts status
-	TsStatus NullableInt32 `json:"ts_status,omitempty"`
+TsStatus NullableInt32 `json:"ts_status,omitempty"`
 	// Issued document ts file id
-	TsFileId NullableString `json:"ts_file_id,omitempty"`
+TsFileId NullableString `json:"ts_file_id,omitempty"`
 	// Issued document ts sent date
-	TsSentDate NullableString `json:"ts_sent_date,omitempty"`
+TsSentDate NullableString `json:"ts_sent_date,omitempty"`
 	// Issued document ts total amount
-	TsFullAmount NullableBool `json:"ts_full_amount,omitempty"`
+TsFullAmount NullableBool `json:"ts_full_amount,omitempty"`
 	// Issued document imported by software
-	ImportedBy NullableString `json:"imported_by,omitempty"`
+ImportedBy NullableString `json:"imported_by,omitempty"`
 }
 
 // NewIssuedDocumentExtraData instantiates a new IssuedDocumentExtraData object
@@ -91,12 +91,12 @@ func (o *IssuedDocumentExtraData) HasMultifattureSent() bool {
 // SetMultifattureSent gets a reference to the given NullableInt32 and assigns it to the MultifattureSent field.
 func (o *IssuedDocumentExtraData) SetMultifattureSent(v int32) *IssuedDocumentExtraData {
 	o.MultifattureSent.Set(&v)
-	return o
+        return o
 }
 // SetMultifattureSentNil sets the value for MultifattureSent to be an explicit nil
 func (o *IssuedDocumentExtraData) SetMultifattureSentNil() *IssuedDocumentExtraData {
 	o.MultifattureSent.Set(nil)
-	return o
+    return o
 }
 
 // UnsetMultifattureSent ensures that no value is present for MultifattureSent, not even an explicit nil
@@ -135,12 +135,12 @@ func (o *IssuedDocumentExtraData) HasTsCommunication() bool {
 // SetTsCommunication gets a reference to the given NullableBool and assigns it to the TsCommunication field.
 func (o *IssuedDocumentExtraData) SetTsCommunication(v bool) *IssuedDocumentExtraData {
 	o.TsCommunication.Set(&v)
-	return o
+        return o
 }
 // SetTsCommunicationNil sets the value for TsCommunication to be an explicit nil
 func (o *IssuedDocumentExtraData) SetTsCommunicationNil() *IssuedDocumentExtraData {
 	o.TsCommunication.Set(nil)
-	return o
+    return o
 }
 
 // UnsetTsCommunication ensures that no value is present for TsCommunication, not even an explicit nil
@@ -179,12 +179,12 @@ func (o *IssuedDocumentExtraData) HasTsFlagTipoSpesa() bool {
 // SetTsFlagTipoSpesa gets a reference to the given NullableFloat32 and assigns it to the TsFlagTipoSpesa field.
 func (o *IssuedDocumentExtraData) SetTsFlagTipoSpesa(v float32) *IssuedDocumentExtraData {
 	o.TsFlagTipoSpesa.Set(&v)
-	return o
+        return o
 }
 // SetTsFlagTipoSpesaNil sets the value for TsFlagTipoSpesa to be an explicit nil
 func (o *IssuedDocumentExtraData) SetTsFlagTipoSpesaNil() *IssuedDocumentExtraData {
 	o.TsFlagTipoSpesa.Set(nil)
-	return o
+    return o
 }
 
 // UnsetTsFlagTipoSpesa ensures that no value is present for TsFlagTipoSpesa, not even an explicit nil
@@ -223,12 +223,12 @@ func (o *IssuedDocumentExtraData) HasTsPagamentoTracciato() bool {
 // SetTsPagamentoTracciato gets a reference to the given NullableBool and assigns it to the TsPagamentoTracciato field.
 func (o *IssuedDocumentExtraData) SetTsPagamentoTracciato(v bool) *IssuedDocumentExtraData {
 	o.TsPagamentoTracciato.Set(&v)
-	return o
+        return o
 }
 // SetTsPagamentoTracciatoNil sets the value for TsPagamentoTracciato to be an explicit nil
 func (o *IssuedDocumentExtraData) SetTsPagamentoTracciatoNil() *IssuedDocumentExtraData {
 	o.TsPagamentoTracciato.Set(nil)
-	return o
+    return o
 }
 
 // UnsetTsPagamentoTracciato ensures that no value is present for TsPagamentoTracciato, not even an explicit nil
@@ -267,12 +267,12 @@ func (o *IssuedDocumentExtraData) HasTsTipoSpesa() bool {
 // SetTsTipoSpesa gets a reference to the given NullableString and assigns it to the TsTipoSpesa field.
 func (o *IssuedDocumentExtraData) SetTsTipoSpesa(v string) *IssuedDocumentExtraData {
 	o.TsTipoSpesa.Set(&v)
-	return o
+        return o
 }
 // SetTsTipoSpesaNil sets the value for TsTipoSpesa to be an explicit nil
 func (o *IssuedDocumentExtraData) SetTsTipoSpesaNil() *IssuedDocumentExtraData {
 	o.TsTipoSpesa.Set(nil)
-	return o
+    return o
 }
 
 // UnsetTsTipoSpesa ensures that no value is present for TsTipoSpesa, not even an explicit nil
@@ -311,12 +311,12 @@ func (o *IssuedDocumentExtraData) HasTsOpposizione() bool {
 // SetTsOpposizione gets a reference to the given NullableBool and assigns it to the TsOpposizione field.
 func (o *IssuedDocumentExtraData) SetTsOpposizione(v bool) *IssuedDocumentExtraData {
 	o.TsOpposizione.Set(&v)
-	return o
+        return o
 }
 // SetTsOpposizioneNil sets the value for TsOpposizione to be an explicit nil
 func (o *IssuedDocumentExtraData) SetTsOpposizioneNil() *IssuedDocumentExtraData {
 	o.TsOpposizione.Set(nil)
-	return o
+    return o
 }
 
 // UnsetTsOpposizione ensures that no value is present for TsOpposizione, not even an explicit nil
@@ -355,12 +355,12 @@ func (o *IssuedDocumentExtraData) HasTsStatus() bool {
 // SetTsStatus gets a reference to the given NullableInt32 and assigns it to the TsStatus field.
 func (o *IssuedDocumentExtraData) SetTsStatus(v int32) *IssuedDocumentExtraData {
 	o.TsStatus.Set(&v)
-	return o
+        return o
 }
 // SetTsStatusNil sets the value for TsStatus to be an explicit nil
 func (o *IssuedDocumentExtraData) SetTsStatusNil() *IssuedDocumentExtraData {
 	o.TsStatus.Set(nil)
-	return o
+    return o
 }
 
 // UnsetTsStatus ensures that no value is present for TsStatus, not even an explicit nil
@@ -399,12 +399,12 @@ func (o *IssuedDocumentExtraData) HasTsFileId() bool {
 // SetTsFileId gets a reference to the given NullableString and assigns it to the TsFileId field.
 func (o *IssuedDocumentExtraData) SetTsFileId(v string) *IssuedDocumentExtraData {
 	o.TsFileId.Set(&v)
-	return o
+        return o
 }
 // SetTsFileIdNil sets the value for TsFileId to be an explicit nil
 func (o *IssuedDocumentExtraData) SetTsFileIdNil() *IssuedDocumentExtraData {
 	o.TsFileId.Set(nil)
-	return o
+    return o
 }
 
 // UnsetTsFileId ensures that no value is present for TsFileId, not even an explicit nil
@@ -443,12 +443,12 @@ func (o *IssuedDocumentExtraData) HasTsSentDate() bool {
 // SetTsSentDate gets a reference to the given NullableString and assigns it to the TsSentDate field.
 func (o *IssuedDocumentExtraData) SetTsSentDate(v string) *IssuedDocumentExtraData {
 	o.TsSentDate.Set(&v)
-	return o
+        return o
 }
 // SetTsSentDateNil sets the value for TsSentDate to be an explicit nil
 func (o *IssuedDocumentExtraData) SetTsSentDateNil() *IssuedDocumentExtraData {
 	o.TsSentDate.Set(nil)
-	return o
+    return o
 }
 
 // UnsetTsSentDate ensures that no value is present for TsSentDate, not even an explicit nil
@@ -487,12 +487,12 @@ func (o *IssuedDocumentExtraData) HasTsFullAmount() bool {
 // SetTsFullAmount gets a reference to the given NullableBool and assigns it to the TsFullAmount field.
 func (o *IssuedDocumentExtraData) SetTsFullAmount(v bool) *IssuedDocumentExtraData {
 	o.TsFullAmount.Set(&v)
-	return o
+        return o
 }
 // SetTsFullAmountNil sets the value for TsFullAmount to be an explicit nil
 func (o *IssuedDocumentExtraData) SetTsFullAmountNil() *IssuedDocumentExtraData {
 	o.TsFullAmount.Set(nil)
-	return o
+    return o
 }
 
 // UnsetTsFullAmount ensures that no value is present for TsFullAmount, not even an explicit nil
@@ -531,12 +531,12 @@ func (o *IssuedDocumentExtraData) HasImportedBy() bool {
 // SetImportedBy gets a reference to the given NullableString and assigns it to the ImportedBy field.
 func (o *IssuedDocumentExtraData) SetImportedBy(v string) *IssuedDocumentExtraData {
 	o.ImportedBy.Set(&v)
-	return o
+        return o
 }
 // SetImportedByNil sets the value for ImportedBy to be an explicit nil
 func (o *IssuedDocumentExtraData) SetImportedByNil() *IssuedDocumentExtraData {
 	o.ImportedBy.Set(nil)
-	return o
+    return o
 }
 
 // UnsetImportedBy ensures that no value is present for ImportedBy, not even an explicit nil

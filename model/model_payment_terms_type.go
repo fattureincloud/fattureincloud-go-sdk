@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -21,11 +21,11 @@ type PaymentTermsType string
 
 // List of PaymentTermsType
 var PaymentTermsTypes = struct {
-	STANDARD PaymentTermsType
-	END_OF_MONTH PaymentTermsType
+    STANDARD PaymentTermsType
+    END_OF_MONTH PaymentTermsType
 } {
-	STANDARD: "standard",
-	END_OF_MONTH: "end_of_month",
+            STANDARD: "standard",
+            END_OF_MONTH: "end_of_month",
 }
 
 // All allowed values of PaymentTermsType enum

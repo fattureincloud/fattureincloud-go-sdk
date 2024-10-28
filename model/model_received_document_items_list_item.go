@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -21,24 +21,24 @@ var _ MappedNullable = &ReceivedDocumentItemsListItem{}
 // ReceivedDocumentItemsListItem struct for ReceivedDocumentItemsListItem
 type ReceivedDocumentItemsListItem struct {
 	// Received document item id
-	Id NullableInt32 `json:"id,omitempty"`
+Id NullableInt32 `json:"id,omitempty"`
 	// Received document product id
-	ProductId NullableInt32 `json:"product_id,omitempty"`
+ProductId NullableInt32 `json:"product_id,omitempty"`
 	// Received document item product code
-	Code NullableString `json:"code,omitempty"`
+Code NullableString `json:"code,omitempty"`
 	// Received document item product name
-	Name NullableString `json:"name,omitempty"`
+Name NullableString `json:"name,omitempty"`
 	// Received document item measure
-	Measure NullableString `json:"measure,omitempty"`
+Measure NullableString `json:"measure,omitempty"`
 	// Received document item product net price
-	NetPrice NullableFloat32 `json:"net_price,omitempty"`
+NetPrice NullableFloat32 `json:"net_price,omitempty"`
 	// Received document item product category
-	Category NullableString `json:"category,omitempty"`
+Category NullableString `json:"category,omitempty"`
 	// Received document item quantity
-	Qty NullableFloat32 `json:"qty,omitempty"`
-	Vat NullableVatType `json:"vat,omitempty"`
+Qty NullableFloat32 `json:"qty,omitempty"`
+Vat NullableVatType `json:"vat,omitempty"`
 	// Received document item product number of items in stock
-	Stock NullableFloat32 `json:"stock,omitempty"`
+Stock NullableFloat32 `json:"stock,omitempty"`
 }
 
 // NewReceivedDocumentItemsListItem instantiates a new ReceivedDocumentItemsListItem object
@@ -89,12 +89,12 @@ func (o *ReceivedDocumentItemsListItem) HasId() bool {
 // SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *ReceivedDocumentItemsListItem) SetId(v int32) *ReceivedDocumentItemsListItem {
 	o.Id.Set(&v)
-	return o
+        return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *ReceivedDocumentItemsListItem) SetIdNil() *ReceivedDocumentItemsListItem {
 	o.Id.Set(nil)
-	return o
+    return o
 }
 
 // UnsetId ensures that no value is present for Id, not even an explicit nil
@@ -133,12 +133,12 @@ func (o *ReceivedDocumentItemsListItem) HasProductId() bool {
 // SetProductId gets a reference to the given NullableInt32 and assigns it to the ProductId field.
 func (o *ReceivedDocumentItemsListItem) SetProductId(v int32) *ReceivedDocumentItemsListItem {
 	o.ProductId.Set(&v)
-	return o
+        return o
 }
 // SetProductIdNil sets the value for ProductId to be an explicit nil
 func (o *ReceivedDocumentItemsListItem) SetProductIdNil() *ReceivedDocumentItemsListItem {
 	o.ProductId.Set(nil)
-	return o
+    return o
 }
 
 // UnsetProductId ensures that no value is present for ProductId, not even an explicit nil
@@ -177,12 +177,12 @@ func (o *ReceivedDocumentItemsListItem) HasCode() bool {
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *ReceivedDocumentItemsListItem) SetCode(v string) *ReceivedDocumentItemsListItem {
 	o.Code.Set(&v)
-	return o
+        return o
 }
 // SetCodeNil sets the value for Code to be an explicit nil
 func (o *ReceivedDocumentItemsListItem) SetCodeNil() *ReceivedDocumentItemsListItem {
 	o.Code.Set(nil)
-	return o
+    return o
 }
 
 // UnsetCode ensures that no value is present for Code, not even an explicit nil
@@ -221,12 +221,12 @@ func (o *ReceivedDocumentItemsListItem) HasName() bool {
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *ReceivedDocumentItemsListItem) SetName(v string) *ReceivedDocumentItemsListItem {
 	o.Name.Set(&v)
-	return o
+        return o
 }
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *ReceivedDocumentItemsListItem) SetNameNil() *ReceivedDocumentItemsListItem {
 	o.Name.Set(nil)
-	return o
+    return o
 }
 
 // UnsetName ensures that no value is present for Name, not even an explicit nil
@@ -265,12 +265,12 @@ func (o *ReceivedDocumentItemsListItem) HasMeasure() bool {
 // SetMeasure gets a reference to the given NullableString and assigns it to the Measure field.
 func (o *ReceivedDocumentItemsListItem) SetMeasure(v string) *ReceivedDocumentItemsListItem {
 	o.Measure.Set(&v)
-	return o
+        return o
 }
 // SetMeasureNil sets the value for Measure to be an explicit nil
 func (o *ReceivedDocumentItemsListItem) SetMeasureNil() *ReceivedDocumentItemsListItem {
 	o.Measure.Set(nil)
-	return o
+    return o
 }
 
 // UnsetMeasure ensures that no value is present for Measure, not even an explicit nil
@@ -309,12 +309,12 @@ func (o *ReceivedDocumentItemsListItem) HasNetPrice() bool {
 // SetNetPrice gets a reference to the given NullableFloat32 and assigns it to the NetPrice field.
 func (o *ReceivedDocumentItemsListItem) SetNetPrice(v float32) *ReceivedDocumentItemsListItem {
 	o.NetPrice.Set(&v)
-	return o
+        return o
 }
 // SetNetPriceNil sets the value for NetPrice to be an explicit nil
 func (o *ReceivedDocumentItemsListItem) SetNetPriceNil() *ReceivedDocumentItemsListItem {
 	o.NetPrice.Set(nil)
-	return o
+    return o
 }
 
 // UnsetNetPrice ensures that no value is present for NetPrice, not even an explicit nil
@@ -353,12 +353,12 @@ func (o *ReceivedDocumentItemsListItem) HasCategory() bool {
 // SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *ReceivedDocumentItemsListItem) SetCategory(v string) *ReceivedDocumentItemsListItem {
 	o.Category.Set(&v)
-	return o
+        return o
 }
 // SetCategoryNil sets the value for Category to be an explicit nil
 func (o *ReceivedDocumentItemsListItem) SetCategoryNil() *ReceivedDocumentItemsListItem {
 	o.Category.Set(nil)
-	return o
+    return o
 }
 
 // UnsetCategory ensures that no value is present for Category, not even an explicit nil
@@ -397,12 +397,12 @@ func (o *ReceivedDocumentItemsListItem) HasQty() bool {
 // SetQty gets a reference to the given NullableFloat32 and assigns it to the Qty field.
 func (o *ReceivedDocumentItemsListItem) SetQty(v float32) *ReceivedDocumentItemsListItem {
 	o.Qty.Set(&v)
-	return o
+        return o
 }
 // SetQtyNil sets the value for Qty to be an explicit nil
 func (o *ReceivedDocumentItemsListItem) SetQtyNil() *ReceivedDocumentItemsListItem {
 	o.Qty.Set(nil)
-	return o
+    return o
 }
 
 // UnsetQty ensures that no value is present for Qty, not even an explicit nil
@@ -441,12 +441,12 @@ func (o *ReceivedDocumentItemsListItem) HasVat() bool {
 // SetVat gets a reference to the given NullableVatType and assigns it to the Vat field.
 func (o *ReceivedDocumentItemsListItem) SetVat(v VatType) *ReceivedDocumentItemsListItem {
 	o.Vat.Set(&v)
-	return o
+        return o
 }
 // SetVatNil sets the value for Vat to be an explicit nil
 func (o *ReceivedDocumentItemsListItem) SetVatNil() *ReceivedDocumentItemsListItem {
 	o.Vat.Set(nil)
-	return o
+    return o
 }
 
 // UnsetVat ensures that no value is present for Vat, not even an explicit nil
@@ -485,12 +485,12 @@ func (o *ReceivedDocumentItemsListItem) HasStock() bool {
 // SetStock gets a reference to the given NullableFloat32 and assigns it to the Stock field.
 func (o *ReceivedDocumentItemsListItem) SetStock(v float32) *ReceivedDocumentItemsListItem {
 	o.Stock.Set(&v)
-	return o
+        return o
 }
 // SetStockNil sets the value for Stock to be an explicit nil
 func (o *ReceivedDocumentItemsListItem) SetStockNil() *ReceivedDocumentItemsListItem {
 	o.Stock.Set(nil)
-	return o
+    return o
 }
 
 // UnsetStock ensures that no value is present for Stock, not even an explicit nil

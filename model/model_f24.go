@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -21,19 +21,19 @@ var _ MappedNullable = &F24{}
 // F24 struct for F24
 type F24 struct {
 	// F24 id
-	Id NullableInt32 `json:"id,omitempty"`
+Id NullableInt32 `json:"id,omitempty"`
 	// F24 due date
-	DueDate NullableString `json:"due_date,omitempty"`
-	Status *F24Status `json:"status,omitempty"`
-	PaymentAccount NullablePaymentAccount `json:"payment_account,omitempty"`
+DueDate NullableString `json:"due_date,omitempty"`
+Status *F24Status `json:"status,omitempty"`
+PaymentAccount NullablePaymentAccount `json:"payment_account,omitempty"`
 	// F24 amount
-	Amount NullableFloat32 `json:"amount,omitempty"`
+Amount NullableFloat32 `json:"amount,omitempty"`
 	// [Temporary] [Read Only] F24 url of the attached file
-	AttachmentUrl NullableString `json:"attachment_url,omitempty"`
+AttachmentUrl NullableString `json:"attachment_url,omitempty"`
 	// [Write Only]  F24 attachment token returned by POST /taxes/attachment
-	AttachmentToken NullableString `json:"attachment_token,omitempty"`
+AttachmentToken NullableString `json:"attachment_token,omitempty"`
 	// F24 description
-	Description NullableString `json:"description,omitempty"`
+Description NullableString `json:"description,omitempty"`
 }
 
 // NewF24 instantiates a new F24 object
@@ -84,12 +84,12 @@ func (o *F24) HasId() bool {
 // SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *F24) SetId(v int32) *F24 {
 	o.Id.Set(&v)
-	return o
+        return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *F24) SetIdNil() *F24 {
 	o.Id.Set(nil)
-	return o
+    return o
 }
 
 // UnsetId ensures that no value is present for Id, not even an explicit nil
@@ -128,12 +128,12 @@ func (o *F24) HasDueDate() bool {
 // SetDueDate gets a reference to the given NullableString and assigns it to the DueDate field.
 func (o *F24) SetDueDate(v string) *F24 {
 	o.DueDate.Set(&v)
-	return o
+        return o
 }
 // SetDueDateNil sets the value for DueDate to be an explicit nil
 func (o *F24) SetDueDateNil() *F24 {
 	o.DueDate.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDueDate ensures that no value is present for DueDate, not even an explicit nil
@@ -171,7 +171,7 @@ func (o *F24) HasStatus() bool {
 // SetStatus gets a reference to the given F24Status and assigns it to the Status field.
 func (o *F24) SetStatus(v F24Status) *F24 {
 	o.Status = &v
-	return o
+        return o
 }
 
 // GetPaymentAccount returns the PaymentAccount field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -205,12 +205,12 @@ func (o *F24) HasPaymentAccount() bool {
 // SetPaymentAccount gets a reference to the given NullablePaymentAccount and assigns it to the PaymentAccount field.
 func (o *F24) SetPaymentAccount(v PaymentAccount) *F24 {
 	o.PaymentAccount.Set(&v)
-	return o
+        return o
 }
 // SetPaymentAccountNil sets the value for PaymentAccount to be an explicit nil
 func (o *F24) SetPaymentAccountNil() *F24 {
 	o.PaymentAccount.Set(nil)
-	return o
+    return o
 }
 
 // UnsetPaymentAccount ensures that no value is present for PaymentAccount, not even an explicit nil
@@ -249,12 +249,12 @@ func (o *F24) HasAmount() bool {
 // SetAmount gets a reference to the given NullableFloat32 and assigns it to the Amount field.
 func (o *F24) SetAmount(v float32) *F24 {
 	o.Amount.Set(&v)
-	return o
+        return o
 }
 // SetAmountNil sets the value for Amount to be an explicit nil
 func (o *F24) SetAmountNil() *F24 {
 	o.Amount.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmount ensures that no value is present for Amount, not even an explicit nil
@@ -293,12 +293,12 @@ func (o *F24) HasAttachmentUrl() bool {
 // SetAttachmentUrl gets a reference to the given NullableString and assigns it to the AttachmentUrl field.
 func (o *F24) SetAttachmentUrl(v string) *F24 {
 	o.AttachmentUrl.Set(&v)
-	return o
+        return o
 }
 // SetAttachmentUrlNil sets the value for AttachmentUrl to be an explicit nil
 func (o *F24) SetAttachmentUrlNil() *F24 {
 	o.AttachmentUrl.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAttachmentUrl ensures that no value is present for AttachmentUrl, not even an explicit nil
@@ -337,12 +337,12 @@ func (o *F24) HasAttachmentToken() bool {
 // SetAttachmentToken gets a reference to the given NullableString and assigns it to the AttachmentToken field.
 func (o *F24) SetAttachmentToken(v string) *F24 {
 	o.AttachmentToken.Set(&v)
-	return o
+        return o
 }
 // SetAttachmentTokenNil sets the value for AttachmentToken to be an explicit nil
 func (o *F24) SetAttachmentTokenNil() *F24 {
 	o.AttachmentToken.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAttachmentToken ensures that no value is present for AttachmentToken, not even an explicit nil
@@ -381,12 +381,12 @@ func (o *F24) HasDescription() bool {
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *F24) SetDescription(v string) *F24 {
 	o.Description.Set(&v)
-	return o
+        return o
 }
 // SetDescriptionNil sets the value for Description to be an explicit nil
 func (o *F24) SetDescriptionNil() *F24 {
 	o.Description.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDescription ensures that no value is present for Description, not even an explicit nil

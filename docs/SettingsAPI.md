@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**DeleteVatType**](SettingsAPI.md#DeleteVatType) | **Delete** /c/{company_id}/settings/vat_types/{vat_type_id} | Delete Vat Type
 [**GetPaymentAccount**](SettingsAPI.md#GetPaymentAccount) | **Get** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Get Payment Account
 [**GetPaymentMethod**](SettingsAPI.md#GetPaymentMethod) | **Get** /c/{company_id}/settings/payment_methods/{payment_method_id} | Get Payment Method
+[**GetTaxProfile**](SettingsAPI.md#GetTaxProfile) | **Get** /c/{company_id}/settings/tax_profile | Get Tax Profile
 [**GetVatType**](SettingsAPI.md#GetVatType) | **Get** /c/{company_id}/settings/vat_types/{vat_type_id} | Get Vat Type
 [**ModifyPaymentAccount**](SettingsAPI.md#ModifyPaymentAccount) | **Put** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Modify Payment Account
 [**ModifyPaymentMethod**](SettingsAPI.md#ModifyPaymentMethod) | **Put** /c/{company_id}/settings/payment_methods/{payment_method_id} | Modify Payment Method
@@ -33,28 +34,28 @@ Create Payment Account
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    createPaymentAccountRequest := *fattureincloud.NewCreatePaymentAccountRequest() // CreatePaymentAccountRequest |  (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        createPaymentAccountRequest := *fattureincloud.NewCreatePaymentAccountRequest() // CreatePaymentAccountRequest |  (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.SettingsAPI.CreatePaymentAccount(auth, companyId).CreatePaymentAccountRequest(createPaymentAccountRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.CreatePaymentAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.CreatePaymentAccount``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreatePaymentAccount`: CreatePaymentAccountResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `CreatePaymentAccount`: CreatePaymentAccountResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -108,28 +109,28 @@ Create Payment Method
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    createPaymentMethodRequest := *fattureincloud.NewCreatePaymentMethodRequest() // CreatePaymentMethodRequest |  (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        createPaymentMethodRequest := *fattureincloud.NewCreatePaymentMethodRequest() // CreatePaymentMethodRequest |  (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.SettingsAPI.CreatePaymentMethod(auth, companyId).CreatePaymentMethodRequest(createPaymentMethodRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.CreatePaymentMethod``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.CreatePaymentMethod``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreatePaymentMethod`: CreatePaymentMethodResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `CreatePaymentMethod`: CreatePaymentMethodResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -183,28 +184,28 @@ Create Vat Type
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    createVatTypeRequest := *fattureincloud.NewCreateVatTypeRequest() // CreateVatTypeRequest |  (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        createVatTypeRequest := *fattureincloud.NewCreateVatTypeRequest() // CreateVatTypeRequest |  (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.SettingsAPI.CreateVatType(auth, companyId).CreateVatTypeRequest(createVatTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.CreateVatType``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.CreateVatType``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateVatType`: CreateVatTypeResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `CreateVatType`: CreateVatTypeResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -258,25 +259,25 @@ Delete Payment Account
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    paymentAccountId := int32(56) // int32 | The Referred Payment Account Id.
+        companyId := int32(12345) // int32 | The ID of the company.
+        paymentAccountId := int32(56) // int32 | The Referred Payment Account Id.
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.SettingsAPI.DeletePaymentAccount(auth, companyId, paymentAccountId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.DeletePaymentAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.DeletePaymentAccount``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
 ```
@@ -332,25 +333,25 @@ Delete Payment Method
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    paymentMethodId := int32(56) // int32 | The Referred Payment Method Id.
+        companyId := int32(12345) // int32 | The ID of the company.
+        paymentMethodId := int32(56) // int32 | The Referred Payment Method Id.
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.SettingsAPI.DeletePaymentMethod(auth, companyId, paymentMethodId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.DeletePaymentMethod``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.DeletePaymentMethod``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
 ```
@@ -406,25 +407,25 @@ Delete Vat Type
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    vatTypeId := int32(56) // int32 | The Referred Vat Type Id.
+        companyId := int32(12345) // int32 | The ID of the company.
+        vatTypeId := int32(56) // int32 | The Referred Vat Type Id.
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.SettingsAPI.DeleteVatType(auth, companyId, vatTypeId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.DeleteVatType``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.DeleteVatType``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
 ```
@@ -480,30 +481,30 @@ Get Payment Account
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    paymentAccountId := int32(56) // int32 | The Referred Payment Account Id.
-    fields := "fields_example" // string | List of comma-separated fields. (optional)
-    fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        paymentAccountId := int32(56) // int32 | The Referred Payment Account Id.
+        fields := "fields_example" // string | List of comma-separated fields. (optional)
+        fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.SettingsAPI.GetPaymentAccount(auth, companyId, paymentAccountId).Fields(fields).Fieldset(fieldset).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.GetPaymentAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.GetPaymentAccount``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetPaymentAccount`: GetPaymentAccountResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `GetPaymentAccount`: GetPaymentAccountResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -560,30 +561,30 @@ Get Payment Method
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    paymentMethodId := int32(56) // int32 | The Referred Payment Method Id.
-    fields := "fields_example" // string | List of comma-separated fields. (optional)
-    fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        paymentMethodId := int32(56) // int32 | The Referred Payment Method Id.
+        fields := "fields_example" // string | List of comma-separated fields. (optional)
+        fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.SettingsAPI.GetPaymentMethod(auth, companyId, paymentMethodId).Fields(fields).Fieldset(fieldset).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.GetPaymentMethod``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.GetPaymentMethod``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetPaymentMethod`: GetPaymentMethodResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `GetPaymentMethod`: GetPaymentMethodResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -626,6 +627,79 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetTaxProfile
+
+> GetTaxProfileResponse GetTaxProfile(ctx, companyId).Execute()
+
+Get Tax Profile
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+    "encoding/json"
+	"fmt"
+	"os"
+    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+)
+
+func main() {
+        companyId := int32(12345) // int32 | The ID of the company.
+
+    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+    configuration := fattureincloudapi.NewConfiguration()
+    apiClient := fattureincloudapi.NewAPIClient(configuration)
+    resp, r, err := apiClient.SettingsAPI.GetTaxProfile(auth, companyId).Execute()
+    if err != nil {
+    fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.GetTaxProfile``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+        // response from `GetTaxProfile`: GetTaxProfileResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**companyId** | **int32** | The ID of the company. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetTaxProfileRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetTaxProfileResponse**](GetTaxProfileResponse.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetVatType
 
 > GetVatTypeResponse GetVatType(ctx, companyId, vatTypeId).Execute()
@@ -640,28 +714,28 @@ Get Vat Type
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    vatTypeId := int32(56) // int32 | The Referred Vat Type Id.
+        companyId := int32(12345) // int32 | The ID of the company.
+        vatTypeId := int32(56) // int32 | The Referred Vat Type Id.
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.SettingsAPI.GetVatType(auth, companyId, vatTypeId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.GetVatType``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.GetVatType``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetVatType`: GetVatTypeResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `GetVatType`: GetVatTypeResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -716,29 +790,29 @@ Modify Payment Account
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    paymentAccountId := int32(56) // int32 | The Referred Payment Account Id.
-    modifyPaymentAccountRequest := *fattureincloud.NewModifyPaymentAccountRequest() // ModifyPaymentAccountRequest |  (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        paymentAccountId := int32(56) // int32 | The Referred Payment Account Id.
+        modifyPaymentAccountRequest := *fattureincloud.NewModifyPaymentAccountRequest() // ModifyPaymentAccountRequest |  (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.SettingsAPI.ModifyPaymentAccount(auth, companyId, paymentAccountId).ModifyPaymentAccountRequest(modifyPaymentAccountRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.ModifyPaymentAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.ModifyPaymentAccount``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ModifyPaymentAccount`: ModifyPaymentAccountResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `ModifyPaymentAccount`: ModifyPaymentAccountResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -794,29 +868,29 @@ Modify Payment Method
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    paymentMethodId := int32(56) // int32 | The Referred Payment Method Id.
-    modifyPaymentMethodRequest := *fattureincloud.NewModifyPaymentMethodRequest() // ModifyPaymentMethodRequest |  (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        paymentMethodId := int32(56) // int32 | The Referred Payment Method Id.
+        modifyPaymentMethodRequest := *fattureincloud.NewModifyPaymentMethodRequest() // ModifyPaymentMethodRequest |  (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.SettingsAPI.ModifyPaymentMethod(auth, companyId, paymentMethodId).ModifyPaymentMethodRequest(modifyPaymentMethodRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.ModifyPaymentMethod``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.ModifyPaymentMethod``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ModifyPaymentMethod`: ModifyPaymentMethodResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `ModifyPaymentMethod`: ModifyPaymentMethodResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -872,29 +946,29 @@ Modify Vat Type
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    vatTypeId := int32(56) // int32 | The Referred Vat Type Id.
-    modifyVatTypeRequest := *fattureincloud.NewModifyVatTypeRequest() // ModifyVatTypeRequest |  (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        vatTypeId := int32(56) // int32 | The Referred Vat Type Id.
+        modifyVatTypeRequest := *fattureincloud.NewModifyVatTypeRequest() // ModifyVatTypeRequest |  (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.SettingsAPI.ModifyVatType(auth, companyId, vatTypeId).ModifyVatTypeRequest(modifyVatTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.ModifyVatType``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.ModifyVatType``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ModifyVatType`: ModifyVatTypeResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `ModifyVatType`: ModifyVatTypeResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 

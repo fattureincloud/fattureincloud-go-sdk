@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -21,13 +21,13 @@ var _ MappedNullable = &EmailScheduleInclude{}
 // EmailScheduleInclude struct for EmailScheduleInclude
 type EmailScheduleInclude struct {
 	// Include a button to view the document
-	Document NullableBool `json:"document,omitempty"`
+Document NullableBool `json:"document,omitempty"`
 	// Include a button to view the delivery note
-	DeliveryNote NullableBool `json:"delivery_note,omitempty"`
+DeliveryNote NullableBool `json:"delivery_note,omitempty"`
 	// Include a button to view the attachment
-	Attachment NullableBool `json:"attachment,omitempty"`
+Attachment NullableBool `json:"attachment,omitempty"`
 	// Include a button to view the accompanying invoice
-	AccompanyingInvoice NullableBool `json:"accompanying_invoice,omitempty"`
+AccompanyingInvoice NullableBool `json:"accompanying_invoice,omitempty"`
 }
 
 // NewEmailScheduleInclude instantiates a new EmailScheduleInclude object
@@ -78,12 +78,12 @@ func (o *EmailScheduleInclude) HasDocument() bool {
 // SetDocument gets a reference to the given NullableBool and assigns it to the Document field.
 func (o *EmailScheduleInclude) SetDocument(v bool) *EmailScheduleInclude {
 	o.Document.Set(&v)
-	return o
+        return o
 }
 // SetDocumentNil sets the value for Document to be an explicit nil
 func (o *EmailScheduleInclude) SetDocumentNil() *EmailScheduleInclude {
 	o.Document.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDocument ensures that no value is present for Document, not even an explicit nil
@@ -122,12 +122,12 @@ func (o *EmailScheduleInclude) HasDeliveryNote() bool {
 // SetDeliveryNote gets a reference to the given NullableBool and assigns it to the DeliveryNote field.
 func (o *EmailScheduleInclude) SetDeliveryNote(v bool) *EmailScheduleInclude {
 	o.DeliveryNote.Set(&v)
-	return o
+        return o
 }
 // SetDeliveryNoteNil sets the value for DeliveryNote to be an explicit nil
 func (o *EmailScheduleInclude) SetDeliveryNoteNil() *EmailScheduleInclude {
 	o.DeliveryNote.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDeliveryNote ensures that no value is present for DeliveryNote, not even an explicit nil
@@ -166,12 +166,12 @@ func (o *EmailScheduleInclude) HasAttachment() bool {
 // SetAttachment gets a reference to the given NullableBool and assigns it to the Attachment field.
 func (o *EmailScheduleInclude) SetAttachment(v bool) *EmailScheduleInclude {
 	o.Attachment.Set(&v)
-	return o
+        return o
 }
 // SetAttachmentNil sets the value for Attachment to be an explicit nil
 func (o *EmailScheduleInclude) SetAttachmentNil() *EmailScheduleInclude {
 	o.Attachment.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAttachment ensures that no value is present for Attachment, not even an explicit nil
@@ -210,12 +210,12 @@ func (o *EmailScheduleInclude) HasAccompanyingInvoice() bool {
 // SetAccompanyingInvoice gets a reference to the given NullableBool and assigns it to the AccompanyingInvoice field.
 func (o *EmailScheduleInclude) SetAccompanyingInvoice(v bool) *EmailScheduleInclude {
 	o.AccompanyingInvoice.Set(&v)
-	return o
+        return o
 }
 // SetAccompanyingInvoiceNil sets the value for AccompanyingInvoice to be an explicit nil
 func (o *EmailScheduleInclude) SetAccompanyingInvoiceNil() *EmailScheduleInclude {
 	o.AccompanyingInvoice.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAccompanyingInvoice ensures that no value is present for AccompanyingInvoice, not even an explicit nil

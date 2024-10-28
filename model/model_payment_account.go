@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -21,18 +21,18 @@ var _ MappedNullable = &PaymentAccount{}
 // PaymentAccount struct for PaymentAccount
 type PaymentAccount struct {
 	// Payment account id
-	Id NullableInt32 `json:"id,omitempty"`
+Id NullableInt32 `json:"id,omitempty"`
 	// Payment account name
-	Name NullableString `json:"name,omitempty"`
-	Type *PaymentAccountType `json:"type,omitempty"`
+Name NullableString `json:"name,omitempty"`
+Type *PaymentAccountType `json:"type,omitempty"`
 	// Payment account iban
-	Iban NullableString `json:"iban,omitempty"`
+Iban NullableString `json:"iban,omitempty"`
 	// Payment account sia
-	Sia NullableString `json:"sia,omitempty"`
+Sia NullableString `json:"sia,omitempty"`
 	// Payment account cuc
-	Cuc NullableString `json:"cuc,omitempty"`
+Cuc NullableString `json:"cuc,omitempty"`
 	// Payment method is virtual
-	Virtual NullableBool `json:"virtual,omitempty"`
+Virtual NullableBool `json:"virtual,omitempty"`
 }
 
 // NewPaymentAccount instantiates a new PaymentAccount object
@@ -85,12 +85,12 @@ func (o *PaymentAccount) HasId() bool {
 // SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *PaymentAccount) SetId(v int32) *PaymentAccount {
 	o.Id.Set(&v)
-	return o
+        return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *PaymentAccount) SetIdNil() *PaymentAccount {
 	o.Id.Set(nil)
-	return o
+    return o
 }
 
 // UnsetId ensures that no value is present for Id, not even an explicit nil
@@ -129,12 +129,12 @@ func (o *PaymentAccount) HasName() bool {
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *PaymentAccount) SetName(v string) *PaymentAccount {
 	o.Name.Set(&v)
-	return o
+        return o
 }
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *PaymentAccount) SetNameNil() *PaymentAccount {
 	o.Name.Set(nil)
-	return o
+    return o
 }
 
 // UnsetName ensures that no value is present for Name, not even an explicit nil
@@ -172,7 +172,7 @@ func (o *PaymentAccount) HasType() bool {
 // SetType gets a reference to the given PaymentAccountType and assigns it to the Type field.
 func (o *PaymentAccount) SetType(v PaymentAccountType) *PaymentAccount {
 	o.Type = &v
-	return o
+        return o
 }
 
 // GetIban returns the Iban field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -206,12 +206,12 @@ func (o *PaymentAccount) HasIban() bool {
 // SetIban gets a reference to the given NullableString and assigns it to the Iban field.
 func (o *PaymentAccount) SetIban(v string) *PaymentAccount {
 	o.Iban.Set(&v)
-	return o
+        return o
 }
 // SetIbanNil sets the value for Iban to be an explicit nil
 func (o *PaymentAccount) SetIbanNil() *PaymentAccount {
 	o.Iban.Set(nil)
-	return o
+    return o
 }
 
 // UnsetIban ensures that no value is present for Iban, not even an explicit nil
@@ -250,12 +250,12 @@ func (o *PaymentAccount) HasSia() bool {
 // SetSia gets a reference to the given NullableString and assigns it to the Sia field.
 func (o *PaymentAccount) SetSia(v string) *PaymentAccount {
 	o.Sia.Set(&v)
-	return o
+        return o
 }
 // SetSiaNil sets the value for Sia to be an explicit nil
 func (o *PaymentAccount) SetSiaNil() *PaymentAccount {
 	o.Sia.Set(nil)
-	return o
+    return o
 }
 
 // UnsetSia ensures that no value is present for Sia, not even an explicit nil
@@ -294,12 +294,12 @@ func (o *PaymentAccount) HasCuc() bool {
 // SetCuc gets a reference to the given NullableString and assigns it to the Cuc field.
 func (o *PaymentAccount) SetCuc(v string) *PaymentAccount {
 	o.Cuc.Set(&v)
-	return o
+        return o
 }
 // SetCucNil sets the value for Cuc to be an explicit nil
 func (o *PaymentAccount) SetCucNil() *PaymentAccount {
 	o.Cuc.Set(nil)
-	return o
+    return o
 }
 
 // UnsetCuc ensures that no value is present for Cuc, not even an explicit nil
@@ -338,12 +338,12 @@ func (o *PaymentAccount) HasVirtual() bool {
 // SetVirtual gets a reference to the given NullableBool and assigns it to the Virtual field.
 func (o *PaymentAccount) SetVirtual(v bool) *PaymentAccount {
 	o.Virtual.Set(&v)
-	return o
+        return o
 }
 // SetVirtualNil sets the value for Virtual to be an explicit nil
 func (o *PaymentAccount) SetVirtualNil() *PaymentAccount {
 	o.Virtual.Set(nil)
-	return o
+    return o
 }
 
 // UnsetVirtual ensures that no value is present for Virtual, not even an explicit nil

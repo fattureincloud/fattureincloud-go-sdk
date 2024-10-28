@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -21,15 +21,15 @@ var _ MappedNullable = &IssuedDocumentOptions{}
 // IssuedDocumentOptions struct for IssuedDocumentOptions
 type IssuedDocumentOptions struct {
 	// Fixes your last payment amount to match your document total
-	FixPayments NullableBool `json:"fix_payments,omitempty"`
+FixPayments NullableBool `json:"fix_payments,omitempty"`
 	// Original documents ids [only for join/transform]
-	CreateFrom []string `json:"create_from,omitempty"`
+CreateFrom []string `json:"create_from,omitempty"`
 	// Tranform a document [only for transform]
-	Transform NullableBool `json:"transform,omitempty"`
+Transform NullableBool `json:"transform,omitempty"`
 	// Keep original document [only for transform]
-	KeepCopy NullableBool `json:"keep_copy,omitempty"`
+KeepCopy NullableBool `json:"keep_copy,omitempty"`
 	// Join type [only for join]
-	JoinType NullableString `json:"join_type,omitempty"`
+JoinType NullableString `json:"join_type,omitempty"`
 }
 
 // NewIssuedDocumentOptions instantiates a new IssuedDocumentOptions object
@@ -80,12 +80,12 @@ func (o *IssuedDocumentOptions) HasFixPayments() bool {
 // SetFixPayments gets a reference to the given NullableBool and assigns it to the FixPayments field.
 func (o *IssuedDocumentOptions) SetFixPayments(v bool) *IssuedDocumentOptions {
 	o.FixPayments.Set(&v)
-	return o
+        return o
 }
 // SetFixPaymentsNil sets the value for FixPayments to be an explicit nil
 func (o *IssuedDocumentOptions) SetFixPaymentsNil() *IssuedDocumentOptions {
 	o.FixPayments.Set(nil)
-	return o
+    return o
 }
 
 // UnsetFixPayments ensures that no value is present for FixPayments, not even an explicit nil
@@ -124,7 +124,7 @@ func (o *IssuedDocumentOptions) HasCreateFrom() bool {
 // SetCreateFrom gets a reference to the given []string and assigns it to the CreateFrom field.
 func (o *IssuedDocumentOptions) SetCreateFrom(v []string) *IssuedDocumentOptions {
 	o.CreateFrom = v
-	return o
+        return o
 }
 
 // GetTransform returns the Transform field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -158,12 +158,12 @@ func (o *IssuedDocumentOptions) HasTransform() bool {
 // SetTransform gets a reference to the given NullableBool and assigns it to the Transform field.
 func (o *IssuedDocumentOptions) SetTransform(v bool) *IssuedDocumentOptions {
 	o.Transform.Set(&v)
-	return o
+        return o
 }
 // SetTransformNil sets the value for Transform to be an explicit nil
 func (o *IssuedDocumentOptions) SetTransformNil() *IssuedDocumentOptions {
 	o.Transform.Set(nil)
-	return o
+    return o
 }
 
 // UnsetTransform ensures that no value is present for Transform, not even an explicit nil
@@ -202,12 +202,12 @@ func (o *IssuedDocumentOptions) HasKeepCopy() bool {
 // SetKeepCopy gets a reference to the given NullableBool and assigns it to the KeepCopy field.
 func (o *IssuedDocumentOptions) SetKeepCopy(v bool) *IssuedDocumentOptions {
 	o.KeepCopy.Set(&v)
-	return o
+        return o
 }
 // SetKeepCopyNil sets the value for KeepCopy to be an explicit nil
 func (o *IssuedDocumentOptions) SetKeepCopyNil() *IssuedDocumentOptions {
 	o.KeepCopy.Set(nil)
-	return o
+    return o
 }
 
 // UnsetKeepCopy ensures that no value is present for KeepCopy, not even an explicit nil
@@ -246,12 +246,12 @@ func (o *IssuedDocumentOptions) HasJoinType() bool {
 // SetJoinType gets a reference to the given NullableString and assigns it to the JoinType field.
 func (o *IssuedDocumentOptions) SetJoinType(v string) *IssuedDocumentOptions {
 	o.JoinType.Set(&v)
-	return o
+        return o
 }
 // SetJoinTypeNil sets the value for JoinType to be an explicit nil
 func (o *IssuedDocumentOptions) SetJoinTypeNil() *IssuedDocumentOptions {
 	o.JoinType.Set(nil)
-	return o
+    return o
 }
 
 // UnsetJoinType ensures that no value is present for JoinType, not even an explicit nil

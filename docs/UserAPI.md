@@ -23,10 +23,10 @@ Get User Info
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
@@ -38,11 +38,11 @@ func main() {
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.UserAPI.GetUserInfo(auth).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserAPI.GetUserInfo``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `UserAPI.GetUserInfo``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetUserInfo`: GetUserInfoResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `GetUserInfo`: GetUserInfoResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -87,10 +87,10 @@ List User Companies
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
@@ -102,11 +102,11 @@ func main() {
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.UserAPI.ListUserCompanies(auth).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserAPI.ListUserCompanies``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `UserAPI.ListUserCompanies``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListUserCompanies`: ListUserCompaniesResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `ListUserCompanies`: ListUserCompaniesResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 

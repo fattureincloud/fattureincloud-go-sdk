@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &ModifyWebhooksSubscriptionResponse{}
 
 // ModifyWebhooksSubscriptionResponse struct for ModifyWebhooksSubscriptionResponse
 type ModifyWebhooksSubscriptionResponse struct {
-	Data *WebhooksSubscription `json:"data,omitempty"`
+Data *WebhooksSubscription `json:"data,omitempty"`
 	// Webhooks registration warnings
-	Warnings []string `json:"warnings,omitempty"`
+Warnings []string `json:"warnings,omitempty"`
 }
 
 // NewModifyWebhooksSubscriptionResponse instantiates a new ModifyWebhooksSubscriptionResponse object
@@ -72,7 +72,7 @@ func (o *ModifyWebhooksSubscriptionResponse) HasData() bool {
 // SetData gets a reference to the given WebhooksSubscription and assigns it to the Data field.
 func (o *ModifyWebhooksSubscriptionResponse) SetData(v WebhooksSubscription) *ModifyWebhooksSubscriptionResponse {
 	o.Data = &v
-	return o
+        return o
 }
 
 // GetWarnings returns the Warnings field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -106,7 +106,7 @@ func (o *ModifyWebhooksSubscriptionResponse) HasWarnings() bool {
 // SetWarnings gets a reference to the given []string and assigns it to the Warnings field.
 func (o *ModifyWebhooksSubscriptionResponse) SetWarnings(v []string) *ModifyWebhooksSubscriptionResponse {
 	o.Warnings = v
-	return o
+        return o
 }
 
 func (o ModifyWebhooksSubscriptionResponse) MarshalJSON() ([]byte, error) {

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -18,7 +18,7 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
-	. "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+        . "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 
@@ -188,10 +188,10 @@ func (a *InfoAPIService) ListCitiesExecute(r ApiListCitiesRequest) (*ListCitiesR
 	localVarFormParams := url.Values{}
 
 	if r.postalCode != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "postal_code", r.postalCode, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "postal_code", r.postalCode, "form", "")
 	}
 	if r.city != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "city", r.city, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "city", r.city, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -916,13 +916,13 @@ func (a *InfoAPIService) ListPaymentAccountsExecute(r ApiListPaymentAccountsRequ
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "form", "")
 	}
 	if r.fieldset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "form", "")
 	}
 	if r.sort != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1049,13 +1049,13 @@ func (a *InfoAPIService) ListPaymentMethodsExecute(r ApiListPaymentMethodsReques
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "form", "")
 	}
 	if r.fieldset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "form", "")
 	}
 	if r.sort != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1170,7 +1170,7 @@ func (a *InfoAPIService) ListProductCategoriesExecute(r ApiListProductCategories
 		return localVarReturnValue, nil, reportError("context is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "context", r.context, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "context", r.context, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -1491,13 +1491,13 @@ func (a *InfoAPIService) ListTemplatesExecute(r ApiListTemplatesRequest) (*ListT
 	localVarFormParams := url.Values{}
 
 	if r.type_ != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "form", "")
 	} else {
 		var defaultValue string = "all"
 		r.type_ = &defaultValue
 	}
 	if r.byType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "by_type", r.byType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "by_type", r.byType, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.byType = &defaultValue
@@ -1712,7 +1712,7 @@ func (a *InfoAPIService) ListVatTypesExecute(r ApiListVatTypesRequest) (*ListVat
 	localVarFormParams := url.Values{}
 
 	if r.fieldset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

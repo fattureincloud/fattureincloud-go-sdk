@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &VerifyEInvoiceXmlErrorResponseErrorValidationResult{}
 
 // VerifyEInvoiceXmlErrorResponseErrorValidationResult struct for VerifyEInvoiceXmlErrorResponseErrorValidationResult
 type VerifyEInvoiceXmlErrorResponseErrorValidationResult struct {
-	XmlErrors []string `json:"xml_errors,omitempty"`
+XmlErrors []string `json:"xml_errors,omitempty"`
 }
 
 // NewVerifyEInvoiceXmlErrorResponseErrorValidationResult instantiates a new VerifyEInvoiceXmlErrorResponseErrorValidationResult object
@@ -71,7 +71,7 @@ func (o *VerifyEInvoiceXmlErrorResponseErrorValidationResult) HasXmlErrors() boo
 // SetXmlErrors gets a reference to the given []string and assigns it to the XmlErrors field.
 func (o *VerifyEInvoiceXmlErrorResponseErrorValidationResult) SetXmlErrors(v []string) *VerifyEInvoiceXmlErrorResponseErrorValidationResult {
 	o.XmlErrors = v
-	return o
+        return o
 }
 
 func (o VerifyEInvoiceXmlErrorResponseErrorValidationResult) MarshalJSON() ([]byte, error) {

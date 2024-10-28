@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &ReceivedDocumentInfoDefaultValues{}
 
 // ReceivedDocumentInfoDefaultValues Received document default values
 type ReceivedDocumentInfoDefaultValues struct {
-	Detailed NullableBool `json:"detailed,omitempty"`
+Detailed NullableBool `json:"detailed,omitempty"`
 }
 
 // NewReceivedDocumentInfoDefaultValues instantiates a new ReceivedDocumentInfoDefaultValues object
@@ -71,12 +71,12 @@ func (o *ReceivedDocumentInfoDefaultValues) HasDetailed() bool {
 // SetDetailed gets a reference to the given NullableBool and assigns it to the Detailed field.
 func (o *ReceivedDocumentInfoDefaultValues) SetDetailed(v bool) *ReceivedDocumentInfoDefaultValues {
 	o.Detailed.Set(&v)
-	return o
+        return o
 }
 // SetDetailedNil sets the value for Detailed to be an explicit nil
 func (o *ReceivedDocumentInfoDefaultValues) SetDetailedNil() *ReceivedDocumentInfoDefaultValues {
 	o.Detailed.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDetailed ensures that no value is present for Detailed, not even an explicit nil

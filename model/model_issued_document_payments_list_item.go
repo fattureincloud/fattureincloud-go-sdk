@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -21,18 +21,18 @@ var _ MappedNullable = &IssuedDocumentPaymentsListItem{}
 // IssuedDocumentPaymentsListItem struct for IssuedDocumentPaymentsListItem
 type IssuedDocumentPaymentsListItem struct {
 	// Issued document payment item id
-	Id NullableInt32 `json:"id,omitempty"`
+Id NullableInt32 `json:"id,omitempty"`
 	// Issued document payment due date
-	DueDate NullableString `json:"due_date,omitempty"`
+DueDate NullableString `json:"due_date,omitempty"`
 	// Issued document payment amount
-	Amount NullableFloat32 `json:"amount,omitempty"`
-	Status *IssuedDocumentStatus `json:"status,omitempty"`
-	PaymentAccount NullablePaymentAccount `json:"payment_account,omitempty"`
+Amount NullableFloat32 `json:"amount,omitempty"`
+Status *IssuedDocumentStatus `json:"status,omitempty"`
+PaymentAccount NullablePaymentAccount `json:"payment_account,omitempty"`
 	// Issued document payment date [Only if status is paid]
-	PaidDate NullableString `json:"paid_date,omitempty"`
+PaidDate NullableString `json:"paid_date,omitempty"`
 	// Issued document payment advanced raw attributes for e-invoices
-	EiRaw map[string]interface{} `json:"ei_raw,omitempty"`
-	PaymentTerms *IssuedDocumentPaymentsListItemPaymentTerms `json:"payment_terms,omitempty"`
+EiRaw map[string]interface{} `json:"ei_raw,omitempty"`
+PaymentTerms *IssuedDocumentPaymentsListItemPaymentTerms `json:"payment_terms,omitempty"`
 }
 
 // NewIssuedDocumentPaymentsListItem instantiates a new IssuedDocumentPaymentsListItem object
@@ -85,12 +85,12 @@ func (o *IssuedDocumentPaymentsListItem) HasId() bool {
 // SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *IssuedDocumentPaymentsListItem) SetId(v int32) *IssuedDocumentPaymentsListItem {
 	o.Id.Set(&v)
-	return o
+        return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *IssuedDocumentPaymentsListItem) SetIdNil() *IssuedDocumentPaymentsListItem {
 	o.Id.Set(nil)
-	return o
+    return o
 }
 
 // UnsetId ensures that no value is present for Id, not even an explicit nil
@@ -129,12 +129,12 @@ func (o *IssuedDocumentPaymentsListItem) HasDueDate() bool {
 // SetDueDate gets a reference to the given NullableString and assigns it to the DueDate field.
 func (o *IssuedDocumentPaymentsListItem) SetDueDate(v string) *IssuedDocumentPaymentsListItem {
 	o.DueDate.Set(&v)
-	return o
+        return o
 }
 // SetDueDateNil sets the value for DueDate to be an explicit nil
 func (o *IssuedDocumentPaymentsListItem) SetDueDateNil() *IssuedDocumentPaymentsListItem {
 	o.DueDate.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDueDate ensures that no value is present for DueDate, not even an explicit nil
@@ -173,12 +173,12 @@ func (o *IssuedDocumentPaymentsListItem) HasAmount() bool {
 // SetAmount gets a reference to the given NullableFloat32 and assigns it to the Amount field.
 func (o *IssuedDocumentPaymentsListItem) SetAmount(v float32) *IssuedDocumentPaymentsListItem {
 	o.Amount.Set(&v)
-	return o
+        return o
 }
 // SetAmountNil sets the value for Amount to be an explicit nil
 func (o *IssuedDocumentPaymentsListItem) SetAmountNil() *IssuedDocumentPaymentsListItem {
 	o.Amount.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmount ensures that no value is present for Amount, not even an explicit nil
@@ -216,7 +216,7 @@ func (o *IssuedDocumentPaymentsListItem) HasStatus() bool {
 // SetStatus gets a reference to the given IssuedDocumentStatus and assigns it to the Status field.
 func (o *IssuedDocumentPaymentsListItem) SetStatus(v IssuedDocumentStatus) *IssuedDocumentPaymentsListItem {
 	o.Status = &v
-	return o
+        return o
 }
 
 // GetPaymentAccount returns the PaymentAccount field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -250,12 +250,12 @@ func (o *IssuedDocumentPaymentsListItem) HasPaymentAccount() bool {
 // SetPaymentAccount gets a reference to the given NullablePaymentAccount and assigns it to the PaymentAccount field.
 func (o *IssuedDocumentPaymentsListItem) SetPaymentAccount(v PaymentAccount) *IssuedDocumentPaymentsListItem {
 	o.PaymentAccount.Set(&v)
-	return o
+        return o
 }
 // SetPaymentAccountNil sets the value for PaymentAccount to be an explicit nil
 func (o *IssuedDocumentPaymentsListItem) SetPaymentAccountNil() *IssuedDocumentPaymentsListItem {
 	o.PaymentAccount.Set(nil)
-	return o
+    return o
 }
 
 // UnsetPaymentAccount ensures that no value is present for PaymentAccount, not even an explicit nil
@@ -294,12 +294,12 @@ func (o *IssuedDocumentPaymentsListItem) HasPaidDate() bool {
 // SetPaidDate gets a reference to the given NullableString and assigns it to the PaidDate field.
 func (o *IssuedDocumentPaymentsListItem) SetPaidDate(v string) *IssuedDocumentPaymentsListItem {
 	o.PaidDate.Set(&v)
-	return o
+        return o
 }
 // SetPaidDateNil sets the value for PaidDate to be an explicit nil
 func (o *IssuedDocumentPaymentsListItem) SetPaidDateNil() *IssuedDocumentPaymentsListItem {
 	o.PaidDate.Set(nil)
-	return o
+    return o
 }
 
 // UnsetPaidDate ensures that no value is present for PaidDate, not even an explicit nil
@@ -338,7 +338,7 @@ func (o *IssuedDocumentPaymentsListItem) HasEiRaw() bool {
 // SetEiRaw gets a reference to the given map[string]interface{} and assigns it to the EiRaw field.
 func (o *IssuedDocumentPaymentsListItem) SetEiRaw(v map[string]interface{}) *IssuedDocumentPaymentsListItem {
 	o.EiRaw = v
-	return o
+        return o
 }
 
 // GetPaymentTerms returns the PaymentTerms field value if set, zero value otherwise.
@@ -371,7 +371,7 @@ func (o *IssuedDocumentPaymentsListItem) HasPaymentTerms() bool {
 // SetPaymentTerms gets a reference to the given IssuedDocumentPaymentsListItemPaymentTerms and assigns it to the PaymentTerms field.
 func (o *IssuedDocumentPaymentsListItem) SetPaymentTerms(v IssuedDocumentPaymentsListItemPaymentTerms) *IssuedDocumentPaymentsListItem {
 	o.PaymentTerms = &v
-	return o
+        return o
 }
 
 func (o IssuedDocumentPaymentsListItem) MarshalJSON() ([]byte, error) {

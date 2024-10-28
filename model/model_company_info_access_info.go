@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -20,10 +20,10 @@ var _ MappedNullable = &CompanyInfoAccessInfo{}
 
 // CompanyInfoAccessInfo struct for CompanyInfoAccessInfo
 type CompanyInfoAccessInfo struct {
-	Role *UserCompanyRole `json:"role,omitempty"`
-	Permissions *Permissions `json:"permissions,omitempty"`
+Role *UserCompanyRole `json:"role,omitempty"`
+Permissions *Permissions `json:"permissions,omitempty"`
 	// Company activated through accountant
-	ThroughAccountant NullableBool `json:"through_accountant,omitempty"`
+ThroughAccountant NullableBool `json:"through_accountant,omitempty"`
 }
 
 // NewCompanyInfoAccessInfo instantiates a new CompanyInfoAccessInfo object
@@ -73,7 +73,7 @@ func (o *CompanyInfoAccessInfo) HasRole() bool {
 // SetRole gets a reference to the given UserCompanyRole and assigns it to the Role field.
 func (o *CompanyInfoAccessInfo) SetRole(v UserCompanyRole) *CompanyInfoAccessInfo {
 	o.Role = &v
-	return o
+        return o
 }
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise.
@@ -106,7 +106,7 @@ func (o *CompanyInfoAccessInfo) HasPermissions() bool {
 // SetPermissions gets a reference to the given Permissions and assigns it to the Permissions field.
 func (o *CompanyInfoAccessInfo) SetPermissions(v Permissions) *CompanyInfoAccessInfo {
 	o.Permissions = &v
-	return o
+        return o
 }
 
 // GetThroughAccountant returns the ThroughAccountant field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -140,12 +140,12 @@ func (o *CompanyInfoAccessInfo) HasThroughAccountant() bool {
 // SetThroughAccountant gets a reference to the given NullableBool and assigns it to the ThroughAccountant field.
 func (o *CompanyInfoAccessInfo) SetThroughAccountant(v bool) *CompanyInfoAccessInfo {
 	o.ThroughAccountant.Set(&v)
-	return o
+        return o
 }
 // SetThroughAccountantNil sets the value for ThroughAccountant to be an explicit nil
 func (o *CompanyInfoAccessInfo) SetThroughAccountantNil() *CompanyInfoAccessInfo {
 	o.ThroughAccountant.Set(nil)
-	return o
+    return o
 }
 
 // UnsetThroughAccountant ensures that no value is present for ThroughAccountant, not even an explicit nil

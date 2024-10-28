@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -21,23 +21,23 @@ var _ MappedNullable = &PaymentMethod{}
 // PaymentMethod struct for PaymentMethod
 type PaymentMethod struct {
 	// Payment method id
-	Id NullableInt32 `json:"id,omitempty"`
+Id NullableInt32 `json:"id,omitempty"`
 	// Payment method name
-	Name NullableString `json:"name,omitempty"`
-	Type *PaymentMethodType `json:"type,omitempty"`
+Name NullableString `json:"name,omitempty"`
+Type *PaymentMethodType `json:"type,omitempty"`
 	// Payment method is default
-	IsDefault NullableBool `json:"is_default,omitempty"`
-	DefaultPaymentAccount NullablePaymentAccount `json:"default_payment_account,omitempty"`
+IsDefault NullableBool `json:"is_default,omitempty"`
+DefaultPaymentAccount NullablePaymentAccount `json:"default_payment_account,omitempty"`
 	// Payment method details
-	Details []PaymentMethodDetails `json:"details,omitempty"`
+Details []PaymentMethodDetails `json:"details,omitempty"`
 	// Payment method bank iban
-	BankIban NullableString `json:"bank_iban,omitempty"`
+BankIban NullableString `json:"bank_iban,omitempty"`
 	// Payment method bank name
-	BankName NullableString `json:"bank_name,omitempty"`
+BankName NullableString `json:"bank_name,omitempty"`
 	// Payment method bank beneficiary
-	BankBeneficiary NullableString `json:"bank_beneficiary,omitempty"`
+BankBeneficiary NullableString `json:"bank_beneficiary,omitempty"`
 	// E-invoice payment method
-	EiPaymentMethod NullableString `json:"ei_payment_method,omitempty"`
+EiPaymentMethod NullableString `json:"ei_payment_method,omitempty"`
 }
 
 // NewPaymentMethod instantiates a new PaymentMethod object
@@ -90,12 +90,12 @@ func (o *PaymentMethod) HasId() bool {
 // SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *PaymentMethod) SetId(v int32) *PaymentMethod {
 	o.Id.Set(&v)
-	return o
+        return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *PaymentMethod) SetIdNil() *PaymentMethod {
 	o.Id.Set(nil)
-	return o
+    return o
 }
 
 // UnsetId ensures that no value is present for Id, not even an explicit nil
@@ -134,12 +134,12 @@ func (o *PaymentMethod) HasName() bool {
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *PaymentMethod) SetName(v string) *PaymentMethod {
 	o.Name.Set(&v)
-	return o
+        return o
 }
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *PaymentMethod) SetNameNil() *PaymentMethod {
 	o.Name.Set(nil)
-	return o
+    return o
 }
 
 // UnsetName ensures that no value is present for Name, not even an explicit nil
@@ -177,7 +177,7 @@ func (o *PaymentMethod) HasType() bool {
 // SetType gets a reference to the given PaymentMethodType and assigns it to the Type field.
 func (o *PaymentMethod) SetType(v PaymentMethodType) *PaymentMethod {
 	o.Type = &v
-	return o
+        return o
 }
 
 // GetIsDefault returns the IsDefault field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -211,12 +211,12 @@ func (o *PaymentMethod) HasIsDefault() bool {
 // SetIsDefault gets a reference to the given NullableBool and assigns it to the IsDefault field.
 func (o *PaymentMethod) SetIsDefault(v bool) *PaymentMethod {
 	o.IsDefault.Set(&v)
-	return o
+        return o
 }
 // SetIsDefaultNil sets the value for IsDefault to be an explicit nil
 func (o *PaymentMethod) SetIsDefaultNil() *PaymentMethod {
 	o.IsDefault.Set(nil)
-	return o
+    return o
 }
 
 // UnsetIsDefault ensures that no value is present for IsDefault, not even an explicit nil
@@ -255,12 +255,12 @@ func (o *PaymentMethod) HasDefaultPaymentAccount() bool {
 // SetDefaultPaymentAccount gets a reference to the given NullablePaymentAccount and assigns it to the DefaultPaymentAccount field.
 func (o *PaymentMethod) SetDefaultPaymentAccount(v PaymentAccount) *PaymentMethod {
 	o.DefaultPaymentAccount.Set(&v)
-	return o
+        return o
 }
 // SetDefaultPaymentAccountNil sets the value for DefaultPaymentAccount to be an explicit nil
 func (o *PaymentMethod) SetDefaultPaymentAccountNil() *PaymentMethod {
 	o.DefaultPaymentAccount.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDefaultPaymentAccount ensures that no value is present for DefaultPaymentAccount, not even an explicit nil
@@ -299,7 +299,7 @@ func (o *PaymentMethod) HasDetails() bool {
 // SetDetails gets a reference to the given []PaymentMethodDetails and assigns it to the Details field.
 func (o *PaymentMethod) SetDetails(v []PaymentMethodDetails) *PaymentMethod {
 	o.Details = v
-	return o
+        return o
 }
 
 // GetBankIban returns the BankIban field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -333,12 +333,12 @@ func (o *PaymentMethod) HasBankIban() bool {
 // SetBankIban gets a reference to the given NullableString and assigns it to the BankIban field.
 func (o *PaymentMethod) SetBankIban(v string) *PaymentMethod {
 	o.BankIban.Set(&v)
-	return o
+        return o
 }
 // SetBankIbanNil sets the value for BankIban to be an explicit nil
 func (o *PaymentMethod) SetBankIbanNil() *PaymentMethod {
 	o.BankIban.Set(nil)
-	return o
+    return o
 }
 
 // UnsetBankIban ensures that no value is present for BankIban, not even an explicit nil
@@ -377,12 +377,12 @@ func (o *PaymentMethod) HasBankName() bool {
 // SetBankName gets a reference to the given NullableString and assigns it to the BankName field.
 func (o *PaymentMethod) SetBankName(v string) *PaymentMethod {
 	o.BankName.Set(&v)
-	return o
+        return o
 }
 // SetBankNameNil sets the value for BankName to be an explicit nil
 func (o *PaymentMethod) SetBankNameNil() *PaymentMethod {
 	o.BankName.Set(nil)
-	return o
+    return o
 }
 
 // UnsetBankName ensures that no value is present for BankName, not even an explicit nil
@@ -421,12 +421,12 @@ func (o *PaymentMethod) HasBankBeneficiary() bool {
 // SetBankBeneficiary gets a reference to the given NullableString and assigns it to the BankBeneficiary field.
 func (o *PaymentMethod) SetBankBeneficiary(v string) *PaymentMethod {
 	o.BankBeneficiary.Set(&v)
-	return o
+        return o
 }
 // SetBankBeneficiaryNil sets the value for BankBeneficiary to be an explicit nil
 func (o *PaymentMethod) SetBankBeneficiaryNil() *PaymentMethod {
 	o.BankBeneficiary.Set(nil)
-	return o
+    return o
 }
 
 // UnsetBankBeneficiary ensures that no value is present for BankBeneficiary, not even an explicit nil
@@ -465,12 +465,12 @@ func (o *PaymentMethod) HasEiPaymentMethod() bool {
 // SetEiPaymentMethod gets a reference to the given NullableString and assigns it to the EiPaymentMethod field.
 func (o *PaymentMethod) SetEiPaymentMethod(v string) *PaymentMethod {
 	o.EiPaymentMethod.Set(&v)
-	return o
+        return o
 }
 // SetEiPaymentMethodNil sets the value for EiPaymentMethod to be an explicit nil
 func (o *PaymentMethod) SetEiPaymentMethodNil() *PaymentMethod {
 	o.EiPaymentMethod.Set(nil)
-	return o
+    return o
 }
 
 // UnsetEiPaymentMethod ensures that no value is present for EiPaymentMethod, not even an explicit nil

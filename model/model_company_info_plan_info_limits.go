@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.2
 Contact: info@fattureincloud.it
 */
 
@@ -21,13 +21,13 @@ var _ MappedNullable = &CompanyInfoPlanInfoLimits{}
 // CompanyInfoPlanInfoLimits Company plan limits
 type CompanyInfoPlanInfoLimits struct {
 	// Company plan clients limits
-	Clients NullableInt32 `json:"clients,omitempty"`
+Clients NullableInt32 `json:"clients,omitempty"`
 	// Company plan suppliers limits
-	Suppliers NullableInt32 `json:"suppliers,omitempty"`
+Suppliers NullableInt32 `json:"suppliers,omitempty"`
 	// Company plan products limits
-	Products NullableInt32 `json:"products,omitempty"`
+Products NullableInt32 `json:"products,omitempty"`
 	// Company plan documents limits
-	Documents NullableInt32 `json:"documents,omitempty"`
+Documents NullableInt32 `json:"documents,omitempty"`
 }
 
 // NewCompanyInfoPlanInfoLimits instantiates a new CompanyInfoPlanInfoLimits object
@@ -78,12 +78,12 @@ func (o *CompanyInfoPlanInfoLimits) HasClients() bool {
 // SetClients gets a reference to the given NullableInt32 and assigns it to the Clients field.
 func (o *CompanyInfoPlanInfoLimits) SetClients(v int32) *CompanyInfoPlanInfoLimits {
 	o.Clients.Set(&v)
-	return o
+        return o
 }
 // SetClientsNil sets the value for Clients to be an explicit nil
 func (o *CompanyInfoPlanInfoLimits) SetClientsNil() *CompanyInfoPlanInfoLimits {
 	o.Clients.Set(nil)
-	return o
+    return o
 }
 
 // UnsetClients ensures that no value is present for Clients, not even an explicit nil
@@ -122,12 +122,12 @@ func (o *CompanyInfoPlanInfoLimits) HasSuppliers() bool {
 // SetSuppliers gets a reference to the given NullableInt32 and assigns it to the Suppliers field.
 func (o *CompanyInfoPlanInfoLimits) SetSuppliers(v int32) *CompanyInfoPlanInfoLimits {
 	o.Suppliers.Set(&v)
-	return o
+        return o
 }
 // SetSuppliersNil sets the value for Suppliers to be an explicit nil
 func (o *CompanyInfoPlanInfoLimits) SetSuppliersNil() *CompanyInfoPlanInfoLimits {
 	o.Suppliers.Set(nil)
-	return o
+    return o
 }
 
 // UnsetSuppliers ensures that no value is present for Suppliers, not even an explicit nil
@@ -166,12 +166,12 @@ func (o *CompanyInfoPlanInfoLimits) HasProducts() bool {
 // SetProducts gets a reference to the given NullableInt32 and assigns it to the Products field.
 func (o *CompanyInfoPlanInfoLimits) SetProducts(v int32) *CompanyInfoPlanInfoLimits {
 	o.Products.Set(&v)
-	return o
+        return o
 }
 // SetProductsNil sets the value for Products to be an explicit nil
 func (o *CompanyInfoPlanInfoLimits) SetProductsNil() *CompanyInfoPlanInfoLimits {
 	o.Products.Set(nil)
-	return o
+    return o
 }
 
 // UnsetProducts ensures that no value is present for Products, not even an explicit nil
@@ -210,12 +210,12 @@ func (o *CompanyInfoPlanInfoLimits) HasDocuments() bool {
 // SetDocuments gets a reference to the given NullableInt32 and assigns it to the Documents field.
 func (o *CompanyInfoPlanInfoLimits) SetDocuments(v int32) *CompanyInfoPlanInfoLimits {
 	o.Documents.Set(&v)
-	return o
+        return o
 }
 // SetDocumentsNil sets the value for Documents to be an explicit nil
 func (o *CompanyInfoPlanInfoLimits) SetDocumentsNil() *CompanyInfoPlanInfoLimits {
 	o.Documents.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDocuments ensures that no value is present for Documents, not even an explicit nil
