@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,9 +21,9 @@ var _ MappedNullable = &SendEInvoiceRequestData{}
 // SendEInvoiceRequestData struct for SendEInvoiceRequestData
 type SendEInvoiceRequestData struct {
 	// Value of TipoCassa used (optional, override the company default value).
-	CassaType NullableString `json:"cassa_type,omitempty"`
+CassaType NullableString `json:"cassa_type,omitempty"`
 	// Value of CausalePagamento used (optional, override the company default value).
-	WithholdingTaxCausal NullableString `json:"withholding_tax_causal,omitempty"`
+WithholdingTaxCausal NullableString `json:"withholding_tax_causal,omitempty"`
 }
 
 // NewSendEInvoiceRequestData instantiates a new SendEInvoiceRequestData object
@@ -74,12 +74,12 @@ func (o *SendEInvoiceRequestData) HasCassaType() bool {
 // SetCassaType gets a reference to the given NullableString and assigns it to the CassaType field.
 func (o *SendEInvoiceRequestData) SetCassaType(v string) *SendEInvoiceRequestData {
 	o.CassaType.Set(&v)
-	return o
+        return o
 }
 // SetCassaTypeNil sets the value for CassaType to be an explicit nil
 func (o *SendEInvoiceRequestData) SetCassaTypeNil() *SendEInvoiceRequestData {
 	o.CassaType.Set(nil)
-	return o
+    return o
 }
 
 // UnsetCassaType ensures that no value is present for CassaType, not even an explicit nil
@@ -118,12 +118,12 @@ func (o *SendEInvoiceRequestData) HasWithholdingTaxCausal() bool {
 // SetWithholdingTaxCausal gets a reference to the given NullableString and assigns it to the WithholdingTaxCausal field.
 func (o *SendEInvoiceRequestData) SetWithholdingTaxCausal(v string) *SendEInvoiceRequestData {
 	o.WithholdingTaxCausal.Set(&v)
-	return o
+        return o
 }
 // SetWithholdingTaxCausalNil sets the value for WithholdingTaxCausal to be an explicit nil
 func (o *SendEInvoiceRequestData) SetWithholdingTaxCausalNil() *SendEInvoiceRequestData {
 	o.WithholdingTaxCausal.Set(nil)
-	return o
+    return o
 }
 
 // UnsetWithholdingTaxCausal ensures that no value is present for WithholdingTaxCausal, not even an explicit nil

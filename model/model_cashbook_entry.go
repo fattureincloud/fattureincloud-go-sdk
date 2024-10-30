@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,22 +21,22 @@ var _ MappedNullable = &CashbookEntry{}
 // CashbookEntry struct for CashbookEntry
 type CashbookEntry struct {
 	// Cashbook id
-	Id NullableString `json:"id,omitempty"`
+Id NullableString `json:"id,omitempty"`
 	// Cashbook date
-	Date NullableString `json:"date,omitempty"`
+Date NullableString `json:"date,omitempty"`
 	// Cashbook description
-	Description NullableString `json:"description,omitempty"`
-	Kind *CashbookEntryKind `json:"kind,omitempty"`
-	Type NullableCashbookEntryType `json:"type,omitempty"`
+Description NullableString `json:"description,omitempty"`
+Kind *CashbookEntryKind `json:"kind,omitempty"`
+Type NullableCashbookEntryType `json:"type,omitempty"`
 	// Cashbook entity name
-	EntityName NullableString `json:"entity_name,omitempty"`
-	Document NullableCashbookEntryDocument `json:"document,omitempty"`
+EntityName NullableString `json:"entity_name,omitempty"`
+Document NullableCashbookEntryDocument `json:"document,omitempty"`
 	// [Only for cashbook entry in] Cashbook total amount in
-	AmountIn NullableFloat32 `json:"amount_in,omitempty"`
-	PaymentAccountIn NullablePaymentAccount `json:"payment_account_in,omitempty"`
+AmountIn NullableFloat32 `json:"amount_in,omitempty"`
+PaymentAccountIn NullablePaymentAccount `json:"payment_account_in,omitempty"`
 	// [Only for cashbook entry out] Cashbook total amount out
-	AmountOut NullableFloat32 `json:"amount_out,omitempty"`
-	PaymentAccountOut NullablePaymentAccount `json:"payment_account_out,omitempty"`
+AmountOut NullableFloat32 `json:"amount_out,omitempty"`
+PaymentAccountOut NullablePaymentAccount `json:"payment_account_out,omitempty"`
 }
 
 // NewCashbookEntry instantiates a new CashbookEntry object
@@ -87,12 +87,12 @@ func (o *CashbookEntry) HasId() bool {
 // SetId gets a reference to the given NullableString and assigns it to the Id field.
 func (o *CashbookEntry) SetId(v string) *CashbookEntry {
 	o.Id.Set(&v)
-	return o
+        return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *CashbookEntry) SetIdNil() *CashbookEntry {
 	o.Id.Set(nil)
-	return o
+    return o
 }
 
 // UnsetId ensures that no value is present for Id, not even an explicit nil
@@ -131,12 +131,12 @@ func (o *CashbookEntry) HasDate() bool {
 // SetDate gets a reference to the given NullableString and assigns it to the Date field.
 func (o *CashbookEntry) SetDate(v string) *CashbookEntry {
 	o.Date.Set(&v)
-	return o
+        return o
 }
 // SetDateNil sets the value for Date to be an explicit nil
 func (o *CashbookEntry) SetDateNil() *CashbookEntry {
 	o.Date.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDate ensures that no value is present for Date, not even an explicit nil
@@ -175,12 +175,12 @@ func (o *CashbookEntry) HasDescription() bool {
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *CashbookEntry) SetDescription(v string) *CashbookEntry {
 	o.Description.Set(&v)
-	return o
+        return o
 }
 // SetDescriptionNil sets the value for Description to be an explicit nil
 func (o *CashbookEntry) SetDescriptionNil() *CashbookEntry {
 	o.Description.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDescription ensures that no value is present for Description, not even an explicit nil
@@ -218,7 +218,7 @@ func (o *CashbookEntry) HasKind() bool {
 // SetKind gets a reference to the given CashbookEntryKind and assigns it to the Kind field.
 func (o *CashbookEntry) SetKind(v CashbookEntryKind) *CashbookEntry {
 	o.Kind = &v
-	return o
+        return o
 }
 
 // GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -252,12 +252,12 @@ func (o *CashbookEntry) HasType() bool {
 // SetType gets a reference to the given NullableCashbookEntryType and assigns it to the Type field.
 func (o *CashbookEntry) SetType(v CashbookEntryType) *CashbookEntry {
 	o.Type.Set(&v)
-	return o
+        return o
 }
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *CashbookEntry) SetTypeNil() *CashbookEntry {
 	o.Type.Set(nil)
-	return o
+    return o
 }
 
 // UnsetType ensures that no value is present for Type, not even an explicit nil
@@ -296,12 +296,12 @@ func (o *CashbookEntry) HasEntityName() bool {
 // SetEntityName gets a reference to the given NullableString and assigns it to the EntityName field.
 func (o *CashbookEntry) SetEntityName(v string) *CashbookEntry {
 	o.EntityName.Set(&v)
-	return o
+        return o
 }
 // SetEntityNameNil sets the value for EntityName to be an explicit nil
 func (o *CashbookEntry) SetEntityNameNil() *CashbookEntry {
 	o.EntityName.Set(nil)
-	return o
+    return o
 }
 
 // UnsetEntityName ensures that no value is present for EntityName, not even an explicit nil
@@ -340,12 +340,12 @@ func (o *CashbookEntry) HasDocument() bool {
 // SetDocument gets a reference to the given NullableCashbookEntryDocument and assigns it to the Document field.
 func (o *CashbookEntry) SetDocument(v CashbookEntryDocument) *CashbookEntry {
 	o.Document.Set(&v)
-	return o
+        return o
 }
 // SetDocumentNil sets the value for Document to be an explicit nil
 func (o *CashbookEntry) SetDocumentNil() *CashbookEntry {
 	o.Document.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDocument ensures that no value is present for Document, not even an explicit nil
@@ -384,12 +384,12 @@ func (o *CashbookEntry) HasAmountIn() bool {
 // SetAmountIn gets a reference to the given NullableFloat32 and assigns it to the AmountIn field.
 func (o *CashbookEntry) SetAmountIn(v float32) *CashbookEntry {
 	o.AmountIn.Set(&v)
-	return o
+        return o
 }
 // SetAmountInNil sets the value for AmountIn to be an explicit nil
 func (o *CashbookEntry) SetAmountInNil() *CashbookEntry {
 	o.AmountIn.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountIn ensures that no value is present for AmountIn, not even an explicit nil
@@ -428,12 +428,12 @@ func (o *CashbookEntry) HasPaymentAccountIn() bool {
 // SetPaymentAccountIn gets a reference to the given NullablePaymentAccount and assigns it to the PaymentAccountIn field.
 func (o *CashbookEntry) SetPaymentAccountIn(v PaymentAccount) *CashbookEntry {
 	o.PaymentAccountIn.Set(&v)
-	return o
+        return o
 }
 // SetPaymentAccountInNil sets the value for PaymentAccountIn to be an explicit nil
 func (o *CashbookEntry) SetPaymentAccountInNil() *CashbookEntry {
 	o.PaymentAccountIn.Set(nil)
-	return o
+    return o
 }
 
 // UnsetPaymentAccountIn ensures that no value is present for PaymentAccountIn, not even an explicit nil
@@ -472,12 +472,12 @@ func (o *CashbookEntry) HasAmountOut() bool {
 // SetAmountOut gets a reference to the given NullableFloat32 and assigns it to the AmountOut field.
 func (o *CashbookEntry) SetAmountOut(v float32) *CashbookEntry {
 	o.AmountOut.Set(&v)
-	return o
+        return o
 }
 // SetAmountOutNil sets the value for AmountOut to be an explicit nil
 func (o *CashbookEntry) SetAmountOutNil() *CashbookEntry {
 	o.AmountOut.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountOut ensures that no value is present for AmountOut, not even an explicit nil
@@ -516,12 +516,12 @@ func (o *CashbookEntry) HasPaymentAccountOut() bool {
 // SetPaymentAccountOut gets a reference to the given NullablePaymentAccount and assigns it to the PaymentAccountOut field.
 func (o *CashbookEntry) SetPaymentAccountOut(v PaymentAccount) *CashbookEntry {
 	o.PaymentAccountOut.Set(&v)
-	return o
+        return o
 }
 // SetPaymentAccountOutNil sets the value for PaymentAccountOut to be an explicit nil
 func (o *CashbookEntry) SetPaymentAccountOutNil() *CashbookEntry {
 	o.PaymentAccountOut.Set(nil)
-	return o
+    return o
 }
 
 // UnsetPaymentAccountOut ensures that no value is present for PaymentAccountOut, not even an explicit nil

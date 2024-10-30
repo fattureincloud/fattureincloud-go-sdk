@@ -35,28 +35,28 @@ Create Issued Document
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    createIssuedDocumentRequest := *fattureincloud.NewCreateIssuedDocumentRequest() // CreateIssuedDocumentRequest | The Issued Document (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        createIssuedDocumentRequest := *fattureincloud.NewCreateIssuedDocumentRequest() // CreateIssuedDocumentRequest | The Issued Document (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.IssuedDocumentsAPI.CreateIssuedDocument(auth, companyId).CreateIssuedDocumentRequest(createIssuedDocumentRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.CreateIssuedDocument``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.CreateIssuedDocument``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateIssuedDocument`: CreateIssuedDocumentResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `CreateIssuedDocument`: CreateIssuedDocumentResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -110,25 +110,25 @@ Delete Issued Document
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    documentId := int32(56) // int32 | The ID of the document.
+        companyId := int32(12345) // int32 | The ID of the company.
+        documentId := int32(56) // int32 | The ID of the document.
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.IssuedDocumentsAPI.DeleteIssuedDocument(auth, companyId, documentId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.DeleteIssuedDocument``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.DeleteIssuedDocument``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
 ```
@@ -184,25 +184,25 @@ Delete Issued Document Attachment
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    documentId := int32(56) // int32 | The ID of the document.
+        companyId := int32(12345) // int32 | The ID of the company.
+        documentId := int32(56) // int32 | The ID of the document.
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.IssuedDocumentsAPI.DeleteIssuedDocumentAttachment(auth, companyId, documentId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.DeleteIssuedDocumentAttachment``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.DeleteIssuedDocumentAttachment``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
 ```
@@ -258,28 +258,28 @@ Get Email Data
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    documentId := int32(56) // int32 | The ID of the document.
+        companyId := int32(12345) // int32 | The ID of the company.
+        documentId := int32(56) // int32 | The ID of the document.
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.IssuedDocumentsAPI.GetEmailData(auth, companyId, documentId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.GetEmailData``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.GetEmailData``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetEmailData`: GetEmailDataResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `GetEmailData`: GetEmailDataResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -334,29 +334,29 @@ Get Existing Issued Document Totals
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    documentId := int32(56) // int32 | The ID of the document.
-    getExistingIssuedDocumentTotalsRequest := *fattureincloud.NewGetExistingIssuedDocumentTotalsRequest() // GetExistingIssuedDocumentTotalsRequest |  (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        documentId := int32(56) // int32 | The ID of the document.
+        getExistingIssuedDocumentTotalsRequest := *fattureincloud.NewGetExistingIssuedDocumentTotalsRequest() // GetExistingIssuedDocumentTotalsRequest |  (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.IssuedDocumentsAPI.GetExistingIssuedDocumentTotals(auth, companyId, documentId).GetExistingIssuedDocumentTotalsRequest(getExistingIssuedDocumentTotalsRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.GetExistingIssuedDocumentTotals``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.GetExistingIssuedDocumentTotals``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetExistingIssuedDocumentTotals`: GetExistingIssuedDocumentTotalsResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `GetExistingIssuedDocumentTotals`: GetExistingIssuedDocumentTotalsResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -412,30 +412,30 @@ Get Issued Document
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    documentId := int32(56) // int32 | The ID of the document.
-    fields := "fields_example" // string | List of comma-separated fields. (optional)
-    fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        documentId := int32(56) // int32 | The ID of the document.
+        fields := "fields_example" // string | List of comma-separated fields. (optional)
+        fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.IssuedDocumentsAPI.GetIssuedDocument(auth, companyId, documentId).Fields(fields).Fieldset(fieldset).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.GetIssuedDocument``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.GetIssuedDocument``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetIssuedDocument`: GetIssuedDocumentResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `GetIssuedDocument`: GetIssuedDocumentResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -492,28 +492,28 @@ Get Issued Document Pre-Create Info
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    type_ := "type__example" // string | The type of the issued document.
+        companyId := int32(12345) // int32 | The ID of the company.
+        type_ := "type__example" // string | The type of the issued document.
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.IssuedDocumentsAPI.GetIssuedDocumentPreCreateInfo(auth, companyId).Type_(type_).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.GetIssuedDocumentPreCreateInfo``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.GetIssuedDocumentPreCreateInfo``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetIssuedDocumentPreCreateInfo`: GetIssuedDocumentPreCreateInfoResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `GetIssuedDocumentPreCreateInfo`: GetIssuedDocumentPreCreateInfoResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -567,28 +567,28 @@ Get New Issued Document Totals
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    getNewIssuedDocumentTotalsRequest := *fattureincloud.NewGetNewIssuedDocumentTotalsRequest() // GetNewIssuedDocumentTotalsRequest |  (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        getNewIssuedDocumentTotalsRequest := *fattureincloud.NewGetNewIssuedDocumentTotalsRequest() // GetNewIssuedDocumentTotalsRequest |  (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.IssuedDocumentsAPI.GetNewIssuedDocumentTotals(auth, companyId).GetNewIssuedDocumentTotalsRequest(getNewIssuedDocumentTotalsRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.GetNewIssuedDocumentTotals``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.GetNewIssuedDocumentTotals``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetNewIssuedDocumentTotals`: GetNewIssuedDocumentTotalsResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `GetNewIssuedDocumentTotals`: GetNewIssuedDocumentTotalsResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -630,7 +630,7 @@ Name | Type | Description  | Notes
 
 ## JoinIssuedDocuments
 
-> JoinIssuedDocumentsResponse JoinIssuedDocuments(ctx, companyId).Ids(ids).Group(group).EInvoice(eInvoice).Execute()
+> JoinIssuedDocumentsResponse JoinIssuedDocuments(ctx, companyId).Ids(ids).Group(group).Type_(type_).Execute()
 
 Join Issued Documents
 
@@ -642,30 +642,30 @@ Join Issued Documents
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    ids := "1,2,3,4" // string | Ids of the documents.
-    group := int32(56) // int32 | Group items. (optional)
-    eInvoice := int32(56) // int32 | New document e_invoice. (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        ids := "1,2,3,4" // string | Ids of the documents.
+        group := int32(56) // int32 | Group items. (optional)
+        type_ := "delivery_notes, orders, quotes, work_reports" // string | Type of the documents to be joined (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedDocumentsAPI.JoinIssuedDocuments(auth, companyId).Ids(ids).Group(group).EInvoice(eInvoice).Execute()
+    resp, r, err := apiClient.IssuedDocumentsAPI.JoinIssuedDocuments(auth, companyId).Ids(ids).Group(group).Type_(type_).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.JoinIssuedDocuments``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.JoinIssuedDocuments``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `JoinIssuedDocuments`: JoinIssuedDocumentsResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `JoinIssuedDocuments`: JoinIssuedDocumentsResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -687,7 +687,7 @@ Name | Type | Description  | Notes
 
  **ids** | **string** | Ids of the documents. | 
  **group** | **int32** | Group items. | 
- **eInvoice** | **int32** | New document e_invoice. | 
+ **type_** | **string** | Type of the documents to be joined | 
 
 ### Return type
 
@@ -721,35 +721,35 @@ List Issued Documents
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    type_ := "type__example" // string | The type of the issued document.
-    fields := "fields_example" // string | List of comma-separated fields. (optional)
-    fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
-    sort := "sort_example" // string | List of comma-separated fields for result sorting (minus for desc sorting). (optional)
-    page := int32(56) // int32 | The page to retrieve. (optional) (default to 1)
-    perPage := int32(56) // int32 | The size of the page. (optional) (default to 5)
-    q := "q_example" // string | Query for filtering the results. (optional)
-    inclusive := int32(56) // int32 | (Only for type = delivery_notes) Include invoices delivery notes. (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        type_ := "type__example" // string | The type of the issued document.
+        fields := "fields_example" // string | List of comma-separated fields. (optional)
+        fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
+        sort := "sort_example" // string | List of comma-separated fields for result sorting (minus for desc sorting). (optional)
+        page := int32(56) // int32 | The page to retrieve. (optional) (default to 1)
+        perPage := int32(56) // int32 | The size of the page. (optional) (default to 5)
+        q := "q_example" // string | Query for filtering the results. (optional)
+        inclusive := int32(56) // int32 | (Only for type = delivery_notes) Include invoices delivery notes. (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.IssuedDocumentsAPI.ListIssuedDocuments(auth, companyId).Type_(type_).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Inclusive(inclusive).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.ListIssuedDocuments``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.ListIssuedDocuments``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListIssuedDocuments`: ListIssuedDocumentsResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `ListIssuedDocuments`: ListIssuedDocumentsResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -810,29 +810,29 @@ Modify Issued Document
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    documentId := int32(56) // int32 | The ID of the document.
-    modifyIssuedDocumentRequest := *fattureincloud.NewModifyIssuedDocumentRequest() // ModifyIssuedDocumentRequest | The modified document (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        documentId := int32(56) // int32 | The ID of the document.
+        modifyIssuedDocumentRequest := *fattureincloud.NewModifyIssuedDocumentRequest() // ModifyIssuedDocumentRequest | The modified document (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.IssuedDocumentsAPI.ModifyIssuedDocument(auth, companyId, documentId).ModifyIssuedDocumentRequest(modifyIssuedDocumentRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.ModifyIssuedDocument``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.ModifyIssuedDocument``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ModifyIssuedDocument`: ModifyIssuedDocumentResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `ModifyIssuedDocument`: ModifyIssuedDocumentResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -888,26 +888,26 @@ Schedule Email
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    documentId := int32(56) // int32 | The ID of the document.
-    scheduleEmailRequest := *fattureincloud.NewScheduleEmailRequest() // ScheduleEmailRequest | Email Schedule (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        documentId := int32(56) // int32 | The ID of the document.
+        scheduleEmailRequest := *fattureincloud.NewScheduleEmailRequest() // ScheduleEmailRequest | Email Schedule (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.IssuedDocumentsAPI.ScheduleEmail(auth, companyId, documentId).ScheduleEmailRequest(scheduleEmailRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.ScheduleEmail``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.ScheduleEmail``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
 ```
@@ -952,7 +952,7 @@ Name | Type | Description  | Notes
 
 ## TransformIssuedDocument
 
-> TransformIssuedDocumentResponse TransformIssuedDocument(ctx, companyId).OriginalDocumentId(originalDocumentId).NewType(newType).EInvoice(eInvoice).TransformKeepCopy(transformKeepCopy).Execute()
+> TransformIssuedDocumentResponse TransformIssuedDocument(ctx, companyId).OriginalDocumentId(originalDocumentId).NewType(newType).Type_(type_).EInvoice(eInvoice).TransformKeepCopy(transformKeepCopy).Execute()
 
 Transform Issued Document
 
@@ -964,31 +964,32 @@ Transform Issued Document
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    originalDocumentId := int32(56) // int32 | Original document id.
-    newType := "newType_example" // string | New document type.
-    eInvoice := int32(56) // int32 | New document e_invoice. (optional)
-    transformKeepCopy := int32(56) // int32 | Keep the old document. (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        originalDocumentId := int32(56) // int32 | Original document id.
+        newType := "newType_example" // string | New document type.
+        type_ := "type__example" // string | Current document type. (optional)
+        eInvoice := int32(56) // int32 | New document e_invoice. (optional)
+        transformKeepCopy := int32(56) // int32 | Keep the old document. (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedDocumentsAPI.TransformIssuedDocument(auth, companyId).OriginalDocumentId(originalDocumentId).NewType(newType).EInvoice(eInvoice).TransformKeepCopy(transformKeepCopy).Execute()
+    resp, r, err := apiClient.IssuedDocumentsAPI.TransformIssuedDocument(auth, companyId).OriginalDocumentId(originalDocumentId).NewType(newType).Type_(type_).EInvoice(eInvoice).TransformKeepCopy(transformKeepCopy).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.TransformIssuedDocument``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.TransformIssuedDocument``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `TransformIssuedDocument`: TransformIssuedDocumentResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `TransformIssuedDocument`: TransformIssuedDocumentResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -1010,6 +1011,7 @@ Name | Type | Description  | Notes
 
  **originalDocumentId** | **int32** | Original document id. | 
  **newType** | **string** | New document type. | 
+ **type_** | **string** | Current document type. | 
  **eInvoice** | **int32** | New document e_invoice. | 
  **transformKeepCopy** | **int32** | Keep the old document. | 
 
@@ -1045,29 +1047,29 @@ Upload Issued Document Attachment
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    filename := "filename_example" // string | Attachment file name (optional)
-    attachment := os.NewFile(1234, "some_file") // *os.File | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx] (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        filename := "filename_example" // string | Attachment file name (optional)
+        attachment := os.NewFile(1234, "some_file") // *os.File | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx] (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.IssuedDocumentsAPI.UploadIssuedDocumentAttachment(auth, companyId).Filename(filename).Attachment(attachment).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.UploadIssuedDocumentAttachment``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.UploadIssuedDocumentAttachment``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UploadIssuedDocumentAttachment`: UploadIssuedDocumentAttachmentResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `UploadIssuedDocumentAttachment`: UploadIssuedDocumentAttachmentResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 

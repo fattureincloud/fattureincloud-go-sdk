@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &VerifyEInvoiceXmlErrorResponse{}
 
 // VerifyEInvoiceXmlErrorResponse struct for VerifyEInvoiceXmlErrorResponse
 type VerifyEInvoiceXmlErrorResponse struct {
-	Error NullableVerifyEInvoiceXmlErrorResponseError `json:"error,omitempty"`
-	Extra NullableVerifyEInvoiceXmlErrorResponseExtra `json:"extra,omitempty"`
+Error NullableVerifyEInvoiceXmlErrorResponseError `json:"error,omitempty"`
+Extra NullableVerifyEInvoiceXmlErrorResponseExtra `json:"extra,omitempty"`
 }
 
 // NewVerifyEInvoiceXmlErrorResponse instantiates a new VerifyEInvoiceXmlErrorResponse object
@@ -72,12 +72,12 @@ func (o *VerifyEInvoiceXmlErrorResponse) HasError() bool {
 // SetError gets a reference to the given NullableVerifyEInvoiceXmlErrorResponseError and assigns it to the Error field.
 func (o *VerifyEInvoiceXmlErrorResponse) SetError(v VerifyEInvoiceXmlErrorResponseError) *VerifyEInvoiceXmlErrorResponse {
 	o.Error.Set(&v)
-	return o
+        return o
 }
 // SetErrorNil sets the value for Error to be an explicit nil
 func (o *VerifyEInvoiceXmlErrorResponse) SetErrorNil() *VerifyEInvoiceXmlErrorResponse {
 	o.Error.Set(nil)
-	return o
+    return o
 }
 
 // UnsetError ensures that no value is present for Error, not even an explicit nil
@@ -116,12 +116,12 @@ func (o *VerifyEInvoiceXmlErrorResponse) HasExtra() bool {
 // SetExtra gets a reference to the given NullableVerifyEInvoiceXmlErrorResponseExtra and assigns it to the Extra field.
 func (o *VerifyEInvoiceXmlErrorResponse) SetExtra(v VerifyEInvoiceXmlErrorResponseExtra) *VerifyEInvoiceXmlErrorResponse {
 	o.Extra.Set(&v)
-	return o
+        return o
 }
 // SetExtraNil sets the value for Extra to be an explicit nil
 func (o *VerifyEInvoiceXmlErrorResponse) SetExtraNil() *VerifyEInvoiceXmlErrorResponse {
 	o.Extra.Set(nil)
-	return o
+    return o
 }
 
 // UnsetExtra ensures that no value is present for Extra, not even an explicit nil

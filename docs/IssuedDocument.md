@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Year** | Pointer to **NullableInt32** | Issued document year | [optional] 
 **Currency** | Pointer to [**Currency**](Currency.md) |  | [optional] 
 **Language** | Pointer to [**Language**](Language.md) |  | [optional] 
-**Subject** | Pointer to **NullableString** | Issued document subject | [optional] 
+**Subject** | Pointer to **NullableString** | Issued document subject [not shown on the PDF] | [optional] 
 **VisibleSubject** | Pointer to **NullableString** | Issued document visible subject | [optional] 
 **RcCenter** | Pointer to **NullableString** | Issued document revenue center [or cost center if type&#x3D;supplier_order]. | [optional] 
 **Notes** | Pointer to **NullableString** | Issued document extra notes | [optional] 

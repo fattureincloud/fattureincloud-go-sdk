@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,22 +21,22 @@ var _ MappedNullable = &Company{}
 // Company struct for Company
 type Company struct {
 	// Company id
-	Id NullableInt32 `json:"id,omitempty"`
+Id NullableInt32 `json:"id,omitempty"`
 	// Company name
-	Name NullableString `json:"name,omitempty"`
-	Type *CompanyType `json:"type,omitempty"`
+Name NullableString `json:"name,omitempty"`
+Type *CompanyType `json:"type,omitempty"`
 	// Company authentication token for this company. [Only if type=company]
-	AccessToken NullableString `json:"access_token,omitempty"`
+AccessToken NullableString `json:"access_token,omitempty"`
 	// Company list of controlled companies [Only if type=accountant]
-	ControlledCompanies []ControlledCompany `json:"controlled_companies,omitempty"`
-	FicLicenseExpire NullableString `json:"fic_license_expire,omitempty"`
-	FicPlan *FattureInCloudPlanType `json:"fic_plan,omitempty"`
+ControlledCompanies []ControlledCompany `json:"controlled_companies,omitempty"`
+FicLicenseExpire NullableString `json:"fic_license_expire,omitempty"`
+FicPlan *FattureInCloudPlanType `json:"fic_plan,omitempty"`
 	// Company connection id
-	ConnectionId NullableInt32 `json:"connection_id,omitempty"`
+ConnectionId NullableInt32 `json:"connection_id,omitempty"`
 	// Company tax code
-	TaxCode NullableString `json:"tax_code,omitempty"`
+TaxCode NullableString `json:"tax_code,omitempty"`
 	// Company vat number
-	VatNumber NullableString `json:"vat_number,omitempty"`
+VatNumber NullableString `json:"vat_number,omitempty"`
 }
 
 // NewCompany instantiates a new Company object
@@ -87,12 +87,12 @@ func (o *Company) HasId() bool {
 // SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *Company) SetId(v int32) *Company {
 	o.Id.Set(&v)
-	return o
+        return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *Company) SetIdNil() *Company {
 	o.Id.Set(nil)
-	return o
+    return o
 }
 
 // UnsetId ensures that no value is present for Id, not even an explicit nil
@@ -131,12 +131,12 @@ func (o *Company) HasName() bool {
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *Company) SetName(v string) *Company {
 	o.Name.Set(&v)
-	return o
+        return o
 }
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *Company) SetNameNil() *Company {
 	o.Name.Set(nil)
-	return o
+    return o
 }
 
 // UnsetName ensures that no value is present for Name, not even an explicit nil
@@ -174,7 +174,7 @@ func (o *Company) HasType() bool {
 // SetType gets a reference to the given CompanyType and assigns it to the Type field.
 func (o *Company) SetType(v CompanyType) *Company {
 	o.Type = &v
-	return o
+        return o
 }
 
 // GetAccessToken returns the AccessToken field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -208,12 +208,12 @@ func (o *Company) HasAccessToken() bool {
 // SetAccessToken gets a reference to the given NullableString and assigns it to the AccessToken field.
 func (o *Company) SetAccessToken(v string) *Company {
 	o.AccessToken.Set(&v)
-	return o
+        return o
 }
 // SetAccessTokenNil sets the value for AccessToken to be an explicit nil
 func (o *Company) SetAccessTokenNil() *Company {
 	o.AccessToken.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAccessToken ensures that no value is present for AccessToken, not even an explicit nil
@@ -252,7 +252,7 @@ func (o *Company) HasControlledCompanies() bool {
 // SetControlledCompanies gets a reference to the given []ControlledCompany and assigns it to the ControlledCompanies field.
 func (o *Company) SetControlledCompanies(v []ControlledCompany) *Company {
 	o.ControlledCompanies = v
-	return o
+        return o
 }
 
 // GetFicLicenseExpire returns the FicLicenseExpire field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -286,12 +286,12 @@ func (o *Company) HasFicLicenseExpire() bool {
 // SetFicLicenseExpire gets a reference to the given NullableString and assigns it to the FicLicenseExpire field.
 func (o *Company) SetFicLicenseExpire(v string) *Company {
 	o.FicLicenseExpire.Set(&v)
-	return o
+        return o
 }
 // SetFicLicenseExpireNil sets the value for FicLicenseExpire to be an explicit nil
 func (o *Company) SetFicLicenseExpireNil() *Company {
 	o.FicLicenseExpire.Set(nil)
-	return o
+    return o
 }
 
 // UnsetFicLicenseExpire ensures that no value is present for FicLicenseExpire, not even an explicit nil
@@ -329,7 +329,7 @@ func (o *Company) HasFicPlan() bool {
 // SetFicPlan gets a reference to the given FattureInCloudPlanType and assigns it to the FicPlan field.
 func (o *Company) SetFicPlan(v FattureInCloudPlanType) *Company {
 	o.FicPlan = &v
-	return o
+        return o
 }
 
 // GetConnectionId returns the ConnectionId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -363,12 +363,12 @@ func (o *Company) HasConnectionId() bool {
 // SetConnectionId gets a reference to the given NullableInt32 and assigns it to the ConnectionId field.
 func (o *Company) SetConnectionId(v int32) *Company {
 	o.ConnectionId.Set(&v)
-	return o
+        return o
 }
 // SetConnectionIdNil sets the value for ConnectionId to be an explicit nil
 func (o *Company) SetConnectionIdNil() *Company {
 	o.ConnectionId.Set(nil)
-	return o
+    return o
 }
 
 // UnsetConnectionId ensures that no value is present for ConnectionId, not even an explicit nil
@@ -407,12 +407,12 @@ func (o *Company) HasTaxCode() bool {
 // SetTaxCode gets a reference to the given NullableString and assigns it to the TaxCode field.
 func (o *Company) SetTaxCode(v string) *Company {
 	o.TaxCode.Set(&v)
-	return o
+        return o
 }
 // SetTaxCodeNil sets the value for TaxCode to be an explicit nil
 func (o *Company) SetTaxCodeNil() *Company {
 	o.TaxCode.Set(nil)
-	return o
+    return o
 }
 
 // UnsetTaxCode ensures that no value is present for TaxCode, not even an explicit nil
@@ -451,12 +451,12 @@ func (o *Company) HasVatNumber() bool {
 // SetVatNumber gets a reference to the given NullableString and assigns it to the VatNumber field.
 func (o *Company) SetVatNumber(v string) *Company {
 	o.VatNumber.Set(&v)
-	return o
+        return o
 }
 // SetVatNumberNil sets the value for VatNumber to be an explicit nil
 func (o *Company) SetVatNumberNil() *Company {
 	o.VatNumber.Set(nil)
-	return o
+    return o
 }
 
 // UnsetVatNumber ensures that no value is present for VatNumber, not even an explicit nil

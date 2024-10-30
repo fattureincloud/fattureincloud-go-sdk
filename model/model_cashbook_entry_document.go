@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,11 +21,11 @@ var _ MappedNullable = &CashbookEntryDocument{}
 // CashbookEntryDocument struct for CashbookEntryDocument
 type CashbookEntryDocument struct {
 	// Cashbook related document id
-	Id NullableInt32 `json:"id,omitempty"`
+Id NullableInt32 `json:"id,omitempty"`
 	// Cashbook related document type
-	Type NullableString `json:"type,omitempty"`
+Type NullableString `json:"type,omitempty"`
 	// Cashbook related document path
-	Path NullableString `json:"path,omitempty"`
+Path NullableString `json:"path,omitempty"`
 }
 
 // NewCashbookEntryDocument instantiates a new CashbookEntryDocument object
@@ -76,12 +76,12 @@ func (o *CashbookEntryDocument) HasId() bool {
 // SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *CashbookEntryDocument) SetId(v int32) *CashbookEntryDocument {
 	o.Id.Set(&v)
-	return o
+        return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *CashbookEntryDocument) SetIdNil() *CashbookEntryDocument {
 	o.Id.Set(nil)
-	return o
+    return o
 }
 
 // UnsetId ensures that no value is present for Id, not even an explicit nil
@@ -120,12 +120,12 @@ func (o *CashbookEntryDocument) HasType() bool {
 // SetType gets a reference to the given NullableString and assigns it to the Type field.
 func (o *CashbookEntryDocument) SetType(v string) *CashbookEntryDocument {
 	o.Type.Set(&v)
-	return o
+        return o
 }
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *CashbookEntryDocument) SetTypeNil() *CashbookEntryDocument {
 	o.Type.Set(nil)
-	return o
+    return o
 }
 
 // UnsetType ensures that no value is present for Type, not even an explicit nil
@@ -164,12 +164,12 @@ func (o *CashbookEntryDocument) HasPath() bool {
 // SetPath gets a reference to the given NullableString and assigns it to the Path field.
 func (o *CashbookEntryDocument) SetPath(v string) *CashbookEntryDocument {
 	o.Path.Set(&v)
-	return o
+        return o
 }
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *CashbookEntryDocument) SetPathNil() *CashbookEntryDocument {
 	o.Path.Set(nil)
-	return o
+    return o
 }
 
 // UnsetPath ensures that no value is present for Path, not even an explicit nil

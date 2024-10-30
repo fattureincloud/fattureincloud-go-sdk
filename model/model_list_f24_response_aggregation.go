@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &ListF24ResponseAggregation{}
 
 // ListF24ResponseAggregation struct for ListF24ResponseAggregation
 type ListF24ResponseAggregation struct {
-	AggregatedData *ListF24ResponseAggregatedData `json:"aggregated_data,omitempty"`
+AggregatedData *ListF24ResponseAggregatedData `json:"aggregated_data,omitempty"`
 }
 
 // NewListF24ResponseAggregation instantiates a new ListF24ResponseAggregation object
@@ -70,7 +70,7 @@ func (o *ListF24ResponseAggregation) HasAggregatedData() bool {
 // SetAggregatedData gets a reference to the given ListF24ResponseAggregatedData and assigns it to the AggregatedData field.
 func (o *ListF24ResponseAggregation) SetAggregatedData(v ListF24ResponseAggregatedData) *ListF24ResponseAggregation {
 	o.AggregatedData = &v
-	return o
+        return o
 }
 
 func (o ListF24ResponseAggregation) MarshalJSON() ([]byte, error) {

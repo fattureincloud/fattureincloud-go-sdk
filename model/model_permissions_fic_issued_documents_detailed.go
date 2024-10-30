@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -20,16 +20,16 @@ var _ MappedNullable = &PermissionsFicIssuedDocumentsDetailed{}
 
 // PermissionsFicIssuedDocumentsDetailed struct for PermissionsFicIssuedDocumentsDetailed
 type PermissionsFicIssuedDocumentsDetailed struct {
-	Quotes *PermissionLevel `json:"quotes,omitempty"`
-	Proformas *PermissionLevel `json:"proformas,omitempty"`
-	Invoices *PermissionLevel `json:"invoices,omitempty"`
-	Receipts *PermissionLevel `json:"receipts,omitempty"`
-	DeliveryNotes *PermissionLevel `json:"delivery_notes,omitempty"`
-	CreditNotes *PermissionLevel `json:"credit_notes,omitempty"`
-	Orders *PermissionLevel `json:"orders,omitempty"`
-	WorkReports *PermissionLevel `json:"work_reports,omitempty"`
-	SupplierOrders *PermissionLevel `json:"supplier_orders,omitempty"`
-	SelfInvoices *PermissionLevel `json:"self_invoices,omitempty"`
+Quotes *PermissionLevel `json:"quotes,omitempty"`
+Proformas *PermissionLevel `json:"proformas,omitempty"`
+Invoices *PermissionLevel `json:"invoices,omitempty"`
+Receipts *PermissionLevel `json:"receipts,omitempty"`
+DeliveryNotes *PermissionLevel `json:"delivery_notes,omitempty"`
+CreditNotes *PermissionLevel `json:"credit_notes,omitempty"`
+Orders *PermissionLevel `json:"orders,omitempty"`
+WorkReports *PermissionLevel `json:"work_reports,omitempty"`
+SupplierOrders *PermissionLevel `json:"supplier_orders,omitempty"`
+SelfInvoices *PermissionLevel `json:"self_invoices,omitempty"`
 }
 
 // NewPermissionsFicIssuedDocumentsDetailed instantiates a new PermissionsFicIssuedDocumentsDetailed object
@@ -79,7 +79,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) HasQuotes() bool {
 // SetQuotes gets a reference to the given PermissionLevel and assigns it to the Quotes field.
 func (o *PermissionsFicIssuedDocumentsDetailed) SetQuotes(v PermissionLevel) *PermissionsFicIssuedDocumentsDetailed {
 	o.Quotes = &v
-	return o
+        return o
 }
 
 // GetProformas returns the Proformas field value if set, zero value otherwise.
@@ -112,7 +112,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) HasProformas() bool {
 // SetProformas gets a reference to the given PermissionLevel and assigns it to the Proformas field.
 func (o *PermissionsFicIssuedDocumentsDetailed) SetProformas(v PermissionLevel) *PermissionsFicIssuedDocumentsDetailed {
 	o.Proformas = &v
-	return o
+        return o
 }
 
 // GetInvoices returns the Invoices field value if set, zero value otherwise.
@@ -145,7 +145,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) HasInvoices() bool {
 // SetInvoices gets a reference to the given PermissionLevel and assigns it to the Invoices field.
 func (o *PermissionsFicIssuedDocumentsDetailed) SetInvoices(v PermissionLevel) *PermissionsFicIssuedDocumentsDetailed {
 	o.Invoices = &v
-	return o
+        return o
 }
 
 // GetReceipts returns the Receipts field value if set, zero value otherwise.
@@ -178,7 +178,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) HasReceipts() bool {
 // SetReceipts gets a reference to the given PermissionLevel and assigns it to the Receipts field.
 func (o *PermissionsFicIssuedDocumentsDetailed) SetReceipts(v PermissionLevel) *PermissionsFicIssuedDocumentsDetailed {
 	o.Receipts = &v
-	return o
+        return o
 }
 
 // GetDeliveryNotes returns the DeliveryNotes field value if set, zero value otherwise.
@@ -211,7 +211,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) HasDeliveryNotes() bool {
 // SetDeliveryNotes gets a reference to the given PermissionLevel and assigns it to the DeliveryNotes field.
 func (o *PermissionsFicIssuedDocumentsDetailed) SetDeliveryNotes(v PermissionLevel) *PermissionsFicIssuedDocumentsDetailed {
 	o.DeliveryNotes = &v
-	return o
+        return o
 }
 
 // GetCreditNotes returns the CreditNotes field value if set, zero value otherwise.
@@ -244,7 +244,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) HasCreditNotes() bool {
 // SetCreditNotes gets a reference to the given PermissionLevel and assigns it to the CreditNotes field.
 func (o *PermissionsFicIssuedDocumentsDetailed) SetCreditNotes(v PermissionLevel) *PermissionsFicIssuedDocumentsDetailed {
 	o.CreditNotes = &v
-	return o
+        return o
 }
 
 // GetOrders returns the Orders field value if set, zero value otherwise.
@@ -277,7 +277,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) HasOrders() bool {
 // SetOrders gets a reference to the given PermissionLevel and assigns it to the Orders field.
 func (o *PermissionsFicIssuedDocumentsDetailed) SetOrders(v PermissionLevel) *PermissionsFicIssuedDocumentsDetailed {
 	o.Orders = &v
-	return o
+        return o
 }
 
 // GetWorkReports returns the WorkReports field value if set, zero value otherwise.
@@ -310,7 +310,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) HasWorkReports() bool {
 // SetWorkReports gets a reference to the given PermissionLevel and assigns it to the WorkReports field.
 func (o *PermissionsFicIssuedDocumentsDetailed) SetWorkReports(v PermissionLevel) *PermissionsFicIssuedDocumentsDetailed {
 	o.WorkReports = &v
-	return o
+        return o
 }
 
 // GetSupplierOrders returns the SupplierOrders field value if set, zero value otherwise.
@@ -343,7 +343,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) HasSupplierOrders() bool {
 // SetSupplierOrders gets a reference to the given PermissionLevel and assigns it to the SupplierOrders field.
 func (o *PermissionsFicIssuedDocumentsDetailed) SetSupplierOrders(v PermissionLevel) *PermissionsFicIssuedDocumentsDetailed {
 	o.SupplierOrders = &v
-	return o
+        return o
 }
 
 // GetSelfInvoices returns the SelfInvoices field value if set, zero value otherwise.
@@ -376,7 +376,7 @@ func (o *PermissionsFicIssuedDocumentsDetailed) HasSelfInvoices() bool {
 // SetSelfInvoices gets a reference to the given PermissionLevel and assigns it to the SelfInvoices field.
 func (o *PermissionsFicIssuedDocumentsDetailed) SetSelfInvoices(v PermissionLevel) *PermissionsFicIssuedDocumentsDetailed {
 	o.SelfInvoices = &v
-	return o
+        return o
 }
 
 func (o PermissionsFicIssuedDocumentsDetailed) MarshalJSON() ([]byte, error) {

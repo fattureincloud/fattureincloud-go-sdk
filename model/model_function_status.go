@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &FunctionStatus{}
 
 // FunctionStatus struct for FunctionStatus
 type FunctionStatus struct {
-	Active NullableBool `json:"active,omitempty"`
+Active NullableBool `json:"active,omitempty"`
 }
 
 // NewFunctionStatus instantiates a new FunctionStatus object
@@ -71,12 +71,12 @@ func (o *FunctionStatus) HasActive() bool {
 // SetActive gets a reference to the given NullableBool and assigns it to the Active field.
 func (o *FunctionStatus) SetActive(v bool) *FunctionStatus {
 	o.Active.Set(&v)
-	return o
+        return o
 }
 // SetActiveNil sets the value for Active to be an explicit nil
 func (o *FunctionStatus) SetActiveNil() *FunctionStatus {
 	o.Active.Set(nil)
-	return o
+    return o
 }
 
 // UnsetActive ensures that no value is present for Active, not even an explicit nil

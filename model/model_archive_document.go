@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,17 +21,17 @@ var _ MappedNullable = &ArchiveDocument{}
 // ArchiveDocument struct for ArchiveDocument
 type ArchiveDocument struct {
 	// Archive document id
-	Id NullableInt32 `json:"id,omitempty"`
+Id NullableInt32 `json:"id,omitempty"`
 	// Archive document date
-	Date NullableString `json:"date,omitempty"`
+Date NullableString `json:"date,omitempty"`
 	// Archive Document description
-	Description NullableString `json:"description,omitempty"`
+Description NullableString `json:"description,omitempty"`
 	// [Temporary] [Read Only] Archive Document url of the attached file
-	AttachmentUrl NullableString `json:"attachment_url,omitempty"`
+AttachmentUrl NullableString `json:"attachment_url,omitempty"`
 	// Archive document category
-	Category NullableString `json:"category,omitempty"`
+Category NullableString `json:"category,omitempty"`
 	// [Write Only]  [Required] Archive document attachment token returned by POST /archive/attachment
-	AttachmentToken NullableString `json:"attachment_token,omitempty"`
+AttachmentToken NullableString `json:"attachment_token,omitempty"`
 }
 
 // NewArchiveDocument instantiates a new ArchiveDocument object
@@ -82,12 +82,12 @@ func (o *ArchiveDocument) HasId() bool {
 // SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *ArchiveDocument) SetId(v int32) *ArchiveDocument {
 	o.Id.Set(&v)
-	return o
+        return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *ArchiveDocument) SetIdNil() *ArchiveDocument {
 	o.Id.Set(nil)
-	return o
+    return o
 }
 
 // UnsetId ensures that no value is present for Id, not even an explicit nil
@@ -126,12 +126,12 @@ func (o *ArchiveDocument) HasDate() bool {
 // SetDate gets a reference to the given NullableString and assigns it to the Date field.
 func (o *ArchiveDocument) SetDate(v string) *ArchiveDocument {
 	o.Date.Set(&v)
-	return o
+        return o
 }
 // SetDateNil sets the value for Date to be an explicit nil
 func (o *ArchiveDocument) SetDateNil() *ArchiveDocument {
 	o.Date.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDate ensures that no value is present for Date, not even an explicit nil
@@ -170,12 +170,12 @@ func (o *ArchiveDocument) HasDescription() bool {
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ArchiveDocument) SetDescription(v string) *ArchiveDocument {
 	o.Description.Set(&v)
-	return o
+        return o
 }
 // SetDescriptionNil sets the value for Description to be an explicit nil
 func (o *ArchiveDocument) SetDescriptionNil() *ArchiveDocument {
 	o.Description.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDescription ensures that no value is present for Description, not even an explicit nil
@@ -214,12 +214,12 @@ func (o *ArchiveDocument) HasAttachmentUrl() bool {
 // SetAttachmentUrl gets a reference to the given NullableString and assigns it to the AttachmentUrl field.
 func (o *ArchiveDocument) SetAttachmentUrl(v string) *ArchiveDocument {
 	o.AttachmentUrl.Set(&v)
-	return o
+        return o
 }
 // SetAttachmentUrlNil sets the value for AttachmentUrl to be an explicit nil
 func (o *ArchiveDocument) SetAttachmentUrlNil() *ArchiveDocument {
 	o.AttachmentUrl.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAttachmentUrl ensures that no value is present for AttachmentUrl, not even an explicit nil
@@ -258,12 +258,12 @@ func (o *ArchiveDocument) HasCategory() bool {
 // SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *ArchiveDocument) SetCategory(v string) *ArchiveDocument {
 	o.Category.Set(&v)
-	return o
+        return o
 }
 // SetCategoryNil sets the value for Category to be an explicit nil
 func (o *ArchiveDocument) SetCategoryNil() *ArchiveDocument {
 	o.Category.Set(nil)
-	return o
+    return o
 }
 
 // UnsetCategory ensures that no value is present for Category, not even an explicit nil
@@ -302,12 +302,12 @@ func (o *ArchiveDocument) HasAttachmentToken() bool {
 // SetAttachmentToken gets a reference to the given NullableString and assigns it to the AttachmentToken field.
 func (o *ArchiveDocument) SetAttachmentToken(v string) *ArchiveDocument {
 	o.AttachmentToken.Set(&v)
-	return o
+        return o
 }
 // SetAttachmentTokenNil sets the value for AttachmentToken to be an explicit nil
 func (o *ArchiveDocument) SetAttachmentTokenNil() *ArchiveDocument {
 	o.AttachmentToken.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAttachmentToken ensures that no value is present for AttachmentToken, not even an explicit nil

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,11 +21,11 @@ type ReceiptType string
 
 // List of ReceiptType
 var ReceiptTypes = struct {
-	TILL_RECEIPT ReceiptType
-	SALES_RECEIPT ReceiptType
+    TILL_RECEIPT ReceiptType
+    SALES_RECEIPT ReceiptType
 } {
-	TILL_RECEIPT: "till_receipt",
-	SALES_RECEIPT: "sales_receipt",
+            TILL_RECEIPT: "till_receipt",
+            SALES_RECEIPT: "sales_receipt",
 }
 
 // All allowed values of ReceiptType enum

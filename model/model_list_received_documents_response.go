@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,28 +21,28 @@ var _ MappedNullable = &ListReceivedDocumentsResponse{}
 // ListReceivedDocumentsResponse 
 type ListReceivedDocumentsResponse struct {
 	// Current page number.
-	CurrentPage NullableInt32 `json:"current_page,omitempty"`
+CurrentPage NullableInt32 `json:"current_page,omitempty"`
 	// First page url.
-	FirstPageUrl NullableString `json:"first_page_url,omitempty"`
+FirstPageUrl NullableString `json:"first_page_url,omitempty"`
 	// First result of the page.
-	From NullableInt32 `json:"from,omitempty"`
+From NullableInt32 `json:"from,omitempty"`
 	// Last page number.
-	LastPage NullableInt32 `json:"last_page,omitempty"`
+LastPage NullableInt32 `json:"last_page,omitempty"`
 	// Last page url.
-	LastPageUrl NullableString `json:"last_page_url,omitempty"`
+LastPageUrl NullableString `json:"last_page_url,omitempty"`
 	// Next page url
-	NextPageUrl NullableString `json:"next_page_url,omitempty"`
+NextPageUrl NullableString `json:"next_page_url,omitempty"`
 	// Request path.
-	Path NullableString `json:"path,omitempty"`
+Path NullableString `json:"path,omitempty"`
 	// Number of result per page.
-	PerPage NullableInt32 `json:"per_page,omitempty"`
+PerPage NullableInt32 `json:"per_page,omitempty"`
 	// Previous page url.
-	PrevPageUrl NullableString `json:"prev_page_url,omitempty"`
+PrevPageUrl NullableString `json:"prev_page_url,omitempty"`
 	// Last result of the page.
-	To NullableInt32 `json:"to,omitempty"`
+To NullableInt32 `json:"to,omitempty"`
 	// Total number of results
-	Total NullableInt32 `json:"total,omitempty"`
-	Data []ReceivedDocument `json:"data,omitempty"`
+Total NullableInt32 `json:"total,omitempty"`
+Data []ReceivedDocument `json:"data,omitempty"`
 }
 
 // NewListReceivedDocumentsResponse instantiates a new ListReceivedDocumentsResponse object
@@ -93,12 +93,12 @@ func (o *ListReceivedDocumentsResponse) HasCurrentPage() bool {
 // SetCurrentPage gets a reference to the given NullableInt32 and assigns it to the CurrentPage field.
 func (o *ListReceivedDocumentsResponse) SetCurrentPage(v int32) *ListReceivedDocumentsResponse {
 	o.CurrentPage.Set(&v)
-	return o
+        return o
 }
 // SetCurrentPageNil sets the value for CurrentPage to be an explicit nil
 func (o *ListReceivedDocumentsResponse) SetCurrentPageNil() *ListReceivedDocumentsResponse {
 	o.CurrentPage.Set(nil)
-	return o
+    return o
 }
 
 // UnsetCurrentPage ensures that no value is present for CurrentPage, not even an explicit nil
@@ -137,12 +137,12 @@ func (o *ListReceivedDocumentsResponse) HasFirstPageUrl() bool {
 // SetFirstPageUrl gets a reference to the given NullableString and assigns it to the FirstPageUrl field.
 func (o *ListReceivedDocumentsResponse) SetFirstPageUrl(v string) *ListReceivedDocumentsResponse {
 	o.FirstPageUrl.Set(&v)
-	return o
+        return o
 }
 // SetFirstPageUrlNil sets the value for FirstPageUrl to be an explicit nil
 func (o *ListReceivedDocumentsResponse) SetFirstPageUrlNil() *ListReceivedDocumentsResponse {
 	o.FirstPageUrl.Set(nil)
-	return o
+    return o
 }
 
 // UnsetFirstPageUrl ensures that no value is present for FirstPageUrl, not even an explicit nil
@@ -181,12 +181,12 @@ func (o *ListReceivedDocumentsResponse) HasFrom() bool {
 // SetFrom gets a reference to the given NullableInt32 and assigns it to the From field.
 func (o *ListReceivedDocumentsResponse) SetFrom(v int32) *ListReceivedDocumentsResponse {
 	o.From.Set(&v)
-	return o
+        return o
 }
 // SetFromNil sets the value for From to be an explicit nil
 func (o *ListReceivedDocumentsResponse) SetFromNil() *ListReceivedDocumentsResponse {
 	o.From.Set(nil)
-	return o
+    return o
 }
 
 // UnsetFrom ensures that no value is present for From, not even an explicit nil
@@ -225,12 +225,12 @@ func (o *ListReceivedDocumentsResponse) HasLastPage() bool {
 // SetLastPage gets a reference to the given NullableInt32 and assigns it to the LastPage field.
 func (o *ListReceivedDocumentsResponse) SetLastPage(v int32) *ListReceivedDocumentsResponse {
 	o.LastPage.Set(&v)
-	return o
+        return o
 }
 // SetLastPageNil sets the value for LastPage to be an explicit nil
 func (o *ListReceivedDocumentsResponse) SetLastPageNil() *ListReceivedDocumentsResponse {
 	o.LastPage.Set(nil)
-	return o
+    return o
 }
 
 // UnsetLastPage ensures that no value is present for LastPage, not even an explicit nil
@@ -269,12 +269,12 @@ func (o *ListReceivedDocumentsResponse) HasLastPageUrl() bool {
 // SetLastPageUrl gets a reference to the given NullableString and assigns it to the LastPageUrl field.
 func (o *ListReceivedDocumentsResponse) SetLastPageUrl(v string) *ListReceivedDocumentsResponse {
 	o.LastPageUrl.Set(&v)
-	return o
+        return o
 }
 // SetLastPageUrlNil sets the value for LastPageUrl to be an explicit nil
 func (o *ListReceivedDocumentsResponse) SetLastPageUrlNil() *ListReceivedDocumentsResponse {
 	o.LastPageUrl.Set(nil)
-	return o
+    return o
 }
 
 // UnsetLastPageUrl ensures that no value is present for LastPageUrl, not even an explicit nil
@@ -313,12 +313,12 @@ func (o *ListReceivedDocumentsResponse) HasNextPageUrl() bool {
 // SetNextPageUrl gets a reference to the given NullableString and assigns it to the NextPageUrl field.
 func (o *ListReceivedDocumentsResponse) SetNextPageUrl(v string) *ListReceivedDocumentsResponse {
 	o.NextPageUrl.Set(&v)
-	return o
+        return o
 }
 // SetNextPageUrlNil sets the value for NextPageUrl to be an explicit nil
 func (o *ListReceivedDocumentsResponse) SetNextPageUrlNil() *ListReceivedDocumentsResponse {
 	o.NextPageUrl.Set(nil)
-	return o
+    return o
 }
 
 // UnsetNextPageUrl ensures that no value is present for NextPageUrl, not even an explicit nil
@@ -357,12 +357,12 @@ func (o *ListReceivedDocumentsResponse) HasPath() bool {
 // SetPath gets a reference to the given NullableString and assigns it to the Path field.
 func (o *ListReceivedDocumentsResponse) SetPath(v string) *ListReceivedDocumentsResponse {
 	o.Path.Set(&v)
-	return o
+        return o
 }
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *ListReceivedDocumentsResponse) SetPathNil() *ListReceivedDocumentsResponse {
 	o.Path.Set(nil)
-	return o
+    return o
 }
 
 // UnsetPath ensures that no value is present for Path, not even an explicit nil
@@ -401,12 +401,12 @@ func (o *ListReceivedDocumentsResponse) HasPerPage() bool {
 // SetPerPage gets a reference to the given NullableInt32 and assigns it to the PerPage field.
 func (o *ListReceivedDocumentsResponse) SetPerPage(v int32) *ListReceivedDocumentsResponse {
 	o.PerPage.Set(&v)
-	return o
+        return o
 }
 // SetPerPageNil sets the value for PerPage to be an explicit nil
 func (o *ListReceivedDocumentsResponse) SetPerPageNil() *ListReceivedDocumentsResponse {
 	o.PerPage.Set(nil)
-	return o
+    return o
 }
 
 // UnsetPerPage ensures that no value is present for PerPage, not even an explicit nil
@@ -445,12 +445,12 @@ func (o *ListReceivedDocumentsResponse) HasPrevPageUrl() bool {
 // SetPrevPageUrl gets a reference to the given NullableString and assigns it to the PrevPageUrl field.
 func (o *ListReceivedDocumentsResponse) SetPrevPageUrl(v string) *ListReceivedDocumentsResponse {
 	o.PrevPageUrl.Set(&v)
-	return o
+        return o
 }
 // SetPrevPageUrlNil sets the value for PrevPageUrl to be an explicit nil
 func (o *ListReceivedDocumentsResponse) SetPrevPageUrlNil() *ListReceivedDocumentsResponse {
 	o.PrevPageUrl.Set(nil)
-	return o
+    return o
 }
 
 // UnsetPrevPageUrl ensures that no value is present for PrevPageUrl, not even an explicit nil
@@ -489,12 +489,12 @@ func (o *ListReceivedDocumentsResponse) HasTo() bool {
 // SetTo gets a reference to the given NullableInt32 and assigns it to the To field.
 func (o *ListReceivedDocumentsResponse) SetTo(v int32) *ListReceivedDocumentsResponse {
 	o.To.Set(&v)
-	return o
+        return o
 }
 // SetToNil sets the value for To to be an explicit nil
 func (o *ListReceivedDocumentsResponse) SetToNil() *ListReceivedDocumentsResponse {
 	o.To.Set(nil)
-	return o
+    return o
 }
 
 // UnsetTo ensures that no value is present for To, not even an explicit nil
@@ -533,12 +533,12 @@ func (o *ListReceivedDocumentsResponse) HasTotal() bool {
 // SetTotal gets a reference to the given NullableInt32 and assigns it to the Total field.
 func (o *ListReceivedDocumentsResponse) SetTotal(v int32) *ListReceivedDocumentsResponse {
 	o.Total.Set(&v)
-	return o
+        return o
 }
 // SetTotalNil sets the value for Total to be an explicit nil
 func (o *ListReceivedDocumentsResponse) SetTotalNil() *ListReceivedDocumentsResponse {
 	o.Total.Set(nil)
-	return o
+    return o
 }
 
 // UnsetTotal ensures that no value is present for Total, not even an explicit nil
@@ -577,7 +577,7 @@ func (o *ListReceivedDocumentsResponse) HasData() bool {
 // SetData gets a reference to the given []ReceivedDocument and assigns it to the Data field.
 func (o *ListReceivedDocumentsResponse) SetData(v []ReceivedDocument) *ListReceivedDocumentsResponse {
 	o.Data = v
-	return o
+        return o
 }
 
 func (o ListReceivedDocumentsResponse) MarshalJSON() ([]byte, error) {

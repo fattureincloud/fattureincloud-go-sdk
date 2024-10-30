@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,29 +21,29 @@ type IssuedDocumentType string
 
 // List of IssuedDocumentType
 var IssuedDocumentTypes = struct {
-	INVOICE IssuedDocumentType
-	QUOTE IssuedDocumentType
-	PROFORMA IssuedDocumentType
-	RECEIPT IssuedDocumentType
-	DELIVERY_NOTE IssuedDocumentType
-	CREDIT_NOTE IssuedDocumentType
-	ORDER IssuedDocumentType
-	WORK_REPORT IssuedDocumentType
-	SUPPLIER_ORDER IssuedDocumentType
-	SELF_OWN_INVOICE IssuedDocumentType
-	SELF_SUPPLIER_INVOICE IssuedDocumentType
+    INVOICE IssuedDocumentType
+    QUOTE IssuedDocumentType
+    PROFORMA IssuedDocumentType
+    RECEIPT IssuedDocumentType
+    DELIVERY_NOTE IssuedDocumentType
+    CREDIT_NOTE IssuedDocumentType
+    ORDER IssuedDocumentType
+    WORK_REPORT IssuedDocumentType
+    SUPPLIER_ORDER IssuedDocumentType
+    SELF_OWN_INVOICE IssuedDocumentType
+    SELF_SUPPLIER_INVOICE IssuedDocumentType
 } {
-	INVOICE: "invoice",
-	QUOTE: "quote",
-	PROFORMA: "proforma",
-	RECEIPT: "receipt",
-	DELIVERY_NOTE: "delivery_note",
-	CREDIT_NOTE: "credit_note",
-	ORDER: "order",
-	WORK_REPORT: "work_report",
-	SUPPLIER_ORDER: "supplier_order",
-	SELF_OWN_INVOICE: "self_own_invoice",
-	SELF_SUPPLIER_INVOICE: "self_supplier_invoice",
+            INVOICE: "invoice",
+            QUOTE: "quote",
+            PROFORMA: "proforma",
+            RECEIPT: "receipt",
+            DELIVERY_NOTE: "delivery_note",
+            CREDIT_NOTE: "credit_note",
+            ORDER: "order",
+            WORK_REPORT: "work_report",
+            SUPPLIER_ORDER: "supplier_order",
+            SELF_OWN_INVOICE: "self_own_invoice",
+            SELF_SUPPLIER_INVOICE: "self_supplier_invoice",
 }
 
 // All allowed values of IssuedDocumentType enum

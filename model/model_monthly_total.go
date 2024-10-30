@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,11 +21,11 @@ var _ MappedNullable = &MonthlyTotal{}
 // MonthlyTotal struct for MonthlyTotal
 type MonthlyTotal struct {
 	// Monthly total net amount
-	Net NullableFloat32 `json:"net,omitempty"`
+Net NullableFloat32 `json:"net,omitempty"`
 	// Monthly total gross amount
-	Gross NullableFloat32 `json:"gross,omitempty"`
+Gross NullableFloat32 `json:"gross,omitempty"`
 	// Monthly total receipt number
-	Count NullableFloat32 `json:"count,omitempty"`
+Count NullableFloat32 `json:"count,omitempty"`
 }
 
 // NewMonthlyTotal instantiates a new MonthlyTotal object
@@ -76,12 +76,12 @@ func (o *MonthlyTotal) HasNet() bool {
 // SetNet gets a reference to the given NullableFloat32 and assigns it to the Net field.
 func (o *MonthlyTotal) SetNet(v float32) *MonthlyTotal {
 	o.Net.Set(&v)
-	return o
+        return o
 }
 // SetNetNil sets the value for Net to be an explicit nil
 func (o *MonthlyTotal) SetNetNil() *MonthlyTotal {
 	o.Net.Set(nil)
-	return o
+    return o
 }
 
 // UnsetNet ensures that no value is present for Net, not even an explicit nil
@@ -120,12 +120,12 @@ func (o *MonthlyTotal) HasGross() bool {
 // SetGross gets a reference to the given NullableFloat32 and assigns it to the Gross field.
 func (o *MonthlyTotal) SetGross(v float32) *MonthlyTotal {
 	o.Gross.Set(&v)
-	return o
+        return o
 }
 // SetGrossNil sets the value for Gross to be an explicit nil
 func (o *MonthlyTotal) SetGrossNil() *MonthlyTotal {
 	o.Gross.Set(nil)
-	return o
+    return o
 }
 
 // UnsetGross ensures that no value is present for Gross, not even an explicit nil
@@ -164,12 +164,12 @@ func (o *MonthlyTotal) HasCount() bool {
 // SetCount gets a reference to the given NullableFloat32 and assigns it to the Count field.
 func (o *MonthlyTotal) SetCount(v float32) *MonthlyTotal {
 	o.Count.Set(&v)
-	return o
+        return o
 }
 // SetCountNil sets the value for Count to be an explicit nil
 func (o *MonthlyTotal) SetCountNil() *MonthlyTotal {
 	o.Count.Set(nil)
-	return o
+    return o
 }
 
 // UnsetCount ensures that no value is present for Count, not even an explicit nil

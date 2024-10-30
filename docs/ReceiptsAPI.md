@@ -28,28 +28,28 @@ Create Receipt
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    createReceiptRequest := *fattureincloud.NewCreateReceiptRequest() // CreateReceiptRequest | The Receipt to create. (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        createReceiptRequest := *fattureincloud.NewCreateReceiptRequest() // CreateReceiptRequest | The Receipt to create. (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.ReceiptsAPI.CreateReceipt(auth, companyId).CreateReceiptRequest(createReceiptRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsAPI.CreateReceipt``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsAPI.CreateReceipt``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateReceipt`: CreateReceiptResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `CreateReceipt`: CreateReceiptResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -103,25 +103,25 @@ Delete Receipt
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    documentId := int32(56) // int32 | The ID of the document.
+        companyId := int32(12345) // int32 | The ID of the company.
+        documentId := int32(56) // int32 | The ID of the document.
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.ReceiptsAPI.DeleteReceipt(auth, companyId, documentId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsAPI.DeleteReceipt``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsAPI.DeleteReceipt``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
 ```
@@ -177,30 +177,30 @@ Get Receipt
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    documentId := int32(56) // int32 | The ID of the document.
-    fields := "fields_example" // string | List of comma-separated fields. (optional)
-    fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        documentId := int32(56) // int32 | The ID of the document.
+        fields := "fields_example" // string | List of comma-separated fields. (optional)
+        fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.ReceiptsAPI.GetReceipt(auth, companyId, documentId).Fields(fields).Fieldset(fieldset).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsAPI.GetReceipt``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsAPI.GetReceipt``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetReceipt`: GetReceiptResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `GetReceipt`: GetReceiptResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -257,27 +257,27 @@ Get Receipt Pre-Create Info
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
+        companyId := int32(12345) // int32 | The ID of the company.
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.ReceiptsAPI.GetReceiptPreCreateInfo(auth, companyId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsAPI.GetReceiptPreCreateInfo``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsAPI.GetReceiptPreCreateInfo``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetReceiptPreCreateInfo`: GetReceiptPreCreateInfoResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `GetReceiptPreCreateInfo`: GetReceiptPreCreateInfoResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -330,29 +330,29 @@ Get Receipts Monthly Totals
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    type_ := "type__example" // string | Receipt Type
-    year := "year_example" // string | Year for which you want monthly totals
+        companyId := int32(12345) // int32 | The ID of the company.
+        type_ := "type__example" // string | Receipt Type
+        year := "year_example" // string | Year for which you want monthly totals
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.ReceiptsAPI.GetReceiptsMonthlyTotals(auth, companyId).Type_(type_).Year(year).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsAPI.GetReceiptsMonthlyTotals``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsAPI.GetReceiptsMonthlyTotals``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetReceiptsMonthlyTotals`: GetReceiptsMonthlyTotalsResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `GetReceiptsMonthlyTotals`: GetReceiptsMonthlyTotalsResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -407,33 +407,33 @@ List Receipts
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    fields := "fields_example" // string | List of comma-separated fields. (optional)
-    fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
-    page := int32(56) // int32 | The page to retrieve. (optional) (default to 1)
-    perPage := int32(56) // int32 | The size of the page. (optional) (default to 5)
-    sort := "sort_example" // string | List of comma-separated fields for result sorting (minus for desc sorting). (optional)
-    q := "q_example" // string | Query for filtering the results. (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        fields := "fields_example" // string | List of comma-separated fields. (optional)
+        fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
+        page := int32(56) // int32 | The page to retrieve. (optional) (default to 1)
+        perPage := int32(56) // int32 | The size of the page. (optional) (default to 5)
+        sort := "sort_example" // string | List of comma-separated fields for result sorting (minus for desc sorting). (optional)
+        q := "q_example" // string | Query for filtering the results. (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.ReceiptsAPI.ListReceipts(auth, companyId).Fields(fields).Fieldset(fieldset).Page(page).PerPage(perPage).Sort(sort).Q(q).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsAPI.ListReceipts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsAPI.ListReceipts``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListReceipts`: ListReceiptsResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `ListReceipts`: ListReceiptsResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -492,29 +492,29 @@ Modify Receipt
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    documentId := int32(56) // int32 | The ID of the document.
-    modifyReceiptRequest := *fattureincloud.NewModifyReceiptRequest() // ModifyReceiptRequest | Modified receipt. (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        documentId := int32(56) // int32 | The ID of the document.
+        modifyReceiptRequest := *fattureincloud.NewModifyReceiptRequest() // ModifyReceiptRequest | Modified receipt. (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.ReceiptsAPI.ModifyReceipt(auth, companyId, documentId).ModifyReceiptRequest(modifyReceiptRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsAPI.ModifyReceipt``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `ReceiptsAPI.ModifyReceipt``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ModifyReceipt`: ModifyReceiptResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `ModifyReceipt`: ModifyReceiptResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 

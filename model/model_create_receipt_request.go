@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &CreateReceiptRequest{}
 
 // CreateReceiptRequest 
 type CreateReceiptRequest struct {
-	Data *Receipt `json:"data,omitempty"`
+Data *Receipt `json:"data,omitempty"`
 	// If true, the number is autocompleted progressively.
-	AutocompleteNumber NullableBool `json:"autocomplete_number,omitempty"`
+AutocompleteNumber NullableBool `json:"autocomplete_number,omitempty"`
 }
 
 // NewCreateReceiptRequest instantiates a new CreateReceiptRequest object
@@ -72,7 +72,7 @@ func (o *CreateReceiptRequest) HasData() bool {
 // SetData gets a reference to the given Receipt and assigns it to the Data field.
 func (o *CreateReceiptRequest) SetData(v Receipt) *CreateReceiptRequest {
 	o.Data = &v
-	return o
+        return o
 }
 
 // GetAutocompleteNumber returns the AutocompleteNumber field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -106,12 +106,12 @@ func (o *CreateReceiptRequest) HasAutocompleteNumber() bool {
 // SetAutocompleteNumber gets a reference to the given NullableBool and assigns it to the AutocompleteNumber field.
 func (o *CreateReceiptRequest) SetAutocompleteNumber(v bool) *CreateReceiptRequest {
 	o.AutocompleteNumber.Set(&v)
-	return o
+        return o
 }
 // SetAutocompleteNumberNil sets the value for AutocompleteNumber to be an explicit nil
 func (o *CreateReceiptRequest) SetAutocompleteNumberNil() *CreateReceiptRequest {
 	o.AutocompleteNumber.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAutocompleteNumber ensures that no value is present for AutocompleteNumber, not even an explicit nil

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,15 +21,15 @@ var _ MappedNullable = &DetailedCountry{}
 // DetailedCountry struct for DetailedCountry
 type DetailedCountry struct {
 	// Country name
-	Name NullableString `json:"name,omitempty"`
+Name NullableString `json:"name,omitempty"`
 	// Country settings name
-	SettingsName NullableString `json:"settings_name,omitempty"`
+SettingsName NullableString `json:"settings_name,omitempty"`
 	// Country iso code
-	Iso NullableString `json:"iso,omitempty"`
+Iso NullableString `json:"iso,omitempty"`
 	// Country fiscal iso code
-	FiscalIso NullableString `json:"fiscal_iso,omitempty"`
+FiscalIso NullableString `json:"fiscal_iso,omitempty"`
 	// Country uic
-	Uic NullableString `json:"uic,omitempty"`
+Uic NullableString `json:"uic,omitempty"`
 }
 
 // NewDetailedCountry instantiates a new DetailedCountry object
@@ -80,12 +80,12 @@ func (o *DetailedCountry) HasName() bool {
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *DetailedCountry) SetName(v string) *DetailedCountry {
 	o.Name.Set(&v)
-	return o
+        return o
 }
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *DetailedCountry) SetNameNil() *DetailedCountry {
 	o.Name.Set(nil)
-	return o
+    return o
 }
 
 // UnsetName ensures that no value is present for Name, not even an explicit nil
@@ -124,12 +124,12 @@ func (o *DetailedCountry) HasSettingsName() bool {
 // SetSettingsName gets a reference to the given NullableString and assigns it to the SettingsName field.
 func (o *DetailedCountry) SetSettingsName(v string) *DetailedCountry {
 	o.SettingsName.Set(&v)
-	return o
+        return o
 }
 // SetSettingsNameNil sets the value for SettingsName to be an explicit nil
 func (o *DetailedCountry) SetSettingsNameNil() *DetailedCountry {
 	o.SettingsName.Set(nil)
-	return o
+    return o
 }
 
 // UnsetSettingsName ensures that no value is present for SettingsName, not even an explicit nil
@@ -168,12 +168,12 @@ func (o *DetailedCountry) HasIso() bool {
 // SetIso gets a reference to the given NullableString and assigns it to the Iso field.
 func (o *DetailedCountry) SetIso(v string) *DetailedCountry {
 	o.Iso.Set(&v)
-	return o
+        return o
 }
 // SetIsoNil sets the value for Iso to be an explicit nil
 func (o *DetailedCountry) SetIsoNil() *DetailedCountry {
 	o.Iso.Set(nil)
-	return o
+    return o
 }
 
 // UnsetIso ensures that no value is present for Iso, not even an explicit nil
@@ -212,12 +212,12 @@ func (o *DetailedCountry) HasFiscalIso() bool {
 // SetFiscalIso gets a reference to the given NullableString and assigns it to the FiscalIso field.
 func (o *DetailedCountry) SetFiscalIso(v string) *DetailedCountry {
 	o.FiscalIso.Set(&v)
-	return o
+        return o
 }
 // SetFiscalIsoNil sets the value for FiscalIso to be an explicit nil
 func (o *DetailedCountry) SetFiscalIsoNil() *DetailedCountry {
 	o.FiscalIso.Set(nil)
-	return o
+    return o
 }
 
 // UnsetFiscalIso ensures that no value is present for FiscalIso, not even an explicit nil
@@ -256,12 +256,12 @@ func (o *DetailedCountry) HasUic() bool {
 // SetUic gets a reference to the given NullableString and assigns it to the Uic field.
 func (o *DetailedCountry) SetUic(v string) *DetailedCountry {
 	o.Uic.Set(&v)
-	return o
+        return o
 }
 // SetUicNil sets the value for Uic to be an explicit nil
 func (o *DetailedCountry) SetUicNil() *DetailedCountry {
 	o.Uic.Set(nil)
-	return o
+    return o
 }
 
 // UnsetUic ensures that no value is present for Uic, not even an explicit nil

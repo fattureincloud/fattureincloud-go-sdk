@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,9 +21,9 @@ var _ MappedNullable = &VatItem{}
 // VatItem struct for VatItem
 type VatItem struct {
 	// Vat item net amount
-	AmountNet NullableFloat32 `json:"amount_net,omitempty"`
+AmountNet NullableFloat32 `json:"amount_net,omitempty"`
 	// Vat item vat amount
-	AmountVat NullableFloat32 `json:"amount_vat,omitempty"`
+AmountVat NullableFloat32 `json:"amount_vat,omitempty"`
 }
 
 // NewVatItem instantiates a new VatItem object
@@ -74,12 +74,12 @@ func (o *VatItem) HasAmountNet() bool {
 // SetAmountNet gets a reference to the given NullableFloat32 and assigns it to the AmountNet field.
 func (o *VatItem) SetAmountNet(v float32) *VatItem {
 	o.AmountNet.Set(&v)
-	return o
+        return o
 }
 // SetAmountNetNil sets the value for AmountNet to be an explicit nil
 func (o *VatItem) SetAmountNetNil() *VatItem {
 	o.AmountNet.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountNet ensures that no value is present for AmountNet, not even an explicit nil
@@ -118,12 +118,12 @@ func (o *VatItem) HasAmountVat() bool {
 // SetAmountVat gets a reference to the given NullableFloat32 and assigns it to the AmountVat field.
 func (o *VatItem) SetAmountVat(v float32) *VatItem {
 	o.AmountVat.Set(&v)
-	return o
+        return o
 }
 // SetAmountVatNil sets the value for AmountVat to be an explicit nil
 func (o *VatItem) SetAmountVatNil() *VatItem {
 	o.AmountVat.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountVat ensures that no value is present for AmountVat, not even an explicit nil

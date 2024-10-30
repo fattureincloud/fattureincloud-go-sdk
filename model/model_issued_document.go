@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,162 +21,162 @@ var _ MappedNullable = &IssuedDocument{}
 // IssuedDocument struct for IssuedDocument
 type IssuedDocument struct {
 	// Issued document id
-	Id NullableInt32 `json:"id,omitempty"`
-	Entity *Entity `json:"entity,omitempty"`
-	Type *IssuedDocumentType `json:"type,omitempty"`
+Id NullableInt32 `json:"id,omitempty"`
+Entity *Entity `json:"entity,omitempty"`
+Type *IssuedDocumentType `json:"type,omitempty"`
 	// Issued document number [If not specified, next number is used]
-	Number NullableInt32 `json:"number,omitempty"`
+Number NullableInt32 `json:"number,omitempty"`
 	// Issued document numeration [Not available if type=delivery_note]
-	Numeration NullableString `json:"numeration,omitempty"`
+Numeration NullableString `json:"numeration,omitempty"`
 	// Issued document date [defaults to today's date]
-	Date NullableString `json:"date,omitempty"`
+Date NullableString `json:"date,omitempty"`
 	// Issued document year
-	Year NullableInt32 `json:"year,omitempty"`
-	Currency *Currency `json:"currency,omitempty"`
-	Language *Language `json:"language,omitempty"`
-	// Issued document subject
-	Subject NullableString `json:"subject,omitempty"`
+Year NullableInt32 `json:"year,omitempty"`
+Currency *Currency `json:"currency,omitempty"`
+Language *Language `json:"language,omitempty"`
+	// Issued document subject [not shown on the PDF]
+Subject NullableString `json:"subject,omitempty"`
 	// Issued document visible subject
-	VisibleSubject NullableString `json:"visible_subject,omitempty"`
+VisibleSubject NullableString `json:"visible_subject,omitempty"`
 	// Issued document revenue center [or cost center if type=supplier_order].
-	RcCenter NullableString `json:"rc_center,omitempty"`
+RcCenter NullableString `json:"rc_center,omitempty"`
 	// Issued document extra notes
-	Notes NullableString `json:"notes,omitempty"`
+Notes NullableString `json:"notes,omitempty"`
 	// Issued document \"Rivalsa INPS\" percentual value
-	Rivalsa NullableFloat32 `json:"rivalsa,omitempty"`
+Rivalsa NullableFloat32 `json:"rivalsa,omitempty"`
 	// Issued document \"Cassa previdenziale\" percentual value
-	Cassa NullableFloat32 `json:"cassa,omitempty"`
+Cassa NullableFloat32 `json:"cassa,omitempty"`
 	// [Read Only] Issued document cassa amount.
-	AmountCassa NullableFloat32 `json:"amount_cassa,omitempty"`
+AmountCassa NullableFloat32 `json:"amount_cassa,omitempty"`
 	// Issued document cassa taxable percentage
-	CassaTaxable NullableFloat32 `json:"cassa_taxable,omitempty"`
+CassaTaxable NullableFloat32 `json:"cassa_taxable,omitempty"`
 	// [Can be set only if cassa_taxable is NULL] Issued document cassa taxable amount
-	AmountCassaTaxable NullableFloat32 `json:"amount_cassa_taxable,omitempty"`
+AmountCassaTaxable NullableFloat32 `json:"amount_cassa_taxable,omitempty"`
 	// Issued document \"Cassa previdenziale 2\" percentual value
-	Cassa2 NullableFloat32 `json:"cassa2,omitempty"`
+Cassa2 NullableFloat32 `json:"cassa2,omitempty"`
 	// [Read Only] Issued document cassa2 amount
-	AmountCassa2 NullableFloat32 `json:"amount_cassa2,omitempty"`
+AmountCassa2 NullableFloat32 `json:"amount_cassa2,omitempty"`
 	// Issued document cassa2 taxable percentage
-	Cassa2Taxable NullableFloat32 `json:"cassa2_taxable,omitempty"`
+Cassa2Taxable NullableFloat32 `json:"cassa2_taxable,omitempty"`
 	// [Can be set only if cassa2_taxable is NULL] Issued document cassa2 taxable amount
-	AmountCassa2Taxable NullableFloat32 `json:"amount_cassa2_taxable,omitempty"`
+AmountCassa2Taxable NullableFloat32 `json:"amount_cassa2_taxable,omitempty"`
 	// Issued document global cassa taxable percentage
-	GlobalCassaTaxable NullableFloat32 `json:"global_cassa_taxable,omitempty"`
+GlobalCassaTaxable NullableFloat32 `json:"global_cassa_taxable,omitempty"`
 	// [Can be set only if global_cassa_taxable is NULL] Issued document global cassa taxable amount
-	AmountGlobalCassaTaxable NullableFloat32 `json:"amount_global_cassa_taxable,omitempty"`
+AmountGlobalCassaTaxable NullableFloat32 `json:"amount_global_cassa_taxable,omitempty"`
 	// Issued document withholding tax (ritenuta d'acconto) percentual value
-	WithholdingTax NullableFloat32 `json:"withholding_tax,omitempty"`
+WithholdingTax NullableFloat32 `json:"withholding_tax,omitempty"`
 	// Issued document withholding tax taxable (imponibile) percentual value
-	WithholdingTaxTaxable NullableFloat32 `json:"withholding_tax_taxable,omitempty"`
+WithholdingTaxTaxable NullableFloat32 `json:"withholding_tax_taxable,omitempty"`
 	// Issued document other withholding tax (altra ritenuta) percentual value
-	OtherWithholdingTax NullableFloat32 `json:"other_withholding_tax,omitempty"`
+OtherWithholdingTax NullableFloat32 `json:"other_withholding_tax,omitempty"`
 	// Issued document stamp duty value [0 if not present]
-	StampDuty NullableFloat32 `json:"stamp_duty,omitempty"`
-	PaymentMethod *PaymentMethod `json:"payment_method,omitempty"`
+StampDuty NullableFloat32 `json:"stamp_duty,omitempty"`
+PaymentMethod *PaymentMethod `json:"payment_method,omitempty"`
 	// Issued document uses split payment
-	UseSplitPayment NullableBool `json:"use_split_payment,omitempty"`
+UseSplitPayment NullableBool `json:"use_split_payment,omitempty"`
 	// Issued document uses gross prices
-	UseGrossPrices NullableBool `json:"use_gross_prices,omitempty"`
+UseGrossPrices NullableBool `json:"use_gross_prices,omitempty"`
 	// Issued document is an e-invoice.
-	EInvoice NullableBool `json:"e_invoice,omitempty"`
-	EiData NullableIssuedDocumentEiData `json:"ei_data,omitempty"`
+EInvoice NullableBool `json:"e_invoice,omitempty"`
+EiData NullableIssuedDocumentEiData `json:"ei_data,omitempty"`
 	// E-invoice cassa type
-	EiCassaType NullableString `json:"ei_cassa_type,omitempty"`
+EiCassaType NullableString `json:"ei_cassa_type,omitempty"`
 	// E-invoice cassa2 type
-	EiCassa2Type NullableString `json:"ei_cassa2_type,omitempty"`
+EiCassa2Type NullableString `json:"ei_cassa2_type,omitempty"`
 	// E-invoice withholding tax causal
-	EiWithholdingTaxCausal NullableString `json:"ei_withholding_tax_causal,omitempty"`
+EiWithholdingTaxCausal NullableString `json:"ei_withholding_tax_causal,omitempty"`
 	// E-invoice other withholding tax type
-	EiOtherWithholdingTaxType NullableString `json:"ei_other_withholding_tax_type,omitempty"`
+EiOtherWithholdingTaxType NullableString `json:"ei_other_withholding_tax_type,omitempty"`
 	// E-invoice other withholding tax causal
-	EiOtherWithholdingTaxCausal NullableString `json:"ei_other_withholding_tax_causal,omitempty"`
-	ItemsList []IssuedDocumentItemsListItem `json:"items_list,omitempty"`
-	PaymentsList []IssuedDocumentPaymentsListItem `json:"payments_list,omitempty"`
-	Template *DocumentTemplate `json:"template,omitempty"`
-	DeliveryNoteTemplate *DocumentTemplate `json:"delivery_note_template,omitempty"`
-	AccInvTemplate *DocumentTemplate `json:"acc_inv_template,omitempty"`
+EiOtherWithholdingTaxCausal NullableString `json:"ei_other_withholding_tax_causal,omitempty"`
+ItemsList []IssuedDocumentItemsListItem `json:"items_list,omitempty"`
+PaymentsList []IssuedDocumentPaymentsListItem `json:"payments_list,omitempty"`
+Template *DocumentTemplate `json:"template,omitempty"`
+DeliveryNoteTemplate *DocumentTemplate `json:"delivery_note_template,omitempty"`
+AccInvTemplate *DocumentTemplate `json:"acc_inv_template,omitempty"`
 	// Issued document PDF horizontal margins
-	HMargins NullableInt32 `json:"h_margins,omitempty"`
+HMargins NullableInt32 `json:"h_margins,omitempty"`
 	// Issued document PDF vertical margins
-	VMargins NullableInt32 `json:"v_margins,omitempty"`
+VMargins NullableInt32 `json:"v_margins,omitempty"`
 	// Show the expiration dates of the payments on the document
-	ShowPayments NullableBool `json:"show_payments,omitempty"`
+ShowPayments NullableBool `json:"show_payments,omitempty"`
 	// Show the payment method details on the document
-	ShowPaymentMethod NullableBool `json:"show_payment_method,omitempty"`
-	ShowTotals *ShowTotalsMode `json:"show_totals,omitempty"`
+ShowPaymentMethod NullableBool `json:"show_payment_method,omitempty"`
+ShowTotals *ShowTotalsMode `json:"show_totals,omitempty"`
 	// Show notification button in the PDF
-	ShowNotificationButton NullableBool `json:"show_notification_button,omitempty"`
+ShowNotificationButton NullableBool `json:"show_notification_button,omitempty"`
 	// Show ts pay button in the PDF
-	ShowTspayButton NullableBool `json:"show_tspay_button,omitempty"`
+ShowTspayButton NullableBool `json:"show_tspay_button,omitempty"`
 	// Issued document has delivery note
-	DeliveryNote NullableBool `json:"delivery_note,omitempty"`
+DeliveryNote NullableBool `json:"delivery_note,omitempty"`
 	// Issued document has an accompanying invoice
-	AccompanyingInvoice NullableBool `json:"accompanying_invoice,omitempty"`
+AccompanyingInvoice NullableBool `json:"accompanying_invoice,omitempty"`
 	// Issued document attached delivery note number
-	DnNumber NullableInt32 `json:"dn_number,omitempty"`
+DnNumber NullableInt32 `json:"dn_number,omitempty"`
 	// Issued document attached delivery note date
-	DnDate NullableString `json:"dn_date,omitempty"`
+DnDate NullableString `json:"dn_date,omitempty"`
 	// Issued document attached delivery note number of packages
-	DnAiPackagesNumber NullableString `json:"dn_ai_packages_number,omitempty"`
+DnAiPackagesNumber NullableString `json:"dn_ai_packages_number,omitempty"`
 	// Issued document attached delivery note package weight
-	DnAiWeight NullableString `json:"dn_ai_weight,omitempty"`
+DnAiWeight NullableString `json:"dn_ai_weight,omitempty"`
 	// Issued document attached delivery note causal
-	DnAiCausal NullableString `json:"dn_ai_causal,omitempty"`
+DnAiCausal NullableString `json:"dn_ai_causal,omitempty"`
 	// Issued document attached delivery note destination
-	DnAiDestination NullableString `json:"dn_ai_destination,omitempty"`
+DnAiDestination NullableString `json:"dn_ai_destination,omitempty"`
 	// Issued document attached delivery note transporter
-	DnAiTransporter NullableString `json:"dn_ai_transporter,omitempty"`
+DnAiTransporter NullableString `json:"dn_ai_transporter,omitempty"`
 	// Issued document attached delivery note notes
-	DnAiNotes NullableString `json:"dn_ai_notes,omitempty"`
+DnAiNotes NullableString `json:"dn_ai_notes,omitempty"`
 	// Issued document is marked
-	IsMarked NullableBool `json:"is_marked,omitempty"`
+IsMarked NullableBool `json:"is_marked,omitempty"`
 	// [Read only] Issued document total net amount
-	AmountNet NullableFloat32 `json:"amount_net,omitempty"`
+AmountNet NullableFloat32 `json:"amount_net,omitempty"`
 	// [Read Only] Issued document total vat amount
-	AmountVat NullableFloat32 `json:"amount_vat,omitempty"`
+AmountVat NullableFloat32 `json:"amount_vat,omitempty"`
 	// [Read Only] Issued document total gross amount
-	AmountGross NullableFloat32 `json:"amount_gross,omitempty"`
+AmountGross NullableFloat32 `json:"amount_gross,omitempty"`
 	// Issued document amount due discount
-	AmountDueDiscount NullableFloat32 `json:"amount_due_discount,omitempty"`
+AmountDueDiscount NullableFloat32 `json:"amount_due_discount,omitempty"`
 	// [Read Only] Issued document rivalsa amount
-	AmountRivalsa NullableFloat32 `json:"amount_rivalsa,omitempty"`
+AmountRivalsa NullableFloat32 `json:"amount_rivalsa,omitempty"`
 	// Issued document taxable rivalsa amount
-	AmountRivalsaTaxable NullableFloat32 `json:"amount_rivalsa_taxable,omitempty"`
+AmountRivalsaTaxable NullableFloat32 `json:"amount_rivalsa_taxable,omitempty"`
 	// [Read Only] Issued document withholding tax amount (ritenuta d'acconto).
-	AmountWithholdingTax NullableFloat32 `json:"amount_withholding_tax,omitempty"`
+AmountWithholdingTax NullableFloat32 `json:"amount_withholding_tax,omitempty"`
 	// Issued document taxable withholding tax amount
-	AmountWithholdingTaxTaxable NullableFloat32 `json:"amount_withholding_tax_taxable,omitempty"`
+AmountWithholdingTaxTaxable NullableFloat32 `json:"amount_withholding_tax_taxable,omitempty"`
 	// [Read Only] Issued document other withholding tax amount (altra ritenuta)
-	AmountOtherWithholdingTax NullableFloat32 `json:"amount_other_withholding_tax,omitempty"`
+AmountOtherWithholdingTax NullableFloat32 `json:"amount_other_withholding_tax,omitempty"`
 	// Issued document taxable other withholding tax amount
-	AmountOtherWithholdingTaxTaxable NullableFloat32 `json:"amount_other_withholding_tax_taxable,omitempty"`
+AmountOtherWithholdingTaxTaxable NullableFloat32 `json:"amount_other_withholding_tax_taxable,omitempty"`
 	// Issued document taxable enasarco amount
-	AmountEnasarcoTaxable NullableFloat32 `json:"amount_enasarco_taxable,omitempty"`
-	ExtraData NullableIssuedDocumentExtraData `json:"extra_data,omitempty"`
+AmountEnasarcoTaxable NullableFloat32 `json:"amount_enasarco_taxable,omitempty"`
+ExtraData NullableIssuedDocumentExtraData `json:"extra_data,omitempty"`
 	// Issued document seen date
-	SeenDate NullableString `json:"seen_date,omitempty"`
+SeenDate NullableString `json:"seen_date,omitempty"`
 	// Issued document date of the next not paid payment
-	NextDueDate NullableString `json:"next_due_date,omitempty"`
+NextDueDate NullableString `json:"next_due_date,omitempty"`
 	// [Temporary] [Read Only] Issued document url of the document PDF file
-	Url NullableString `json:"url,omitempty"`
+Url NullableString `json:"url,omitempty"`
 	// [Temporary] [Read Only] Issued document url of the attached delivery note PDF file
-	DnUrl NullableString `json:"dn_url,omitempty"`
+DnUrl NullableString `json:"dn_url,omitempty"`
 	// [Temporary] [Read Only] Issued document url of the accompanying invoice PDF file
-	AiUrl NullableString `json:"ai_url,omitempty"`
+AiUrl NullableString `json:"ai_url,omitempty"`
 	// [Temporary] [Read Only] Issued document url of the attached file
-	AttachmentUrl NullableString `json:"attachment_url,omitempty"`
+AttachmentUrl NullableString `json:"attachment_url,omitempty"`
 	// [Write Only] Issued document attachment token returned by POST /issued_documents/attachment
-	AttachmentToken NullableString `json:"attachment_token,omitempty"`
+AttachmentToken NullableString `json:"attachment_token,omitempty"`
 	// Issued document advanced raw attributes for e-invoices
-	EiRaw map[string]interface{} `json:"ei_raw,omitempty"`
+EiRaw map[string]interface{} `json:"ei_raw,omitempty"`
 	// [Read only] Status of the e-invoice.   * **attempt** - We are trying to send the invoice, please wait up to 2 hours   * **missing** - The invoice is missing   * **not_sent** - The invoice has yet to be sent   * **sent** - The invoice was sent   * **pending** - The checks for the digital signature and sending are in progress   * **processing** - The SDI is delivering the invoice to the customer   * **error** - An error occurred while handling the invoice, please try to resend it or contact support   * **discarded** - The invoice has been rejected by the SDI, so it must be corrected and re-sent   * **not_delivered** - The SDI was unable to deliver the invoice   * **accepted** - The customer accepted the invoice   * **rejected** - The customer rejected the invoice, so it must be corrected   * **no_response** - A response has not yet been received whithin the deadline, contact the customer to ascertain the status of the invoice   * **manual_accepted** - The customer accepted the invoice   * **manual_rejected** - The customer rejected the invoice 
-	EiStatus NullableString `json:"ei_status,omitempty"`
+EiStatus NullableString `json:"ei_status,omitempty"`
 	// Issued Document can't be edited
-	Locked NullableBool `json:"locked,omitempty"`
+Locked NullableBool `json:"locked,omitempty"`
 	// Issued document creation date
-	CreatedAt NullableString `json:"created_at,omitempty"`
+CreatedAt NullableString `json:"created_at,omitempty"`
 	// Issued document last update date
-	UpdatedAt NullableString `json:"updated_at,omitempty"`
+UpdatedAt NullableString `json:"updated_at,omitempty"`
 }
 
 // NewIssuedDocument instantiates a new IssuedDocument object
@@ -231,12 +231,12 @@ func (o *IssuedDocument) HasId() bool {
 // SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *IssuedDocument) SetId(v int32) *IssuedDocument {
 	o.Id.Set(&v)
-	return o
+        return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *IssuedDocument) SetIdNil() *IssuedDocument {
 	o.Id.Set(nil)
-	return o
+    return o
 }
 
 // UnsetId ensures that no value is present for Id, not even an explicit nil
@@ -274,7 +274,7 @@ func (o *IssuedDocument) HasEntity() bool {
 // SetEntity gets a reference to the given Entity and assigns it to the Entity field.
 func (o *IssuedDocument) SetEntity(v Entity) *IssuedDocument {
 	o.Entity = &v
-	return o
+        return o
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -307,7 +307,7 @@ func (o *IssuedDocument) HasType() bool {
 // SetType gets a reference to the given IssuedDocumentType and assigns it to the Type field.
 func (o *IssuedDocument) SetType(v IssuedDocumentType) *IssuedDocument {
 	o.Type = &v
-	return o
+        return o
 }
 
 // GetNumber returns the Number field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -341,12 +341,12 @@ func (o *IssuedDocument) HasNumber() bool {
 // SetNumber gets a reference to the given NullableInt32 and assigns it to the Number field.
 func (o *IssuedDocument) SetNumber(v int32) *IssuedDocument {
 	o.Number.Set(&v)
-	return o
+        return o
 }
 // SetNumberNil sets the value for Number to be an explicit nil
 func (o *IssuedDocument) SetNumberNil() *IssuedDocument {
 	o.Number.Set(nil)
-	return o
+    return o
 }
 
 // UnsetNumber ensures that no value is present for Number, not even an explicit nil
@@ -385,12 +385,12 @@ func (o *IssuedDocument) HasNumeration() bool {
 // SetNumeration gets a reference to the given NullableString and assigns it to the Numeration field.
 func (o *IssuedDocument) SetNumeration(v string) *IssuedDocument {
 	o.Numeration.Set(&v)
-	return o
+        return o
 }
 // SetNumerationNil sets the value for Numeration to be an explicit nil
 func (o *IssuedDocument) SetNumerationNil() *IssuedDocument {
 	o.Numeration.Set(nil)
-	return o
+    return o
 }
 
 // UnsetNumeration ensures that no value is present for Numeration, not even an explicit nil
@@ -429,12 +429,12 @@ func (o *IssuedDocument) HasDate() bool {
 // SetDate gets a reference to the given NullableString and assigns it to the Date field.
 func (o *IssuedDocument) SetDate(v string) *IssuedDocument {
 	o.Date.Set(&v)
-	return o
+        return o
 }
 // SetDateNil sets the value for Date to be an explicit nil
 func (o *IssuedDocument) SetDateNil() *IssuedDocument {
 	o.Date.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDate ensures that no value is present for Date, not even an explicit nil
@@ -473,12 +473,12 @@ func (o *IssuedDocument) HasYear() bool {
 // SetYear gets a reference to the given NullableInt32 and assigns it to the Year field.
 func (o *IssuedDocument) SetYear(v int32) *IssuedDocument {
 	o.Year.Set(&v)
-	return o
+        return o
 }
 // SetYearNil sets the value for Year to be an explicit nil
 func (o *IssuedDocument) SetYearNil() *IssuedDocument {
 	o.Year.Set(nil)
-	return o
+    return o
 }
 
 // UnsetYear ensures that no value is present for Year, not even an explicit nil
@@ -516,7 +516,7 @@ func (o *IssuedDocument) HasCurrency() bool {
 // SetCurrency gets a reference to the given Currency and assigns it to the Currency field.
 func (o *IssuedDocument) SetCurrency(v Currency) *IssuedDocument {
 	o.Currency = &v
-	return o
+        return o
 }
 
 // GetLanguage returns the Language field value if set, zero value otherwise.
@@ -549,7 +549,7 @@ func (o *IssuedDocument) HasLanguage() bool {
 // SetLanguage gets a reference to the given Language and assigns it to the Language field.
 func (o *IssuedDocument) SetLanguage(v Language) *IssuedDocument {
 	o.Language = &v
-	return o
+        return o
 }
 
 // GetSubject returns the Subject field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -583,12 +583,12 @@ func (o *IssuedDocument) HasSubject() bool {
 // SetSubject gets a reference to the given NullableString and assigns it to the Subject field.
 func (o *IssuedDocument) SetSubject(v string) *IssuedDocument {
 	o.Subject.Set(&v)
-	return o
+        return o
 }
 // SetSubjectNil sets the value for Subject to be an explicit nil
 func (o *IssuedDocument) SetSubjectNil() *IssuedDocument {
 	o.Subject.Set(nil)
-	return o
+    return o
 }
 
 // UnsetSubject ensures that no value is present for Subject, not even an explicit nil
@@ -627,12 +627,12 @@ func (o *IssuedDocument) HasVisibleSubject() bool {
 // SetVisibleSubject gets a reference to the given NullableString and assigns it to the VisibleSubject field.
 func (o *IssuedDocument) SetVisibleSubject(v string) *IssuedDocument {
 	o.VisibleSubject.Set(&v)
-	return o
+        return o
 }
 // SetVisibleSubjectNil sets the value for VisibleSubject to be an explicit nil
 func (o *IssuedDocument) SetVisibleSubjectNil() *IssuedDocument {
 	o.VisibleSubject.Set(nil)
-	return o
+    return o
 }
 
 // UnsetVisibleSubject ensures that no value is present for VisibleSubject, not even an explicit nil
@@ -671,12 +671,12 @@ func (o *IssuedDocument) HasRcCenter() bool {
 // SetRcCenter gets a reference to the given NullableString and assigns it to the RcCenter field.
 func (o *IssuedDocument) SetRcCenter(v string) *IssuedDocument {
 	o.RcCenter.Set(&v)
-	return o
+        return o
 }
 // SetRcCenterNil sets the value for RcCenter to be an explicit nil
 func (o *IssuedDocument) SetRcCenterNil() *IssuedDocument {
 	o.RcCenter.Set(nil)
-	return o
+    return o
 }
 
 // UnsetRcCenter ensures that no value is present for RcCenter, not even an explicit nil
@@ -715,12 +715,12 @@ func (o *IssuedDocument) HasNotes() bool {
 // SetNotes gets a reference to the given NullableString and assigns it to the Notes field.
 func (o *IssuedDocument) SetNotes(v string) *IssuedDocument {
 	o.Notes.Set(&v)
-	return o
+        return o
 }
 // SetNotesNil sets the value for Notes to be an explicit nil
 func (o *IssuedDocument) SetNotesNil() *IssuedDocument {
 	o.Notes.Set(nil)
-	return o
+    return o
 }
 
 // UnsetNotes ensures that no value is present for Notes, not even an explicit nil
@@ -759,12 +759,12 @@ func (o *IssuedDocument) HasRivalsa() bool {
 // SetRivalsa gets a reference to the given NullableFloat32 and assigns it to the Rivalsa field.
 func (o *IssuedDocument) SetRivalsa(v float32) *IssuedDocument {
 	o.Rivalsa.Set(&v)
-	return o
+        return o
 }
 // SetRivalsaNil sets the value for Rivalsa to be an explicit nil
 func (o *IssuedDocument) SetRivalsaNil() *IssuedDocument {
 	o.Rivalsa.Set(nil)
-	return o
+    return o
 }
 
 // UnsetRivalsa ensures that no value is present for Rivalsa, not even an explicit nil
@@ -803,12 +803,12 @@ func (o *IssuedDocument) HasCassa() bool {
 // SetCassa gets a reference to the given NullableFloat32 and assigns it to the Cassa field.
 func (o *IssuedDocument) SetCassa(v float32) *IssuedDocument {
 	o.Cassa.Set(&v)
-	return o
+        return o
 }
 // SetCassaNil sets the value for Cassa to be an explicit nil
 func (o *IssuedDocument) SetCassaNil() *IssuedDocument {
 	o.Cassa.Set(nil)
-	return o
+    return o
 }
 
 // UnsetCassa ensures that no value is present for Cassa, not even an explicit nil
@@ -847,12 +847,12 @@ func (o *IssuedDocument) HasAmountCassa() bool {
 // SetAmountCassa gets a reference to the given NullableFloat32 and assigns it to the AmountCassa field.
 func (o *IssuedDocument) SetAmountCassa(v float32) *IssuedDocument {
 	o.AmountCassa.Set(&v)
-	return o
+        return o
 }
 // SetAmountCassaNil sets the value for AmountCassa to be an explicit nil
 func (o *IssuedDocument) SetAmountCassaNil() *IssuedDocument {
 	o.AmountCassa.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountCassa ensures that no value is present for AmountCassa, not even an explicit nil
@@ -891,12 +891,12 @@ func (o *IssuedDocument) HasCassaTaxable() bool {
 // SetCassaTaxable gets a reference to the given NullableFloat32 and assigns it to the CassaTaxable field.
 func (o *IssuedDocument) SetCassaTaxable(v float32) *IssuedDocument {
 	o.CassaTaxable.Set(&v)
-	return o
+        return o
 }
 // SetCassaTaxableNil sets the value for CassaTaxable to be an explicit nil
 func (o *IssuedDocument) SetCassaTaxableNil() *IssuedDocument {
 	o.CassaTaxable.Set(nil)
-	return o
+    return o
 }
 
 // UnsetCassaTaxable ensures that no value is present for CassaTaxable, not even an explicit nil
@@ -935,12 +935,12 @@ func (o *IssuedDocument) HasAmountCassaTaxable() bool {
 // SetAmountCassaTaxable gets a reference to the given NullableFloat32 and assigns it to the AmountCassaTaxable field.
 func (o *IssuedDocument) SetAmountCassaTaxable(v float32) *IssuedDocument {
 	o.AmountCassaTaxable.Set(&v)
-	return o
+        return o
 }
 // SetAmountCassaTaxableNil sets the value for AmountCassaTaxable to be an explicit nil
 func (o *IssuedDocument) SetAmountCassaTaxableNil() *IssuedDocument {
 	o.AmountCassaTaxable.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountCassaTaxable ensures that no value is present for AmountCassaTaxable, not even an explicit nil
@@ -979,12 +979,12 @@ func (o *IssuedDocument) HasCassa2() bool {
 // SetCassa2 gets a reference to the given NullableFloat32 and assigns it to the Cassa2 field.
 func (o *IssuedDocument) SetCassa2(v float32) *IssuedDocument {
 	o.Cassa2.Set(&v)
-	return o
+        return o
 }
 // SetCassa2Nil sets the value for Cassa2 to be an explicit nil
 func (o *IssuedDocument) SetCassa2Nil() *IssuedDocument {
 	o.Cassa2.Set(nil)
-	return o
+    return o
 }
 
 // UnsetCassa2 ensures that no value is present for Cassa2, not even an explicit nil
@@ -1023,12 +1023,12 @@ func (o *IssuedDocument) HasAmountCassa2() bool {
 // SetAmountCassa2 gets a reference to the given NullableFloat32 and assigns it to the AmountCassa2 field.
 func (o *IssuedDocument) SetAmountCassa2(v float32) *IssuedDocument {
 	o.AmountCassa2.Set(&v)
-	return o
+        return o
 }
 // SetAmountCassa2Nil sets the value for AmountCassa2 to be an explicit nil
 func (o *IssuedDocument) SetAmountCassa2Nil() *IssuedDocument {
 	o.AmountCassa2.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountCassa2 ensures that no value is present for AmountCassa2, not even an explicit nil
@@ -1067,12 +1067,12 @@ func (o *IssuedDocument) HasCassa2Taxable() bool {
 // SetCassa2Taxable gets a reference to the given NullableFloat32 and assigns it to the Cassa2Taxable field.
 func (o *IssuedDocument) SetCassa2Taxable(v float32) *IssuedDocument {
 	o.Cassa2Taxable.Set(&v)
-	return o
+        return o
 }
 // SetCassa2TaxableNil sets the value for Cassa2Taxable to be an explicit nil
 func (o *IssuedDocument) SetCassa2TaxableNil() *IssuedDocument {
 	o.Cassa2Taxable.Set(nil)
-	return o
+    return o
 }
 
 // UnsetCassa2Taxable ensures that no value is present for Cassa2Taxable, not even an explicit nil
@@ -1111,12 +1111,12 @@ func (o *IssuedDocument) HasAmountCassa2Taxable() bool {
 // SetAmountCassa2Taxable gets a reference to the given NullableFloat32 and assigns it to the AmountCassa2Taxable field.
 func (o *IssuedDocument) SetAmountCassa2Taxable(v float32) *IssuedDocument {
 	o.AmountCassa2Taxable.Set(&v)
-	return o
+        return o
 }
 // SetAmountCassa2TaxableNil sets the value for AmountCassa2Taxable to be an explicit nil
 func (o *IssuedDocument) SetAmountCassa2TaxableNil() *IssuedDocument {
 	o.AmountCassa2Taxable.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountCassa2Taxable ensures that no value is present for AmountCassa2Taxable, not even an explicit nil
@@ -1155,12 +1155,12 @@ func (o *IssuedDocument) HasGlobalCassaTaxable() bool {
 // SetGlobalCassaTaxable gets a reference to the given NullableFloat32 and assigns it to the GlobalCassaTaxable field.
 func (o *IssuedDocument) SetGlobalCassaTaxable(v float32) *IssuedDocument {
 	o.GlobalCassaTaxable.Set(&v)
-	return o
+        return o
 }
 // SetGlobalCassaTaxableNil sets the value for GlobalCassaTaxable to be an explicit nil
 func (o *IssuedDocument) SetGlobalCassaTaxableNil() *IssuedDocument {
 	o.GlobalCassaTaxable.Set(nil)
-	return o
+    return o
 }
 
 // UnsetGlobalCassaTaxable ensures that no value is present for GlobalCassaTaxable, not even an explicit nil
@@ -1199,12 +1199,12 @@ func (o *IssuedDocument) HasAmountGlobalCassaTaxable() bool {
 // SetAmountGlobalCassaTaxable gets a reference to the given NullableFloat32 and assigns it to the AmountGlobalCassaTaxable field.
 func (o *IssuedDocument) SetAmountGlobalCassaTaxable(v float32) *IssuedDocument {
 	o.AmountGlobalCassaTaxable.Set(&v)
-	return o
+        return o
 }
 // SetAmountGlobalCassaTaxableNil sets the value for AmountGlobalCassaTaxable to be an explicit nil
 func (o *IssuedDocument) SetAmountGlobalCassaTaxableNil() *IssuedDocument {
 	o.AmountGlobalCassaTaxable.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountGlobalCassaTaxable ensures that no value is present for AmountGlobalCassaTaxable, not even an explicit nil
@@ -1243,12 +1243,12 @@ func (o *IssuedDocument) HasWithholdingTax() bool {
 // SetWithholdingTax gets a reference to the given NullableFloat32 and assigns it to the WithholdingTax field.
 func (o *IssuedDocument) SetWithholdingTax(v float32) *IssuedDocument {
 	o.WithholdingTax.Set(&v)
-	return o
+        return o
 }
 // SetWithholdingTaxNil sets the value for WithholdingTax to be an explicit nil
 func (o *IssuedDocument) SetWithholdingTaxNil() *IssuedDocument {
 	o.WithholdingTax.Set(nil)
-	return o
+    return o
 }
 
 // UnsetWithholdingTax ensures that no value is present for WithholdingTax, not even an explicit nil
@@ -1287,12 +1287,12 @@ func (o *IssuedDocument) HasWithholdingTaxTaxable() bool {
 // SetWithholdingTaxTaxable gets a reference to the given NullableFloat32 and assigns it to the WithholdingTaxTaxable field.
 func (o *IssuedDocument) SetWithholdingTaxTaxable(v float32) *IssuedDocument {
 	o.WithholdingTaxTaxable.Set(&v)
-	return o
+        return o
 }
 // SetWithholdingTaxTaxableNil sets the value for WithholdingTaxTaxable to be an explicit nil
 func (o *IssuedDocument) SetWithholdingTaxTaxableNil() *IssuedDocument {
 	o.WithholdingTaxTaxable.Set(nil)
-	return o
+    return o
 }
 
 // UnsetWithholdingTaxTaxable ensures that no value is present for WithholdingTaxTaxable, not even an explicit nil
@@ -1331,12 +1331,12 @@ func (o *IssuedDocument) HasOtherWithholdingTax() bool {
 // SetOtherWithholdingTax gets a reference to the given NullableFloat32 and assigns it to the OtherWithholdingTax field.
 func (o *IssuedDocument) SetOtherWithholdingTax(v float32) *IssuedDocument {
 	o.OtherWithholdingTax.Set(&v)
-	return o
+        return o
 }
 // SetOtherWithholdingTaxNil sets the value for OtherWithholdingTax to be an explicit nil
 func (o *IssuedDocument) SetOtherWithholdingTaxNil() *IssuedDocument {
 	o.OtherWithholdingTax.Set(nil)
-	return o
+    return o
 }
 
 // UnsetOtherWithholdingTax ensures that no value is present for OtherWithholdingTax, not even an explicit nil
@@ -1375,12 +1375,12 @@ func (o *IssuedDocument) HasStampDuty() bool {
 // SetStampDuty gets a reference to the given NullableFloat32 and assigns it to the StampDuty field.
 func (o *IssuedDocument) SetStampDuty(v float32) *IssuedDocument {
 	o.StampDuty.Set(&v)
-	return o
+        return o
 }
 // SetStampDutyNil sets the value for StampDuty to be an explicit nil
 func (o *IssuedDocument) SetStampDutyNil() *IssuedDocument {
 	o.StampDuty.Set(nil)
-	return o
+    return o
 }
 
 // UnsetStampDuty ensures that no value is present for StampDuty, not even an explicit nil
@@ -1418,7 +1418,7 @@ func (o *IssuedDocument) HasPaymentMethod() bool {
 // SetPaymentMethod gets a reference to the given PaymentMethod and assigns it to the PaymentMethod field.
 func (o *IssuedDocument) SetPaymentMethod(v PaymentMethod) *IssuedDocument {
 	o.PaymentMethod = &v
-	return o
+        return o
 }
 
 // GetUseSplitPayment returns the UseSplitPayment field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1452,12 +1452,12 @@ func (o *IssuedDocument) HasUseSplitPayment() bool {
 // SetUseSplitPayment gets a reference to the given NullableBool and assigns it to the UseSplitPayment field.
 func (o *IssuedDocument) SetUseSplitPayment(v bool) *IssuedDocument {
 	o.UseSplitPayment.Set(&v)
-	return o
+        return o
 }
 // SetUseSplitPaymentNil sets the value for UseSplitPayment to be an explicit nil
 func (o *IssuedDocument) SetUseSplitPaymentNil() *IssuedDocument {
 	o.UseSplitPayment.Set(nil)
-	return o
+    return o
 }
 
 // UnsetUseSplitPayment ensures that no value is present for UseSplitPayment, not even an explicit nil
@@ -1496,12 +1496,12 @@ func (o *IssuedDocument) HasUseGrossPrices() bool {
 // SetUseGrossPrices gets a reference to the given NullableBool and assigns it to the UseGrossPrices field.
 func (o *IssuedDocument) SetUseGrossPrices(v bool) *IssuedDocument {
 	o.UseGrossPrices.Set(&v)
-	return o
+        return o
 }
 // SetUseGrossPricesNil sets the value for UseGrossPrices to be an explicit nil
 func (o *IssuedDocument) SetUseGrossPricesNil() *IssuedDocument {
 	o.UseGrossPrices.Set(nil)
-	return o
+    return o
 }
 
 // UnsetUseGrossPrices ensures that no value is present for UseGrossPrices, not even an explicit nil
@@ -1540,12 +1540,12 @@ func (o *IssuedDocument) HasEInvoice() bool {
 // SetEInvoice gets a reference to the given NullableBool and assigns it to the EInvoice field.
 func (o *IssuedDocument) SetEInvoice(v bool) *IssuedDocument {
 	o.EInvoice.Set(&v)
-	return o
+        return o
 }
 // SetEInvoiceNil sets the value for EInvoice to be an explicit nil
 func (o *IssuedDocument) SetEInvoiceNil() *IssuedDocument {
 	o.EInvoice.Set(nil)
-	return o
+    return o
 }
 
 // UnsetEInvoice ensures that no value is present for EInvoice, not even an explicit nil
@@ -1584,12 +1584,12 @@ func (o *IssuedDocument) HasEiData() bool {
 // SetEiData gets a reference to the given NullableIssuedDocumentEiData and assigns it to the EiData field.
 func (o *IssuedDocument) SetEiData(v IssuedDocumentEiData) *IssuedDocument {
 	o.EiData.Set(&v)
-	return o
+        return o
 }
 // SetEiDataNil sets the value for EiData to be an explicit nil
 func (o *IssuedDocument) SetEiDataNil() *IssuedDocument {
 	o.EiData.Set(nil)
-	return o
+    return o
 }
 
 // UnsetEiData ensures that no value is present for EiData, not even an explicit nil
@@ -1628,12 +1628,12 @@ func (o *IssuedDocument) HasEiCassaType() bool {
 // SetEiCassaType gets a reference to the given NullableString and assigns it to the EiCassaType field.
 func (o *IssuedDocument) SetEiCassaType(v string) *IssuedDocument {
 	o.EiCassaType.Set(&v)
-	return o
+        return o
 }
 // SetEiCassaTypeNil sets the value for EiCassaType to be an explicit nil
 func (o *IssuedDocument) SetEiCassaTypeNil() *IssuedDocument {
 	o.EiCassaType.Set(nil)
-	return o
+    return o
 }
 
 // UnsetEiCassaType ensures that no value is present for EiCassaType, not even an explicit nil
@@ -1672,12 +1672,12 @@ func (o *IssuedDocument) HasEiCassa2Type() bool {
 // SetEiCassa2Type gets a reference to the given NullableString and assigns it to the EiCassa2Type field.
 func (o *IssuedDocument) SetEiCassa2Type(v string) *IssuedDocument {
 	o.EiCassa2Type.Set(&v)
-	return o
+        return o
 }
 // SetEiCassa2TypeNil sets the value for EiCassa2Type to be an explicit nil
 func (o *IssuedDocument) SetEiCassa2TypeNil() *IssuedDocument {
 	o.EiCassa2Type.Set(nil)
-	return o
+    return o
 }
 
 // UnsetEiCassa2Type ensures that no value is present for EiCassa2Type, not even an explicit nil
@@ -1716,12 +1716,12 @@ func (o *IssuedDocument) HasEiWithholdingTaxCausal() bool {
 // SetEiWithholdingTaxCausal gets a reference to the given NullableString and assigns it to the EiWithholdingTaxCausal field.
 func (o *IssuedDocument) SetEiWithholdingTaxCausal(v string) *IssuedDocument {
 	o.EiWithholdingTaxCausal.Set(&v)
-	return o
+        return o
 }
 // SetEiWithholdingTaxCausalNil sets the value for EiWithholdingTaxCausal to be an explicit nil
 func (o *IssuedDocument) SetEiWithholdingTaxCausalNil() *IssuedDocument {
 	o.EiWithholdingTaxCausal.Set(nil)
-	return o
+    return o
 }
 
 // UnsetEiWithholdingTaxCausal ensures that no value is present for EiWithholdingTaxCausal, not even an explicit nil
@@ -1760,12 +1760,12 @@ func (o *IssuedDocument) HasEiOtherWithholdingTaxType() bool {
 // SetEiOtherWithholdingTaxType gets a reference to the given NullableString and assigns it to the EiOtherWithholdingTaxType field.
 func (o *IssuedDocument) SetEiOtherWithholdingTaxType(v string) *IssuedDocument {
 	o.EiOtherWithholdingTaxType.Set(&v)
-	return o
+        return o
 }
 // SetEiOtherWithholdingTaxTypeNil sets the value for EiOtherWithholdingTaxType to be an explicit nil
 func (o *IssuedDocument) SetEiOtherWithholdingTaxTypeNil() *IssuedDocument {
 	o.EiOtherWithholdingTaxType.Set(nil)
-	return o
+    return o
 }
 
 // UnsetEiOtherWithholdingTaxType ensures that no value is present for EiOtherWithholdingTaxType, not even an explicit nil
@@ -1804,12 +1804,12 @@ func (o *IssuedDocument) HasEiOtherWithholdingTaxCausal() bool {
 // SetEiOtherWithholdingTaxCausal gets a reference to the given NullableString and assigns it to the EiOtherWithholdingTaxCausal field.
 func (o *IssuedDocument) SetEiOtherWithholdingTaxCausal(v string) *IssuedDocument {
 	o.EiOtherWithholdingTaxCausal.Set(&v)
-	return o
+        return o
 }
 // SetEiOtherWithholdingTaxCausalNil sets the value for EiOtherWithholdingTaxCausal to be an explicit nil
 func (o *IssuedDocument) SetEiOtherWithholdingTaxCausalNil() *IssuedDocument {
 	o.EiOtherWithholdingTaxCausal.Set(nil)
-	return o
+    return o
 }
 
 // UnsetEiOtherWithholdingTaxCausal ensures that no value is present for EiOtherWithholdingTaxCausal, not even an explicit nil
@@ -1848,7 +1848,7 @@ func (o *IssuedDocument) HasItemsList() bool {
 // SetItemsList gets a reference to the given []IssuedDocumentItemsListItem and assigns it to the ItemsList field.
 func (o *IssuedDocument) SetItemsList(v []IssuedDocumentItemsListItem) *IssuedDocument {
 	o.ItemsList = v
-	return o
+        return o
 }
 
 // GetPaymentsList returns the PaymentsList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1882,7 +1882,7 @@ func (o *IssuedDocument) HasPaymentsList() bool {
 // SetPaymentsList gets a reference to the given []IssuedDocumentPaymentsListItem and assigns it to the PaymentsList field.
 func (o *IssuedDocument) SetPaymentsList(v []IssuedDocumentPaymentsListItem) *IssuedDocument {
 	o.PaymentsList = v
-	return o
+        return o
 }
 
 // GetTemplate returns the Template field value if set, zero value otherwise.
@@ -1915,7 +1915,7 @@ func (o *IssuedDocument) HasTemplate() bool {
 // SetTemplate gets a reference to the given DocumentTemplate and assigns it to the Template field.
 func (o *IssuedDocument) SetTemplate(v DocumentTemplate) *IssuedDocument {
 	o.Template = &v
-	return o
+        return o
 }
 
 // GetDeliveryNoteTemplate returns the DeliveryNoteTemplate field value if set, zero value otherwise.
@@ -1948,7 +1948,7 @@ func (o *IssuedDocument) HasDeliveryNoteTemplate() bool {
 // SetDeliveryNoteTemplate gets a reference to the given DocumentTemplate and assigns it to the DeliveryNoteTemplate field.
 func (o *IssuedDocument) SetDeliveryNoteTemplate(v DocumentTemplate) *IssuedDocument {
 	o.DeliveryNoteTemplate = &v
-	return o
+        return o
 }
 
 // GetAccInvTemplate returns the AccInvTemplate field value if set, zero value otherwise.
@@ -1981,7 +1981,7 @@ func (o *IssuedDocument) HasAccInvTemplate() bool {
 // SetAccInvTemplate gets a reference to the given DocumentTemplate and assigns it to the AccInvTemplate field.
 func (o *IssuedDocument) SetAccInvTemplate(v DocumentTemplate) *IssuedDocument {
 	o.AccInvTemplate = &v
-	return o
+        return o
 }
 
 // GetHMargins returns the HMargins field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -2015,12 +2015,12 @@ func (o *IssuedDocument) HasHMargins() bool {
 // SetHMargins gets a reference to the given NullableInt32 and assigns it to the HMargins field.
 func (o *IssuedDocument) SetHMargins(v int32) *IssuedDocument {
 	o.HMargins.Set(&v)
-	return o
+        return o
 }
 // SetHMarginsNil sets the value for HMargins to be an explicit nil
 func (o *IssuedDocument) SetHMarginsNil() *IssuedDocument {
 	o.HMargins.Set(nil)
-	return o
+    return o
 }
 
 // UnsetHMargins ensures that no value is present for HMargins, not even an explicit nil
@@ -2059,12 +2059,12 @@ func (o *IssuedDocument) HasVMargins() bool {
 // SetVMargins gets a reference to the given NullableInt32 and assigns it to the VMargins field.
 func (o *IssuedDocument) SetVMargins(v int32) *IssuedDocument {
 	o.VMargins.Set(&v)
-	return o
+        return o
 }
 // SetVMarginsNil sets the value for VMargins to be an explicit nil
 func (o *IssuedDocument) SetVMarginsNil() *IssuedDocument {
 	o.VMargins.Set(nil)
-	return o
+    return o
 }
 
 // UnsetVMargins ensures that no value is present for VMargins, not even an explicit nil
@@ -2103,12 +2103,12 @@ func (o *IssuedDocument) HasShowPayments() bool {
 // SetShowPayments gets a reference to the given NullableBool and assigns it to the ShowPayments field.
 func (o *IssuedDocument) SetShowPayments(v bool) *IssuedDocument {
 	o.ShowPayments.Set(&v)
-	return o
+        return o
 }
 // SetShowPaymentsNil sets the value for ShowPayments to be an explicit nil
 func (o *IssuedDocument) SetShowPaymentsNil() *IssuedDocument {
 	o.ShowPayments.Set(nil)
-	return o
+    return o
 }
 
 // UnsetShowPayments ensures that no value is present for ShowPayments, not even an explicit nil
@@ -2147,12 +2147,12 @@ func (o *IssuedDocument) HasShowPaymentMethod() bool {
 // SetShowPaymentMethod gets a reference to the given NullableBool and assigns it to the ShowPaymentMethod field.
 func (o *IssuedDocument) SetShowPaymentMethod(v bool) *IssuedDocument {
 	o.ShowPaymentMethod.Set(&v)
-	return o
+        return o
 }
 // SetShowPaymentMethodNil sets the value for ShowPaymentMethod to be an explicit nil
 func (o *IssuedDocument) SetShowPaymentMethodNil() *IssuedDocument {
 	o.ShowPaymentMethod.Set(nil)
-	return o
+    return o
 }
 
 // UnsetShowPaymentMethod ensures that no value is present for ShowPaymentMethod, not even an explicit nil
@@ -2190,7 +2190,7 @@ func (o *IssuedDocument) HasShowTotals() bool {
 // SetShowTotals gets a reference to the given ShowTotalsMode and assigns it to the ShowTotals field.
 func (o *IssuedDocument) SetShowTotals(v ShowTotalsMode) *IssuedDocument {
 	o.ShowTotals = &v
-	return o
+        return o
 }
 
 // GetShowNotificationButton returns the ShowNotificationButton field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -2224,12 +2224,12 @@ func (o *IssuedDocument) HasShowNotificationButton() bool {
 // SetShowNotificationButton gets a reference to the given NullableBool and assigns it to the ShowNotificationButton field.
 func (o *IssuedDocument) SetShowNotificationButton(v bool) *IssuedDocument {
 	o.ShowNotificationButton.Set(&v)
-	return o
+        return o
 }
 // SetShowNotificationButtonNil sets the value for ShowNotificationButton to be an explicit nil
 func (o *IssuedDocument) SetShowNotificationButtonNil() *IssuedDocument {
 	o.ShowNotificationButton.Set(nil)
-	return o
+    return o
 }
 
 // UnsetShowNotificationButton ensures that no value is present for ShowNotificationButton, not even an explicit nil
@@ -2268,12 +2268,12 @@ func (o *IssuedDocument) HasShowTspayButton() bool {
 // SetShowTspayButton gets a reference to the given NullableBool and assigns it to the ShowTspayButton field.
 func (o *IssuedDocument) SetShowTspayButton(v bool) *IssuedDocument {
 	o.ShowTspayButton.Set(&v)
-	return o
+        return o
 }
 // SetShowTspayButtonNil sets the value for ShowTspayButton to be an explicit nil
 func (o *IssuedDocument) SetShowTspayButtonNil() *IssuedDocument {
 	o.ShowTspayButton.Set(nil)
-	return o
+    return o
 }
 
 // UnsetShowTspayButton ensures that no value is present for ShowTspayButton, not even an explicit nil
@@ -2312,12 +2312,12 @@ func (o *IssuedDocument) HasDeliveryNote() bool {
 // SetDeliveryNote gets a reference to the given NullableBool and assigns it to the DeliveryNote field.
 func (o *IssuedDocument) SetDeliveryNote(v bool) *IssuedDocument {
 	o.DeliveryNote.Set(&v)
-	return o
+        return o
 }
 // SetDeliveryNoteNil sets the value for DeliveryNote to be an explicit nil
 func (o *IssuedDocument) SetDeliveryNoteNil() *IssuedDocument {
 	o.DeliveryNote.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDeliveryNote ensures that no value is present for DeliveryNote, not even an explicit nil
@@ -2356,12 +2356,12 @@ func (o *IssuedDocument) HasAccompanyingInvoice() bool {
 // SetAccompanyingInvoice gets a reference to the given NullableBool and assigns it to the AccompanyingInvoice field.
 func (o *IssuedDocument) SetAccompanyingInvoice(v bool) *IssuedDocument {
 	o.AccompanyingInvoice.Set(&v)
-	return o
+        return o
 }
 // SetAccompanyingInvoiceNil sets the value for AccompanyingInvoice to be an explicit nil
 func (o *IssuedDocument) SetAccompanyingInvoiceNil() *IssuedDocument {
 	o.AccompanyingInvoice.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAccompanyingInvoice ensures that no value is present for AccompanyingInvoice, not even an explicit nil
@@ -2400,12 +2400,12 @@ func (o *IssuedDocument) HasDnNumber() bool {
 // SetDnNumber gets a reference to the given NullableInt32 and assigns it to the DnNumber field.
 func (o *IssuedDocument) SetDnNumber(v int32) *IssuedDocument {
 	o.DnNumber.Set(&v)
-	return o
+        return o
 }
 // SetDnNumberNil sets the value for DnNumber to be an explicit nil
 func (o *IssuedDocument) SetDnNumberNil() *IssuedDocument {
 	o.DnNumber.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDnNumber ensures that no value is present for DnNumber, not even an explicit nil
@@ -2444,12 +2444,12 @@ func (o *IssuedDocument) HasDnDate() bool {
 // SetDnDate gets a reference to the given NullableString and assigns it to the DnDate field.
 func (o *IssuedDocument) SetDnDate(v string) *IssuedDocument {
 	o.DnDate.Set(&v)
-	return o
+        return o
 }
 // SetDnDateNil sets the value for DnDate to be an explicit nil
 func (o *IssuedDocument) SetDnDateNil() *IssuedDocument {
 	o.DnDate.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDnDate ensures that no value is present for DnDate, not even an explicit nil
@@ -2488,12 +2488,12 @@ func (o *IssuedDocument) HasDnAiPackagesNumber() bool {
 // SetDnAiPackagesNumber gets a reference to the given NullableString and assigns it to the DnAiPackagesNumber field.
 func (o *IssuedDocument) SetDnAiPackagesNumber(v string) *IssuedDocument {
 	o.DnAiPackagesNumber.Set(&v)
-	return o
+        return o
 }
 // SetDnAiPackagesNumberNil sets the value for DnAiPackagesNumber to be an explicit nil
 func (o *IssuedDocument) SetDnAiPackagesNumberNil() *IssuedDocument {
 	o.DnAiPackagesNumber.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDnAiPackagesNumber ensures that no value is present for DnAiPackagesNumber, not even an explicit nil
@@ -2532,12 +2532,12 @@ func (o *IssuedDocument) HasDnAiWeight() bool {
 // SetDnAiWeight gets a reference to the given NullableString and assigns it to the DnAiWeight field.
 func (o *IssuedDocument) SetDnAiWeight(v string) *IssuedDocument {
 	o.DnAiWeight.Set(&v)
-	return o
+        return o
 }
 // SetDnAiWeightNil sets the value for DnAiWeight to be an explicit nil
 func (o *IssuedDocument) SetDnAiWeightNil() *IssuedDocument {
 	o.DnAiWeight.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDnAiWeight ensures that no value is present for DnAiWeight, not even an explicit nil
@@ -2576,12 +2576,12 @@ func (o *IssuedDocument) HasDnAiCausal() bool {
 // SetDnAiCausal gets a reference to the given NullableString and assigns it to the DnAiCausal field.
 func (o *IssuedDocument) SetDnAiCausal(v string) *IssuedDocument {
 	o.DnAiCausal.Set(&v)
-	return o
+        return o
 }
 // SetDnAiCausalNil sets the value for DnAiCausal to be an explicit nil
 func (o *IssuedDocument) SetDnAiCausalNil() *IssuedDocument {
 	o.DnAiCausal.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDnAiCausal ensures that no value is present for DnAiCausal, not even an explicit nil
@@ -2620,12 +2620,12 @@ func (o *IssuedDocument) HasDnAiDestination() bool {
 // SetDnAiDestination gets a reference to the given NullableString and assigns it to the DnAiDestination field.
 func (o *IssuedDocument) SetDnAiDestination(v string) *IssuedDocument {
 	o.DnAiDestination.Set(&v)
-	return o
+        return o
 }
 // SetDnAiDestinationNil sets the value for DnAiDestination to be an explicit nil
 func (o *IssuedDocument) SetDnAiDestinationNil() *IssuedDocument {
 	o.DnAiDestination.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDnAiDestination ensures that no value is present for DnAiDestination, not even an explicit nil
@@ -2664,12 +2664,12 @@ func (o *IssuedDocument) HasDnAiTransporter() bool {
 // SetDnAiTransporter gets a reference to the given NullableString and assigns it to the DnAiTransporter field.
 func (o *IssuedDocument) SetDnAiTransporter(v string) *IssuedDocument {
 	o.DnAiTransporter.Set(&v)
-	return o
+        return o
 }
 // SetDnAiTransporterNil sets the value for DnAiTransporter to be an explicit nil
 func (o *IssuedDocument) SetDnAiTransporterNil() *IssuedDocument {
 	o.DnAiTransporter.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDnAiTransporter ensures that no value is present for DnAiTransporter, not even an explicit nil
@@ -2708,12 +2708,12 @@ func (o *IssuedDocument) HasDnAiNotes() bool {
 // SetDnAiNotes gets a reference to the given NullableString and assigns it to the DnAiNotes field.
 func (o *IssuedDocument) SetDnAiNotes(v string) *IssuedDocument {
 	o.DnAiNotes.Set(&v)
-	return o
+        return o
 }
 // SetDnAiNotesNil sets the value for DnAiNotes to be an explicit nil
 func (o *IssuedDocument) SetDnAiNotesNil() *IssuedDocument {
 	o.DnAiNotes.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDnAiNotes ensures that no value is present for DnAiNotes, not even an explicit nil
@@ -2752,12 +2752,12 @@ func (o *IssuedDocument) HasIsMarked() bool {
 // SetIsMarked gets a reference to the given NullableBool and assigns it to the IsMarked field.
 func (o *IssuedDocument) SetIsMarked(v bool) *IssuedDocument {
 	o.IsMarked.Set(&v)
-	return o
+        return o
 }
 // SetIsMarkedNil sets the value for IsMarked to be an explicit nil
 func (o *IssuedDocument) SetIsMarkedNil() *IssuedDocument {
 	o.IsMarked.Set(nil)
-	return o
+    return o
 }
 
 // UnsetIsMarked ensures that no value is present for IsMarked, not even an explicit nil
@@ -2796,12 +2796,12 @@ func (o *IssuedDocument) HasAmountNet() bool {
 // SetAmountNet gets a reference to the given NullableFloat32 and assigns it to the AmountNet field.
 func (o *IssuedDocument) SetAmountNet(v float32) *IssuedDocument {
 	o.AmountNet.Set(&v)
-	return o
+        return o
 }
 // SetAmountNetNil sets the value for AmountNet to be an explicit nil
 func (o *IssuedDocument) SetAmountNetNil() *IssuedDocument {
 	o.AmountNet.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountNet ensures that no value is present for AmountNet, not even an explicit nil
@@ -2840,12 +2840,12 @@ func (o *IssuedDocument) HasAmountVat() bool {
 // SetAmountVat gets a reference to the given NullableFloat32 and assigns it to the AmountVat field.
 func (o *IssuedDocument) SetAmountVat(v float32) *IssuedDocument {
 	o.AmountVat.Set(&v)
-	return o
+        return o
 }
 // SetAmountVatNil sets the value for AmountVat to be an explicit nil
 func (o *IssuedDocument) SetAmountVatNil() *IssuedDocument {
 	o.AmountVat.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountVat ensures that no value is present for AmountVat, not even an explicit nil
@@ -2884,12 +2884,12 @@ func (o *IssuedDocument) HasAmountGross() bool {
 // SetAmountGross gets a reference to the given NullableFloat32 and assigns it to the AmountGross field.
 func (o *IssuedDocument) SetAmountGross(v float32) *IssuedDocument {
 	o.AmountGross.Set(&v)
-	return o
+        return o
 }
 // SetAmountGrossNil sets the value for AmountGross to be an explicit nil
 func (o *IssuedDocument) SetAmountGrossNil() *IssuedDocument {
 	o.AmountGross.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountGross ensures that no value is present for AmountGross, not even an explicit nil
@@ -2928,12 +2928,12 @@ func (o *IssuedDocument) HasAmountDueDiscount() bool {
 // SetAmountDueDiscount gets a reference to the given NullableFloat32 and assigns it to the AmountDueDiscount field.
 func (o *IssuedDocument) SetAmountDueDiscount(v float32) *IssuedDocument {
 	o.AmountDueDiscount.Set(&v)
-	return o
+        return o
 }
 // SetAmountDueDiscountNil sets the value for AmountDueDiscount to be an explicit nil
 func (o *IssuedDocument) SetAmountDueDiscountNil() *IssuedDocument {
 	o.AmountDueDiscount.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountDueDiscount ensures that no value is present for AmountDueDiscount, not even an explicit nil
@@ -2972,12 +2972,12 @@ func (o *IssuedDocument) HasAmountRivalsa() bool {
 // SetAmountRivalsa gets a reference to the given NullableFloat32 and assigns it to the AmountRivalsa field.
 func (o *IssuedDocument) SetAmountRivalsa(v float32) *IssuedDocument {
 	o.AmountRivalsa.Set(&v)
-	return o
+        return o
 }
 // SetAmountRivalsaNil sets the value for AmountRivalsa to be an explicit nil
 func (o *IssuedDocument) SetAmountRivalsaNil() *IssuedDocument {
 	o.AmountRivalsa.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountRivalsa ensures that no value is present for AmountRivalsa, not even an explicit nil
@@ -3016,12 +3016,12 @@ func (o *IssuedDocument) HasAmountRivalsaTaxable() bool {
 // SetAmountRivalsaTaxable gets a reference to the given NullableFloat32 and assigns it to the AmountRivalsaTaxable field.
 func (o *IssuedDocument) SetAmountRivalsaTaxable(v float32) *IssuedDocument {
 	o.AmountRivalsaTaxable.Set(&v)
-	return o
+        return o
 }
 // SetAmountRivalsaTaxableNil sets the value for AmountRivalsaTaxable to be an explicit nil
 func (o *IssuedDocument) SetAmountRivalsaTaxableNil() *IssuedDocument {
 	o.AmountRivalsaTaxable.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountRivalsaTaxable ensures that no value is present for AmountRivalsaTaxable, not even an explicit nil
@@ -3060,12 +3060,12 @@ func (o *IssuedDocument) HasAmountWithholdingTax() bool {
 // SetAmountWithholdingTax gets a reference to the given NullableFloat32 and assigns it to the AmountWithholdingTax field.
 func (o *IssuedDocument) SetAmountWithholdingTax(v float32) *IssuedDocument {
 	o.AmountWithholdingTax.Set(&v)
-	return o
+        return o
 }
 // SetAmountWithholdingTaxNil sets the value for AmountWithholdingTax to be an explicit nil
 func (o *IssuedDocument) SetAmountWithholdingTaxNil() *IssuedDocument {
 	o.AmountWithholdingTax.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountWithholdingTax ensures that no value is present for AmountWithholdingTax, not even an explicit nil
@@ -3104,12 +3104,12 @@ func (o *IssuedDocument) HasAmountWithholdingTaxTaxable() bool {
 // SetAmountWithholdingTaxTaxable gets a reference to the given NullableFloat32 and assigns it to the AmountWithholdingTaxTaxable field.
 func (o *IssuedDocument) SetAmountWithholdingTaxTaxable(v float32) *IssuedDocument {
 	o.AmountWithholdingTaxTaxable.Set(&v)
-	return o
+        return o
 }
 // SetAmountWithholdingTaxTaxableNil sets the value for AmountWithholdingTaxTaxable to be an explicit nil
 func (o *IssuedDocument) SetAmountWithholdingTaxTaxableNil() *IssuedDocument {
 	o.AmountWithholdingTaxTaxable.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountWithholdingTaxTaxable ensures that no value is present for AmountWithholdingTaxTaxable, not even an explicit nil
@@ -3148,12 +3148,12 @@ func (o *IssuedDocument) HasAmountOtherWithholdingTax() bool {
 // SetAmountOtherWithholdingTax gets a reference to the given NullableFloat32 and assigns it to the AmountOtherWithholdingTax field.
 func (o *IssuedDocument) SetAmountOtherWithholdingTax(v float32) *IssuedDocument {
 	o.AmountOtherWithholdingTax.Set(&v)
-	return o
+        return o
 }
 // SetAmountOtherWithholdingTaxNil sets the value for AmountOtherWithholdingTax to be an explicit nil
 func (o *IssuedDocument) SetAmountOtherWithholdingTaxNil() *IssuedDocument {
 	o.AmountOtherWithholdingTax.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountOtherWithholdingTax ensures that no value is present for AmountOtherWithholdingTax, not even an explicit nil
@@ -3192,12 +3192,12 @@ func (o *IssuedDocument) HasAmountOtherWithholdingTaxTaxable() bool {
 // SetAmountOtherWithholdingTaxTaxable gets a reference to the given NullableFloat32 and assigns it to the AmountOtherWithholdingTaxTaxable field.
 func (o *IssuedDocument) SetAmountOtherWithholdingTaxTaxable(v float32) *IssuedDocument {
 	o.AmountOtherWithholdingTaxTaxable.Set(&v)
-	return o
+        return o
 }
 // SetAmountOtherWithholdingTaxTaxableNil sets the value for AmountOtherWithholdingTaxTaxable to be an explicit nil
 func (o *IssuedDocument) SetAmountOtherWithholdingTaxTaxableNil() *IssuedDocument {
 	o.AmountOtherWithholdingTaxTaxable.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountOtherWithholdingTaxTaxable ensures that no value is present for AmountOtherWithholdingTaxTaxable, not even an explicit nil
@@ -3236,12 +3236,12 @@ func (o *IssuedDocument) HasAmountEnasarcoTaxable() bool {
 // SetAmountEnasarcoTaxable gets a reference to the given NullableFloat32 and assigns it to the AmountEnasarcoTaxable field.
 func (o *IssuedDocument) SetAmountEnasarcoTaxable(v float32) *IssuedDocument {
 	o.AmountEnasarcoTaxable.Set(&v)
-	return o
+        return o
 }
 // SetAmountEnasarcoTaxableNil sets the value for AmountEnasarcoTaxable to be an explicit nil
 func (o *IssuedDocument) SetAmountEnasarcoTaxableNil() *IssuedDocument {
 	o.AmountEnasarcoTaxable.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAmountEnasarcoTaxable ensures that no value is present for AmountEnasarcoTaxable, not even an explicit nil
@@ -3280,12 +3280,12 @@ func (o *IssuedDocument) HasExtraData() bool {
 // SetExtraData gets a reference to the given NullableIssuedDocumentExtraData and assigns it to the ExtraData field.
 func (o *IssuedDocument) SetExtraData(v IssuedDocumentExtraData) *IssuedDocument {
 	o.ExtraData.Set(&v)
-	return o
+        return o
 }
 // SetExtraDataNil sets the value for ExtraData to be an explicit nil
 func (o *IssuedDocument) SetExtraDataNil() *IssuedDocument {
 	o.ExtraData.Set(nil)
-	return o
+    return o
 }
 
 // UnsetExtraData ensures that no value is present for ExtraData, not even an explicit nil
@@ -3324,12 +3324,12 @@ func (o *IssuedDocument) HasSeenDate() bool {
 // SetSeenDate gets a reference to the given NullableString and assigns it to the SeenDate field.
 func (o *IssuedDocument) SetSeenDate(v string) *IssuedDocument {
 	o.SeenDate.Set(&v)
-	return o
+        return o
 }
 // SetSeenDateNil sets the value for SeenDate to be an explicit nil
 func (o *IssuedDocument) SetSeenDateNil() *IssuedDocument {
 	o.SeenDate.Set(nil)
-	return o
+    return o
 }
 
 // UnsetSeenDate ensures that no value is present for SeenDate, not even an explicit nil
@@ -3368,12 +3368,12 @@ func (o *IssuedDocument) HasNextDueDate() bool {
 // SetNextDueDate gets a reference to the given NullableString and assigns it to the NextDueDate field.
 func (o *IssuedDocument) SetNextDueDate(v string) *IssuedDocument {
 	o.NextDueDate.Set(&v)
-	return o
+        return o
 }
 // SetNextDueDateNil sets the value for NextDueDate to be an explicit nil
 func (o *IssuedDocument) SetNextDueDateNil() *IssuedDocument {
 	o.NextDueDate.Set(nil)
-	return o
+    return o
 }
 
 // UnsetNextDueDate ensures that no value is present for NextDueDate, not even an explicit nil
@@ -3412,12 +3412,12 @@ func (o *IssuedDocument) HasUrl() bool {
 // SetUrl gets a reference to the given NullableString and assigns it to the Url field.
 func (o *IssuedDocument) SetUrl(v string) *IssuedDocument {
 	o.Url.Set(&v)
-	return o
+        return o
 }
 // SetUrlNil sets the value for Url to be an explicit nil
 func (o *IssuedDocument) SetUrlNil() *IssuedDocument {
 	o.Url.Set(nil)
-	return o
+    return o
 }
 
 // UnsetUrl ensures that no value is present for Url, not even an explicit nil
@@ -3456,12 +3456,12 @@ func (o *IssuedDocument) HasDnUrl() bool {
 // SetDnUrl gets a reference to the given NullableString and assigns it to the DnUrl field.
 func (o *IssuedDocument) SetDnUrl(v string) *IssuedDocument {
 	o.DnUrl.Set(&v)
-	return o
+        return o
 }
 // SetDnUrlNil sets the value for DnUrl to be an explicit nil
 func (o *IssuedDocument) SetDnUrlNil() *IssuedDocument {
 	o.DnUrl.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDnUrl ensures that no value is present for DnUrl, not even an explicit nil
@@ -3500,12 +3500,12 @@ func (o *IssuedDocument) HasAiUrl() bool {
 // SetAiUrl gets a reference to the given NullableString and assigns it to the AiUrl field.
 func (o *IssuedDocument) SetAiUrl(v string) *IssuedDocument {
 	o.AiUrl.Set(&v)
-	return o
+        return o
 }
 // SetAiUrlNil sets the value for AiUrl to be an explicit nil
 func (o *IssuedDocument) SetAiUrlNil() *IssuedDocument {
 	o.AiUrl.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAiUrl ensures that no value is present for AiUrl, not even an explicit nil
@@ -3544,12 +3544,12 @@ func (o *IssuedDocument) HasAttachmentUrl() bool {
 // SetAttachmentUrl gets a reference to the given NullableString and assigns it to the AttachmentUrl field.
 func (o *IssuedDocument) SetAttachmentUrl(v string) *IssuedDocument {
 	o.AttachmentUrl.Set(&v)
-	return o
+        return o
 }
 // SetAttachmentUrlNil sets the value for AttachmentUrl to be an explicit nil
 func (o *IssuedDocument) SetAttachmentUrlNil() *IssuedDocument {
 	o.AttachmentUrl.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAttachmentUrl ensures that no value is present for AttachmentUrl, not even an explicit nil
@@ -3588,12 +3588,12 @@ func (o *IssuedDocument) HasAttachmentToken() bool {
 // SetAttachmentToken gets a reference to the given NullableString and assigns it to the AttachmentToken field.
 func (o *IssuedDocument) SetAttachmentToken(v string) *IssuedDocument {
 	o.AttachmentToken.Set(&v)
-	return o
+        return o
 }
 // SetAttachmentTokenNil sets the value for AttachmentToken to be an explicit nil
 func (o *IssuedDocument) SetAttachmentTokenNil() *IssuedDocument {
 	o.AttachmentToken.Set(nil)
-	return o
+    return o
 }
 
 // UnsetAttachmentToken ensures that no value is present for AttachmentToken, not even an explicit nil
@@ -3632,7 +3632,7 @@ func (o *IssuedDocument) HasEiRaw() bool {
 // SetEiRaw gets a reference to the given map[string]interface{} and assigns it to the EiRaw field.
 func (o *IssuedDocument) SetEiRaw(v map[string]interface{}) *IssuedDocument {
 	o.EiRaw = v
-	return o
+        return o
 }
 
 // GetEiStatus returns the EiStatus field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -3666,12 +3666,12 @@ func (o *IssuedDocument) HasEiStatus() bool {
 // SetEiStatus gets a reference to the given NullableString and assigns it to the EiStatus field.
 func (o *IssuedDocument) SetEiStatus(v string) *IssuedDocument {
 	o.EiStatus.Set(&v)
-	return o
+        return o
 }
 // SetEiStatusNil sets the value for EiStatus to be an explicit nil
 func (o *IssuedDocument) SetEiStatusNil() *IssuedDocument {
 	o.EiStatus.Set(nil)
-	return o
+    return o
 }
 
 // UnsetEiStatus ensures that no value is present for EiStatus, not even an explicit nil
@@ -3710,12 +3710,12 @@ func (o *IssuedDocument) HasLocked() bool {
 // SetLocked gets a reference to the given NullableBool and assigns it to the Locked field.
 func (o *IssuedDocument) SetLocked(v bool) *IssuedDocument {
 	o.Locked.Set(&v)
-	return o
+        return o
 }
 // SetLockedNil sets the value for Locked to be an explicit nil
 func (o *IssuedDocument) SetLockedNil() *IssuedDocument {
 	o.Locked.Set(nil)
-	return o
+    return o
 }
 
 // UnsetLocked ensures that no value is present for Locked, not even an explicit nil
@@ -3754,12 +3754,12 @@ func (o *IssuedDocument) HasCreatedAt() bool {
 // SetCreatedAt gets a reference to the given NullableString and assigns it to the CreatedAt field.
 func (o *IssuedDocument) SetCreatedAt(v string) *IssuedDocument {
 	o.CreatedAt.Set(&v)
-	return o
+        return o
 }
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *IssuedDocument) SetCreatedAtNil() *IssuedDocument {
 	o.CreatedAt.Set(nil)
-	return o
+    return o
 }
 
 // UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
@@ -3798,12 +3798,12 @@ func (o *IssuedDocument) HasUpdatedAt() bool {
 // SetUpdatedAt gets a reference to the given NullableString and assigns it to the UpdatedAt field.
 func (o *IssuedDocument) SetUpdatedAt(v string) *IssuedDocument {
 	o.UpdatedAt.Set(&v)
-	return o
+        return o
 }
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *IssuedDocument) SetUpdatedAtNil() *IssuedDocument {
 	o.UpdatedAt.Set(nil)
-	return o
+    return o
 }
 
 // UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil

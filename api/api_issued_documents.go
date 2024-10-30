@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -19,7 +19,7 @@ import (
 	"net/url"
 	"strings"
 	"os"
-	. "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+        . "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 
@@ -621,10 +621,10 @@ func (a *IssuedDocumentsAPIService) GetIssuedDocumentExecute(r ApiGetIssuedDocum
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "form", "")
 	}
 	if r.fieldset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -739,7 +739,7 @@ func (a *IssuedDocumentsAPIService) GetIssuedDocumentPreCreateInfoExecute(r ApiG
 		return localVarReturnValue, nil, reportError("type_ is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -911,7 +911,7 @@ type ApiJoinIssuedDocumentsRequest struct {
 	companyId int32
 	ids *string
 	group *int32
-	eInvoice *int32
+	type_ *string
 }
 
 // Ids of the documents.
@@ -926,9 +926,9 @@ func (r ApiJoinIssuedDocumentsRequest) Group(group int32) ApiJoinIssuedDocuments
 	return r
 }
 
-// New document e_invoice.
-func (r ApiJoinIssuedDocumentsRequest) EInvoice(eInvoice int32) ApiJoinIssuedDocumentsRequest {
-	r.eInvoice = &eInvoice
+// Type of the documents to be joined
+func (r ApiJoinIssuedDocumentsRequest) Type_(type_ string) ApiJoinIssuedDocumentsRequest {
+	r.type_ = &type_
 	return r
 }
 
@@ -978,12 +978,12 @@ func (a *IssuedDocumentsAPIService) JoinIssuedDocumentsExecute(r ApiJoinIssuedDo
 		return localVarReturnValue, nil, reportError("ids is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "ids", r.ids, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "ids", r.ids, "form", "")
 	if r.group != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "group", r.group, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "group", r.group, "form", "")
 	}
-	if r.eInvoice != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "e_invoice", r.eInvoice, "")
+	if r.type_ != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1147,33 +1147,33 @@ func (a *IssuedDocumentsAPIService) ListIssuedDocumentsExecute(r ApiListIssuedDo
 		return localVarReturnValue, nil, reportError("type_ is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "form", "")
 	if r.fields != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "form", "")
 	}
 	if r.fieldset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "form", "")
 	}
 	if r.sort != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "form", "")
 	}
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	} else {
 		var defaultValue int32 = 1
 		r.page = &defaultValue
 	}
 	if r.perPage != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "form", "")
 	} else {
 		var defaultValue int32 = 5
 		r.perPage = &defaultValue
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.inclusive != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "inclusive", r.inclusive, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "inclusive", r.inclusive, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1456,6 +1456,7 @@ type ApiTransformIssuedDocumentRequest struct {
 	companyId int32
 	originalDocumentId *int32
 	newType *string
+	type_ *string
 	eInvoice *int32
 	transformKeepCopy *int32
 }
@@ -1469,6 +1470,12 @@ func (r ApiTransformIssuedDocumentRequest) OriginalDocumentId(originalDocumentId
 // New document type.
 func (r ApiTransformIssuedDocumentRequest) NewType(newType string) ApiTransformIssuedDocumentRequest {
 	r.newType = &newType
+	return r
+}
+
+// Current document type.
+func (r ApiTransformIssuedDocumentRequest) Type_(type_ string) ApiTransformIssuedDocumentRequest {
+	r.type_ = &type_
 	return r
 }
 
@@ -1533,13 +1540,16 @@ func (a *IssuedDocumentsAPIService) TransformIssuedDocumentExecute(r ApiTransfor
 		return localVarReturnValue, nil, reportError("newType is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "original_document_id", r.originalDocumentId, "")
-	parameterAddToHeaderOrQuery(localVarQueryParams, "new_type", r.newType, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "original_document_id", r.originalDocumentId, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "new_type", r.newType, "form", "")
+	if r.type_ != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "form", "")
+	}
 	if r.eInvoice != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "e_invoice", r.eInvoice, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "e_invoice", r.eInvoice, "form", "")
 	}
 	if r.transformKeepCopy != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "transform_keep_copy", r.transformKeepCopy, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "transform_keep_copy", r.transformKeepCopy, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1676,7 +1686,7 @@ func (a *IssuedDocumentsAPIService) UploadIssuedDocumentAttachmentExecute(r ApiU
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.filename != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "filename", r.filename, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "filename", r.filename, "", "")
 	}
 	var attachmentLocalVarFormFileName string
 	var attachmentLocalVarFileName     string

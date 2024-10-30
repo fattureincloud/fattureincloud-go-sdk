@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,13 +21,13 @@ type F24Status string
 
 // List of F24Status
 var F24Statuses = struct {
-	PAID F24Status
-	NOT_PAID F24Status
-	REVERSED F24Status
+    PAID F24Status
+    NOT_PAID F24Status
+    REVERSED F24Status
 } {
-	PAID: "paid",
-	NOT_PAID: "not_paid",
-	REVERSED: "reversed",
+            PAID: "paid",
+            NOT_PAID: "not_paid",
+            REVERSED: "reversed",
 }
 
 // All allowed values of F24Status enum

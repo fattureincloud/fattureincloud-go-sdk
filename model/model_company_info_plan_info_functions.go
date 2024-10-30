@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -20,24 +20,24 @@ var _ MappedNullable = &CompanyInfoPlanInfoFunctions{}
 
 // CompanyInfoPlanInfoFunctions Access to functions for this company.
 type CompanyInfoPlanInfoFunctions struct {
-	Archive NullableBool `json:"archive,omitempty"`
-	Cerved NullableBool `json:"cerved,omitempty"`
-	DocumentAttachments NullableBool `json:"document_attachments,omitempty"`
-	EInvoice NullableBool `json:"e_invoice,omitempty"`
-	Genius NullableBool `json:"genius,omitempty"`
-	MailTracking NullableBool `json:"mail_tracking,omitempty"`
-	PaymentNotifications NullableBool `json:"payment_notifications,omitempty"`
-	Paypal NullableBool `json:"paypal,omitempty"`
-	Receipts NullableBool `json:"receipts,omitempty"`
-	Recurring NullableBool `json:"recurring,omitempty"`
-	Smtp NullableBool `json:"smtp,omitempty"`
-	Sofort NullableBool `json:"sofort,omitempty"`
-	Stock NullableBool `json:"stock,omitempty"`
-	Subaccounts NullableBool `json:"subaccounts,omitempty"`
-	TesseraSanitaria NullableBool `json:"tessera_sanitaria,omitempty"`
-	TsDigital NullableBool `json:"ts_digital,omitempty"`
-	TsInvoiceTrading NullableBool `json:"ts_invoice_trading,omitempty"`
-	TsPay NullableBool `json:"ts_pay,omitempty"`
+Archive NullableBool `json:"archive,omitempty"`
+Cerved NullableBool `json:"cerved,omitempty"`
+DocumentAttachments NullableBool `json:"document_attachments,omitempty"`
+EInvoice NullableBool `json:"e_invoice,omitempty"`
+Genius NullableBool `json:"genius,omitempty"`
+MailTracking NullableBool `json:"mail_tracking,omitempty"`
+PaymentNotifications NullableBool `json:"payment_notifications,omitempty"`
+Paypal NullableBool `json:"paypal,omitempty"`
+Receipts NullableBool `json:"receipts,omitempty"`
+Recurring NullableBool `json:"recurring,omitempty"`
+Smtp NullableBool `json:"smtp,omitempty"`
+Sofort NullableBool `json:"sofort,omitempty"`
+Stock NullableBool `json:"stock,omitempty"`
+Subaccounts NullableBool `json:"subaccounts,omitempty"`
+TesseraSanitaria NullableBool `json:"tessera_sanitaria,omitempty"`
+TsDigital NullableBool `json:"ts_digital,omitempty"`
+TsInvoiceTrading NullableBool `json:"ts_invoice_trading,omitempty"`
+TsPay NullableBool `json:"ts_pay,omitempty"`
 }
 
 // NewCompanyInfoPlanInfoFunctions instantiates a new CompanyInfoPlanInfoFunctions object
@@ -88,12 +88,12 @@ func (o *CompanyInfoPlanInfoFunctions) HasArchive() bool {
 // SetArchive gets a reference to the given NullableBool and assigns it to the Archive field.
 func (o *CompanyInfoPlanInfoFunctions) SetArchive(v bool) *CompanyInfoPlanInfoFunctions {
 	o.Archive.Set(&v)
-	return o
+        return o
 }
 // SetArchiveNil sets the value for Archive to be an explicit nil
 func (o *CompanyInfoPlanInfoFunctions) SetArchiveNil() *CompanyInfoPlanInfoFunctions {
 	o.Archive.Set(nil)
-	return o
+    return o
 }
 
 // UnsetArchive ensures that no value is present for Archive, not even an explicit nil
@@ -132,12 +132,12 @@ func (o *CompanyInfoPlanInfoFunctions) HasCerved() bool {
 // SetCerved gets a reference to the given NullableBool and assigns it to the Cerved field.
 func (o *CompanyInfoPlanInfoFunctions) SetCerved(v bool) *CompanyInfoPlanInfoFunctions {
 	o.Cerved.Set(&v)
-	return o
+        return o
 }
 // SetCervedNil sets the value for Cerved to be an explicit nil
 func (o *CompanyInfoPlanInfoFunctions) SetCervedNil() *CompanyInfoPlanInfoFunctions {
 	o.Cerved.Set(nil)
-	return o
+    return o
 }
 
 // UnsetCerved ensures that no value is present for Cerved, not even an explicit nil
@@ -176,12 +176,12 @@ func (o *CompanyInfoPlanInfoFunctions) HasDocumentAttachments() bool {
 // SetDocumentAttachments gets a reference to the given NullableBool and assigns it to the DocumentAttachments field.
 func (o *CompanyInfoPlanInfoFunctions) SetDocumentAttachments(v bool) *CompanyInfoPlanInfoFunctions {
 	o.DocumentAttachments.Set(&v)
-	return o
+        return o
 }
 // SetDocumentAttachmentsNil sets the value for DocumentAttachments to be an explicit nil
 func (o *CompanyInfoPlanInfoFunctions) SetDocumentAttachmentsNil() *CompanyInfoPlanInfoFunctions {
 	o.DocumentAttachments.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDocumentAttachments ensures that no value is present for DocumentAttachments, not even an explicit nil
@@ -220,12 +220,12 @@ func (o *CompanyInfoPlanInfoFunctions) HasEInvoice() bool {
 // SetEInvoice gets a reference to the given NullableBool and assigns it to the EInvoice field.
 func (o *CompanyInfoPlanInfoFunctions) SetEInvoice(v bool) *CompanyInfoPlanInfoFunctions {
 	o.EInvoice.Set(&v)
-	return o
+        return o
 }
 // SetEInvoiceNil sets the value for EInvoice to be an explicit nil
 func (o *CompanyInfoPlanInfoFunctions) SetEInvoiceNil() *CompanyInfoPlanInfoFunctions {
 	o.EInvoice.Set(nil)
-	return o
+    return o
 }
 
 // UnsetEInvoice ensures that no value is present for EInvoice, not even an explicit nil
@@ -264,12 +264,12 @@ func (o *CompanyInfoPlanInfoFunctions) HasGenius() bool {
 // SetGenius gets a reference to the given NullableBool and assigns it to the Genius field.
 func (o *CompanyInfoPlanInfoFunctions) SetGenius(v bool) *CompanyInfoPlanInfoFunctions {
 	o.Genius.Set(&v)
-	return o
+        return o
 }
 // SetGeniusNil sets the value for Genius to be an explicit nil
 func (o *CompanyInfoPlanInfoFunctions) SetGeniusNil() *CompanyInfoPlanInfoFunctions {
 	o.Genius.Set(nil)
-	return o
+    return o
 }
 
 // UnsetGenius ensures that no value is present for Genius, not even an explicit nil
@@ -308,12 +308,12 @@ func (o *CompanyInfoPlanInfoFunctions) HasMailTracking() bool {
 // SetMailTracking gets a reference to the given NullableBool and assigns it to the MailTracking field.
 func (o *CompanyInfoPlanInfoFunctions) SetMailTracking(v bool) *CompanyInfoPlanInfoFunctions {
 	o.MailTracking.Set(&v)
-	return o
+        return o
 }
 // SetMailTrackingNil sets the value for MailTracking to be an explicit nil
 func (o *CompanyInfoPlanInfoFunctions) SetMailTrackingNil() *CompanyInfoPlanInfoFunctions {
 	o.MailTracking.Set(nil)
-	return o
+    return o
 }
 
 // UnsetMailTracking ensures that no value is present for MailTracking, not even an explicit nil
@@ -352,12 +352,12 @@ func (o *CompanyInfoPlanInfoFunctions) HasPaymentNotifications() bool {
 // SetPaymentNotifications gets a reference to the given NullableBool and assigns it to the PaymentNotifications field.
 func (o *CompanyInfoPlanInfoFunctions) SetPaymentNotifications(v bool) *CompanyInfoPlanInfoFunctions {
 	o.PaymentNotifications.Set(&v)
-	return o
+        return o
 }
 // SetPaymentNotificationsNil sets the value for PaymentNotifications to be an explicit nil
 func (o *CompanyInfoPlanInfoFunctions) SetPaymentNotificationsNil() *CompanyInfoPlanInfoFunctions {
 	o.PaymentNotifications.Set(nil)
-	return o
+    return o
 }
 
 // UnsetPaymentNotifications ensures that no value is present for PaymentNotifications, not even an explicit nil
@@ -396,12 +396,12 @@ func (o *CompanyInfoPlanInfoFunctions) HasPaypal() bool {
 // SetPaypal gets a reference to the given NullableBool and assigns it to the Paypal field.
 func (o *CompanyInfoPlanInfoFunctions) SetPaypal(v bool) *CompanyInfoPlanInfoFunctions {
 	o.Paypal.Set(&v)
-	return o
+        return o
 }
 // SetPaypalNil sets the value for Paypal to be an explicit nil
 func (o *CompanyInfoPlanInfoFunctions) SetPaypalNil() *CompanyInfoPlanInfoFunctions {
 	o.Paypal.Set(nil)
-	return o
+    return o
 }
 
 // UnsetPaypal ensures that no value is present for Paypal, not even an explicit nil
@@ -440,12 +440,12 @@ func (o *CompanyInfoPlanInfoFunctions) HasReceipts() bool {
 // SetReceipts gets a reference to the given NullableBool and assigns it to the Receipts field.
 func (o *CompanyInfoPlanInfoFunctions) SetReceipts(v bool) *CompanyInfoPlanInfoFunctions {
 	o.Receipts.Set(&v)
-	return o
+        return o
 }
 // SetReceiptsNil sets the value for Receipts to be an explicit nil
 func (o *CompanyInfoPlanInfoFunctions) SetReceiptsNil() *CompanyInfoPlanInfoFunctions {
 	o.Receipts.Set(nil)
-	return o
+    return o
 }
 
 // UnsetReceipts ensures that no value is present for Receipts, not even an explicit nil
@@ -484,12 +484,12 @@ func (o *CompanyInfoPlanInfoFunctions) HasRecurring() bool {
 // SetRecurring gets a reference to the given NullableBool and assigns it to the Recurring field.
 func (o *CompanyInfoPlanInfoFunctions) SetRecurring(v bool) *CompanyInfoPlanInfoFunctions {
 	o.Recurring.Set(&v)
-	return o
+        return o
 }
 // SetRecurringNil sets the value for Recurring to be an explicit nil
 func (o *CompanyInfoPlanInfoFunctions) SetRecurringNil() *CompanyInfoPlanInfoFunctions {
 	o.Recurring.Set(nil)
-	return o
+    return o
 }
 
 // UnsetRecurring ensures that no value is present for Recurring, not even an explicit nil
@@ -528,12 +528,12 @@ func (o *CompanyInfoPlanInfoFunctions) HasSmtp() bool {
 // SetSmtp gets a reference to the given NullableBool and assigns it to the Smtp field.
 func (o *CompanyInfoPlanInfoFunctions) SetSmtp(v bool) *CompanyInfoPlanInfoFunctions {
 	o.Smtp.Set(&v)
-	return o
+        return o
 }
 // SetSmtpNil sets the value for Smtp to be an explicit nil
 func (o *CompanyInfoPlanInfoFunctions) SetSmtpNil() *CompanyInfoPlanInfoFunctions {
 	o.Smtp.Set(nil)
-	return o
+    return o
 }
 
 // UnsetSmtp ensures that no value is present for Smtp, not even an explicit nil
@@ -572,12 +572,12 @@ func (o *CompanyInfoPlanInfoFunctions) HasSofort() bool {
 // SetSofort gets a reference to the given NullableBool and assigns it to the Sofort field.
 func (o *CompanyInfoPlanInfoFunctions) SetSofort(v bool) *CompanyInfoPlanInfoFunctions {
 	o.Sofort.Set(&v)
-	return o
+        return o
 }
 // SetSofortNil sets the value for Sofort to be an explicit nil
 func (o *CompanyInfoPlanInfoFunctions) SetSofortNil() *CompanyInfoPlanInfoFunctions {
 	o.Sofort.Set(nil)
-	return o
+    return o
 }
 
 // UnsetSofort ensures that no value is present for Sofort, not even an explicit nil
@@ -616,12 +616,12 @@ func (o *CompanyInfoPlanInfoFunctions) HasStock() bool {
 // SetStock gets a reference to the given NullableBool and assigns it to the Stock field.
 func (o *CompanyInfoPlanInfoFunctions) SetStock(v bool) *CompanyInfoPlanInfoFunctions {
 	o.Stock.Set(&v)
-	return o
+        return o
 }
 // SetStockNil sets the value for Stock to be an explicit nil
 func (o *CompanyInfoPlanInfoFunctions) SetStockNil() *CompanyInfoPlanInfoFunctions {
 	o.Stock.Set(nil)
-	return o
+    return o
 }
 
 // UnsetStock ensures that no value is present for Stock, not even an explicit nil
@@ -660,12 +660,12 @@ func (o *CompanyInfoPlanInfoFunctions) HasSubaccounts() bool {
 // SetSubaccounts gets a reference to the given NullableBool and assigns it to the Subaccounts field.
 func (o *CompanyInfoPlanInfoFunctions) SetSubaccounts(v bool) *CompanyInfoPlanInfoFunctions {
 	o.Subaccounts.Set(&v)
-	return o
+        return o
 }
 // SetSubaccountsNil sets the value for Subaccounts to be an explicit nil
 func (o *CompanyInfoPlanInfoFunctions) SetSubaccountsNil() *CompanyInfoPlanInfoFunctions {
 	o.Subaccounts.Set(nil)
-	return o
+    return o
 }
 
 // UnsetSubaccounts ensures that no value is present for Subaccounts, not even an explicit nil
@@ -704,12 +704,12 @@ func (o *CompanyInfoPlanInfoFunctions) HasTesseraSanitaria() bool {
 // SetTesseraSanitaria gets a reference to the given NullableBool and assigns it to the TesseraSanitaria field.
 func (o *CompanyInfoPlanInfoFunctions) SetTesseraSanitaria(v bool) *CompanyInfoPlanInfoFunctions {
 	o.TesseraSanitaria.Set(&v)
-	return o
+        return o
 }
 // SetTesseraSanitariaNil sets the value for TesseraSanitaria to be an explicit nil
 func (o *CompanyInfoPlanInfoFunctions) SetTesseraSanitariaNil() *CompanyInfoPlanInfoFunctions {
 	o.TesseraSanitaria.Set(nil)
-	return o
+    return o
 }
 
 // UnsetTesseraSanitaria ensures that no value is present for TesseraSanitaria, not even an explicit nil
@@ -748,12 +748,12 @@ func (o *CompanyInfoPlanInfoFunctions) HasTsDigital() bool {
 // SetTsDigital gets a reference to the given NullableBool and assigns it to the TsDigital field.
 func (o *CompanyInfoPlanInfoFunctions) SetTsDigital(v bool) *CompanyInfoPlanInfoFunctions {
 	o.TsDigital.Set(&v)
-	return o
+        return o
 }
 // SetTsDigitalNil sets the value for TsDigital to be an explicit nil
 func (o *CompanyInfoPlanInfoFunctions) SetTsDigitalNil() *CompanyInfoPlanInfoFunctions {
 	o.TsDigital.Set(nil)
-	return o
+    return o
 }
 
 // UnsetTsDigital ensures that no value is present for TsDigital, not even an explicit nil
@@ -792,12 +792,12 @@ func (o *CompanyInfoPlanInfoFunctions) HasTsInvoiceTrading() bool {
 // SetTsInvoiceTrading gets a reference to the given NullableBool and assigns it to the TsInvoiceTrading field.
 func (o *CompanyInfoPlanInfoFunctions) SetTsInvoiceTrading(v bool) *CompanyInfoPlanInfoFunctions {
 	o.TsInvoiceTrading.Set(&v)
-	return o
+        return o
 }
 // SetTsInvoiceTradingNil sets the value for TsInvoiceTrading to be an explicit nil
 func (o *CompanyInfoPlanInfoFunctions) SetTsInvoiceTradingNil() *CompanyInfoPlanInfoFunctions {
 	o.TsInvoiceTrading.Set(nil)
-	return o
+    return o
 }
 
 // UnsetTsInvoiceTrading ensures that no value is present for TsInvoiceTrading, not even an explicit nil
@@ -836,12 +836,12 @@ func (o *CompanyInfoPlanInfoFunctions) HasTsPay() bool {
 // SetTsPay gets a reference to the given NullableBool and assigns it to the TsPay field.
 func (o *CompanyInfoPlanInfoFunctions) SetTsPay(v bool) *CompanyInfoPlanInfoFunctions {
 	o.TsPay.Set(&v)
-	return o
+        return o
 }
 // SetTsPayNil sets the value for TsPay to be an explicit nil
 func (o *CompanyInfoPlanInfoFunctions) SetTsPayNil() *CompanyInfoPlanInfoFunctions {
 	o.TsPay.Set(nil)
-	return o
+    return o
 }
 
 // UnsetTsPay ensures that no value is present for TsPay, not even an explicit nil

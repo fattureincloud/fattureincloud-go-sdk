@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -20,28 +20,28 @@ var _ MappedNullable = &IssuedDocumentEiData{}
 
 // IssuedDocumentEiData Issued document e-invoice data [Only if e_invoice=true]
 type IssuedDocumentEiData struct {
-	VatKind NullableVatKind `json:"vat_kind,omitempty"`
-	OriginalDocumentType NullableOriginalDocumentType `json:"original_document_type,omitempty"`
+VatKind NullableVatKind `json:"vat_kind,omitempty"`
+OriginalDocumentType NullableOriginalDocumentType `json:"original_document_type,omitempty"`
 	// E-invoice original document number
-	OdNumber NullableString `json:"od_number,omitempty"`
+OdNumber NullableString `json:"od_number,omitempty"`
 	// E-invoice original document date
-	OdDate NullableString `json:"od_date,omitempty"`
+OdDate NullableString `json:"od_date,omitempty"`
 	// E-invoice CIG
-	Cig NullableString `json:"cig,omitempty"`
+Cig NullableString `json:"cig,omitempty"`
 	// E-invoice CUP
-	Cup NullableString `json:"cup,omitempty"`
+Cup NullableString `json:"cup,omitempty"`
 	// E-invoice payment method [required for e-invoices] (see [here](https://www.fatturapa.gov.it/export/documenti/fatturapa/v1.2.2/Rappresentazione_Tabellare_FattOrdinaria_V1.2.2.pdf) for the accepted values of ModalitaPagamento)
-	PaymentMethod NullableString `json:"payment_method,omitempty"`
+PaymentMethod NullableString `json:"payment_method,omitempty"`
 	// E-invoice bank name
-	BankName NullableString `json:"bank_name,omitempty"`
+BankName NullableString `json:"bank_name,omitempty"`
 	// E-invoice bank IBAN
-	BankIban NullableString `json:"bank_iban,omitempty"`
+BankIban NullableString `json:"bank_iban,omitempty"`
 	// E-invoice bank beneficiary
-	BankBeneficiary NullableString `json:"bank_beneficiary,omitempty"`
+BankBeneficiary NullableString `json:"bank_beneficiary,omitempty"`
 	// E-invoice invoice number
-	InvoiceNumber NullableString `json:"invoice_number,omitempty"`
+InvoiceNumber NullableString `json:"invoice_number,omitempty"`
 	// E-invoice invoice date
-	InvoiceDate NullableString `json:"invoice_date,omitempty"`
+InvoiceDate NullableString `json:"invoice_date,omitempty"`
 }
 
 // NewIssuedDocumentEiData instantiates a new IssuedDocumentEiData object
@@ -92,12 +92,12 @@ func (o *IssuedDocumentEiData) HasVatKind() bool {
 // SetVatKind gets a reference to the given NullableVatKind and assigns it to the VatKind field.
 func (o *IssuedDocumentEiData) SetVatKind(v VatKind) *IssuedDocumentEiData {
 	o.VatKind.Set(&v)
-	return o
+        return o
 }
 // SetVatKindNil sets the value for VatKind to be an explicit nil
 func (o *IssuedDocumentEiData) SetVatKindNil() *IssuedDocumentEiData {
 	o.VatKind.Set(nil)
-	return o
+    return o
 }
 
 // UnsetVatKind ensures that no value is present for VatKind, not even an explicit nil
@@ -136,12 +136,12 @@ func (o *IssuedDocumentEiData) HasOriginalDocumentType() bool {
 // SetOriginalDocumentType gets a reference to the given NullableOriginalDocumentType and assigns it to the OriginalDocumentType field.
 func (o *IssuedDocumentEiData) SetOriginalDocumentType(v OriginalDocumentType) *IssuedDocumentEiData {
 	o.OriginalDocumentType.Set(&v)
-	return o
+        return o
 }
 // SetOriginalDocumentTypeNil sets the value for OriginalDocumentType to be an explicit nil
 func (o *IssuedDocumentEiData) SetOriginalDocumentTypeNil() *IssuedDocumentEiData {
 	o.OriginalDocumentType.Set(nil)
-	return o
+    return o
 }
 
 // UnsetOriginalDocumentType ensures that no value is present for OriginalDocumentType, not even an explicit nil
@@ -180,12 +180,12 @@ func (o *IssuedDocumentEiData) HasOdNumber() bool {
 // SetOdNumber gets a reference to the given NullableString and assigns it to the OdNumber field.
 func (o *IssuedDocumentEiData) SetOdNumber(v string) *IssuedDocumentEiData {
 	o.OdNumber.Set(&v)
-	return o
+        return o
 }
 // SetOdNumberNil sets the value for OdNumber to be an explicit nil
 func (o *IssuedDocumentEiData) SetOdNumberNil() *IssuedDocumentEiData {
 	o.OdNumber.Set(nil)
-	return o
+    return o
 }
 
 // UnsetOdNumber ensures that no value is present for OdNumber, not even an explicit nil
@@ -224,12 +224,12 @@ func (o *IssuedDocumentEiData) HasOdDate() bool {
 // SetOdDate gets a reference to the given NullableString and assigns it to the OdDate field.
 func (o *IssuedDocumentEiData) SetOdDate(v string) *IssuedDocumentEiData {
 	o.OdDate.Set(&v)
-	return o
+        return o
 }
 // SetOdDateNil sets the value for OdDate to be an explicit nil
 func (o *IssuedDocumentEiData) SetOdDateNil() *IssuedDocumentEiData {
 	o.OdDate.Set(nil)
-	return o
+    return o
 }
 
 // UnsetOdDate ensures that no value is present for OdDate, not even an explicit nil
@@ -268,12 +268,12 @@ func (o *IssuedDocumentEiData) HasCig() bool {
 // SetCig gets a reference to the given NullableString and assigns it to the Cig field.
 func (o *IssuedDocumentEiData) SetCig(v string) *IssuedDocumentEiData {
 	o.Cig.Set(&v)
-	return o
+        return o
 }
 // SetCigNil sets the value for Cig to be an explicit nil
 func (o *IssuedDocumentEiData) SetCigNil() *IssuedDocumentEiData {
 	o.Cig.Set(nil)
-	return o
+    return o
 }
 
 // UnsetCig ensures that no value is present for Cig, not even an explicit nil
@@ -312,12 +312,12 @@ func (o *IssuedDocumentEiData) HasCup() bool {
 // SetCup gets a reference to the given NullableString and assigns it to the Cup field.
 func (o *IssuedDocumentEiData) SetCup(v string) *IssuedDocumentEiData {
 	o.Cup.Set(&v)
-	return o
+        return o
 }
 // SetCupNil sets the value for Cup to be an explicit nil
 func (o *IssuedDocumentEiData) SetCupNil() *IssuedDocumentEiData {
 	o.Cup.Set(nil)
-	return o
+    return o
 }
 
 // UnsetCup ensures that no value is present for Cup, not even an explicit nil
@@ -356,12 +356,12 @@ func (o *IssuedDocumentEiData) HasPaymentMethod() bool {
 // SetPaymentMethod gets a reference to the given NullableString and assigns it to the PaymentMethod field.
 func (o *IssuedDocumentEiData) SetPaymentMethod(v string) *IssuedDocumentEiData {
 	o.PaymentMethod.Set(&v)
-	return o
+        return o
 }
 // SetPaymentMethodNil sets the value for PaymentMethod to be an explicit nil
 func (o *IssuedDocumentEiData) SetPaymentMethodNil() *IssuedDocumentEiData {
 	o.PaymentMethod.Set(nil)
-	return o
+    return o
 }
 
 // UnsetPaymentMethod ensures that no value is present for PaymentMethod, not even an explicit nil
@@ -400,12 +400,12 @@ func (o *IssuedDocumentEiData) HasBankName() bool {
 // SetBankName gets a reference to the given NullableString and assigns it to the BankName field.
 func (o *IssuedDocumentEiData) SetBankName(v string) *IssuedDocumentEiData {
 	o.BankName.Set(&v)
-	return o
+        return o
 }
 // SetBankNameNil sets the value for BankName to be an explicit nil
 func (o *IssuedDocumentEiData) SetBankNameNil() *IssuedDocumentEiData {
 	o.BankName.Set(nil)
-	return o
+    return o
 }
 
 // UnsetBankName ensures that no value is present for BankName, not even an explicit nil
@@ -444,12 +444,12 @@ func (o *IssuedDocumentEiData) HasBankIban() bool {
 // SetBankIban gets a reference to the given NullableString and assigns it to the BankIban field.
 func (o *IssuedDocumentEiData) SetBankIban(v string) *IssuedDocumentEiData {
 	o.BankIban.Set(&v)
-	return o
+        return o
 }
 // SetBankIbanNil sets the value for BankIban to be an explicit nil
 func (o *IssuedDocumentEiData) SetBankIbanNil() *IssuedDocumentEiData {
 	o.BankIban.Set(nil)
-	return o
+    return o
 }
 
 // UnsetBankIban ensures that no value is present for BankIban, not even an explicit nil
@@ -488,12 +488,12 @@ func (o *IssuedDocumentEiData) HasBankBeneficiary() bool {
 // SetBankBeneficiary gets a reference to the given NullableString and assigns it to the BankBeneficiary field.
 func (o *IssuedDocumentEiData) SetBankBeneficiary(v string) *IssuedDocumentEiData {
 	o.BankBeneficiary.Set(&v)
-	return o
+        return o
 }
 // SetBankBeneficiaryNil sets the value for BankBeneficiary to be an explicit nil
 func (o *IssuedDocumentEiData) SetBankBeneficiaryNil() *IssuedDocumentEiData {
 	o.BankBeneficiary.Set(nil)
-	return o
+    return o
 }
 
 // UnsetBankBeneficiary ensures that no value is present for BankBeneficiary, not even an explicit nil
@@ -532,12 +532,12 @@ func (o *IssuedDocumentEiData) HasInvoiceNumber() bool {
 // SetInvoiceNumber gets a reference to the given NullableString and assigns it to the InvoiceNumber field.
 func (o *IssuedDocumentEiData) SetInvoiceNumber(v string) *IssuedDocumentEiData {
 	o.InvoiceNumber.Set(&v)
-	return o
+        return o
 }
 // SetInvoiceNumberNil sets the value for InvoiceNumber to be an explicit nil
 func (o *IssuedDocumentEiData) SetInvoiceNumberNil() *IssuedDocumentEiData {
 	o.InvoiceNumber.Set(nil)
-	return o
+    return o
 }
 
 // UnsetInvoiceNumber ensures that no value is present for InvoiceNumber, not even an explicit nil
@@ -576,12 +576,12 @@ func (o *IssuedDocumentEiData) HasInvoiceDate() bool {
 // SetInvoiceDate gets a reference to the given NullableString and assigns it to the InvoiceDate field.
 func (o *IssuedDocumentEiData) SetInvoiceDate(v string) *IssuedDocumentEiData {
 	o.InvoiceDate.Set(&v)
-	return o
+        return o
 }
 // SetInvoiceDateNil sets the value for InvoiceDate to be an explicit nil
 func (o *IssuedDocumentEiData) SetInvoiceDateNil() *IssuedDocumentEiData {
 	o.InvoiceDate.Set(nil)
-	return o
+    return o
 }
 
 // UnsetInvoiceDate ensures that no value is present for InvoiceDate, not even an explicit nil

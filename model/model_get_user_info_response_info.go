@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &GetUserInfoResponseInfo{}
 
 // GetUserInfoResponseInfo struct for GetUserInfoResponseInfo
 type GetUserInfoResponseInfo struct {
-	NeedMarketingConsentsConfirmation NullableBool `json:"need_marketing_consents_confirmation,omitempty"`
-	NeedPasswordChange NullableBool `json:"need_password_change,omitempty"`
-	NeedTermsOfServiceConfirmation NullableBool `json:"need_terms_of_service_confirmation,omitempty"`
+NeedMarketingConsentsConfirmation NullableBool `json:"need_marketing_consents_confirmation,omitempty"`
+NeedPasswordChange NullableBool `json:"need_password_change,omitempty"`
+NeedTermsOfServiceConfirmation NullableBool `json:"need_terms_of_service_confirmation,omitempty"`
 }
 
 // NewGetUserInfoResponseInfo instantiates a new GetUserInfoResponseInfo object
@@ -73,12 +73,12 @@ func (o *GetUserInfoResponseInfo) HasNeedMarketingConsentsConfirmation() bool {
 // SetNeedMarketingConsentsConfirmation gets a reference to the given NullableBool and assigns it to the NeedMarketingConsentsConfirmation field.
 func (o *GetUserInfoResponseInfo) SetNeedMarketingConsentsConfirmation(v bool) *GetUserInfoResponseInfo {
 	o.NeedMarketingConsentsConfirmation.Set(&v)
-	return o
+        return o
 }
 // SetNeedMarketingConsentsConfirmationNil sets the value for NeedMarketingConsentsConfirmation to be an explicit nil
 func (o *GetUserInfoResponseInfo) SetNeedMarketingConsentsConfirmationNil() *GetUserInfoResponseInfo {
 	o.NeedMarketingConsentsConfirmation.Set(nil)
-	return o
+    return o
 }
 
 // UnsetNeedMarketingConsentsConfirmation ensures that no value is present for NeedMarketingConsentsConfirmation, not even an explicit nil
@@ -117,12 +117,12 @@ func (o *GetUserInfoResponseInfo) HasNeedPasswordChange() bool {
 // SetNeedPasswordChange gets a reference to the given NullableBool and assigns it to the NeedPasswordChange field.
 func (o *GetUserInfoResponseInfo) SetNeedPasswordChange(v bool) *GetUserInfoResponseInfo {
 	o.NeedPasswordChange.Set(&v)
-	return o
+        return o
 }
 // SetNeedPasswordChangeNil sets the value for NeedPasswordChange to be an explicit nil
 func (o *GetUserInfoResponseInfo) SetNeedPasswordChangeNil() *GetUserInfoResponseInfo {
 	o.NeedPasswordChange.Set(nil)
-	return o
+    return o
 }
 
 // UnsetNeedPasswordChange ensures that no value is present for NeedPasswordChange, not even an explicit nil
@@ -161,12 +161,12 @@ func (o *GetUserInfoResponseInfo) HasNeedTermsOfServiceConfirmation() bool {
 // SetNeedTermsOfServiceConfirmation gets a reference to the given NullableBool and assigns it to the NeedTermsOfServiceConfirmation field.
 func (o *GetUserInfoResponseInfo) SetNeedTermsOfServiceConfirmation(v bool) *GetUserInfoResponseInfo {
 	o.NeedTermsOfServiceConfirmation.Set(&v)
-	return o
+        return o
 }
 // SetNeedTermsOfServiceConfirmationNil sets the value for NeedTermsOfServiceConfirmation to be an explicit nil
 func (o *GetUserInfoResponseInfo) SetNeedTermsOfServiceConfirmationNil() *GetUserInfoResponseInfo {
 	o.NeedTermsOfServiceConfirmation.Set(nil)
-	return o
+    return o
 }
 
 // UnsetNeedTermsOfServiceConfirmation ensures that no value is present for NeedTermsOfServiceConfirmation, not even an explicit nil

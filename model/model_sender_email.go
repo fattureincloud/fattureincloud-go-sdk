@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,9 +21,9 @@ var _ MappedNullable = &SenderEmail{}
 // SenderEmail struct for SenderEmail
 type SenderEmail struct {
 	// Sender email id
-	Id NullableInt32 `json:"id,omitempty"`
+Id NullableInt32 `json:"id,omitempty"`
 	// Sender email address
-	Email NullableString `json:"email,omitempty"`
+Email NullableString `json:"email,omitempty"`
 }
 
 // NewSenderEmail instantiates a new SenderEmail object
@@ -74,12 +74,12 @@ func (o *SenderEmail) HasId() bool {
 // SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *SenderEmail) SetId(v int32) *SenderEmail {
 	o.Id.Set(&v)
-	return o
+        return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *SenderEmail) SetIdNil() *SenderEmail {
 	o.Id.Set(nil)
-	return o
+    return o
 }
 
 // UnsetId ensures that no value is present for Id, not even an explicit nil
@@ -118,12 +118,12 @@ func (o *SenderEmail) HasEmail() bool {
 // SetEmail gets a reference to the given NullableString and assigns it to the Email field.
 func (o *SenderEmail) SetEmail(v string) *SenderEmail {
 	o.Email.Set(&v)
-	return o
+        return o
 }
 // SetEmailNil sets the value for Email to be an explicit nil
 func (o *SenderEmail) SetEmailNil() *SenderEmail {
 	o.Email.Set(nil)
-	return o
+    return o
 }
 
 // UnsetEmail ensures that no value is present for Email, not even an explicit nil

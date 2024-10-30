@@ -26,28 +26,28 @@ Create Cashbook Entry
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    createCashbookEntryRequest := *fattureincloud.NewCreateCashbookEntryRequest() // CreateCashbookEntryRequest | Cashbook entry.  (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        createCashbookEntryRequest := *fattureincloud.NewCreateCashbookEntryRequest() // CreateCashbookEntryRequest | Cashbook entry.  (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.CashbookAPI.CreateCashbookEntry(auth, companyId).CreateCashbookEntryRequest(createCashbookEntryRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CashbookAPI.CreateCashbookEntry``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `CashbookAPI.CreateCashbookEntry``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateCashbookEntry`: CreateCashbookEntryResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `CreateCashbookEntry`: CreateCashbookEntryResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -101,25 +101,25 @@ Delete Cashbook Entry
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    documentId := "documentId_example" // string | The ID of the document.
+        companyId := int32(12345) // int32 | The ID of the company.
+        documentId := "documentId_example" // string | The ID of the document.
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.CashbookAPI.DeleteCashbookEntry(auth, companyId, documentId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CashbookAPI.DeleteCashbookEntry``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `CashbookAPI.DeleteCashbookEntry``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
 ```
@@ -175,30 +175,30 @@ Get Cashbook Entry
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    documentId := "documentId_example" // string | The ID of the document.
-    fields := "fields_example" // string | List of comma-separated fields. (optional)
-    fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        documentId := "documentId_example" // string | The ID of the document.
+        fields := "fields_example" // string | List of comma-separated fields. (optional)
+        fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.CashbookAPI.GetCashbookEntry(auth, companyId, documentId).Fields(fields).Fieldset(fieldset).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CashbookAPI.GetCashbookEntry``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `CashbookAPI.GetCashbookEntry``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetCashbookEntry`: GetCashbookEntryResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `GetCashbookEntry`: GetCashbookEntryResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -255,32 +255,32 @@ List Cashbook Entries
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    dateFrom := "dateFrom_example" // string | Start date.
-    dateTo := "dateTo_example" // string | End date.
-    year := int32(56) // int32 | Filter cashbook by year. (optional)
-    type_ := "type__example" // string | Filter cashbook by type. (optional)
-    paymentAccountId := int32(56) // int32 | Filter by payment account. (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        dateFrom := "dateFrom_example" // string | Start date.
+        dateTo := "dateTo_example" // string | End date.
+        year := int32(56) // int32 | Filter cashbook by year. (optional)
+        type_ := "type__example" // string | Filter cashbook by type. (optional)
+        paymentAccountId := int32(56) // int32 | Filter by payment account. (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.CashbookAPI.ListCashbookEntries(auth, companyId).DateFrom(dateFrom).DateTo(dateTo).Year(year).Type_(type_).PaymentAccountId(paymentAccountId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CashbookAPI.ListCashbookEntries``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `CashbookAPI.ListCashbookEntries``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListCashbookEntries`: ListCashbookEntriesResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `ListCashbookEntries`: ListCashbookEntriesResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -338,29 +338,29 @@ Modify Cashbook Entry
 package main
 
 import (
-    "context"
+	"context"
     "encoding/json"
-    "fmt"
-    "os"
+	"fmt"
+	"os"
     fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
     fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    documentId := "documentId_example" // string | The ID of the document.
-    modifyCashbookEntryRequest := *fattureincloud.NewModifyCashbookEntryRequest() // ModifyCashbookEntryRequest | Cashbook Entry (optional)
+        companyId := int32(12345) // int32 | The ID of the company.
+        documentId := "documentId_example" // string | The ID of the document.
+        modifyCashbookEntryRequest := *fattureincloud.NewModifyCashbookEntryRequest() // ModifyCashbookEntryRequest | Cashbook Entry (optional)
 
     auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
     configuration := fattureincloudapi.NewConfiguration()
     apiClient := fattureincloudapi.NewAPIClient(configuration)
     resp, r, err := apiClient.CashbookAPI.ModifyCashbookEntry(auth, companyId, documentId).ModifyCashbookEntryRequest(modifyCashbookEntryRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CashbookAPI.ModifyCashbookEntry``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    fmt.Fprintf(os.Stderr, "Error when calling `CashbookAPI.ModifyCashbookEntry``: %v\n", err)
+    fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ModifyCashbookEntry`: ModifyCashbookEntryResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+        // response from `ModifyCashbookEntry`: ModifyCashbookEntryResponse
+        json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 

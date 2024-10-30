@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -20,18 +20,18 @@ var _ MappedNullable = &ReceivedDocumentInfo{}
 
 // ReceivedDocumentInfo struct for ReceivedDocumentInfo
 type ReceivedDocumentInfo struct {
-	DefaultValues NullableReceivedDocumentInfoDefaultValues `json:"default_values,omitempty"`
-	ItemsDefaultValues NullableReceivedDocumentInfoItemsDefaultValues `json:"items_default_values,omitempty"`
+DefaultValues NullableReceivedDocumentInfoDefaultValues `json:"default_values,omitempty"`
+ItemsDefaultValues NullableReceivedDocumentInfoItemsDefaultValues `json:"items_default_values,omitempty"`
 	// Countries list
-	CountriesList []string `json:"countries_list,omitempty"`
+CountriesList []string `json:"countries_list,omitempty"`
 	// Currencies list
-	CurrenciesList []Currency `json:"currencies_list,omitempty"`
+CurrenciesList []Currency `json:"currencies_list,omitempty"`
 	// Categories list
-	CategoriesList []string `json:"categories_list,omitempty"`
+CategoriesList []string `json:"categories_list,omitempty"`
 	// Payments accounts list
-	PaymentAccountsList []PaymentAccount `json:"payment_accounts_list,omitempty"`
+PaymentAccountsList []PaymentAccount `json:"payment_accounts_list,omitempty"`
 	// Vat types list
-	VatTypesList []VatType `json:"vat_types_list,omitempty"`
+VatTypesList []VatType `json:"vat_types_list,omitempty"`
 }
 
 // NewReceivedDocumentInfo instantiates a new ReceivedDocumentInfo object
@@ -82,12 +82,12 @@ func (o *ReceivedDocumentInfo) HasDefaultValues() bool {
 // SetDefaultValues gets a reference to the given NullableReceivedDocumentInfoDefaultValues and assigns it to the DefaultValues field.
 func (o *ReceivedDocumentInfo) SetDefaultValues(v ReceivedDocumentInfoDefaultValues) *ReceivedDocumentInfo {
 	o.DefaultValues.Set(&v)
-	return o
+        return o
 }
 // SetDefaultValuesNil sets the value for DefaultValues to be an explicit nil
 func (o *ReceivedDocumentInfo) SetDefaultValuesNil() *ReceivedDocumentInfo {
 	o.DefaultValues.Set(nil)
-	return o
+    return o
 }
 
 // UnsetDefaultValues ensures that no value is present for DefaultValues, not even an explicit nil
@@ -126,12 +126,12 @@ func (o *ReceivedDocumentInfo) HasItemsDefaultValues() bool {
 // SetItemsDefaultValues gets a reference to the given NullableReceivedDocumentInfoItemsDefaultValues and assigns it to the ItemsDefaultValues field.
 func (o *ReceivedDocumentInfo) SetItemsDefaultValues(v ReceivedDocumentInfoItemsDefaultValues) *ReceivedDocumentInfo {
 	o.ItemsDefaultValues.Set(&v)
-	return o
+        return o
 }
 // SetItemsDefaultValuesNil sets the value for ItemsDefaultValues to be an explicit nil
 func (o *ReceivedDocumentInfo) SetItemsDefaultValuesNil() *ReceivedDocumentInfo {
 	o.ItemsDefaultValues.Set(nil)
-	return o
+    return o
 }
 
 // UnsetItemsDefaultValues ensures that no value is present for ItemsDefaultValues, not even an explicit nil
@@ -170,7 +170,7 @@ func (o *ReceivedDocumentInfo) HasCountriesList() bool {
 // SetCountriesList gets a reference to the given []string and assigns it to the CountriesList field.
 func (o *ReceivedDocumentInfo) SetCountriesList(v []string) *ReceivedDocumentInfo {
 	o.CountriesList = v
-	return o
+        return o
 }
 
 // GetCurrenciesList returns the CurrenciesList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -204,7 +204,7 @@ func (o *ReceivedDocumentInfo) HasCurrenciesList() bool {
 // SetCurrenciesList gets a reference to the given []Currency and assigns it to the CurrenciesList field.
 func (o *ReceivedDocumentInfo) SetCurrenciesList(v []Currency) *ReceivedDocumentInfo {
 	o.CurrenciesList = v
-	return o
+        return o
 }
 
 // GetCategoriesList returns the CategoriesList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -238,7 +238,7 @@ func (o *ReceivedDocumentInfo) HasCategoriesList() bool {
 // SetCategoriesList gets a reference to the given []string and assigns it to the CategoriesList field.
 func (o *ReceivedDocumentInfo) SetCategoriesList(v []string) *ReceivedDocumentInfo {
 	o.CategoriesList = v
-	return o
+        return o
 }
 
 // GetPaymentAccountsList returns the PaymentAccountsList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -272,7 +272,7 @@ func (o *ReceivedDocumentInfo) HasPaymentAccountsList() bool {
 // SetPaymentAccountsList gets a reference to the given []PaymentAccount and assigns it to the PaymentAccountsList field.
 func (o *ReceivedDocumentInfo) SetPaymentAccountsList(v []PaymentAccount) *ReceivedDocumentInfo {
 	o.PaymentAccountsList = v
-	return o
+        return o
 }
 
 // GetVatTypesList returns the VatTypesList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -306,7 +306,7 @@ func (o *ReceivedDocumentInfo) HasVatTypesList() bool {
 // SetVatTypesList gets a reference to the given []VatType and assigns it to the VatTypesList field.
 func (o *ReceivedDocumentInfo) SetVatTypesList(v []VatType) *ReceivedDocumentInfo {
 	o.VatTypesList = v
-	return o
+        return o
 }
 
 func (o ReceivedDocumentInfo) MarshalJSON() ([]byte, error) {
