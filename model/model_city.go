@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -76,7 +76,7 @@ func (o *City) HasPostalCode() bool {
 // SetPostalCode gets a reference to the given NullableString and assigns it to the PostalCode field.
 func (o *City) SetPostalCode(v string) *City {
 	o.PostalCode.Set(&v)
-	return o
+		return o
 }
 // SetPostalCodeNil sets the value for PostalCode to be an explicit nil
 func (o *City) SetPostalCodeNil() *City {
@@ -120,7 +120,7 @@ func (o *City) HasCity() bool {
 // SetCity gets a reference to the given NullableString and assigns it to the City field.
 func (o *City) SetCity(v string) *City {
 	o.City.Set(&v)
-	return o
+		return o
 }
 // SetCityNil sets the value for City to be an explicit nil
 func (o *City) SetCityNil() *City {
@@ -164,7 +164,7 @@ func (o *City) HasProvince() bool {
 // SetProvince gets a reference to the given NullableString and assigns it to the Province field.
 func (o *City) SetProvince(v string) *City {
 	o.Province.Set(&v)
-	return o
+		return o
 }
 // SetProvinceNil sets the value for Province to be an explicit nil
 func (o *City) SetProvinceNil() *City {

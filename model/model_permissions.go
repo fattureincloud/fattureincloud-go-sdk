@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -94,7 +94,7 @@ func (o *Permissions) HasFicSituation() bool {
 // SetFicSituation gets a reference to the given PermissionLevel and assigns it to the FicSituation field.
 func (o *Permissions) SetFicSituation(v PermissionLevel) *Permissions {
 	o.FicSituation = &v
-	return o
+		return o
 }
 
 // GetFicClients returns the FicClients field value if set, zero value otherwise.
@@ -127,7 +127,7 @@ func (o *Permissions) HasFicClients() bool {
 // SetFicClients gets a reference to the given PermissionLevel and assigns it to the FicClients field.
 func (o *Permissions) SetFicClients(v PermissionLevel) *Permissions {
 	o.FicClients = &v
-	return o
+		return o
 }
 
 // GetFicSuppliers returns the FicSuppliers field value if set, zero value otherwise.
@@ -160,7 +160,7 @@ func (o *Permissions) HasFicSuppliers() bool {
 // SetFicSuppliers gets a reference to the given PermissionLevel and assigns it to the FicSuppliers field.
 func (o *Permissions) SetFicSuppliers(v PermissionLevel) *Permissions {
 	o.FicSuppliers = &v
-	return o
+		return o
 }
 
 // GetFicProducts returns the FicProducts field value if set, zero value otherwise.
@@ -193,7 +193,7 @@ func (o *Permissions) HasFicProducts() bool {
 // SetFicProducts gets a reference to the given PermissionLevel and assigns it to the FicProducts field.
 func (o *Permissions) SetFicProducts(v PermissionLevel) *Permissions {
 	o.FicProducts = &v
-	return o
+		return o
 }
 
 // GetFicIssuedDocuments returns the FicIssuedDocuments field value if set, zero value otherwise.
@@ -226,7 +226,7 @@ func (o *Permissions) HasFicIssuedDocuments() bool {
 // SetFicIssuedDocuments gets a reference to the given PermissionLevel and assigns it to the FicIssuedDocuments field.
 func (o *Permissions) SetFicIssuedDocuments(v PermissionLevel) *Permissions {
 	o.FicIssuedDocuments = &v
-	return o
+		return o
 }
 
 // GetFicReceivedDocuments returns the FicReceivedDocuments field value if set, zero value otherwise.
@@ -259,7 +259,7 @@ func (o *Permissions) HasFicReceivedDocuments() bool {
 // SetFicReceivedDocuments gets a reference to the given PermissionLevel and assigns it to the FicReceivedDocuments field.
 func (o *Permissions) SetFicReceivedDocuments(v PermissionLevel) *Permissions {
 	o.FicReceivedDocuments = &v
-	return o
+		return o
 }
 
 // GetFicReceipts returns the FicReceipts field value if set, zero value otherwise.
@@ -292,7 +292,7 @@ func (o *Permissions) HasFicReceipts() bool {
 // SetFicReceipts gets a reference to the given PermissionLevel and assigns it to the FicReceipts field.
 func (o *Permissions) SetFicReceipts(v PermissionLevel) *Permissions {
 	o.FicReceipts = &v
-	return o
+		return o
 }
 
 // GetFicCalendar returns the FicCalendar field value if set, zero value otherwise.
@@ -325,7 +325,7 @@ func (o *Permissions) HasFicCalendar() bool {
 // SetFicCalendar gets a reference to the given PermissionLevel and assigns it to the FicCalendar field.
 func (o *Permissions) SetFicCalendar(v PermissionLevel) *Permissions {
 	o.FicCalendar = &v
-	return o
+		return o
 }
 
 // GetFicArchive returns the FicArchive field value if set, zero value otherwise.
@@ -358,7 +358,7 @@ func (o *Permissions) HasFicArchive() bool {
 // SetFicArchive gets a reference to the given PermissionLevel and assigns it to the FicArchive field.
 func (o *Permissions) SetFicArchive(v PermissionLevel) *Permissions {
 	o.FicArchive = &v
-	return o
+		return o
 }
 
 // GetFicTaxes returns the FicTaxes field value if set, zero value otherwise.
@@ -391,7 +391,7 @@ func (o *Permissions) HasFicTaxes() bool {
 // SetFicTaxes gets a reference to the given PermissionLevel and assigns it to the FicTaxes field.
 func (o *Permissions) SetFicTaxes(v PermissionLevel) *Permissions {
 	o.FicTaxes = &v
-	return o
+		return o
 }
 
 // GetFicStock returns the FicStock field value if set, zero value otherwise.
@@ -424,7 +424,7 @@ func (o *Permissions) HasFicStock() bool {
 // SetFicStock gets a reference to the given PermissionLevel and assigns it to the FicStock field.
 func (o *Permissions) SetFicStock(v PermissionLevel) *Permissions {
 	o.FicStock = &v
-	return o
+		return o
 }
 
 // GetFicCashbook returns the FicCashbook field value if set, zero value otherwise.
@@ -457,7 +457,7 @@ func (o *Permissions) HasFicCashbook() bool {
 // SetFicCashbook gets a reference to the given PermissionLevel and assigns it to the FicCashbook field.
 func (o *Permissions) SetFicCashbook(v PermissionLevel) *Permissions {
 	o.FicCashbook = &v
-	return o
+		return o
 }
 
 // GetFicSettings returns the FicSettings field value if set, zero value otherwise.
@@ -490,7 +490,7 @@ func (o *Permissions) HasFicSettings() bool {
 // SetFicSettings gets a reference to the given PermissionLevel and assigns it to the FicSettings field.
 func (o *Permissions) SetFicSettings(v PermissionLevel) *Permissions {
 	o.FicSettings = &v
-	return o
+		return o
 }
 
 // GetFicEmails returns the FicEmails field value if set, zero value otherwise.
@@ -523,7 +523,7 @@ func (o *Permissions) HasFicEmails() bool {
 // SetFicEmails gets a reference to the given PermissionLevel and assigns it to the FicEmails field.
 func (o *Permissions) SetFicEmails(v PermissionLevel) *Permissions {
 	o.FicEmails = &v
-	return o
+		return o
 }
 
 // GetFicExport returns the FicExport field value if set, zero value otherwise.
@@ -556,7 +556,7 @@ func (o *Permissions) HasFicExport() bool {
 // SetFicExport gets a reference to the given PermissionLevel and assigns it to the FicExport field.
 func (o *Permissions) SetFicExport(v PermissionLevel) *Permissions {
 	o.FicExport = &v
-	return o
+		return o
 }
 
 // GetFicImportBankstatements returns the FicImportBankstatements field value if set, zero value otherwise.
@@ -589,7 +589,7 @@ func (o *Permissions) HasFicImportBankstatements() bool {
 // SetFicImportBankstatements gets a reference to the given PermissionLevel and assigns it to the FicImportBankstatements field.
 func (o *Permissions) SetFicImportBankstatements(v PermissionLevel) *Permissions {
 	o.FicImportBankstatements = &v
-	return o
+		return o
 }
 
 // GetFicImportClientsSuppliers returns the FicImportClientsSuppliers field value if set, zero value otherwise.
@@ -622,7 +622,7 @@ func (o *Permissions) HasFicImportClientsSuppliers() bool {
 // SetFicImportClientsSuppliers gets a reference to the given PermissionLevel and assigns it to the FicImportClientsSuppliers field.
 func (o *Permissions) SetFicImportClientsSuppliers(v PermissionLevel) *Permissions {
 	o.FicImportClientsSuppliers = &v
-	return o
+		return o
 }
 
 // GetFicImportIssuedDocuments returns the FicImportIssuedDocuments field value if set, zero value otherwise.
@@ -655,7 +655,7 @@ func (o *Permissions) HasFicImportIssuedDocuments() bool {
 // SetFicImportIssuedDocuments gets a reference to the given PermissionLevel and assigns it to the FicImportIssuedDocuments field.
 func (o *Permissions) SetFicImportIssuedDocuments(v PermissionLevel) *Permissions {
 	o.FicImportIssuedDocuments = &v
-	return o
+		return o
 }
 
 // GetFicImportProducts returns the FicImportProducts field value if set, zero value otherwise.
@@ -688,7 +688,7 @@ func (o *Permissions) HasFicImportProducts() bool {
 // SetFicImportProducts gets a reference to the given PermissionLevel and assigns it to the FicImportProducts field.
 func (o *Permissions) SetFicImportProducts(v PermissionLevel) *Permissions {
 	o.FicImportProducts = &v
-	return o
+		return o
 }
 
 // GetFicRecurring returns the FicRecurring field value if set, zero value otherwise.
@@ -721,7 +721,7 @@ func (o *Permissions) HasFicRecurring() bool {
 // SetFicRecurring gets a reference to the given PermissionLevel and assigns it to the FicRecurring field.
 func (o *Permissions) SetFicRecurring(v PermissionLevel) *Permissions {
 	o.FicRecurring = &v
-	return o
+		return o
 }
 
 // GetFicRiba returns the FicRiba field value if set, zero value otherwise.
@@ -754,7 +754,7 @@ func (o *Permissions) HasFicRiba() bool {
 // SetFicRiba gets a reference to the given PermissionLevel and assigns it to the FicRiba field.
 func (o *Permissions) SetFicRiba(v PermissionLevel) *Permissions {
 	o.FicRiba = &v
-	return o
+		return o
 }
 
 // GetDicEmployees returns the DicEmployees field value if set, zero value otherwise.
@@ -787,7 +787,7 @@ func (o *Permissions) HasDicEmployees() bool {
 // SetDicEmployees gets a reference to the given PermissionLevel and assigns it to the DicEmployees field.
 func (o *Permissions) SetDicEmployees(v PermissionLevel) *Permissions {
 	o.DicEmployees = &v
-	return o
+		return o
 }
 
 // GetDicSettings returns the DicSettings field value if set, zero value otherwise.
@@ -820,7 +820,7 @@ func (o *Permissions) HasDicSettings() bool {
 // SetDicSettings gets a reference to the given PermissionLevel and assigns it to the DicSettings field.
 func (o *Permissions) SetDicSettings(v PermissionLevel) *Permissions {
 	o.DicSettings = &v
-	return o
+		return o
 }
 
 // GetDicTimesheet returns the DicTimesheet field value if set, zero value otherwise.
@@ -853,7 +853,7 @@ func (o *Permissions) HasDicTimesheet() bool {
 // SetDicTimesheet gets a reference to the given PermissionLevel and assigns it to the DicTimesheet field.
 func (o *Permissions) SetDicTimesheet(v PermissionLevel) *Permissions {
 	o.DicTimesheet = &v
-	return o
+		return o
 }
 
 // GetFicIssuedDocumentsDetailed returns the FicIssuedDocumentsDetailed field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -887,7 +887,7 @@ func (o *Permissions) HasFicIssuedDocumentsDetailed() bool {
 // SetFicIssuedDocumentsDetailed gets a reference to the given NullablePermissionsFicIssuedDocumentsDetailed and assigns it to the FicIssuedDocumentsDetailed field.
 func (o *Permissions) SetFicIssuedDocumentsDetailed(v PermissionsFicIssuedDocumentsDetailed) *Permissions {
 	o.FicIssuedDocumentsDetailed.Set(&v)
-	return o
+		return o
 }
 // SetFicIssuedDocumentsDetailedNil sets the value for FicIssuedDocumentsDetailed to be an explicit nil
 func (o *Permissions) SetFicIssuedDocumentsDetailedNil() *Permissions {

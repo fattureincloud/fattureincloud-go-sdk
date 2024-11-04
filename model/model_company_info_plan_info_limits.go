@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -78,7 +78,7 @@ func (o *CompanyInfoPlanInfoLimits) HasClients() bool {
 // SetClients gets a reference to the given NullableInt32 and assigns it to the Clients field.
 func (o *CompanyInfoPlanInfoLimits) SetClients(v int32) *CompanyInfoPlanInfoLimits {
 	o.Clients.Set(&v)
-	return o
+		return o
 }
 // SetClientsNil sets the value for Clients to be an explicit nil
 func (o *CompanyInfoPlanInfoLimits) SetClientsNil() *CompanyInfoPlanInfoLimits {
@@ -122,7 +122,7 @@ func (o *CompanyInfoPlanInfoLimits) HasSuppliers() bool {
 // SetSuppliers gets a reference to the given NullableInt32 and assigns it to the Suppliers field.
 func (o *CompanyInfoPlanInfoLimits) SetSuppliers(v int32) *CompanyInfoPlanInfoLimits {
 	o.Suppliers.Set(&v)
-	return o
+		return o
 }
 // SetSuppliersNil sets the value for Suppliers to be an explicit nil
 func (o *CompanyInfoPlanInfoLimits) SetSuppliersNil() *CompanyInfoPlanInfoLimits {
@@ -166,7 +166,7 @@ func (o *CompanyInfoPlanInfoLimits) HasProducts() bool {
 // SetProducts gets a reference to the given NullableInt32 and assigns it to the Products field.
 func (o *CompanyInfoPlanInfoLimits) SetProducts(v int32) *CompanyInfoPlanInfoLimits {
 	o.Products.Set(&v)
-	return o
+		return o
 }
 // SetProductsNil sets the value for Products to be an explicit nil
 func (o *CompanyInfoPlanInfoLimits) SetProductsNil() *CompanyInfoPlanInfoLimits {
@@ -210,7 +210,7 @@ func (o *CompanyInfoPlanInfoLimits) HasDocuments() bool {
 // SetDocuments gets a reference to the given NullableInt32 and assigns it to the Documents field.
 func (o *CompanyInfoPlanInfoLimits) SetDocuments(v int32) *CompanyInfoPlanInfoLimits {
 	o.Documents.Set(&v)
-	return o
+		return o
 }
 // SetDocumentsNil sets the value for Documents to be an explicit nil
 func (o *CompanyInfoPlanInfoLimits) SetDocumentsNil() *CompanyInfoPlanInfoLimits {

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -72,7 +72,7 @@ func (o *VerifyEInvoiceXmlErrorResponse) HasError() bool {
 // SetError gets a reference to the given NullableVerifyEInvoiceXmlErrorResponseError and assigns it to the Error field.
 func (o *VerifyEInvoiceXmlErrorResponse) SetError(v VerifyEInvoiceXmlErrorResponseError) *VerifyEInvoiceXmlErrorResponse {
 	o.Error.Set(&v)
-	return o
+		return o
 }
 // SetErrorNil sets the value for Error to be an explicit nil
 func (o *VerifyEInvoiceXmlErrorResponse) SetErrorNil() *VerifyEInvoiceXmlErrorResponse {
@@ -116,7 +116,7 @@ func (o *VerifyEInvoiceXmlErrorResponse) HasExtra() bool {
 // SetExtra gets a reference to the given NullableVerifyEInvoiceXmlErrorResponseExtra and assigns it to the Extra field.
 func (o *VerifyEInvoiceXmlErrorResponse) SetExtra(v VerifyEInvoiceXmlErrorResponseExtra) *VerifyEInvoiceXmlErrorResponse {
 	o.Extra.Set(&v)
-	return o
+		return o
 }
 // SetExtraNil sets the value for Extra to be an explicit nil
 func (o *VerifyEInvoiceXmlErrorResponse) SetExtraNil() *VerifyEInvoiceXmlErrorResponse {

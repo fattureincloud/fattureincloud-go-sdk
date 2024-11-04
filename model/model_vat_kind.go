@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,12 +21,10 @@ type VatKind string
 
 // List of VatKind
 var VatKinds = struct {
-	NULL VatKind
 	I VatKind
 	D VatKind
 	S VatKind
 } {
-	NULL: "null",
 	I: "I",
 	D: "D",
 	S: "S",
@@ -34,7 +32,6 @@ var VatKinds = struct {
 
 // All allowed values of VatKind enum
 var AllowedVatKindEnumValues = []VatKind{
-	"null",
 	"I",
 	"D",
 	"S",

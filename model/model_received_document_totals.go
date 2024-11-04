@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -84,7 +84,7 @@ func (o *ReceivedDocumentTotals) HasAmountNet() bool {
 // SetAmountNet gets a reference to the given NullableFloat32 and assigns it to the AmountNet field.
 func (o *ReceivedDocumentTotals) SetAmountNet(v float32) *ReceivedDocumentTotals {
 	o.AmountNet.Set(&v)
-	return o
+		return o
 }
 // SetAmountNetNil sets the value for AmountNet to be an explicit nil
 func (o *ReceivedDocumentTotals) SetAmountNetNil() *ReceivedDocumentTotals {
@@ -128,7 +128,7 @@ func (o *ReceivedDocumentTotals) HasAmountVat() bool {
 // SetAmountVat gets a reference to the given NullableFloat32 and assigns it to the AmountVat field.
 func (o *ReceivedDocumentTotals) SetAmountVat(v float32) *ReceivedDocumentTotals {
 	o.AmountVat.Set(&v)
-	return o
+		return o
 }
 // SetAmountVatNil sets the value for AmountVat to be an explicit nil
 func (o *ReceivedDocumentTotals) SetAmountVatNil() *ReceivedDocumentTotals {
@@ -172,7 +172,7 @@ func (o *ReceivedDocumentTotals) HasAmountGross() bool {
 // SetAmountGross gets a reference to the given NullableFloat32 and assigns it to the AmountGross field.
 func (o *ReceivedDocumentTotals) SetAmountGross(v float32) *ReceivedDocumentTotals {
 	o.AmountGross.Set(&v)
-	return o
+		return o
 }
 // SetAmountGrossNil sets the value for AmountGross to be an explicit nil
 func (o *ReceivedDocumentTotals) SetAmountGrossNil() *ReceivedDocumentTotals {
@@ -216,7 +216,7 @@ func (o *ReceivedDocumentTotals) HasAmountWithholdingTax() bool {
 // SetAmountWithholdingTax gets a reference to the given NullableFloat32 and assigns it to the AmountWithholdingTax field.
 func (o *ReceivedDocumentTotals) SetAmountWithholdingTax(v float32) *ReceivedDocumentTotals {
 	o.AmountWithholdingTax.Set(&v)
-	return o
+		return o
 }
 // SetAmountWithholdingTaxNil sets the value for AmountWithholdingTax to be an explicit nil
 func (o *ReceivedDocumentTotals) SetAmountWithholdingTaxNil() *ReceivedDocumentTotals {
@@ -260,7 +260,7 @@ func (o *ReceivedDocumentTotals) HasAmountOtherWithholdingTax() bool {
 // SetAmountOtherWithholdingTax gets a reference to the given NullableFloat32 and assigns it to the AmountOtherWithholdingTax field.
 func (o *ReceivedDocumentTotals) SetAmountOtherWithholdingTax(v float32) *ReceivedDocumentTotals {
 	o.AmountOtherWithholdingTax.Set(&v)
-	return o
+		return o
 }
 // SetAmountOtherWithholdingTaxNil sets the value for AmountOtherWithholdingTax to be an explicit nil
 func (o *ReceivedDocumentTotals) SetAmountOtherWithholdingTaxNil() *ReceivedDocumentTotals {
@@ -304,7 +304,7 @@ func (o *ReceivedDocumentTotals) HasAmountDue() bool {
 // SetAmountDue gets a reference to the given NullableFloat32 and assigns it to the AmountDue field.
 func (o *ReceivedDocumentTotals) SetAmountDue(v float32) *ReceivedDocumentTotals {
 	o.AmountDue.Set(&v)
-	return o
+		return o
 }
 // SetAmountDueNil sets the value for AmountDue to be an explicit nil
 func (o *ReceivedDocumentTotals) SetAmountDueNil() *ReceivedDocumentTotals {
@@ -348,7 +348,7 @@ func (o *ReceivedDocumentTotals) HasPaymentsSum() bool {
 // SetPaymentsSum gets a reference to the given NullableFloat32 and assigns it to the PaymentsSum field.
 func (o *ReceivedDocumentTotals) SetPaymentsSum(v float32) *ReceivedDocumentTotals {
 	o.PaymentsSum.Set(&v)
-	return o
+		return o
 }
 // SetPaymentsSumNil sets the value for PaymentsSum to be an explicit nil
 func (o *ReceivedDocumentTotals) SetPaymentsSumNil() *ReceivedDocumentTotals {

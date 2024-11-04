@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -93,7 +93,7 @@ func (o *ListEmailsResponse) HasCurrentPage() bool {
 // SetCurrentPage gets a reference to the given NullableInt32 and assigns it to the CurrentPage field.
 func (o *ListEmailsResponse) SetCurrentPage(v int32) *ListEmailsResponse {
 	o.CurrentPage.Set(&v)
-	return o
+		return o
 }
 // SetCurrentPageNil sets the value for CurrentPage to be an explicit nil
 func (o *ListEmailsResponse) SetCurrentPageNil() *ListEmailsResponse {
@@ -137,7 +137,7 @@ func (o *ListEmailsResponse) HasFirstPageUrl() bool {
 // SetFirstPageUrl gets a reference to the given NullableString and assigns it to the FirstPageUrl field.
 func (o *ListEmailsResponse) SetFirstPageUrl(v string) *ListEmailsResponse {
 	o.FirstPageUrl.Set(&v)
-	return o
+		return o
 }
 // SetFirstPageUrlNil sets the value for FirstPageUrl to be an explicit nil
 func (o *ListEmailsResponse) SetFirstPageUrlNil() *ListEmailsResponse {
@@ -181,7 +181,7 @@ func (o *ListEmailsResponse) HasFrom() bool {
 // SetFrom gets a reference to the given NullableInt32 and assigns it to the From field.
 func (o *ListEmailsResponse) SetFrom(v int32) *ListEmailsResponse {
 	o.From.Set(&v)
-	return o
+		return o
 }
 // SetFromNil sets the value for From to be an explicit nil
 func (o *ListEmailsResponse) SetFromNil() *ListEmailsResponse {
@@ -225,7 +225,7 @@ func (o *ListEmailsResponse) HasLastPage() bool {
 // SetLastPage gets a reference to the given NullableInt32 and assigns it to the LastPage field.
 func (o *ListEmailsResponse) SetLastPage(v int32) *ListEmailsResponse {
 	o.LastPage.Set(&v)
-	return o
+		return o
 }
 // SetLastPageNil sets the value for LastPage to be an explicit nil
 func (o *ListEmailsResponse) SetLastPageNil() *ListEmailsResponse {
@@ -269,7 +269,7 @@ func (o *ListEmailsResponse) HasLastPageUrl() bool {
 // SetLastPageUrl gets a reference to the given NullableString and assigns it to the LastPageUrl field.
 func (o *ListEmailsResponse) SetLastPageUrl(v string) *ListEmailsResponse {
 	o.LastPageUrl.Set(&v)
-	return o
+		return o
 }
 // SetLastPageUrlNil sets the value for LastPageUrl to be an explicit nil
 func (o *ListEmailsResponse) SetLastPageUrlNil() *ListEmailsResponse {
@@ -313,7 +313,7 @@ func (o *ListEmailsResponse) HasNextPageUrl() bool {
 // SetNextPageUrl gets a reference to the given NullableString and assigns it to the NextPageUrl field.
 func (o *ListEmailsResponse) SetNextPageUrl(v string) *ListEmailsResponse {
 	o.NextPageUrl.Set(&v)
-	return o
+		return o
 }
 // SetNextPageUrlNil sets the value for NextPageUrl to be an explicit nil
 func (o *ListEmailsResponse) SetNextPageUrlNil() *ListEmailsResponse {
@@ -357,7 +357,7 @@ func (o *ListEmailsResponse) HasPath() bool {
 // SetPath gets a reference to the given NullableString and assigns it to the Path field.
 func (o *ListEmailsResponse) SetPath(v string) *ListEmailsResponse {
 	o.Path.Set(&v)
-	return o
+		return o
 }
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *ListEmailsResponse) SetPathNil() *ListEmailsResponse {
@@ -401,7 +401,7 @@ func (o *ListEmailsResponse) HasPerPage() bool {
 // SetPerPage gets a reference to the given NullableInt32 and assigns it to the PerPage field.
 func (o *ListEmailsResponse) SetPerPage(v int32) *ListEmailsResponse {
 	o.PerPage.Set(&v)
-	return o
+		return o
 }
 // SetPerPageNil sets the value for PerPage to be an explicit nil
 func (o *ListEmailsResponse) SetPerPageNil() *ListEmailsResponse {
@@ -445,7 +445,7 @@ func (o *ListEmailsResponse) HasPrevPageUrl() bool {
 // SetPrevPageUrl gets a reference to the given NullableString and assigns it to the PrevPageUrl field.
 func (o *ListEmailsResponse) SetPrevPageUrl(v string) *ListEmailsResponse {
 	o.PrevPageUrl.Set(&v)
-	return o
+		return o
 }
 // SetPrevPageUrlNil sets the value for PrevPageUrl to be an explicit nil
 func (o *ListEmailsResponse) SetPrevPageUrlNil() *ListEmailsResponse {
@@ -489,7 +489,7 @@ func (o *ListEmailsResponse) HasTo() bool {
 // SetTo gets a reference to the given NullableInt32 and assigns it to the To field.
 func (o *ListEmailsResponse) SetTo(v int32) *ListEmailsResponse {
 	o.To.Set(&v)
-	return o
+		return o
 }
 // SetToNil sets the value for To to be an explicit nil
 func (o *ListEmailsResponse) SetToNil() *ListEmailsResponse {
@@ -533,7 +533,7 @@ func (o *ListEmailsResponse) HasTotal() bool {
 // SetTotal gets a reference to the given NullableInt32 and assigns it to the Total field.
 func (o *ListEmailsResponse) SetTotal(v int32) *ListEmailsResponse {
 	o.Total.Set(&v)
-	return o
+		return o
 }
 // SetTotalNil sets the value for Total to be an explicit nil
 func (o *ListEmailsResponse) SetTotalNil() *ListEmailsResponse {
@@ -576,7 +576,7 @@ func (o *ListEmailsResponse) HasData() bool {
 // SetData gets a reference to the given []Email and assigns it to the Data field.
 func (o *ListEmailsResponse) SetData(v []Email) *ListEmailsResponse {
 	o.Data = v
-	return o
+		return o
 }
 
 func (o ListEmailsResponse) MarshalJSON() ([]byte, error) {

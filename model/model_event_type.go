@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -84,6 +84,17 @@ var EventTypes = struct {
 	ENTITIES_ALL_DELETE EventType
 	ISSUED_DOCUMENTS_E_INVOICES_STATUS_UPDATE EventType
 	RECEIVED_DOCUMENTS_E_INVOICES_RECEIVE EventType
+	ISSUED_DOCUMENTS_INVOICES_EMAIL_SENT EventType
+	ISSUED_DOCUMENTS_QUOTES_EMAIL_SENT EventType
+	ISSUED_DOCUMENTS_PROFORMAS_EMAIL_SENT EventType
+	ISSUED_DOCUMENTS_RECEIPTS_EMAIL_SENT EventType
+	ISSUED_DOCUMENTS_DELIVERY_NOTES_EMAIL_SENT EventType
+	ISSUED_DOCUMENTS_CREDIT_NOTES_EMAIL_SENT EventType
+	ISSUED_DOCUMENTS_ORDERS_EMAIL_SENT EventType
+	ISSUED_DOCUMENTS_WORK_REPORTS_EMAIL_SENT EventType
+	ISSUED_DOCUMENTS_SUPPLIER_ORDERS_EMAIL_SENT EventType
+	ISSUED_DOCUMENTS_SELF_INVOICES_EMAIL_SENT EventType
+	ISSUED_DOCUMENTS_ALL_EMAIL_SENT EventType
 } {
 	ISSUED_DOCUMENTS_INVOICES_CREATE: "it.fattureincloud.webhooks.issued_documents.invoices.create",
 	ISSUED_DOCUMENTS_INVOICES_UPDATE: "it.fattureincloud.webhooks.issued_documents.invoices.update",
@@ -148,6 +159,17 @@ var EventTypes = struct {
 	ENTITIES_ALL_DELETE: "it.fattureincloud.webhooks.entities.all.delete",
 	ISSUED_DOCUMENTS_E_INVOICES_STATUS_UPDATE: "it.fattureincloud.webhooks.issued_documents.e_invoices.status_update",
 	RECEIVED_DOCUMENTS_E_INVOICES_RECEIVE: "it.fattureincloud.webhooks.received_documents.e_invoices.receive",
+	ISSUED_DOCUMENTS_INVOICES_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.invoices.email_sent",
+	ISSUED_DOCUMENTS_QUOTES_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.quotes.email_sent",
+	ISSUED_DOCUMENTS_PROFORMAS_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.proformas.email_sent",
+	ISSUED_DOCUMENTS_RECEIPTS_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.receipts.email_sent",
+	ISSUED_DOCUMENTS_DELIVERY_NOTES_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.delivery_notes.email_sent",
+	ISSUED_DOCUMENTS_CREDIT_NOTES_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.credit_notes.email_sent",
+	ISSUED_DOCUMENTS_ORDERS_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.orders.email_sent",
+	ISSUED_DOCUMENTS_WORK_REPORTS_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.work_reports.email_sent",
+	ISSUED_DOCUMENTS_SUPPLIER_ORDERS_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.supplier_orders.email_sent",
+	ISSUED_DOCUMENTS_SELF_INVOICES_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.self_invoices.email_sent",
+	ISSUED_DOCUMENTS_ALL_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.all.email_sent",
 }
 
 // All allowed values of EventType enum
@@ -215,6 +237,17 @@ var AllowedEventTypeEnumValues = []EventType{
 	"it.fattureincloud.webhooks.entities.all.delete",
 	"it.fattureincloud.webhooks.issued_documents.e_invoices.status_update",
 	"it.fattureincloud.webhooks.received_documents.e_invoices.receive",
+	"it.fattureincloud.webhooks.issued_documents.invoices.email_sent",
+	"it.fattureincloud.webhooks.issued_documents.quotes.email_sent",
+	"it.fattureincloud.webhooks.issued_documents.proformas.email_sent",
+	"it.fattureincloud.webhooks.issued_documents.receipts.email_sent",
+	"it.fattureincloud.webhooks.issued_documents.delivery_notes.email_sent",
+	"it.fattureincloud.webhooks.issued_documents.credit_notes.email_sent",
+	"it.fattureincloud.webhooks.issued_documents.orders.email_sent",
+	"it.fattureincloud.webhooks.issued_documents.work_reports.email_sent",
+	"it.fattureincloud.webhooks.issued_documents.supplier_orders.email_sent",
+	"it.fattureincloud.webhooks.issued_documents.self_invoices.email_sent",
+	"it.fattureincloud.webhooks.issued_documents.all.email_sent",
 }
 
 func (v *EventType) UnmarshalJSON(src []byte) error {

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -144,7 +144,7 @@ func (o *Client) HasId() bool {
 // SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *Client) SetId(v int32) *Client {
 	o.Id.Set(&v)
-	return o
+		return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *Client) SetIdNil() *Client {
@@ -188,7 +188,7 @@ func (o *Client) HasCode() bool {
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *Client) SetCode(v string) *Client {
 	o.Code.Set(&v)
-	return o
+		return o
 }
 // SetCodeNil sets the value for Code to be an explicit nil
 func (o *Client) SetCodeNil() *Client {
@@ -232,7 +232,7 @@ func (o *Client) HasName() bool {
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *Client) SetName(v string) *Client {
 	o.Name.Set(&v)
-	return o
+		return o
 }
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *Client) SetNameNil() *Client {
@@ -276,7 +276,7 @@ func (o *Client) HasType() bool {
 // SetType gets a reference to the given NullableClientType and assigns it to the Type field.
 func (o *Client) SetType(v ClientType) *Client {
 	o.Type.Set(&v)
-	return o
+		return o
 }
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *Client) SetTypeNil() *Client {
@@ -320,7 +320,7 @@ func (o *Client) HasFirstName() bool {
 // SetFirstName gets a reference to the given NullableString and assigns it to the FirstName field.
 func (o *Client) SetFirstName(v string) *Client {
 	o.FirstName.Set(&v)
-	return o
+		return o
 }
 // SetFirstNameNil sets the value for FirstName to be an explicit nil
 func (o *Client) SetFirstNameNil() *Client {
@@ -364,7 +364,7 @@ func (o *Client) HasLastName() bool {
 // SetLastName gets a reference to the given NullableString and assigns it to the LastName field.
 func (o *Client) SetLastName(v string) *Client {
 	o.LastName.Set(&v)
-	return o
+		return o
 }
 // SetLastNameNil sets the value for LastName to be an explicit nil
 func (o *Client) SetLastNameNil() *Client {
@@ -408,7 +408,7 @@ func (o *Client) HasContactPerson() bool {
 // SetContactPerson gets a reference to the given NullableString and assigns it to the ContactPerson field.
 func (o *Client) SetContactPerson(v string) *Client {
 	o.ContactPerson.Set(&v)
-	return o
+		return o
 }
 // SetContactPersonNil sets the value for ContactPerson to be an explicit nil
 func (o *Client) SetContactPersonNil() *Client {
@@ -452,7 +452,7 @@ func (o *Client) HasVatNumber() bool {
 // SetVatNumber gets a reference to the given NullableString and assigns it to the VatNumber field.
 func (o *Client) SetVatNumber(v string) *Client {
 	o.VatNumber.Set(&v)
-	return o
+		return o
 }
 // SetVatNumberNil sets the value for VatNumber to be an explicit nil
 func (o *Client) SetVatNumberNil() *Client {
@@ -496,7 +496,7 @@ func (o *Client) HasTaxCode() bool {
 // SetTaxCode gets a reference to the given NullableString and assigns it to the TaxCode field.
 func (o *Client) SetTaxCode(v string) *Client {
 	o.TaxCode.Set(&v)
-	return o
+		return o
 }
 // SetTaxCodeNil sets the value for TaxCode to be an explicit nil
 func (o *Client) SetTaxCodeNil() *Client {
@@ -540,7 +540,7 @@ func (o *Client) HasAddressStreet() bool {
 // SetAddressStreet gets a reference to the given NullableString and assigns it to the AddressStreet field.
 func (o *Client) SetAddressStreet(v string) *Client {
 	o.AddressStreet.Set(&v)
-	return o
+		return o
 }
 // SetAddressStreetNil sets the value for AddressStreet to be an explicit nil
 func (o *Client) SetAddressStreetNil() *Client {
@@ -584,7 +584,7 @@ func (o *Client) HasAddressPostalCode() bool {
 // SetAddressPostalCode gets a reference to the given NullableString and assigns it to the AddressPostalCode field.
 func (o *Client) SetAddressPostalCode(v string) *Client {
 	o.AddressPostalCode.Set(&v)
-	return o
+		return o
 }
 // SetAddressPostalCodeNil sets the value for AddressPostalCode to be an explicit nil
 func (o *Client) SetAddressPostalCodeNil() *Client {
@@ -628,7 +628,7 @@ func (o *Client) HasAddressCity() bool {
 // SetAddressCity gets a reference to the given NullableString and assigns it to the AddressCity field.
 func (o *Client) SetAddressCity(v string) *Client {
 	o.AddressCity.Set(&v)
-	return o
+		return o
 }
 // SetAddressCityNil sets the value for AddressCity to be an explicit nil
 func (o *Client) SetAddressCityNil() *Client {
@@ -672,7 +672,7 @@ func (o *Client) HasAddressProvince() bool {
 // SetAddressProvince gets a reference to the given NullableString and assigns it to the AddressProvince field.
 func (o *Client) SetAddressProvince(v string) *Client {
 	o.AddressProvince.Set(&v)
-	return o
+		return o
 }
 // SetAddressProvinceNil sets the value for AddressProvince to be an explicit nil
 func (o *Client) SetAddressProvinceNil() *Client {
@@ -716,7 +716,7 @@ func (o *Client) HasAddressExtra() bool {
 // SetAddressExtra gets a reference to the given NullableString and assigns it to the AddressExtra field.
 func (o *Client) SetAddressExtra(v string) *Client {
 	o.AddressExtra.Set(&v)
-	return o
+		return o
 }
 // SetAddressExtraNil sets the value for AddressExtra to be an explicit nil
 func (o *Client) SetAddressExtraNil() *Client {
@@ -760,7 +760,7 @@ func (o *Client) HasCountry() bool {
 // SetCountry gets a reference to the given NullableString and assigns it to the Country field.
 func (o *Client) SetCountry(v string) *Client {
 	o.Country.Set(&v)
-	return o
+		return o
 }
 // SetCountryNil sets the value for Country to be an explicit nil
 func (o *Client) SetCountryNil() *Client {
@@ -804,7 +804,7 @@ func (o *Client) HasCountryIso() bool {
 // SetCountryIso gets a reference to the given NullableString and assigns it to the CountryIso field.
 func (o *Client) SetCountryIso(v string) *Client {
 	o.CountryIso.Set(&v)
-	return o
+		return o
 }
 // SetCountryIsoNil sets the value for CountryIso to be an explicit nil
 func (o *Client) SetCountryIsoNil() *Client {
@@ -848,7 +848,7 @@ func (o *Client) HasEmail() bool {
 // SetEmail gets a reference to the given NullableString and assigns it to the Email field.
 func (o *Client) SetEmail(v string) *Client {
 	o.Email.Set(&v)
-	return o
+		return o
 }
 // SetEmailNil sets the value for Email to be an explicit nil
 func (o *Client) SetEmailNil() *Client {
@@ -892,7 +892,7 @@ func (o *Client) HasCertifiedEmail() bool {
 // SetCertifiedEmail gets a reference to the given NullableString and assigns it to the CertifiedEmail field.
 func (o *Client) SetCertifiedEmail(v string) *Client {
 	o.CertifiedEmail.Set(&v)
-	return o
+		return o
 }
 // SetCertifiedEmailNil sets the value for CertifiedEmail to be an explicit nil
 func (o *Client) SetCertifiedEmailNil() *Client {
@@ -936,7 +936,7 @@ func (o *Client) HasPhone() bool {
 // SetPhone gets a reference to the given NullableString and assigns it to the Phone field.
 func (o *Client) SetPhone(v string) *Client {
 	o.Phone.Set(&v)
-	return o
+		return o
 }
 // SetPhoneNil sets the value for Phone to be an explicit nil
 func (o *Client) SetPhoneNil() *Client {
@@ -980,7 +980,7 @@ func (o *Client) HasFax() bool {
 // SetFax gets a reference to the given NullableString and assigns it to the Fax field.
 func (o *Client) SetFax(v string) *Client {
 	o.Fax.Set(&v)
-	return o
+		return o
 }
 // SetFaxNil sets the value for Fax to be an explicit nil
 func (o *Client) SetFaxNil() *Client {
@@ -1024,7 +1024,7 @@ func (o *Client) HasNotes() bool {
 // SetNotes gets a reference to the given NullableString and assigns it to the Notes field.
 func (o *Client) SetNotes(v string) *Client {
 	o.Notes.Set(&v)
-	return o
+		return o
 }
 // SetNotesNil sets the value for Notes to be an explicit nil
 func (o *Client) SetNotesNil() *Client {
@@ -1068,7 +1068,7 @@ func (o *Client) HasDefaultVat() bool {
 // SetDefaultVat gets a reference to the given NullableVatType and assigns it to the DefaultVat field.
 func (o *Client) SetDefaultVat(v VatType) *Client {
 	o.DefaultVat.Set(&v)
-	return o
+		return o
 }
 // SetDefaultVatNil sets the value for DefaultVat to be an explicit nil
 func (o *Client) SetDefaultVatNil() *Client {
@@ -1112,7 +1112,7 @@ func (o *Client) HasDefaultPaymentTerms() bool {
 // SetDefaultPaymentTerms gets a reference to the given NullableInt32 and assigns it to the DefaultPaymentTerms field.
 func (o *Client) SetDefaultPaymentTerms(v int32) *Client {
 	o.DefaultPaymentTerms.Set(&v)
-	return o
+		return o
 }
 // SetDefaultPaymentTermsNil sets the value for DefaultPaymentTerms to be an explicit nil
 func (o *Client) SetDefaultPaymentTermsNil() *Client {
@@ -1155,7 +1155,7 @@ func (o *Client) HasDefaultPaymentTermsType() bool {
 // SetDefaultPaymentTermsType gets a reference to the given PaymentTermsType and assigns it to the DefaultPaymentTermsType field.
 func (o *Client) SetDefaultPaymentTermsType(v PaymentTermsType) *Client {
 	o.DefaultPaymentTermsType = &v
-	return o
+		return o
 }
 
 // GetDefaultPaymentMethod returns the DefaultPaymentMethod field value if set, zero value otherwise.
@@ -1188,7 +1188,7 @@ func (o *Client) HasDefaultPaymentMethod() bool {
 // SetDefaultPaymentMethod gets a reference to the given PaymentMethod and assigns it to the DefaultPaymentMethod field.
 func (o *Client) SetDefaultPaymentMethod(v PaymentMethod) *Client {
 	o.DefaultPaymentMethod = &v
-	return o
+		return o
 }
 
 // GetBankName returns the BankName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1222,7 +1222,7 @@ func (o *Client) HasBankName() bool {
 // SetBankName gets a reference to the given NullableString and assigns it to the BankName field.
 func (o *Client) SetBankName(v string) *Client {
 	o.BankName.Set(&v)
-	return o
+		return o
 }
 // SetBankNameNil sets the value for BankName to be an explicit nil
 func (o *Client) SetBankNameNil() *Client {
@@ -1266,7 +1266,7 @@ func (o *Client) HasBankIban() bool {
 // SetBankIban gets a reference to the given NullableString and assigns it to the BankIban field.
 func (o *Client) SetBankIban(v string) *Client {
 	o.BankIban.Set(&v)
-	return o
+		return o
 }
 // SetBankIbanNil sets the value for BankIban to be an explicit nil
 func (o *Client) SetBankIbanNil() *Client {
@@ -1310,7 +1310,7 @@ func (o *Client) HasBankSwiftCode() bool {
 // SetBankSwiftCode gets a reference to the given NullableString and assigns it to the BankSwiftCode field.
 func (o *Client) SetBankSwiftCode(v string) *Client {
 	o.BankSwiftCode.Set(&v)
-	return o
+		return o
 }
 // SetBankSwiftCodeNil sets the value for BankSwiftCode to be an explicit nil
 func (o *Client) SetBankSwiftCodeNil() *Client {
@@ -1354,7 +1354,7 @@ func (o *Client) HasShippingAddress() bool {
 // SetShippingAddress gets a reference to the given NullableString and assigns it to the ShippingAddress field.
 func (o *Client) SetShippingAddress(v string) *Client {
 	o.ShippingAddress.Set(&v)
-	return o
+		return o
 }
 // SetShippingAddressNil sets the value for ShippingAddress to be an explicit nil
 func (o *Client) SetShippingAddressNil() *Client {
@@ -1398,7 +1398,7 @@ func (o *Client) HasEInvoice() bool {
 // SetEInvoice gets a reference to the given NullableBool and assigns it to the EInvoice field.
 func (o *Client) SetEInvoice(v bool) *Client {
 	o.EInvoice.Set(&v)
-	return o
+		return o
 }
 // SetEInvoiceNil sets the value for EInvoice to be an explicit nil
 func (o *Client) SetEInvoiceNil() *Client {
@@ -1442,7 +1442,7 @@ func (o *Client) HasEiCode() bool {
 // SetEiCode gets a reference to the given NullableString and assigns it to the EiCode field.
 func (o *Client) SetEiCode(v string) *Client {
 	o.EiCode.Set(&v)
-	return o
+		return o
 }
 // SetEiCodeNil sets the value for EiCode to be an explicit nil
 func (o *Client) SetEiCodeNil() *Client {
@@ -1486,7 +1486,7 @@ func (o *Client) HasDiscountHighlight() bool {
 // SetDiscountHighlight gets a reference to the given NullableBool and assigns it to the DiscountHighlight field.
 func (o *Client) SetDiscountHighlight(v bool) *Client {
 	o.DiscountHighlight.Set(&v)
-	return o
+		return o
 }
 // SetDiscountHighlightNil sets the value for DiscountHighlight to be an explicit nil
 func (o *Client) SetDiscountHighlightNil() *Client {
@@ -1530,7 +1530,7 @@ func (o *Client) HasDefaultDiscount() bool {
 // SetDefaultDiscount gets a reference to the given NullableFloat32 and assigns it to the DefaultDiscount field.
 func (o *Client) SetDefaultDiscount(v float32) *Client {
 	o.DefaultDiscount.Set(&v)
-	return o
+		return o
 }
 // SetDefaultDiscountNil sets the value for DefaultDiscount to be an explicit nil
 func (o *Client) SetDefaultDiscountNil() *Client {
@@ -1574,7 +1574,7 @@ func (o *Client) HasHasIntentDeclaration() bool {
 // SetHasIntentDeclaration gets a reference to the given NullableBool and assigns it to the HasIntentDeclaration field.
 func (o *Client) SetHasIntentDeclaration(v bool) *Client {
 	o.HasIntentDeclaration.Set(&v)
-	return o
+		return o
 }
 // SetHasIntentDeclarationNil sets the value for HasIntentDeclaration to be an explicit nil
 func (o *Client) SetHasIntentDeclarationNil() *Client {
@@ -1618,7 +1618,7 @@ func (o *Client) HasIntentDeclarationProtocolNumber() bool {
 // SetIntentDeclarationProtocolNumber gets a reference to the given NullableString and assigns it to the IntentDeclarationProtocolNumber field.
 func (o *Client) SetIntentDeclarationProtocolNumber(v string) *Client {
 	o.IntentDeclarationProtocolNumber.Set(&v)
-	return o
+		return o
 }
 // SetIntentDeclarationProtocolNumberNil sets the value for IntentDeclarationProtocolNumber to be an explicit nil
 func (o *Client) SetIntentDeclarationProtocolNumberNil() *Client {
@@ -1662,7 +1662,7 @@ func (o *Client) HasIntentDeclarationProtocolDate() bool {
 // SetIntentDeclarationProtocolDate gets a reference to the given NullableString and assigns it to the IntentDeclarationProtocolDate field.
 func (o *Client) SetIntentDeclarationProtocolDate(v string) *Client {
 	o.IntentDeclarationProtocolDate.Set(&v)
-	return o
+		return o
 }
 // SetIntentDeclarationProtocolDateNil sets the value for IntentDeclarationProtocolDate to be an explicit nil
 func (o *Client) SetIntentDeclarationProtocolDateNil() *Client {
@@ -1706,7 +1706,7 @@ func (o *Client) HasCreatedAt() bool {
 // SetCreatedAt gets a reference to the given NullableString and assigns it to the CreatedAt field.
 func (o *Client) SetCreatedAt(v string) *Client {
 	o.CreatedAt.Set(&v)
-	return o
+		return o
 }
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *Client) SetCreatedAtNil() *Client {
@@ -1750,7 +1750,7 @@ func (o *Client) HasUpdatedAt() bool {
 // SetUpdatedAt gets a reference to the given NullableString and assigns it to the UpdatedAt field.
 func (o *Client) SetUpdatedAt(v string) *Client {
 	o.UpdatedAt.Set(&v)
-	return o
+		return o
 }
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *Client) SetUpdatedAtNil() *Client {

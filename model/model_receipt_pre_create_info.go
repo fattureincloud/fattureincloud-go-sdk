@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &ReceiptPreCreateInfo{}
 
 // ReceiptPreCreateInfo struct for ReceiptPreCreateInfo
 type ReceiptPreCreateInfo struct {
-	Numerations map[string]map[string]int32 `json:"numerations,omitempty"`
+	Numerations *map[string]map[string]int32 `json:"numerations,omitempty"`
 	// Receipt used numerations list
 	NumerationsList []string `json:"numerations_list,omitempty"`
 	// Receipt used revenue centers list
@@ -56,14 +56,14 @@ func (o *ReceiptPreCreateInfo) GetNumerations() map[string]map[string]int32 {
 		var ret map[string]map[string]int32
 		return ret
 	}
-	return o.Numerations
+	return *o.Numerations
 }
 
 // GetNumerationsOk returns a tuple with the Numerations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReceiptPreCreateInfo) GetNumerationsOk() (map[string]map[string]int32, bool) {
+func (o *ReceiptPreCreateInfo) GetNumerationsOk() (*map[string]map[string]int32, bool) {
 	if o == nil || IsNil(o.Numerations) {
-		return map[string]map[string]int32{}, false
+		return nil, false
 	}
 	return o.Numerations, true
 }
@@ -79,8 +79,8 @@ func (o *ReceiptPreCreateInfo) HasNumerations() bool {
 
 // SetNumerations gets a reference to the given map[string]map[string]int32 and assigns it to the Numerations field.
 func (o *ReceiptPreCreateInfo) SetNumerations(v map[string]map[string]int32) *ReceiptPreCreateInfo {
-	o.Numerations = v
-	return o
+	o.Numerations = &v
+		return o
 }
 
 // GetNumerationsList returns the NumerationsList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -114,7 +114,7 @@ func (o *ReceiptPreCreateInfo) HasNumerationsList() bool {
 // SetNumerationsList gets a reference to the given []string and assigns it to the NumerationsList field.
 func (o *ReceiptPreCreateInfo) SetNumerationsList(v []string) *ReceiptPreCreateInfo {
 	o.NumerationsList = v
-	return o
+		return o
 }
 
 // GetRcCentersList returns the RcCentersList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -148,7 +148,7 @@ func (o *ReceiptPreCreateInfo) HasRcCentersList() bool {
 // SetRcCentersList gets a reference to the given []string and assigns it to the RcCentersList field.
 func (o *ReceiptPreCreateInfo) SetRcCentersList(v []string) *ReceiptPreCreateInfo {
 	o.RcCentersList = v
-	return o
+		return o
 }
 
 // GetPaymentAccountsList returns the PaymentAccountsList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -182,7 +182,7 @@ func (o *ReceiptPreCreateInfo) HasPaymentAccountsList() bool {
 // SetPaymentAccountsList gets a reference to the given []PaymentAccount and assigns it to the PaymentAccountsList field.
 func (o *ReceiptPreCreateInfo) SetPaymentAccountsList(v []PaymentAccount) *ReceiptPreCreateInfo {
 	o.PaymentAccountsList = v
-	return o
+		return o
 }
 
 // GetCategoriesList returns the CategoriesList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -216,7 +216,7 @@ func (o *ReceiptPreCreateInfo) HasCategoriesList() bool {
 // SetCategoriesList gets a reference to the given []string and assigns it to the CategoriesList field.
 func (o *ReceiptPreCreateInfo) SetCategoriesList(v []string) *ReceiptPreCreateInfo {
 	o.CategoriesList = v
-	return o
+		return o
 }
 
 // GetVatTypesList returns the VatTypesList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -250,7 +250,7 @@ func (o *ReceiptPreCreateInfo) HasVatTypesList() bool {
 // SetVatTypesList gets a reference to the given []VatType and assigns it to the VatTypesList field.
 func (o *ReceiptPreCreateInfo) SetVatTypesList(v []VatType) *ReceiptPreCreateInfo {
 	o.VatTypesList = v
-	return o
+		return o
 }
 
 func (o ReceiptPreCreateInfo) MarshalJSON() ([]byte, error) {

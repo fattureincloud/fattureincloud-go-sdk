@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -85,7 +85,7 @@ func (o *CompanyInfo) HasId() bool {
 // SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *CompanyInfo) SetId(v int32) *CompanyInfo {
 	o.Id.Set(&v)
-	return o
+		return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *CompanyInfo) SetIdNil() *CompanyInfo {
@@ -129,7 +129,7 @@ func (o *CompanyInfo) HasName() bool {
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *CompanyInfo) SetName(v string) *CompanyInfo {
 	o.Name.Set(&v)
-	return o
+		return o
 }
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *CompanyInfo) SetNameNil() *CompanyInfo {
@@ -173,7 +173,7 @@ func (o *CompanyInfo) HasEmail() bool {
 // SetEmail gets a reference to the given NullableString and assigns it to the Email field.
 func (o *CompanyInfo) SetEmail(v string) *CompanyInfo {
 	o.Email.Set(&v)
-	return o
+		return o
 }
 // SetEmailNil sets the value for Email to be an explicit nil
 func (o *CompanyInfo) SetEmailNil() *CompanyInfo {
@@ -216,7 +216,7 @@ func (o *CompanyInfo) HasType() bool {
 // SetType gets a reference to the given CompanyType and assigns it to the Type field.
 func (o *CompanyInfo) SetType(v CompanyType) *CompanyInfo {
 	o.Type = &v
-	return o
+		return o
 }
 
 // GetAccessInfo returns the AccessInfo field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -250,7 +250,7 @@ func (o *CompanyInfo) HasAccessInfo() bool {
 // SetAccessInfo gets a reference to the given NullableCompanyInfoAccessInfo and assigns it to the AccessInfo field.
 func (o *CompanyInfo) SetAccessInfo(v CompanyInfoAccessInfo) *CompanyInfo {
 	o.AccessInfo.Set(&v)
-	return o
+		return o
 }
 // SetAccessInfoNil sets the value for AccessInfo to be an explicit nil
 func (o *CompanyInfo) SetAccessInfoNil() *CompanyInfo {
@@ -294,7 +294,7 @@ func (o *CompanyInfo) HasFicLicenseExpire() bool {
 // SetFicLicenseExpire gets a reference to the given NullableString and assigns it to the FicLicenseExpire field.
 func (o *CompanyInfo) SetFicLicenseExpire(v string) *CompanyInfo {
 	o.FicLicenseExpire.Set(&v)
-	return o
+		return o
 }
 // SetFicLicenseExpireNil sets the value for FicLicenseExpire to be an explicit nil
 func (o *CompanyInfo) SetFicLicenseExpireNil() *CompanyInfo {
@@ -337,7 +337,7 @@ func (o *CompanyInfo) HasFicPlanName() bool {
 // SetFicPlanName gets a reference to the given FattureInCloudPlanType and assigns it to the FicPlanName field.
 func (o *CompanyInfo) SetFicPlanName(v FattureInCloudPlanType) *CompanyInfo {
 	o.FicPlanName = &v
-	return o
+		return o
 }
 
 // GetPlanInfo returns the PlanInfo field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -371,7 +371,7 @@ func (o *CompanyInfo) HasPlanInfo() bool {
 // SetPlanInfo gets a reference to the given NullableCompanyInfoPlanInfo and assigns it to the PlanInfo field.
 func (o *CompanyInfo) SetPlanInfo(v CompanyInfoPlanInfo) *CompanyInfo {
 	o.PlanInfo.Set(&v)
-	return o
+		return o
 }
 // SetPlanInfoNil sets the value for PlanInfo to be an explicit nil
 func (o *CompanyInfo) SetPlanInfoNil() *CompanyInfo {
@@ -415,7 +415,7 @@ func (o *CompanyInfo) HasAccountantId() bool {
 // SetAccountantId gets a reference to the given NullableInt32 and assigns it to the AccountantId field.
 func (o *CompanyInfo) SetAccountantId(v int32) *CompanyInfo {
 	o.AccountantId.Set(&v)
-	return o
+		return o
 }
 // SetAccountantIdNil sets the value for AccountantId to be an explicit nil
 func (o *CompanyInfo) SetAccountantIdNil() *CompanyInfo {
@@ -459,7 +459,7 @@ func (o *CompanyInfo) HasIsAccountant() bool {
 // SetIsAccountant gets a reference to the given NullableBool and assigns it to the IsAccountant field.
 func (o *CompanyInfo) SetIsAccountant(v bool) *CompanyInfo {
 	o.IsAccountant.Set(&v)
-	return o
+		return o
 }
 // SetIsAccountantNil sets the value for IsAccountant to be an explicit nil
 func (o *CompanyInfo) SetIsAccountantNil() *CompanyInfo {

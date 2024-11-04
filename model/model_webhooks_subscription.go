@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -79,7 +79,7 @@ func (o *WebhooksSubscription) HasId() bool {
 // SetId gets a reference to the given NullableString and assigns it to the Id field.
 func (o *WebhooksSubscription) SetId(v string) *WebhooksSubscription {
 	o.Id.Set(&v)
-	return o
+		return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *WebhooksSubscription) SetIdNil() *WebhooksSubscription {
@@ -123,7 +123,7 @@ func (o *WebhooksSubscription) HasSink() bool {
 // SetSink gets a reference to the given NullableString and assigns it to the Sink field.
 func (o *WebhooksSubscription) SetSink(v string) *WebhooksSubscription {
 	o.Sink.Set(&v)
-	return o
+		return o
 }
 // SetSinkNil sets the value for Sink to be an explicit nil
 func (o *WebhooksSubscription) SetSinkNil() *WebhooksSubscription {
@@ -167,7 +167,7 @@ func (o *WebhooksSubscription) HasVerified() bool {
 // SetVerified gets a reference to the given NullableBool and assigns it to the Verified field.
 func (o *WebhooksSubscription) SetVerified(v bool) *WebhooksSubscription {
 	o.Verified.Set(&v)
-	return o
+		return o
 }
 // SetVerifiedNil sets the value for Verified to be an explicit nil
 func (o *WebhooksSubscription) SetVerifiedNil() *WebhooksSubscription {
@@ -211,7 +211,7 @@ func (o *WebhooksSubscription) HasTypes() bool {
 // SetTypes gets a reference to the given []EventType and assigns it to the Types field.
 func (o *WebhooksSubscription) SetTypes(v []EventType) *WebhooksSubscription {
 	o.Types = v
-	return o
+		return o
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -244,7 +244,7 @@ func (o *WebhooksSubscription) HasConfig() bool {
 // SetConfig gets a reference to the given WebhooksSubscriptionConfig and assigns it to the Config field.
 func (o *WebhooksSubscription) SetConfig(v WebhooksSubscriptionConfig) *WebhooksSubscription {
 	o.Config = &v
-	return o
+		return o
 }
 
 func (o WebhooksSubscription) MarshalJSON() ([]byte, error) {

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -82,7 +82,7 @@ func (o *ArchiveDocument) HasId() bool {
 // SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *ArchiveDocument) SetId(v int32) *ArchiveDocument {
 	o.Id.Set(&v)
-	return o
+		return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *ArchiveDocument) SetIdNil() *ArchiveDocument {
@@ -126,7 +126,7 @@ func (o *ArchiveDocument) HasDate() bool {
 // SetDate gets a reference to the given NullableString and assigns it to the Date field.
 func (o *ArchiveDocument) SetDate(v string) *ArchiveDocument {
 	o.Date.Set(&v)
-	return o
+		return o
 }
 // SetDateNil sets the value for Date to be an explicit nil
 func (o *ArchiveDocument) SetDateNil() *ArchiveDocument {
@@ -170,7 +170,7 @@ func (o *ArchiveDocument) HasDescription() bool {
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ArchiveDocument) SetDescription(v string) *ArchiveDocument {
 	o.Description.Set(&v)
-	return o
+		return o
 }
 // SetDescriptionNil sets the value for Description to be an explicit nil
 func (o *ArchiveDocument) SetDescriptionNil() *ArchiveDocument {
@@ -214,7 +214,7 @@ func (o *ArchiveDocument) HasAttachmentUrl() bool {
 // SetAttachmentUrl gets a reference to the given NullableString and assigns it to the AttachmentUrl field.
 func (o *ArchiveDocument) SetAttachmentUrl(v string) *ArchiveDocument {
 	o.AttachmentUrl.Set(&v)
-	return o
+		return o
 }
 // SetAttachmentUrlNil sets the value for AttachmentUrl to be an explicit nil
 func (o *ArchiveDocument) SetAttachmentUrlNil() *ArchiveDocument {
@@ -258,7 +258,7 @@ func (o *ArchiveDocument) HasCategory() bool {
 // SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *ArchiveDocument) SetCategory(v string) *ArchiveDocument {
 	o.Category.Set(&v)
-	return o
+		return o
 }
 // SetCategoryNil sets the value for Category to be an explicit nil
 func (o *ArchiveDocument) SetCategoryNil() *ArchiveDocument {
@@ -302,7 +302,7 @@ func (o *ArchiveDocument) HasAttachmentToken() bool {
 // SetAttachmentToken gets a reference to the given NullableString and assigns it to the AttachmentToken field.
 func (o *ArchiveDocument) SetAttachmentToken(v string) *ArchiveDocument {
 	o.AttachmentToken.Set(&v)
-	return o
+		return o
 }
 // SetAttachmentTokenNil sets the value for AttachmentToken to be an explicit nil
 func (o *ArchiveDocument) SetAttachmentTokenNil() *ArchiveDocument {

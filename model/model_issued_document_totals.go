@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -52,7 +52,7 @@ type IssuedDocumentTotals struct {
 	IsEnasarcoMaximalExceeded NullableBool `json:"is_enasarco_maximal_exceeded,omitempty"`
 	// Issued document payments sum
 	PaymentsSum NullableFloat32 `json:"payments_sum,omitempty"`
-	VatList map[string]VatItem `json:"vat_list,omitempty"`
+	VatList *map[string]VatItem `json:"vat_list,omitempty"`
 }
 
 // NewIssuedDocumentTotals instantiates a new IssuedDocumentTotals object
@@ -103,7 +103,7 @@ func (o *IssuedDocumentTotals) HasAmountNet() bool {
 // SetAmountNet gets a reference to the given NullableFloat32 and assigns it to the AmountNet field.
 func (o *IssuedDocumentTotals) SetAmountNet(v float32) *IssuedDocumentTotals {
 	o.AmountNet.Set(&v)
-	return o
+		return o
 }
 // SetAmountNetNil sets the value for AmountNet to be an explicit nil
 func (o *IssuedDocumentTotals) SetAmountNetNil() *IssuedDocumentTotals {
@@ -147,7 +147,7 @@ func (o *IssuedDocumentTotals) HasAmountRivalsa() bool {
 // SetAmountRivalsa gets a reference to the given NullableFloat32 and assigns it to the AmountRivalsa field.
 func (o *IssuedDocumentTotals) SetAmountRivalsa(v float32) *IssuedDocumentTotals {
 	o.AmountRivalsa.Set(&v)
-	return o
+		return o
 }
 // SetAmountRivalsaNil sets the value for AmountRivalsa to be an explicit nil
 func (o *IssuedDocumentTotals) SetAmountRivalsaNil() *IssuedDocumentTotals {
@@ -191,7 +191,7 @@ func (o *IssuedDocumentTotals) HasAmountNetWithRivalsa() bool {
 // SetAmountNetWithRivalsa gets a reference to the given NullableFloat32 and assigns it to the AmountNetWithRivalsa field.
 func (o *IssuedDocumentTotals) SetAmountNetWithRivalsa(v float32) *IssuedDocumentTotals {
 	o.AmountNetWithRivalsa.Set(&v)
-	return o
+		return o
 }
 // SetAmountNetWithRivalsaNil sets the value for AmountNetWithRivalsa to be an explicit nil
 func (o *IssuedDocumentTotals) SetAmountNetWithRivalsaNil() *IssuedDocumentTotals {
@@ -235,7 +235,7 @@ func (o *IssuedDocumentTotals) HasAmountCassa() bool {
 // SetAmountCassa gets a reference to the given NullableFloat32 and assigns it to the AmountCassa field.
 func (o *IssuedDocumentTotals) SetAmountCassa(v float32) *IssuedDocumentTotals {
 	o.AmountCassa.Set(&v)
-	return o
+		return o
 }
 // SetAmountCassaNil sets the value for AmountCassa to be an explicit nil
 func (o *IssuedDocumentTotals) SetAmountCassaNil() *IssuedDocumentTotals {
@@ -279,7 +279,7 @@ func (o *IssuedDocumentTotals) HasTaxableAmount() bool {
 // SetTaxableAmount gets a reference to the given NullableFloat32 and assigns it to the TaxableAmount field.
 func (o *IssuedDocumentTotals) SetTaxableAmount(v float32) *IssuedDocumentTotals {
 	o.TaxableAmount.Set(&v)
-	return o
+		return o
 }
 // SetTaxableAmountNil sets the value for TaxableAmount to be an explicit nil
 func (o *IssuedDocumentTotals) SetTaxableAmountNil() *IssuedDocumentTotals {
@@ -323,7 +323,7 @@ func (o *IssuedDocumentTotals) HasNotTaxableAmount() bool {
 // SetNotTaxableAmount gets a reference to the given NullableFloat32 and assigns it to the NotTaxableAmount field.
 func (o *IssuedDocumentTotals) SetNotTaxableAmount(v float32) *IssuedDocumentTotals {
 	o.NotTaxableAmount.Set(&v)
-	return o
+		return o
 }
 // SetNotTaxableAmountNil sets the value for NotTaxableAmount to be an explicit nil
 func (o *IssuedDocumentTotals) SetNotTaxableAmountNil() *IssuedDocumentTotals {
@@ -367,7 +367,7 @@ func (o *IssuedDocumentTotals) HasAmountVat() bool {
 // SetAmountVat gets a reference to the given NullableFloat32 and assigns it to the AmountVat field.
 func (o *IssuedDocumentTotals) SetAmountVat(v float32) *IssuedDocumentTotals {
 	o.AmountVat.Set(&v)
-	return o
+		return o
 }
 // SetAmountVatNil sets the value for AmountVat to be an explicit nil
 func (o *IssuedDocumentTotals) SetAmountVatNil() *IssuedDocumentTotals {
@@ -411,7 +411,7 @@ func (o *IssuedDocumentTotals) HasAmountGross() bool {
 // SetAmountGross gets a reference to the given NullableFloat32 and assigns it to the AmountGross field.
 func (o *IssuedDocumentTotals) SetAmountGross(v float32) *IssuedDocumentTotals {
 	o.AmountGross.Set(&v)
-	return o
+		return o
 }
 // SetAmountGrossNil sets the value for AmountGross to be an explicit nil
 func (o *IssuedDocumentTotals) SetAmountGrossNil() *IssuedDocumentTotals {
@@ -455,7 +455,7 @@ func (o *IssuedDocumentTotals) HasTaxableAmountWithholdingTax() bool {
 // SetTaxableAmountWithholdingTax gets a reference to the given NullableFloat32 and assigns it to the TaxableAmountWithholdingTax field.
 func (o *IssuedDocumentTotals) SetTaxableAmountWithholdingTax(v float32) *IssuedDocumentTotals {
 	o.TaxableAmountWithholdingTax.Set(&v)
-	return o
+		return o
 }
 // SetTaxableAmountWithholdingTaxNil sets the value for TaxableAmountWithholdingTax to be an explicit nil
 func (o *IssuedDocumentTotals) SetTaxableAmountWithholdingTaxNil() *IssuedDocumentTotals {
@@ -499,7 +499,7 @@ func (o *IssuedDocumentTotals) HasAmountWithholdingTax() bool {
 // SetAmountWithholdingTax gets a reference to the given NullableFloat32 and assigns it to the AmountWithholdingTax field.
 func (o *IssuedDocumentTotals) SetAmountWithholdingTax(v float32) *IssuedDocumentTotals {
 	o.AmountWithholdingTax.Set(&v)
-	return o
+		return o
 }
 // SetAmountWithholdingTaxNil sets the value for AmountWithholdingTax to be an explicit nil
 func (o *IssuedDocumentTotals) SetAmountWithholdingTaxNil() *IssuedDocumentTotals {
@@ -543,7 +543,7 @@ func (o *IssuedDocumentTotals) HasTaxableAmountOtherWithholdingTax() bool {
 // SetTaxableAmountOtherWithholdingTax gets a reference to the given NullableFloat32 and assigns it to the TaxableAmountOtherWithholdingTax field.
 func (o *IssuedDocumentTotals) SetTaxableAmountOtherWithholdingTax(v float32) *IssuedDocumentTotals {
 	o.TaxableAmountOtherWithholdingTax.Set(&v)
-	return o
+		return o
 }
 // SetTaxableAmountOtherWithholdingTaxNil sets the value for TaxableAmountOtherWithholdingTax to be an explicit nil
 func (o *IssuedDocumentTotals) SetTaxableAmountOtherWithholdingTaxNil() *IssuedDocumentTotals {
@@ -587,7 +587,7 @@ func (o *IssuedDocumentTotals) HasAmountOtherWithholdingTax() bool {
 // SetAmountOtherWithholdingTax gets a reference to the given NullableFloat32 and assigns it to the AmountOtherWithholdingTax field.
 func (o *IssuedDocumentTotals) SetAmountOtherWithholdingTax(v float32) *IssuedDocumentTotals {
 	o.AmountOtherWithholdingTax.Set(&v)
-	return o
+		return o
 }
 // SetAmountOtherWithholdingTaxNil sets the value for AmountOtherWithholdingTax to be an explicit nil
 func (o *IssuedDocumentTotals) SetAmountOtherWithholdingTaxNil() *IssuedDocumentTotals {
@@ -631,7 +631,7 @@ func (o *IssuedDocumentTotals) HasStampDuty() bool {
 // SetStampDuty gets a reference to the given NullableFloat32 and assigns it to the StampDuty field.
 func (o *IssuedDocumentTotals) SetStampDuty(v float32) *IssuedDocumentTotals {
 	o.StampDuty.Set(&v)
-	return o
+		return o
 }
 // SetStampDutyNil sets the value for StampDuty to be an explicit nil
 func (o *IssuedDocumentTotals) SetStampDutyNil() *IssuedDocumentTotals {
@@ -675,7 +675,7 @@ func (o *IssuedDocumentTotals) HasAmountDue() bool {
 // SetAmountDue gets a reference to the given NullableFloat32 and assigns it to the AmountDue field.
 func (o *IssuedDocumentTotals) SetAmountDue(v float32) *IssuedDocumentTotals {
 	o.AmountDue.Set(&v)
-	return o
+		return o
 }
 // SetAmountDueNil sets the value for AmountDue to be an explicit nil
 func (o *IssuedDocumentTotals) SetAmountDueNil() *IssuedDocumentTotals {
@@ -719,7 +719,7 @@ func (o *IssuedDocumentTotals) HasIsEnasarcoMaximalExceeded() bool {
 // SetIsEnasarcoMaximalExceeded gets a reference to the given NullableBool and assigns it to the IsEnasarcoMaximalExceeded field.
 func (o *IssuedDocumentTotals) SetIsEnasarcoMaximalExceeded(v bool) *IssuedDocumentTotals {
 	o.IsEnasarcoMaximalExceeded.Set(&v)
-	return o
+		return o
 }
 // SetIsEnasarcoMaximalExceededNil sets the value for IsEnasarcoMaximalExceeded to be an explicit nil
 func (o *IssuedDocumentTotals) SetIsEnasarcoMaximalExceededNil() *IssuedDocumentTotals {
@@ -763,7 +763,7 @@ func (o *IssuedDocumentTotals) HasPaymentsSum() bool {
 // SetPaymentsSum gets a reference to the given NullableFloat32 and assigns it to the PaymentsSum field.
 func (o *IssuedDocumentTotals) SetPaymentsSum(v float32) *IssuedDocumentTotals {
 	o.PaymentsSum.Set(&v)
-	return o
+		return o
 }
 // SetPaymentsSumNil sets the value for PaymentsSum to be an explicit nil
 func (o *IssuedDocumentTotals) SetPaymentsSumNil() *IssuedDocumentTotals {
@@ -782,14 +782,14 @@ func (o *IssuedDocumentTotals) GetVatList() map[string]VatItem {
 		var ret map[string]VatItem
 		return ret
 	}
-	return o.VatList
+	return *o.VatList
 }
 
 // GetVatListOk returns a tuple with the VatList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IssuedDocumentTotals) GetVatListOk() (map[string]VatItem, bool) {
+func (o *IssuedDocumentTotals) GetVatListOk() (*map[string]VatItem, bool) {
 	if o == nil || IsNil(o.VatList) {
-		return map[string]VatItem{}, false
+		return nil, false
 	}
 	return o.VatList, true
 }
@@ -805,8 +805,8 @@ func (o *IssuedDocumentTotals) HasVatList() bool {
 
 // SetVatList gets a reference to the given map[string]VatItem and assigns it to the VatList field.
 func (o *IssuedDocumentTotals) SetVatList(v map[string]VatItem) *IssuedDocumentTotals {
-	o.VatList = v
-	return o
+	o.VatList = &v
+		return o
 }
 
 func (o IssuedDocumentTotals) MarshalJSON() ([]byte, error) {

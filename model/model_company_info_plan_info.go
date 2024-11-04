@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -73,7 +73,7 @@ func (o *CompanyInfoPlanInfo) HasLimits() bool {
 // SetLimits gets a reference to the given NullableCompanyInfoPlanInfoLimits and assigns it to the Limits field.
 func (o *CompanyInfoPlanInfo) SetLimits(v CompanyInfoPlanInfoLimits) *CompanyInfoPlanInfo {
 	o.Limits.Set(&v)
-	return o
+		return o
 }
 // SetLimitsNil sets the value for Limits to be an explicit nil
 func (o *CompanyInfoPlanInfo) SetLimitsNil() *CompanyInfoPlanInfo {
@@ -117,7 +117,7 @@ func (o *CompanyInfoPlanInfo) HasFunctions() bool {
 // SetFunctions gets a reference to the given NullableCompanyInfoPlanInfoFunctions and assigns it to the Functions field.
 func (o *CompanyInfoPlanInfo) SetFunctions(v CompanyInfoPlanInfoFunctions) *CompanyInfoPlanInfo {
 	o.Functions.Set(&v)
-	return o
+		return o
 }
 // SetFunctionsNil sets the value for Functions to be an explicit nil
 func (o *CompanyInfoPlanInfo) SetFunctionsNil() *CompanyInfoPlanInfo {
@@ -161,7 +161,7 @@ func (o *CompanyInfoPlanInfo) HasFunctionsStatus() bool {
 // SetFunctionsStatus gets a reference to the given NullableCompanyInfoPlanInfoFunctionsStatus and assigns it to the FunctionsStatus field.
 func (o *CompanyInfoPlanInfo) SetFunctionsStatus(v CompanyInfoPlanInfoFunctionsStatus) *CompanyInfoPlanInfo {
 	o.FunctionsStatus.Set(&v)
-	return o
+		return o
 }
 // SetFunctionsStatusNil sets the value for FunctionsStatus to be an explicit nil
 func (o *CompanyInfoPlanInfo) SetFunctionsStatusNil() *CompanyInfoPlanInfo {

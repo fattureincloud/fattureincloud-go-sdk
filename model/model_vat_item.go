@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -74,7 +74,7 @@ func (o *VatItem) HasAmountNet() bool {
 // SetAmountNet gets a reference to the given NullableFloat32 and assigns it to the AmountNet field.
 func (o *VatItem) SetAmountNet(v float32) *VatItem {
 	o.AmountNet.Set(&v)
-	return o
+		return o
 }
 // SetAmountNetNil sets the value for AmountNet to be an explicit nil
 func (o *VatItem) SetAmountNetNil() *VatItem {
@@ -118,7 +118,7 @@ func (o *VatItem) HasAmountVat() bool {
 // SetAmountVat gets a reference to the given NullableFloat32 and assigns it to the AmountVat field.
 func (o *VatItem) SetAmountVat(v float32) *VatItem {
 	o.AmountVat.Set(&v)
-	return o
+		return o
 }
 // SetAmountVatNil sets the value for AmountVat to be an explicit nil
 func (o *VatItem) SetAmountVatNil() *VatItem {

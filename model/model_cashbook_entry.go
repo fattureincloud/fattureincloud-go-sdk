@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -87,7 +87,7 @@ func (o *CashbookEntry) HasId() bool {
 // SetId gets a reference to the given NullableString and assigns it to the Id field.
 func (o *CashbookEntry) SetId(v string) *CashbookEntry {
 	o.Id.Set(&v)
-	return o
+		return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *CashbookEntry) SetIdNil() *CashbookEntry {
@@ -131,7 +131,7 @@ func (o *CashbookEntry) HasDate() bool {
 // SetDate gets a reference to the given NullableString and assigns it to the Date field.
 func (o *CashbookEntry) SetDate(v string) *CashbookEntry {
 	o.Date.Set(&v)
-	return o
+		return o
 }
 // SetDateNil sets the value for Date to be an explicit nil
 func (o *CashbookEntry) SetDateNil() *CashbookEntry {
@@ -175,7 +175,7 @@ func (o *CashbookEntry) HasDescription() bool {
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *CashbookEntry) SetDescription(v string) *CashbookEntry {
 	o.Description.Set(&v)
-	return o
+		return o
 }
 // SetDescriptionNil sets the value for Description to be an explicit nil
 func (o *CashbookEntry) SetDescriptionNil() *CashbookEntry {
@@ -218,7 +218,7 @@ func (o *CashbookEntry) HasKind() bool {
 // SetKind gets a reference to the given CashbookEntryKind and assigns it to the Kind field.
 func (o *CashbookEntry) SetKind(v CashbookEntryKind) *CashbookEntry {
 	o.Kind = &v
-	return o
+		return o
 }
 
 // GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -252,7 +252,7 @@ func (o *CashbookEntry) HasType() bool {
 // SetType gets a reference to the given NullableCashbookEntryType and assigns it to the Type field.
 func (o *CashbookEntry) SetType(v CashbookEntryType) *CashbookEntry {
 	o.Type.Set(&v)
-	return o
+		return o
 }
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *CashbookEntry) SetTypeNil() *CashbookEntry {
@@ -296,7 +296,7 @@ func (o *CashbookEntry) HasEntityName() bool {
 // SetEntityName gets a reference to the given NullableString and assigns it to the EntityName field.
 func (o *CashbookEntry) SetEntityName(v string) *CashbookEntry {
 	o.EntityName.Set(&v)
-	return o
+		return o
 }
 // SetEntityNameNil sets the value for EntityName to be an explicit nil
 func (o *CashbookEntry) SetEntityNameNil() *CashbookEntry {
@@ -340,7 +340,7 @@ func (o *CashbookEntry) HasDocument() bool {
 // SetDocument gets a reference to the given NullableCashbookEntryDocument and assigns it to the Document field.
 func (o *CashbookEntry) SetDocument(v CashbookEntryDocument) *CashbookEntry {
 	o.Document.Set(&v)
-	return o
+		return o
 }
 // SetDocumentNil sets the value for Document to be an explicit nil
 func (o *CashbookEntry) SetDocumentNil() *CashbookEntry {
@@ -384,7 +384,7 @@ func (o *CashbookEntry) HasAmountIn() bool {
 // SetAmountIn gets a reference to the given NullableFloat32 and assigns it to the AmountIn field.
 func (o *CashbookEntry) SetAmountIn(v float32) *CashbookEntry {
 	o.AmountIn.Set(&v)
-	return o
+		return o
 }
 // SetAmountInNil sets the value for AmountIn to be an explicit nil
 func (o *CashbookEntry) SetAmountInNil() *CashbookEntry {
@@ -428,7 +428,7 @@ func (o *CashbookEntry) HasPaymentAccountIn() bool {
 // SetPaymentAccountIn gets a reference to the given NullablePaymentAccount and assigns it to the PaymentAccountIn field.
 func (o *CashbookEntry) SetPaymentAccountIn(v PaymentAccount) *CashbookEntry {
 	o.PaymentAccountIn.Set(&v)
-	return o
+		return o
 }
 // SetPaymentAccountInNil sets the value for PaymentAccountIn to be an explicit nil
 func (o *CashbookEntry) SetPaymentAccountInNil() *CashbookEntry {
@@ -472,7 +472,7 @@ func (o *CashbookEntry) HasAmountOut() bool {
 // SetAmountOut gets a reference to the given NullableFloat32 and assigns it to the AmountOut field.
 func (o *CashbookEntry) SetAmountOut(v float32) *CashbookEntry {
 	o.AmountOut.Set(&v)
-	return o
+		return o
 }
 // SetAmountOutNil sets the value for AmountOut to be an explicit nil
 func (o *CashbookEntry) SetAmountOutNil() *CashbookEntry {
@@ -516,7 +516,7 @@ func (o *CashbookEntry) HasPaymentAccountOut() bool {
 // SetPaymentAccountOut gets a reference to the given NullablePaymentAccount and assigns it to the PaymentAccountOut field.
 func (o *CashbookEntry) SetPaymentAccountOut(v PaymentAccount) *CashbookEntry {
 	o.PaymentAccountOut.Set(&v)
-	return o
+		return o
 }
 // SetPaymentAccountOutNil sets the value for PaymentAccountOut to be an explicit nil
 func (o *CashbookEntry) SetPaymentAccountOutNil() *CashbookEntry {

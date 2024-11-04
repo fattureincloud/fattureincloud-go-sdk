@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -117,7 +117,7 @@ func (o *Supplier) HasId() bool {
 // SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *Supplier) SetId(v int32) *Supplier {
 	o.Id.Set(&v)
-	return o
+		return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *Supplier) SetIdNil() *Supplier {
@@ -161,7 +161,7 @@ func (o *Supplier) HasCode() bool {
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *Supplier) SetCode(v string) *Supplier {
 	o.Code.Set(&v)
-	return o
+		return o
 }
 // SetCodeNil sets the value for Code to be an explicit nil
 func (o *Supplier) SetCodeNil() *Supplier {
@@ -205,7 +205,7 @@ func (o *Supplier) HasName() bool {
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *Supplier) SetName(v string) *Supplier {
 	o.Name.Set(&v)
-	return o
+		return o
 }
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *Supplier) SetNameNil() *Supplier {
@@ -249,7 +249,7 @@ func (o *Supplier) HasType() bool {
 // SetType gets a reference to the given NullableSupplierType and assigns it to the Type field.
 func (o *Supplier) SetType(v SupplierType) *Supplier {
 	o.Type.Set(&v)
-	return o
+		return o
 }
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *Supplier) SetTypeNil() *Supplier {
@@ -293,7 +293,7 @@ func (o *Supplier) HasFirstName() bool {
 // SetFirstName gets a reference to the given NullableString and assigns it to the FirstName field.
 func (o *Supplier) SetFirstName(v string) *Supplier {
 	o.FirstName.Set(&v)
-	return o
+		return o
 }
 // SetFirstNameNil sets the value for FirstName to be an explicit nil
 func (o *Supplier) SetFirstNameNil() *Supplier {
@@ -337,7 +337,7 @@ func (o *Supplier) HasLastName() bool {
 // SetLastName gets a reference to the given NullableString and assigns it to the LastName field.
 func (o *Supplier) SetLastName(v string) *Supplier {
 	o.LastName.Set(&v)
-	return o
+		return o
 }
 // SetLastNameNil sets the value for LastName to be an explicit nil
 func (o *Supplier) SetLastNameNil() *Supplier {
@@ -381,7 +381,7 @@ func (o *Supplier) HasContactPerson() bool {
 // SetContactPerson gets a reference to the given NullableString and assigns it to the ContactPerson field.
 func (o *Supplier) SetContactPerson(v string) *Supplier {
 	o.ContactPerson.Set(&v)
-	return o
+		return o
 }
 // SetContactPersonNil sets the value for ContactPerson to be an explicit nil
 func (o *Supplier) SetContactPersonNil() *Supplier {
@@ -425,7 +425,7 @@ func (o *Supplier) HasVatNumber() bool {
 // SetVatNumber gets a reference to the given NullableString and assigns it to the VatNumber field.
 func (o *Supplier) SetVatNumber(v string) *Supplier {
 	o.VatNumber.Set(&v)
-	return o
+		return o
 }
 // SetVatNumberNil sets the value for VatNumber to be an explicit nil
 func (o *Supplier) SetVatNumberNil() *Supplier {
@@ -469,7 +469,7 @@ func (o *Supplier) HasTaxCode() bool {
 // SetTaxCode gets a reference to the given NullableString and assigns it to the TaxCode field.
 func (o *Supplier) SetTaxCode(v string) *Supplier {
 	o.TaxCode.Set(&v)
-	return o
+		return o
 }
 // SetTaxCodeNil sets the value for TaxCode to be an explicit nil
 func (o *Supplier) SetTaxCodeNil() *Supplier {
@@ -513,7 +513,7 @@ func (o *Supplier) HasAddressStreet() bool {
 // SetAddressStreet gets a reference to the given NullableString and assigns it to the AddressStreet field.
 func (o *Supplier) SetAddressStreet(v string) *Supplier {
 	o.AddressStreet.Set(&v)
-	return o
+		return o
 }
 // SetAddressStreetNil sets the value for AddressStreet to be an explicit nil
 func (o *Supplier) SetAddressStreetNil() *Supplier {
@@ -557,7 +557,7 @@ func (o *Supplier) HasAddressPostalCode() bool {
 // SetAddressPostalCode gets a reference to the given NullableString and assigns it to the AddressPostalCode field.
 func (o *Supplier) SetAddressPostalCode(v string) *Supplier {
 	o.AddressPostalCode.Set(&v)
-	return o
+		return o
 }
 // SetAddressPostalCodeNil sets the value for AddressPostalCode to be an explicit nil
 func (o *Supplier) SetAddressPostalCodeNil() *Supplier {
@@ -601,7 +601,7 @@ func (o *Supplier) HasAddressCity() bool {
 // SetAddressCity gets a reference to the given NullableString and assigns it to the AddressCity field.
 func (o *Supplier) SetAddressCity(v string) *Supplier {
 	o.AddressCity.Set(&v)
-	return o
+		return o
 }
 // SetAddressCityNil sets the value for AddressCity to be an explicit nil
 func (o *Supplier) SetAddressCityNil() *Supplier {
@@ -645,7 +645,7 @@ func (o *Supplier) HasAddressProvince() bool {
 // SetAddressProvince gets a reference to the given NullableString and assigns it to the AddressProvince field.
 func (o *Supplier) SetAddressProvince(v string) *Supplier {
 	o.AddressProvince.Set(&v)
-	return o
+		return o
 }
 // SetAddressProvinceNil sets the value for AddressProvince to be an explicit nil
 func (o *Supplier) SetAddressProvinceNil() *Supplier {
@@ -689,7 +689,7 @@ func (o *Supplier) HasAddressExtra() bool {
 // SetAddressExtra gets a reference to the given NullableString and assigns it to the AddressExtra field.
 func (o *Supplier) SetAddressExtra(v string) *Supplier {
 	o.AddressExtra.Set(&v)
-	return o
+		return o
 }
 // SetAddressExtraNil sets the value for AddressExtra to be an explicit nil
 func (o *Supplier) SetAddressExtraNil() *Supplier {
@@ -733,7 +733,7 @@ func (o *Supplier) HasCountry() bool {
 // SetCountry gets a reference to the given NullableString and assigns it to the Country field.
 func (o *Supplier) SetCountry(v string) *Supplier {
 	o.Country.Set(&v)
-	return o
+		return o
 }
 // SetCountryNil sets the value for Country to be an explicit nil
 func (o *Supplier) SetCountryNil() *Supplier {
@@ -777,7 +777,7 @@ func (o *Supplier) HasCountryIso() bool {
 // SetCountryIso gets a reference to the given NullableString and assigns it to the CountryIso field.
 func (o *Supplier) SetCountryIso(v string) *Supplier {
 	o.CountryIso.Set(&v)
-	return o
+		return o
 }
 // SetCountryIsoNil sets the value for CountryIso to be an explicit nil
 func (o *Supplier) SetCountryIsoNil() *Supplier {
@@ -821,7 +821,7 @@ func (o *Supplier) HasEmail() bool {
 // SetEmail gets a reference to the given NullableString and assigns it to the Email field.
 func (o *Supplier) SetEmail(v string) *Supplier {
 	o.Email.Set(&v)
-	return o
+		return o
 }
 // SetEmailNil sets the value for Email to be an explicit nil
 func (o *Supplier) SetEmailNil() *Supplier {
@@ -865,7 +865,7 @@ func (o *Supplier) HasCertifiedEmail() bool {
 // SetCertifiedEmail gets a reference to the given NullableString and assigns it to the CertifiedEmail field.
 func (o *Supplier) SetCertifiedEmail(v string) *Supplier {
 	o.CertifiedEmail.Set(&v)
-	return o
+		return o
 }
 // SetCertifiedEmailNil sets the value for CertifiedEmail to be an explicit nil
 func (o *Supplier) SetCertifiedEmailNil() *Supplier {
@@ -909,7 +909,7 @@ func (o *Supplier) HasPhone() bool {
 // SetPhone gets a reference to the given NullableString and assigns it to the Phone field.
 func (o *Supplier) SetPhone(v string) *Supplier {
 	o.Phone.Set(&v)
-	return o
+		return o
 }
 // SetPhoneNil sets the value for Phone to be an explicit nil
 func (o *Supplier) SetPhoneNil() *Supplier {
@@ -953,7 +953,7 @@ func (o *Supplier) HasFax() bool {
 // SetFax gets a reference to the given NullableString and assigns it to the Fax field.
 func (o *Supplier) SetFax(v string) *Supplier {
 	o.Fax.Set(&v)
-	return o
+		return o
 }
 // SetFaxNil sets the value for Fax to be an explicit nil
 func (o *Supplier) SetFaxNil() *Supplier {
@@ -997,7 +997,7 @@ func (o *Supplier) HasNotes() bool {
 // SetNotes gets a reference to the given NullableString and assigns it to the Notes field.
 func (o *Supplier) SetNotes(v string) *Supplier {
 	o.Notes.Set(&v)
-	return o
+		return o
 }
 // SetNotesNil sets the value for Notes to be an explicit nil
 func (o *Supplier) SetNotesNil() *Supplier {
@@ -1041,7 +1041,7 @@ func (o *Supplier) HasBankIban() bool {
 // SetBankIban gets a reference to the given NullableString and assigns it to the BankIban field.
 func (o *Supplier) SetBankIban(v string) *Supplier {
 	o.BankIban.Set(&v)
-	return o
+		return o
 }
 // SetBankIbanNil sets the value for BankIban to be an explicit nil
 func (o *Supplier) SetBankIbanNil() *Supplier {
@@ -1085,7 +1085,7 @@ func (o *Supplier) HasCreatedAt() bool {
 // SetCreatedAt gets a reference to the given NullableString and assigns it to the CreatedAt field.
 func (o *Supplier) SetCreatedAt(v string) *Supplier {
 	o.CreatedAt.Set(&v)
-	return o
+		return o
 }
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *Supplier) SetCreatedAtNil() *Supplier {
@@ -1129,7 +1129,7 @@ func (o *Supplier) HasUpdatedAt() bool {
 // SetUpdatedAt gets a reference to the given NullableString and assigns it to the UpdatedAt field.
 func (o *Supplier) SetUpdatedAt(v string) *Supplier {
 	o.UpdatedAt.Set(&v)
-	return o
+		return o
 }
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *Supplier) SetUpdatedAtNil() *Supplier {

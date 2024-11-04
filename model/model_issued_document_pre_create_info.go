@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &IssuedDocumentPreCreateInfo{}
 
 // IssuedDocumentPreCreateInfo struct for IssuedDocumentPreCreateInfo
 type IssuedDocumentPreCreateInfo struct {
-	Numerations map[string]map[string]int32 `json:"numerations,omitempty"`
-	DnNumerations map[string]map[string]int32 `json:"dn_numerations,omitempty"`
+	Numerations *map[string]map[string]int32 `json:"numerations,omitempty"`
+	DnNumerations *map[string]map[string]int32 `json:"dn_numerations,omitempty"`
 	DefaultValues NullableIssuedDocumentPreCreateInfoDefaultValues `json:"default_values,omitempty"`
 	ExtraDataDefaultValues NullableIssuedDocumentPreCreateInfoExtraDataDefaultValues `json:"extra_data_default_values,omitempty"`
 	ItemsDefaultValues NullableIssuedDocumentPreCreateInfoItemsDefaultValues `json:"items_default_values,omitempty"`
@@ -68,14 +68,14 @@ func (o *IssuedDocumentPreCreateInfo) GetNumerations() map[string]map[string]int
 		var ret map[string]map[string]int32
 		return ret
 	}
-	return o.Numerations
+	return *o.Numerations
 }
 
 // GetNumerationsOk returns a tuple with the Numerations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IssuedDocumentPreCreateInfo) GetNumerationsOk() (map[string]map[string]int32, bool) {
+func (o *IssuedDocumentPreCreateInfo) GetNumerationsOk() (*map[string]map[string]int32, bool) {
 	if o == nil || IsNil(o.Numerations) {
-		return map[string]map[string]int32{}, false
+		return nil, false
 	}
 	return o.Numerations, true
 }
@@ -91,8 +91,8 @@ func (o *IssuedDocumentPreCreateInfo) HasNumerations() bool {
 
 // SetNumerations gets a reference to the given map[string]map[string]int32 and assigns it to the Numerations field.
 func (o *IssuedDocumentPreCreateInfo) SetNumerations(v map[string]map[string]int32) *IssuedDocumentPreCreateInfo {
-	o.Numerations = v
-	return o
+	o.Numerations = &v
+		return o
 }
 
 // GetDnNumerations returns the DnNumerations field value if set, zero value otherwise.
@@ -101,14 +101,14 @@ func (o *IssuedDocumentPreCreateInfo) GetDnNumerations() map[string]map[string]i
 		var ret map[string]map[string]int32
 		return ret
 	}
-	return o.DnNumerations
+	return *o.DnNumerations
 }
 
 // GetDnNumerationsOk returns a tuple with the DnNumerations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IssuedDocumentPreCreateInfo) GetDnNumerationsOk() (map[string]map[string]int32, bool) {
+func (o *IssuedDocumentPreCreateInfo) GetDnNumerationsOk() (*map[string]map[string]int32, bool) {
 	if o == nil || IsNil(o.DnNumerations) {
-		return map[string]map[string]int32{}, false
+		return nil, false
 	}
 	return o.DnNumerations, true
 }
@@ -124,8 +124,8 @@ func (o *IssuedDocumentPreCreateInfo) HasDnNumerations() bool {
 
 // SetDnNumerations gets a reference to the given map[string]map[string]int32 and assigns it to the DnNumerations field.
 func (o *IssuedDocumentPreCreateInfo) SetDnNumerations(v map[string]map[string]int32) *IssuedDocumentPreCreateInfo {
-	o.DnNumerations = v
-	return o
+	o.DnNumerations = &v
+		return o
 }
 
 // GetDefaultValues returns the DefaultValues field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -159,7 +159,7 @@ func (o *IssuedDocumentPreCreateInfo) HasDefaultValues() bool {
 // SetDefaultValues gets a reference to the given NullableIssuedDocumentPreCreateInfoDefaultValues and assigns it to the DefaultValues field.
 func (o *IssuedDocumentPreCreateInfo) SetDefaultValues(v IssuedDocumentPreCreateInfoDefaultValues) *IssuedDocumentPreCreateInfo {
 	o.DefaultValues.Set(&v)
-	return o
+		return o
 }
 // SetDefaultValuesNil sets the value for DefaultValues to be an explicit nil
 func (o *IssuedDocumentPreCreateInfo) SetDefaultValuesNil() *IssuedDocumentPreCreateInfo {
@@ -203,7 +203,7 @@ func (o *IssuedDocumentPreCreateInfo) HasExtraDataDefaultValues() bool {
 // SetExtraDataDefaultValues gets a reference to the given NullableIssuedDocumentPreCreateInfoExtraDataDefaultValues and assigns it to the ExtraDataDefaultValues field.
 func (o *IssuedDocumentPreCreateInfo) SetExtraDataDefaultValues(v IssuedDocumentPreCreateInfoExtraDataDefaultValues) *IssuedDocumentPreCreateInfo {
 	o.ExtraDataDefaultValues.Set(&v)
-	return o
+		return o
 }
 // SetExtraDataDefaultValuesNil sets the value for ExtraDataDefaultValues to be an explicit nil
 func (o *IssuedDocumentPreCreateInfo) SetExtraDataDefaultValuesNil() *IssuedDocumentPreCreateInfo {
@@ -247,7 +247,7 @@ func (o *IssuedDocumentPreCreateInfo) HasItemsDefaultValues() bool {
 // SetItemsDefaultValues gets a reference to the given NullableIssuedDocumentPreCreateInfoItemsDefaultValues and assigns it to the ItemsDefaultValues field.
 func (o *IssuedDocumentPreCreateInfo) SetItemsDefaultValues(v IssuedDocumentPreCreateInfoItemsDefaultValues) *IssuedDocumentPreCreateInfo {
 	o.ItemsDefaultValues.Set(&v)
-	return o
+		return o
 }
 // SetItemsDefaultValuesNil sets the value for ItemsDefaultValues to be an explicit nil
 func (o *IssuedDocumentPreCreateInfo) SetItemsDefaultValuesNil() *IssuedDocumentPreCreateInfo {
@@ -291,7 +291,7 @@ func (o *IssuedDocumentPreCreateInfo) HasCountriesList() bool {
 // SetCountriesList gets a reference to the given []string and assigns it to the CountriesList field.
 func (o *IssuedDocumentPreCreateInfo) SetCountriesList(v []string) *IssuedDocumentPreCreateInfo {
 	o.CountriesList = v
-	return o
+		return o
 }
 
 // GetCurrenciesList returns the CurrenciesList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -325,7 +325,7 @@ func (o *IssuedDocumentPreCreateInfo) HasCurrenciesList() bool {
 // SetCurrenciesList gets a reference to the given []Currency and assigns it to the CurrenciesList field.
 func (o *IssuedDocumentPreCreateInfo) SetCurrenciesList(v []Currency) *IssuedDocumentPreCreateInfo {
 	o.CurrenciesList = v
-	return o
+		return o
 }
 
 // GetTemplatesList returns the TemplatesList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -359,7 +359,7 @@ func (o *IssuedDocumentPreCreateInfo) HasTemplatesList() bool {
 // SetTemplatesList gets a reference to the given []DocumentTemplate and assigns it to the TemplatesList field.
 func (o *IssuedDocumentPreCreateInfo) SetTemplatesList(v []DocumentTemplate) *IssuedDocumentPreCreateInfo {
 	o.TemplatesList = v
-	return o
+		return o
 }
 
 // GetDnTemplatesList returns the DnTemplatesList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -393,7 +393,7 @@ func (o *IssuedDocumentPreCreateInfo) HasDnTemplatesList() bool {
 // SetDnTemplatesList gets a reference to the given []DocumentTemplate and assigns it to the DnTemplatesList field.
 func (o *IssuedDocumentPreCreateInfo) SetDnTemplatesList(v []DocumentTemplate) *IssuedDocumentPreCreateInfo {
 	o.DnTemplatesList = v
-	return o
+		return o
 }
 
 // GetAiTemplatesList returns the AiTemplatesList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -427,7 +427,7 @@ func (o *IssuedDocumentPreCreateInfo) HasAiTemplatesList() bool {
 // SetAiTemplatesList gets a reference to the given []DocumentTemplate and assigns it to the AiTemplatesList field.
 func (o *IssuedDocumentPreCreateInfo) SetAiTemplatesList(v []DocumentTemplate) *IssuedDocumentPreCreateInfo {
 	o.AiTemplatesList = v
-	return o
+		return o
 }
 
 // GetPaymentMethodsList returns the PaymentMethodsList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -461,7 +461,7 @@ func (o *IssuedDocumentPreCreateInfo) HasPaymentMethodsList() bool {
 // SetPaymentMethodsList gets a reference to the given []PaymentMethod and assigns it to the PaymentMethodsList field.
 func (o *IssuedDocumentPreCreateInfo) SetPaymentMethodsList(v []PaymentMethod) *IssuedDocumentPreCreateInfo {
 	o.PaymentMethodsList = v
-	return o
+		return o
 }
 
 // GetPaymentAccountsList returns the PaymentAccountsList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -495,7 +495,7 @@ func (o *IssuedDocumentPreCreateInfo) HasPaymentAccountsList() bool {
 // SetPaymentAccountsList gets a reference to the given []PaymentAccount and assigns it to the PaymentAccountsList field.
 func (o *IssuedDocumentPreCreateInfo) SetPaymentAccountsList(v []PaymentAccount) *IssuedDocumentPreCreateInfo {
 	o.PaymentAccountsList = v
-	return o
+		return o
 }
 
 // GetVatTypesList returns the VatTypesList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -529,7 +529,7 @@ func (o *IssuedDocumentPreCreateInfo) HasVatTypesList() bool {
 // SetVatTypesList gets a reference to the given []VatType and assigns it to the VatTypesList field.
 func (o *IssuedDocumentPreCreateInfo) SetVatTypesList(v []VatType) *IssuedDocumentPreCreateInfo {
 	o.VatTypesList = v
-	return o
+		return o
 }
 
 // GetLanguagesList returns the LanguagesList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -563,7 +563,7 @@ func (o *IssuedDocumentPreCreateInfo) HasLanguagesList() bool {
 // SetLanguagesList gets a reference to the given []Language and assigns it to the LanguagesList field.
 func (o *IssuedDocumentPreCreateInfo) SetLanguagesList(v []Language) *IssuedDocumentPreCreateInfo {
 	o.LanguagesList = v
-	return o
+		return o
 }
 
 func (o IssuedDocumentPreCreateInfo) MarshalJSON() ([]byte, error) {

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -71,7 +71,7 @@ func (o *ModifyVatTypeRequest) HasData() bool {
 // SetData gets a reference to the given NullableVatType and assigns it to the Data field.
 func (o *ModifyVatTypeRequest) SetData(v VatType) *ModifyVatTypeRequest {
 	o.Data.Set(&v)
-	return o
+		return o
 }
 // SetDataNil sets the value for Data to be an explicit nil
 func (o *ModifyVatTypeRequest) SetDataNil() *ModifyVatTypeRequest {

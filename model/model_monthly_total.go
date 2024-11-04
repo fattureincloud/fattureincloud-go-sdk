@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -76,7 +76,7 @@ func (o *MonthlyTotal) HasNet() bool {
 // SetNet gets a reference to the given NullableFloat32 and assigns it to the Net field.
 func (o *MonthlyTotal) SetNet(v float32) *MonthlyTotal {
 	o.Net.Set(&v)
-	return o
+		return o
 }
 // SetNetNil sets the value for Net to be an explicit nil
 func (o *MonthlyTotal) SetNetNil() *MonthlyTotal {
@@ -120,7 +120,7 @@ func (o *MonthlyTotal) HasGross() bool {
 // SetGross gets a reference to the given NullableFloat32 and assigns it to the Gross field.
 func (o *MonthlyTotal) SetGross(v float32) *MonthlyTotal {
 	o.Gross.Set(&v)
-	return o
+		return o
 }
 // SetGrossNil sets the value for Gross to be an explicit nil
 func (o *MonthlyTotal) SetGrossNil() *MonthlyTotal {
@@ -164,7 +164,7 @@ func (o *MonthlyTotal) HasCount() bool {
 // SetCount gets a reference to the given NullableFloat32 and assigns it to the Count field.
 func (o *MonthlyTotal) SetCount(v float32) *MonthlyTotal {
 	o.Count.Set(&v)
-	return o
+		return o
 }
 // SetCountNil sets the value for Count to be an explicit nil
 func (o *MonthlyTotal) SetCountNil() *MonthlyTotal {
