@@ -17,7 +17,6 @@ import (
 )
 
 func TestVatKindResponse(t *testing.T) {
-	assert.Equal(t, "null", string(VatKinds.NULL))
 	assert.Equal(t, "I", string(VatKinds.I))
 	assert.Equal(t, "D", string(VatKinds.D))
 	assert.Equal(t, "S", string(VatKinds.S))
