@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -52,7 +52,7 @@ type IssuedDocumentTotals struct {
 	IsEnasarcoMaximalExceeded NullableBool `json:"is_enasarco_maximal_exceeded,omitempty"`
 	// Issued document payments sum
 	PaymentsSum NullableFloat32 `json:"payments_sum,omitempty"`
-	VatList map[string]VatItem `json:"vat_list,omitempty"`
+	VatList *map[string]VatItem `json:"vat_list,omitempty"`
 }
 
 // NewIssuedDocumentTotals instantiates a new IssuedDocumentTotals object
@@ -782,14 +782,14 @@ func (o *IssuedDocumentTotals) GetVatList() map[string]VatItem {
 		var ret map[string]VatItem
 		return ret
 	}
-	return o.VatList
+	return *o.VatList
 }
 
 // GetVatListOk returns a tuple with the VatList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IssuedDocumentTotals) GetVatListOk() (map[string]VatItem, bool) {
+func (o *IssuedDocumentTotals) GetVatListOk() (*map[string]VatItem, bool) {
 	if o == nil || IsNil(o.VatList) {
-		return map[string]VatItem{}, false
+		return nil, false
 	}
 	return o.VatList, true
 }
@@ -805,7 +805,7 @@ func (o *IssuedDocumentTotals) HasVatList() bool {
 
 // SetVatList gets a reference to the given map[string]VatItem and assigns it to the VatList field.
 func (o *IssuedDocumentTotals) SetVatList(v map[string]VatItem) *IssuedDocumentTotals {
-	o.VatList = v
+	o.VatList = &v
 	return o
 }
 

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &IssuedDocumentPreCreateInfo{}
 
 // IssuedDocumentPreCreateInfo struct for IssuedDocumentPreCreateInfo
 type IssuedDocumentPreCreateInfo struct {
-	Numerations map[string]map[string]int32 `json:"numerations,omitempty"`
-	DnNumerations map[string]map[string]int32 `json:"dn_numerations,omitempty"`
+	Numerations *map[string]map[string]int32 `json:"numerations,omitempty"`
+	DnNumerations *map[string]map[string]int32 `json:"dn_numerations,omitempty"`
 	DefaultValues NullableIssuedDocumentPreCreateInfoDefaultValues `json:"default_values,omitempty"`
 	ExtraDataDefaultValues NullableIssuedDocumentPreCreateInfoExtraDataDefaultValues `json:"extra_data_default_values,omitempty"`
 	ItemsDefaultValues NullableIssuedDocumentPreCreateInfoItemsDefaultValues `json:"items_default_values,omitempty"`
@@ -68,14 +68,14 @@ func (o *IssuedDocumentPreCreateInfo) GetNumerations() map[string]map[string]int
 		var ret map[string]map[string]int32
 		return ret
 	}
-	return o.Numerations
+	return *o.Numerations
 }
 
 // GetNumerationsOk returns a tuple with the Numerations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IssuedDocumentPreCreateInfo) GetNumerationsOk() (map[string]map[string]int32, bool) {
+func (o *IssuedDocumentPreCreateInfo) GetNumerationsOk() (*map[string]map[string]int32, bool) {
 	if o == nil || IsNil(o.Numerations) {
-		return map[string]map[string]int32{}, false
+		return nil, false
 	}
 	return o.Numerations, true
 }
@@ -91,7 +91,7 @@ func (o *IssuedDocumentPreCreateInfo) HasNumerations() bool {
 
 // SetNumerations gets a reference to the given map[string]map[string]int32 and assigns it to the Numerations field.
 func (o *IssuedDocumentPreCreateInfo) SetNumerations(v map[string]map[string]int32) *IssuedDocumentPreCreateInfo {
-	o.Numerations = v
+	o.Numerations = &v
 	return o
 }
 
@@ -101,14 +101,14 @@ func (o *IssuedDocumentPreCreateInfo) GetDnNumerations() map[string]map[string]i
 		var ret map[string]map[string]int32
 		return ret
 	}
-	return o.DnNumerations
+	return *o.DnNumerations
 }
 
 // GetDnNumerationsOk returns a tuple with the DnNumerations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IssuedDocumentPreCreateInfo) GetDnNumerationsOk() (map[string]map[string]int32, bool) {
+func (o *IssuedDocumentPreCreateInfo) GetDnNumerationsOk() (*map[string]map[string]int32, bool) {
 	if o == nil || IsNil(o.DnNumerations) {
-		return map[string]map[string]int32{}, false
+		return nil, false
 	}
 	return o.DnNumerations, true
 }
@@ -124,7 +124,7 @@ func (o *IssuedDocumentPreCreateInfo) HasDnNumerations() bool {
 
 // SetDnNumerations gets a reference to the given map[string]map[string]int32 and assigns it to the DnNumerations field.
 func (o *IssuedDocumentPreCreateInfo) SetDnNumerations(v map[string]map[string]int32) *IssuedDocumentPreCreateInfo {
-	o.DnNumerations = v
+	o.DnNumerations = &v
 	return o
 }
 

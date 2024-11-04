@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -34,7 +34,7 @@ type IssuedDocument struct {
 	Year NullableInt32 `json:"year,omitempty"`
 	Currency *Currency `json:"currency,omitempty"`
 	Language *Language `json:"language,omitempty"`
-	// Issued document subject
+	// Issued document subject [not shown on the PDF]
 	Subject NullableString `json:"subject,omitempty"`
 	// Issued document visible subject
 	VisibleSubject NullableString `json:"visible_subject,omitempty"`
