@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,9 +21,9 @@ var _ MappedNullable = &CompanyPlanUsage{}
 // CompanyPlanUsage struct for CompanyPlanUsage
 type CompanyPlanUsage struct {
 	// Plan limit
-	Limit NullableFloat32 `json:"limit,omitempty"`
+Limit NullableFloat32 `json:"limit,omitempty"`
 	// Plan usage
-	Usage NullableFloat32 `json:"usage,omitempty"`
+Usage NullableFloat32 `json:"usage,omitempty"`
 }
 
 // NewCompanyPlanUsage instantiates a new CompanyPlanUsage object
@@ -74,7 +74,7 @@ func (o *CompanyPlanUsage) HasLimit() bool {
 // SetLimit gets a reference to the given NullableFloat32 and assigns it to the Limit field.
 func (o *CompanyPlanUsage) SetLimit(v float32) *CompanyPlanUsage {
 	o.Limit.Set(&v)
-	return o
+		return o
 }
 // SetLimitNil sets the value for Limit to be an explicit nil
 func (o *CompanyPlanUsage) SetLimitNil() *CompanyPlanUsage {
@@ -118,7 +118,7 @@ func (o *CompanyPlanUsage) HasUsage() bool {
 // SetUsage gets a reference to the given NullableFloat32 and assigns it to the Usage field.
 func (o *CompanyPlanUsage) SetUsage(v float32) *CompanyPlanUsage {
 	o.Usage.Set(&v)
-	return o
+		return o
 }
 // SetUsageNil sets the value for Usage to be an explicit nil
 func (o *CompanyPlanUsage) SetUsageNil() *CompanyPlanUsage {

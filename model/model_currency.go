@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,13 +21,13 @@ var _ MappedNullable = &Currency{}
 // Currency struct for Currency
 type Currency struct {
 	// Currency code
-	Id NullableString `json:"id,omitempty"`
+Id NullableString `json:"id,omitempty"`
 	// Currency symbol
-	Symbol NullableString `json:"symbol,omitempty"`
+Symbol NullableString `json:"symbol,omitempty"`
 	// Currency exchange rate (EUR to this)
-	ExchangeRate NullableString `json:"exchange_rate,omitempty"`
+ExchangeRate NullableString `json:"exchange_rate,omitempty"`
 	// Currency html code
-	HtmlSymbol NullableString `json:"html_symbol,omitempty"`
+HtmlSymbol NullableString `json:"html_symbol,omitempty"`
 }
 
 // NewCurrency instantiates a new Currency object
@@ -78,7 +78,7 @@ func (o *Currency) HasId() bool {
 // SetId gets a reference to the given NullableString and assigns it to the Id field.
 func (o *Currency) SetId(v string) *Currency {
 	o.Id.Set(&v)
-	return o
+		return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *Currency) SetIdNil() *Currency {
@@ -122,7 +122,7 @@ func (o *Currency) HasSymbol() bool {
 // SetSymbol gets a reference to the given NullableString and assigns it to the Symbol field.
 func (o *Currency) SetSymbol(v string) *Currency {
 	o.Symbol.Set(&v)
-	return o
+		return o
 }
 // SetSymbolNil sets the value for Symbol to be an explicit nil
 func (o *Currency) SetSymbolNil() *Currency {
@@ -166,7 +166,7 @@ func (o *Currency) HasExchangeRate() bool {
 // SetExchangeRate gets a reference to the given NullableString and assigns it to the ExchangeRate field.
 func (o *Currency) SetExchangeRate(v string) *Currency {
 	o.ExchangeRate.Set(&v)
-	return o
+		return o
 }
 // SetExchangeRateNil sets the value for ExchangeRate to be an explicit nil
 func (o *Currency) SetExchangeRateNil() *Currency {
@@ -210,7 +210,7 @@ func (o *Currency) HasHtmlSymbol() bool {
 // SetHtmlSymbol gets a reference to the given NullableString and assigns it to the HtmlSymbol field.
 func (o *Currency) SetHtmlSymbol(v string) *Currency {
 	o.HtmlSymbol.Set(&v)
-	return o
+		return o
 }
 // SetHtmlSymbolNil sets the value for HtmlSymbol to be an explicit nil
 func (o *Currency) SetHtmlSymbolNil() *Currency {

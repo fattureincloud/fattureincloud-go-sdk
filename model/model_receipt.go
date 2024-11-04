@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,32 +21,32 @@ var _ MappedNullable = &Receipt{}
 // Receipt struct for Receipt
 type Receipt struct {
 	// Receipt id
-	Id NullableInt32 `json:"id,omitempty"`
+Id NullableInt32 `json:"id,omitempty"`
 	// Receipt date
-	Date NullableString `json:"date,omitempty"`
+Date NullableString `json:"date,omitempty"`
 	// Receipt number
-	Number NullableFloat32 `json:"number,omitempty"`
+Number NullableFloat32 `json:"number,omitempty"`
 	// Receipt numeration
-	Numeration NullableString `json:"numeration,omitempty"`
+Numeration NullableString `json:"numeration,omitempty"`
 	// Receipt total net amount
-	AmountNet NullableFloat32 `json:"amount_net,omitempty"`
+AmountNet NullableFloat32 `json:"amount_net,omitempty"`
 	// Receipt total vat amount
-	AmountVat NullableFloat32 `json:"amount_vat,omitempty"`
+AmountVat NullableFloat32 `json:"amount_vat,omitempty"`
 	// Receipt total gross amount
-	AmountGross NullableFloat32 `json:"amount_gross,omitempty"`
+AmountGross NullableFloat32 `json:"amount_gross,omitempty"`
 	// Receipt uses gross prices
-	UseGrossPrices NullableBool `json:"use_gross_prices,omitempty"`
-	Type *ReceiptType `json:"type,omitempty"`
+UseGrossPrices NullableBool `json:"use_gross_prices,omitempty"`
+Type *ReceiptType `json:"type,omitempty"`
 	// Receipt description
-	Description NullableString `json:"description,omitempty"`
+Description NullableString `json:"description,omitempty"`
 	// Receipt revenue center
-	RcCenter NullableString `json:"rc_center,omitempty"`
+RcCenter NullableString `json:"rc_center,omitempty"`
 	// Receipt creation date
-	CreatedAt NullableString `json:"created_at,omitempty"`
+CreatedAt NullableString `json:"created_at,omitempty"`
 	// Receipt last update date
-	UpdatedAt NullableString `json:"updated_at,omitempty"`
-	PaymentAccount NullablePaymentAccount `json:"payment_account,omitempty"`
-	ItemsList []ReceiptItemsListItem `json:"items_list,omitempty"`
+UpdatedAt NullableString `json:"updated_at,omitempty"`
+PaymentAccount NullablePaymentAccount `json:"payment_account,omitempty"`
+ItemsList []ReceiptItemsListItem `json:"items_list,omitempty"`
 }
 
 // NewReceipt instantiates a new Receipt object
@@ -97,7 +97,7 @@ func (o *Receipt) HasId() bool {
 // SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *Receipt) SetId(v int32) *Receipt {
 	o.Id.Set(&v)
-	return o
+		return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *Receipt) SetIdNil() *Receipt {
@@ -141,7 +141,7 @@ func (o *Receipt) HasDate() bool {
 // SetDate gets a reference to the given NullableString and assigns it to the Date field.
 func (o *Receipt) SetDate(v string) *Receipt {
 	o.Date.Set(&v)
-	return o
+		return o
 }
 // SetDateNil sets the value for Date to be an explicit nil
 func (o *Receipt) SetDateNil() *Receipt {
@@ -185,7 +185,7 @@ func (o *Receipt) HasNumber() bool {
 // SetNumber gets a reference to the given NullableFloat32 and assigns it to the Number field.
 func (o *Receipt) SetNumber(v float32) *Receipt {
 	o.Number.Set(&v)
-	return o
+		return o
 }
 // SetNumberNil sets the value for Number to be an explicit nil
 func (o *Receipt) SetNumberNil() *Receipt {
@@ -229,7 +229,7 @@ func (o *Receipt) HasNumeration() bool {
 // SetNumeration gets a reference to the given NullableString and assigns it to the Numeration field.
 func (o *Receipt) SetNumeration(v string) *Receipt {
 	o.Numeration.Set(&v)
-	return o
+		return o
 }
 // SetNumerationNil sets the value for Numeration to be an explicit nil
 func (o *Receipt) SetNumerationNil() *Receipt {
@@ -273,7 +273,7 @@ func (o *Receipt) HasAmountNet() bool {
 // SetAmountNet gets a reference to the given NullableFloat32 and assigns it to the AmountNet field.
 func (o *Receipt) SetAmountNet(v float32) *Receipt {
 	o.AmountNet.Set(&v)
-	return o
+		return o
 }
 // SetAmountNetNil sets the value for AmountNet to be an explicit nil
 func (o *Receipt) SetAmountNetNil() *Receipt {
@@ -317,7 +317,7 @@ func (o *Receipt) HasAmountVat() bool {
 // SetAmountVat gets a reference to the given NullableFloat32 and assigns it to the AmountVat field.
 func (o *Receipt) SetAmountVat(v float32) *Receipt {
 	o.AmountVat.Set(&v)
-	return o
+		return o
 }
 // SetAmountVatNil sets the value for AmountVat to be an explicit nil
 func (o *Receipt) SetAmountVatNil() *Receipt {
@@ -361,7 +361,7 @@ func (o *Receipt) HasAmountGross() bool {
 // SetAmountGross gets a reference to the given NullableFloat32 and assigns it to the AmountGross field.
 func (o *Receipt) SetAmountGross(v float32) *Receipt {
 	o.AmountGross.Set(&v)
-	return o
+		return o
 }
 // SetAmountGrossNil sets the value for AmountGross to be an explicit nil
 func (o *Receipt) SetAmountGrossNil() *Receipt {
@@ -405,7 +405,7 @@ func (o *Receipt) HasUseGrossPrices() bool {
 // SetUseGrossPrices gets a reference to the given NullableBool and assigns it to the UseGrossPrices field.
 func (o *Receipt) SetUseGrossPrices(v bool) *Receipt {
 	o.UseGrossPrices.Set(&v)
-	return o
+		return o
 }
 // SetUseGrossPricesNil sets the value for UseGrossPrices to be an explicit nil
 func (o *Receipt) SetUseGrossPricesNil() *Receipt {
@@ -448,7 +448,7 @@ func (o *Receipt) HasType() bool {
 // SetType gets a reference to the given ReceiptType and assigns it to the Type field.
 func (o *Receipt) SetType(v ReceiptType) *Receipt {
 	o.Type = &v
-	return o
+		return o
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -482,7 +482,7 @@ func (o *Receipt) HasDescription() bool {
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *Receipt) SetDescription(v string) *Receipt {
 	o.Description.Set(&v)
-	return o
+		return o
 }
 // SetDescriptionNil sets the value for Description to be an explicit nil
 func (o *Receipt) SetDescriptionNil() *Receipt {
@@ -526,7 +526,7 @@ func (o *Receipt) HasRcCenter() bool {
 // SetRcCenter gets a reference to the given NullableString and assigns it to the RcCenter field.
 func (o *Receipt) SetRcCenter(v string) *Receipt {
 	o.RcCenter.Set(&v)
-	return o
+		return o
 }
 // SetRcCenterNil sets the value for RcCenter to be an explicit nil
 func (o *Receipt) SetRcCenterNil() *Receipt {
@@ -570,7 +570,7 @@ func (o *Receipt) HasCreatedAt() bool {
 // SetCreatedAt gets a reference to the given NullableString and assigns it to the CreatedAt field.
 func (o *Receipt) SetCreatedAt(v string) *Receipt {
 	o.CreatedAt.Set(&v)
-	return o
+		return o
 }
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *Receipt) SetCreatedAtNil() *Receipt {
@@ -614,7 +614,7 @@ func (o *Receipt) HasUpdatedAt() bool {
 // SetUpdatedAt gets a reference to the given NullableString and assigns it to the UpdatedAt field.
 func (o *Receipt) SetUpdatedAt(v string) *Receipt {
 	o.UpdatedAt.Set(&v)
-	return o
+		return o
 }
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *Receipt) SetUpdatedAtNil() *Receipt {
@@ -658,7 +658,7 @@ func (o *Receipt) HasPaymentAccount() bool {
 // SetPaymentAccount gets a reference to the given NullablePaymentAccount and assigns it to the PaymentAccount field.
 func (o *Receipt) SetPaymentAccount(v PaymentAccount) *Receipt {
 	o.PaymentAccount.Set(&v)
-	return o
+		return o
 }
 // SetPaymentAccountNil sets the value for PaymentAccount to be an explicit nil
 func (o *Receipt) SetPaymentAccountNil() *Receipt {
@@ -702,7 +702,7 @@ func (o *Receipt) HasItemsList() bool {
 // SetItemsList gets a reference to the given []ReceiptItemsListItem and assigns it to the ItemsList field.
 func (o *Receipt) SetItemsList(v []ReceiptItemsListItem) *Receipt {
 	o.ItemsList = v
-	return o
+		return o
 }
 
 func (o Receipt) MarshalJSON() ([]byte, error) {

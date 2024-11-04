@@ -27,28 +27,28 @@ Create Archive Document
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    createArchiveDocumentRequest := *fattureincloud.NewCreateArchiveDocumentRequest() // CreateArchiveDocumentRequest | The Archive Document. (optional)
+		companyId := int32(12345) // int32 | The ID of the company.
+		createArchiveDocumentRequest := *fattureincloud.NewCreateArchiveDocumentRequest() // CreateArchiveDocumentRequest | The Archive Document. (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArchiveAPI.CreateArchiveDocument(auth, companyId).CreateArchiveDocumentRequest(createArchiveDocumentRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ArchiveAPI.CreateArchiveDocument``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateArchiveDocument`: CreateArchiveDocumentResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.ArchiveAPI.CreateArchiveDocument(auth, companyId).CreateArchiveDocumentRequest(createArchiveDocumentRequest).Execute()
+	if err != nil {
+	fmt.Fprintf(os.Stderr, "Error when calling `ArchiveAPI.CreateArchiveDocument``: %v\n", err)
+	fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+		// response from `CreateArchiveDocument`: CreateArchiveDocumentResponse
+		json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -102,26 +102,26 @@ Delete Archive Document
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    documentId := int32(56) // int32 | The ID of the document.
+		companyId := int32(12345) // int32 | The ID of the company.
+		documentId := int32(56) // int32 | The ID of the document.
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArchiveAPI.DeleteArchiveDocument(auth, companyId, documentId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ArchiveAPI.DeleteArchiveDocument``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.ArchiveAPI.DeleteArchiveDocument(auth, companyId, documentId).Execute()
+	if err != nil {
+	fmt.Fprintf(os.Stderr, "Error when calling `ArchiveAPI.DeleteArchiveDocument``: %v\n", err)
+	fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -176,30 +176,30 @@ Get Archive Document
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    documentId := int32(56) // int32 | The ID of the document.
-    fields := "fields_example" // string | List of comma-separated fields. (optional)
-    fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
+		companyId := int32(12345) // int32 | The ID of the company.
+		documentId := int32(56) // int32 | The ID of the document.
+		fields := "fields_example" // string | List of comma-separated fields. (optional)
+		fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArchiveAPI.GetArchiveDocument(auth, companyId, documentId).Fields(fields).Fieldset(fieldset).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ArchiveAPI.GetArchiveDocument``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetArchiveDocument`: GetArchiveDocumentResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.ArchiveAPI.GetArchiveDocument(auth, companyId, documentId).Fields(fields).Fieldset(fieldset).Execute()
+	if err != nil {
+	fmt.Fprintf(os.Stderr, "Error when calling `ArchiveAPI.GetArchiveDocument``: %v\n", err)
+	fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+		// response from `GetArchiveDocument`: GetArchiveDocumentResponse
+		json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -256,33 +256,33 @@ List Archive Documents
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    fields := "fields_example" // string | List of comma-separated fields. (optional)
-    fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
-    sort := "sort_example" // string | List of comma-separated fields for result sorting (minus for desc sorting). (optional)
-    page := int32(56) // int32 | The page to retrieve. (optional) (default to 1)
-    perPage := int32(56) // int32 | The size of the page. (optional) (default to 5)
-    q := "q_example" // string | Query for filtering the results. (optional)
+		companyId := int32(12345) // int32 | The ID of the company.
+		fields := "fields_example" // string | List of comma-separated fields. (optional)
+		fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
+		sort := "sort_example" // string | List of comma-separated fields for result sorting (minus for desc sorting). (optional)
+		page := int32(56) // int32 | The page to retrieve. (optional) (default to 1)
+		perPage := int32(56) // int32 | The size of the page. (optional) (default to 5)
+		q := "q_example" // string | Query for filtering the results. (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArchiveAPI.ListArchiveDocuments(auth, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ArchiveAPI.ListArchiveDocuments``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListArchiveDocuments`: ListArchiveDocumentsResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.ArchiveAPI.ListArchiveDocuments(auth, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
+	if err != nil {
+	fmt.Fprintf(os.Stderr, "Error when calling `ArchiveAPI.ListArchiveDocuments``: %v\n", err)
+	fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+		// response from `ListArchiveDocuments`: ListArchiveDocumentsResponse
+		json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -341,29 +341,29 @@ Modify Archive Document
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    documentId := int32(56) // int32 | The ID of the document.
-    modifyArchiveDocumentRequest := *fattureincloud.NewModifyArchiveDocumentRequest() // ModifyArchiveDocumentRequest | Modified Archive Document (optional)
+		companyId := int32(12345) // int32 | The ID of the company.
+		documentId := int32(56) // int32 | The ID of the document.
+		modifyArchiveDocumentRequest := *fattureincloud.NewModifyArchiveDocumentRequest() // ModifyArchiveDocumentRequest | Modified Archive Document (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArchiveAPI.ModifyArchiveDocument(auth, companyId, documentId).ModifyArchiveDocumentRequest(modifyArchiveDocumentRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ArchiveAPI.ModifyArchiveDocument``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ModifyArchiveDocument`: ModifyArchiveDocumentResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.ArchiveAPI.ModifyArchiveDocument(auth, companyId, documentId).ModifyArchiveDocumentRequest(modifyArchiveDocumentRequest).Execute()
+	if err != nil {
+	fmt.Fprintf(os.Stderr, "Error when calling `ArchiveAPI.ModifyArchiveDocument``: %v\n", err)
+	fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+		// response from `ModifyArchiveDocument`: ModifyArchiveDocumentResponse
+		json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -419,29 +419,29 @@ Upload Archive Document Attachment
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    filename := "filename_example" // string | Attachment file name (optional)
-    attachment := os.NewFile(1234, "some_file") // *os.File | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx] (optional)
+		companyId := int32(12345) // int32 | The ID of the company.
+		filename := "filename_example" // string | Attachment file name (optional)
+		attachment := os.NewFile(1234, "some_file") // *os.File | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx] (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArchiveAPI.UploadArchiveDocumentAttachment(auth, companyId).Filename(filename).Attachment(attachment).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ArchiveAPI.UploadArchiveDocumentAttachment``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UploadArchiveDocumentAttachment`: UploadArchiveAttachmentResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.ArchiveAPI.UploadArchiveDocumentAttachment(auth, companyId).Filename(filename).Attachment(attachment).Execute()
+	if err != nil {
+	fmt.Fprintf(os.Stderr, "Error when calling `ArchiveAPI.UploadArchiveDocumentAttachment``: %v\n", err)
+	fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+		// response from `UploadArchiveDocumentAttachment`: UploadArchiveAttachmentResponse
+		json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 

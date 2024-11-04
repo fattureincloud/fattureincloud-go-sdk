@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,8 +21,8 @@ var _ MappedNullable = &ReceivedDocumentPaymentsListItemPaymentTerms{}
 // ReceivedDocumentPaymentsListItemPaymentTerms struct for ReceivedDocumentPaymentsListItemPaymentTerms
 type ReceivedDocumentPaymentsListItemPaymentTerms struct {
 	// Received document payment number of days by which the payment must be made
-	Days NullableInt32 `json:"days,omitempty"`
-	Type *PaymentTermsType `json:"type,omitempty"`
+Days NullableInt32 `json:"days,omitempty"`
+Type *PaymentTermsType `json:"type,omitempty"`
 }
 
 // NewReceivedDocumentPaymentsListItemPaymentTerms instantiates a new ReceivedDocumentPaymentsListItemPaymentTerms object
@@ -75,7 +75,7 @@ func (o *ReceivedDocumentPaymentsListItemPaymentTerms) HasDays() bool {
 // SetDays gets a reference to the given NullableInt32 and assigns it to the Days field.
 func (o *ReceivedDocumentPaymentsListItemPaymentTerms) SetDays(v int32) *ReceivedDocumentPaymentsListItemPaymentTerms {
 	o.Days.Set(&v)
-	return o
+		return o
 }
 // SetDaysNil sets the value for Days to be an explicit nil
 func (o *ReceivedDocumentPaymentsListItemPaymentTerms) SetDaysNil() *ReceivedDocumentPaymentsListItemPaymentTerms {
@@ -118,7 +118,7 @@ func (o *ReceivedDocumentPaymentsListItemPaymentTerms) HasType() bool {
 // SetType gets a reference to the given PaymentTermsType and assigns it to the Type field.
 func (o *ReceivedDocumentPaymentsListItemPaymentTerms) SetType(v PaymentTermsType) *ReceivedDocumentPaymentsListItemPaymentTerms {
 	o.Type = &v
-	return o
+		return o
 }
 
 func (o ReceivedDocumentPaymentsListItemPaymentTerms) MarshalJSON() ([]byte, error) {

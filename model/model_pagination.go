@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,27 +21,27 @@ var _ MappedNullable = &Pagination{}
 // Pagination 
 type Pagination struct {
 	// Current page number.
-	CurrentPage NullableInt32 `json:"current_page,omitempty"`
+CurrentPage NullableInt32 `json:"current_page,omitempty"`
 	// First page url.
-	FirstPageUrl NullableString `json:"first_page_url,omitempty"`
+FirstPageUrl NullableString `json:"first_page_url,omitempty"`
 	// First result of the page.
-	From NullableInt32 `json:"from,omitempty"`
+From NullableInt32 `json:"from,omitempty"`
 	// Last page number.
-	LastPage NullableInt32 `json:"last_page,omitempty"`
+LastPage NullableInt32 `json:"last_page,omitempty"`
 	// Last page url.
-	LastPageUrl NullableString `json:"last_page_url,omitempty"`
+LastPageUrl NullableString `json:"last_page_url,omitempty"`
 	// Next page url
-	NextPageUrl NullableString `json:"next_page_url,omitempty"`
+NextPageUrl NullableString `json:"next_page_url,omitempty"`
 	// Request path.
-	Path NullableString `json:"path,omitempty"`
+Path NullableString `json:"path,omitempty"`
 	// Number of result per page.
-	PerPage NullableInt32 `json:"per_page,omitempty"`
+PerPage NullableInt32 `json:"per_page,omitempty"`
 	// Previous page url.
-	PrevPageUrl NullableString `json:"prev_page_url,omitempty"`
+PrevPageUrl NullableString `json:"prev_page_url,omitempty"`
 	// Last result of the page.
-	To NullableInt32 `json:"to,omitempty"`
+To NullableInt32 `json:"to,omitempty"`
 	// Total number of results
-	Total NullableInt32 `json:"total,omitempty"`
+Total NullableInt32 `json:"total,omitempty"`
 }
 
 // NewPagination instantiates a new Pagination object
@@ -92,7 +92,7 @@ func (o *Pagination) HasCurrentPage() bool {
 // SetCurrentPage gets a reference to the given NullableInt32 and assigns it to the CurrentPage field.
 func (o *Pagination) SetCurrentPage(v int32) *Pagination {
 	o.CurrentPage.Set(&v)
-	return o
+		return o
 }
 // SetCurrentPageNil sets the value for CurrentPage to be an explicit nil
 func (o *Pagination) SetCurrentPageNil() *Pagination {
@@ -136,7 +136,7 @@ func (o *Pagination) HasFirstPageUrl() bool {
 // SetFirstPageUrl gets a reference to the given NullableString and assigns it to the FirstPageUrl field.
 func (o *Pagination) SetFirstPageUrl(v string) *Pagination {
 	o.FirstPageUrl.Set(&v)
-	return o
+		return o
 }
 // SetFirstPageUrlNil sets the value for FirstPageUrl to be an explicit nil
 func (o *Pagination) SetFirstPageUrlNil() *Pagination {
@@ -180,7 +180,7 @@ func (o *Pagination) HasFrom() bool {
 // SetFrom gets a reference to the given NullableInt32 and assigns it to the From field.
 func (o *Pagination) SetFrom(v int32) *Pagination {
 	o.From.Set(&v)
-	return o
+		return o
 }
 // SetFromNil sets the value for From to be an explicit nil
 func (o *Pagination) SetFromNil() *Pagination {
@@ -224,7 +224,7 @@ func (o *Pagination) HasLastPage() bool {
 // SetLastPage gets a reference to the given NullableInt32 and assigns it to the LastPage field.
 func (o *Pagination) SetLastPage(v int32) *Pagination {
 	o.LastPage.Set(&v)
-	return o
+		return o
 }
 // SetLastPageNil sets the value for LastPage to be an explicit nil
 func (o *Pagination) SetLastPageNil() *Pagination {
@@ -268,7 +268,7 @@ func (o *Pagination) HasLastPageUrl() bool {
 // SetLastPageUrl gets a reference to the given NullableString and assigns it to the LastPageUrl field.
 func (o *Pagination) SetLastPageUrl(v string) *Pagination {
 	o.LastPageUrl.Set(&v)
-	return o
+		return o
 }
 // SetLastPageUrlNil sets the value for LastPageUrl to be an explicit nil
 func (o *Pagination) SetLastPageUrlNil() *Pagination {
@@ -312,7 +312,7 @@ func (o *Pagination) HasNextPageUrl() bool {
 // SetNextPageUrl gets a reference to the given NullableString and assigns it to the NextPageUrl field.
 func (o *Pagination) SetNextPageUrl(v string) *Pagination {
 	o.NextPageUrl.Set(&v)
-	return o
+		return o
 }
 // SetNextPageUrlNil sets the value for NextPageUrl to be an explicit nil
 func (o *Pagination) SetNextPageUrlNil() *Pagination {
@@ -356,7 +356,7 @@ func (o *Pagination) HasPath() bool {
 // SetPath gets a reference to the given NullableString and assigns it to the Path field.
 func (o *Pagination) SetPath(v string) *Pagination {
 	o.Path.Set(&v)
-	return o
+		return o
 }
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *Pagination) SetPathNil() *Pagination {
@@ -400,7 +400,7 @@ func (o *Pagination) HasPerPage() bool {
 // SetPerPage gets a reference to the given NullableInt32 and assigns it to the PerPage field.
 func (o *Pagination) SetPerPage(v int32) *Pagination {
 	o.PerPage.Set(&v)
-	return o
+		return o
 }
 // SetPerPageNil sets the value for PerPage to be an explicit nil
 func (o *Pagination) SetPerPageNil() *Pagination {
@@ -444,7 +444,7 @@ func (o *Pagination) HasPrevPageUrl() bool {
 // SetPrevPageUrl gets a reference to the given NullableString and assigns it to the PrevPageUrl field.
 func (o *Pagination) SetPrevPageUrl(v string) *Pagination {
 	o.PrevPageUrl.Set(&v)
-	return o
+		return o
 }
 // SetPrevPageUrlNil sets the value for PrevPageUrl to be an explicit nil
 func (o *Pagination) SetPrevPageUrlNil() *Pagination {
@@ -488,7 +488,7 @@ func (o *Pagination) HasTo() bool {
 // SetTo gets a reference to the given NullableInt32 and assigns it to the To field.
 func (o *Pagination) SetTo(v int32) *Pagination {
 	o.To.Set(&v)
-	return o
+		return o
 }
 // SetToNil sets the value for To to be an explicit nil
 func (o *Pagination) SetToNil() *Pagination {
@@ -532,7 +532,7 @@ func (o *Pagination) HasTotal() bool {
 // SetTotal gets a reference to the given NullableInt32 and assigns it to the Total field.
 func (o *Pagination) SetTotal(v int32) *Pagination {
 	o.Total.Set(&v)
-	return o
+		return o
 }
 // SetTotalNil sets the value for Total to be an explicit nil
 func (o *Pagination) SetTotalNil() *Pagination {

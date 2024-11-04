@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,9 +21,9 @@ var _ MappedNullable = &Language{}
 // Language struct for Language
 type Language struct {
 	// Language code
-	Code NullableString `json:"code,omitempty"`
+Code NullableString `json:"code,omitempty"`
 	// Language extended name
-	Name NullableString `json:"name,omitempty"`
+Name NullableString `json:"name,omitempty"`
 }
 
 // NewLanguage instantiates a new Language object
@@ -74,7 +74,7 @@ func (o *Language) HasCode() bool {
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *Language) SetCode(v string) *Language {
 	o.Code.Set(&v)
-	return o
+		return o
 }
 // SetCodeNil sets the value for Code to be an explicit nil
 func (o *Language) SetCodeNil() *Language {
@@ -118,7 +118,7 @@ func (o *Language) HasName() bool {
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *Language) SetName(v string) *Language {
 	o.Name.Set(&v)
-	return o
+		return o
 }
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *Language) SetNameNil() *Language {

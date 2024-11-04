@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -19,7 +19,7 @@ import (
 	"net/url"
 	"strings"
 	"os"
-	. "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+		. "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 
@@ -626,10 +626,10 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentExecute(r ApiGetReceive
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "form", "")
 	}
 	if r.fieldset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -744,7 +744,7 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentPreCreateInfoExecute(r 
 		return localVarReturnValue, nil, reportError("type_ is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -900,30 +900,30 @@ func (a *ReceivedDocumentsAPIService) ListReceivedDocumentsExecute(r ApiListRece
 		return localVarReturnValue, nil, reportError("type_ is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "form", "")
 	if r.fields != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "form", "")
 	}
 	if r.fieldset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "form", "")
 	}
 	if r.sort != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "form", "")
 	}
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	} else {
 		var defaultValue int32 = 1
 		r.page = &defaultValue
 	}
 	if r.perPage != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "form", "")
 	} else {
 		var defaultValue int32 = 5
 		r.perPage = &defaultValue
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1176,7 +1176,7 @@ func (a *ReceivedDocumentsAPIService) UploadReceivedDocumentAttachmentExecute(r 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.filename != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "filename", r.filename, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "filename", r.filename, "", "")
 	}
 	var attachmentLocalVarFormFileName string
 	var attachmentLocalVarFileName     string

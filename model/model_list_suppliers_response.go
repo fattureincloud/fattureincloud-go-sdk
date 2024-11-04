@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,28 +21,28 @@ var _ MappedNullable = &ListSuppliersResponse{}
 // ListSuppliersResponse struct for ListSuppliersResponse
 type ListSuppliersResponse struct {
 	// Current page number.
-	CurrentPage NullableInt32 `json:"current_page,omitempty"`
+CurrentPage NullableInt32 `json:"current_page,omitempty"`
 	// First page url.
-	FirstPageUrl NullableString `json:"first_page_url,omitempty"`
+FirstPageUrl NullableString `json:"first_page_url,omitempty"`
 	// First result of the page.
-	From NullableInt32 `json:"from,omitempty"`
+From NullableInt32 `json:"from,omitempty"`
 	// Last page number.
-	LastPage NullableInt32 `json:"last_page,omitempty"`
+LastPage NullableInt32 `json:"last_page,omitempty"`
 	// Last page url.
-	LastPageUrl NullableString `json:"last_page_url,omitempty"`
+LastPageUrl NullableString `json:"last_page_url,omitempty"`
 	// Next page url
-	NextPageUrl NullableString `json:"next_page_url,omitempty"`
+NextPageUrl NullableString `json:"next_page_url,omitempty"`
 	// Request path.
-	Path NullableString `json:"path,omitempty"`
+Path NullableString `json:"path,omitempty"`
 	// Number of result per page.
-	PerPage NullableInt32 `json:"per_page,omitempty"`
+PerPage NullableInt32 `json:"per_page,omitempty"`
 	// Previous page url.
-	PrevPageUrl NullableString `json:"prev_page_url,omitempty"`
+PrevPageUrl NullableString `json:"prev_page_url,omitempty"`
 	// Last result of the page.
-	To NullableInt32 `json:"to,omitempty"`
+To NullableInt32 `json:"to,omitempty"`
 	// Total number of results
-	Total NullableInt32 `json:"total,omitempty"`
-	Data []Supplier `json:"data,omitempty"`
+Total NullableInt32 `json:"total,omitempty"`
+Data []Supplier `json:"data,omitempty"`
 }
 
 // NewListSuppliersResponse instantiates a new ListSuppliersResponse object
@@ -93,7 +93,7 @@ func (o *ListSuppliersResponse) HasCurrentPage() bool {
 // SetCurrentPage gets a reference to the given NullableInt32 and assigns it to the CurrentPage field.
 func (o *ListSuppliersResponse) SetCurrentPage(v int32) *ListSuppliersResponse {
 	o.CurrentPage.Set(&v)
-	return o
+		return o
 }
 // SetCurrentPageNil sets the value for CurrentPage to be an explicit nil
 func (o *ListSuppliersResponse) SetCurrentPageNil() *ListSuppliersResponse {
@@ -137,7 +137,7 @@ func (o *ListSuppliersResponse) HasFirstPageUrl() bool {
 // SetFirstPageUrl gets a reference to the given NullableString and assigns it to the FirstPageUrl field.
 func (o *ListSuppliersResponse) SetFirstPageUrl(v string) *ListSuppliersResponse {
 	o.FirstPageUrl.Set(&v)
-	return o
+		return o
 }
 // SetFirstPageUrlNil sets the value for FirstPageUrl to be an explicit nil
 func (o *ListSuppliersResponse) SetFirstPageUrlNil() *ListSuppliersResponse {
@@ -181,7 +181,7 @@ func (o *ListSuppliersResponse) HasFrom() bool {
 // SetFrom gets a reference to the given NullableInt32 and assigns it to the From field.
 func (o *ListSuppliersResponse) SetFrom(v int32) *ListSuppliersResponse {
 	o.From.Set(&v)
-	return o
+		return o
 }
 // SetFromNil sets the value for From to be an explicit nil
 func (o *ListSuppliersResponse) SetFromNil() *ListSuppliersResponse {
@@ -225,7 +225,7 @@ func (o *ListSuppliersResponse) HasLastPage() bool {
 // SetLastPage gets a reference to the given NullableInt32 and assigns it to the LastPage field.
 func (o *ListSuppliersResponse) SetLastPage(v int32) *ListSuppliersResponse {
 	o.LastPage.Set(&v)
-	return o
+		return o
 }
 // SetLastPageNil sets the value for LastPage to be an explicit nil
 func (o *ListSuppliersResponse) SetLastPageNil() *ListSuppliersResponse {
@@ -269,7 +269,7 @@ func (o *ListSuppliersResponse) HasLastPageUrl() bool {
 // SetLastPageUrl gets a reference to the given NullableString and assigns it to the LastPageUrl field.
 func (o *ListSuppliersResponse) SetLastPageUrl(v string) *ListSuppliersResponse {
 	o.LastPageUrl.Set(&v)
-	return o
+		return o
 }
 // SetLastPageUrlNil sets the value for LastPageUrl to be an explicit nil
 func (o *ListSuppliersResponse) SetLastPageUrlNil() *ListSuppliersResponse {
@@ -313,7 +313,7 @@ func (o *ListSuppliersResponse) HasNextPageUrl() bool {
 // SetNextPageUrl gets a reference to the given NullableString and assigns it to the NextPageUrl field.
 func (o *ListSuppliersResponse) SetNextPageUrl(v string) *ListSuppliersResponse {
 	o.NextPageUrl.Set(&v)
-	return o
+		return o
 }
 // SetNextPageUrlNil sets the value for NextPageUrl to be an explicit nil
 func (o *ListSuppliersResponse) SetNextPageUrlNil() *ListSuppliersResponse {
@@ -357,7 +357,7 @@ func (o *ListSuppliersResponse) HasPath() bool {
 // SetPath gets a reference to the given NullableString and assigns it to the Path field.
 func (o *ListSuppliersResponse) SetPath(v string) *ListSuppliersResponse {
 	o.Path.Set(&v)
-	return o
+		return o
 }
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *ListSuppliersResponse) SetPathNil() *ListSuppliersResponse {
@@ -401,7 +401,7 @@ func (o *ListSuppliersResponse) HasPerPage() bool {
 // SetPerPage gets a reference to the given NullableInt32 and assigns it to the PerPage field.
 func (o *ListSuppliersResponse) SetPerPage(v int32) *ListSuppliersResponse {
 	o.PerPage.Set(&v)
-	return o
+		return o
 }
 // SetPerPageNil sets the value for PerPage to be an explicit nil
 func (o *ListSuppliersResponse) SetPerPageNil() *ListSuppliersResponse {
@@ -445,7 +445,7 @@ func (o *ListSuppliersResponse) HasPrevPageUrl() bool {
 // SetPrevPageUrl gets a reference to the given NullableString and assigns it to the PrevPageUrl field.
 func (o *ListSuppliersResponse) SetPrevPageUrl(v string) *ListSuppliersResponse {
 	o.PrevPageUrl.Set(&v)
-	return o
+		return o
 }
 // SetPrevPageUrlNil sets the value for PrevPageUrl to be an explicit nil
 func (o *ListSuppliersResponse) SetPrevPageUrlNil() *ListSuppliersResponse {
@@ -489,7 +489,7 @@ func (o *ListSuppliersResponse) HasTo() bool {
 // SetTo gets a reference to the given NullableInt32 and assigns it to the To field.
 func (o *ListSuppliersResponse) SetTo(v int32) *ListSuppliersResponse {
 	o.To.Set(&v)
-	return o
+		return o
 }
 // SetToNil sets the value for To to be an explicit nil
 func (o *ListSuppliersResponse) SetToNil() *ListSuppliersResponse {
@@ -533,7 +533,7 @@ func (o *ListSuppliersResponse) HasTotal() bool {
 // SetTotal gets a reference to the given NullableInt32 and assigns it to the Total field.
 func (o *ListSuppliersResponse) SetTotal(v int32) *ListSuppliersResponse {
 	o.Total.Set(&v)
-	return o
+		return o
 }
 // SetTotalNil sets the value for Total to be an explicit nil
 func (o *ListSuppliersResponse) SetTotalNil() *ListSuppliersResponse {
@@ -577,7 +577,7 @@ func (o *ListSuppliersResponse) HasData() bool {
 // SetData gets a reference to the given []Supplier and assigns it to the Data field.
 func (o *ListSuppliersResponse) SetData(v []Supplier) *ListSuppliersResponse {
 	o.Data = v
-	return o
+		return o
 }
 
 func (o ListSuppliersResponse) MarshalJSON() ([]byte, error) {

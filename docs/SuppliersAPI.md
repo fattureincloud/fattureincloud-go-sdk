@@ -26,28 +26,28 @@ Create Supplier
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    createSupplierRequest := *fattureincloud.NewCreateSupplierRequest() // CreateSupplierRequest | The supplier to create (optional)
+		companyId := int32(12345) // int32 | The ID of the company.
+		createSupplierRequest := *fattureincloud.NewCreateSupplierRequest() // CreateSupplierRequest | The supplier to create (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.SuppliersAPI.CreateSupplier(auth, companyId).CreateSupplierRequest(createSupplierRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SuppliersAPI.CreateSupplier``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateSupplier`: CreateSupplierResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.SuppliersAPI.CreateSupplier(auth, companyId).CreateSupplierRequest(createSupplierRequest).Execute()
+	if err != nil {
+	fmt.Fprintf(os.Stderr, "Error when calling `SuppliersAPI.CreateSupplier``: %v\n", err)
+	fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+		// response from `CreateSupplier`: CreateSupplierResponse
+		json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -101,26 +101,26 @@ Delete Supplier
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    supplierId := int32(56) // int32 | The ID of the supplier.
+		companyId := int32(12345) // int32 | The ID of the company.
+		supplierId := int32(56) // int32 | The ID of the supplier.
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.SuppliersAPI.DeleteSupplier(auth, companyId, supplierId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SuppliersAPI.DeleteSupplier``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.SuppliersAPI.DeleteSupplier(auth, companyId, supplierId).Execute()
+	if err != nil {
+	fmt.Fprintf(os.Stderr, "Error when calling `SuppliersAPI.DeleteSupplier``: %v\n", err)
+	fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -175,30 +175,30 @@ Get Supplier
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    supplierId := int32(56) // int32 | The ID of the supplier.
-    fields := "fields_example" // string | List of comma-separated fields. (optional)
-    fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
+		companyId := int32(12345) // int32 | The ID of the company.
+		supplierId := int32(56) // int32 | The ID of the supplier.
+		fields := "fields_example" // string | List of comma-separated fields. (optional)
+		fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.SuppliersAPI.GetSupplier(auth, companyId, supplierId).Fields(fields).Fieldset(fieldset).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SuppliersAPI.GetSupplier``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSupplier`: GetSupplierResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.SuppliersAPI.GetSupplier(auth, companyId, supplierId).Fields(fields).Fieldset(fieldset).Execute()
+	if err != nil {
+	fmt.Fprintf(os.Stderr, "Error when calling `SuppliersAPI.GetSupplier``: %v\n", err)
+	fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+		// response from `GetSupplier`: GetSupplierResponse
+		json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -255,33 +255,33 @@ List Suppliers
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    fields := "fields_example" // string | List of comma-separated fields. (optional)
-    fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
-    sort := "sort_example" // string | List of comma-separated fields for result sorting (minus for desc sorting). (optional)
-    page := int32(56) // int32 | The page to retrieve. (optional) (default to 1)
-    perPage := int32(56) // int32 | The size of the page. (optional) (default to 5)
-    q := "q_example" // string | Query for filtering the results. (optional)
+		companyId := int32(12345) // int32 | The ID of the company.
+		fields := "fields_example" // string | List of comma-separated fields. (optional)
+		fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
+		sort := "sort_example" // string | List of comma-separated fields for result sorting (minus for desc sorting). (optional)
+		page := int32(56) // int32 | The page to retrieve. (optional) (default to 1)
+		perPage := int32(56) // int32 | The size of the page. (optional) (default to 5)
+		q := "q_example" // string | Query for filtering the results. (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.SuppliersAPI.ListSuppliers(auth, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SuppliersAPI.ListSuppliers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListSuppliers`: ListSuppliersResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.SuppliersAPI.ListSuppliers(auth, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
+	if err != nil {
+	fmt.Fprintf(os.Stderr, "Error when calling `SuppliersAPI.ListSuppliers``: %v\n", err)
+	fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+		// response from `ListSuppliers`: ListSuppliersResponse
+		json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -340,29 +340,29 @@ Modify Supplier
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    supplierId := int32(56) // int32 | The ID of the supplier.
-    modifySupplierRequest := *fattureincloud.NewModifySupplierRequest() // ModifySupplierRequest | The modified Supplier. First level parameters are managed in delta mode. (optional)
+		companyId := int32(12345) // int32 | The ID of the company.
+		supplierId := int32(56) // int32 | The ID of the supplier.
+		modifySupplierRequest := *fattureincloud.NewModifySupplierRequest() // ModifySupplierRequest | The modified Supplier. First level parameters are managed in delta mode. (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.SuppliersAPI.ModifySupplier(auth, companyId, supplierId).ModifySupplierRequest(modifySupplierRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SuppliersAPI.ModifySupplier``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ModifySupplier`: ModifySupplierResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.SuppliersAPI.ModifySupplier(auth, companyId, supplierId).ModifySupplierRequest(modifySupplierRequest).Execute()
+	if err != nil {
+	fmt.Fprintf(os.Stderr, "Error when calling `SuppliersAPI.ModifySupplier``: %v\n", err)
+	fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+		// response from `ModifySupplier`: ModifySupplierResponse
+		json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,73 +21,73 @@ var _ MappedNullable = &Entity{}
 // Entity struct for Entity
 type Entity struct {
 	// Entity id
-	Id NullableInt32 `json:"id,omitempty"`
+Id NullableInt32 `json:"id,omitempty"`
 	// Entity code
-	Code NullableString `json:"code,omitempty"`
+Code NullableString `json:"code,omitempty"`
 	// Entity name
-	Name NullableString `json:"name,omitempty"`
-	Type NullableEntityType `json:"type,omitempty"`
+Name NullableString `json:"name,omitempty"`
+Type NullableEntityType `json:"type,omitempty"`
 	// Entity first name
-	FirstName NullableString `json:"first_name,omitempty"`
+FirstName NullableString `json:"first_name,omitempty"`
 	// Entity last name
-	LastName NullableString `json:"last_name,omitempty"`
+LastName NullableString `json:"last_name,omitempty"`
 	// Entity contact person
-	ContactPerson NullableString `json:"contact_person,omitempty"`
+ContactPerson NullableString `json:"contact_person,omitempty"`
 	// Entity vat number
-	VatNumber NullableString `json:"vat_number,omitempty"`
+VatNumber NullableString `json:"vat_number,omitempty"`
 	// Entity tax code
-	TaxCode NullableString `json:"tax_code,omitempty"`
+TaxCode NullableString `json:"tax_code,omitempty"`
 	// Entitity address street
-	AddressStreet NullableString `json:"address_street,omitempty"`
+AddressStreet NullableString `json:"address_street,omitempty"`
 	// Entity address postal code
-	AddressPostalCode NullableString `json:"address_postal_code,omitempty"`
+AddressPostalCode NullableString `json:"address_postal_code,omitempty"`
 	// Entity address city
-	AddressCity NullableString `json:"address_city,omitempty"`
+AddressCity NullableString `json:"address_city,omitempty"`
 	// Entity address province
-	AddressProvince NullableString `json:"address_province,omitempty"`
+AddressProvince NullableString `json:"address_province,omitempty"`
 	// Entity address extra info
-	AddressExtra NullableString `json:"address_extra,omitempty"`
+AddressExtra NullableString `json:"address_extra,omitempty"`
 	// Entity country
-	Country NullableString `json:"country,omitempty"`
+Country NullableString `json:"country,omitempty"`
 	// Entity country iso code
-	CountryIso NullableString `json:"country_iso,omitempty"`
+CountryIso NullableString `json:"country_iso,omitempty"`
 	// Entity email
-	Email NullableString `json:"email,omitempty"`
+Email NullableString `json:"email,omitempty"`
 	// Entity certified email
-	CertifiedEmail NullableString `json:"certified_email,omitempty"`
+CertifiedEmail NullableString `json:"certified_email,omitempty"`
 	// Entity phone
-	Phone NullableString `json:"phone,omitempty"`
+Phone NullableString `json:"phone,omitempty"`
 	// Entity fax
-	Fax NullableString `json:"fax,omitempty"`
+Fax NullableString `json:"fax,omitempty"`
 	// Entity extra
-	Notes NullableString `json:"notes,omitempty"`
+Notes NullableString `json:"notes,omitempty"`
 	// [Only for client] Client default payment terms
-	DefaultPaymentTerms NullableInt32 `json:"default_payment_terms,omitempty"`
-	DefaultVat NullableVatType `json:"default_vat,omitempty"`
-	DefaultPaymentTermsType *PaymentTermsType `json:"default_payment_terms_type,omitempty"`
-	DefaultPaymentMethod *PaymentMethod `json:"default_payment_method,omitempty"`
+DefaultPaymentTerms NullableInt32 `json:"default_payment_terms,omitempty"`
+DefaultVat NullableVatType `json:"default_vat,omitempty"`
+DefaultPaymentTermsType *PaymentTermsType `json:"default_payment_terms_type,omitempty"`
+DefaultPaymentMethod *PaymentMethod `json:"default_payment_method,omitempty"`
 	// [Only for client] Client bank name
-	BankName NullableString `json:"bank_name,omitempty"`
+BankName NullableString `json:"bank_name,omitempty"`
 	// [Only for client] Client bank iban
-	BankIban NullableString `json:"bank_iban,omitempty"`
+BankIban NullableString `json:"bank_iban,omitempty"`
 	// [Only for client] Client bank swift code
-	BankSwiftCode NullableString `json:"bank_swift_code,omitempty"`
+BankSwiftCode NullableString `json:"bank_swift_code,omitempty"`
 	// [Only for client] Client Shipping address
-	ShippingAddress NullableString `json:"shipping_address,omitempty"`
+ShippingAddress NullableString `json:"shipping_address,omitempty"`
 	// [Only for client] Use e-invoices.
-	EInvoice NullableBool `json:"e_invoice,omitempty"`
+EInvoice NullableBool `json:"e_invoice,omitempty"`
 	// [Only for client] E-invoices code.
-	EiCode NullableString `json:"ei_code,omitempty"`
+EiCode NullableString `json:"ei_code,omitempty"`
 	// [Only for client] Has intent declaration.
-	HasIntentDeclaration NullableBool `json:"has_intent_declaration,omitempty"`
+HasIntentDeclaration NullableBool `json:"has_intent_declaration,omitempty"`
 	// [Only for client] Client intent declaration protocol number
-	IntentDeclarationProtocolNumber NullableString `json:"intent_declaration_protocol_number,omitempty"`
+IntentDeclarationProtocolNumber NullableString `json:"intent_declaration_protocol_number,omitempty"`
 	// [Only for client] Client intent declaration protocol date
-	IntentDeclarationProtocolDate NullableString `json:"intent_declaration_protocol_date,omitempty"`
+IntentDeclarationProtocolDate NullableString `json:"intent_declaration_protocol_date,omitempty"`
 	// Entity creation date
-	CreatedAt NullableString `json:"created_at,omitempty"`
+CreatedAt NullableString `json:"created_at,omitempty"`
 	// Entity last update date
-	UpdatedAt NullableString `json:"updated_at,omitempty"`
+UpdatedAt NullableString `json:"updated_at,omitempty"`
 }
 
 // NewEntity instantiates a new Entity object
@@ -140,7 +140,7 @@ func (o *Entity) HasId() bool {
 // SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *Entity) SetId(v int32) *Entity {
 	o.Id.Set(&v)
-	return o
+		return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *Entity) SetIdNil() *Entity {
@@ -184,7 +184,7 @@ func (o *Entity) HasCode() bool {
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *Entity) SetCode(v string) *Entity {
 	o.Code.Set(&v)
-	return o
+		return o
 }
 // SetCodeNil sets the value for Code to be an explicit nil
 func (o *Entity) SetCodeNil() *Entity {
@@ -228,7 +228,7 @@ func (o *Entity) HasName() bool {
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *Entity) SetName(v string) *Entity {
 	o.Name.Set(&v)
-	return o
+		return o
 }
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *Entity) SetNameNil() *Entity {
@@ -272,7 +272,7 @@ func (o *Entity) HasType() bool {
 // SetType gets a reference to the given NullableEntityType and assigns it to the Type field.
 func (o *Entity) SetType(v EntityType) *Entity {
 	o.Type.Set(&v)
-	return o
+		return o
 }
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *Entity) SetTypeNil() *Entity {
@@ -316,7 +316,7 @@ func (o *Entity) HasFirstName() bool {
 // SetFirstName gets a reference to the given NullableString and assigns it to the FirstName field.
 func (o *Entity) SetFirstName(v string) *Entity {
 	o.FirstName.Set(&v)
-	return o
+		return o
 }
 // SetFirstNameNil sets the value for FirstName to be an explicit nil
 func (o *Entity) SetFirstNameNil() *Entity {
@@ -360,7 +360,7 @@ func (o *Entity) HasLastName() bool {
 // SetLastName gets a reference to the given NullableString and assigns it to the LastName field.
 func (o *Entity) SetLastName(v string) *Entity {
 	o.LastName.Set(&v)
-	return o
+		return o
 }
 // SetLastNameNil sets the value for LastName to be an explicit nil
 func (o *Entity) SetLastNameNil() *Entity {
@@ -404,7 +404,7 @@ func (o *Entity) HasContactPerson() bool {
 // SetContactPerson gets a reference to the given NullableString and assigns it to the ContactPerson field.
 func (o *Entity) SetContactPerson(v string) *Entity {
 	o.ContactPerson.Set(&v)
-	return o
+		return o
 }
 // SetContactPersonNil sets the value for ContactPerson to be an explicit nil
 func (o *Entity) SetContactPersonNil() *Entity {
@@ -448,7 +448,7 @@ func (o *Entity) HasVatNumber() bool {
 // SetVatNumber gets a reference to the given NullableString and assigns it to the VatNumber field.
 func (o *Entity) SetVatNumber(v string) *Entity {
 	o.VatNumber.Set(&v)
-	return o
+		return o
 }
 // SetVatNumberNil sets the value for VatNumber to be an explicit nil
 func (o *Entity) SetVatNumberNil() *Entity {
@@ -492,7 +492,7 @@ func (o *Entity) HasTaxCode() bool {
 // SetTaxCode gets a reference to the given NullableString and assigns it to the TaxCode field.
 func (o *Entity) SetTaxCode(v string) *Entity {
 	o.TaxCode.Set(&v)
-	return o
+		return o
 }
 // SetTaxCodeNil sets the value for TaxCode to be an explicit nil
 func (o *Entity) SetTaxCodeNil() *Entity {
@@ -536,7 +536,7 @@ func (o *Entity) HasAddressStreet() bool {
 // SetAddressStreet gets a reference to the given NullableString and assigns it to the AddressStreet field.
 func (o *Entity) SetAddressStreet(v string) *Entity {
 	o.AddressStreet.Set(&v)
-	return o
+		return o
 }
 // SetAddressStreetNil sets the value for AddressStreet to be an explicit nil
 func (o *Entity) SetAddressStreetNil() *Entity {
@@ -580,7 +580,7 @@ func (o *Entity) HasAddressPostalCode() bool {
 // SetAddressPostalCode gets a reference to the given NullableString and assigns it to the AddressPostalCode field.
 func (o *Entity) SetAddressPostalCode(v string) *Entity {
 	o.AddressPostalCode.Set(&v)
-	return o
+		return o
 }
 // SetAddressPostalCodeNil sets the value for AddressPostalCode to be an explicit nil
 func (o *Entity) SetAddressPostalCodeNil() *Entity {
@@ -624,7 +624,7 @@ func (o *Entity) HasAddressCity() bool {
 // SetAddressCity gets a reference to the given NullableString and assigns it to the AddressCity field.
 func (o *Entity) SetAddressCity(v string) *Entity {
 	o.AddressCity.Set(&v)
-	return o
+		return o
 }
 // SetAddressCityNil sets the value for AddressCity to be an explicit nil
 func (o *Entity) SetAddressCityNil() *Entity {
@@ -668,7 +668,7 @@ func (o *Entity) HasAddressProvince() bool {
 // SetAddressProvince gets a reference to the given NullableString and assigns it to the AddressProvince field.
 func (o *Entity) SetAddressProvince(v string) *Entity {
 	o.AddressProvince.Set(&v)
-	return o
+		return o
 }
 // SetAddressProvinceNil sets the value for AddressProvince to be an explicit nil
 func (o *Entity) SetAddressProvinceNil() *Entity {
@@ -712,7 +712,7 @@ func (o *Entity) HasAddressExtra() bool {
 // SetAddressExtra gets a reference to the given NullableString and assigns it to the AddressExtra field.
 func (o *Entity) SetAddressExtra(v string) *Entity {
 	o.AddressExtra.Set(&v)
-	return o
+		return o
 }
 // SetAddressExtraNil sets the value for AddressExtra to be an explicit nil
 func (o *Entity) SetAddressExtraNil() *Entity {
@@ -756,7 +756,7 @@ func (o *Entity) HasCountry() bool {
 // SetCountry gets a reference to the given NullableString and assigns it to the Country field.
 func (o *Entity) SetCountry(v string) *Entity {
 	o.Country.Set(&v)
-	return o
+		return o
 }
 // SetCountryNil sets the value for Country to be an explicit nil
 func (o *Entity) SetCountryNil() *Entity {
@@ -800,7 +800,7 @@ func (o *Entity) HasCountryIso() bool {
 // SetCountryIso gets a reference to the given NullableString and assigns it to the CountryIso field.
 func (o *Entity) SetCountryIso(v string) *Entity {
 	o.CountryIso.Set(&v)
-	return o
+		return o
 }
 // SetCountryIsoNil sets the value for CountryIso to be an explicit nil
 func (o *Entity) SetCountryIsoNil() *Entity {
@@ -844,7 +844,7 @@ func (o *Entity) HasEmail() bool {
 // SetEmail gets a reference to the given NullableString and assigns it to the Email field.
 func (o *Entity) SetEmail(v string) *Entity {
 	o.Email.Set(&v)
-	return o
+		return o
 }
 // SetEmailNil sets the value for Email to be an explicit nil
 func (o *Entity) SetEmailNil() *Entity {
@@ -888,7 +888,7 @@ func (o *Entity) HasCertifiedEmail() bool {
 // SetCertifiedEmail gets a reference to the given NullableString and assigns it to the CertifiedEmail field.
 func (o *Entity) SetCertifiedEmail(v string) *Entity {
 	o.CertifiedEmail.Set(&v)
-	return o
+		return o
 }
 // SetCertifiedEmailNil sets the value for CertifiedEmail to be an explicit nil
 func (o *Entity) SetCertifiedEmailNil() *Entity {
@@ -932,7 +932,7 @@ func (o *Entity) HasPhone() bool {
 // SetPhone gets a reference to the given NullableString and assigns it to the Phone field.
 func (o *Entity) SetPhone(v string) *Entity {
 	o.Phone.Set(&v)
-	return o
+		return o
 }
 // SetPhoneNil sets the value for Phone to be an explicit nil
 func (o *Entity) SetPhoneNil() *Entity {
@@ -976,7 +976,7 @@ func (o *Entity) HasFax() bool {
 // SetFax gets a reference to the given NullableString and assigns it to the Fax field.
 func (o *Entity) SetFax(v string) *Entity {
 	o.Fax.Set(&v)
-	return o
+		return o
 }
 // SetFaxNil sets the value for Fax to be an explicit nil
 func (o *Entity) SetFaxNil() *Entity {
@@ -1020,7 +1020,7 @@ func (o *Entity) HasNotes() bool {
 // SetNotes gets a reference to the given NullableString and assigns it to the Notes field.
 func (o *Entity) SetNotes(v string) *Entity {
 	o.Notes.Set(&v)
-	return o
+		return o
 }
 // SetNotesNil sets the value for Notes to be an explicit nil
 func (o *Entity) SetNotesNil() *Entity {
@@ -1064,7 +1064,7 @@ func (o *Entity) HasDefaultPaymentTerms() bool {
 // SetDefaultPaymentTerms gets a reference to the given NullableInt32 and assigns it to the DefaultPaymentTerms field.
 func (o *Entity) SetDefaultPaymentTerms(v int32) *Entity {
 	o.DefaultPaymentTerms.Set(&v)
-	return o
+		return o
 }
 // SetDefaultPaymentTermsNil sets the value for DefaultPaymentTerms to be an explicit nil
 func (o *Entity) SetDefaultPaymentTermsNil() *Entity {
@@ -1108,7 +1108,7 @@ func (o *Entity) HasDefaultVat() bool {
 // SetDefaultVat gets a reference to the given NullableVatType and assigns it to the DefaultVat field.
 func (o *Entity) SetDefaultVat(v VatType) *Entity {
 	o.DefaultVat.Set(&v)
-	return o
+		return o
 }
 // SetDefaultVatNil sets the value for DefaultVat to be an explicit nil
 func (o *Entity) SetDefaultVatNil() *Entity {
@@ -1151,7 +1151,7 @@ func (o *Entity) HasDefaultPaymentTermsType() bool {
 // SetDefaultPaymentTermsType gets a reference to the given PaymentTermsType and assigns it to the DefaultPaymentTermsType field.
 func (o *Entity) SetDefaultPaymentTermsType(v PaymentTermsType) *Entity {
 	o.DefaultPaymentTermsType = &v
-	return o
+		return o
 }
 
 // GetDefaultPaymentMethod returns the DefaultPaymentMethod field value if set, zero value otherwise.
@@ -1184,7 +1184,7 @@ func (o *Entity) HasDefaultPaymentMethod() bool {
 // SetDefaultPaymentMethod gets a reference to the given PaymentMethod and assigns it to the DefaultPaymentMethod field.
 func (o *Entity) SetDefaultPaymentMethod(v PaymentMethod) *Entity {
 	o.DefaultPaymentMethod = &v
-	return o
+		return o
 }
 
 // GetBankName returns the BankName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1218,7 +1218,7 @@ func (o *Entity) HasBankName() bool {
 // SetBankName gets a reference to the given NullableString and assigns it to the BankName field.
 func (o *Entity) SetBankName(v string) *Entity {
 	o.BankName.Set(&v)
-	return o
+		return o
 }
 // SetBankNameNil sets the value for BankName to be an explicit nil
 func (o *Entity) SetBankNameNil() *Entity {
@@ -1262,7 +1262,7 @@ func (o *Entity) HasBankIban() bool {
 // SetBankIban gets a reference to the given NullableString and assigns it to the BankIban field.
 func (o *Entity) SetBankIban(v string) *Entity {
 	o.BankIban.Set(&v)
-	return o
+		return o
 }
 // SetBankIbanNil sets the value for BankIban to be an explicit nil
 func (o *Entity) SetBankIbanNil() *Entity {
@@ -1306,7 +1306,7 @@ func (o *Entity) HasBankSwiftCode() bool {
 // SetBankSwiftCode gets a reference to the given NullableString and assigns it to the BankSwiftCode field.
 func (o *Entity) SetBankSwiftCode(v string) *Entity {
 	o.BankSwiftCode.Set(&v)
-	return o
+		return o
 }
 // SetBankSwiftCodeNil sets the value for BankSwiftCode to be an explicit nil
 func (o *Entity) SetBankSwiftCodeNil() *Entity {
@@ -1350,7 +1350,7 @@ func (o *Entity) HasShippingAddress() bool {
 // SetShippingAddress gets a reference to the given NullableString and assigns it to the ShippingAddress field.
 func (o *Entity) SetShippingAddress(v string) *Entity {
 	o.ShippingAddress.Set(&v)
-	return o
+		return o
 }
 // SetShippingAddressNil sets the value for ShippingAddress to be an explicit nil
 func (o *Entity) SetShippingAddressNil() *Entity {
@@ -1394,7 +1394,7 @@ func (o *Entity) HasEInvoice() bool {
 // SetEInvoice gets a reference to the given NullableBool and assigns it to the EInvoice field.
 func (o *Entity) SetEInvoice(v bool) *Entity {
 	o.EInvoice.Set(&v)
-	return o
+		return o
 }
 // SetEInvoiceNil sets the value for EInvoice to be an explicit nil
 func (o *Entity) SetEInvoiceNil() *Entity {
@@ -1438,7 +1438,7 @@ func (o *Entity) HasEiCode() bool {
 // SetEiCode gets a reference to the given NullableString and assigns it to the EiCode field.
 func (o *Entity) SetEiCode(v string) *Entity {
 	o.EiCode.Set(&v)
-	return o
+		return o
 }
 // SetEiCodeNil sets the value for EiCode to be an explicit nil
 func (o *Entity) SetEiCodeNil() *Entity {
@@ -1482,7 +1482,7 @@ func (o *Entity) HasHasIntentDeclaration() bool {
 // SetHasIntentDeclaration gets a reference to the given NullableBool and assigns it to the HasIntentDeclaration field.
 func (o *Entity) SetHasIntentDeclaration(v bool) *Entity {
 	o.HasIntentDeclaration.Set(&v)
-	return o
+		return o
 }
 // SetHasIntentDeclarationNil sets the value for HasIntentDeclaration to be an explicit nil
 func (o *Entity) SetHasIntentDeclarationNil() *Entity {
@@ -1526,7 +1526,7 @@ func (o *Entity) HasIntentDeclarationProtocolNumber() bool {
 // SetIntentDeclarationProtocolNumber gets a reference to the given NullableString and assigns it to the IntentDeclarationProtocolNumber field.
 func (o *Entity) SetIntentDeclarationProtocolNumber(v string) *Entity {
 	o.IntentDeclarationProtocolNumber.Set(&v)
-	return o
+		return o
 }
 // SetIntentDeclarationProtocolNumberNil sets the value for IntentDeclarationProtocolNumber to be an explicit nil
 func (o *Entity) SetIntentDeclarationProtocolNumberNil() *Entity {
@@ -1570,7 +1570,7 @@ func (o *Entity) HasIntentDeclarationProtocolDate() bool {
 // SetIntentDeclarationProtocolDate gets a reference to the given NullableString and assigns it to the IntentDeclarationProtocolDate field.
 func (o *Entity) SetIntentDeclarationProtocolDate(v string) *Entity {
 	o.IntentDeclarationProtocolDate.Set(&v)
-	return o
+		return o
 }
 // SetIntentDeclarationProtocolDateNil sets the value for IntentDeclarationProtocolDate to be an explicit nil
 func (o *Entity) SetIntentDeclarationProtocolDateNil() *Entity {
@@ -1614,7 +1614,7 @@ func (o *Entity) HasCreatedAt() bool {
 // SetCreatedAt gets a reference to the given NullableString and assigns it to the CreatedAt field.
 func (o *Entity) SetCreatedAt(v string) *Entity {
 	o.CreatedAt.Set(&v)
-	return o
+		return o
 }
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *Entity) SetCreatedAtNil() *Entity {
@@ -1658,7 +1658,7 @@ func (o *Entity) HasUpdatedAt() bool {
 // SetUpdatedAt gets a reference to the given NullableString and assigns it to the UpdatedAt field.
 func (o *Entity) SetUpdatedAt(v string) *Entity {
 	o.UpdatedAt.Set(&v)
-	return o
+		return o
 }
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *Entity) SetUpdatedAtNil() *Entity {

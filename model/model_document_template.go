@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,11 +21,11 @@ var _ MappedNullable = &DocumentTemplate{}
 // DocumentTemplate struct for DocumentTemplate
 type DocumentTemplate struct {
 	// Template id
-	Id NullableInt32 `json:"id,omitempty"`
+Id NullableInt32 `json:"id,omitempty"`
 	// Template name
-	Name NullableString `json:"name,omitempty"`
+Name NullableString `json:"name,omitempty"`
 	// Template type
-	Type NullableString `json:"type,omitempty"`
+Type NullableString `json:"type,omitempty"`
 }
 
 // NewDocumentTemplate instantiates a new DocumentTemplate object
@@ -76,7 +76,7 @@ func (o *DocumentTemplate) HasId() bool {
 // SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *DocumentTemplate) SetId(v int32) *DocumentTemplate {
 	o.Id.Set(&v)
-	return o
+		return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *DocumentTemplate) SetIdNil() *DocumentTemplate {
@@ -120,7 +120,7 @@ func (o *DocumentTemplate) HasName() bool {
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *DocumentTemplate) SetName(v string) *DocumentTemplate {
 	o.Name.Set(&v)
-	return o
+		return o
 }
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *DocumentTemplate) SetNameNil() *DocumentTemplate {
@@ -164,7 +164,7 @@ func (o *DocumentTemplate) HasType() bool {
 // SetType gets a reference to the given NullableString and assigns it to the Type field.
 func (o *DocumentTemplate) SetType(v string) *DocumentTemplate {
 	o.Type.Set(&v)
-	return o
+		return o
 }
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *DocumentTemplate) SetTypeNil() *DocumentTemplate {

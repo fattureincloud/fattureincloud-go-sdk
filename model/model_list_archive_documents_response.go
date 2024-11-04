@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,28 +21,28 @@ var _ MappedNullable = &ListArchiveDocumentsResponse{}
 // ListArchiveDocumentsResponse 
 type ListArchiveDocumentsResponse struct {
 	// Current page number.
-	CurrentPage NullableInt32 `json:"current_page,omitempty"`
+CurrentPage NullableInt32 `json:"current_page,omitempty"`
 	// First page url.
-	FirstPageUrl NullableString `json:"first_page_url,omitempty"`
+FirstPageUrl NullableString `json:"first_page_url,omitempty"`
 	// First result of the page.
-	From NullableInt32 `json:"from,omitempty"`
+From NullableInt32 `json:"from,omitempty"`
 	// Last page number.
-	LastPage NullableInt32 `json:"last_page,omitempty"`
+LastPage NullableInt32 `json:"last_page,omitempty"`
 	// Last page url.
-	LastPageUrl NullableString `json:"last_page_url,omitempty"`
+LastPageUrl NullableString `json:"last_page_url,omitempty"`
 	// Next page url
-	NextPageUrl NullableString `json:"next_page_url,omitempty"`
+NextPageUrl NullableString `json:"next_page_url,omitempty"`
 	// Request path.
-	Path NullableString `json:"path,omitempty"`
+Path NullableString `json:"path,omitempty"`
 	// Number of result per page.
-	PerPage NullableInt32 `json:"per_page,omitempty"`
+PerPage NullableInt32 `json:"per_page,omitempty"`
 	// Previous page url.
-	PrevPageUrl NullableString `json:"prev_page_url,omitempty"`
+PrevPageUrl NullableString `json:"prev_page_url,omitempty"`
 	// Last result of the page.
-	To NullableInt32 `json:"to,omitempty"`
+To NullableInt32 `json:"to,omitempty"`
 	// Total number of results
-	Total NullableInt32 `json:"total,omitempty"`
-	Data []ArchiveDocument `json:"data,omitempty"`
+Total NullableInt32 `json:"total,omitempty"`
+Data []ArchiveDocument `json:"data,omitempty"`
 }
 
 // NewListArchiveDocumentsResponse instantiates a new ListArchiveDocumentsResponse object
@@ -93,7 +93,7 @@ func (o *ListArchiveDocumentsResponse) HasCurrentPage() bool {
 // SetCurrentPage gets a reference to the given NullableInt32 and assigns it to the CurrentPage field.
 func (o *ListArchiveDocumentsResponse) SetCurrentPage(v int32) *ListArchiveDocumentsResponse {
 	o.CurrentPage.Set(&v)
-	return o
+		return o
 }
 // SetCurrentPageNil sets the value for CurrentPage to be an explicit nil
 func (o *ListArchiveDocumentsResponse) SetCurrentPageNil() *ListArchiveDocumentsResponse {
@@ -137,7 +137,7 @@ func (o *ListArchiveDocumentsResponse) HasFirstPageUrl() bool {
 // SetFirstPageUrl gets a reference to the given NullableString and assigns it to the FirstPageUrl field.
 func (o *ListArchiveDocumentsResponse) SetFirstPageUrl(v string) *ListArchiveDocumentsResponse {
 	o.FirstPageUrl.Set(&v)
-	return o
+		return o
 }
 // SetFirstPageUrlNil sets the value for FirstPageUrl to be an explicit nil
 func (o *ListArchiveDocumentsResponse) SetFirstPageUrlNil() *ListArchiveDocumentsResponse {
@@ -181,7 +181,7 @@ func (o *ListArchiveDocumentsResponse) HasFrom() bool {
 // SetFrom gets a reference to the given NullableInt32 and assigns it to the From field.
 func (o *ListArchiveDocumentsResponse) SetFrom(v int32) *ListArchiveDocumentsResponse {
 	o.From.Set(&v)
-	return o
+		return o
 }
 // SetFromNil sets the value for From to be an explicit nil
 func (o *ListArchiveDocumentsResponse) SetFromNil() *ListArchiveDocumentsResponse {
@@ -225,7 +225,7 @@ func (o *ListArchiveDocumentsResponse) HasLastPage() bool {
 // SetLastPage gets a reference to the given NullableInt32 and assigns it to the LastPage field.
 func (o *ListArchiveDocumentsResponse) SetLastPage(v int32) *ListArchiveDocumentsResponse {
 	o.LastPage.Set(&v)
-	return o
+		return o
 }
 // SetLastPageNil sets the value for LastPage to be an explicit nil
 func (o *ListArchiveDocumentsResponse) SetLastPageNil() *ListArchiveDocumentsResponse {
@@ -269,7 +269,7 @@ func (o *ListArchiveDocumentsResponse) HasLastPageUrl() bool {
 // SetLastPageUrl gets a reference to the given NullableString and assigns it to the LastPageUrl field.
 func (o *ListArchiveDocumentsResponse) SetLastPageUrl(v string) *ListArchiveDocumentsResponse {
 	o.LastPageUrl.Set(&v)
-	return o
+		return o
 }
 // SetLastPageUrlNil sets the value for LastPageUrl to be an explicit nil
 func (o *ListArchiveDocumentsResponse) SetLastPageUrlNil() *ListArchiveDocumentsResponse {
@@ -313,7 +313,7 @@ func (o *ListArchiveDocumentsResponse) HasNextPageUrl() bool {
 // SetNextPageUrl gets a reference to the given NullableString and assigns it to the NextPageUrl field.
 func (o *ListArchiveDocumentsResponse) SetNextPageUrl(v string) *ListArchiveDocumentsResponse {
 	o.NextPageUrl.Set(&v)
-	return o
+		return o
 }
 // SetNextPageUrlNil sets the value for NextPageUrl to be an explicit nil
 func (o *ListArchiveDocumentsResponse) SetNextPageUrlNil() *ListArchiveDocumentsResponse {
@@ -357,7 +357,7 @@ func (o *ListArchiveDocumentsResponse) HasPath() bool {
 // SetPath gets a reference to the given NullableString and assigns it to the Path field.
 func (o *ListArchiveDocumentsResponse) SetPath(v string) *ListArchiveDocumentsResponse {
 	o.Path.Set(&v)
-	return o
+		return o
 }
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *ListArchiveDocumentsResponse) SetPathNil() *ListArchiveDocumentsResponse {
@@ -401,7 +401,7 @@ func (o *ListArchiveDocumentsResponse) HasPerPage() bool {
 // SetPerPage gets a reference to the given NullableInt32 and assigns it to the PerPage field.
 func (o *ListArchiveDocumentsResponse) SetPerPage(v int32) *ListArchiveDocumentsResponse {
 	o.PerPage.Set(&v)
-	return o
+		return o
 }
 // SetPerPageNil sets the value for PerPage to be an explicit nil
 func (o *ListArchiveDocumentsResponse) SetPerPageNil() *ListArchiveDocumentsResponse {
@@ -445,7 +445,7 @@ func (o *ListArchiveDocumentsResponse) HasPrevPageUrl() bool {
 // SetPrevPageUrl gets a reference to the given NullableString and assigns it to the PrevPageUrl field.
 func (o *ListArchiveDocumentsResponse) SetPrevPageUrl(v string) *ListArchiveDocumentsResponse {
 	o.PrevPageUrl.Set(&v)
-	return o
+		return o
 }
 // SetPrevPageUrlNil sets the value for PrevPageUrl to be an explicit nil
 func (o *ListArchiveDocumentsResponse) SetPrevPageUrlNil() *ListArchiveDocumentsResponse {
@@ -489,7 +489,7 @@ func (o *ListArchiveDocumentsResponse) HasTo() bool {
 // SetTo gets a reference to the given NullableInt32 and assigns it to the To field.
 func (o *ListArchiveDocumentsResponse) SetTo(v int32) *ListArchiveDocumentsResponse {
 	o.To.Set(&v)
-	return o
+		return o
 }
 // SetToNil sets the value for To to be an explicit nil
 func (o *ListArchiveDocumentsResponse) SetToNil() *ListArchiveDocumentsResponse {
@@ -533,7 +533,7 @@ func (o *ListArchiveDocumentsResponse) HasTotal() bool {
 // SetTotal gets a reference to the given NullableInt32 and assigns it to the Total field.
 func (o *ListArchiveDocumentsResponse) SetTotal(v int32) *ListArchiveDocumentsResponse {
 	o.Total.Set(&v)
-	return o
+		return o
 }
 // SetTotalNil sets the value for Total to be an explicit nil
 func (o *ListArchiveDocumentsResponse) SetTotalNil() *ListArchiveDocumentsResponse {
@@ -577,7 +577,7 @@ func (o *ListArchiveDocumentsResponse) HasData() bool {
 // SetData gets a reference to the given []ArchiveDocument and assigns it to the Data field.
 func (o *ListArchiveDocumentsResponse) SetData(v []ArchiveDocument) *ListArchiveDocumentsResponse {
 	o.Data = v
-	return o
+		return o
 }
 
 func (o ListArchiveDocumentsResponse) MarshalJSON() ([]byte, error) {

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -24,10 +24,12 @@ var ReceivedDocumentTypes = struct {
 	EXPENSE ReceivedDocumentType
 	PASSIVE_CREDIT_NOTE ReceivedDocumentType
 	PASSIVE_DELIVERY_NOTE ReceivedDocumentType
+	SELF_INVOICE ReceivedDocumentType
 } {
-	EXPENSE: "expense",
-	PASSIVE_CREDIT_NOTE: "passive_credit_note",
-	PASSIVE_DELIVERY_NOTE: "passive_delivery_note",
+			EXPENSE: "expense",
+			PASSIVE_CREDIT_NOTE: "passive_credit_note",
+			PASSIVE_DELIVERY_NOTE: "passive_delivery_note",
+			SELF_INVOICE: "self_invoice",
 }
 
 // All allowed values of ReceivedDocumentType enum
@@ -35,6 +37,7 @@ var AllowedReceivedDocumentTypeEnumValues = []ReceivedDocumentType{
 	"expense",
 	"passive_credit_note",
 	"passive_delivery_note",
+	"self_invoice",
 }
 
 func (v *ReceivedDocumentType) UnmarshalJSON(src []byte) error {

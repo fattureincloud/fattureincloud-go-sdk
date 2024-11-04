@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &GetUserInfoResponse{}
 
 // GetUserInfoResponse 
 type GetUserInfoResponse struct {
-	Data *User `json:"data,omitempty"`
-	Info NullableGetUserInfoResponseInfo `json:"info,omitempty"`
-	EmailConfirmationState NullableGetUserInfoResponseEmailConfirmationState `json:"email_confirmation_state,omitempty"`
+Data *User `json:"data,omitempty"`
+Info NullableGetUserInfoResponseInfo `json:"info,omitempty"`
+EmailConfirmationState NullableGetUserInfoResponseEmailConfirmationState `json:"email_confirmation_state,omitempty"`
 }
 
 // NewGetUserInfoResponse instantiates a new GetUserInfoResponse object
@@ -72,7 +72,7 @@ func (o *GetUserInfoResponse) HasData() bool {
 // SetData gets a reference to the given User and assigns it to the Data field.
 func (o *GetUserInfoResponse) SetData(v User) *GetUserInfoResponse {
 	o.Data = &v
-	return o
+		return o
 }
 
 // GetInfo returns the Info field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -106,7 +106,7 @@ func (o *GetUserInfoResponse) HasInfo() bool {
 // SetInfo gets a reference to the given NullableGetUserInfoResponseInfo and assigns it to the Info field.
 func (o *GetUserInfoResponse) SetInfo(v GetUserInfoResponseInfo) *GetUserInfoResponse {
 	o.Info.Set(&v)
-	return o
+		return o
 }
 // SetInfoNil sets the value for Info to be an explicit nil
 func (o *GetUserInfoResponse) SetInfoNil() *GetUserInfoResponse {
@@ -150,7 +150,7 @@ func (o *GetUserInfoResponse) HasEmailConfirmationState() bool {
 // SetEmailConfirmationState gets a reference to the given NullableGetUserInfoResponseEmailConfirmationState and assigns it to the EmailConfirmationState field.
 func (o *GetUserInfoResponse) SetEmailConfirmationState(v GetUserInfoResponseEmailConfirmationState) *GetUserInfoResponse {
 	o.EmailConfirmationState.Set(&v)
-	return o
+		return o
 }
 // SetEmailConfirmationStateNil sets the value for EmailConfirmationState to be an explicit nil
 func (o *GetUserInfoResponse) SetEmailConfirmationStateNil() *GetUserInfoResponse {

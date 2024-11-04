@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,26 +21,26 @@ var _ MappedNullable = &EmailData{}
 // EmailData struct for EmailData
 type EmailData struct {
 	// Email recipient
-	RecipientEmail NullableString `json:"recipient_email,omitempty"`
-	DefaultSenderEmail NullableEmailDataDefaultSenderEmail `json:"default_sender_email,omitempty"`
+RecipientEmail NullableString `json:"recipient_email,omitempty"`
+DefaultSenderEmail NullableEmailDataDefaultSenderEmail `json:"default_sender_email,omitempty"`
 	// List of all emails from which the document can be sent
-	SenderEmailsList []SenderEmail `json:"sender_emails_list,omitempty"`
+SenderEmailsList []SenderEmail `json:"sender_emails_list,omitempty"`
 	// Email cc [by default is the logged company email]
-	CcEmail NullableString `json:"cc_email,omitempty"`
+CcEmail NullableString `json:"cc_email,omitempty"`
 	// Email subject
-	Subject NullableString `json:"subject,omitempty"`
+Subject NullableString `json:"subject,omitempty"`
 	// Email body
-	Body NullableString `json:"body,omitempty"`
+Body NullableString `json:"body,omitempty"`
 	// Document exists if it is not a delivery note
-	DocumentExists NullableBool `json:"document_exists,omitempty"`
+DocumentExists NullableBool `json:"document_exists,omitempty"`
 	// Document is a delivery note
-	DeliveryNoteExists NullableBool `json:"delivery_note_exists,omitempty"`
+DeliveryNoteExists NullableBool `json:"delivery_note_exists,omitempty"`
 	// Document has attachment
-	AttachmentExists NullableBool `json:"attachment_exists,omitempty"`
+AttachmentExists NullableBool `json:"attachment_exists,omitempty"`
 	// Document has accompanying invoice
-	AccompanyingInvoiceExists NullableBool `json:"accompanying_invoice_exists,omitempty"`
+AccompanyingInvoiceExists NullableBool `json:"accompanying_invoice_exists,omitempty"`
 	// Attach document pdf
-	DefaultAttachPdf NullableBool `json:"default_attach_pdf,omitempty"`
+DefaultAttachPdf NullableBool `json:"default_attach_pdf,omitempty"`
 }
 
 // NewEmailData instantiates a new EmailData object
@@ -91,7 +91,7 @@ func (o *EmailData) HasRecipientEmail() bool {
 // SetRecipientEmail gets a reference to the given NullableString and assigns it to the RecipientEmail field.
 func (o *EmailData) SetRecipientEmail(v string) *EmailData {
 	o.RecipientEmail.Set(&v)
-	return o
+		return o
 }
 // SetRecipientEmailNil sets the value for RecipientEmail to be an explicit nil
 func (o *EmailData) SetRecipientEmailNil() *EmailData {
@@ -135,7 +135,7 @@ func (o *EmailData) HasDefaultSenderEmail() bool {
 // SetDefaultSenderEmail gets a reference to the given NullableEmailDataDefaultSenderEmail and assigns it to the DefaultSenderEmail field.
 func (o *EmailData) SetDefaultSenderEmail(v EmailDataDefaultSenderEmail) *EmailData {
 	o.DefaultSenderEmail.Set(&v)
-	return o
+		return o
 }
 // SetDefaultSenderEmailNil sets the value for DefaultSenderEmail to be an explicit nil
 func (o *EmailData) SetDefaultSenderEmailNil() *EmailData {
@@ -179,7 +179,7 @@ func (o *EmailData) HasSenderEmailsList() bool {
 // SetSenderEmailsList gets a reference to the given []SenderEmail and assigns it to the SenderEmailsList field.
 func (o *EmailData) SetSenderEmailsList(v []SenderEmail) *EmailData {
 	o.SenderEmailsList = v
-	return o
+		return o
 }
 
 // GetCcEmail returns the CcEmail field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -213,7 +213,7 @@ func (o *EmailData) HasCcEmail() bool {
 // SetCcEmail gets a reference to the given NullableString and assigns it to the CcEmail field.
 func (o *EmailData) SetCcEmail(v string) *EmailData {
 	o.CcEmail.Set(&v)
-	return o
+		return o
 }
 // SetCcEmailNil sets the value for CcEmail to be an explicit nil
 func (o *EmailData) SetCcEmailNil() *EmailData {
@@ -257,7 +257,7 @@ func (o *EmailData) HasSubject() bool {
 // SetSubject gets a reference to the given NullableString and assigns it to the Subject field.
 func (o *EmailData) SetSubject(v string) *EmailData {
 	o.Subject.Set(&v)
-	return o
+		return o
 }
 // SetSubjectNil sets the value for Subject to be an explicit nil
 func (o *EmailData) SetSubjectNil() *EmailData {
@@ -301,7 +301,7 @@ func (o *EmailData) HasBody() bool {
 // SetBody gets a reference to the given NullableString and assigns it to the Body field.
 func (o *EmailData) SetBody(v string) *EmailData {
 	o.Body.Set(&v)
-	return o
+		return o
 }
 // SetBodyNil sets the value for Body to be an explicit nil
 func (o *EmailData) SetBodyNil() *EmailData {
@@ -345,7 +345,7 @@ func (o *EmailData) HasDocumentExists() bool {
 // SetDocumentExists gets a reference to the given NullableBool and assigns it to the DocumentExists field.
 func (o *EmailData) SetDocumentExists(v bool) *EmailData {
 	o.DocumentExists.Set(&v)
-	return o
+		return o
 }
 // SetDocumentExistsNil sets the value for DocumentExists to be an explicit nil
 func (o *EmailData) SetDocumentExistsNil() *EmailData {
@@ -389,7 +389,7 @@ func (o *EmailData) HasDeliveryNoteExists() bool {
 // SetDeliveryNoteExists gets a reference to the given NullableBool and assigns it to the DeliveryNoteExists field.
 func (o *EmailData) SetDeliveryNoteExists(v bool) *EmailData {
 	o.DeliveryNoteExists.Set(&v)
-	return o
+		return o
 }
 // SetDeliveryNoteExistsNil sets the value for DeliveryNoteExists to be an explicit nil
 func (o *EmailData) SetDeliveryNoteExistsNil() *EmailData {
@@ -433,7 +433,7 @@ func (o *EmailData) HasAttachmentExists() bool {
 // SetAttachmentExists gets a reference to the given NullableBool and assigns it to the AttachmentExists field.
 func (o *EmailData) SetAttachmentExists(v bool) *EmailData {
 	o.AttachmentExists.Set(&v)
-	return o
+		return o
 }
 // SetAttachmentExistsNil sets the value for AttachmentExists to be an explicit nil
 func (o *EmailData) SetAttachmentExistsNil() *EmailData {
@@ -477,7 +477,7 @@ func (o *EmailData) HasAccompanyingInvoiceExists() bool {
 // SetAccompanyingInvoiceExists gets a reference to the given NullableBool and assigns it to the AccompanyingInvoiceExists field.
 func (o *EmailData) SetAccompanyingInvoiceExists(v bool) *EmailData {
 	o.AccompanyingInvoiceExists.Set(&v)
-	return o
+		return o
 }
 // SetAccompanyingInvoiceExistsNil sets the value for AccompanyingInvoiceExists to be an explicit nil
 func (o *EmailData) SetAccompanyingInvoiceExistsNil() *EmailData {
@@ -521,7 +521,7 @@ func (o *EmailData) HasDefaultAttachPdf() bool {
 // SetDefaultAttachPdf gets a reference to the given NullableBool and assigns it to the DefaultAttachPdf field.
 func (o *EmailData) SetDefaultAttachPdf(v bool) *EmailData {
 	o.DefaultAttachPdf.Set(&v)
-	return o
+		return o
 }
 // SetDefaultAttachPdfNil sets the value for DefaultAttachPdf to be an explicit nil
 func (o *EmailData) SetDefaultAttachPdfNil() *EmailData {

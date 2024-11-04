@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -22,15 +22,15 @@ var _ MappedNullable = &EInvoiceRejectionReason{}
 // EInvoiceRejectionReason struct for EInvoiceRejectionReason
 type EInvoiceRejectionReason struct {
 	// E-invoice rejection reason
-	Reason NullableString `json:"reason,omitempty"`
+Reason NullableString `json:"reason,omitempty"`
 	// E-invoice status
-	EiStatus NullableString `json:"ei_status,omitempty"`
+EiStatus NullableString `json:"ei_status,omitempty"`
 	// Error solution.
-	Solution NullableString `json:"solution,omitempty"`
+Solution NullableString `json:"solution,omitempty"`
 	// E-invoice rejection error code
-	Code NullableString `json:"code,omitempty"`
+Code NullableString `json:"code,omitempty"`
 	// E-invoice rejection date
-	Date NullableTime `json:"date,omitempty"`
+Date NullableTime `json:"date,omitempty"`
 }
 
 // NewEInvoiceRejectionReason instantiates a new EInvoiceRejectionReason object
@@ -81,7 +81,7 @@ func (o *EInvoiceRejectionReason) HasReason() bool {
 // SetReason gets a reference to the given NullableString and assigns it to the Reason field.
 func (o *EInvoiceRejectionReason) SetReason(v string) *EInvoiceRejectionReason {
 	o.Reason.Set(&v)
-	return o
+		return o
 }
 // SetReasonNil sets the value for Reason to be an explicit nil
 func (o *EInvoiceRejectionReason) SetReasonNil() *EInvoiceRejectionReason {
@@ -125,7 +125,7 @@ func (o *EInvoiceRejectionReason) HasEiStatus() bool {
 // SetEiStatus gets a reference to the given NullableString and assigns it to the EiStatus field.
 func (o *EInvoiceRejectionReason) SetEiStatus(v string) *EInvoiceRejectionReason {
 	o.EiStatus.Set(&v)
-	return o
+		return o
 }
 // SetEiStatusNil sets the value for EiStatus to be an explicit nil
 func (o *EInvoiceRejectionReason) SetEiStatusNil() *EInvoiceRejectionReason {
@@ -169,7 +169,7 @@ func (o *EInvoiceRejectionReason) HasSolution() bool {
 // SetSolution gets a reference to the given NullableString and assigns it to the Solution field.
 func (o *EInvoiceRejectionReason) SetSolution(v string) *EInvoiceRejectionReason {
 	o.Solution.Set(&v)
-	return o
+		return o
 }
 // SetSolutionNil sets the value for Solution to be an explicit nil
 func (o *EInvoiceRejectionReason) SetSolutionNil() *EInvoiceRejectionReason {
@@ -213,7 +213,7 @@ func (o *EInvoiceRejectionReason) HasCode() bool {
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *EInvoiceRejectionReason) SetCode(v string) *EInvoiceRejectionReason {
 	o.Code.Set(&v)
-	return o
+		return o
 }
 // SetCodeNil sets the value for Code to be an explicit nil
 func (o *EInvoiceRejectionReason) SetCodeNil() *EInvoiceRejectionReason {
@@ -257,7 +257,7 @@ func (o *EInvoiceRejectionReason) HasDate() bool {
 // SetDate gets a reference to the given NullableTime and assigns it to the Date field.
 func (o *EInvoiceRejectionReason) SetDate(v time.Time) *EInvoiceRejectionReason {
 	o.Date.Set(&v)
-	return o
+		return o
 }
 // SetDateNil sets the value for Date to be an explicit nil
 func (o *EInvoiceRejectionReason) SetDateNil() *EInvoiceRejectionReason {

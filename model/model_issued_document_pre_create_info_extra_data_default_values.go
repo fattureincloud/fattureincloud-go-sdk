@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -20,10 +20,10 @@ var _ MappedNullable = &IssuedDocumentPreCreateInfoExtraDataDefaultValues{}
 
 // IssuedDocumentPreCreateInfoExtraDataDefaultValues Issued document extra data default values
 type IssuedDocumentPreCreateInfoExtraDataDefaultValues struct {
-	TsCommunication NullableBool `json:"ts_communication,omitempty"`
-	TsTipoSpesa NullableString `json:"ts_tipo_spesa,omitempty"`
-	TsFlagTipoSpesa NullableInt32 `json:"ts_flag_tipo_spesa,omitempty"`
-	TsPagamentoTracciato NullableBool `json:"ts_pagamento_tracciato,omitempty"`
+TsCommunication NullableBool `json:"ts_communication,omitempty"`
+TsTipoSpesa NullableString `json:"ts_tipo_spesa,omitempty"`
+TsFlagTipoSpesa NullableInt32 `json:"ts_flag_tipo_spesa,omitempty"`
+TsPagamentoTracciato NullableBool `json:"ts_pagamento_tracciato,omitempty"`
 }
 
 // NewIssuedDocumentPreCreateInfoExtraDataDefaultValues instantiates a new IssuedDocumentPreCreateInfoExtraDataDefaultValues object
@@ -74,7 +74,7 @@ func (o *IssuedDocumentPreCreateInfoExtraDataDefaultValues) HasTsCommunication()
 // SetTsCommunication gets a reference to the given NullableBool and assigns it to the TsCommunication field.
 func (o *IssuedDocumentPreCreateInfoExtraDataDefaultValues) SetTsCommunication(v bool) *IssuedDocumentPreCreateInfoExtraDataDefaultValues {
 	o.TsCommunication.Set(&v)
-	return o
+		return o
 }
 // SetTsCommunicationNil sets the value for TsCommunication to be an explicit nil
 func (o *IssuedDocumentPreCreateInfoExtraDataDefaultValues) SetTsCommunicationNil() *IssuedDocumentPreCreateInfoExtraDataDefaultValues {
@@ -118,7 +118,7 @@ func (o *IssuedDocumentPreCreateInfoExtraDataDefaultValues) HasTsTipoSpesa() boo
 // SetTsTipoSpesa gets a reference to the given NullableString and assigns it to the TsTipoSpesa field.
 func (o *IssuedDocumentPreCreateInfoExtraDataDefaultValues) SetTsTipoSpesa(v string) *IssuedDocumentPreCreateInfoExtraDataDefaultValues {
 	o.TsTipoSpesa.Set(&v)
-	return o
+		return o
 }
 // SetTsTipoSpesaNil sets the value for TsTipoSpesa to be an explicit nil
 func (o *IssuedDocumentPreCreateInfoExtraDataDefaultValues) SetTsTipoSpesaNil() *IssuedDocumentPreCreateInfoExtraDataDefaultValues {
@@ -162,7 +162,7 @@ func (o *IssuedDocumentPreCreateInfoExtraDataDefaultValues) HasTsFlagTipoSpesa()
 // SetTsFlagTipoSpesa gets a reference to the given NullableInt32 and assigns it to the TsFlagTipoSpesa field.
 func (o *IssuedDocumentPreCreateInfoExtraDataDefaultValues) SetTsFlagTipoSpesa(v int32) *IssuedDocumentPreCreateInfoExtraDataDefaultValues {
 	o.TsFlagTipoSpesa.Set(&v)
-	return o
+		return o
 }
 // SetTsFlagTipoSpesaNil sets the value for TsFlagTipoSpesa to be an explicit nil
 func (o *IssuedDocumentPreCreateInfoExtraDataDefaultValues) SetTsFlagTipoSpesaNil() *IssuedDocumentPreCreateInfoExtraDataDefaultValues {
@@ -206,7 +206,7 @@ func (o *IssuedDocumentPreCreateInfoExtraDataDefaultValues) HasTsPagamentoTracci
 // SetTsPagamentoTracciato gets a reference to the given NullableBool and assigns it to the TsPagamentoTracciato field.
 func (o *IssuedDocumentPreCreateInfoExtraDataDefaultValues) SetTsPagamentoTracciato(v bool) *IssuedDocumentPreCreateInfoExtraDataDefaultValues {
 	o.TsPagamentoTracciato.Set(&v)
-	return o
+		return o
 }
 // SetTsPagamentoTracciatoNil sets the value for TsPagamentoTracciato to be an explicit nil
 func (o *IssuedDocumentPreCreateInfoExtraDataDefaultValues) SetTsPagamentoTracciatoNil() *IssuedDocumentPreCreateInfoExtraDataDefaultValues {

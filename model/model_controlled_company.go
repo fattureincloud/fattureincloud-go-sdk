@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,18 +21,18 @@ var _ MappedNullable = &ControlledCompany{}
 // ControlledCompany struct for ControlledCompany
 type ControlledCompany struct {
 	// Controlled company id
-	Id NullableInt32 `json:"id,omitempty"`
+Id NullableInt32 `json:"id,omitempty"`
 	// Controlled company id
-	Name NullableString `json:"name,omitempty"`
-	Type *CompanyType `json:"type,omitempty"`
+Name NullableString `json:"name,omitempty"`
+Type *CompanyType `json:"type,omitempty"`
 	// Controlled company access token Only if type=company]
-	AccessToken NullableString `json:"access_token,omitempty"`
-	FicLicenseExpire NullableString `json:"fic_license_expire,omitempty"`
-	FicPlan *FattureInCloudPlanType `json:"fic_plan,omitempty"`
+AccessToken NullableString `json:"access_token,omitempty"`
+FicLicenseExpire NullableString `json:"fic_license_expire,omitempty"`
+FicPlan *FattureInCloudPlanType `json:"fic_plan,omitempty"`
 	// Controlled company connection id
-	ConnectionId NullableFloat32 `json:"connection_id,omitempty"`
+ConnectionId NullableFloat32 `json:"connection_id,omitempty"`
 	// Controlled company tax code
-	TaxCode NullableString `json:"tax_code,omitempty"`
+TaxCode NullableString `json:"tax_code,omitempty"`
 }
 
 // NewControlledCompany instantiates a new ControlledCompany object
@@ -83,7 +83,7 @@ func (o *ControlledCompany) HasId() bool {
 // SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *ControlledCompany) SetId(v int32) *ControlledCompany {
 	o.Id.Set(&v)
-	return o
+		return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *ControlledCompany) SetIdNil() *ControlledCompany {
@@ -127,7 +127,7 @@ func (o *ControlledCompany) HasName() bool {
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *ControlledCompany) SetName(v string) *ControlledCompany {
 	o.Name.Set(&v)
-	return o
+		return o
 }
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *ControlledCompany) SetNameNil() *ControlledCompany {
@@ -170,7 +170,7 @@ func (o *ControlledCompany) HasType() bool {
 // SetType gets a reference to the given CompanyType and assigns it to the Type field.
 func (o *ControlledCompany) SetType(v CompanyType) *ControlledCompany {
 	o.Type = &v
-	return o
+		return o
 }
 
 // GetAccessToken returns the AccessToken field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -204,7 +204,7 @@ func (o *ControlledCompany) HasAccessToken() bool {
 // SetAccessToken gets a reference to the given NullableString and assigns it to the AccessToken field.
 func (o *ControlledCompany) SetAccessToken(v string) *ControlledCompany {
 	o.AccessToken.Set(&v)
-	return o
+		return o
 }
 // SetAccessTokenNil sets the value for AccessToken to be an explicit nil
 func (o *ControlledCompany) SetAccessTokenNil() *ControlledCompany {
@@ -248,7 +248,7 @@ func (o *ControlledCompany) HasFicLicenseExpire() bool {
 // SetFicLicenseExpire gets a reference to the given NullableString and assigns it to the FicLicenseExpire field.
 func (o *ControlledCompany) SetFicLicenseExpire(v string) *ControlledCompany {
 	o.FicLicenseExpire.Set(&v)
-	return o
+		return o
 }
 // SetFicLicenseExpireNil sets the value for FicLicenseExpire to be an explicit nil
 func (o *ControlledCompany) SetFicLicenseExpireNil() *ControlledCompany {
@@ -291,7 +291,7 @@ func (o *ControlledCompany) HasFicPlan() bool {
 // SetFicPlan gets a reference to the given FattureInCloudPlanType and assigns it to the FicPlan field.
 func (o *ControlledCompany) SetFicPlan(v FattureInCloudPlanType) *ControlledCompany {
 	o.FicPlan = &v
-	return o
+		return o
 }
 
 // GetConnectionId returns the ConnectionId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -325,7 +325,7 @@ func (o *ControlledCompany) HasConnectionId() bool {
 // SetConnectionId gets a reference to the given NullableFloat32 and assigns it to the ConnectionId field.
 func (o *ControlledCompany) SetConnectionId(v float32) *ControlledCompany {
 	o.ConnectionId.Set(&v)
-	return o
+		return o
 }
 // SetConnectionIdNil sets the value for ConnectionId to be an explicit nil
 func (o *ControlledCompany) SetConnectionIdNil() *ControlledCompany {
@@ -369,7 +369,7 @@ func (o *ControlledCompany) HasTaxCode() bool {
 // SetTaxCode gets a reference to the given NullableString and assigns it to the TaxCode field.
 func (o *ControlledCompany) SetTaxCode(v string) *ControlledCompany {
 	o.TaxCode.Set(&v)
-	return o
+		return o
 }
 // SetTaxCodeNil sets the value for TaxCode to be an explicit nil
 func (o *ControlledCompany) SetTaxCodeNil() *ControlledCompany {

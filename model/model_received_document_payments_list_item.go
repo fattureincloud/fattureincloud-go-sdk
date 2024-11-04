@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,17 +21,17 @@ var _ MappedNullable = &ReceivedDocumentPaymentsListItem{}
 // ReceivedDocumentPaymentsListItem struct for ReceivedDocumentPaymentsListItem
 type ReceivedDocumentPaymentsListItem struct {
 	// Received document payment id
-	Id NullableInt32 `json:"id,omitempty"`
+Id NullableInt32 `json:"id,omitempty"`
 	// Received document payment total amount
-	Amount NullableFloat32 `json:"amount,omitempty"`
+Amount NullableFloat32 `json:"amount,omitempty"`
 	// Due date
-	DueDate NullableString `json:"due_date,omitempty"`
+DueDate NullableString `json:"due_date,omitempty"`
 	// Received document payment paid date
-	PaidDate NullableString `json:"paid_date,omitempty"`
-	PaymentTerms NullableReceivedDocumentPaymentsListItemPaymentTerms `json:"payment_terms,omitempty"`
+PaidDate NullableString `json:"paid_date,omitempty"`
+PaymentTerms NullableReceivedDocumentPaymentsListItemPaymentTerms `json:"payment_terms,omitempty"`
 	// Received document payment status
-	Status NullableString `json:"status,omitempty"`
-	PaymentAccount NullablePaymentAccount `json:"payment_account,omitempty"`
+Status NullableString `json:"status,omitempty"`
+PaymentAccount NullablePaymentAccount `json:"payment_account,omitempty"`
 }
 
 // NewReceivedDocumentPaymentsListItem instantiates a new ReceivedDocumentPaymentsListItem object
@@ -82,7 +82,7 @@ func (o *ReceivedDocumentPaymentsListItem) HasId() bool {
 // SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *ReceivedDocumentPaymentsListItem) SetId(v int32) *ReceivedDocumentPaymentsListItem {
 	o.Id.Set(&v)
-	return o
+		return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *ReceivedDocumentPaymentsListItem) SetIdNil() *ReceivedDocumentPaymentsListItem {
@@ -126,7 +126,7 @@ func (o *ReceivedDocumentPaymentsListItem) HasAmount() bool {
 // SetAmount gets a reference to the given NullableFloat32 and assigns it to the Amount field.
 func (o *ReceivedDocumentPaymentsListItem) SetAmount(v float32) *ReceivedDocumentPaymentsListItem {
 	o.Amount.Set(&v)
-	return o
+		return o
 }
 // SetAmountNil sets the value for Amount to be an explicit nil
 func (o *ReceivedDocumentPaymentsListItem) SetAmountNil() *ReceivedDocumentPaymentsListItem {
@@ -170,7 +170,7 @@ func (o *ReceivedDocumentPaymentsListItem) HasDueDate() bool {
 // SetDueDate gets a reference to the given NullableString and assigns it to the DueDate field.
 func (o *ReceivedDocumentPaymentsListItem) SetDueDate(v string) *ReceivedDocumentPaymentsListItem {
 	o.DueDate.Set(&v)
-	return o
+		return o
 }
 // SetDueDateNil sets the value for DueDate to be an explicit nil
 func (o *ReceivedDocumentPaymentsListItem) SetDueDateNil() *ReceivedDocumentPaymentsListItem {
@@ -214,7 +214,7 @@ func (o *ReceivedDocumentPaymentsListItem) HasPaidDate() bool {
 // SetPaidDate gets a reference to the given NullableString and assigns it to the PaidDate field.
 func (o *ReceivedDocumentPaymentsListItem) SetPaidDate(v string) *ReceivedDocumentPaymentsListItem {
 	o.PaidDate.Set(&v)
-	return o
+		return o
 }
 // SetPaidDateNil sets the value for PaidDate to be an explicit nil
 func (o *ReceivedDocumentPaymentsListItem) SetPaidDateNil() *ReceivedDocumentPaymentsListItem {
@@ -258,7 +258,7 @@ func (o *ReceivedDocumentPaymentsListItem) HasPaymentTerms() bool {
 // SetPaymentTerms gets a reference to the given NullableReceivedDocumentPaymentsListItemPaymentTerms and assigns it to the PaymentTerms field.
 func (o *ReceivedDocumentPaymentsListItem) SetPaymentTerms(v ReceivedDocumentPaymentsListItemPaymentTerms) *ReceivedDocumentPaymentsListItem {
 	o.PaymentTerms.Set(&v)
-	return o
+		return o
 }
 // SetPaymentTermsNil sets the value for PaymentTerms to be an explicit nil
 func (o *ReceivedDocumentPaymentsListItem) SetPaymentTermsNil() *ReceivedDocumentPaymentsListItem {
@@ -302,7 +302,7 @@ func (o *ReceivedDocumentPaymentsListItem) HasStatus() bool {
 // SetStatus gets a reference to the given NullableString and assigns it to the Status field.
 func (o *ReceivedDocumentPaymentsListItem) SetStatus(v string) *ReceivedDocumentPaymentsListItem {
 	o.Status.Set(&v)
-	return o
+		return o
 }
 // SetStatusNil sets the value for Status to be an explicit nil
 func (o *ReceivedDocumentPaymentsListItem) SetStatusNil() *ReceivedDocumentPaymentsListItem {
@@ -346,7 +346,7 @@ func (o *ReceivedDocumentPaymentsListItem) HasPaymentAccount() bool {
 // SetPaymentAccount gets a reference to the given NullablePaymentAccount and assigns it to the PaymentAccount field.
 func (o *ReceivedDocumentPaymentsListItem) SetPaymentAccount(v PaymentAccount) *ReceivedDocumentPaymentsListItem {
 	o.PaymentAccount.Set(&v)
-	return o
+		return o
 }
 // SetPaymentAccountNil sets the value for PaymentAccount to be an explicit nil
 func (o *ReceivedDocumentPaymentsListItem) SetPaymentAccountNil() *ReceivedDocumentPaymentsListItem {

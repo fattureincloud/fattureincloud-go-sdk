@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,14 +21,14 @@ var _ MappedNullable = &ReceiptItemsListItem{}
 // ReceiptItemsListItem struct for ReceiptItemsListItem
 type ReceiptItemsListItem struct {
 	// Receipt item id
-	Id NullableInt32 `json:"id,omitempty"`
+Id NullableInt32 `json:"id,omitempty"`
 	// Receipt item total net amount
-	AmountNet NullableFloat32 `json:"amount_net,omitempty"`
+AmountNet NullableFloat32 `json:"amount_net,omitempty"`
 	// Receipt item total gross amount
-	AmountGross NullableFloat32 `json:"amount_gross,omitempty"`
+AmountGross NullableFloat32 `json:"amount_gross,omitempty"`
 	// Receipt item category
-	Category NullableString `json:"category,omitempty"`
-	Vat NullableVatType `json:"vat,omitempty"`
+Category NullableString `json:"category,omitempty"`
+Vat NullableVatType `json:"vat,omitempty"`
 }
 
 // NewReceiptItemsListItem instantiates a new ReceiptItemsListItem object
@@ -79,7 +79,7 @@ func (o *ReceiptItemsListItem) HasId() bool {
 // SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *ReceiptItemsListItem) SetId(v int32) *ReceiptItemsListItem {
 	o.Id.Set(&v)
-	return o
+		return o
 }
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *ReceiptItemsListItem) SetIdNil() *ReceiptItemsListItem {
@@ -123,7 +123,7 @@ func (o *ReceiptItemsListItem) HasAmountNet() bool {
 // SetAmountNet gets a reference to the given NullableFloat32 and assigns it to the AmountNet field.
 func (o *ReceiptItemsListItem) SetAmountNet(v float32) *ReceiptItemsListItem {
 	o.AmountNet.Set(&v)
-	return o
+		return o
 }
 // SetAmountNetNil sets the value for AmountNet to be an explicit nil
 func (o *ReceiptItemsListItem) SetAmountNetNil() *ReceiptItemsListItem {
@@ -167,7 +167,7 @@ func (o *ReceiptItemsListItem) HasAmountGross() bool {
 // SetAmountGross gets a reference to the given NullableFloat32 and assigns it to the AmountGross field.
 func (o *ReceiptItemsListItem) SetAmountGross(v float32) *ReceiptItemsListItem {
 	o.AmountGross.Set(&v)
-	return o
+		return o
 }
 // SetAmountGrossNil sets the value for AmountGross to be an explicit nil
 func (o *ReceiptItemsListItem) SetAmountGrossNil() *ReceiptItemsListItem {
@@ -211,7 +211,7 @@ func (o *ReceiptItemsListItem) HasCategory() bool {
 // SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *ReceiptItemsListItem) SetCategory(v string) *ReceiptItemsListItem {
 	o.Category.Set(&v)
-	return o
+		return o
 }
 // SetCategoryNil sets the value for Category to be an explicit nil
 func (o *ReceiptItemsListItem) SetCategoryNil() *ReceiptItemsListItem {
@@ -255,7 +255,7 @@ func (o *ReceiptItemsListItem) HasVat() bool {
 // SetVat gets a reference to the given NullableVatType and assigns it to the Vat field.
 func (o *ReceiptItemsListItem) SetVat(v VatType) *ReceiptItemsListItem {
 	o.Vat.Set(&v)
-	return o
+		return o
 }
 // SetVatNil sets the value for Vat to be an explicit nil
 func (o *ReceiptItemsListItem) SetVatNil() *ReceiptItemsListItem {

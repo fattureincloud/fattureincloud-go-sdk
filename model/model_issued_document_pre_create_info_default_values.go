@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -20,24 +20,24 @@ var _ MappedNullable = &IssuedDocumentPreCreateInfoDefaultValues{}
 
 // IssuedDocumentPreCreateInfoDefaultValues Issued document default values
 type IssuedDocumentPreCreateInfoDefaultValues struct {
-	DefaultTemplate *DocumentTemplate `json:"default_template,omitempty"`
-	DnTemplate *DocumentTemplate `json:"dn_template,omitempty"`
-	AiTemplate *DocumentTemplate `json:"ai_template,omitempty"`
+DefaultTemplate *DocumentTemplate `json:"default_template,omitempty"`
+DnTemplate *DocumentTemplate `json:"dn_template,omitempty"`
+AiTemplate *DocumentTemplate `json:"ai_template,omitempty"`
 	// Default notes.
-	Notes NullableString `json:"notes,omitempty"`
+Notes NullableString `json:"notes,omitempty"`
 	// Default rivalsa percentage.
-	Rivalsa NullableFloat32 `json:"rivalsa,omitempty"`
+Rivalsa NullableFloat32 `json:"rivalsa,omitempty"`
 	// Default cassa percentage.
-	Cassa NullableFloat32 `json:"cassa,omitempty"`
+Cassa NullableFloat32 `json:"cassa,omitempty"`
 	// Default withholding tax percentage.
-	WithholdingTax NullableFloat32 `json:"withholding_tax,omitempty"`
+WithholdingTax NullableFloat32 `json:"withholding_tax,omitempty"`
 	// Default withholding tax taxable percentage.
-	WithholdingTaxTaxable NullableFloat32 `json:"withholding_tax_taxable,omitempty"`
+WithholdingTaxTaxable NullableFloat32 `json:"withholding_tax_taxable,omitempty"`
 	// Default other withholding tax percentage.
-	OtherWithholdingTax NullableFloat32 `json:"other_withholding_tax,omitempty"`
+OtherWithholdingTax NullableFloat32 `json:"other_withholding_tax,omitempty"`
 	// Use gross price by default.
-	UseGrossPrices NullableBool `json:"use_gross_prices,omitempty"`
-	PaymentMethod *PaymentMethod `json:"payment_method,omitempty"`
+UseGrossPrices NullableBool `json:"use_gross_prices,omitempty"`
+PaymentMethod *PaymentMethod `json:"payment_method,omitempty"`
 }
 
 // NewIssuedDocumentPreCreateInfoDefaultValues instantiates a new IssuedDocumentPreCreateInfoDefaultValues object
@@ -87,7 +87,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) HasDefaultTemplate() bool {
 // SetDefaultTemplate gets a reference to the given DocumentTemplate and assigns it to the DefaultTemplate field.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) SetDefaultTemplate(v DocumentTemplate) *IssuedDocumentPreCreateInfoDefaultValues {
 	o.DefaultTemplate = &v
-	return o
+		return o
 }
 
 // GetDnTemplate returns the DnTemplate field value if set, zero value otherwise.
@@ -120,7 +120,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) HasDnTemplate() bool {
 // SetDnTemplate gets a reference to the given DocumentTemplate and assigns it to the DnTemplate field.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) SetDnTemplate(v DocumentTemplate) *IssuedDocumentPreCreateInfoDefaultValues {
 	o.DnTemplate = &v
-	return o
+		return o
 }
 
 // GetAiTemplate returns the AiTemplate field value if set, zero value otherwise.
@@ -153,7 +153,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) HasAiTemplate() bool {
 // SetAiTemplate gets a reference to the given DocumentTemplate and assigns it to the AiTemplate field.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) SetAiTemplate(v DocumentTemplate) *IssuedDocumentPreCreateInfoDefaultValues {
 	o.AiTemplate = &v
-	return o
+		return o
 }
 
 // GetNotes returns the Notes field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -187,7 +187,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) HasNotes() bool {
 // SetNotes gets a reference to the given NullableString and assigns it to the Notes field.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) SetNotes(v string) *IssuedDocumentPreCreateInfoDefaultValues {
 	o.Notes.Set(&v)
-	return o
+		return o
 }
 // SetNotesNil sets the value for Notes to be an explicit nil
 func (o *IssuedDocumentPreCreateInfoDefaultValues) SetNotesNil() *IssuedDocumentPreCreateInfoDefaultValues {
@@ -231,7 +231,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) HasRivalsa() bool {
 // SetRivalsa gets a reference to the given NullableFloat32 and assigns it to the Rivalsa field.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) SetRivalsa(v float32) *IssuedDocumentPreCreateInfoDefaultValues {
 	o.Rivalsa.Set(&v)
-	return o
+		return o
 }
 // SetRivalsaNil sets the value for Rivalsa to be an explicit nil
 func (o *IssuedDocumentPreCreateInfoDefaultValues) SetRivalsaNil() *IssuedDocumentPreCreateInfoDefaultValues {
@@ -275,7 +275,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) HasCassa() bool {
 // SetCassa gets a reference to the given NullableFloat32 and assigns it to the Cassa field.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) SetCassa(v float32) *IssuedDocumentPreCreateInfoDefaultValues {
 	o.Cassa.Set(&v)
-	return o
+		return o
 }
 // SetCassaNil sets the value for Cassa to be an explicit nil
 func (o *IssuedDocumentPreCreateInfoDefaultValues) SetCassaNil() *IssuedDocumentPreCreateInfoDefaultValues {
@@ -319,7 +319,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) HasWithholdingTax() bool {
 // SetWithholdingTax gets a reference to the given NullableFloat32 and assigns it to the WithholdingTax field.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) SetWithholdingTax(v float32) *IssuedDocumentPreCreateInfoDefaultValues {
 	o.WithholdingTax.Set(&v)
-	return o
+		return o
 }
 // SetWithholdingTaxNil sets the value for WithholdingTax to be an explicit nil
 func (o *IssuedDocumentPreCreateInfoDefaultValues) SetWithholdingTaxNil() *IssuedDocumentPreCreateInfoDefaultValues {
@@ -363,7 +363,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) HasWithholdingTaxTaxable() bo
 // SetWithholdingTaxTaxable gets a reference to the given NullableFloat32 and assigns it to the WithholdingTaxTaxable field.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) SetWithholdingTaxTaxable(v float32) *IssuedDocumentPreCreateInfoDefaultValues {
 	o.WithholdingTaxTaxable.Set(&v)
-	return o
+		return o
 }
 // SetWithholdingTaxTaxableNil sets the value for WithholdingTaxTaxable to be an explicit nil
 func (o *IssuedDocumentPreCreateInfoDefaultValues) SetWithholdingTaxTaxableNil() *IssuedDocumentPreCreateInfoDefaultValues {
@@ -407,7 +407,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) HasOtherWithholdingTax() bool
 // SetOtherWithholdingTax gets a reference to the given NullableFloat32 and assigns it to the OtherWithholdingTax field.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) SetOtherWithholdingTax(v float32) *IssuedDocumentPreCreateInfoDefaultValues {
 	o.OtherWithholdingTax.Set(&v)
-	return o
+		return o
 }
 // SetOtherWithholdingTaxNil sets the value for OtherWithholdingTax to be an explicit nil
 func (o *IssuedDocumentPreCreateInfoDefaultValues) SetOtherWithholdingTaxNil() *IssuedDocumentPreCreateInfoDefaultValues {
@@ -451,7 +451,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) HasUseGrossPrices() bool {
 // SetUseGrossPrices gets a reference to the given NullableBool and assigns it to the UseGrossPrices field.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) SetUseGrossPrices(v bool) *IssuedDocumentPreCreateInfoDefaultValues {
 	o.UseGrossPrices.Set(&v)
-	return o
+		return o
 }
 // SetUseGrossPricesNil sets the value for UseGrossPrices to be an explicit nil
 func (o *IssuedDocumentPreCreateInfoDefaultValues) SetUseGrossPricesNil() *IssuedDocumentPreCreateInfoDefaultValues {
@@ -494,7 +494,7 @@ func (o *IssuedDocumentPreCreateInfoDefaultValues) HasPaymentMethod() bool {
 // SetPaymentMethod gets a reference to the given PaymentMethod and assigns it to the PaymentMethod field.
 func (o *IssuedDocumentPreCreateInfoDefaultValues) SetPaymentMethod(v PaymentMethod) *IssuedDocumentPreCreateInfoDefaultValues {
 	o.PaymentMethod = &v
-	return o
+		return o
 }
 
 func (o IssuedDocumentPreCreateInfoDefaultValues) MarshalJSON() ([]byte, error) {

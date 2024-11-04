@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &ModifyIssuedDocumentRequest{}
 
 // ModifyIssuedDocumentRequest 
 type ModifyIssuedDocumentRequest struct {
-	Data *IssuedDocument `json:"data,omitempty"`
-	Options *IssuedDocumentOptions `json:"options,omitempty"`
+Data *IssuedDocument `json:"data,omitempty"`
+Options *IssuedDocumentOptions `json:"options,omitempty"`
 }
 
 // NewModifyIssuedDocumentRequest instantiates a new ModifyIssuedDocumentRequest object
@@ -71,7 +71,7 @@ func (o *ModifyIssuedDocumentRequest) HasData() bool {
 // SetData gets a reference to the given IssuedDocument and assigns it to the Data field.
 func (o *ModifyIssuedDocumentRequest) SetData(v IssuedDocument) *ModifyIssuedDocumentRequest {
 	o.Data = &v
-	return o
+		return o
 }
 
 // GetOptions returns the Options field value if set, zero value otherwise.
@@ -104,7 +104,7 @@ func (o *ModifyIssuedDocumentRequest) HasOptions() bool {
 // SetOptions gets a reference to the given IssuedDocumentOptions and assigns it to the Options field.
 func (o *ModifyIssuedDocumentRequest) SetOptions(v IssuedDocumentOptions) *ModifyIssuedDocumentRequest {
 	o.Options = &v
-	return o
+		return o
 }
 
 func (o ModifyIssuedDocumentRequest) MarshalJSON() ([]byte, error) {

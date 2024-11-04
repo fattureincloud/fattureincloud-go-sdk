@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &VerifyEInvoiceXmlErrorResponseError{}
 
 // VerifyEInvoiceXmlErrorResponseError struct for VerifyEInvoiceXmlErrorResponseError
 type VerifyEInvoiceXmlErrorResponseError struct {
-	Message NullableString `json:"message,omitempty"`
-	ValidationResult NullableVerifyEInvoiceXmlErrorResponseErrorValidationResult `json:"validation_result,omitempty"`
+Message NullableString `json:"message,omitempty"`
+ValidationResult NullableVerifyEInvoiceXmlErrorResponseErrorValidationResult `json:"validation_result,omitempty"`
 }
 
 // NewVerifyEInvoiceXmlErrorResponseError instantiates a new VerifyEInvoiceXmlErrorResponseError object
@@ -72,7 +72,7 @@ func (o *VerifyEInvoiceXmlErrorResponseError) HasMessage() bool {
 // SetMessage gets a reference to the given NullableString and assigns it to the Message field.
 func (o *VerifyEInvoiceXmlErrorResponseError) SetMessage(v string) *VerifyEInvoiceXmlErrorResponseError {
 	o.Message.Set(&v)
-	return o
+		return o
 }
 // SetMessageNil sets the value for Message to be an explicit nil
 func (o *VerifyEInvoiceXmlErrorResponseError) SetMessageNil() *VerifyEInvoiceXmlErrorResponseError {
@@ -116,7 +116,7 @@ func (o *VerifyEInvoiceXmlErrorResponseError) HasValidationResult() bool {
 // SetValidationResult gets a reference to the given NullableVerifyEInvoiceXmlErrorResponseErrorValidationResult and assigns it to the ValidationResult field.
 func (o *VerifyEInvoiceXmlErrorResponseError) SetValidationResult(v VerifyEInvoiceXmlErrorResponseErrorValidationResult) *VerifyEInvoiceXmlErrorResponseError {
 	o.ValidationResult.Set(&v)
-	return o
+		return o
 }
 // SetValidationResultNil sets the value for ValidationResult to be an explicit nil
 func (o *VerifyEInvoiceXmlErrorResponseError) SetValidationResultNil() *VerifyEInvoiceXmlErrorResponseError {

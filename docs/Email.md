@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **NullableInt32** | Email id | [optional] 
 **Status** | Pointer to [**EmailStatus**](EmailStatus.md) |  | [optional] 
-**SentDate** | Pointer to **NullableTime** | Email sent date | [optional] 
+**SentDate** | Pointer to **NullableString** | Email sent date | [optional] 
 **ErrorsCount** | Pointer to **NullableInt32** | Email errors count | [optional] 
 **ErrorLog** | Pointer to **NullableString** | Email errors log | [optional] 
 **FromEmail** | Pointer to **NullableString** | Email sender email | [optional] 
@@ -102,20 +102,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetSentDate
 
-`func (o *Email) GetSentDate() time.Time`
+`func (o *Email) GetSentDate() string`
 
 GetSentDate returns the SentDate field if non-nil, zero value otherwise.
 
 ### GetSentDateOk
 
-`func (o *Email) GetSentDateOk() (*time.Time, bool)`
+`func (o *Email) GetSentDateOk() (*string, bool)`
 
 GetSentDateOk returns a tuple with the SentDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSentDate
 
-`func (o *Email) SetSentDate(v time.Time)`
+`func (o *Email) SetSentDate(v string)`
 
 SetSentDate sets SentDate field to given value.
 

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,20 +21,20 @@ var _ MappedNullable = &EmailSchedule{}
 // EmailSchedule struct for EmailSchedule
 type EmailSchedule struct {
 	// Email sender id [required if **sender_email** is not specified]
-	SenderId NullableInt32 `json:"sender_id,omitempty"`
+SenderId NullableInt32 `json:"sender_id,omitempty"`
 	// Email sender address [required if **sender_id** is not specified]
-	SenderEmail NullableString `json:"sender_email,omitempty"`
+SenderEmail NullableString `json:"sender_email,omitempty"`
 	// Email recipient emails [comma separated]
-	RecipientEmail NullableString `json:"recipient_email,omitempty"`
+RecipientEmail NullableString `json:"recipient_email,omitempty"`
 	// Email subject
-	Subject NullableString `json:"subject,omitempty"`
+Subject NullableString `json:"subject,omitempty"`
 	// Email body [HTML Escaped] [max size 50KiB]
-	Body NullableString `json:"body,omitempty"`
-	Include NullableEmailScheduleInclude `json:"include,omitempty"`
+Body NullableString `json:"body,omitempty"`
+Include NullableEmailScheduleInclude `json:"include,omitempty"`
 	// Attach the pdf of the document
-	AttachPdf NullableBool `json:"attach_pdf,omitempty"`
+AttachPdf NullableBool `json:"attach_pdf,omitempty"`
 	// Send a copy of the email to the **cc_email** specified by **Get email data**
-	SendCopy NullableBool `json:"send_copy,omitempty"`
+SendCopy NullableBool `json:"send_copy,omitempty"`
 }
 
 // NewEmailSchedule instantiates a new EmailSchedule object
@@ -85,7 +85,7 @@ func (o *EmailSchedule) HasSenderId() bool {
 // SetSenderId gets a reference to the given NullableInt32 and assigns it to the SenderId field.
 func (o *EmailSchedule) SetSenderId(v int32) *EmailSchedule {
 	o.SenderId.Set(&v)
-	return o
+		return o
 }
 // SetSenderIdNil sets the value for SenderId to be an explicit nil
 func (o *EmailSchedule) SetSenderIdNil() *EmailSchedule {
@@ -129,7 +129,7 @@ func (o *EmailSchedule) HasSenderEmail() bool {
 // SetSenderEmail gets a reference to the given NullableString and assigns it to the SenderEmail field.
 func (o *EmailSchedule) SetSenderEmail(v string) *EmailSchedule {
 	o.SenderEmail.Set(&v)
-	return o
+		return o
 }
 // SetSenderEmailNil sets the value for SenderEmail to be an explicit nil
 func (o *EmailSchedule) SetSenderEmailNil() *EmailSchedule {
@@ -173,7 +173,7 @@ func (o *EmailSchedule) HasRecipientEmail() bool {
 // SetRecipientEmail gets a reference to the given NullableString and assigns it to the RecipientEmail field.
 func (o *EmailSchedule) SetRecipientEmail(v string) *EmailSchedule {
 	o.RecipientEmail.Set(&v)
-	return o
+		return o
 }
 // SetRecipientEmailNil sets the value for RecipientEmail to be an explicit nil
 func (o *EmailSchedule) SetRecipientEmailNil() *EmailSchedule {
@@ -217,7 +217,7 @@ func (o *EmailSchedule) HasSubject() bool {
 // SetSubject gets a reference to the given NullableString and assigns it to the Subject field.
 func (o *EmailSchedule) SetSubject(v string) *EmailSchedule {
 	o.Subject.Set(&v)
-	return o
+		return o
 }
 // SetSubjectNil sets the value for Subject to be an explicit nil
 func (o *EmailSchedule) SetSubjectNil() *EmailSchedule {
@@ -261,7 +261,7 @@ func (o *EmailSchedule) HasBody() bool {
 // SetBody gets a reference to the given NullableString and assigns it to the Body field.
 func (o *EmailSchedule) SetBody(v string) *EmailSchedule {
 	o.Body.Set(&v)
-	return o
+		return o
 }
 // SetBodyNil sets the value for Body to be an explicit nil
 func (o *EmailSchedule) SetBodyNil() *EmailSchedule {
@@ -305,7 +305,7 @@ func (o *EmailSchedule) HasInclude() bool {
 // SetInclude gets a reference to the given NullableEmailScheduleInclude and assigns it to the Include field.
 func (o *EmailSchedule) SetInclude(v EmailScheduleInclude) *EmailSchedule {
 	o.Include.Set(&v)
-	return o
+		return o
 }
 // SetIncludeNil sets the value for Include to be an explicit nil
 func (o *EmailSchedule) SetIncludeNil() *EmailSchedule {
@@ -349,7 +349,7 @@ func (o *EmailSchedule) HasAttachPdf() bool {
 // SetAttachPdf gets a reference to the given NullableBool and assigns it to the AttachPdf field.
 func (o *EmailSchedule) SetAttachPdf(v bool) *EmailSchedule {
 	o.AttachPdf.Set(&v)
-	return o
+		return o
 }
 // SetAttachPdfNil sets the value for AttachPdf to be an explicit nil
 func (o *EmailSchedule) SetAttachPdfNil() *EmailSchedule {
@@ -393,7 +393,7 @@ func (o *EmailSchedule) HasSendCopy() bool {
 // SetSendCopy gets a reference to the given NullableBool and assigns it to the SendCopy field.
 func (o *EmailSchedule) SetSendCopy(v bool) *EmailSchedule {
 	o.SendCopy.Set(&v)
-	return o
+		return o
 }
 // SetSendCopyNil sets the value for SendCopy to be an explicit nil
 func (o *EmailSchedule) SetSendCopyNil() *EmailSchedule {

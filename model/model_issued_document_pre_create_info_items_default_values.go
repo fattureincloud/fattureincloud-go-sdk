@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &IssuedDocumentPreCreateInfoItemsDefaultValues{}
 
 // IssuedDocumentPreCreateInfoItemsDefaultValues Issued document items default values
 type IssuedDocumentPreCreateInfoItemsDefaultValues struct {
-	Vat NullableVatType `json:"vat,omitempty"`
+Vat NullableVatType `json:"vat,omitempty"`
 }
 
 // NewIssuedDocumentPreCreateInfoItemsDefaultValues instantiates a new IssuedDocumentPreCreateInfoItemsDefaultValues object
@@ -71,7 +71,7 @@ func (o *IssuedDocumentPreCreateInfoItemsDefaultValues) HasVat() bool {
 // SetVat gets a reference to the given NullableVatType and assigns it to the Vat field.
 func (o *IssuedDocumentPreCreateInfoItemsDefaultValues) SetVat(v VatType) *IssuedDocumentPreCreateInfoItemsDefaultValues {
 	o.Vat.Set(&v)
-	return o
+		return o
 }
 // SetVatNil sets the value for Vat to be an explicit nil
 func (o *IssuedDocumentPreCreateInfoItemsDefaultValues) SetVatNil() *IssuedDocumentPreCreateInfoItemsDefaultValues {

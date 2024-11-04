@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,9 +21,9 @@ var _ MappedNullable = &SendEInvoiceResponseData{}
 // SendEInvoiceResponseData struct for SendEInvoiceResponseData
 type SendEInvoiceResponseData struct {
 	// Response message.
-	Name NullableString `json:"name,omitempty"`
+Name NullableString `json:"name,omitempty"`
 	// E-invoice sent date.
-	Date NullableString `json:"date,omitempty"`
+Date NullableString `json:"date,omitempty"`
 }
 
 // NewSendEInvoiceResponseData instantiates a new SendEInvoiceResponseData object
@@ -74,7 +74,7 @@ func (o *SendEInvoiceResponseData) HasName() bool {
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *SendEInvoiceResponseData) SetName(v string) *SendEInvoiceResponseData {
 	o.Name.Set(&v)
-	return o
+		return o
 }
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *SendEInvoiceResponseData) SetNameNil() *SendEInvoiceResponseData {
@@ -118,7 +118,7 @@ func (o *SendEInvoiceResponseData) HasDate() bool {
 // SetDate gets a reference to the given NullableString and assigns it to the Date field.
 func (o *SendEInvoiceResponseData) SetDate(v string) *SendEInvoiceResponseData {
 	o.Date.Set(&v)
-	return o
+		return o
 }
 // SetDateNil sets the value for Date to be an explicit nil
 func (o *SendEInvoiceResponseData) SetDateNil() *SendEInvoiceResponseData {

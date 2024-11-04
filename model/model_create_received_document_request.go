@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -21,8 +21,8 @@ var _ MappedNullable = &CreateReceivedDocumentRequest{}
 // CreateReceivedDocumentRequest 
 type CreateReceivedDocumentRequest struct {
 	// Pending received document id of the document from which the new document is created.
-	PendingId NullableInt32 `json:"pending_id,omitempty"`
-	Data *ReceivedDocument `json:"data,omitempty"`
+PendingId NullableInt32 `json:"pending_id,omitempty"`
+Data *ReceivedDocument `json:"data,omitempty"`
 }
 
 // NewCreateReceivedDocumentRequest instantiates a new CreateReceivedDocumentRequest object
@@ -73,7 +73,7 @@ func (o *CreateReceivedDocumentRequest) HasPendingId() bool {
 // SetPendingId gets a reference to the given NullableInt32 and assigns it to the PendingId field.
 func (o *CreateReceivedDocumentRequest) SetPendingId(v int32) *CreateReceivedDocumentRequest {
 	o.PendingId.Set(&v)
-	return o
+		return o
 }
 // SetPendingIdNil sets the value for PendingId to be an explicit nil
 func (o *CreateReceivedDocumentRequest) SetPendingIdNil() *CreateReceivedDocumentRequest {
@@ -116,7 +116,7 @@ func (o *CreateReceivedDocumentRequest) HasData() bool {
 // SetData gets a reference to the given ReceivedDocument and assigns it to the Data field.
 func (o *CreateReceivedDocumentRequest) SetData(v ReceivedDocument) *CreateReceivedDocumentRequest {
 	o.Data = &v
-	return o
+		return o
 }
 
 func (o CreateReceivedDocumentRequest) MarshalJSON() ([]byte, error) {

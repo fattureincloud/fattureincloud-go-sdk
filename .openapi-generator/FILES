@@ -115,6 +115,7 @@ docs/GetReceiptsMonthlyTotalsResponse.md
 docs/GetReceivedDocumentPreCreateInfoResponse.md
 docs/GetReceivedDocumentResponse.md
 docs/GetSupplierResponse.md
+docs/GetTaxProfileResponse.md
 docs/GetUserInfoResponse.md
 docs/GetUserInfoResponseEmailConfirmationState.md
 docs/GetUserInfoResponseInfo.md
@@ -246,6 +247,7 @@ docs/ShowTotalsMode.md
 docs/Supplier.md
 docs/SupplierType.md
 docs/SuppliersAPI.md
+docs/TaxProfile.md
 docs/TaxesAPI.md
 docs/TransformIssuedDocumentResponse.md
 docs/UploadArchiveAttachmentResponse.md
@@ -361,6 +363,7 @@ model_get_receipts_monthly_totals_response.go
 model_get_received_document_pre_create_info_response.go
 model_get_received_document_response.go
 model_get_supplier_response.go
+model_get_tax_profile_response.go
 model_get_user_info_response.go
 model_get_user_info_response_email_confirmation_state.go
 model_get_user_info_response_info.go
@@ -484,6 +487,7 @@ model_sender_email.go
 model_show_totals_mode.go
 model_supplier.go
 model_supplier_type.go
+model_tax_profile.go
 model_transform_issued_document_response.go
 model_upload_archive_attachment_response.go
 model_upload_f24_attachment_response.go

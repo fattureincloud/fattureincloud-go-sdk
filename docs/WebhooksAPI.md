@@ -26,28 +26,28 @@ Create a Webhook Subscription
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    createWebhooksSubscriptionRequest := *fattureincloud.NewCreateWebhooksSubscriptionRequest() // CreateWebhooksSubscriptionRequest |  (optional)
+		companyId := int32(12345) // int32 | The ID of the company.
+		createWebhooksSubscriptionRequest := *fattureincloud.NewCreateWebhooksSubscriptionRequest() // CreateWebhooksSubscriptionRequest |  (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksAPI.CreateWebhooksSubscription(auth, companyId).CreateWebhooksSubscriptionRequest(createWebhooksSubscriptionRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.CreateWebhooksSubscription``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateWebhooksSubscription`: CreateWebhooksSubscriptionResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.WebhooksAPI.CreateWebhooksSubscription(auth, companyId).CreateWebhooksSubscriptionRequest(createWebhooksSubscriptionRequest).Execute()
+	if err != nil {
+	fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.CreateWebhooksSubscription``: %v\n", err)
+	fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+		// response from `CreateWebhooksSubscription`: CreateWebhooksSubscriptionResponse
+		json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -101,26 +101,26 @@ Delete Webhooks Subscription
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    subscriptionId := "SUB123" // string | The ID of the subscription.
+		companyId := int32(12345) // int32 | The ID of the company.
+		subscriptionId := "SUB123" // string | The ID of the subscription.
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksAPI.DeleteWebhooksSubscription(auth, companyId, subscriptionId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.DeleteWebhooksSubscription``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.WebhooksAPI.DeleteWebhooksSubscription(auth, companyId, subscriptionId).Execute()
+	if err != nil {
+	fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.DeleteWebhooksSubscription``: %v\n", err)
+	fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -175,28 +175,28 @@ Get Webhooks Subscription
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    subscriptionId := "SUB123" // string | The ID of the subscription.
+		companyId := int32(12345) // int32 | The ID of the company.
+		subscriptionId := "SUB123" // string | The ID of the subscription.
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksAPI.GetWebhooksSubscription(auth, companyId, subscriptionId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.GetWebhooksSubscription``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetWebhooksSubscription`: GetWebhooksSubscriptionResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.WebhooksAPI.GetWebhooksSubscription(auth, companyId, subscriptionId).Execute()
+	if err != nil {
+	fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.GetWebhooksSubscription``: %v\n", err)
+	fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+		// response from `GetWebhooksSubscription`: GetWebhooksSubscriptionResponse
+		json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -251,27 +251,27 @@ List Webhooks Subscriptions
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
+		companyId := int32(12345) // int32 | The ID of the company.
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksAPI.ListWebhooksSubscriptions(auth, companyId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.ListWebhooksSubscriptions``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListWebhooksSubscriptions`: ListWebhooksSubscriptionsResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.WebhooksAPI.ListWebhooksSubscriptions(auth, companyId).Execute()
+	if err != nil {
+	fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.ListWebhooksSubscriptions``: %v\n", err)
+	fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+		// response from `ListWebhooksSubscriptions`: ListWebhooksSubscriptionsResponse
+		json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -324,29 +324,29 @@ Modify Webhooks Subscription
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    subscriptionId := "SUB123" // string | The ID of the subscription.
-    modifyWebhooksSubscriptionRequest := *fattureincloud.NewModifyWebhooksSubscriptionRequest() // ModifyWebhooksSubscriptionRequest |  (optional)
+		companyId := int32(12345) // int32 | The ID of the company.
+		subscriptionId := "SUB123" // string | The ID of the subscription.
+		modifyWebhooksSubscriptionRequest := *fattureincloud.NewModifyWebhooksSubscriptionRequest() // ModifyWebhooksSubscriptionRequest |  (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksAPI.ModifyWebhooksSubscription(auth, companyId, subscriptionId).ModifyWebhooksSubscriptionRequest(modifyWebhooksSubscriptionRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.ModifyWebhooksSubscription``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ModifyWebhooksSubscription`: ModifyWebhooksSubscriptionResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.WebhooksAPI.ModifyWebhooksSubscription(auth, companyId, subscriptionId).ModifyWebhooksSubscriptionRequest(modifyWebhooksSubscriptionRequest).Execute()
+	if err != nil {
+	fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.ModifyWebhooksSubscription``: %v\n", err)
+	fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+		// response from `ModifyWebhooksSubscription`: ModifyWebhooksSubscriptionResponse
+		json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
