@@ -11,8 +11,6 @@ package api
 
 import (
 	"context"
-	"encoding/json"
-	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"net/url"
@@ -360,8 +358,6 @@ func TestGetIssuedDocumentPreCreateInfo(t *testing.T) {
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewIssuedDocumentPreCreateInfo().
-		SetNumerations(nil).
-		SetDnNumerations(nil).
 		SetDefaultValues(*NewIssuedDocumentPreCreateInfoDefaultValues().
 			SetDefaultTemplate(*NewDocumentTemplate().SetId(1)).
 			SetDnTemplate(*NewDocumentTemplate().SetId(1)).
@@ -730,9 +726,6 @@ func TestJoinIssuedDocuments(t *testing.T) {
 			*NewIssuedDocumentOptions().
 				SetCreateFrom([]string{"82112399", "82112400"}),
 		)
-
-	exj, _ := json.Marshal(expected)
-	fmt.Print(string(exj))
 
 	assert.True(t, reflect.DeepEqual(expected, actual))
 }

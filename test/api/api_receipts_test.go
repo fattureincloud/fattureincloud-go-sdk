@@ -134,7 +134,6 @@ func TestGetReceiptPreCreateInfo(t *testing.T) {
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewReceiptPreCreateInfo().
-		SetNumerations(nil).
 		SetNumerationsList([]string{"num"}).
 		SetRcCentersList([]string{"bg"}).
 		SetPaymentAccountsList([]PaymentAccount{*NewPaymentAccount().SetId(1).SetType(PaymentAccountTypes.STANDARD)}).
