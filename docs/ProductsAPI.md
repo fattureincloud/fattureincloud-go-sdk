@@ -26,28 +26,28 @@ Create Product
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    createProductRequest := *fattureincloud.NewCreateProductRequest() // CreateProductRequest |  (optional)
+	companyId := int32(12345) // int32 | The ID of the company.
+	createProductRequest := *fattureincloud.NewCreateProductRequest() // CreateProductRequest |  (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductsAPI.CreateProduct(auth, companyId).CreateProductRequest(createProductRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductsAPI.CreateProduct``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateProduct`: CreateProductResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductsAPI.CreateProduct(auth, companyId).CreateProductRequest(createProductRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductsAPI.CreateProduct``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateProduct`: CreateProductResponse
+	json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -101,26 +101,26 @@ Delete Product
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    productId := int32(56) // int32 | The ID of the product.
+	companyId := int32(12345) // int32 | The ID of the company.
+	productId := int32(56) // int32 | The ID of the product.
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductsAPI.DeleteProduct(auth, companyId, productId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductsAPI.DeleteProduct``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductsAPI.DeleteProduct(auth, companyId, productId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductsAPI.DeleteProduct``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -175,30 +175,30 @@ Get Product
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    productId := int32(56) // int32 | The ID of the product.
-    fields := "fields_example" // string | List of comma-separated fields. (optional)
-    fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
+	companyId := int32(12345) // int32 | The ID of the company.
+	productId := int32(56) // int32 | The ID of the product.
+	fields := "fields_example" // string | List of comma-separated fields. (optional)
+	fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductsAPI.GetProduct(auth, companyId, productId).Fields(fields).Fieldset(fieldset).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductsAPI.GetProduct``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetProduct`: GetProductResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductsAPI.GetProduct(auth, companyId, productId).Fields(fields).Fieldset(fieldset).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductsAPI.GetProduct``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetProduct`: GetProductResponse
+	json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -255,33 +255,33 @@ List Products
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    fields := "fields_example" // string | List of comma-separated fields. (optional)
-    fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
-    sort := "sort_example" // string | List of comma-separated fields for result sorting (minus for desc sorting). (optional)
-    page := int32(56) // int32 | The page to retrieve. (optional) (default to 1)
-    perPage := int32(56) // int32 | The size of the page. (optional) (default to 5)
-    q := "q_example" // string | Query for filtering the results. (optional)
+	companyId := int32(12345) // int32 | The ID of the company.
+	fields := "fields_example" // string | List of comma-separated fields. (optional)
+	fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
+	sort := "sort_example" // string | List of comma-separated fields for result sorting (minus for desc sorting). (optional)
+	page := int32(56) // int32 | The page to retrieve. (optional) (default to 1)
+	perPage := int32(56) // int32 | The size of the page. (optional) (default to 5)
+	q := "q_example" // string | Query for filtering the results. (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductsAPI.ListProducts(auth, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductsAPI.ListProducts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListProducts`: ListProductsResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductsAPI.ListProducts(auth, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductsAPI.ListProducts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListProducts`: ListProductsResponse
+	json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -340,29 +340,29 @@ Modify Product
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    productId := int32(56) // int32 | The ID of the product.
-    modifyProductRequest := *fattureincloud.NewModifyProductRequest() // ModifyProductRequest | Modified product details. (optional)
+	companyId := int32(12345) // int32 | The ID of the company.
+	productId := int32(56) // int32 | The ID of the product.
+	modifyProductRequest := *fattureincloud.NewModifyProductRequest() // ModifyProductRequest | Modified product details. (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductsAPI.ModifyProduct(auth, companyId, productId).ModifyProductRequest(modifyProductRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductsAPI.ModifyProduct``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ModifyProduct`: ModifyProductResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductsAPI.ModifyProduct(auth, companyId, productId).ModifyProductRequest(modifyProductRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductsAPI.ModifyProduct``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ModifyProduct`: ModifyProductResponse
+	json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 

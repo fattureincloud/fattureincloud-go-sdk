@@ -366,3 +366,53 @@ func TestModifyVatType(t *testing.T) {
 
 	assert.True(t, reflect.DeepEqual(*expected, actual.GetData()))
 }
+
+func TestGetTaxProfile(t *testing.T) {
+	s := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		w.Write([]byte(`{"data":{"company_type":"individual","company_subtype":"artigiani","regime":"forfettario_5","rivalsa_name":"","default_rivalsa":0,"cassa_name":"","default_cassa":0,"default_cassa_taxable":100,"cassa2_name":"","default_cassa2":0,"default_cassa2_taxable":0,"default_withholding_tax":0,"default_withholding_tax_taxable":100,"default_other_withholding_tax":0,"enasarco":false,"contributions_percentage":0,"med":false,"default_vat":{"id":66,"value":0,"description":"Contribuenti forfettari","notes":"Operazione non soggetta a IVA ai sensi dell'art. 1, commi 54-89, Legge n. 190/2014 e succ. modifiche/integrazioni","e_invoice":true,"ei_type":"2.2","ei_description":"Non soggetta art. 1/54-89 L. 190/2014 e succ. modifiche/integrazioni","editable":false,"is_disabled":false,"default":true}}}`))
+	}))
+	defer s.Close()
+
+	serverURL, _ := url.Parse(s.URL)
+	configuration := fattureincloud.NewConfiguration()
+	configuration.HTTPClient = s.Client()
+	configuration.Host = serverURL.Host
+	configuration.Scheme = "http"
+	apiClient := fattureincloud.NewAPIClient(configuration)
+
+	actual, _, err := apiClient.SettingsAPI.GetTaxProfile(context.Background(), 2).Execute()
+	assert.NoError(t, err, "errore in chiamata api")
+
+	expected := NewTaxProfile().
+		SetCompanyType("individual").
+		SetCompanySubtype("artigiani").
+		SetRegime("forfettario_5").
+		SetRivalsaName("").
+		SetDefaultRivalsa(0).
+		SetCassaName("").
+		SetDefaultCassa(0).
+		SetDefaultCassaTaxable(100).
+		SetCassa2Name("").
+		SetDefaultCassa2(0).
+		SetDefaultCassa2Taxable(0).
+		SetDefaultWithholdingTax(0).
+		SetDefaultWithholdingTaxTaxable(100).
+		SetDefaultOtherWithholdingTax(0).
+		SetEnasarco(false).
+		SetContributionsPercentage(0).
+		SetMed(false).
+		SetDefaultVat(*NewVatType().
+			SetId(66).
+			SetValue(0).
+			SetDescription("Contribuenti forfettari").
+			SetNotes("Operazione non soggetta a IVA ai sensi dell'art. 1, commi 54-89, Legge n. 190/2014 e succ. modifiche/integrazioni").
+			SetEInvoice(true).
+			SetEiType("2.2").
+			SetEiDescription("Non soggetta art. 1/54-89 L. 190/2014 e succ. modifiche/integrazioni").
+			SetEditable(false).
+			SetIsDisabled(false).
+			SetDefault(true))
+
+	assert.True(t, reflect.DeepEqual(*expected, actual.GetData()))
+}

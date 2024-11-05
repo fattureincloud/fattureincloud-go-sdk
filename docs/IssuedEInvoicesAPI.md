@@ -25,28 +25,28 @@ Get E-Invoice Rejection Reason
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    documentId := int32(56) // int32 | The ID of the document.
+	companyId := int32(12345) // int32 | The ID of the company.
+	documentId := int32(56) // int32 | The ID of the document.
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedEInvoicesAPI.GetEInvoiceRejectionReason(auth, companyId, documentId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedEInvoicesAPI.GetEInvoiceRejectionReason``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetEInvoiceRejectionReason`: GetEInvoiceRejectionReasonResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.IssuedEInvoicesAPI.GetEInvoiceRejectionReason(auth, companyId, documentId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IssuedEInvoicesAPI.GetEInvoiceRejectionReason``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetEInvoiceRejectionReason`: GetEInvoiceRejectionReasonResponse
+	json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -101,29 +101,29 @@ Get E-Invoice XML
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    documentId := int32(56) // int32 | The ID of the document.
-    includeAttachment := true // bool | Include the attachment to the XML e-invoice. (optional)
+	companyId := int32(12345) // int32 | The ID of the company.
+	documentId := int32(56) // int32 | The ID of the document.
+	includeAttachment := true // bool | Include the attachment to the XML e-invoice. (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedEInvoicesAPI.GetEInvoiceXml(auth, companyId, documentId).IncludeAttachment(includeAttachment).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedEInvoicesAPI.GetEInvoiceXml``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetEInvoiceXml`: string
-    json.NewEncoder(os.Stdout).Encode(resp)
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.IssuedEInvoicesAPI.GetEInvoiceXml(auth, companyId, documentId).IncludeAttachment(includeAttachment).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IssuedEInvoicesAPI.GetEInvoiceXml``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetEInvoiceXml`: string
+	json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -179,29 +179,29 @@ Send E-Invoice
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    documentId := int32(56) // int32 | The ID of the document.
-    sendEInvoiceRequest := *fattureincloud.NewSendEInvoiceRequest() // SendEInvoiceRequest |  (optional)
+	companyId := int32(12345) // int32 | The ID of the company.
+	documentId := int32(56) // int32 | The ID of the document.
+	sendEInvoiceRequest := *fattureincloud.NewSendEInvoiceRequest() // SendEInvoiceRequest |  (optional)
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedEInvoicesAPI.SendEInvoice(auth, companyId, documentId).SendEInvoiceRequest(sendEInvoiceRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedEInvoicesAPI.SendEInvoice``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SendEInvoice`: SendEInvoiceResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.IssuedEInvoicesAPI.SendEInvoice(auth, companyId, documentId).SendEInvoiceRequest(sendEInvoiceRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IssuedEInvoicesAPI.SendEInvoice``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SendEInvoice`: SendEInvoiceResponse
+	json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 
@@ -257,28 +257,28 @@ Verify E-Invoice XML
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
-    documentId := int32(56) // int32 | The ID of the document.
+	companyId := int32(12345) // int32 | The ID of the company.
+	documentId := int32(56) // int32 | The ID of the document.
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedEInvoicesAPI.VerifyEInvoiceXml(auth, companyId, documentId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IssuedEInvoicesAPI.VerifyEInvoiceXml``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `VerifyEInvoiceXml`: VerifyEInvoiceXmlResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.IssuedEInvoicesAPI.VerifyEInvoiceXml(auth, companyId, documentId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IssuedEInvoicesAPI.VerifyEInvoiceXml``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VerifyEInvoiceXml`: VerifyEInvoiceXmlResponse
+	json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 

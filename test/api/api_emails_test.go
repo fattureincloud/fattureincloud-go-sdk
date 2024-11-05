@@ -43,7 +43,7 @@ func TestListEmails(t *testing.T) {
 	expected := NewEmail().
 		SetId(1).
 		SetStatus(EmailStatuses.SENT).
-		SetSentDate(time.Date(2022, 7, 18, 13, 53, 12, 0, time.UTC)).
+		SetSentDate("2022-07-18T13:53:12Z").
 		SetErrorsCount(0).
 		SetErrorLog("").
 		SetFromEmail("test@mail.it").

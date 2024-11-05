@@ -22,27 +22,27 @@ List Emails
 package main
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "os"
-    fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-    fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
 
 func main() {
-    companyId := int32(12345) // int32 | The ID of the company.
+	companyId := int32(12345) // int32 | The ID of the company.
 
-    auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-    configuration := fattureincloudapi.NewConfiguration()
-    apiClient := fattureincloudapi.NewAPIClient(configuration)
-    resp, r, err := apiClient.EmailsAPI.ListEmails(auth, companyId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EmailsAPI.ListEmails``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListEmails`: ListEmailsResponse
-    json.NewEncoder(os.Stdout).Encode(resp)
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.EmailsAPI.ListEmails(auth, companyId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `EmailsAPI.ListEmails``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListEmails`: ListEmailsResponse
+	json.NewEncoder(os.Stdout).Encode(resp)
 }
 ```
 

@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -301,10 +301,10 @@ func (a *CashbookAPIService) GetCashbookEntryExecute(r ApiGetCashbookEntryReques
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "form", "")
 	}
 	if r.fieldset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -450,16 +450,16 @@ func (a *CashbookAPIService) ListCashbookEntriesExecute(r ApiListCashbookEntries
 		return localVarReturnValue, nil, reportError("dateTo is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "date_from", r.dateFrom, "")
-	parameterAddToHeaderOrQuery(localVarQueryParams, "date_to", r.dateTo, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "date_from", r.dateFrom, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "date_to", r.dateTo, "form", "")
 	if r.year != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "year", r.year, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "year", r.year, "form", "")
 	}
 	if r.type_ != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "form", "")
 	}
 	if r.paymentAccountId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "payment_account_id", r.paymentAccountId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "payment_account_id", r.paymentAccountId, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

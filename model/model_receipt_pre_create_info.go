@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.0
+API version: 2.1.3
 Contact: info@fattureincloud.it
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &ReceiptPreCreateInfo{}
 
 // ReceiptPreCreateInfo struct for ReceiptPreCreateInfo
 type ReceiptPreCreateInfo struct {
-	Numerations map[string]map[string]int32 `json:"numerations,omitempty"`
+	Numerations *map[string]map[string]int32 `json:"numerations,omitempty"`
 	// Receipt used numerations list
 	NumerationsList []string `json:"numerations_list,omitempty"`
 	// Receipt used revenue centers list
@@ -56,14 +56,14 @@ func (o *ReceiptPreCreateInfo) GetNumerations() map[string]map[string]int32 {
 		var ret map[string]map[string]int32
 		return ret
 	}
-	return o.Numerations
+	return *o.Numerations
 }
 
 // GetNumerationsOk returns a tuple with the Numerations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReceiptPreCreateInfo) GetNumerationsOk() (map[string]map[string]int32, bool) {
+func (o *ReceiptPreCreateInfo) GetNumerationsOk() (*map[string]map[string]int32, bool) {
 	if o == nil || IsNil(o.Numerations) {
-		return map[string]map[string]int32{}, false
+		return nil, false
 	}
 	return o.Numerations, true
 }
@@ -79,7 +79,7 @@ func (o *ReceiptPreCreateInfo) HasNumerations() bool {
 
 // SetNumerations gets a reference to the given map[string]map[string]int32 and assigns it to the Numerations field.
 func (o *ReceiptPreCreateInfo) SetNumerations(v map[string]map[string]int32) *ReceiptPreCreateInfo {
-	o.Numerations = v
+	o.Numerations = &v
 	return o
 }
 
