@@ -5,16 +5,20 @@ All URIs are relative to *https://api-v2.fattureincloud.it*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateIssuedDocument**](IssuedDocumentsAPI.md#CreateIssuedDocument) | **Post** /c/{company_id}/issued_documents | Create Issued Document
+[**DeleteBinIssuedDocument**](IssuedDocumentsAPI.md#DeleteBinIssuedDocument) | **Delete** /c/{company_id}/bin/issued_documents/{document_id} | 
 [**DeleteIssuedDocument**](IssuedDocumentsAPI.md#DeleteIssuedDocument) | **Delete** /c/{company_id}/issued_documents/{document_id} | Delete Issued Document
 [**DeleteIssuedDocumentAttachment**](IssuedDocumentsAPI.md#DeleteIssuedDocumentAttachment) | **Delete** /c/{company_id}/issued_documents/{document_id}/attachment | Delete Issued Document Attachment
+[**GetBinIssuedDocument**](IssuedDocumentsAPI.md#GetBinIssuedDocument) | **Get** /c/{company_id}/bin/issued_documents/{document_id} | Get Bin Issued Documents List
 [**GetEmailData**](IssuedDocumentsAPI.md#GetEmailData) | **Get** /c/{company_id}/issued_documents/{document_id}/email | Get Email Data
 [**GetExistingIssuedDocumentTotals**](IssuedDocumentsAPI.md#GetExistingIssuedDocumentTotals) | **Post** /c/{company_id}/issued_documents/{document_id}/totals | Get Existing Issued Document Totals
 [**GetIssuedDocument**](IssuedDocumentsAPI.md#GetIssuedDocument) | **Get** /c/{company_id}/issued_documents/{document_id} | Get Issued Document
 [**GetIssuedDocumentPreCreateInfo**](IssuedDocumentsAPI.md#GetIssuedDocumentPreCreateInfo) | **Get** /c/{company_id}/issued_documents/info | Get Issued Document Pre-Create Info
 [**GetNewIssuedDocumentTotals**](IssuedDocumentsAPI.md#GetNewIssuedDocumentTotals) | **Post** /c/{company_id}/issued_documents/totals | Get New Issued Document Totals
 [**JoinIssuedDocuments**](IssuedDocumentsAPI.md#JoinIssuedDocuments) | **Get** /c/{company_id}/issued_documents/join | Join Issued Documents
+[**ListBinIssuedDocuments**](IssuedDocumentsAPI.md#ListBinIssuedDocuments) | **Get** /c/{company_id}/bin/issued_documents | Get Bin Issued Documents List
 [**ListIssuedDocuments**](IssuedDocumentsAPI.md#ListIssuedDocuments) | **Get** /c/{company_id}/issued_documents | List Issued Documents
 [**ModifyIssuedDocument**](IssuedDocumentsAPI.md#ModifyIssuedDocument) | **Put** /c/{company_id}/issued_documents/{document_id} | Modify Issued Document
+[**RecoverBinIssuedDocument**](IssuedDocumentsAPI.md#RecoverBinIssuedDocument) | **Post** /c/{company_id}/bin/issued_documents/{document_id}/recover | 
 [**ScheduleEmail**](IssuedDocumentsAPI.md#ScheduleEmail) | **Post** /c/{company_id}/issued_documents/{document_id}/email | Schedule Email
 [**TransformIssuedDocument**](IssuedDocumentsAPI.md#TransformIssuedDocument) | **Get** /c/{company_id}/issued_documents/transform | Transform Issued Document
 [**UploadIssuedDocumentAttachment**](IssuedDocumentsAPI.md#UploadIssuedDocumentAttachment) | **Post** /c/{company_id}/issued_documents/attachment | Upload Issued Document Attachment
@@ -90,6 +94,80 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteBinIssuedDocument
+
+> DeleteBinIssuedDocument(ctx, companyId, documentId).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+)
+
+func main() {
+	companyId := int32(12345) // int32 | The ID of the company.
+	documentId := int32(56) // int32 | The ID of the document.
+
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.IssuedDocumentsAPI.DeleteBinIssuedDocument(auth, companyId, documentId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.DeleteBinIssuedDocument``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**companyId** | **int32** | The ID of the company. | 
+**documentId** | **int32** | The ID of the document. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteBinIssuedDocumentRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -238,6 +316,82 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetBinIssuedDocument
+
+> GetBinIssuedDocumentResponse GetBinIssuedDocument(ctx, companyId, documentId).Execute()
+
+Get Bin Issued Documents List
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+)
+
+func main() {
+	companyId := int32(12345) // int32 | The ID of the company.
+	documentId := int32(56) // int32 | The ID of the document.
+
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.IssuedDocumentsAPI.GetBinIssuedDocument(auth, companyId, documentId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.GetBinIssuedDocument``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetBinIssuedDocument`: GetBinIssuedDocumentResponse
+	json.NewEncoder(os.Stdout).Encode(resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**companyId** | **int32** | The ID of the company. | 
+**documentId** | **int32** | The ID of the document. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetBinIssuedDocumentRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**GetBinIssuedDocumentResponse**](GetBinIssuedDocumentResponse.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -707,6 +861,79 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ListBinIssuedDocuments
+
+> ListBinIssuedDocuments ListBinIssuedDocuments(ctx, companyId).Execute()
+
+Get Bin Issued Documents List
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+)
+
+func main() {
+	companyId := int32(12345) // int32 | The ID of the company.
+
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.IssuedDocumentsAPI.ListBinIssuedDocuments(auth, companyId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.ListBinIssuedDocuments``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListBinIssuedDocuments`: ListBinIssuedDocuments
+	json.NewEncoder(os.Stdout).Encode(resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**companyId** | **int32** | The ID of the company. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListBinIssuedDocumentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**ListBinIssuedDocuments**](ListBinIssuedDocuments.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ListIssuedDocuments
 
 > ListIssuedDocumentsResponse ListIssuedDocuments(ctx, companyId).Type_(type_).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Inclusive(inclusive).Execute()
@@ -868,6 +1095,80 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## RecoverBinIssuedDocument
+
+> RecoverBinIssuedDocument(ctx, companyId, documentId).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+)
+
+func main() {
+	companyId := int32(12345) // int32 | The ID of the company.
+	documentId := int32(56) // int32 | The ID of the document.
+
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.IssuedDocumentsAPI.RecoverBinIssuedDocument(auth, companyId, documentId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IssuedDocumentsAPI.RecoverBinIssuedDocument``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**companyId** | **int32** | The ID of the company. | 
+**documentId** | **int32** | The ID of the document. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiRecoverBinIssuedDocumentRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

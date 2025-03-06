@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.3
+API version: 2.1.5
 Contact: info@fattureincloud.it
 */
 
@@ -29,6 +29,7 @@ type WebhooksSubscription struct {
 	// Webhooks events types.
 	Types []EventType `json:"types,omitempty"`
 	Config *WebhooksSubscriptionConfig `json:"config,omitempty"`
+	VerificationMethod *WebhooksSubscriptionVerificationMethod `json:"verification_method,omitempty"`
 }
 
 // NewWebhooksSubscription instantiates a new WebhooksSubscription object
@@ -247,6 +248,39 @@ func (o *WebhooksSubscription) SetConfig(v WebhooksSubscriptionConfig) *Webhooks
 	return o
 }
 
+// GetVerificationMethod returns the VerificationMethod field value if set, zero value otherwise.
+func (o *WebhooksSubscription) GetVerificationMethod() WebhooksSubscriptionVerificationMethod {
+	if o == nil || IsNil(o.VerificationMethod) {
+		var ret WebhooksSubscriptionVerificationMethod
+		return ret
+	}
+	return *o.VerificationMethod
+}
+
+// GetVerificationMethodOk returns a tuple with the VerificationMethod field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WebhooksSubscription) GetVerificationMethodOk() (*WebhooksSubscriptionVerificationMethod, bool) {
+	if o == nil || IsNil(o.VerificationMethod) {
+		return nil, false
+	}
+	return o.VerificationMethod, true
+}
+
+// HasVerificationMethod returns a boolean if a field has been set.
+func (o *WebhooksSubscription) HasVerificationMethod() bool {
+	if o != nil && !IsNil(o.VerificationMethod) {
+		return true
+	}
+
+	return false
+}
+
+// SetVerificationMethod gets a reference to the given WebhooksSubscriptionVerificationMethod and assigns it to the VerificationMethod field.
+func (o *WebhooksSubscription) SetVerificationMethod(v WebhooksSubscriptionVerificationMethod) *WebhooksSubscription {
+	o.VerificationMethod = &v
+	return o
+}
+
 func (o WebhooksSubscription) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -271,6 +305,9 @@ func (o WebhooksSubscription) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
+	}
+	if !IsNil(o.VerificationMethod) {
+		toSerialize["verification_method"] = o.VerificationMethod
 	}
 	return toSerialize, nil
 }

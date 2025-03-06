@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.3
+API version: 2.1.5
 Contact: info@fattureincloud.it
 */
 
@@ -45,7 +45,7 @@ var (
 	queryDescape    = strings.NewReplacer( "%5B", "[", "%5D", "]" )
 )
 
-// APIClient manages communication with the Fatture in Cloud API v2 - API Reference API v2.1.3
+// APIClient manages communication with the Fatture in Cloud API v2 - API Reference API v2.1.5
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
@@ -68,6 +68,8 @@ type APIClient struct {
 	IssuedDocumentsAPI *IssuedDocumentsAPIService
 
 	IssuedEInvoicesAPI *IssuedEInvoicesAPIService
+
+	PriceListsAPI *PriceListsAPIService
 
 	ProductsAPI *ProductsAPIService
 
@@ -110,6 +112,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.InfoAPI = (*InfoAPIService)(&c.common)
 	c.IssuedDocumentsAPI = (*IssuedDocumentsAPIService)(&c.common)
 	c.IssuedEInvoicesAPI = (*IssuedEInvoicesAPIService)(&c.common)
+	c.PriceListsAPI = (*PriceListsAPIService)(&c.common)
 	c.ProductsAPI = (*ProductsAPIService)(&c.common)
 	c.ReceiptsAPI = (*ReceiptsAPIService)(&c.common)
 	c.ReceivedDocumentsAPI = (*ReceivedDocumentsAPIService)(&c.common)

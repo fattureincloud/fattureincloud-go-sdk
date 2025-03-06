@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## ListEmails
 
-> ListEmailsResponse ListEmails(ctx, companyId).Execute()
+> ListEmailsResponse ListEmails(ctx, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
 
 List Emails
 
@@ -32,11 +32,17 @@ import (
 
 func main() {
 	companyId := int32(12345) // int32 | The ID of the company.
+	fields := "fields_example" // string | List of comma-separated fields. (optional)
+	fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
+	sort := "sort_example" // string | List of comma-separated fields for result sorting (minus for desc sorting). (optional)
+	page := int32(56) // int32 | The page to retrieve. (optional) (default to 1)
+	perPage := int32(56) // int32 | The size of the page. (optional) (default to 5)
+	q := "q_example" // string | Query for filtering the results. (optional)
 
 	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
 	configuration := fattureincloudapi.NewConfiguration()
 	apiClient := fattureincloudapi.NewAPIClient(configuration)
-	resp, r, err := apiClient.EmailsAPI.ListEmails(auth, companyId).Execute()
+	resp, r, err := apiClient.EmailsAPI.ListEmails(auth, companyId).Fields(fields).Fieldset(fieldset).Sort(sort).Page(page).PerPage(perPage).Q(q).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `EmailsAPI.ListEmails``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -62,6 +68,12 @@ Other parameters are passed through a pointer to a apiListEmailsRequest struct v
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **fields** | **string** | List of comma-separated fields. | 
+ **fieldset** | **string** | Name of the fieldset. | 
+ **sort** | **string** | List of comma-separated fields for result sorting (minus for desc sorting). | 
+ **page** | **int32** | The page to retrieve. | [default to 1]
+ **perPage** | **int32** | The size of the page. | [default to 5]
+ **q** | **string** | Query for filtering the results. | 
 
 ### Return type
 

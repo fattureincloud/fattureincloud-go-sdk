@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.3
+API version: 2.1.5
 Contact: info@fattureincloud.it
 */
 
@@ -556,4 +556,108 @@ func (a *WebhooksAPIService) ModifyWebhooksSubscriptionExecute(r ApiModifyWebhoo
 	}
 
 	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiVerifyWebhooksSubscriptionRequest struct {
+	ctx context.Context
+	ApiService *WebhooksAPIService
+	companyId int32
+	subscriptionId string
+	verifyWebhooksSubscriptionRequest *VerifyWebhooksSubscriptionRequest
+}
+
+func (r ApiVerifyWebhooksSubscriptionRequest) VerifyWebhooksSubscriptionRequest(verifyWebhooksSubscriptionRequest VerifyWebhooksSubscriptionRequest) ApiVerifyWebhooksSubscriptionRequest {
+	r.verifyWebhooksSubscriptionRequest = &verifyWebhooksSubscriptionRequest
+	return r
+}
+
+func (r ApiVerifyWebhooksSubscriptionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.VerifyWebhooksSubscriptionExecute(r)
+}
+
+/*
+VerifyWebhooksSubscription Verify Webhooks Subscription
+
+Verify a webhook subscription.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param companyId The ID of the company.
+ @param subscriptionId The ID of the subscription.
+ @return ApiVerifyWebhooksSubscriptionRequest
+*/
+func (a *WebhooksAPIService) VerifyWebhooksSubscription(ctx context.Context, companyId int32, subscriptionId string) ApiVerifyWebhooksSubscriptionRequest {
+	return ApiVerifyWebhooksSubscriptionRequest{
+		ApiService: a,
+		ctx: ctx,
+		companyId: companyId,
+		subscriptionId: subscriptionId,
+	}
+}
+
+// Execute executes the request
+func (a *WebhooksAPIService) VerifyWebhooksSubscriptionExecute(r ApiVerifyWebhooksSubscriptionRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.VerifyWebhooksSubscription")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/c/{company_id}/subscriptions/{subscription_id}/verify"
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"subscription_id"+"}", url.PathEscape(parameterValueToString(r.subscriptionId, "subscriptionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.verifyWebhooksSubscriptionRequest
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
 }

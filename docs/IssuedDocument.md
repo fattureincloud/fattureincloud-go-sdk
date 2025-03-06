@@ -86,6 +86,7 @@ Name | Type | Description | Notes
 **AttachmentToken** | Pointer to **NullableString** | [Write Only] Issued document attachment token returned by POST /issued_documents/attachment | [optional] 
 **EiRaw** | Pointer to **map[string]interface{}** | Issued document advanced raw attributes for e-invoices | [optional] 
 **EiStatus** | Pointer to **NullableString** | [Read only] Status of the e-invoice.   * **attempt** - We are trying to send the invoice, please wait up to 2 hours   * **missing** - The invoice is missing   * **not_sent** - The invoice has yet to be sent   * **sent** - The invoice was sent   * **pending** - The checks for the digital signature and sending are in progress   * **processing** - The SDI is delivering the invoice to the customer   * **error** - An error occurred while handling the invoice, please try to resend it or contact support   * **discarded** - The invoice has been rejected by the SDI, so it must be corrected and re-sent   * **not_delivered** - The SDI was unable to deliver the invoice   * **accepted** - The customer accepted the invoice   * **rejected** - The customer rejected the invoice, so it must be corrected   * **no_response** - A response has not yet been received whithin the deadline, contact the customer to ascertain the status of the invoice   * **manual_accepted** - The customer accepted the invoice   * **manual_rejected** - The customer rejected the invoice  | [optional] 
+**PriceListId** | Pointer to **NullableString** | Price list id | [optional] 
 **Locked** | Pointer to **NullableBool** | Issued Document can&#39;t be edited | [optional] 
 **CreatedAt** | Pointer to **NullableString** | Issued document creation date | [optional] 
 **UpdatedAt** | Pointer to **NullableString** | Issued document last update date | [optional] 
@@ -2889,6 +2890,41 @@ HasEiStatus returns a boolean if a field has been set.
 `func (o *IssuedDocument) UnsetEiStatus()`
 
 UnsetEiStatus ensures that no value is present for EiStatus, not even an explicit nil
+### GetPriceListId
+
+`func (o *IssuedDocument) GetPriceListId() string`
+
+GetPriceListId returns the PriceListId field if non-nil, zero value otherwise.
+
+### GetPriceListIdOk
+
+`func (o *IssuedDocument) GetPriceListIdOk() (*string, bool)`
+
+GetPriceListIdOk returns a tuple with the PriceListId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriceListId
+
+`func (o *IssuedDocument) SetPriceListId(v string)`
+
+SetPriceListId sets PriceListId field to given value.
+
+### HasPriceListId
+
+`func (o *IssuedDocument) HasPriceListId() bool`
+
+HasPriceListId returns a boolean if a field has been set.
+
+### SetPriceListIdNil
+
+`func (o *IssuedDocument) SetPriceListIdNil(b bool)`
+
+ SetPriceListIdNil sets the value for PriceListId to be an explicit nil
+
+### UnsetPriceListId
+`func (o *IssuedDocument) UnsetPriceListId()`
+
+UnsetPriceListId ensures that no value is present for PriceListId, not even an explicit nil
 ### GetLocked
 
 `func (o *IssuedDocument) GetLocked() bool`

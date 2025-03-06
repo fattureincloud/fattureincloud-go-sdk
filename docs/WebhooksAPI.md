@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**GetWebhooksSubscription**](WebhooksAPI.md#GetWebhooksSubscription) | **Get** /c/{company_id}/subscriptions/{subscription_id} | Get Webhooks Subscription
 [**ListWebhooksSubscriptions**](WebhooksAPI.md#ListWebhooksSubscriptions) | **Get** /c/{company_id}/subscriptions | List Webhooks Subscriptions
 [**ModifyWebhooksSubscription**](WebhooksAPI.md#ModifyWebhooksSubscription) | **Put** /c/{company_id}/subscriptions/{subscription_id} | Modify Webhooks Subscription
+[**VerifyWebhooksSubscription**](WebhooksAPI.md#VerifyWebhooksSubscription) | **Post** /c/{company_id}/subscriptions/{subscription_id}/verify | Verify Webhooks Subscription
 
 
 
@@ -382,6 +383,82 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VerifyWebhooksSubscription
+
+> VerifyWebhooksSubscription(ctx, companyId, subscriptionId).VerifyWebhooksSubscriptionRequest(verifyWebhooksSubscriptionRequest).Execute()
+
+Verify Webhooks Subscription
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+)
+
+func main() {
+	companyId := int32(12345) // int32 | The ID of the company.
+	subscriptionId := "SUB123" // string | The ID of the subscription.
+	verifyWebhooksSubscriptionRequest := *fattureincloud.NewVerifyWebhooksSubscriptionRequest() // VerifyWebhooksSubscriptionRequest |  (optional)
+
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.WebhooksAPI.VerifyWebhooksSubscription(auth, companyId, subscriptionId).VerifyWebhooksSubscriptionRequest(verifyWebhooksSubscriptionRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.VerifyWebhooksSubscription``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**companyId** | **int32** | The ID of the company. | 
+**subscriptionId** | **string** | The ID of the subscription. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVerifyWebhooksSubscriptionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **verifyWebhooksSubscriptionRequest** | [**VerifyWebhooksSubscriptionRequest**](VerifyWebhooksSubscriptionRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

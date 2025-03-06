@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**CreateClient**](ClientsAPI.md#CreateClient) | **Post** /c/{company_id}/entities/clients | Create Client
 [**DeleteClient**](ClientsAPI.md#DeleteClient) | **Delete** /c/{company_id}/entities/clients/{client_id} | Delete Client
 [**GetClient**](ClientsAPI.md#GetClient) | **Get** /c/{company_id}/entities/clients/{client_id} | Get Client
+[**GetClientInfo**](ClientsAPI.md#GetClientInfo) | **Get** /c/{company_id}/entities/clients/info | Get Client info
 [**ListClients**](ClientsAPI.md#ListClients) | **Get** /c/{company_id}/entities/clients | List Clients
 [**ModifyClient**](ClientsAPI.md#ModifyClient) | **Put** /c/{company_id}/entities/clients/{client_id} | Modify Client
 
@@ -226,6 +227,79 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetClientResponse**](GetClientResponse.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetClientInfo
+
+> GetEntityClientPreCreateInfoResponse GetClientInfo(ctx, companyId).Execute()
+
+Get Client info
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+)
+
+func main() {
+	companyId := int32(12345) // int32 | The ID of the company.
+
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.ClientsAPI.GetClientInfo(auth, companyId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ClientsAPI.GetClientInfo``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetClientInfo`: GetEntityClientPreCreateInfoResponse
+	json.NewEncoder(os.Stdout).Encode(resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**companyId** | **int32** | The ID of the company. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetClientInfoRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetEntityClientPreCreateInfoResponse**](GetEntityClientPreCreateInfoResponse.md)
 
 ### Authorization
 

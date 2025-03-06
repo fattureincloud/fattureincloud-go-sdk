@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.3
+API version: 2.1.5
 Contact: info@fattureincloud.it
 */
 
@@ -43,6 +43,8 @@ type IssuedDocumentPreCreateInfo struct {
 	VatTypesList []VatType `json:"vat_types_list,omitempty"`
 	// Languages list
 	LanguagesList []Language `json:"languages_list,omitempty"`
+	// Price lists
+	PriceLists []PriceList `json:"price_lists,omitempty"`
 }
 
 // NewIssuedDocumentPreCreateInfo instantiates a new IssuedDocumentPreCreateInfo object
@@ -566,6 +568,39 @@ func (o *IssuedDocumentPreCreateInfo) SetLanguagesList(v []Language) *IssuedDocu
 	return o
 }
 
+// GetPriceLists returns the PriceLists field value if set, zero value otherwise.
+func (o *IssuedDocumentPreCreateInfo) GetPriceLists() []PriceList {
+	if o == nil || IsNil(o.PriceLists) {
+		var ret []PriceList
+		return ret
+	}
+	return o.PriceLists
+}
+
+// GetPriceListsOk returns a tuple with the PriceLists field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IssuedDocumentPreCreateInfo) GetPriceListsOk() ([]PriceList, bool) {
+	if o == nil || IsNil(o.PriceLists) {
+		return nil, false
+	}
+	return o.PriceLists, true
+}
+
+// HasPriceLists returns a boolean if a field has been set.
+func (o *IssuedDocumentPreCreateInfo) HasPriceLists() bool {
+	if o != nil && !IsNil(o.PriceLists) {
+		return true
+	}
+
+	return false
+}
+
+// SetPriceLists gets a reference to the given []PriceList and assigns it to the PriceLists field.
+func (o *IssuedDocumentPreCreateInfo) SetPriceLists(v []PriceList) *IssuedDocumentPreCreateInfo {
+	o.PriceLists = v
+	return o
+}
+
 func (o IssuedDocumentPreCreateInfo) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -617,6 +652,9 @@ func (o IssuedDocumentPreCreateInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if o.LanguagesList != nil {
 		toSerialize["languages_list"] = o.LanguagesList
+	}
+	if !IsNil(o.PriceLists) {
+		toSerialize["price_lists"] = o.PriceLists
 	}
 	return toSerialize, nil
 }

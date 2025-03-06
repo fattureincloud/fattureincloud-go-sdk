@@ -34,12 +34,13 @@ Name | Type | Description | Notes
 **BankSwiftCode** | Pointer to **NullableString** | Client bank swift code | [optional] 
 **ShippingAddress** | Pointer to **NullableString** | Client shipping address | [optional] 
 **EInvoice** | Pointer to **NullableBool** | Use e-invoices for this entity | [optional] 
-**EiCode** | Pointer to **NullableString** | Client e-invoice code  | [optional] 
 **DiscountHighlight** | Pointer to **NullableBool** | Highlight Discount | [optional] 
+**EiCode** | Pointer to **NullableString** | Client e-invoice code  | [optional] 
 **DefaultDiscount** | Pointer to **NullableFloat32** | Client default discount | [optional] 
 **HasIntentDeclaration** | Pointer to **NullableBool** | Client has intent declaration | [optional] 
 **IntentDeclarationProtocolNumber** | Pointer to **NullableString** | Client intent declaration protocol number | [optional] 
 **IntentDeclarationProtocolDate** | Pointer to **NullableString** | Client intent declaration protocol date | [optional] 
+**PriceListId** | Pointer to **NullableString** | Price list id | [optional] 
 **CreatedAt** | Pointer to **NullableString** | Client creation date | [optional] 
 **UpdatedAt** | Pointer to **NullableString** | Client last update date | [optional] 
 
@@ -1092,41 +1093,6 @@ HasEInvoice returns a boolean if a field has been set.
 `func (o *Client) UnsetEInvoice()`
 
 UnsetEInvoice ensures that no value is present for EInvoice, not even an explicit nil
-### GetEiCode
-
-`func (o *Client) GetEiCode() string`
-
-GetEiCode returns the EiCode field if non-nil, zero value otherwise.
-
-### GetEiCodeOk
-
-`func (o *Client) GetEiCodeOk() (*string, bool)`
-
-GetEiCodeOk returns a tuple with the EiCode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEiCode
-
-`func (o *Client) SetEiCode(v string)`
-
-SetEiCode sets EiCode field to given value.
-
-### HasEiCode
-
-`func (o *Client) HasEiCode() bool`
-
-HasEiCode returns a boolean if a field has been set.
-
-### SetEiCodeNil
-
-`func (o *Client) SetEiCodeNil(b bool)`
-
- SetEiCodeNil sets the value for EiCode to be an explicit nil
-
-### UnsetEiCode
-`func (o *Client) UnsetEiCode()`
-
-UnsetEiCode ensures that no value is present for EiCode, not even an explicit nil
 ### GetDiscountHighlight
 
 `func (o *Client) GetDiscountHighlight() bool`
@@ -1162,6 +1128,41 @@ HasDiscountHighlight returns a boolean if a field has been set.
 `func (o *Client) UnsetDiscountHighlight()`
 
 UnsetDiscountHighlight ensures that no value is present for DiscountHighlight, not even an explicit nil
+### GetEiCode
+
+`func (o *Client) GetEiCode() string`
+
+GetEiCode returns the EiCode field if non-nil, zero value otherwise.
+
+### GetEiCodeOk
+
+`func (o *Client) GetEiCodeOk() (*string, bool)`
+
+GetEiCodeOk returns a tuple with the EiCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEiCode
+
+`func (o *Client) SetEiCode(v string)`
+
+SetEiCode sets EiCode field to given value.
+
+### HasEiCode
+
+`func (o *Client) HasEiCode() bool`
+
+HasEiCode returns a boolean if a field has been set.
+
+### SetEiCodeNil
+
+`func (o *Client) SetEiCodeNil(b bool)`
+
+ SetEiCodeNil sets the value for EiCode to be an explicit nil
+
+### UnsetEiCode
+`func (o *Client) UnsetEiCode()`
+
+UnsetEiCode ensures that no value is present for EiCode, not even an explicit nil
 ### GetDefaultDiscount
 
 `func (o *Client) GetDefaultDiscount() float32`
@@ -1302,6 +1303,41 @@ HasIntentDeclarationProtocolDate returns a boolean if a field has been set.
 `func (o *Client) UnsetIntentDeclarationProtocolDate()`
 
 UnsetIntentDeclarationProtocolDate ensures that no value is present for IntentDeclarationProtocolDate, not even an explicit nil
+### GetPriceListId
+
+`func (o *Client) GetPriceListId() string`
+
+GetPriceListId returns the PriceListId field if non-nil, zero value otherwise.
+
+### GetPriceListIdOk
+
+`func (o *Client) GetPriceListIdOk() (*string, bool)`
+
+GetPriceListIdOk returns a tuple with the PriceListId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriceListId
+
+`func (o *Client) SetPriceListId(v string)`
+
+SetPriceListId sets PriceListId field to given value.
+
+### HasPriceListId
+
+`func (o *Client) HasPriceListId() bool`
+
+HasPriceListId returns a boolean if a field has been set.
+
+### SetPriceListIdNil
+
+`func (o *Client) SetPriceListIdNil(b bool)`
+
+ SetPriceListIdNil sets the value for PriceListId to be an explicit nil
+
+### UnsetPriceListId
+`func (o *Client) UnsetPriceListId()`
+
+UnsetPriceListId ensures that no value is present for PriceListId, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *Client) GetCreatedAt() string`

@@ -36,10 +36,13 @@ var Scopes = struct {
 	STOCK_ALL Scope
 	RECEIPTS_READ Scope
 	RECEIPTS_ALL Scope
+	CALENDAR_READ Scope
+	CALENDAR_ALL Scope
 	TAXES_READ Scope
 	TAXES_ALL Scope
 	ARCHIVE_READ Scope
 	ARCHIVE_ALL Scope
+	EMAILS_READ Scope
 	CASHBOOK_READ Scope
 	CASHBOOK_ALL Scope
 	SETTINGS_READ Scope
@@ -78,10 +81,13 @@ var Scopes = struct {
 	STOCK_ALL: "stock:a",
 	RECEIPTS_READ: "receipts:r",
 	RECEIPTS_ALL: "receipts:a",
+	CALENDAR_READ: "calendar:r",
+	CALENDAR_ALL: "calendar:a",
 	TAXES_READ: "taxes:r",
 	TAXES_ALL: "taxes:a",
 	ARCHIVE_READ: "archive:r",
 	ARCHIVE_ALL: "archive:a",
+	EMAILS_READ: "emails:r",
 	CASHBOOK_READ: "cashbook:r",
 	CASHBOOK_ALL: "cashbook:a",
 	SETTINGS_READ: "settings:r",

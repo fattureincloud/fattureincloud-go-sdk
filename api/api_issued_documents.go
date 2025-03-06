@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.3
+API version: 2.1.5
 Contact: info@fattureincloud.it
 */
 
@@ -136,6 +136,102 @@ func (a *IssuedDocumentsAPIService) CreateIssuedDocumentExecute(r ApiCreateIssue
 	}
 
 	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiDeleteBinIssuedDocumentRequest struct {
+	ctx context.Context
+	ApiService *IssuedDocumentsAPIService
+	companyId int32
+	documentId int32
+}
+
+func (r ApiDeleteBinIssuedDocumentRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteBinIssuedDocumentExecute(r)
+}
+
+/*
+DeleteBinIssuedDocument 
+
+Delete Bin Issued Document
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param companyId The ID of the company.
+ @param documentId The ID of the document.
+ @return ApiDeleteBinIssuedDocumentRequest
+*/
+func (a *IssuedDocumentsAPIService) DeleteBinIssuedDocument(ctx context.Context, companyId int32, documentId int32) ApiDeleteBinIssuedDocumentRequest {
+	return ApiDeleteBinIssuedDocumentRequest{
+		ApiService: a,
+		ctx: ctx,
+		companyId: companyId,
+		documentId: documentId,
+	}
+}
+
+// Execute executes the request
+func (a *IssuedDocumentsAPIService) DeleteBinIssuedDocumentExecute(r ApiDeleteBinIssuedDocumentRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsAPIService.DeleteBinIssuedDocument")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/c/{company_id}/bin/issued_documents/{document_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
 }
 
 type ApiDeleteIssuedDocumentRequest struct {
@@ -328,6 +424,113 @@ func (a *IssuedDocumentsAPIService) DeleteIssuedDocumentAttachmentExecute(r ApiD
 	}
 
 	return localVarHTTPResponse, nil
+}
+
+type ApiGetBinIssuedDocumentRequest struct {
+	ctx context.Context
+	ApiService *IssuedDocumentsAPIService
+	companyId int32
+	documentId int32
+}
+
+func (r ApiGetBinIssuedDocumentRequest) Execute() (*GetBinIssuedDocumentResponse, *http.Response, error) {
+	return r.ApiService.GetBinIssuedDocumentExecute(r)
+}
+
+/*
+GetBinIssuedDocument Get Bin Issued Documents List
+
+Get bin issued documents detail
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param companyId The ID of the company.
+ @param documentId The ID of the document.
+ @return ApiGetBinIssuedDocumentRequest
+*/
+func (a *IssuedDocumentsAPIService) GetBinIssuedDocument(ctx context.Context, companyId int32, documentId int32) ApiGetBinIssuedDocumentRequest {
+	return ApiGetBinIssuedDocumentRequest{
+		ApiService: a,
+		ctx: ctx,
+		companyId: companyId,
+		documentId: documentId,
+	}
+}
+
+// Execute executes the request
+//  @return GetBinIssuedDocumentResponse
+func (a *IssuedDocumentsAPIService) GetBinIssuedDocumentExecute(r ApiGetBinIssuedDocumentRequest) (*GetBinIssuedDocumentResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetBinIssuedDocumentResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsAPIService.GetBinIssuedDocument")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/c/{company_id}/bin/issued_documents/{document_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
 type ApiGetEmailDataRequest struct {
@@ -1039,6 +1242,109 @@ func (a *IssuedDocumentsAPIService) JoinIssuedDocumentsExecute(r ApiJoinIssuedDo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiListBinIssuedDocumentsRequest struct {
+	ctx context.Context
+	ApiService *IssuedDocumentsAPIService
+	companyId int32
+}
+
+func (r ApiListBinIssuedDocumentsRequest) Execute() (*ListBinIssuedDocuments, *http.Response, error) {
+	return r.ApiService.ListBinIssuedDocumentsExecute(r)
+}
+
+/*
+ListBinIssuedDocuments Get Bin Issued Documents List
+
+Get bin issued documents list
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param companyId The ID of the company.
+ @return ApiListBinIssuedDocumentsRequest
+*/
+func (a *IssuedDocumentsAPIService) ListBinIssuedDocuments(ctx context.Context, companyId int32) ApiListBinIssuedDocumentsRequest {
+	return ApiListBinIssuedDocumentsRequest{
+		ApiService: a,
+		ctx: ctx,
+		companyId: companyId,
+	}
+}
+
+// Execute executes the request
+//  @return ListBinIssuedDocuments
+func (a *IssuedDocumentsAPIService) ListBinIssuedDocumentsExecute(r ApiListBinIssuedDocumentsRequest) (*ListBinIssuedDocuments, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ListBinIssuedDocuments
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsAPIService.ListBinIssuedDocuments")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/c/{company_id}/bin/issued_documents"
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiListIssuedDocumentsRequest struct {
 	ctx context.Context
 	ApiService *IssuedDocumentsAPIService
@@ -1343,6 +1649,102 @@ func (a *IssuedDocumentsAPIService) ModifyIssuedDocumentExecute(r ApiModifyIssue
 	}
 
 	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiRecoverBinIssuedDocumentRequest struct {
+	ctx context.Context
+	ApiService *IssuedDocumentsAPIService
+	companyId int32
+	documentId int32
+}
+
+func (r ApiRecoverBinIssuedDocumentRequest) Execute() (*http.Response, error) {
+	return r.ApiService.RecoverBinIssuedDocumentExecute(r)
+}
+
+/*
+RecoverBinIssuedDocument 
+
+Recover Issued Document From The Bin
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param companyId The ID of the company.
+ @param documentId The ID of the document.
+ @return ApiRecoverBinIssuedDocumentRequest
+*/
+func (a *IssuedDocumentsAPIService) RecoverBinIssuedDocument(ctx context.Context, companyId int32, documentId int32) ApiRecoverBinIssuedDocumentRequest {
+	return ApiRecoverBinIssuedDocumentRequest{
+		ApiService: a,
+		ctx: ctx,
+		companyId: companyId,
+		documentId: documentId,
+	}
+}
+
+// Execute executes the request
+func (a *IssuedDocumentsAPIService) RecoverBinIssuedDocumentExecute(r ApiRecoverBinIssuedDocumentRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IssuedDocumentsAPIService.RecoverBinIssuedDocument")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/c/{company_id}/bin/issued_documents/{document_id}/recover"
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", url.PathEscape(parameterValueToString(r.documentId, "documentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
 }
 
 type ApiScheduleEmailRequest struct {
