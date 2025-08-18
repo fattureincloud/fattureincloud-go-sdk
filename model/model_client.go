@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.3
+API version: 2.1.5
 Contact: info@fattureincloud.it
 */
 
@@ -76,10 +76,10 @@ type Client struct {
 	ShippingAddress NullableString `json:"shipping_address,omitempty"`
 	// Use e-invoices for this entity
 	EInvoice NullableBool `json:"e_invoice,omitempty"`
-	// Client e-invoice code 
-	EiCode NullableString `json:"ei_code,omitempty"`
 	// Highlight Discount
 	DiscountHighlight NullableBool `json:"discount_highlight,omitempty"`
+	// Client e-invoice code 
+	EiCode NullableString `json:"ei_code,omitempty"`
 	// Client default discount
 	DefaultDiscount NullableFloat32 `json:"default_discount,omitempty"`
 	// Client has intent declaration
@@ -88,6 +88,8 @@ type Client struct {
 	IntentDeclarationProtocolNumber NullableString `json:"intent_declaration_protocol_number,omitempty"`
 	// Client intent declaration protocol date
 	IntentDeclarationProtocolDate NullableString `json:"intent_declaration_protocol_date,omitempty"`
+	// Price list id
+	PriceListId NullableString `json:"price_list_id,omitempty"`
 	// Client creation date
 	CreatedAt NullableString `json:"created_at,omitempty"`
 	// Client last update date
@@ -1411,50 +1413,6 @@ func (o *Client) UnsetEInvoice() {
 	o.EInvoice.Unset()
 }
 
-// GetEiCode returns the EiCode field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Client) GetEiCode() string {
-	if o == nil || IsNil(o.EiCode.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.EiCode.Get()
-}
-
-// GetEiCodeOk returns a tuple with the EiCode field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Client) GetEiCodeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.EiCode.Get(), o.EiCode.IsSet()
-}
-
-// HasEiCode returns a boolean if a field has been set.
-func (o *Client) HasEiCode() bool {
-	if o != nil && o.EiCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetEiCode gets a reference to the given NullableString and assigns it to the EiCode field.
-func (o *Client) SetEiCode(v string) *Client {
-	o.EiCode.Set(&v)
-	return o
-}
-// SetEiCodeNil sets the value for EiCode to be an explicit nil
-func (o *Client) SetEiCodeNil() *Client {
-	o.EiCode.Set(nil)
-	return o
-}
-
-// UnsetEiCode ensures that no value is present for EiCode, not even an explicit nil
-func (o *Client) UnsetEiCode() {
-	o.EiCode.Unset()
-}
-
 // GetDiscountHighlight returns the DiscountHighlight field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Client) GetDiscountHighlight() bool {
 	if o == nil || IsNil(o.DiscountHighlight.Get()) {
@@ -1497,6 +1455,50 @@ func (o *Client) SetDiscountHighlightNil() *Client {
 // UnsetDiscountHighlight ensures that no value is present for DiscountHighlight, not even an explicit nil
 func (o *Client) UnsetDiscountHighlight() {
 	o.DiscountHighlight.Unset()
+}
+
+// GetEiCode returns the EiCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Client) GetEiCode() string {
+	if o == nil || IsNil(o.EiCode.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.EiCode.Get()
+}
+
+// GetEiCodeOk returns a tuple with the EiCode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Client) GetEiCodeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.EiCode.Get(), o.EiCode.IsSet()
+}
+
+// HasEiCode returns a boolean if a field has been set.
+func (o *Client) HasEiCode() bool {
+	if o != nil && o.EiCode.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetEiCode gets a reference to the given NullableString and assigns it to the EiCode field.
+func (o *Client) SetEiCode(v string) *Client {
+	o.EiCode.Set(&v)
+	return o
+}
+// SetEiCodeNil sets the value for EiCode to be an explicit nil
+func (o *Client) SetEiCodeNil() *Client {
+	o.EiCode.Set(nil)
+	return o
+}
+
+// UnsetEiCode ensures that no value is present for EiCode, not even an explicit nil
+func (o *Client) UnsetEiCode() {
+	o.EiCode.Unset()
 }
 
 // GetDefaultDiscount returns the DefaultDiscount field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1673,6 +1675,50 @@ func (o *Client) SetIntentDeclarationProtocolDateNil() *Client {
 // UnsetIntentDeclarationProtocolDate ensures that no value is present for IntentDeclarationProtocolDate, not even an explicit nil
 func (o *Client) UnsetIntentDeclarationProtocolDate() {
 	o.IntentDeclarationProtocolDate.Unset()
+}
+
+// GetPriceListId returns the PriceListId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Client) GetPriceListId() string {
+	if o == nil || IsNil(o.PriceListId.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.PriceListId.Get()
+}
+
+// GetPriceListIdOk returns a tuple with the PriceListId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Client) GetPriceListIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.PriceListId.Get(), o.PriceListId.IsSet()
+}
+
+// HasPriceListId returns a boolean if a field has been set.
+func (o *Client) HasPriceListId() bool {
+	if o != nil && o.PriceListId.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetPriceListId gets a reference to the given NullableString and assigns it to the PriceListId field.
+func (o *Client) SetPriceListId(v string) *Client {
+	o.PriceListId.Set(&v)
+	return o
+}
+// SetPriceListIdNil sets the value for PriceListId to be an explicit nil
+func (o *Client) SetPriceListIdNil() *Client {
+	o.PriceListId.Set(nil)
+	return o
+}
+
+// UnsetPriceListId ensures that no value is present for PriceListId, not even an explicit nil
+func (o *Client) UnsetPriceListId() {
+	o.PriceListId.Unset()
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1863,11 +1909,11 @@ func (o Client) ToMap() (map[string]interface{}, error) {
 	if o.EInvoice.IsSet() {
 		toSerialize["e_invoice"] = o.EInvoice.Get()
 	}
-	if o.EiCode.IsSet() {
-		toSerialize["ei_code"] = o.EiCode.Get()
-	}
 	if o.DiscountHighlight.IsSet() {
 		toSerialize["discount_highlight"] = o.DiscountHighlight.Get()
+	}
+	if o.EiCode.IsSet() {
+		toSerialize["ei_code"] = o.EiCode.Get()
 	}
 	if o.DefaultDiscount.IsSet() {
 		toSerialize["default_discount"] = o.DefaultDiscount.Get()
@@ -1880,6 +1926,9 @@ func (o Client) ToMap() (map[string]interface{}, error) {
 	}
 	if o.IntentDeclarationProtocolDate.IsSet() {
 		toSerialize["intent_declaration_protocol_date"] = o.IntentDeclarationProtocolDate.Get()
+	}
+	if o.PriceListId.IsSet() {
+		toSerialize["price_list_id"] = o.PriceListId.Get()
 	}
 	if o.CreatedAt.IsSet() {
 		toSerialize["created_at"] = o.CreatedAt.Get()

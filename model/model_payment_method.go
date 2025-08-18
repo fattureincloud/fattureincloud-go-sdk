@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.3
+API version: 2.1.5
 Contact: info@fattureincloud.it
 */
 
@@ -18,7 +18,7 @@ import (
 // checks if the PaymentMethod type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PaymentMethod{}
 
-// PaymentMethod struct for PaymentMethod
+// PaymentMethod 
 type PaymentMethod struct {
 	// Payment method id
 	Id NullableInt32 `json:"id,omitempty"`

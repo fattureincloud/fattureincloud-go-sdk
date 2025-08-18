@@ -9,6 +9,7 @@ api_emails.go
 api_info.go
 api_issued_documents.go
 api_issued_e_invoices.go
+api_price_lists.go
 api_products.go
 api_receipts.go
 api_received_documents.go
@@ -82,6 +83,7 @@ docs/EmailScheduleInclude.md
 docs/EmailStatus.md
 docs/EmailsAPI.md
 docs/Entity.md
+docs/EntityClientPreCreateInfo.md
 docs/EntityType.md
 docs/EventType.md
 docs/F24.md
@@ -89,12 +91,15 @@ docs/F24Status.md
 docs/FattureInCloudPlanType.md
 docs/FunctionStatus.md
 docs/GetArchiveDocumentResponse.md
+docs/GetBinIssuedDocumentResponse.md
+docs/GetBinReceivedDocumentResponse.md
 docs/GetCashbookEntryResponse.md
 docs/GetClientResponse.md
 docs/GetCompanyInfoResponse.md
 docs/GetCompanyPlanUsageResponse.md
 docs/GetEInvoiceRejectionReasonResponse.md
 docs/GetEmailDataResponse.md
+docs/GetEntityClientPreCreateInfoResponse.md
 docs/GetExistingIssuedDocumentTotalsRequest.md
 docs/GetExistingIssuedDocumentTotalsResponse.md
 docs/GetExistingReceivedDocumentTotalsRequest.md
@@ -108,6 +113,7 @@ docs/GetNewReceivedDocumentTotalsRequest.md
 docs/GetNewReceivedDocumentTotalsResponse.md
 docs/GetPaymentAccountResponse.md
 docs/GetPaymentMethodResponse.md
+docs/GetPriceListItemsResponse.md
 docs/GetProductResponse.md
 docs/GetReceiptPreCreateInfoResponse.md
 docs/GetReceiptResponse.md
@@ -143,6 +149,8 @@ docs/Language.md
 docs/ListArchiveCategoriesResponse.md
 docs/ListArchiveDocumentsResponse.md
 docs/ListArchiveDocumentsResponsePage.md
+docs/ListBinIssuedDocuments.md
+docs/ListBinReceivedDocuments.md
 docs/ListCashbookEntriesResponse.md
 docs/ListCitiesResponse.md
 docs/ListClientsResponse.md
@@ -163,6 +171,7 @@ docs/ListIssuedDocumentsResponsePage.md
 docs/ListLanguagesResponse.md
 docs/ListPaymentAccountsResponse.md
 docs/ListPaymentMethodsResponse.md
+docs/ListPriceListsResponse.md
 docs/ListProductCategoriesResponse.md
 docs/ListProductsResponse.md
 docs/ListProductsResponsePage.md
@@ -218,6 +227,11 @@ docs/PaymentTermsType.md
 docs/PermissionLevel.md
 docs/Permissions.md
 docs/PermissionsFicIssuedDocumentsDetailed.md
+docs/PriceList.md
+docs/PriceListItem.md
+docs/PriceListPricesType.md
+docs/PriceListType.md
+docs/PriceListsAPI.md
 docs/Product.md
 docs/ProductsAPI.md
 docs/Receipt.md
@@ -266,10 +280,13 @@ docs/VerifyEInvoiceXmlErrorResponseErrorValidationResult.md
 docs/VerifyEInvoiceXmlErrorResponseExtra.md
 docs/VerifyEInvoiceXmlResponse.md
 docs/VerifyEInvoiceXmlResponseData.md
+docs/VerifyWebhooksSubscription.md
+docs/VerifyWebhooksSubscriptionRequest.md
 docs/WebhooksAPI.md
 docs/WebhooksSubscription.md
 docs/WebhooksSubscriptionConfig.md
 docs/WebhooksSubscriptionMapping.md
+docs/WebhooksSubscriptionVerificationMethod.md
 go.mod
 go.sum
 model_archive_document.go
@@ -330,6 +347,7 @@ model_email_schedule.go
 model_email_schedule_include.go
 model_email_status.go
 model_entity.go
+model_entity_client_pre_create_info.go
 model_entity_type.go
 model_event_type.go
 model_f24.go
@@ -337,12 +355,15 @@ model_f24_status.go
 model_fatture_in_cloud_plan_type.go
 model_function_status.go
 model_get_archive_document_response.go
+model_get_bin_issued_document_response.go
+model_get_bin_received_document_response.go
 model_get_cashbook_entry_response.go
 model_get_client_response.go
 model_get_company_info_response.go
 model_get_company_plan_usage_response.go
 model_get_e_invoice_rejection_reason_response.go
 model_get_email_data_response.go
+model_get_entity_client_pre_create_info_response.go
 model_get_existing_issued_document_totals_request.go
 model_get_existing_issued_document_totals_response.go
 model_get_existing_received_document_totals_request.go
@@ -356,6 +377,7 @@ model_get_new_received_document_totals_request.go
 model_get_new_received_document_totals_response.go
 model_get_payment_account_response.go
 model_get_payment_method_response.go
+model_get_price_list_items_response.go
 model_get_product_response.go
 model_get_receipt_pre_create_info_response.go
 model_get_receipt_response.go
@@ -388,6 +410,8 @@ model_language.go
 model_list_archive_categories_response.go
 model_list_archive_documents_response.go
 model_list_archive_documents_response_page.go
+model_list_bin_issued_documents.go
+model_list_bin_received_documents.go
 model_list_cashbook_entries_response.go
 model_list_cities_response.go
 model_list_clients_response.go
@@ -408,6 +432,7 @@ model_list_issued_documents_response_page.go
 model_list_languages_response.go
 model_list_payment_accounts_response.go
 model_list_payment_methods_response.go
+model_list_price_lists_response.go
 model_list_product_categories_response.go
 model_list_products_response.go
 model_list_products_response_page.go
@@ -463,6 +488,10 @@ model_payment_terms_type.go
 model_permission_level.go
 model_permissions.go
 model_permissions_fic_issued_documents_detailed.go
+model_price_list.go
+model_price_list_item.go
+model_price_list_prices_type.go
+model_price_list_type.go
 model_product.go
 model_receipt.go
 model_receipt_items_list_item.go
@@ -504,8 +533,11 @@ model_verify_e_invoice_xml_error_response_error_validation_result.go
 model_verify_e_invoice_xml_error_response_extra.go
 model_verify_e_invoice_xml_response.go
 model_verify_e_invoice_xml_response_data.go
+model_verify_webhooks_subscription.go
+model_verify_webhooks_subscription_request.go
 model_webhooks_subscription.go
 model_webhooks_subscription_config.go
 model_webhooks_subscription_mapping.go
+model_webhooks_subscription_verification_method.go
 response.go
 utils.go

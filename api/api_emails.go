@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.3
+API version: 2.1.5
 Contact: info@fattureincloud.it
 */
 
@@ -29,6 +29,48 @@ type ApiListEmailsRequest struct {
 	ctx context.Context
 	ApiService *EmailsAPIService
 	companyId int32
+	fields *string
+	fieldset *string
+	sort *string
+	page *int32
+	perPage *int32
+	q *string
+}
+
+// List of comma-separated fields.
+func (r ApiListEmailsRequest) Fields(fields string) ApiListEmailsRequest {
+	r.fields = &fields
+	return r
+}
+
+// Name of the fieldset.
+func (r ApiListEmailsRequest) Fieldset(fieldset string) ApiListEmailsRequest {
+	r.fieldset = &fieldset
+	return r
+}
+
+// List of comma-separated fields for result sorting (minus for desc sorting).
+func (r ApiListEmailsRequest) Sort(sort string) ApiListEmailsRequest {
+	r.sort = &sort
+	return r
+}
+
+// The page to retrieve.
+func (r ApiListEmailsRequest) Page(page int32) ApiListEmailsRequest {
+	r.page = &page
+	return r
+}
+
+// The size of the page.
+func (r ApiListEmailsRequest) PerPage(perPage int32) ApiListEmailsRequest {
+	r.perPage = &perPage
+	return r
+}
+
+// Query for filtering the results.
+func (r ApiListEmailsRequest) Q(q string) ApiListEmailsRequest {
+	r.q = &q
+	return r
 }
 
 func (r ApiListEmailsRequest) Execute() (*ListEmailsResponse, *http.Response, error) {
@@ -74,6 +116,30 @@ func (a *EmailsAPIService) ListEmailsExecute(r ApiListEmailsRequest) (*ListEmail
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.fields != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "form", "")
+	}
+	if r.fieldset != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "form", "")
+	}
+	if r.sort != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "form", "")
+	}
+	if r.page != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	} else {
+		var defaultValue int32 = 1
+		r.page = &defaultValue
+	}
+	if r.perPage != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "form", "")
+	} else {
+		var defaultValue int32 = 5
+		r.perPage = &defaultValue
+	}
+	if r.q != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

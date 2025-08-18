@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Verified** | Pointer to **NullableBool** | [Read Only] True if the webhooks subscription has been verified. | [optional] 
 **Types** | Pointer to [**[]EventType**](EventType.md) | Webhooks events types. | [optional] 
 **Config** | Pointer to [**WebhooksSubscriptionConfig**](WebhooksSubscriptionConfig.md) |  | [optional] 
+**VerificationMethod** | Pointer to [**WebhooksSubscriptionVerificationMethod**](WebhooksSubscriptionVerificationMethod.md) |  | [optional] 
 
 ## Methods
 
@@ -193,6 +194,31 @@ SetConfig sets Config field to given value.
 `func (o *WebhooksSubscription) HasConfig() bool`
 
 HasConfig returns a boolean if a field has been set.
+
+### GetVerificationMethod
+
+`func (o *WebhooksSubscription) GetVerificationMethod() WebhooksSubscriptionVerificationMethod`
+
+GetVerificationMethod returns the VerificationMethod field if non-nil, zero value otherwise.
+
+### GetVerificationMethodOk
+
+`func (o *WebhooksSubscription) GetVerificationMethodOk() (*WebhooksSubscriptionVerificationMethod, bool)`
+
+GetVerificationMethodOk returns a tuple with the VerificationMethod field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVerificationMethod
+
+`func (o *WebhooksSubscription) SetVerificationMethod(v WebhooksSubscriptionVerificationMethod)`
+
+SetVerificationMethod sets VerificationMethod field to given value.
+
+### HasVerificationMethod
+
+`func (o *WebhooksSubscription) HasVerificationMethod() bool`
+
+HasVerificationMethod returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

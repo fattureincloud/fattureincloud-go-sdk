@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **PaymentAccountsList** | Pointer to [**[]PaymentAccount**](PaymentAccount.md) | Payment accounts list | [optional] 
 **VatTypesList** | Pointer to [**[]VatType**](VatType.md) | Vat types list | [optional] 
 **LanguagesList** | Pointer to [**[]Language**](Language.md) | Languages list | [optional] 
+**PriceLists** | Pointer to [**[]PriceList**](PriceList.md) | Price lists | [optional] 
 
 ## Methods
 
@@ -508,6 +509,31 @@ HasLanguagesList returns a boolean if a field has been set.
 `func (o *IssuedDocumentPreCreateInfo) UnsetLanguagesList()`
 
 UnsetLanguagesList ensures that no value is present for LanguagesList, not even an explicit nil
+### GetPriceLists
+
+`func (o *IssuedDocumentPreCreateInfo) GetPriceLists() []PriceList`
+
+GetPriceLists returns the PriceLists field if non-nil, zero value otherwise.
+
+### GetPriceListsOk
+
+`func (o *IssuedDocumentPreCreateInfo) GetPriceListsOk() (*[]PriceList, bool)`
+
+GetPriceListsOk returns a tuple with the PriceLists field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriceLists
+
+`func (o *IssuedDocumentPreCreateInfo) SetPriceLists(v []PriceList)`
+
+SetPriceLists sets PriceLists field to given value.
+
+### HasPriceLists
+
+`func (o *IssuedDocumentPreCreateInfo) HasPriceLists() bool`
+
+HasPriceLists returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

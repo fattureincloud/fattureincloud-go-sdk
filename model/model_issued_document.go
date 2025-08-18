@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.3
+API version: 2.1.5
 Contact: info@fattureincloud.it
 */
 
@@ -171,6 +171,8 @@ type IssuedDocument struct {
 	EiRaw map[string]interface{} `json:"ei_raw,omitempty"`
 	// [Read only] Status of the e-invoice.   * **attempt** - We are trying to send the invoice, please wait up to 2 hours   * **missing** - The invoice is missing   * **not_sent** - The invoice has yet to be sent   * **sent** - The invoice was sent   * **pending** - The checks for the digital signature and sending are in progress   * **processing** - The SDI is delivering the invoice to the customer   * **error** - An error occurred while handling the invoice, please try to resend it or contact support   * **discarded** - The invoice has been rejected by the SDI, so it must be corrected and re-sent   * **not_delivered** - The SDI was unable to deliver the invoice   * **accepted** - The customer accepted the invoice   * **rejected** - The customer rejected the invoice, so it must be corrected   * **no_response** - A response has not yet been received whithin the deadline, contact the customer to ascertain the status of the invoice   * **manual_accepted** - The customer accepted the invoice   * **manual_rejected** - The customer rejected the invoice 
 	EiStatus NullableString `json:"ei_status,omitempty"`
+	// Price list id
+	PriceListId NullableString `json:"price_list_id,omitempty"`
 	// Issued Document can't be edited
 	Locked NullableBool `json:"locked,omitempty"`
 	// Issued document creation date
@@ -3679,6 +3681,50 @@ func (o *IssuedDocument) UnsetEiStatus() {
 	o.EiStatus.Unset()
 }
 
+// GetPriceListId returns the PriceListId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *IssuedDocument) GetPriceListId() string {
+	if o == nil || IsNil(o.PriceListId.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.PriceListId.Get()
+}
+
+// GetPriceListIdOk returns a tuple with the PriceListId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *IssuedDocument) GetPriceListIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.PriceListId.Get(), o.PriceListId.IsSet()
+}
+
+// HasPriceListId returns a boolean if a field has been set.
+func (o *IssuedDocument) HasPriceListId() bool {
+	if o != nil && o.PriceListId.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetPriceListId gets a reference to the given NullableString and assigns it to the PriceListId field.
+func (o *IssuedDocument) SetPriceListId(v string) *IssuedDocument {
+	o.PriceListId.Set(&v)
+	return o
+}
+// SetPriceListIdNil sets the value for PriceListId to be an explicit nil
+func (o *IssuedDocument) SetPriceListIdNil() *IssuedDocument {
+	o.PriceListId.Set(nil)
+	return o
+}
+
+// UnsetPriceListId ensures that no value is present for PriceListId, not even an explicit nil
+func (o *IssuedDocument) UnsetPriceListId() {
+	o.PriceListId.Unset()
+}
+
 // GetLocked returns the Locked field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IssuedDocument) GetLocked() bool {
 	if o == nil || IsNil(o.Locked.Get()) {
@@ -4066,6 +4112,9 @@ func (o IssuedDocument) ToMap() (map[string]interface{}, error) {
 	}
 	if o.EiStatus.IsSet() {
 		toSerialize["ei_status"] = o.EiStatus.Get()
+	}
+	if o.PriceListId.IsSet() {
+		toSerialize["price_list_id"] = o.PriceListId.Get()
 	}
 	if o.Locked.IsSet() {
 		toSerialize["locked"] = o.Locked.Get()
