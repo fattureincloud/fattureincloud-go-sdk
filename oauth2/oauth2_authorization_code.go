@@ -5,8 +5,45 @@ import (
 	"net/url"
 )
 
-// TODO: riordiorganizzare i metodi
+// OAuth2AuthorizationCodeParams
+type OAuth2AuthorizationCodeParams struct {
+	// State
+	state string
+	// Authorization code
+	authorizationCode string
+}
 
+// Initialize a new instance of the OAuth2AuthorizationCodeParams class
+func NewOAuth2AuthorizationCodeParams(code string, state string) *OAuth2AuthorizationCodeParams {
+	this := OAuth2AuthorizationCodeParams{}
+	this.authorizationCode = code
+	this.state = state
+	return &this
+}
+
+// Sets AuthorizationCode
+func (o *OAuth2AuthorizationCodeParams) SetAuthorizationCode(v string) *OAuth2AuthorizationCodeParams {
+	o.authorizationCode = v
+	return o
+}
+
+// Sets State
+func (o *OAuth2AuthorizationCodeParams) SetState(v string) *OAuth2AuthorizationCodeParams {
+	o.state = v
+	return o
+}
+
+// Gets AuthorizationCode
+func (o *OAuth2AuthorizationCodeParams) GetAuthorizationCode() string {
+	return o.authorizationCode
+}
+
+// Gets State
+func (o *OAuth2AuthorizationCodeParams) GetState() string {
+	return o.state
+}
+
+// OAuth2AuthorizationCodeManager
 type OAuth2AuthorizationCodeManager struct {
 	OAuth2Manager
 	// Client secret
@@ -123,42 +160,4 @@ func (o *OAuth2AuthorizationCodeManager) RefreshToken(refreshToken string) (*OAu
 	}
 
 	return ExecuteTokenPost(o.baseUri, data)
-}
-
-// OAuth2AuthorizationCodeParams
-type OAuth2AuthorizationCodeParams struct {
-	// State
-	state string
-	// Authorization code
-	authorizationCode string
-}
-
-// Initialize a new instance of the OAuth2AuthorizationCodeParams class
-func NewOAuth2AuthorizationCodeParams(code string, state string) *OAuth2AuthorizationCodeParams {
-	this := OAuth2AuthorizationCodeParams{}
-	this.authorizationCode = code
-	this.state = state
-	return &this
-}
-
-// Sets AuthorizationCode
-func (o *OAuth2AuthorizationCodeParams) SetAuthorizationCode(v string) *OAuth2AuthorizationCodeParams {
-	o.authorizationCode = v
-	return o
-}
-
-// Sets State
-func (o *OAuth2AuthorizationCodeParams) SetState(v string) *OAuth2AuthorizationCodeParams {
-	o.state = v
-	return o
-}
-
-// Gets AuthorizationCode
-func (o *OAuth2AuthorizationCodeParams) GetAuthorizationCode() string {
-	return o.authorizationCode
-}
-
-// Gets State
-func (o *OAuth2AuthorizationCodeParams) GetState() string {
-	return o.state
 }
