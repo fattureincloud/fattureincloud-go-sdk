@@ -53,11 +53,11 @@ type OAuth2AuthorizationCodeManager struct {
 }
 
 // Initialize a new instance of the OAuth2AuthorizationCodeManager class
-func NewOAuth2AuthorizationCodeManager(clientId string, clientSecret string, redirecUri string) *OAuth2AuthorizationCodeManager {
+func NewOAuth2AuthorizationCodeManager(clientId string, clientSecret string, redirectUri string) *OAuth2AuthorizationCodeManager {
 	this := OAuth2AuthorizationCodeManager{}
 	this.clientId = clientId
 	this.clientSecret = clientSecret
-	this.redirectUri = redirecUri
+	this.redirectUri = redirectUri
 	this.baseUri = "https://api-v2.fattureincloud.it"
 	return &this
 }
