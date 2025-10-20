@@ -126,4 +126,3 @@ func (v *NullableListTemplatesResponse) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
-

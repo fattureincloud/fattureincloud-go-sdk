@@ -125,4 +125,3 @@ func (v *NullableGetReceiptPreCreateInfoResponse) UnmarshalJSON(src []byte) erro
 	return json.Unmarshal(src, &v.value)
 }
 
-

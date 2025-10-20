@@ -137,4 +137,3 @@ func (v *NullableReceivedDocumentInfoItemsDefaultValues) UnmarshalJSON(src []byt
 	return json.Unmarshal(src, &v.value)
 }
 
-

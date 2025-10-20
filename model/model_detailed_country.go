@@ -333,4 +333,3 @@ func (v *NullableDetailedCountry) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
-

@@ -136,4 +136,3 @@ func (v *NullableIssuedDocumentPreCreateInfoItemsDefaultValues) UnmarshalJSON(sr
 	return json.Unmarshal(src, &v.value)
 }
 
-

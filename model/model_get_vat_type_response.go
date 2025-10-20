@@ -136,4 +136,3 @@ func (v *NullableGetVatTypeResponse) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
-

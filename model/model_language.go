@@ -186,4 +186,3 @@ func (v *NullableLanguage) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
-

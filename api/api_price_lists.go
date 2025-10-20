@@ -43,7 +43,7 @@ Retrieves all the Items of a PriceList
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param companyId The ID of the company.
- @param priceListId
+ @param priceListId The ID of the price
  @return ApiGetPriceListItemsRequest
 */
 func (a *PriceListsAPIService) GetPriceListItems(ctx context.Context, companyId int32, priceListId string) ApiGetPriceListItemsRequest {

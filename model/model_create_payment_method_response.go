@@ -125,4 +125,3 @@ func (v *NullableCreatePaymentMethodResponse) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
-

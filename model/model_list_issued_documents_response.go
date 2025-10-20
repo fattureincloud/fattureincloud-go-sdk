@@ -665,4 +665,3 @@ func (v *NullableListIssuedDocumentsResponse) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
-

@@ -136,4 +136,3 @@ func (v *NullableGetUserInfoResponseEmailConfirmationState) UnmarshalJSON(src []
 	return json.Unmarshal(src, &v.value)
 }
 
-

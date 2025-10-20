@@ -323,4 +323,3 @@ func (v *NullableIssuedDocumentOptions) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
-

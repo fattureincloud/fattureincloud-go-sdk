@@ -702,4 +702,3 @@ func (v *NullableListF24Response) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
-

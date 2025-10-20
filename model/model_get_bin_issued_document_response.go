@@ -125,4 +125,3 @@ func (v *NullableGetBinIssuedDocumentResponse) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
-

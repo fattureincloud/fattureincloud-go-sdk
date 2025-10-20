@@ -126,4 +126,3 @@ func (v *NullableListCurrenciesResponse) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
-

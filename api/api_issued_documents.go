@@ -150,7 +150,7 @@ func (r ApiDeleteBinIssuedDocumentRequest) Execute() (*http.Response, error) {
 }
 
 /*
-DeleteBinIssuedDocument 
+DeleteBinIssuedDocument Delete Bin Issued Document
 
 Delete Bin Issued Document
 
@@ -1663,7 +1663,7 @@ func (r ApiRecoverBinIssuedDocumentRequest) Execute() (*http.Response, error) {
 }
 
 /*
-RecoverBinIssuedDocument 
+RecoverBinIssuedDocument Recover Issued Document From The Bin
 
 Recover Issued Document From The Bin
 

@@ -125,4 +125,3 @@ func (v *NullableGetExistingIssuedDocumentTotalsRequest) UnmarshalJSON(src []byt
 	return json.Unmarshal(src, &v.value)
 }
 
-

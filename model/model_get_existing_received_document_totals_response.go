@@ -125,4 +125,3 @@ func (v *NullableGetExistingReceivedDocumentTotalsResponse) UnmarshalJSON(src []
 	return json.Unmarshal(src, &v.value)
 }
 
-

@@ -232,4 +232,3 @@ func (v *NullableGetUserInfoResponseInfo) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
-

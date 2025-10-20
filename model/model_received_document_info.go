@@ -379,4 +379,3 @@ func (v *NullableReceivedDocumentInfo) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
-

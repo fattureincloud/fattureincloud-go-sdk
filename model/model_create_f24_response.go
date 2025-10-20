@@ -125,4 +125,3 @@ func (v *NullableCreateF24Response) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
-

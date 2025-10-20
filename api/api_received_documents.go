@@ -150,7 +150,7 @@ func (r ApiDeleteBinReceivedDocumentRequest) Execute() (*http.Response, error) {
 }
 
 /*
-DeleteBinReceivedDocument 
+DeleteBinReceivedDocument Delete Bin Received Document
 
 Delete Bin Received Document
 
@@ -1413,7 +1413,7 @@ func (r ApiRecoverBinReceivedDocumentRequest) Execute() (*http.Response, error) 
 }
 
 /*
-RecoverBinReceivedDocument 
+RecoverBinReceivedDocument Recover Received Document From The Bin
 
 Recover Received Document From The Bin
 

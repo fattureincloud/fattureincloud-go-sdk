@@ -280,4 +280,3 @@ func (v *NullableIssuedDocumentPreCreateInfoExtraDataDefaultValues) UnmarshalJSO
 	return json.Unmarshal(src, &v.value)
 }
 
-

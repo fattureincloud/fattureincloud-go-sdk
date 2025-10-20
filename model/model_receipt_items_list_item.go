@@ -332,4 +332,3 @@ func (v *NullableReceiptItemsListItem) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
-

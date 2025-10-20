@@ -137,4 +137,3 @@ func (v *NullableListF24ResponseAggregatedData) UnmarshalJSON(src []byte) error 
 	return json.Unmarshal(src, &v.value)
 }
 
-

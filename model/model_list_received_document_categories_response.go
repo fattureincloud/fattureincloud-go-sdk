@@ -126,4 +126,3 @@ func (v *NullableListReceivedDocumentCategoriesResponse) UnmarshalJSON(src []byt
 	return json.Unmarshal(src, &v.value)
 }
 
-

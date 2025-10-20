@@ -626,4 +626,3 @@ func (v *NullableIssuedDocumentExtraData) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
-

@@ -126,4 +126,3 @@ func (v *NullableVerifyEInvoiceXmlErrorResponseErrorValidationResult) UnmarshalJ
 	return json.Unmarshal(src, &v.value)
 }
 
-

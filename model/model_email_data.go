@@ -616,4 +616,3 @@ func (v *NullableEmailData) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
-

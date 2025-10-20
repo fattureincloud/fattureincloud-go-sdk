@@ -31,7 +31,6 @@ type CompanyInfoPlanInfoFunctions struct {
 	Receipts NullableBool `json:"receipts,omitempty"`
 	Recurring NullableBool `json:"recurring,omitempty"`
 	Smtp NullableBool `json:"smtp,omitempty"`
-	Sofort NullableBool `json:"sofort,omitempty"`
 	Stock NullableBool `json:"stock,omitempty"`
 	Subaccounts NullableBool `json:"subaccounts,omitempty"`
 	TesseraSanitaria NullableBool `json:"tessera_sanitaria,omitempty"`
@@ -541,50 +540,6 @@ func (o *CompanyInfoPlanInfoFunctions) UnsetSmtp() {
 	o.Smtp.Unset()
 }
 
-// GetSofort returns the Sofort field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CompanyInfoPlanInfoFunctions) GetSofort() bool {
-	if o == nil || IsNil(o.Sofort.Get()) {
-		var ret bool
-		return ret
-	}
-	return *o.Sofort.Get()
-}
-
-// GetSofortOk returns a tuple with the Sofort field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CompanyInfoPlanInfoFunctions) GetSofortOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Sofort.Get(), o.Sofort.IsSet()
-}
-
-// HasSofort returns a boolean if a field has been set.
-func (o *CompanyInfoPlanInfoFunctions) HasSofort() bool {
-	if o != nil && o.Sofort.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetSofort gets a reference to the given NullableBool and assigns it to the Sofort field.
-func (o *CompanyInfoPlanInfoFunctions) SetSofort(v bool) *CompanyInfoPlanInfoFunctions {
-	o.Sofort.Set(&v)
-	return o
-}
-// SetSofortNil sets the value for Sofort to be an explicit nil
-func (o *CompanyInfoPlanInfoFunctions) SetSofortNil() *CompanyInfoPlanInfoFunctions {
-	o.Sofort.Set(nil)
-	return o
-}
-
-// UnsetSofort ensures that no value is present for Sofort, not even an explicit nil
-func (o *CompanyInfoPlanInfoFunctions) UnsetSofort() {
-	o.Sofort.Unset()
-}
-
 // GetStock returns the Stock field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CompanyInfoPlanInfoFunctions) GetStock() bool {
 	if o == nil || IsNil(o.Stock.Get()) {
@@ -892,9 +847,6 @@ func (o CompanyInfoPlanInfoFunctions) ToMap() (map[string]interface{}, error) {
 	if o.Smtp.IsSet() {
 		toSerialize["smtp"] = o.Smtp.Get()
 	}
-	if o.Sofort.IsSet() {
-		toSerialize["sofort"] = o.Sofort.Get()
-	}
 	if o.Stock.IsSet() {
 		toSerialize["stock"] = o.Stock.Get()
 	}
@@ -951,5 +903,4 @@ func (v *NullableCompanyInfoPlanInfoFunctions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 
