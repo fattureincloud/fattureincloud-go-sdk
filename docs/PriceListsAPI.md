@@ -33,7 +33,7 @@ import (
 
 func main() {
 	companyId := int32(12345) // int32 | The ID of the company.
-	priceListId := "priceListId_example" // string | 
+	priceListId := "priceListId_example" // string | The ID of the price
 
 	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
 	configuration := fattureincloudapi.NewConfiguration()
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **companyId** | **int32** | The ID of the company. | 
-**priceListId** | **string** |  | 
+**priceListId** | **string** | The ID of the price | 
 
 ### Other Parameters
 
