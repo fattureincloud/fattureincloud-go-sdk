@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.5
+API version: 2.1.7
 Contact: info@fattureincloud.it
 */
 
@@ -150,7 +150,7 @@ func (r ApiDeleteBinIssuedDocumentRequest) Execute() (*http.Response, error) {
 }
 
 /*
-DeleteBinIssuedDocument 
+DeleteBinIssuedDocument Delete Bin Issued Document
 
 Delete Bin Issued Document
 
@@ -1663,7 +1663,7 @@ func (r ApiRecoverBinIssuedDocumentRequest) Execute() (*http.Response, error) {
 }
 
 /*
-RecoverBinIssuedDocument 
+RecoverBinIssuedDocument Recover Issued Document From The Bin
 
 Recover Issued Document From The Bin
 

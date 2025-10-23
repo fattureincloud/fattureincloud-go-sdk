@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.5
+API version: 2.1.7
 Contact: info@fattureincloud.it
 */
 
@@ -32,8 +32,7 @@ import (
 	"strings"
 	"time"
 	"unicode/utf8"
-	. "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
-
+    . "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 
 	"golang.org/x/oauth2"
 )
@@ -45,7 +44,7 @@ var (
 	queryDescape    = strings.NewReplacer( "%5B", "[", "%5D", "]" )
 )
 
-// APIClient manages communication with the Fatture in Cloud API v2 - API Reference API v2.1.5
+// APIClient manages communication with the Fatture in Cloud API v2 - API Reference API v2.1.7
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
@@ -179,6 +178,10 @@ func typeCheckParameter(obj interface{}, expected string, name string) error {
 
 func parameterValueToString( obj interface{}, key string ) string {
 	if reflect.TypeOf(obj).Kind() != reflect.Ptr {
+		if actualObj, ok := obj.(interface{ GetActualInstanceValue() interface{} }); ok {
+			return fmt.Sprintf("%v", actualObj.GetActualInstanceValue())
+		}
+
 		return fmt.Sprintf("%v", obj)
 	}
 	var param,ok = obj.(MappedNullable)
@@ -565,17 +568,6 @@ func addFile(w *multipart.Writer, fieldName, path string) error {
 	return err
 }
 
-// Prevent trying to import "fmt"
-func reportError(format string, a ...interface{}) error {
-	return fmt.Errorf(format, a...)
-}
-
-// A wrapper for strict JSON decoding
-func newStrictDecoder(data []byte) *json.Decoder {
-	dec := json.NewDecoder(bytes.NewBuffer(data))
-	dec.DisallowUnknownFields()
-	return dec
-}
 // Set request body from an interface{}
 func setBody(body interface{}, contentType string) (bodyBuf *bytes.Buffer, err error) {
 	if bodyBuf == nil {
