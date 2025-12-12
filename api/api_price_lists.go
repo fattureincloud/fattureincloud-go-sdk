@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.5
+API version: 2.1.6
 Contact: info@fattureincloud.it
 */
 
@@ -43,7 +43,7 @@ Retrieves all the Items of a PriceList
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param companyId The ID of the company.
- @param priceListId
+ @param priceListId The ID of the price
  @return ApiGetPriceListItemsRequest
 */
 func (a *PriceListsAPIService) GetPriceListItems(ctx context.Context, companyId int32, priceListId string) ApiGetPriceListItemsRequest {

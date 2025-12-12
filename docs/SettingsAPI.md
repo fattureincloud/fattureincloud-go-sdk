@@ -13,7 +13,9 @@ Method | HTTP request | Description
 [**GetPaymentAccount**](SettingsAPI.md#GetPaymentAccount) | **Get** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Get Payment Account
 [**GetPaymentMethod**](SettingsAPI.md#GetPaymentMethod) | **Get** /c/{company_id}/settings/payment_methods/{payment_method_id} | Get Payment Method
 [**GetTaxProfile**](SettingsAPI.md#GetTaxProfile) | **Get** /c/{company_id}/settings/tax_profile | Get Tax Profile
+[**GetTemplate**](SettingsAPI.md#GetTemplate) | **Get** /c/{company_id}/settings/templates/{template_id} | Get Template
 [**GetVatType**](SettingsAPI.md#GetVatType) | **Get** /c/{company_id}/settings/vat_types/{vat_type_id} | Get Vat Type
+[**ListTemplates**](SettingsAPI.md#ListTemplates) | **Get** /c/{company_id}/settings/templates | List Templates
 [**ModifyPaymentAccount**](SettingsAPI.md#ModifyPaymentAccount) | **Put** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Modify Payment Account
 [**ModifyPaymentMethod**](SettingsAPI.md#ModifyPaymentMethod) | **Put** /c/{company_id}/settings/payment_methods/{payment_method_id} | Modify Payment Method
 [**ModifyVatType**](SettingsAPI.md#ModifyVatType) | **Put** /c/{company_id}/settings/vat_types/{vat_type_id} | Modify Vat Type
@@ -700,6 +702,86 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetTemplate
+
+> GetTemplatesResponse GetTemplate(ctx, companyId, templateId).Fields(fields).Fieldset(fieldset).Execute()
+
+Get Template
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+)
+
+func main() {
+	companyId := int32(12345) // int32 | The ID of the company.
+	templateId := int32(56) // int32 | The Referred Template Id.
+	fields := "fields_example" // string | List of comma-separated fields. (optional)
+	fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
+
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.GetTemplate(auth, companyId, templateId).Fields(fields).Fieldset(fieldset).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.GetTemplate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTemplate`: GetTemplatesResponse
+	json.NewEncoder(os.Stdout).Encode(resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**companyId** | **int32** | The ID of the company. | 
+**templateId** | **int32** | The Referred Template Id. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetTemplateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **fields** | **string** | List of comma-separated fields. | 
+ **fieldset** | **string** | Name of the fieldset. | 
+
+### Return type
+
+[**GetTemplatesResponse**](GetTemplatesResponse.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetVatType
 
 > GetVatTypeResponse GetVatType(ctx, companyId, vatTypeId).Execute()
@@ -761,6 +843,83 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetVatTypeResponse**](GetVatTypeResponse.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListTemplates
+
+> ListTemplatesResponse ListTemplates(ctx, companyId).Fields(fields).Fieldset(fieldset).Execute()
+
+List Templates
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+)
+
+func main() {
+	companyId := int32(12345) // int32 | The ID of the company.
+	fields := "fields_example" // string | List of comma-separated fields. (optional)
+	fieldset := "fieldset_example" // string | Name of the fieldset. (optional)
+
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.ListTemplates(auth, companyId).Fields(fields).Fieldset(fieldset).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.ListTemplates``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListTemplates`: ListTemplatesResponse
+	json.NewEncoder(os.Stdout).Encode(resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**companyId** | **int32** | The ID of the company. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListTemplatesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **fields** | **string** | List of comma-separated fields. | 
+ **fieldset** | **string** | Name of the fieldset. | 
+
+### Return type
+
+[**ListTemplatesResponse**](ListTemplatesResponse.md)
 
 ### Authorization
 

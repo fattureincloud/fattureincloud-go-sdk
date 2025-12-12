@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 **Receipts** | Pointer to **NullableBool** |  | [optional] 
 **Recurring** | Pointer to **NullableBool** |  | [optional] 
 **Smtp** | Pointer to **NullableBool** |  | [optional] 
-**Sofort** | Pointer to **NullableBool** |  | [optional] 
 **Stock** | Pointer to **NullableBool** |  | [optional] 
 **Subaccounts** | Pointer to **NullableBool** |  | [optional] 
 **TesseraSanitaria** | Pointer to **NullableBool** |  | [optional] 
@@ -427,41 +426,6 @@ HasSmtp returns a boolean if a field has been set.
 `func (o *CompanyInfoPlanInfoFunctions) UnsetSmtp()`
 
 UnsetSmtp ensures that no value is present for Smtp, not even an explicit nil
-### GetSofort
-
-`func (o *CompanyInfoPlanInfoFunctions) GetSofort() bool`
-
-GetSofort returns the Sofort field if non-nil, zero value otherwise.
-
-### GetSofortOk
-
-`func (o *CompanyInfoPlanInfoFunctions) GetSofortOk() (*bool, bool)`
-
-GetSofortOk returns a tuple with the Sofort field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSofort
-
-`func (o *CompanyInfoPlanInfoFunctions) SetSofort(v bool)`
-
-SetSofort sets Sofort field to given value.
-
-### HasSofort
-
-`func (o *CompanyInfoPlanInfoFunctions) HasSofort() bool`
-
-HasSofort returns a boolean if a field has been set.
-
-### SetSofortNil
-
-`func (o *CompanyInfoPlanInfoFunctions) SetSofortNil(b bool)`
-
- SetSofortNil sets the value for Sofort to be an explicit nil
-
-### UnsetSofort
-`func (o *CompanyInfoPlanInfoFunctions) UnsetSofort()`
-
-UnsetSofort ensures that no value is present for Sofort, not even an explicit nil
 ### GetStock
 
 `func (o *CompanyInfoPlanInfoFunctions) GetStock() bool`

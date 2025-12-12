@@ -5,7 +5,7 @@ All URIs are relative to *https://api-v2.fattureincloud.it*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateIssuedDocument**](IssuedDocumentsAPI.md#CreateIssuedDocument) | **Post** /c/{company_id}/issued_documents | Create Issued Document
-[**DeleteBinIssuedDocument**](IssuedDocumentsAPI.md#DeleteBinIssuedDocument) | **Delete** /c/{company_id}/bin/issued_documents/{document_id} | 
+[**DeleteBinIssuedDocument**](IssuedDocumentsAPI.md#DeleteBinIssuedDocument) | **Delete** /c/{company_id}/bin/issued_documents/{document_id} | Delete Bin Issued Document
 [**DeleteIssuedDocument**](IssuedDocumentsAPI.md#DeleteIssuedDocument) | **Delete** /c/{company_id}/issued_documents/{document_id} | Delete Issued Document
 [**DeleteIssuedDocumentAttachment**](IssuedDocumentsAPI.md#DeleteIssuedDocumentAttachment) | **Delete** /c/{company_id}/issued_documents/{document_id}/attachment | Delete Issued Document Attachment
 [**GetBinIssuedDocument**](IssuedDocumentsAPI.md#GetBinIssuedDocument) | **Get** /c/{company_id}/bin/issued_documents/{document_id} | Get Bin Issued Documents List
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 [**ListBinIssuedDocuments**](IssuedDocumentsAPI.md#ListBinIssuedDocuments) | **Get** /c/{company_id}/bin/issued_documents | Get Bin Issued Documents List
 [**ListIssuedDocuments**](IssuedDocumentsAPI.md#ListIssuedDocuments) | **Get** /c/{company_id}/issued_documents | List Issued Documents
 [**ModifyIssuedDocument**](IssuedDocumentsAPI.md#ModifyIssuedDocument) | **Put** /c/{company_id}/issued_documents/{document_id} | Modify Issued Document
-[**RecoverBinIssuedDocument**](IssuedDocumentsAPI.md#RecoverBinIssuedDocument) | **Post** /c/{company_id}/bin/issued_documents/{document_id}/recover | 
+[**RecoverBinIssuedDocument**](IssuedDocumentsAPI.md#RecoverBinIssuedDocument) | **Post** /c/{company_id}/bin/issued_documents/{document_id}/recover | Recover Issued Document From The Bin
 [**ScheduleEmail**](IssuedDocumentsAPI.md#ScheduleEmail) | **Post** /c/{company_id}/issued_documents/{document_id}/email | Schedule Email
 [**TransformIssuedDocument**](IssuedDocumentsAPI.md#TransformIssuedDocument) | **Get** /c/{company_id}/issued_documents/transform | Transform Issued Document
 [**UploadIssuedDocumentAttachment**](IssuedDocumentsAPI.md#UploadIssuedDocumentAttachment) | **Post** /c/{company_id}/issued_documents/attachment | Upload Issued Document Attachment
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 > DeleteBinIssuedDocument(ctx, companyId, documentId).Execute()
 
-
+Delete Bin Issued Document
 
 
 
@@ -1105,7 +1105,7 @@ Name | Type | Description  | Notes
 
 > RecoverBinIssuedDocument(ctx, companyId, documentId).Execute()
 
-
+Recover Issued Document From The Bin
 
 
 

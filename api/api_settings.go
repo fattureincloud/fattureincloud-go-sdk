@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.5
+API version: 2.1.6
 Contact: info@fattureincloud.it
 */
 
@@ -1004,6 +1004,133 @@ func (a *SettingsAPIService) GetTaxProfileExecute(r ApiGetTaxProfileRequest) (*G
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiGetTemplateRequest struct {
+	ctx context.Context
+	ApiService *SettingsAPIService
+	companyId int32
+	templateId int32
+	fields *string
+	fieldset *string
+}
+
+// List of comma-separated fields.
+func (r ApiGetTemplateRequest) Fields(fields string) ApiGetTemplateRequest {
+	r.fields = &fields
+	return r
+}
+
+// Name of the fieldset.
+func (r ApiGetTemplateRequest) Fieldset(fieldset string) ApiGetTemplateRequest {
+	r.fieldset = &fieldset
+	return r
+}
+
+func (r ApiGetTemplateRequest) Execute() (*GetTemplatesResponse, *http.Response, error) {
+	return r.ApiService.GetTemplateExecute(r)
+}
+
+/*
+GetTemplate Get Template
+
+Gets a specified template.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param companyId The ID of the company.
+ @param templateId The Referred Template Id.
+ @return ApiGetTemplateRequest
+*/
+func (a *SettingsAPIService) GetTemplate(ctx context.Context, companyId int32, templateId int32) ApiGetTemplateRequest {
+	return ApiGetTemplateRequest{
+		ApiService: a,
+		ctx: ctx,
+		companyId: companyId,
+		templateId: templateId,
+	}
+}
+
+// Execute executes the request
+//  @return GetTemplatesResponse
+func (a *SettingsAPIService) GetTemplateExecute(r ApiGetTemplateRequest) (*GetTemplatesResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetTemplatesResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.GetTemplate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/c/{company_id}/settings/templates/{template_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"template_id"+"}", url.PathEscape(parameterValueToString(r.templateId, "templateId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.fields != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "form", "")
+	}
+	if r.fieldset != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiGetVatTypeRequest struct {
 	ctx context.Context
 	ApiService *SettingsAPIService
@@ -1057,6 +1184,129 @@ func (a *SettingsAPIService) GetVatTypeExecute(r ApiGetVatTypeRequest) (*GetVatT
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiListTemplatesRequest struct {
+	ctx context.Context
+	ApiService *SettingsAPIService
+	companyId int32
+	fields *string
+	fieldset *string
+}
+
+// List of comma-separated fields.
+func (r ApiListTemplatesRequest) Fields(fields string) ApiListTemplatesRequest {
+	r.fields = &fields
+	return r
+}
+
+// Name of the fieldset.
+func (r ApiListTemplatesRequest) Fieldset(fieldset string) ApiListTemplatesRequest {
+	r.fieldset = &fieldset
+	return r
+}
+
+func (r ApiListTemplatesRequest) Execute() (*ListTemplatesResponse, *http.Response, error) {
+	return r.ApiService.ListTemplatesExecute(r)
+}
+
+/*
+ListTemplates List Templates
+
+Gets all the standard and private templates.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param companyId The ID of the company.
+ @return ApiListTemplatesRequest
+*/
+func (a *SettingsAPIService) ListTemplates(ctx context.Context, companyId int32) ApiListTemplatesRequest {
+	return ApiListTemplatesRequest{
+		ApiService: a,
+		ctx: ctx,
+		companyId: companyId,
+	}
+}
+
+// Execute executes the request
+//  @return ListTemplatesResponse
+func (a *SettingsAPIService) ListTemplatesExecute(r ApiListTemplatesRequest) (*ListTemplatesResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ListTemplatesResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.ListTemplates")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/c/{company_id}/settings/templates"
+	localVarPath = strings.Replace(localVarPath, "{"+"company_id"+"}", url.PathEscape(parameterValueToString(r.companyId, "companyId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.fields != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "form", "")
+	}
+	if r.fieldset != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fieldset", r.fieldset, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

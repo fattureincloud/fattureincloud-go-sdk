@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.5
+API version: 2.1.6
 Contact: info@fattureincloud.it
 */
 
@@ -21,11 +21,20 @@ var _ MappedNullable = &DocumentTemplate{}
 // DocumentTemplate struct for DocumentTemplate
 type DocumentTemplate struct {
 	// Template id
-	Id NullableInt32 `json:"id,omitempty"`
+	Id *int32 `json:"id,omitempty"`
+	// Template privacy
+	Privacy *string `json:"privacy,omitempty"`
+	Type *TemplateType `json:"type,omitempty"`
 	// Template name
-	Name NullableString `json:"name,omitempty"`
-	// Template type
-	Type NullableString `json:"type,omitempty"`
+	Name *string `json:"name,omitempty"`
+	// Can disable watermark
+	CanDisableWatermark *bool `json:"can_disable_watermark,omitempty"`
+	// Template author
+	Author *string `json:"author,omitempty"`
+	// Template definition content
+	Content *string `json:"content,omitempty"`
+	// Supports custom taxable
+	SupportsCustomTaxable *bool `json:"supports_custom_taxable,omitempty"`
 }
 
 // NewDocumentTemplate instantiates a new DocumentTemplate object
@@ -45,136 +54,268 @@ func NewDocumentTemplateWithDefaults() *DocumentTemplate {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetId returns the Id field value if set, zero value otherwise.
 func (o *DocumentTemplate) GetId() int32 {
-	if o == nil || IsNil(o.Id.Get()) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
-	return *o.Id.Get()
+	return *o.Id
 }
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DocumentTemplate) GetIdOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
-	return o.Id.Get(), o.Id.IsSet()
+	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *DocumentTemplate) HasId() bool {
-	if o != nil && o.Id.IsSet() {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
+// SetId gets a reference to the given int32 and assigns it to the Id field.
 func (o *DocumentTemplate) SetId(v int32) *DocumentTemplate {
-	o.Id.Set(&v)
-	return o
-}
-// SetIdNil sets the value for Id to be an explicit nil
-func (o *DocumentTemplate) SetIdNil() *DocumentTemplate {
-	o.Id.Set(nil)
+	o.Id = &v
 	return o
 }
 
-// UnsetId ensures that no value is present for Id, not even an explicit nil
-func (o *DocumentTemplate) UnsetId() {
-	o.Id.Unset()
-}
-
-// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DocumentTemplate) GetName() string {
-	if o == nil || IsNil(o.Name.Get()) {
+// GetPrivacy returns the Privacy field value if set, zero value otherwise.
+func (o *DocumentTemplate) GetPrivacy() string {
+	if o == nil || IsNil(o.Privacy) {
 		var ret string
 		return ret
 	}
-	return *o.Name.Get()
+	return *o.Privacy
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetPrivacyOk returns a tuple with the Privacy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DocumentTemplate) GetNameOk() (*string, bool) {
-	if o == nil {
+func (o *DocumentTemplate) GetPrivacyOk() (*string, bool) {
+	if o == nil || IsNil(o.Privacy) {
 		return nil, false
 	}
-	return o.Name.Get(), o.Name.IsSet()
+	return o.Privacy, true
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *DocumentTemplate) HasName() bool {
-	if o != nil && o.Name.IsSet() {
+// HasPrivacy returns a boolean if a field has been set.
+func (o *DocumentTemplate) HasPrivacy() bool {
+	if o != nil && !IsNil(o.Privacy) {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given NullableString and assigns it to the Name field.
-func (o *DocumentTemplate) SetName(v string) *DocumentTemplate {
-	o.Name.Set(&v)
-	return o
-}
-// SetNameNil sets the value for Name to be an explicit nil
-func (o *DocumentTemplate) SetNameNil() *DocumentTemplate {
-	o.Name.Set(nil)
+// SetPrivacy gets a reference to the given string and assigns it to the Privacy field.
+func (o *DocumentTemplate) SetPrivacy(v string) *DocumentTemplate {
+	o.Privacy = &v
 	return o
 }
 
-// UnsetName ensures that no value is present for Name, not even an explicit nil
-func (o *DocumentTemplate) UnsetName() {
-	o.Name.Unset()
-}
-
-// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DocumentTemplate) GetType() string {
-	if o == nil || IsNil(o.Type.Get()) {
-		var ret string
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *DocumentTemplate) GetType() TemplateType {
+	if o == nil || IsNil(o.Type) {
+		var ret TemplateType
 		return ret
 	}
-	return *o.Type.Get()
+	return *o.Type
 }
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DocumentTemplate) GetTypeOk() (*string, bool) {
-	if o == nil {
+func (o *DocumentTemplate) GetTypeOk() (*TemplateType, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
-	return o.Type.Get(), o.Type.IsSet()
+	return o.Type, true
 }
 
 // HasType returns a boolean if a field has been set.
 func (o *DocumentTemplate) HasType() bool {
-	if o != nil && o.Type.IsSet() {
+	if o != nil && !IsNil(o.Type) {
 		return true
 	}
 
 	return false
 }
 
-// SetType gets a reference to the given NullableString and assigns it to the Type field.
-func (o *DocumentTemplate) SetType(v string) *DocumentTemplate {
-	o.Type.Set(&v)
-	return o
-}
-// SetTypeNil sets the value for Type to be an explicit nil
-func (o *DocumentTemplate) SetTypeNil() *DocumentTemplate {
-	o.Type.Set(nil)
+// SetType gets a reference to the given TemplateType and assigns it to the Type field.
+func (o *DocumentTemplate) SetType(v TemplateType) *DocumentTemplate {
+	o.Type = &v
 	return o
 }
 
-// UnsetType ensures that no value is present for Type, not even an explicit nil
-func (o *DocumentTemplate) UnsetType() {
-	o.Type.Unset()
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *DocumentTemplate) GetName() string {
+	if o == nil || IsNil(o.Name) {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DocumentTemplate) GetNameOk() (*string, bool) {
+	if o == nil || IsNil(o.Name) {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *DocumentTemplate) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *DocumentTemplate) SetName(v string) *DocumentTemplate {
+	o.Name = &v
+	return o
+}
+
+// GetCanDisableWatermark returns the CanDisableWatermark field value if set, zero value otherwise.
+func (o *DocumentTemplate) GetCanDisableWatermark() bool {
+	if o == nil || IsNil(o.CanDisableWatermark) {
+		var ret bool
+		return ret
+	}
+	return *o.CanDisableWatermark
+}
+
+// GetCanDisableWatermarkOk returns a tuple with the CanDisableWatermark field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DocumentTemplate) GetCanDisableWatermarkOk() (*bool, bool) {
+	if o == nil || IsNil(o.CanDisableWatermark) {
+		return nil, false
+	}
+	return o.CanDisableWatermark, true
+}
+
+// HasCanDisableWatermark returns a boolean if a field has been set.
+func (o *DocumentTemplate) HasCanDisableWatermark() bool {
+	if o != nil && !IsNil(o.CanDisableWatermark) {
+		return true
+	}
+
+	return false
+}
+
+// SetCanDisableWatermark gets a reference to the given bool and assigns it to the CanDisableWatermark field.
+func (o *DocumentTemplate) SetCanDisableWatermark(v bool) *DocumentTemplate {
+	o.CanDisableWatermark = &v
+	return o
+}
+
+// GetAuthor returns the Author field value if set, zero value otherwise.
+func (o *DocumentTemplate) GetAuthor() string {
+	if o == nil || IsNil(o.Author) {
+		var ret string
+		return ret
+	}
+	return *o.Author
+}
+
+// GetAuthorOk returns a tuple with the Author field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DocumentTemplate) GetAuthorOk() (*string, bool) {
+	if o == nil || IsNil(o.Author) {
+		return nil, false
+	}
+	return o.Author, true
+}
+
+// HasAuthor returns a boolean if a field has been set.
+func (o *DocumentTemplate) HasAuthor() bool {
+	if o != nil && !IsNil(o.Author) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthor gets a reference to the given string and assigns it to the Author field.
+func (o *DocumentTemplate) SetAuthor(v string) *DocumentTemplate {
+	o.Author = &v
+	return o
+}
+
+// GetContent returns the Content field value if set, zero value otherwise.
+func (o *DocumentTemplate) GetContent() string {
+	if o == nil || IsNil(o.Content) {
+		var ret string
+		return ret
+	}
+	return *o.Content
+}
+
+// GetContentOk returns a tuple with the Content field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DocumentTemplate) GetContentOk() (*string, bool) {
+	if o == nil || IsNil(o.Content) {
+		return nil, false
+	}
+	return o.Content, true
+}
+
+// HasContent returns a boolean if a field has been set.
+func (o *DocumentTemplate) HasContent() bool {
+	if o != nil && !IsNil(o.Content) {
+		return true
+	}
+
+	return false
+}
+
+// SetContent gets a reference to the given string and assigns it to the Content field.
+func (o *DocumentTemplate) SetContent(v string) *DocumentTemplate {
+	o.Content = &v
+	return o
+}
+
+// GetSupportsCustomTaxable returns the SupportsCustomTaxable field value if set, zero value otherwise.
+func (o *DocumentTemplate) GetSupportsCustomTaxable() bool {
+	if o == nil || IsNil(o.SupportsCustomTaxable) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportsCustomTaxable
+}
+
+// GetSupportsCustomTaxableOk returns a tuple with the SupportsCustomTaxable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DocumentTemplate) GetSupportsCustomTaxableOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportsCustomTaxable) {
+		return nil, false
+	}
+	return o.SupportsCustomTaxable, true
+}
+
+// HasSupportsCustomTaxable returns a boolean if a field has been set.
+func (o *DocumentTemplate) HasSupportsCustomTaxable() bool {
+	if o != nil && !IsNil(o.SupportsCustomTaxable) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportsCustomTaxable gets a reference to the given bool and assigns it to the SupportsCustomTaxable field.
+func (o *DocumentTemplate) SetSupportsCustomTaxable(v bool) *DocumentTemplate {
+	o.SupportsCustomTaxable = &v
+	return o
 }
 
 func (o DocumentTemplate) MarshalJSON() ([]byte, error) {
@@ -187,14 +328,29 @@ func (o DocumentTemplate) MarshalJSON() ([]byte, error) {
 
 func (o DocumentTemplate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Id.IsSet() {
-		toSerialize["id"] = o.Id.Get()
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
-	if o.Name.IsSet() {
-		toSerialize["name"] = o.Name.Get()
+	if !IsNil(o.Privacy) {
+		toSerialize["privacy"] = o.Privacy
 	}
-	if o.Type.IsSet() {
-		toSerialize["type"] = o.Type.Get()
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
+	}
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.CanDisableWatermark) {
+		toSerialize["can_disable_watermark"] = o.CanDisableWatermark
+	}
+	if !IsNil(o.Author) {
+		toSerialize["author"] = o.Author
+	}
+	if !IsNil(o.Content) {
+		toSerialize["content"] = o.Content
+	}
+	if !IsNil(o.SupportsCustomTaxable) {
+		toSerialize["supports_custom_taxable"] = o.SupportsCustomTaxable
 	}
 	return toSerialize, nil
 }
@@ -234,5 +390,4 @@ func (v *NullableDocumentTemplate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 
