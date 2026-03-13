@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Qty** | Pointer to **NullableFloat32** | Received document item quantity | [optional] 
 **Vat** | Pointer to [**NullableVatType**](VatType.md) |  | [optional] 
 **Stock** | Pointer to **NullableFloat32** | Received document item product number of items in stock | [optional] 
+**DeductibilityVatPercentage** | Pointer to **NullableFloat32** | Received document item deductibility vat percentage | [optional] 
 
 ## Methods
 
@@ -384,6 +385,41 @@ HasStock returns a boolean if a field has been set.
 `func (o *ReceivedDocumentItemsListItem) UnsetStock()`
 
 UnsetStock ensures that no value is present for Stock, not even an explicit nil
+### GetDeductibilityVatPercentage
+
+`func (o *ReceivedDocumentItemsListItem) GetDeductibilityVatPercentage() float32`
+
+GetDeductibilityVatPercentage returns the DeductibilityVatPercentage field if non-nil, zero value otherwise.
+
+### GetDeductibilityVatPercentageOk
+
+`func (o *ReceivedDocumentItemsListItem) GetDeductibilityVatPercentageOk() (*float32, bool)`
+
+GetDeductibilityVatPercentageOk returns a tuple with the DeductibilityVatPercentage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeductibilityVatPercentage
+
+`func (o *ReceivedDocumentItemsListItem) SetDeductibilityVatPercentage(v float32)`
+
+SetDeductibilityVatPercentage sets DeductibilityVatPercentage field to given value.
+
+### HasDeductibilityVatPercentage
+
+`func (o *ReceivedDocumentItemsListItem) HasDeductibilityVatPercentage() bool`
+
+HasDeductibilityVatPercentage returns a boolean if a field has been set.
+
+### SetDeductibilityVatPercentageNil
+
+`func (o *ReceivedDocumentItemsListItem) SetDeductibilityVatPercentageNil(b bool)`
+
+ SetDeductibilityVatPercentageNil sets the value for DeductibilityVatPercentage to be an explicit nil
+
+### UnsetDeductibilityVatPercentage
+`func (o *ReceivedDocumentItemsListItem) UnsetDeductibilityVatPercentage()`
+
+UnsetDeductibilityVatPercentage ensures that no value is present for DeductibilityVatPercentage, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

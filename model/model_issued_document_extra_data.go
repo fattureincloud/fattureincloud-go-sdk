@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.5
+API version: 2.1.8
 Contact: info@fattureincloud.it
 */
 
@@ -41,6 +41,10 @@ type IssuedDocumentExtraData struct {
 	TsFullAmount NullableBool `json:"ts_full_amount,omitempty"`
 	// Issued document imported by software
 	ImportedBy NullableString `json:"imported_by,omitempty"`
+	// Issued document debt VAT detect
+	DebtVatDetect NullableBool `json:"debt_vat_detect,omitempty"`
+	// Issued document revenue detect
+	RevenueDetect NullableBool `json:"revenue_detect,omitempty"`
 }
 
 // NewIssuedDocumentExtraData instantiates a new IssuedDocumentExtraData object
@@ -544,6 +548,94 @@ func (o *IssuedDocumentExtraData) UnsetImportedBy() {
 	o.ImportedBy.Unset()
 }
 
+// GetDebtVatDetect returns the DebtVatDetect field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *IssuedDocumentExtraData) GetDebtVatDetect() bool {
+	if o == nil || IsNil(o.DebtVatDetect.Get()) {
+		var ret bool
+		return ret
+	}
+	return *o.DebtVatDetect.Get()
+}
+
+// GetDebtVatDetectOk returns a tuple with the DebtVatDetect field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *IssuedDocumentExtraData) GetDebtVatDetectOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.DebtVatDetect.Get(), o.DebtVatDetect.IsSet()
+}
+
+// HasDebtVatDetect returns a boolean if a field has been set.
+func (o *IssuedDocumentExtraData) HasDebtVatDetect() bool {
+	if o != nil && o.DebtVatDetect.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDebtVatDetect gets a reference to the given NullableBool and assigns it to the DebtVatDetect field.
+func (o *IssuedDocumentExtraData) SetDebtVatDetect(v bool) *IssuedDocumentExtraData {
+	o.DebtVatDetect.Set(&v)
+	return o
+}
+// SetDebtVatDetectNil sets the value for DebtVatDetect to be an explicit nil
+func (o *IssuedDocumentExtraData) SetDebtVatDetectNil() *IssuedDocumentExtraData {
+	o.DebtVatDetect.Set(nil)
+	return o
+}
+
+// UnsetDebtVatDetect ensures that no value is present for DebtVatDetect, not even an explicit nil
+func (o *IssuedDocumentExtraData) UnsetDebtVatDetect() {
+	o.DebtVatDetect.Unset()
+}
+
+// GetRevenueDetect returns the RevenueDetect field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *IssuedDocumentExtraData) GetRevenueDetect() bool {
+	if o == nil || IsNil(o.RevenueDetect.Get()) {
+		var ret bool
+		return ret
+	}
+	return *o.RevenueDetect.Get()
+}
+
+// GetRevenueDetectOk returns a tuple with the RevenueDetect field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *IssuedDocumentExtraData) GetRevenueDetectOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.RevenueDetect.Get(), o.RevenueDetect.IsSet()
+}
+
+// HasRevenueDetect returns a boolean if a field has been set.
+func (o *IssuedDocumentExtraData) HasRevenueDetect() bool {
+	if o != nil && o.RevenueDetect.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetRevenueDetect gets a reference to the given NullableBool and assigns it to the RevenueDetect field.
+func (o *IssuedDocumentExtraData) SetRevenueDetect(v bool) *IssuedDocumentExtraData {
+	o.RevenueDetect.Set(&v)
+	return o
+}
+// SetRevenueDetectNil sets the value for RevenueDetect to be an explicit nil
+func (o *IssuedDocumentExtraData) SetRevenueDetectNil() *IssuedDocumentExtraData {
+	o.RevenueDetect.Set(nil)
+	return o
+}
+
+// UnsetRevenueDetect ensures that no value is present for RevenueDetect, not even an explicit nil
+func (o *IssuedDocumentExtraData) UnsetRevenueDetect() {
+	o.RevenueDetect.Unset()
+}
+
 func (o IssuedDocumentExtraData) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -587,6 +679,12 @@ func (o IssuedDocumentExtraData) ToMap() (map[string]interface{}, error) {
 	if o.ImportedBy.IsSet() {
 		toSerialize["imported_by"] = o.ImportedBy.Get()
 	}
+	if o.DebtVatDetect.IsSet() {
+		toSerialize["debt_vat_detect"] = o.DebtVatDetect.Get()
+	}
+	if o.RevenueDetect.IsSet() {
+		toSerialize["revenue_detect"] = o.RevenueDetect.Get()
+	}
 	return toSerialize, nil
 }
 
@@ -625,5 +723,4 @@ func (v *NullableIssuedDocumentExtraData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

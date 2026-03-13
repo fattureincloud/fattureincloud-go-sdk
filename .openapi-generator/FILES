@@ -22,6 +22,7 @@ client.go
 configuration.go
 docs/ArchiveAPI.md
 docs/ArchiveDocument.md
+docs/Attachment.md
 docs/AttachmentData.md
 docs/CashbookAPI.md
 docs/CashbookEntry.md
@@ -113,6 +114,7 @@ docs/GetNewReceivedDocumentTotalsRequest.md
 docs/GetNewReceivedDocumentTotalsResponse.md
 docs/GetPaymentAccountResponse.md
 docs/GetPaymentMethodResponse.md
+docs/GetPendingReceivedDocumentResponse.md
 docs/GetPriceListItemsResponse.md
 docs/GetProductResponse.md
 docs/GetReceiptPreCreateInfoResponse.md
@@ -122,6 +124,7 @@ docs/GetReceivedDocumentPreCreateInfoResponse.md
 docs/GetReceivedDocumentResponse.md
 docs/GetSupplierResponse.md
 docs/GetTaxProfileResponse.md
+docs/GetTemplatesResponse.md
 docs/GetUserInfoResponse.md
 docs/GetUserInfoResponseEmailConfirmationState.md
 docs/GetUserInfoResponseInfo.md
@@ -171,6 +174,8 @@ docs/ListIssuedDocumentsResponsePage.md
 docs/ListLanguagesResponse.md
 docs/ListPaymentAccountsResponse.md
 docs/ListPaymentMethodsResponse.md
+docs/ListPendingReceivedDocumentsResponse.md
+docs/ListPendingReceivedDocumentsResponsePage.md
 docs/ListPriceListsResponse.md
 docs/ListProductCategoriesResponse.md
 docs/ListProductsResponse.md
@@ -224,6 +229,12 @@ docs/PaymentMethod.md
 docs/PaymentMethodDetails.md
 docs/PaymentMethodType.md
 docs/PaymentTermsType.md
+docs/PendingReceivedDocument.md
+docs/PendingReceivedDocumentExtractedData.md
+docs/PendingReceivedDocumentExtractedDataMining.md
+docs/PendingReceivedDocumentPaymentsListItem.md
+docs/PendingReceivedDocumentPaymentsListItemPaymentTerms.md
+docs/PendingReceivedDocumentType.md
 docs/PermissionLevel.md
 docs/Permissions.md
 docs/PermissionsFicIssuedDocumentsDetailed.md
@@ -263,6 +274,7 @@ docs/SupplierType.md
 docs/SuppliersAPI.md
 docs/TaxProfile.md
 docs/TaxesAPI.md
+docs/TemplateType.md
 docs/TransformIssuedDocumentResponse.md
 docs/UploadArchiveAttachmentResponse.md
 docs/UploadF24AttachmentResponse.md
@@ -290,6 +302,7 @@ docs/WebhooksSubscriptionVerificationMethod.md
 go.mod
 go.sum
 model_archive_document.go
+model_attachment.go
 model_attachment_data.go
 model_cashbook_entry.go
 model_cashbook_entry_document.go
@@ -377,6 +390,7 @@ model_get_new_received_document_totals_request.go
 model_get_new_received_document_totals_response.go
 model_get_payment_account_response.go
 model_get_payment_method_response.go
+model_get_pending_received_document_response.go
 model_get_price_list_items_response.go
 model_get_product_response.go
 model_get_receipt_pre_create_info_response.go
@@ -386,6 +400,7 @@ model_get_received_document_pre_create_info_response.go
 model_get_received_document_response.go
 model_get_supplier_response.go
 model_get_tax_profile_response.go
+model_get_templates_response.go
 model_get_user_info_response.go
 model_get_user_info_response_email_confirmation_state.go
 model_get_user_info_response_info.go
@@ -432,6 +447,8 @@ model_list_issued_documents_response_page.go
 model_list_languages_response.go
 model_list_payment_accounts_response.go
 model_list_payment_methods_response.go
+model_list_pending_received_documents_response.go
+model_list_pending_received_documents_response_page.go
 model_list_price_lists_response.go
 model_list_product_categories_response.go
 model_list_products_response.go
@@ -485,6 +502,12 @@ model_payment_method.go
 model_payment_method_details.go
 model_payment_method_type.go
 model_payment_terms_type.go
+model_pending_received_document.go
+model_pending_received_document_extracted_data.go
+model_pending_received_document_extracted_data_mining.go
+model_pending_received_document_payments_list_item.go
+model_pending_received_document_payments_list_item_payment_terms.go
+model_pending_received_document_type.go
 model_permission_level.go
 model_permissions.go
 model_permissions_fic_issued_documents_detailed.go
@@ -517,6 +540,7 @@ model_show_totals_mode.go
 model_supplier.go
 model_supplier_type.go
 model_tax_profile.go
+model_template_type.go
 model_transform_issued_document_response.go
 model_upload_archive_attachment_response.go
 model_upload_f24_attachment_response.go

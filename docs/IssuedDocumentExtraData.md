@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **TsSentDate** | Pointer to **NullableString** | Issued document ts sent date | [optional] 
 **TsFullAmount** | Pointer to **NullableBool** | Issued document ts total amount | [optional] 
 **ImportedBy** | Pointer to **NullableString** | Issued document imported by software | [optional] 
+**DebtVatDetect** | Pointer to **NullableBool** | Issued document debt VAT detect | [optional] 
+**RevenueDetect** | Pointer to **NullableBool** | Issued document revenue detect | [optional] 
 
 ## Methods
 
@@ -420,6 +422,76 @@ HasImportedBy returns a boolean if a field has been set.
 `func (o *IssuedDocumentExtraData) UnsetImportedBy()`
 
 UnsetImportedBy ensures that no value is present for ImportedBy, not even an explicit nil
+### GetDebtVatDetect
+
+`func (o *IssuedDocumentExtraData) GetDebtVatDetect() bool`
+
+GetDebtVatDetect returns the DebtVatDetect field if non-nil, zero value otherwise.
+
+### GetDebtVatDetectOk
+
+`func (o *IssuedDocumentExtraData) GetDebtVatDetectOk() (*bool, bool)`
+
+GetDebtVatDetectOk returns a tuple with the DebtVatDetect field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDebtVatDetect
+
+`func (o *IssuedDocumentExtraData) SetDebtVatDetect(v bool)`
+
+SetDebtVatDetect sets DebtVatDetect field to given value.
+
+### HasDebtVatDetect
+
+`func (o *IssuedDocumentExtraData) HasDebtVatDetect() bool`
+
+HasDebtVatDetect returns a boolean if a field has been set.
+
+### SetDebtVatDetectNil
+
+`func (o *IssuedDocumentExtraData) SetDebtVatDetectNil(b bool)`
+
+ SetDebtVatDetectNil sets the value for DebtVatDetect to be an explicit nil
+
+### UnsetDebtVatDetect
+`func (o *IssuedDocumentExtraData) UnsetDebtVatDetect()`
+
+UnsetDebtVatDetect ensures that no value is present for DebtVatDetect, not even an explicit nil
+### GetRevenueDetect
+
+`func (o *IssuedDocumentExtraData) GetRevenueDetect() bool`
+
+GetRevenueDetect returns the RevenueDetect field if non-nil, zero value otherwise.
+
+### GetRevenueDetectOk
+
+`func (o *IssuedDocumentExtraData) GetRevenueDetectOk() (*bool, bool)`
+
+GetRevenueDetectOk returns a tuple with the RevenueDetect field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRevenueDetect
+
+`func (o *IssuedDocumentExtraData) SetRevenueDetect(v bool)`
+
+SetRevenueDetect sets RevenueDetect field to given value.
+
+### HasRevenueDetect
+
+`func (o *IssuedDocumentExtraData) HasRevenueDetect() bool`
+
+HasRevenueDetect returns a boolean if a field has been set.
+
+### SetRevenueDetectNil
+
+`func (o *IssuedDocumentExtraData) SetRevenueDetectNil(b bool)`
+
+ SetRevenueDetectNil sets the value for RevenueDetect to be an explicit nil
+
+### UnsetRevenueDetect
+`func (o *IssuedDocumentExtraData) UnsetRevenueDetect()`
+
+UnsetRevenueDetect ensures that no value is present for RevenueDetect, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

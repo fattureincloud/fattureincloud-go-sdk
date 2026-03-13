@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.5
+API version: 2.1.8
 Contact: info@fattureincloud.it
 */
 
@@ -39,6 +39,8 @@ type ReceivedDocumentItemsListItem struct {
 	Vat NullableVatType `json:"vat,omitempty"`
 	// Received document item product number of items in stock
 	Stock NullableFloat32 `json:"stock,omitempty"`
+	// Received document item deductibility vat percentage
+	DeductibilityVatPercentage NullableFloat32 `json:"deductibility_vat_percentage,omitempty"`
 }
 
 // NewReceivedDocumentItemsListItem instantiates a new ReceivedDocumentItemsListItem object
@@ -498,6 +500,50 @@ func (o *ReceivedDocumentItemsListItem) UnsetStock() {
 	o.Stock.Unset()
 }
 
+// GetDeductibilityVatPercentage returns the DeductibilityVatPercentage field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ReceivedDocumentItemsListItem) GetDeductibilityVatPercentage() float32 {
+	if o == nil || IsNil(o.DeductibilityVatPercentage.Get()) {
+		var ret float32
+		return ret
+	}
+	return *o.DeductibilityVatPercentage.Get()
+}
+
+// GetDeductibilityVatPercentageOk returns a tuple with the DeductibilityVatPercentage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ReceivedDocumentItemsListItem) GetDeductibilityVatPercentageOk() (*float32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.DeductibilityVatPercentage.Get(), o.DeductibilityVatPercentage.IsSet()
+}
+
+// HasDeductibilityVatPercentage returns a boolean if a field has been set.
+func (o *ReceivedDocumentItemsListItem) HasDeductibilityVatPercentage() bool {
+	if o != nil && o.DeductibilityVatPercentage.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDeductibilityVatPercentage gets a reference to the given NullableFloat32 and assigns it to the DeductibilityVatPercentage field.
+func (o *ReceivedDocumentItemsListItem) SetDeductibilityVatPercentage(v float32) *ReceivedDocumentItemsListItem {
+	o.DeductibilityVatPercentage.Set(&v)
+	return o
+}
+// SetDeductibilityVatPercentageNil sets the value for DeductibilityVatPercentage to be an explicit nil
+func (o *ReceivedDocumentItemsListItem) SetDeductibilityVatPercentageNil() *ReceivedDocumentItemsListItem {
+	o.DeductibilityVatPercentage.Set(nil)
+	return o
+}
+
+// UnsetDeductibilityVatPercentage ensures that no value is present for DeductibilityVatPercentage, not even an explicit nil
+func (o *ReceivedDocumentItemsListItem) UnsetDeductibilityVatPercentage() {
+	o.DeductibilityVatPercentage.Unset()
+}
+
 func (o ReceivedDocumentItemsListItem) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -538,6 +584,9 @@ func (o ReceivedDocumentItemsListItem) ToMap() (map[string]interface{}, error) {
 	if o.Stock.IsSet() {
 		toSerialize["stock"] = o.Stock.Get()
 	}
+	if o.DeductibilityVatPercentage.IsSet() {
+		toSerialize["deductibility_vat_percentage"] = o.DeductibilityVatPercentage.Get()
+	}
 	return toSerialize, nil
 }
 
@@ -576,5 +625,4 @@ func (v *NullableReceivedDocumentItemsListItem) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 
