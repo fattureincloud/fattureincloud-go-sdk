@@ -17,19 +17,19 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
+	"strings"
+
 	. "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
-
 
 // ReceivedDocumentsAPIService ReceivedDocumentsAPI service
 type ReceivedDocumentsAPIService service
 
 type ApiCreateReceivedDocumentRequest struct {
-	ctx context.Context
-	ApiService *ReceivedDocumentsAPIService
-	companyId int32
+	ctx                           context.Context
+	ApiService                    *ReceivedDocumentsAPIService
+	companyId                     int32
 	createReceivedDocumentRequest *CreateReceivedDocumentRequest
 }
 
@@ -48,26 +48,27 @@ CreateReceivedDocument Create Received Document
 
 Creates a new document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @return ApiCreateReceivedDocumentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@return ApiCreateReceivedDocumentRequest
 */
 func (a *ReceivedDocumentsAPIService) CreateReceivedDocument(ctx context.Context, companyId int32) ApiCreateReceivedDocumentRequest {
 	return ApiCreateReceivedDocumentRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 	}
 }
 
 // Execute executes the request
-//  @return CreateReceivedDocumentResponse
+//
+//	@return CreateReceivedDocumentResponse
 func (a *ReceivedDocumentsAPIService) CreateReceivedDocumentExecute(r ApiCreateReceivedDocumentRequest) (*CreateReceivedDocumentResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateReceivedDocumentResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateReceivedDocumentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.CreateReceivedDocument")
@@ -130,8 +131,8 @@ func (a *ReceivedDocumentsAPIService) CreateReceivedDocumentExecute(r ApiCreateR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -141,8 +142,8 @@ func (a *ReceivedDocumentsAPIService) CreateReceivedDocumentExecute(r ApiCreateR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -152,8 +153,8 @@ func (a *ReceivedDocumentsAPIService) CreateReceivedDocumentExecute(r ApiCreateR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -163,8 +164,8 @@ func (a *ReceivedDocumentsAPIService) CreateReceivedDocumentExecute(r ApiCreateR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -174,8 +175,8 @@ func (a *ReceivedDocumentsAPIService) CreateReceivedDocumentExecute(r ApiCreateR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -185,8 +186,8 @@ func (a *ReceivedDocumentsAPIService) CreateReceivedDocumentExecute(r ApiCreateR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -196,8 +197,8 @@ func (a *ReceivedDocumentsAPIService) CreateReceivedDocumentExecute(r ApiCreateR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -207,8 +208,8 @@ func (a *ReceivedDocumentsAPIService) CreateReceivedDocumentExecute(r ApiCreateR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -218,8 +219,8 @@ func (a *ReceivedDocumentsAPIService) CreateReceivedDocumentExecute(r ApiCreateR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -237,9 +238,9 @@ func (a *ReceivedDocumentsAPIService) CreateReceivedDocumentExecute(r ApiCreateR
 }
 
 type ApiDeleteBinReceivedDocumentRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ReceivedDocumentsAPIService
-	companyId int32
+	companyId  int32
 	documentId int32
 }
 
@@ -252,16 +253,16 @@ DeleteBinReceivedDocument Delete Bin Received Document
 
 Delete Bin Received Document
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @param documentId The ID of the document.
- @return ApiDeleteBinReceivedDocumentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@param documentId The ID of the document.
+	@return ApiDeleteBinReceivedDocumentRequest
 */
 func (a *ReceivedDocumentsAPIService) DeleteBinReceivedDocument(ctx context.Context, companyId int32, documentId int32) ApiDeleteBinReceivedDocumentRequest {
 	return ApiDeleteBinReceivedDocumentRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 		documentId: documentId,
 	}
 }
@@ -269,9 +270,9 @@ func (a *ReceivedDocumentsAPIService) DeleteBinReceivedDocument(ctx context.Cont
 // Execute executes the request
 func (a *ReceivedDocumentsAPIService) DeleteBinReceivedDocumentExecute(r ApiDeleteBinReceivedDocumentRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.DeleteBinReceivedDocument")
@@ -333,8 +334,8 @@ func (a *ReceivedDocumentsAPIService) DeleteBinReceivedDocumentExecute(r ApiDele
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -344,8 +345,8 @@ func (a *ReceivedDocumentsAPIService) DeleteBinReceivedDocumentExecute(r ApiDele
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -355,8 +356,8 @@ func (a *ReceivedDocumentsAPIService) DeleteBinReceivedDocumentExecute(r ApiDele
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -366,8 +367,8 @@ func (a *ReceivedDocumentsAPIService) DeleteBinReceivedDocumentExecute(r ApiDele
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -377,8 +378,8 @@ func (a *ReceivedDocumentsAPIService) DeleteBinReceivedDocumentExecute(r ApiDele
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -388,8 +389,8 @@ func (a *ReceivedDocumentsAPIService) DeleteBinReceivedDocumentExecute(r ApiDele
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -399,8 +400,8 @@ func (a *ReceivedDocumentsAPIService) DeleteBinReceivedDocumentExecute(r ApiDele
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -410,8 +411,8 @@ func (a *ReceivedDocumentsAPIService) DeleteBinReceivedDocumentExecute(r ApiDele
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -421,8 +422,8 @@ func (a *ReceivedDocumentsAPIService) DeleteBinReceivedDocumentExecute(r ApiDele
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarHTTPResponse, newErr
 	}
@@ -431,9 +432,9 @@ func (a *ReceivedDocumentsAPIService) DeleteBinReceivedDocumentExecute(r ApiDele
 }
 
 type ApiDeleteReceivedDocumentRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ReceivedDocumentsAPIService
-	companyId int32
+	companyId  int32
 	documentId int32
 }
 
@@ -446,16 +447,16 @@ DeleteReceivedDocument Delete Received Document
 
 Deletes the specified document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @param documentId The ID of the document.
- @return ApiDeleteReceivedDocumentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@param documentId The ID of the document.
+	@return ApiDeleteReceivedDocumentRequest
 */
 func (a *ReceivedDocumentsAPIService) DeleteReceivedDocument(ctx context.Context, companyId int32, documentId int32) ApiDeleteReceivedDocumentRequest {
 	return ApiDeleteReceivedDocumentRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 		documentId: documentId,
 	}
 }
@@ -463,9 +464,9 @@ func (a *ReceivedDocumentsAPIService) DeleteReceivedDocument(ctx context.Context
 // Execute executes the request
 func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentExecute(r ApiDeleteReceivedDocumentRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.DeleteReceivedDocument")
@@ -527,8 +528,8 @@ func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentExecute(r ApiDeleteR
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -538,8 +539,8 @@ func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentExecute(r ApiDeleteR
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -549,8 +550,8 @@ func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentExecute(r ApiDeleteR
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -560,8 +561,8 @@ func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentExecute(r ApiDeleteR
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -571,8 +572,8 @@ func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentExecute(r ApiDeleteR
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -582,8 +583,8 @@ func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentExecute(r ApiDeleteR
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -593,8 +594,8 @@ func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentExecute(r ApiDeleteR
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -604,8 +605,8 @@ func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentExecute(r ApiDeleteR
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -615,8 +616,8 @@ func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentExecute(r ApiDeleteR
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarHTTPResponse, newErr
 	}
@@ -625,9 +626,9 @@ func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentExecute(r ApiDeleteR
 }
 
 type ApiDeleteReceivedDocumentAttachmentRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ReceivedDocumentsAPIService
-	companyId int32
+	companyId  int32
 	documentId int32
 }
 
@@ -640,16 +641,16 @@ DeleteReceivedDocumentAttachment Delete Received Document Attachment
 
 Removes the attachment of the specified document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @param documentId The ID of the document.
- @return ApiDeleteReceivedDocumentAttachmentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@param documentId The ID of the document.
+	@return ApiDeleteReceivedDocumentAttachmentRequest
 */
 func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentAttachment(ctx context.Context, companyId int32, documentId int32) ApiDeleteReceivedDocumentAttachmentRequest {
 	return ApiDeleteReceivedDocumentAttachmentRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 		documentId: documentId,
 	}
 }
@@ -657,9 +658,9 @@ func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentAttachment(ctx conte
 // Execute executes the request
 func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentAttachmentExecute(r ApiDeleteReceivedDocumentAttachmentRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.DeleteReceivedDocumentAttachment")
@@ -721,8 +722,8 @@ func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentAttachmentExecute(r 
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -732,8 +733,8 @@ func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentAttachmentExecute(r 
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -743,8 +744,8 @@ func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentAttachmentExecute(r 
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -754,8 +755,8 @@ func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentAttachmentExecute(r 
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -765,8 +766,8 @@ func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentAttachmentExecute(r 
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -776,8 +777,8 @@ func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentAttachmentExecute(r 
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -787,8 +788,8 @@ func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentAttachmentExecute(r 
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -798,8 +799,8 @@ func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentAttachmentExecute(r 
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -809,8 +810,8 @@ func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentAttachmentExecute(r 
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarHTTPResponse, newErr
 	}
@@ -819,9 +820,9 @@ func (a *ReceivedDocumentsAPIService) DeleteReceivedDocumentAttachmentExecute(r 
 }
 
 type ApiGetBinReceivedDocumentRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ReceivedDocumentsAPIService
-	companyId int32
+	companyId  int32
 	documentId int32
 }
 
@@ -834,28 +835,29 @@ GetBinReceivedDocument Get Bin Received Documents List
 
 Get bin issued documents detail
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @param documentId The ID of the document.
- @return ApiGetBinReceivedDocumentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@param documentId The ID of the document.
+	@return ApiGetBinReceivedDocumentRequest
 */
 func (a *ReceivedDocumentsAPIService) GetBinReceivedDocument(ctx context.Context, companyId int32, documentId int32) ApiGetBinReceivedDocumentRequest {
 	return ApiGetBinReceivedDocumentRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 		documentId: documentId,
 	}
 }
 
 // Execute executes the request
-//  @return GetBinReceivedDocumentResponse
+//
+//	@return GetBinReceivedDocumentResponse
 func (a *ReceivedDocumentsAPIService) GetBinReceivedDocumentExecute(r ApiGetBinReceivedDocumentRequest) (*GetBinReceivedDocumentResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetBinReceivedDocumentResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetBinReceivedDocumentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.GetBinReceivedDocument")
@@ -917,8 +919,8 @@ func (a *ReceivedDocumentsAPIService) GetBinReceivedDocumentExecute(r ApiGetBinR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -928,8 +930,8 @@ func (a *ReceivedDocumentsAPIService) GetBinReceivedDocumentExecute(r ApiGetBinR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -939,8 +941,8 @@ func (a *ReceivedDocumentsAPIService) GetBinReceivedDocumentExecute(r ApiGetBinR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -950,8 +952,8 @@ func (a *ReceivedDocumentsAPIService) GetBinReceivedDocumentExecute(r ApiGetBinR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -961,8 +963,8 @@ func (a *ReceivedDocumentsAPIService) GetBinReceivedDocumentExecute(r ApiGetBinR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -972,8 +974,8 @@ func (a *ReceivedDocumentsAPIService) GetBinReceivedDocumentExecute(r ApiGetBinR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -983,8 +985,8 @@ func (a *ReceivedDocumentsAPIService) GetBinReceivedDocumentExecute(r ApiGetBinR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -994,8 +996,8 @@ func (a *ReceivedDocumentsAPIService) GetBinReceivedDocumentExecute(r ApiGetBinR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1005,8 +1007,8 @@ func (a *ReceivedDocumentsAPIService) GetBinReceivedDocumentExecute(r ApiGetBinR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1024,10 +1026,10 @@ func (a *ReceivedDocumentsAPIService) GetBinReceivedDocumentExecute(r ApiGetBinR
 }
 
 type ApiGetExistingReceivedDocumentTotalsRequest struct {
-	ctx context.Context
-	ApiService *ReceivedDocumentsAPIService
-	companyId int32
-	documentId int32
+	ctx                                      context.Context
+	ApiService                               *ReceivedDocumentsAPIService
+	companyId                                int32
+	documentId                               int32
 	getExistingReceivedDocumentTotalsRequest *GetExistingReceivedDocumentTotalsRequest
 }
 
@@ -1046,28 +1048,29 @@ GetExistingReceivedDocumentTotals Get Existing Received Document Totals
 
 Returns the totals for the specified document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @param documentId The ID of the document.
- @return ApiGetExistingReceivedDocumentTotalsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@param documentId The ID of the document.
+	@return ApiGetExistingReceivedDocumentTotalsRequest
 */
 func (a *ReceivedDocumentsAPIService) GetExistingReceivedDocumentTotals(ctx context.Context, companyId int32, documentId int32) ApiGetExistingReceivedDocumentTotalsRequest {
 	return ApiGetExistingReceivedDocumentTotalsRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 		documentId: documentId,
 	}
 }
 
 // Execute executes the request
-//  @return GetExistingReceivedDocumentTotalsResponse
+//
+//	@return GetExistingReceivedDocumentTotalsResponse
 func (a *ReceivedDocumentsAPIService) GetExistingReceivedDocumentTotalsExecute(r ApiGetExistingReceivedDocumentTotalsRequest) (*GetExistingReceivedDocumentTotalsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetExistingReceivedDocumentTotalsResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetExistingReceivedDocumentTotalsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.GetExistingReceivedDocumentTotals")
@@ -1131,8 +1134,8 @@ func (a *ReceivedDocumentsAPIService) GetExistingReceivedDocumentTotalsExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -1142,8 +1145,8 @@ func (a *ReceivedDocumentsAPIService) GetExistingReceivedDocumentTotalsExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -1153,8 +1156,8 @@ func (a *ReceivedDocumentsAPIService) GetExistingReceivedDocumentTotalsExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -1164,8 +1167,8 @@ func (a *ReceivedDocumentsAPIService) GetExistingReceivedDocumentTotalsExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -1175,8 +1178,8 @@ func (a *ReceivedDocumentsAPIService) GetExistingReceivedDocumentTotalsExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -1186,8 +1189,8 @@ func (a *ReceivedDocumentsAPIService) GetExistingReceivedDocumentTotalsExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -1197,8 +1200,8 @@ func (a *ReceivedDocumentsAPIService) GetExistingReceivedDocumentTotalsExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -1208,8 +1211,8 @@ func (a *ReceivedDocumentsAPIService) GetExistingReceivedDocumentTotalsExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1219,8 +1222,8 @@ func (a *ReceivedDocumentsAPIService) GetExistingReceivedDocumentTotalsExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1238,9 +1241,9 @@ func (a *ReceivedDocumentsAPIService) GetExistingReceivedDocumentTotalsExecute(r
 }
 
 type ApiGetNewReceivedDocumentTotalsRequest struct {
-	ctx context.Context
-	ApiService *ReceivedDocumentsAPIService
-	companyId int32
+	ctx                                 context.Context
+	ApiService                          *ReceivedDocumentsAPIService
+	companyId                           int32
 	getNewReceivedDocumentTotalsRequest *GetNewReceivedDocumentTotalsRequest
 }
 
@@ -1259,26 +1262,27 @@ GetNewReceivedDocumentTotals Get New Received Document Totals
 
 Returns the totals for a new document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @return ApiGetNewReceivedDocumentTotalsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@return ApiGetNewReceivedDocumentTotalsRequest
 */
 func (a *ReceivedDocumentsAPIService) GetNewReceivedDocumentTotals(ctx context.Context, companyId int32) ApiGetNewReceivedDocumentTotalsRequest {
 	return ApiGetNewReceivedDocumentTotalsRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNewReceivedDocumentTotalsResponse
+//
+//	@return GetNewReceivedDocumentTotalsResponse
 func (a *ReceivedDocumentsAPIService) GetNewReceivedDocumentTotalsExecute(r ApiGetNewReceivedDocumentTotalsRequest) (*GetNewReceivedDocumentTotalsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNewReceivedDocumentTotalsResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNewReceivedDocumentTotalsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.GetNewReceivedDocumentTotals")
@@ -1341,8 +1345,8 @@ func (a *ReceivedDocumentsAPIService) GetNewReceivedDocumentTotalsExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -1352,8 +1356,8 @@ func (a *ReceivedDocumentsAPIService) GetNewReceivedDocumentTotalsExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -1363,8 +1367,8 @@ func (a *ReceivedDocumentsAPIService) GetNewReceivedDocumentTotalsExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -1374,8 +1378,8 @@ func (a *ReceivedDocumentsAPIService) GetNewReceivedDocumentTotalsExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -1385,8 +1389,8 @@ func (a *ReceivedDocumentsAPIService) GetNewReceivedDocumentTotalsExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -1396,8 +1400,8 @@ func (a *ReceivedDocumentsAPIService) GetNewReceivedDocumentTotalsExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -1407,8 +1411,8 @@ func (a *ReceivedDocumentsAPIService) GetNewReceivedDocumentTotalsExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -1418,8 +1422,8 @@ func (a *ReceivedDocumentsAPIService) GetNewReceivedDocumentTotalsExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1429,8 +1433,8 @@ func (a *ReceivedDocumentsAPIService) GetNewReceivedDocumentTotalsExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1448,12 +1452,12 @@ func (a *ReceivedDocumentsAPIService) GetNewReceivedDocumentTotalsExecute(r ApiG
 }
 
 type ApiGetPendingReceivedDocumentRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ReceivedDocumentsAPIService
-	companyId int32
+	companyId  int32
 	documentId int32
-	fields *string
-	fieldset *string
+	fields     *string
+	fieldset   *string
 }
 
 // List of comma-separated fields.
@@ -1477,28 +1481,29 @@ GetPendingReceivedDocument Get Pending Received Document
 
 Gets the specified pending received document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @param documentId The ID of the document.
- @return ApiGetPendingReceivedDocumentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@param documentId The ID of the document.
+	@return ApiGetPendingReceivedDocumentRequest
 */
 func (a *ReceivedDocumentsAPIService) GetPendingReceivedDocument(ctx context.Context, companyId int32, documentId int32) ApiGetPendingReceivedDocumentRequest {
 	return ApiGetPendingReceivedDocumentRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 		documentId: documentId,
 	}
 }
 
 // Execute executes the request
-//  @return GetPendingReceivedDocumentResponse
+//
+//	@return GetPendingReceivedDocumentResponse
 func (a *ReceivedDocumentsAPIService) GetPendingReceivedDocumentExecute(r ApiGetPendingReceivedDocumentRequest) (*GetPendingReceivedDocumentResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetPendingReceivedDocumentResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetPendingReceivedDocumentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.GetPendingReceivedDocument")
@@ -1566,8 +1571,8 @@ func (a *ReceivedDocumentsAPIService) GetPendingReceivedDocumentExecute(r ApiGet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -1577,8 +1582,8 @@ func (a *ReceivedDocumentsAPIService) GetPendingReceivedDocumentExecute(r ApiGet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -1588,8 +1593,8 @@ func (a *ReceivedDocumentsAPIService) GetPendingReceivedDocumentExecute(r ApiGet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -1599,8 +1604,8 @@ func (a *ReceivedDocumentsAPIService) GetPendingReceivedDocumentExecute(r ApiGet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -1610,8 +1615,8 @@ func (a *ReceivedDocumentsAPIService) GetPendingReceivedDocumentExecute(r ApiGet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -1621,8 +1626,8 @@ func (a *ReceivedDocumentsAPIService) GetPendingReceivedDocumentExecute(r ApiGet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -1632,8 +1637,8 @@ func (a *ReceivedDocumentsAPIService) GetPendingReceivedDocumentExecute(r ApiGet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -1643,8 +1648,8 @@ func (a *ReceivedDocumentsAPIService) GetPendingReceivedDocumentExecute(r ApiGet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1654,8 +1659,8 @@ func (a *ReceivedDocumentsAPIService) GetPendingReceivedDocumentExecute(r ApiGet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1673,12 +1678,12 @@ func (a *ReceivedDocumentsAPIService) GetPendingReceivedDocumentExecute(r ApiGet
 }
 
 type ApiGetReceivedDocumentRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ReceivedDocumentsAPIService
-	companyId int32
+	companyId  int32
 	documentId int32
-	fields *string
-	fieldset *string
+	fields     *string
+	fieldset   *string
 }
 
 // List of comma-separated fields.
@@ -1702,28 +1707,29 @@ GetReceivedDocument Get Received Document
 
 Gets the specified document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @param documentId The ID of the document.
- @return ApiGetReceivedDocumentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@param documentId The ID of the document.
+	@return ApiGetReceivedDocumentRequest
 */
 func (a *ReceivedDocumentsAPIService) GetReceivedDocument(ctx context.Context, companyId int32, documentId int32) ApiGetReceivedDocumentRequest {
 	return ApiGetReceivedDocumentRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 		documentId: documentId,
 	}
 }
 
 // Execute executes the request
-//  @return GetReceivedDocumentResponse
+//
+//	@return GetReceivedDocumentResponse
 func (a *ReceivedDocumentsAPIService) GetReceivedDocumentExecute(r ApiGetReceivedDocumentRequest) (*GetReceivedDocumentResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetReceivedDocumentResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetReceivedDocumentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.GetReceivedDocument")
@@ -1791,8 +1797,8 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentExecute(r ApiGetReceive
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -1802,8 +1808,8 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentExecute(r ApiGetReceive
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -1813,8 +1819,8 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentExecute(r ApiGetReceive
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -1824,8 +1830,8 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentExecute(r ApiGetReceive
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -1835,8 +1841,8 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentExecute(r ApiGetReceive
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -1846,8 +1852,8 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentExecute(r ApiGetReceive
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -1857,8 +1863,8 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentExecute(r ApiGetReceive
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -1868,8 +1874,8 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentExecute(r ApiGetReceive
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1879,8 +1885,8 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentExecute(r ApiGetReceive
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1898,10 +1904,10 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentExecute(r ApiGetReceive
 }
 
 type ApiGetReceivedDocumentPreCreateInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ReceivedDocumentsAPIService
-	companyId int32
-	type_ *string
+	companyId  int32
+	type_      *string
 }
 
 // The type of the received document.
@@ -1919,26 +1925,27 @@ GetReceivedDocumentPreCreateInfo Get Received Document Pre-Create Info
 
 Retrieves the information useful while creating a new document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @return ApiGetReceivedDocumentPreCreateInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@return ApiGetReceivedDocumentPreCreateInfoRequest
 */
 func (a *ReceivedDocumentsAPIService) GetReceivedDocumentPreCreateInfo(ctx context.Context, companyId int32) ApiGetReceivedDocumentPreCreateInfoRequest {
 	return ApiGetReceivedDocumentPreCreateInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 	}
 }
 
 // Execute executes the request
-//  @return GetReceivedDocumentPreCreateInfoResponse
+//
+//	@return GetReceivedDocumentPreCreateInfoResponse
 func (a *ReceivedDocumentsAPIService) GetReceivedDocumentPreCreateInfoExecute(r ApiGetReceivedDocumentPreCreateInfoRequest) (*GetReceivedDocumentPreCreateInfoResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetReceivedDocumentPreCreateInfoResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetReceivedDocumentPreCreateInfoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.GetReceivedDocumentPreCreateInfo")
@@ -1953,7 +1960,7 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentPreCreateInfoExecute(r 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.type_ == nil {
-		return localVarReturnValue, nil, reportError("type_ is required and must be specified")
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: "type_ is required and must be specified"}
 	}
 
 	parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "form", "")
@@ -2003,8 +2010,8 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentPreCreateInfoExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -2014,8 +2021,8 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentPreCreateInfoExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -2025,8 +2032,8 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentPreCreateInfoExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -2036,8 +2043,8 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentPreCreateInfoExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -2047,8 +2054,8 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentPreCreateInfoExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -2058,8 +2065,8 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentPreCreateInfoExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -2069,8 +2076,8 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentPreCreateInfoExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -2080,8 +2087,8 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentPreCreateInfoExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -2091,8 +2098,8 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentPreCreateInfoExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2110,9 +2117,9 @@ func (a *ReceivedDocumentsAPIService) GetReceivedDocumentPreCreateInfoExecute(r 
 }
 
 type ApiListBinReceivedDocumentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ReceivedDocumentsAPIService
-	companyId int32
+	companyId  int32
 }
 
 func (r ApiListBinReceivedDocumentsRequest) Execute() (*ListBinReceivedDocuments, *http.Response, error) {
@@ -2124,26 +2131,27 @@ ListBinReceivedDocuments Get Bin Received Documents List
 
 Get bin Received documents list
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @return ApiListBinReceivedDocumentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@return ApiListBinReceivedDocumentsRequest
 */
 func (a *ReceivedDocumentsAPIService) ListBinReceivedDocuments(ctx context.Context, companyId int32) ApiListBinReceivedDocumentsRequest {
 	return ApiListBinReceivedDocumentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 	}
 }
 
 // Execute executes the request
-//  @return ListBinReceivedDocuments
+//
+//	@return ListBinReceivedDocuments
 func (a *ReceivedDocumentsAPIService) ListBinReceivedDocumentsExecute(r ApiListBinReceivedDocumentsRequest) (*ListBinReceivedDocuments, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListBinReceivedDocuments
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListBinReceivedDocuments
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.ListBinReceivedDocuments")
@@ -2204,8 +2212,8 @@ func (a *ReceivedDocumentsAPIService) ListBinReceivedDocumentsExecute(r ApiListB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -2215,8 +2223,8 @@ func (a *ReceivedDocumentsAPIService) ListBinReceivedDocumentsExecute(r ApiListB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -2226,8 +2234,8 @@ func (a *ReceivedDocumentsAPIService) ListBinReceivedDocumentsExecute(r ApiListB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -2237,8 +2245,8 @@ func (a *ReceivedDocumentsAPIService) ListBinReceivedDocumentsExecute(r ApiListB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -2248,8 +2256,8 @@ func (a *ReceivedDocumentsAPIService) ListBinReceivedDocumentsExecute(r ApiListB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -2259,8 +2267,8 @@ func (a *ReceivedDocumentsAPIService) ListBinReceivedDocumentsExecute(r ApiListB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -2270,8 +2278,8 @@ func (a *ReceivedDocumentsAPIService) ListBinReceivedDocumentsExecute(r ApiListB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -2281,8 +2289,8 @@ func (a *ReceivedDocumentsAPIService) ListBinReceivedDocumentsExecute(r ApiListB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -2292,8 +2300,8 @@ func (a *ReceivedDocumentsAPIService) ListBinReceivedDocumentsExecute(r ApiListB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2311,16 +2319,16 @@ func (a *ReceivedDocumentsAPIService) ListBinReceivedDocumentsExecute(r ApiListB
 }
 
 type ApiListPendingReceivedDocumentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ReceivedDocumentsAPIService
-	companyId int32
-	type_ *string
-	fields *string
-	fieldset *string
-	sort *string
-	page *int32
-	perPage *int32
-	q *string
+	companyId  int32
+	type_      *string
+	fields     *string
+	fieldset   *string
+	sort       *string
+	page       *int32
+	perPage    *int32
+	q          *string
 }
 
 // The type of the pending received document.
@@ -2374,26 +2382,27 @@ ListPendingReceivedDocuments List Pending Received Documents
 
 Lists the pending received documents.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @return ApiListPendingReceivedDocumentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@return ApiListPendingReceivedDocumentsRequest
 */
 func (a *ReceivedDocumentsAPIService) ListPendingReceivedDocuments(ctx context.Context, companyId int32) ApiListPendingReceivedDocumentsRequest {
 	return ApiListPendingReceivedDocumentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 	}
 }
 
 // Execute executes the request
-//  @return ListPendingReceivedDocumentsResponse
+//
+//	@return ListPendingReceivedDocumentsResponse
 func (a *ReceivedDocumentsAPIService) ListPendingReceivedDocumentsExecute(r ApiListPendingReceivedDocumentsRequest) (*ListPendingReceivedDocumentsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListPendingReceivedDocumentsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListPendingReceivedDocumentsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.ListPendingReceivedDocuments")
@@ -2408,7 +2417,7 @@ func (a *ReceivedDocumentsAPIService) ListPendingReceivedDocumentsExecute(r ApiL
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.type_ == nil {
-		return localVarReturnValue, nil, reportError("type_ is required and must be specified")
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: "type_ is required and must be specified"}
 	}
 
 	parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "form", "")
@@ -2482,8 +2491,8 @@ func (a *ReceivedDocumentsAPIService) ListPendingReceivedDocumentsExecute(r ApiL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -2493,8 +2502,8 @@ func (a *ReceivedDocumentsAPIService) ListPendingReceivedDocumentsExecute(r ApiL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -2504,8 +2513,8 @@ func (a *ReceivedDocumentsAPIService) ListPendingReceivedDocumentsExecute(r ApiL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -2515,8 +2524,8 @@ func (a *ReceivedDocumentsAPIService) ListPendingReceivedDocumentsExecute(r ApiL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -2526,8 +2535,8 @@ func (a *ReceivedDocumentsAPIService) ListPendingReceivedDocumentsExecute(r ApiL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -2537,8 +2546,8 @@ func (a *ReceivedDocumentsAPIService) ListPendingReceivedDocumentsExecute(r ApiL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -2548,8 +2557,8 @@ func (a *ReceivedDocumentsAPIService) ListPendingReceivedDocumentsExecute(r ApiL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -2559,8 +2568,8 @@ func (a *ReceivedDocumentsAPIService) ListPendingReceivedDocumentsExecute(r ApiL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -2570,8 +2579,8 @@ func (a *ReceivedDocumentsAPIService) ListPendingReceivedDocumentsExecute(r ApiL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2589,16 +2598,16 @@ func (a *ReceivedDocumentsAPIService) ListPendingReceivedDocumentsExecute(r ApiL
 }
 
 type ApiListReceivedDocumentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ReceivedDocumentsAPIService
-	companyId int32
-	type_ *string
-	fields *string
-	fieldset *string
-	sort *string
-	page *int32
-	perPage *int32
-	q *string
+	companyId  int32
+	type_      *string
+	fields     *string
+	fieldset   *string
+	sort       *string
+	page       *int32
+	perPage    *int32
+	q          *string
 }
 
 // The type of the received document.
@@ -2652,26 +2661,27 @@ ListReceivedDocuments List Received Documents
 
 Lists the received documents.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @return ApiListReceivedDocumentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@return ApiListReceivedDocumentsRequest
 */
 func (a *ReceivedDocumentsAPIService) ListReceivedDocuments(ctx context.Context, companyId int32) ApiListReceivedDocumentsRequest {
 	return ApiListReceivedDocumentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 	}
 }
 
 // Execute executes the request
-//  @return ListReceivedDocumentsResponse
+//
+//	@return ListReceivedDocumentsResponse
 func (a *ReceivedDocumentsAPIService) ListReceivedDocumentsExecute(r ApiListReceivedDocumentsRequest) (*ListReceivedDocumentsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListReceivedDocumentsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListReceivedDocumentsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.ListReceivedDocuments")
@@ -2686,7 +2696,7 @@ func (a *ReceivedDocumentsAPIService) ListReceivedDocumentsExecute(r ApiListRece
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.type_ == nil {
-		return localVarReturnValue, nil, reportError("type_ is required and must be specified")
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: "type_ is required and must be specified"}
 	}
 
 	parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "form", "")
@@ -2760,8 +2770,8 @@ func (a *ReceivedDocumentsAPIService) ListReceivedDocumentsExecute(r ApiListRece
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -2771,8 +2781,8 @@ func (a *ReceivedDocumentsAPIService) ListReceivedDocumentsExecute(r ApiListRece
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -2782,8 +2792,8 @@ func (a *ReceivedDocumentsAPIService) ListReceivedDocumentsExecute(r ApiListRece
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -2793,8 +2803,8 @@ func (a *ReceivedDocumentsAPIService) ListReceivedDocumentsExecute(r ApiListRece
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -2804,8 +2814,8 @@ func (a *ReceivedDocumentsAPIService) ListReceivedDocumentsExecute(r ApiListRece
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -2815,8 +2825,8 @@ func (a *ReceivedDocumentsAPIService) ListReceivedDocumentsExecute(r ApiListRece
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -2826,8 +2836,8 @@ func (a *ReceivedDocumentsAPIService) ListReceivedDocumentsExecute(r ApiListRece
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -2837,8 +2847,8 @@ func (a *ReceivedDocumentsAPIService) ListReceivedDocumentsExecute(r ApiListRece
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -2848,8 +2858,8 @@ func (a *ReceivedDocumentsAPIService) ListReceivedDocumentsExecute(r ApiListRece
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2867,10 +2877,10 @@ func (a *ReceivedDocumentsAPIService) ListReceivedDocumentsExecute(r ApiListRece
 }
 
 type ApiModifyReceivedDocumentRequest struct {
-	ctx context.Context
-	ApiService *ReceivedDocumentsAPIService
-	companyId int32
-	documentId int32
+	ctx                           context.Context
+	ApiService                    *ReceivedDocumentsAPIService
+	companyId                     int32
+	documentId                    int32
 	modifyReceivedDocumentRequest *ModifyReceivedDocumentRequest
 }
 
@@ -2889,28 +2899,29 @@ ModifyReceivedDocument Modify Received Document
 
 Modifies the specified document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @param documentId The ID of the document.
- @return ApiModifyReceivedDocumentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@param documentId The ID of the document.
+	@return ApiModifyReceivedDocumentRequest
 */
 func (a *ReceivedDocumentsAPIService) ModifyReceivedDocument(ctx context.Context, companyId int32, documentId int32) ApiModifyReceivedDocumentRequest {
 	return ApiModifyReceivedDocumentRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 		documentId: documentId,
 	}
 }
 
 // Execute executes the request
-//  @return ModifyReceivedDocumentResponse
+//
+//	@return ModifyReceivedDocumentResponse
 func (a *ReceivedDocumentsAPIService) ModifyReceivedDocumentExecute(r ApiModifyReceivedDocumentRequest) (*ModifyReceivedDocumentResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModifyReceivedDocumentResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModifyReceivedDocumentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.ModifyReceivedDocument")
@@ -2974,8 +2985,8 @@ func (a *ReceivedDocumentsAPIService) ModifyReceivedDocumentExecute(r ApiModifyR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -2985,8 +2996,8 @@ func (a *ReceivedDocumentsAPIService) ModifyReceivedDocumentExecute(r ApiModifyR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -2996,8 +3007,8 @@ func (a *ReceivedDocumentsAPIService) ModifyReceivedDocumentExecute(r ApiModifyR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -3007,8 +3018,8 @@ func (a *ReceivedDocumentsAPIService) ModifyReceivedDocumentExecute(r ApiModifyR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -3018,8 +3029,8 @@ func (a *ReceivedDocumentsAPIService) ModifyReceivedDocumentExecute(r ApiModifyR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -3029,8 +3040,8 @@ func (a *ReceivedDocumentsAPIService) ModifyReceivedDocumentExecute(r ApiModifyR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -3040,8 +3051,8 @@ func (a *ReceivedDocumentsAPIService) ModifyReceivedDocumentExecute(r ApiModifyR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -3051,8 +3062,8 @@ func (a *ReceivedDocumentsAPIService) ModifyReceivedDocumentExecute(r ApiModifyR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -3062,8 +3073,8 @@ func (a *ReceivedDocumentsAPIService) ModifyReceivedDocumentExecute(r ApiModifyR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3081,9 +3092,9 @@ func (a *ReceivedDocumentsAPIService) ModifyReceivedDocumentExecute(r ApiModifyR
 }
 
 type ApiRecoverBinReceivedDocumentRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ReceivedDocumentsAPIService
-	companyId int32
+	companyId  int32
 	documentId int32
 }
 
@@ -3096,16 +3107,16 @@ RecoverBinReceivedDocument Recover Received Document From The Bin
 
 Recover Received Document From The Bin
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @param documentId The ID of the document.
- @return ApiRecoverBinReceivedDocumentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@param documentId The ID of the document.
+	@return ApiRecoverBinReceivedDocumentRequest
 */
 func (a *ReceivedDocumentsAPIService) RecoverBinReceivedDocument(ctx context.Context, companyId int32, documentId int32) ApiRecoverBinReceivedDocumentRequest {
 	return ApiRecoverBinReceivedDocumentRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 		documentId: documentId,
 	}
 }
@@ -3113,9 +3124,9 @@ func (a *ReceivedDocumentsAPIService) RecoverBinReceivedDocument(ctx context.Con
 // Execute executes the request
 func (a *ReceivedDocumentsAPIService) RecoverBinReceivedDocumentExecute(r ApiRecoverBinReceivedDocumentRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.RecoverBinReceivedDocument")
@@ -3177,8 +3188,8 @@ func (a *ReceivedDocumentsAPIService) RecoverBinReceivedDocumentExecute(r ApiRec
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -3188,8 +3199,8 @@ func (a *ReceivedDocumentsAPIService) RecoverBinReceivedDocumentExecute(r ApiRec
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -3199,8 +3210,8 @@ func (a *ReceivedDocumentsAPIService) RecoverBinReceivedDocumentExecute(r ApiRec
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -3210,8 +3221,8 @@ func (a *ReceivedDocumentsAPIService) RecoverBinReceivedDocumentExecute(r ApiRec
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -3221,8 +3232,8 @@ func (a *ReceivedDocumentsAPIService) RecoverBinReceivedDocumentExecute(r ApiRec
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -3232,8 +3243,8 @@ func (a *ReceivedDocumentsAPIService) RecoverBinReceivedDocumentExecute(r ApiRec
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -3243,8 +3254,8 @@ func (a *ReceivedDocumentsAPIService) RecoverBinReceivedDocumentExecute(r ApiRec
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -3254,8 +3265,8 @@ func (a *ReceivedDocumentsAPIService) RecoverBinReceivedDocumentExecute(r ApiRec
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -3265,8 +3276,8 @@ func (a *ReceivedDocumentsAPIService) RecoverBinReceivedDocumentExecute(r ApiRec
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarHTTPResponse, newErr
 	}
@@ -3275,10 +3286,10 @@ func (a *ReceivedDocumentsAPIService) RecoverBinReceivedDocumentExecute(r ApiRec
 }
 
 type ApiUploadReceivedDocumentAttachmentRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ReceivedDocumentsAPIService
-	companyId int32
-	filename *string
+	companyId  int32
+	filename   *string
 	attachment *os.File
 }
 
@@ -3303,26 +3314,27 @@ UploadReceivedDocumentAttachment Upload Received Document Attachment
 
 Uploads an attachment destined to a received document. The actual association between the document and the attachment must be implemented separately, using the returned token.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @return ApiUploadReceivedDocumentAttachmentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@return ApiUploadReceivedDocumentAttachmentRequest
 */
 func (a *ReceivedDocumentsAPIService) UploadReceivedDocumentAttachment(ctx context.Context, companyId int32) ApiUploadReceivedDocumentAttachmentRequest {
 	return ApiUploadReceivedDocumentAttachmentRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 	}
 }
 
 // Execute executes the request
-//  @return UploadReceivedDocumentAttachmentResponse
+//
+//	@return UploadReceivedDocumentAttachmentResponse
 func (a *ReceivedDocumentsAPIService) UploadReceivedDocumentAttachmentExecute(r ApiUploadReceivedDocumentAttachmentRequest) (*UploadReceivedDocumentAttachmentResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UploadReceivedDocumentAttachmentResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UploadReceivedDocumentAttachmentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceivedDocumentsAPIService.UploadReceivedDocumentAttachment")
@@ -3358,8 +3370,8 @@ func (a *ReceivedDocumentsAPIService) UploadReceivedDocumentAttachmentExecute(r 
 		parameterAddToHeaderOrQuery(localVarFormParams, "filename", r.filename, "", "")
 	}
 	var attachmentLocalVarFormFileName string
-	var attachmentLocalVarFileName     string
-	var attachmentLocalVarFileBytes    []byte
+	var attachmentLocalVarFileName string
+	var attachmentLocalVarFileBytes []byte
 
 	attachmentLocalVarFormFileName = "attachment"
 	attachmentLocalVarFile := r.attachment
@@ -3401,8 +3413,8 @@ func (a *ReceivedDocumentsAPIService) UploadReceivedDocumentAttachmentExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -3412,8 +3424,8 @@ func (a *ReceivedDocumentsAPIService) UploadReceivedDocumentAttachmentExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -3423,8 +3435,8 @@ func (a *ReceivedDocumentsAPIService) UploadReceivedDocumentAttachmentExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -3434,8 +3446,8 @@ func (a *ReceivedDocumentsAPIService) UploadReceivedDocumentAttachmentExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -3445,8 +3457,8 @@ func (a *ReceivedDocumentsAPIService) UploadReceivedDocumentAttachmentExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -3456,8 +3468,8 @@ func (a *ReceivedDocumentsAPIService) UploadReceivedDocumentAttachmentExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -3467,8 +3479,8 @@ func (a *ReceivedDocumentsAPIService) UploadReceivedDocumentAttachmentExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -3478,8 +3490,8 @@ func (a *ReceivedDocumentsAPIService) UploadReceivedDocumentAttachmentExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -3489,8 +3501,8 @@ func (a *ReceivedDocumentsAPIService) UploadReceivedDocumentAttachmentExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

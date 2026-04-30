@@ -69,9 +69,9 @@ type ServerVariable struct {
 
 // ServerConfiguration stores the information about a server
 type ServerConfiguration struct {
-	URL string
+	URL         string
 	Description string
-	Variables map[string]ServerVariable
+	Variables   map[string]ServerVariable
 }
 
 // ServerConfigurations stores multiple ServerConfiguration items
@@ -92,17 +92,16 @@ type Configuration struct {
 // NewConfiguration returns a new Configuration object
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
-		DefaultHeader:    make(map[string]string),
-		UserAgent:        "FattureInCloud/2.1.3/Go-SDK",
-		Debug:            false,
-		Servers:          ServerConfigurations{
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "FattureInCloud/2.1.3/Go-SDK",
+		Debug:         false,
+		Servers: ServerConfigurations{
 			{
-				URL: "https://api-v2.fattureincloud.it",
+				URL:         "https://api-v2.fattureincloud.it",
 				Description: "No description provided",
 			},
 		},
-		OperationServers: map[string]ServerConfigurations{
-		},
+		OperationServers: map[string]ServerConfigurations{},
 	}
 	return cfg
 }
@@ -151,7 +150,7 @@ func getServerIndex(ctx context.Context) (int, error) {
 		if index, ok := si.(int); ok {
 			return index, nil
 		}
-		return 0, reportError("Invalid type %T should be int", si)
+		return 0, &GenericOpenAPIError{error: fmt.Sprintf("Invalid type %T should be int", si)}
 	}
 	return 0, nil
 }
@@ -160,7 +159,7 @@ func getServerOperationIndex(ctx context.Context, endpoint string) (int, error) 
 	osi := ctx.Value(ContextOperationServerIndices)
 	if osi != nil {
 		if operationIndices, ok := osi.(map[string]int); !ok {
-			return 0, reportError("Invalid type %T should be map[string]int", osi)
+			return 0, &GenericOpenAPIError{error: fmt.Sprintf("Invalid type %T should be map[string]int", osi)}
 		} else {
 			index, ok := operationIndices[endpoint]
 			if ok {
@@ -177,7 +176,7 @@ func getServerVariables(ctx context.Context) (map[string]string, error) {
 		if variables, ok := sv.(map[string]string); ok {
 			return variables, nil
 		}
-		return nil, reportError("ctx value of ContextServerVariables has invalid type %T should be map[string]string", sv)
+		return nil, &GenericOpenAPIError{error: fmt.Sprintf("ctx value of ContextServerVariables has invalid type %T should be map[string]string", sv)}
 	}
 	return nil, nil
 }
@@ -186,7 +185,7 @@ func getServerOperationVariables(ctx context.Context, endpoint string) (map[stri
 	osv := ctx.Value(ContextOperationServerVariables)
 	if osv != nil {
 		if operationVariables, ok := osv.(map[string]map[string]string); !ok {
-			return nil, reportError("ctx value of ContextOperationServerVariables has invalid type %T should be map[string]map[string]string", osv)
+			return nil, &GenericOpenAPIError{error: fmt.Sprintf("ctx value of ContextOperationServerVariables has invalid type %T should be map[string]map[string]string", osv)}
 		} else {
 			variables, ok := operationVariables[endpoint]
 			if ok {

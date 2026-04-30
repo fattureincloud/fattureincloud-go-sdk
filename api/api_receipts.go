@@ -18,17 +18,17 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+
 	. "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
-
 
 // ReceiptsAPIService ReceiptsAPI service
 type ReceiptsAPIService service
 
 type ApiCreateReceiptRequest struct {
-	ctx context.Context
-	ApiService *ReceiptsAPIService
-	companyId int32
+	ctx                  context.Context
+	ApiService           *ReceiptsAPIService
+	companyId            int32
 	createReceiptRequest *CreateReceiptRequest
 }
 
@@ -47,26 +47,27 @@ CreateReceipt Create Receipt
 
 Creates a new receipt.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @return ApiCreateReceiptRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@return ApiCreateReceiptRequest
 */
 func (a *ReceiptsAPIService) CreateReceipt(ctx context.Context, companyId int32) ApiCreateReceiptRequest {
 	return ApiCreateReceiptRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 	}
 }
 
 // Execute executes the request
-//  @return CreateReceiptResponse
+//
+//	@return CreateReceiptResponse
 func (a *ReceiptsAPIService) CreateReceiptExecute(r ApiCreateReceiptRequest) (*CreateReceiptResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateReceiptResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateReceiptResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsAPIService.CreateReceipt")
@@ -129,8 +130,8 @@ func (a *ReceiptsAPIService) CreateReceiptExecute(r ApiCreateReceiptRequest) (*C
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -140,8 +141,8 @@ func (a *ReceiptsAPIService) CreateReceiptExecute(r ApiCreateReceiptRequest) (*C
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -151,8 +152,8 @@ func (a *ReceiptsAPIService) CreateReceiptExecute(r ApiCreateReceiptRequest) (*C
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -162,8 +163,8 @@ func (a *ReceiptsAPIService) CreateReceiptExecute(r ApiCreateReceiptRequest) (*C
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -173,8 +174,8 @@ func (a *ReceiptsAPIService) CreateReceiptExecute(r ApiCreateReceiptRequest) (*C
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -184,8 +185,8 @@ func (a *ReceiptsAPIService) CreateReceiptExecute(r ApiCreateReceiptRequest) (*C
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -195,8 +196,8 @@ func (a *ReceiptsAPIService) CreateReceiptExecute(r ApiCreateReceiptRequest) (*C
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -206,8 +207,8 @@ func (a *ReceiptsAPIService) CreateReceiptExecute(r ApiCreateReceiptRequest) (*C
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -217,8 +218,8 @@ func (a *ReceiptsAPIService) CreateReceiptExecute(r ApiCreateReceiptRequest) (*C
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -236,9 +237,9 @@ func (a *ReceiptsAPIService) CreateReceiptExecute(r ApiCreateReceiptRequest) (*C
 }
 
 type ApiDeleteReceiptRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ReceiptsAPIService
-	companyId int32
+	companyId  int32
 	documentId int32
 }
 
@@ -251,16 +252,16 @@ DeleteReceipt Delete Receipt
 
 Deletes the specified receipt.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @param documentId The ID of the document.
- @return ApiDeleteReceiptRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@param documentId The ID of the document.
+	@return ApiDeleteReceiptRequest
 */
 func (a *ReceiptsAPIService) DeleteReceipt(ctx context.Context, companyId int32, documentId int32) ApiDeleteReceiptRequest {
 	return ApiDeleteReceiptRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 		documentId: documentId,
 	}
 }
@@ -268,9 +269,9 @@ func (a *ReceiptsAPIService) DeleteReceipt(ctx context.Context, companyId int32,
 // Execute executes the request
 func (a *ReceiptsAPIService) DeleteReceiptExecute(r ApiDeleteReceiptRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsAPIService.DeleteReceipt")
@@ -332,8 +333,8 @@ func (a *ReceiptsAPIService) DeleteReceiptExecute(r ApiDeleteReceiptRequest) (*h
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -343,8 +344,8 @@ func (a *ReceiptsAPIService) DeleteReceiptExecute(r ApiDeleteReceiptRequest) (*h
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -354,8 +355,8 @@ func (a *ReceiptsAPIService) DeleteReceiptExecute(r ApiDeleteReceiptRequest) (*h
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -365,8 +366,8 @@ func (a *ReceiptsAPIService) DeleteReceiptExecute(r ApiDeleteReceiptRequest) (*h
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -376,8 +377,8 @@ func (a *ReceiptsAPIService) DeleteReceiptExecute(r ApiDeleteReceiptRequest) (*h
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -387,8 +388,8 @@ func (a *ReceiptsAPIService) DeleteReceiptExecute(r ApiDeleteReceiptRequest) (*h
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -398,8 +399,8 @@ func (a *ReceiptsAPIService) DeleteReceiptExecute(r ApiDeleteReceiptRequest) (*h
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -409,8 +410,8 @@ func (a *ReceiptsAPIService) DeleteReceiptExecute(r ApiDeleteReceiptRequest) (*h
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -420,8 +421,8 @@ func (a *ReceiptsAPIService) DeleteReceiptExecute(r ApiDeleteReceiptRequest) (*h
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarHTTPResponse, newErr
 	}
@@ -430,12 +431,12 @@ func (a *ReceiptsAPIService) DeleteReceiptExecute(r ApiDeleteReceiptRequest) (*h
 }
 
 type ApiGetReceiptRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ReceiptsAPIService
-	companyId int32
+	companyId  int32
 	documentId int32
-	fields *string
-	fieldset *string
+	fields     *string
+	fieldset   *string
 }
 
 // List of comma-separated fields.
@@ -459,28 +460,29 @@ GetReceipt Get Receipt
 
 Gets the specified receipt.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @param documentId The ID of the document.
- @return ApiGetReceiptRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@param documentId The ID of the document.
+	@return ApiGetReceiptRequest
 */
 func (a *ReceiptsAPIService) GetReceipt(ctx context.Context, companyId int32, documentId int32) ApiGetReceiptRequest {
 	return ApiGetReceiptRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 		documentId: documentId,
 	}
 }
 
 // Execute executes the request
-//  @return GetReceiptResponse
+//
+//	@return GetReceiptResponse
 func (a *ReceiptsAPIService) GetReceiptExecute(r ApiGetReceiptRequest) (*GetReceiptResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetReceiptResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetReceiptResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsAPIService.GetReceipt")
@@ -548,8 +550,8 @@ func (a *ReceiptsAPIService) GetReceiptExecute(r ApiGetReceiptRequest) (*GetRece
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -559,8 +561,8 @@ func (a *ReceiptsAPIService) GetReceiptExecute(r ApiGetReceiptRequest) (*GetRece
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -570,8 +572,8 @@ func (a *ReceiptsAPIService) GetReceiptExecute(r ApiGetReceiptRequest) (*GetRece
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -581,8 +583,8 @@ func (a *ReceiptsAPIService) GetReceiptExecute(r ApiGetReceiptRequest) (*GetRece
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -592,8 +594,8 @@ func (a *ReceiptsAPIService) GetReceiptExecute(r ApiGetReceiptRequest) (*GetRece
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -603,8 +605,8 @@ func (a *ReceiptsAPIService) GetReceiptExecute(r ApiGetReceiptRequest) (*GetRece
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -614,8 +616,8 @@ func (a *ReceiptsAPIService) GetReceiptExecute(r ApiGetReceiptRequest) (*GetRece
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -625,8 +627,8 @@ func (a *ReceiptsAPIService) GetReceiptExecute(r ApiGetReceiptRequest) (*GetRece
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -636,8 +638,8 @@ func (a *ReceiptsAPIService) GetReceiptExecute(r ApiGetReceiptRequest) (*GetRece
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -655,9 +657,9 @@ func (a *ReceiptsAPIService) GetReceiptExecute(r ApiGetReceiptRequest) (*GetRece
 }
 
 type ApiGetReceiptPreCreateInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ReceiptsAPIService
-	companyId int32
+	companyId  int32
 }
 
 func (r ApiGetReceiptPreCreateInfoRequest) Execute() (*GetReceiptPreCreateInfoResponse, *http.Response, error) {
@@ -669,26 +671,27 @@ GetReceiptPreCreateInfo Get Receipt Pre-Create Info
 
 Retrieves the information useful while creating a new receipt.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @return ApiGetReceiptPreCreateInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@return ApiGetReceiptPreCreateInfoRequest
 */
 func (a *ReceiptsAPIService) GetReceiptPreCreateInfo(ctx context.Context, companyId int32) ApiGetReceiptPreCreateInfoRequest {
 	return ApiGetReceiptPreCreateInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 	}
 }
 
 // Execute executes the request
-//  @return GetReceiptPreCreateInfoResponse
+//
+//	@return GetReceiptPreCreateInfoResponse
 func (a *ReceiptsAPIService) GetReceiptPreCreateInfoExecute(r ApiGetReceiptPreCreateInfoRequest) (*GetReceiptPreCreateInfoResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetReceiptPreCreateInfoResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetReceiptPreCreateInfoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsAPIService.GetReceiptPreCreateInfo")
@@ -749,8 +752,8 @@ func (a *ReceiptsAPIService) GetReceiptPreCreateInfoExecute(r ApiGetReceiptPreCr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -760,8 +763,8 @@ func (a *ReceiptsAPIService) GetReceiptPreCreateInfoExecute(r ApiGetReceiptPreCr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -771,8 +774,8 @@ func (a *ReceiptsAPIService) GetReceiptPreCreateInfoExecute(r ApiGetReceiptPreCr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -782,8 +785,8 @@ func (a *ReceiptsAPIService) GetReceiptPreCreateInfoExecute(r ApiGetReceiptPreCr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -793,8 +796,8 @@ func (a *ReceiptsAPIService) GetReceiptPreCreateInfoExecute(r ApiGetReceiptPreCr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -804,8 +807,8 @@ func (a *ReceiptsAPIService) GetReceiptPreCreateInfoExecute(r ApiGetReceiptPreCr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -815,8 +818,8 @@ func (a *ReceiptsAPIService) GetReceiptPreCreateInfoExecute(r ApiGetReceiptPreCr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -826,8 +829,8 @@ func (a *ReceiptsAPIService) GetReceiptPreCreateInfoExecute(r ApiGetReceiptPreCr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -837,8 +840,8 @@ func (a *ReceiptsAPIService) GetReceiptPreCreateInfoExecute(r ApiGetReceiptPreCr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -856,11 +859,11 @@ func (a *ReceiptsAPIService) GetReceiptPreCreateInfoExecute(r ApiGetReceiptPreCr
 }
 
 type ApiGetReceiptsMonthlyTotalsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ReceiptsAPIService
-	companyId int32
-	type_ *string
-	year *string
+	companyId  int32
+	type_      *string
+	year       *string
 }
 
 // Receipt Type
@@ -884,26 +887,27 @@ GetReceiptsMonthlyTotals Get Receipts Monthly Totals
 
 Returns the monthly totals by year and receipt type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @return ApiGetReceiptsMonthlyTotalsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@return ApiGetReceiptsMonthlyTotalsRequest
 */
 func (a *ReceiptsAPIService) GetReceiptsMonthlyTotals(ctx context.Context, companyId int32) ApiGetReceiptsMonthlyTotalsRequest {
 	return ApiGetReceiptsMonthlyTotalsRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 	}
 }
 
 // Execute executes the request
-//  @return GetReceiptsMonthlyTotalsResponse
+//
+//	@return GetReceiptsMonthlyTotalsResponse
 func (a *ReceiptsAPIService) GetReceiptsMonthlyTotalsExecute(r ApiGetReceiptsMonthlyTotalsRequest) (*GetReceiptsMonthlyTotalsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetReceiptsMonthlyTotalsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetReceiptsMonthlyTotalsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsAPIService.GetReceiptsMonthlyTotals")
@@ -918,10 +922,10 @@ func (a *ReceiptsAPIService) GetReceiptsMonthlyTotalsExecute(r ApiGetReceiptsMon
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.type_ == nil {
-		return localVarReturnValue, nil, reportError("type_ is required and must be specified")
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: "type_ is required and must be specified"}
 	}
 	if r.year == nil {
-		return localVarReturnValue, nil, reportError("year is required and must be specified")
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: "year is required and must be specified"}
 	}
 
 	parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "form", "")
@@ -972,8 +976,8 @@ func (a *ReceiptsAPIService) GetReceiptsMonthlyTotalsExecute(r ApiGetReceiptsMon
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -983,8 +987,8 @@ func (a *ReceiptsAPIService) GetReceiptsMonthlyTotalsExecute(r ApiGetReceiptsMon
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -994,8 +998,8 @@ func (a *ReceiptsAPIService) GetReceiptsMonthlyTotalsExecute(r ApiGetReceiptsMon
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -1005,8 +1009,8 @@ func (a *ReceiptsAPIService) GetReceiptsMonthlyTotalsExecute(r ApiGetReceiptsMon
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -1016,8 +1020,8 @@ func (a *ReceiptsAPIService) GetReceiptsMonthlyTotalsExecute(r ApiGetReceiptsMon
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -1027,8 +1031,8 @@ func (a *ReceiptsAPIService) GetReceiptsMonthlyTotalsExecute(r ApiGetReceiptsMon
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -1038,8 +1042,8 @@ func (a *ReceiptsAPIService) GetReceiptsMonthlyTotalsExecute(r ApiGetReceiptsMon
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -1049,8 +1053,8 @@ func (a *ReceiptsAPIService) GetReceiptsMonthlyTotalsExecute(r ApiGetReceiptsMon
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1060,8 +1064,8 @@ func (a *ReceiptsAPIService) GetReceiptsMonthlyTotalsExecute(r ApiGetReceiptsMon
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1079,15 +1083,15 @@ func (a *ReceiptsAPIService) GetReceiptsMonthlyTotalsExecute(r ApiGetReceiptsMon
 }
 
 type ApiListReceiptsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ReceiptsAPIService
-	companyId int32
-	fields *string
-	fieldset *string
-	page *int32
-	perPage *int32
-	sort *string
-	q *string
+	companyId  int32
+	fields     *string
+	fieldset   *string
+	page       *int32
+	perPage    *int32
+	sort       *string
+	q          *string
 }
 
 // List of comma-separated fields.
@@ -1135,26 +1139,27 @@ ListReceipts List Receipts
 
 Lists the receipts.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @return ApiListReceiptsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@return ApiListReceiptsRequest
 */
 func (a *ReceiptsAPIService) ListReceipts(ctx context.Context, companyId int32) ApiListReceiptsRequest {
 	return ApiListReceiptsRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 	}
 }
 
 // Execute executes the request
-//  @return ListReceiptsResponse
+//
+//	@return ListReceiptsResponse
 func (a *ReceiptsAPIService) ListReceiptsExecute(r ApiListReceiptsRequest) (*ListReceiptsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListReceiptsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListReceiptsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsAPIService.ListReceipts")
@@ -1239,8 +1244,8 @@ func (a *ReceiptsAPIService) ListReceiptsExecute(r ApiListReceiptsRequest) (*Lis
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -1250,8 +1255,8 @@ func (a *ReceiptsAPIService) ListReceiptsExecute(r ApiListReceiptsRequest) (*Lis
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -1261,8 +1266,8 @@ func (a *ReceiptsAPIService) ListReceiptsExecute(r ApiListReceiptsRequest) (*Lis
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -1272,8 +1277,8 @@ func (a *ReceiptsAPIService) ListReceiptsExecute(r ApiListReceiptsRequest) (*Lis
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -1283,8 +1288,8 @@ func (a *ReceiptsAPIService) ListReceiptsExecute(r ApiListReceiptsRequest) (*Lis
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -1294,8 +1299,8 @@ func (a *ReceiptsAPIService) ListReceiptsExecute(r ApiListReceiptsRequest) (*Lis
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -1305,8 +1310,8 @@ func (a *ReceiptsAPIService) ListReceiptsExecute(r ApiListReceiptsRequest) (*Lis
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -1316,8 +1321,8 @@ func (a *ReceiptsAPIService) ListReceiptsExecute(r ApiListReceiptsRequest) (*Lis
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1327,8 +1332,8 @@ func (a *ReceiptsAPIService) ListReceiptsExecute(r ApiListReceiptsRequest) (*Lis
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1346,10 +1351,10 @@ func (a *ReceiptsAPIService) ListReceiptsExecute(r ApiListReceiptsRequest) (*Lis
 }
 
 type ApiModifyReceiptRequest struct {
-	ctx context.Context
-	ApiService *ReceiptsAPIService
-	companyId int32
-	documentId int32
+	ctx                  context.Context
+	ApiService           *ReceiptsAPIService
+	companyId            int32
+	documentId           int32
 	modifyReceiptRequest *ModifyReceiptRequest
 }
 
@@ -1368,28 +1373,29 @@ ModifyReceipt Modify Receipt
 
 Modifies the specified receipt.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @param documentId The ID of the document.
- @return ApiModifyReceiptRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@param documentId The ID of the document.
+	@return ApiModifyReceiptRequest
 */
 func (a *ReceiptsAPIService) ModifyReceipt(ctx context.Context, companyId int32, documentId int32) ApiModifyReceiptRequest {
 	return ApiModifyReceiptRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 		documentId: documentId,
 	}
 }
 
 // Execute executes the request
-//  @return ModifyReceiptResponse
+//
+//	@return ModifyReceiptResponse
 func (a *ReceiptsAPIService) ModifyReceiptExecute(r ApiModifyReceiptRequest) (*ModifyReceiptResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModifyReceiptResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModifyReceiptResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReceiptsAPIService.ModifyReceipt")
@@ -1453,8 +1459,8 @@ func (a *ReceiptsAPIService) ModifyReceiptExecute(r ApiModifyReceiptRequest) (*M
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -1464,8 +1470,8 @@ func (a *ReceiptsAPIService) ModifyReceiptExecute(r ApiModifyReceiptRequest) (*M
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -1475,8 +1481,8 @@ func (a *ReceiptsAPIService) ModifyReceiptExecute(r ApiModifyReceiptRequest) (*M
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -1486,8 +1492,8 @@ func (a *ReceiptsAPIService) ModifyReceiptExecute(r ApiModifyReceiptRequest) (*M
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -1497,8 +1503,8 @@ func (a *ReceiptsAPIService) ModifyReceiptExecute(r ApiModifyReceiptRequest) (*M
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -1508,8 +1514,8 @@ func (a *ReceiptsAPIService) ModifyReceiptExecute(r ApiModifyReceiptRequest) (*M
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -1519,8 +1525,8 @@ func (a *ReceiptsAPIService) ModifyReceiptExecute(r ApiModifyReceiptRequest) (*M
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -1530,8 +1536,8 @@ func (a *ReceiptsAPIService) ModifyReceiptExecute(r ApiModifyReceiptRequest) (*M
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1541,8 +1547,8 @@ func (a *ReceiptsAPIService) ModifyReceiptExecute(r ApiModifyReceiptRequest) (*M
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

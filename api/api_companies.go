@@ -18,17 +18,17 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+
 	. "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
 )
-
 
 // CompaniesAPIService CompaniesAPI service
 type CompaniesAPIService service
 
 type ApiGetCompanyInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CompaniesAPIService
-	companyId int32
+	companyId  int32
 }
 
 func (r ApiGetCompanyInfoRequest) Execute() (*GetCompanyInfoResponse, *http.Response, error) {
@@ -40,26 +40,27 @@ GetCompanyInfo Get Company Info
 
 Gets the company detailed info.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @return ApiGetCompanyInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@return ApiGetCompanyInfoRequest
 */
 func (a *CompaniesAPIService) GetCompanyInfo(ctx context.Context, companyId int32) ApiGetCompanyInfoRequest {
 	return ApiGetCompanyInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 	}
 }
 
 // Execute executes the request
-//  @return GetCompanyInfoResponse
+//
+//	@return GetCompanyInfoResponse
 func (a *CompaniesAPIService) GetCompanyInfoExecute(r ApiGetCompanyInfoRequest) (*GetCompanyInfoResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetCompanyInfoResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetCompanyInfoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CompaniesAPIService.GetCompanyInfo")
@@ -120,8 +121,8 @@ func (a *CompaniesAPIService) GetCompanyInfoExecute(r ApiGetCompanyInfoRequest) 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -131,8 +132,8 @@ func (a *CompaniesAPIService) GetCompanyInfoExecute(r ApiGetCompanyInfoRequest) 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -142,8 +143,8 @@ func (a *CompaniesAPIService) GetCompanyInfoExecute(r ApiGetCompanyInfoRequest) 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -153,8 +154,8 @@ func (a *CompaniesAPIService) GetCompanyInfoExecute(r ApiGetCompanyInfoRequest) 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -164,8 +165,8 @@ func (a *CompaniesAPIService) GetCompanyInfoExecute(r ApiGetCompanyInfoRequest) 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -175,8 +176,8 @@ func (a *CompaniesAPIService) GetCompanyInfoExecute(r ApiGetCompanyInfoRequest) 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -186,8 +187,8 @@ func (a *CompaniesAPIService) GetCompanyInfoExecute(r ApiGetCompanyInfoRequest) 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -197,8 +198,8 @@ func (a *CompaniesAPIService) GetCompanyInfoExecute(r ApiGetCompanyInfoRequest) 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -208,8 +209,8 @@ func (a *CompaniesAPIService) GetCompanyInfoExecute(r ApiGetCompanyInfoRequest) 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -227,10 +228,10 @@ func (a *CompaniesAPIService) GetCompanyInfoExecute(r ApiGetCompanyInfoRequest) 
 }
 
 type ApiGetCompanyPlanUsageRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CompaniesAPIService
-	companyId int32
-	category *string
+	companyId  int32
+	category   *string
 }
 
 // Category
@@ -248,26 +249,27 @@ GetCompanyPlanUsage Get Company Plan Usage
 
 Gets the company limits usage.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId The ID of the company.
- @return ApiGetCompanyPlanUsageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId The ID of the company.
+	@return ApiGetCompanyPlanUsageRequest
 */
 func (a *CompaniesAPIService) GetCompanyPlanUsage(ctx context.Context, companyId int32) ApiGetCompanyPlanUsageRequest {
 	return ApiGetCompanyPlanUsageRequest{
 		ApiService: a,
-		ctx: ctx,
-		companyId: companyId,
+		ctx:        ctx,
+		companyId:  companyId,
 	}
 }
 
 // Execute executes the request
-//  @return GetCompanyPlanUsageResponse
+//
+//	@return GetCompanyPlanUsageResponse
 func (a *CompaniesAPIService) GetCompanyPlanUsageExecute(r ApiGetCompanyPlanUsageRequest) (*GetCompanyPlanUsageResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetCompanyPlanUsageResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetCompanyPlanUsageResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CompaniesAPIService.GetCompanyPlanUsage")
@@ -282,7 +284,7 @@ func (a *CompaniesAPIService) GetCompanyPlanUsageExecute(r ApiGetCompanyPlanUsag
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.category == nil {
-		return localVarReturnValue, nil, reportError("category is required and must be specified")
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: "category is required and must be specified"}
 	}
 
 	parameterAddToHeaderOrQuery(localVarQueryParams, "category", r.category, "form", "")
@@ -332,8 +334,8 @@ func (a *CompaniesAPIService) GetCompanyPlanUsageExecute(r ApiGetCompanyPlanUsag
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -343,8 +345,8 @@ func (a *CompaniesAPIService) GetCompanyPlanUsageExecute(r ApiGetCompanyPlanUsag
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -354,8 +356,8 @@ func (a *CompaniesAPIService) GetCompanyPlanUsageExecute(r ApiGetCompanyPlanUsag
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -365,8 +367,8 @@ func (a *CompaniesAPIService) GetCompanyPlanUsageExecute(r ApiGetCompanyPlanUsag
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -376,8 +378,8 @@ func (a *CompaniesAPIService) GetCompanyPlanUsageExecute(r ApiGetCompanyPlanUsag
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -387,8 +389,8 @@ func (a *CompaniesAPIService) GetCompanyPlanUsageExecute(r ApiGetCompanyPlanUsag
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -398,8 +400,8 @@ func (a *CompaniesAPIService) GetCompanyPlanUsageExecute(r ApiGetCompanyPlanUsag
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -409,8 +411,8 @@ func (a *CompaniesAPIService) GetCompanyPlanUsageExecute(r ApiGetCompanyPlanUsag
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -420,8 +422,8 @@ func (a *CompaniesAPIService) GetCompanyPlanUsageExecute(r ApiGetCompanyPlanUsag
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
