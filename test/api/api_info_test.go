@@ -344,7 +344,7 @@ func TestListRevenueCenters(t *testing.T) {
 func TestListDefaultTemplates(t *testing.T) {
 	s := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte(`{"data":[{"id":10,"name":"New Standard S1","type":"Tipo 1"},{"id":20,"name":"New Standard S2","type":"Tipo 2"}]}`))
+		w.Write([]byte(`{"data":[{"id":10,"name":"New Standard S1","type":"standard"},{"id":20,"name":"New Standard S2","type":"delivery_note"}]}`))
 	}))
 	defer s.Close()
 
@@ -361,7 +361,7 @@ func TestListDefaultTemplates(t *testing.T) {
 	expected := NewDocumentTemplate().
 		SetId(20).
 		SetName("New Standard S2").
-		SetType("Tipo 2")
+		SetType("delivery_note")
 
 	assert.True(t, reflect.DeepEqual(expected, &actual.Data[1]))
 }
