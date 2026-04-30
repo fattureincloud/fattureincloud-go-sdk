@@ -341,7 +341,7 @@ func TestListRevenueCenters(t *testing.T) {
 	assert.True(t, reflect.DeepEqual(expected, actual.Data))
 }
 
-func TestListTemplates(t *testing.T) {
+func TestListDefaultTemplates(t *testing.T) {
 	s := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
 		w.Write([]byte(`{"data":[{"id":10,"name":"New Standard S1","type":"Tipo 1"},{"id":20,"name":"New Standard S2","type":"Tipo 2"}]}`))
@@ -355,7 +355,7 @@ func TestListTemplates(t *testing.T) {
 	configuration.Scheme = "http"
 	apiClient := fattureincloud.NewAPIClient(configuration)
 
-	actual, _, err := apiClient.InfoAPI.ListTemplates(context.Background()).Execute()
+	actual, _, err := apiClient.InfoAPI.ListDefaultTemplates(context.Background()).Execute()
 	assert.NoError(t, err, "errore in chiamata api")
 
 	expected := NewDocumentTemplate().
