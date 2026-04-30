@@ -21,155 +21,163 @@ type EventType string
 
 // List of EventType
 var EventTypes = struct {
-	ISSUED_DOCUMENTS_INVOICES_CREATE EventType
-	ISSUED_DOCUMENTS_INVOICES_UPDATE EventType
-	ISSUED_DOCUMENTS_INVOICES_DELETE EventType
-	ISSUED_DOCUMENTS_QUOTES_CREATE EventType
-	ISSUED_DOCUMENTS_QUOTES_UPDATE EventType
-	ISSUED_DOCUMENTS_QUOTES_DELETE EventType
-	ISSUED_DOCUMENTS_PROFORMAS_CREATE EventType
-	ISSUED_DOCUMENTS_PROFORMAS_UPDATE EventType
-	ISSUED_DOCUMENTS_PROFORMAS_DELETE EventType
-	ISSUED_DOCUMENTS_RECEIPTS_CREATE EventType
-	ISSUED_DOCUMENTS_RECEIPTS_UPDATE EventType
-	ISSUED_DOCUMENTS_RECEIPTS_DELETE EventType
-	ISSUED_DOCUMENTS_DELIVERY_NOTES_CREATE EventType
-	ISSUED_DOCUMENTS_DELIVERY_NOTES_UPDATE EventType
-	ISSUED_DOCUMENTS_DELIVERY_NOTES_DELETE EventType
-	ISSUED_DOCUMENTS_CREDIT_NOTES_CREATE EventType
-	ISSUED_DOCUMENTS_CREDIT_NOTES_UPDATE EventType
-	ISSUED_DOCUMENTS_CREDIT_NOTES_DELETE EventType
-	ISSUED_DOCUMENTS_ORDERS_CREATE EventType
-	ISSUED_DOCUMENTS_ORDERS_UPDATE EventType
-	ISSUED_DOCUMENTS_ORDERS_DELETE EventType
-	ISSUED_DOCUMENTS_WORK_REPORTS_CREATE EventType
-	ISSUED_DOCUMENTS_WORK_REPORTS_UPDATE EventType
-	ISSUED_DOCUMENTS_WORK_REPORTS_DELETE EventType
-	ISSUED_DOCUMENTS_SUPPLIER_ORDERS_CREATE EventType
-	ISSUED_DOCUMENTS_SUPPLIER_ORDERS_UPDATE EventType
-	ISSUED_DOCUMENTS_SUPPLIER_ORDERS_DELETE EventType
-	ISSUED_DOCUMENTS_SELF_INVOICES_CREATE EventType
-	ISSUED_DOCUMENTS_SELF_INVOICES_UPDATE EventType
-	ISSUED_DOCUMENTS_SELF_INVOICES_DELETE EventType
-	ISSUED_DOCUMENTS_ALL_CREATE EventType
-	ISSUED_DOCUMENTS_ALL_UPDATE EventType
-	ISSUED_DOCUMENTS_ALL_DELETE EventType
-	RECEIVED_DOCUMENTS_CREATE EventType
-	RECEIVED_DOCUMENTS_UPDATE EventType
-	RECEIVED_DOCUMENTS_DELETE EventType
-	RECEIPTS_CREATE EventType
-	RECEIPTS_UPDATE EventType
-	RECEIPTS_DELETE EventType
-	TAXES_CREATE EventType
-	TAXES_UPDATE EventType
-	TAXES_DELETE EventType
-	ARCHIVE_DOCUMENTS_CREATE EventType
-	ARCHIVE_DOCUMENTS_UPDATE EventType
-	ARCHIVE_DOCUMENTS_DELETE EventType
-	CASHBOOK_CREATE EventType
-	CASHBOOK_UPDATE EventType
-	CASHBOOK_DELETE EventType
-	PRODUCTS_CREATE EventType
-	PRODUCTS_UPDATE EventType
-	PRODUCTS_DELETE EventType
-	PRODUCTS_STOCK_UPDATE EventType
-	ENTITIES_CLIENTS_CREATE EventType
-	ENTITIES_CLIENTS_UPDATE EventType
-	ENTITIES_CLIENTS_DELETE EventType
-	ENTITIES_SUPPLIERS_CREATE EventType
-	ENTITIES_SUPPLIERS_UPDATE EventType
-	ENTITIES_SUPPLIERS_DELETE EventType
-	ENTITIES_ALL_CREATE EventType
-	ENTITIES_ALL_UPDATE EventType
-	ENTITIES_ALL_DELETE EventType
-	ISSUED_DOCUMENTS_E_INVOICES_STATUS_UPDATE EventType
-	RECEIVED_DOCUMENTS_E_INVOICES_RECEIVE EventType
-	ISSUED_DOCUMENTS_INVOICES_EMAIL_SENT EventType
-	ISSUED_DOCUMENTS_QUOTES_EMAIL_SENT EventType
-	ISSUED_DOCUMENTS_PROFORMAS_EMAIL_SENT EventType
-	ISSUED_DOCUMENTS_RECEIPTS_EMAIL_SENT EventType
-	ISSUED_DOCUMENTS_DELIVERY_NOTES_EMAIL_SENT EventType
-	ISSUED_DOCUMENTS_CREDIT_NOTES_EMAIL_SENT EventType
-	ISSUED_DOCUMENTS_ORDERS_EMAIL_SENT EventType
-	ISSUED_DOCUMENTS_WORK_REPORTS_EMAIL_SENT EventType
-	ISSUED_DOCUMENTS_SUPPLIER_ORDERS_EMAIL_SENT EventType
-	ISSUED_DOCUMENTS_SELF_INVOICES_EMAIL_SENT EventType
-	ISSUED_DOCUMENTS_ALL_EMAIL_SENT EventType
-} {
-	ISSUED_DOCUMENTS_INVOICES_CREATE: "it.fattureincloud.webhooks.issued_documents.invoices.create",
-	ISSUED_DOCUMENTS_INVOICES_UPDATE: "it.fattureincloud.webhooks.issued_documents.invoices.update",
-	ISSUED_DOCUMENTS_INVOICES_DELETE: "it.fattureincloud.webhooks.issued_documents.invoices.delete",
-	ISSUED_DOCUMENTS_QUOTES_CREATE: "it.fattureincloud.webhooks.issued_documents.quotes.create",
-	ISSUED_DOCUMENTS_QUOTES_UPDATE: "it.fattureincloud.webhooks.issued_documents.quotes.update",
-	ISSUED_DOCUMENTS_QUOTES_DELETE: "it.fattureincloud.webhooks.issued_documents.quotes.delete",
-	ISSUED_DOCUMENTS_PROFORMAS_CREATE: "it.fattureincloud.webhooks.issued_documents.proformas.create",
-	ISSUED_DOCUMENTS_PROFORMAS_UPDATE: "it.fattureincloud.webhooks.issued_documents.proformas.update",
-	ISSUED_DOCUMENTS_PROFORMAS_DELETE: "it.fattureincloud.webhooks.issued_documents.proformas.delete",
-	ISSUED_DOCUMENTS_RECEIPTS_CREATE: "it.fattureincloud.webhooks.issued_documents.receipts.create",
-	ISSUED_DOCUMENTS_RECEIPTS_UPDATE: "it.fattureincloud.webhooks.issued_documents.receipts.update",
-	ISSUED_DOCUMENTS_RECEIPTS_DELETE: "it.fattureincloud.webhooks.issued_documents.receipts.delete",
-	ISSUED_DOCUMENTS_DELIVERY_NOTES_CREATE: "it.fattureincloud.webhooks.issued_documents.delivery_notes.create",
-	ISSUED_DOCUMENTS_DELIVERY_NOTES_UPDATE: "it.fattureincloud.webhooks.issued_documents.delivery_notes.update",
-	ISSUED_DOCUMENTS_DELIVERY_NOTES_DELETE: "it.fattureincloud.webhooks.issued_documents.delivery_notes.delete",
-	ISSUED_DOCUMENTS_CREDIT_NOTES_CREATE: "it.fattureincloud.webhooks.issued_documents.credit_notes.create",
-	ISSUED_DOCUMENTS_CREDIT_NOTES_UPDATE: "it.fattureincloud.webhooks.issued_documents.credit_notes.update",
-	ISSUED_DOCUMENTS_CREDIT_NOTES_DELETE: "it.fattureincloud.webhooks.issued_documents.credit_notes.delete",
-	ISSUED_DOCUMENTS_ORDERS_CREATE: "it.fattureincloud.webhooks.issued_documents.orders.create",
-	ISSUED_DOCUMENTS_ORDERS_UPDATE: "it.fattureincloud.webhooks.issued_documents.orders.update",
-	ISSUED_DOCUMENTS_ORDERS_DELETE: "it.fattureincloud.webhooks.issued_documents.orders.delete",
-	ISSUED_DOCUMENTS_WORK_REPORTS_CREATE: "it.fattureincloud.webhooks.issued_documents.work_reports.create",
-	ISSUED_DOCUMENTS_WORK_REPORTS_UPDATE: "it.fattureincloud.webhooks.issued_documents.work_reports.update",
-	ISSUED_DOCUMENTS_WORK_REPORTS_DELETE: "it.fattureincloud.webhooks.issued_documents.work_reports.delete",
-	ISSUED_DOCUMENTS_SUPPLIER_ORDERS_CREATE: "it.fattureincloud.webhooks.issued_documents.supplier_orders.create",
-	ISSUED_DOCUMENTS_SUPPLIER_ORDERS_UPDATE: "it.fattureincloud.webhooks.issued_documents.supplier_orders.update",
-	ISSUED_DOCUMENTS_SUPPLIER_ORDERS_DELETE: "it.fattureincloud.webhooks.issued_documents.supplier_orders.delete",
-	ISSUED_DOCUMENTS_SELF_INVOICES_CREATE: "it.fattureincloud.webhooks.issued_documents.self_invoices.create",
-	ISSUED_DOCUMENTS_SELF_INVOICES_UPDATE: "it.fattureincloud.webhooks.issued_documents.self_invoices.update",
-	ISSUED_DOCUMENTS_SELF_INVOICES_DELETE: "it.fattureincloud.webhooks.issued_documents.self_invoices.delete",
-	ISSUED_DOCUMENTS_ALL_CREATE: "it.fattureincloud.webhooks.issued_documents.all.create",
-	ISSUED_DOCUMENTS_ALL_UPDATE: "it.fattureincloud.webhooks.issued_documents.all.update",
-	ISSUED_DOCUMENTS_ALL_DELETE: "it.fattureincloud.webhooks.issued_documents.all.delete",
-	RECEIVED_DOCUMENTS_CREATE: "it.fattureincloud.webhooks.received_documents.create",
-	RECEIVED_DOCUMENTS_UPDATE: "it.fattureincloud.webhooks.received_documents.update",
-	RECEIVED_DOCUMENTS_DELETE: "it.fattureincloud.webhooks.received_documents.delete",
-	RECEIPTS_CREATE: "it.fattureincloud.webhooks.receipts.create",
-	RECEIPTS_UPDATE: "it.fattureincloud.webhooks.receipts.update",
-	RECEIPTS_DELETE: "it.fattureincloud.webhooks.receipts.delete",
-	TAXES_CREATE: "it.fattureincloud.webhooks.taxes.create",
-	TAXES_UPDATE: "it.fattureincloud.webhooks.taxes.update",
-	TAXES_DELETE: "it.fattureincloud.webhooks.taxes.delete",
-	ARCHIVE_DOCUMENTS_CREATE: "it.fattureincloud.webhooks.archive_documents.create",
-	ARCHIVE_DOCUMENTS_UPDATE: "it.fattureincloud.webhooks.archive_documents.update",
-	ARCHIVE_DOCUMENTS_DELETE: "it.fattureincloud.webhooks.archive_documents.delete",
-	CASHBOOK_CREATE: "it.fattureincloud.webhooks.cashbook.create",
-	CASHBOOK_UPDATE: "it.fattureincloud.webhooks.cashbook.update",
-	CASHBOOK_DELETE: "it.fattureincloud.webhooks.cashbook.delete",
-	PRODUCTS_CREATE: "it.fattureincloud.webhooks.products.create",
-	PRODUCTS_UPDATE: "it.fattureincloud.webhooks.products.update",
-	PRODUCTS_DELETE: "it.fattureincloud.webhooks.products.delete",
-	PRODUCTS_STOCK_UPDATE: "it.fattureincloud.webhooks.products.stock_update",
-	ENTITIES_CLIENTS_CREATE: "it.fattureincloud.webhooks.entities.clients.create",
-	ENTITIES_CLIENTS_UPDATE: "it.fattureincloud.webhooks.entities.clients.update",
-	ENTITIES_CLIENTS_DELETE: "it.fattureincloud.webhooks.entities.clients.delete",
-	ENTITIES_SUPPLIERS_CREATE: "it.fattureincloud.webhooks.entities.suppliers.create",
-	ENTITIES_SUPPLIERS_UPDATE: "it.fattureincloud.webhooks.entities.suppliers.update",
-	ENTITIES_SUPPLIERS_DELETE: "it.fattureincloud.webhooks.entities.suppliers.delete",
-	ENTITIES_ALL_CREATE: "it.fattureincloud.webhooks.entities.all.create",
-	ENTITIES_ALL_UPDATE: "it.fattureincloud.webhooks.entities.all.update",
-	ENTITIES_ALL_DELETE: "it.fattureincloud.webhooks.entities.all.delete",
-	ISSUED_DOCUMENTS_E_INVOICES_STATUS_UPDATE: "it.fattureincloud.webhooks.issued_documents.e_invoices.status_update",
-	RECEIVED_DOCUMENTS_E_INVOICES_RECEIVE: "it.fattureincloud.webhooks.received_documents.e_invoices.receive",
-	ISSUED_DOCUMENTS_INVOICES_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.invoices.email_sent",
-	ISSUED_DOCUMENTS_QUOTES_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.quotes.email_sent",
-	ISSUED_DOCUMENTS_PROFORMAS_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.proformas.email_sent",
-	ISSUED_DOCUMENTS_RECEIPTS_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.receipts.email_sent",
-	ISSUED_DOCUMENTS_DELIVERY_NOTES_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.delivery_notes.email_sent",
-	ISSUED_DOCUMENTS_CREDIT_NOTES_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.credit_notes.email_sent",
-	ISSUED_DOCUMENTS_ORDERS_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.orders.email_sent",
-	ISSUED_DOCUMENTS_WORK_REPORTS_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.work_reports.email_sent",
-	ISSUED_DOCUMENTS_SUPPLIER_ORDERS_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.supplier_orders.email_sent",
-	ISSUED_DOCUMENTS_SELF_INVOICES_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.self_invoices.email_sent",
-	ISSUED_DOCUMENTS_ALL_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.all.email_sent",
+	ISSUED_DOCUMENTS_INVOICES_CREATE                   EventType
+	ISSUED_DOCUMENTS_INVOICES_UPDATE                   EventType
+	ISSUED_DOCUMENTS_INVOICES_DELETE                   EventType
+	ISSUED_DOCUMENTS_QUOTES_CREATE                     EventType
+	ISSUED_DOCUMENTS_QUOTES_UPDATE                     EventType
+	ISSUED_DOCUMENTS_QUOTES_DELETE                     EventType
+	ISSUED_DOCUMENTS_PROFORMAS_CREATE                  EventType
+	ISSUED_DOCUMENTS_PROFORMAS_UPDATE                  EventType
+	ISSUED_DOCUMENTS_PROFORMAS_DELETE                  EventType
+	ISSUED_DOCUMENTS_RECEIPTS_CREATE                   EventType
+	ISSUED_DOCUMENTS_RECEIPTS_UPDATE                   EventType
+	ISSUED_DOCUMENTS_RECEIPTS_DELETE                   EventType
+	ISSUED_DOCUMENTS_DELIVERY_NOTES_CREATE             EventType
+	ISSUED_DOCUMENTS_DELIVERY_NOTES_UPDATE             EventType
+	ISSUED_DOCUMENTS_DELIVERY_NOTES_DELETE             EventType
+	ISSUED_DOCUMENTS_CREDIT_NOTES_CREATE               EventType
+	ISSUED_DOCUMENTS_CREDIT_NOTES_UPDATE               EventType
+	ISSUED_DOCUMENTS_CREDIT_NOTES_DELETE               EventType
+	ISSUED_DOCUMENTS_ORDERS_CREATE                     EventType
+	ISSUED_DOCUMENTS_ORDERS_UPDATE                     EventType
+	ISSUED_DOCUMENTS_ORDERS_DELETE                     EventType
+	ISSUED_DOCUMENTS_WORK_REPORTS_CREATE               EventType
+	ISSUED_DOCUMENTS_WORK_REPORTS_UPDATE               EventType
+	ISSUED_DOCUMENTS_WORK_REPORTS_DELETE               EventType
+	ISSUED_DOCUMENTS_SUPPLIER_ORDERS_CREATE            EventType
+	ISSUED_DOCUMENTS_SUPPLIER_ORDERS_UPDATE            EventType
+	ISSUED_DOCUMENTS_SUPPLIER_ORDERS_DELETE            EventType
+	ISSUED_DOCUMENTS_SELF_SUPPLIER_INVOICES_CREATE     EventType
+	ISSUED_DOCUMENTS_SELF_SUPPLIER_INVOICES_UPDATE     EventType
+	ISSUED_DOCUMENTS_SELF_SUPPLIER_INVOICES_DELETE     EventType
+	ISSUED_DOCUMENTS_SELF_OWN_INVOICES_CREATE          EventType
+	ISSUED_DOCUMENTS_SELF_OWN_INVOICES_UPDATE          EventType
+	ISSUED_DOCUMENTS_SELF_OWN_INVOICES_DELETE          EventType
+	ISSUED_DOCUMENTS_ALL_CREATE                        EventType
+	ISSUED_DOCUMENTS_ALL_UPDATE                        EventType
+	ISSUED_DOCUMENTS_ALL_DELETE                        EventType
+	RECEIVED_DOCUMENTS_CREATE                          EventType
+	RECEIVED_DOCUMENTS_UPDATE                          EventType
+	RECEIVED_DOCUMENTS_DELETE                          EventType
+	RECEIPTS_CREATE                                    EventType
+	RECEIPTS_UPDATE                                    EventType
+	RECEIPTS_DELETE                                    EventType
+	TAXES_CREATE                                       EventType
+	TAXES_UPDATE                                       EventType
+	TAXES_DELETE                                       EventType
+	ARCHIVE_DOCUMENTS_CREATE                           EventType
+	ARCHIVE_DOCUMENTS_UPDATE                           EventType
+	ARCHIVE_DOCUMENTS_DELETE                           EventType
+	CASHBOOK_CREATE                                    EventType
+	CASHBOOK_UPDATE                                    EventType
+	CASHBOOK_DELETE                                    EventType
+	PRODUCTS_CREATE                                    EventType
+	PRODUCTS_UPDATE                                    EventType
+	PRODUCTS_DELETE                                    EventType
+	PRODUCTS_STOCK_UPDATE                              EventType
+	ENTITIES_CLIENTS_CREATE                            EventType
+	ENTITIES_CLIENTS_UPDATE                            EventType
+	ENTITIES_CLIENTS_DELETE                            EventType
+	ENTITIES_SUPPLIERS_CREATE                          EventType
+	ENTITIES_SUPPLIERS_UPDATE                          EventType
+	ENTITIES_SUPPLIERS_DELETE                          EventType
+	ENTITIES_ALL_CREATE                                EventType
+	ENTITIES_ALL_UPDATE                                EventType
+	ENTITIES_ALL_DELETE                                EventType
+	ISSUED_DOCUMENTS_E_INVOICES_STATUS_UPDATE          EventType
+	RECEIVED_DOCUMENTS_E_INVOICES_RECEIVE              EventType
+	ISSUED_DOCUMENTS_INVOICES_EMAIL_SENT               EventType
+	ISSUED_DOCUMENTS_QUOTES_EMAIL_SENT                 EventType
+	ISSUED_DOCUMENTS_PROFORMAS_EMAIL_SENT              EventType
+	ISSUED_DOCUMENTS_RECEIPTS_EMAIL_SENT               EventType
+	ISSUED_DOCUMENTS_DELIVERY_NOTES_EMAIL_SENT         EventType
+	ISSUED_DOCUMENTS_CREDIT_NOTES_EMAIL_SENT           EventType
+	ISSUED_DOCUMENTS_ORDERS_EMAIL_SENT                 EventType
+	ISSUED_DOCUMENTS_WORK_REPORTS_EMAIL_SENT           EventType
+	ISSUED_DOCUMENTS_SUPPLIER_ORDERS_EMAIL_SENT        EventType
+	ISSUED_DOCUMENTS_SELF_SUPPLIER_INVOICES_EMAIL_SENT EventType
+	ISSUED_DOCUMENTS_SELF_OWN_INVOICES_EMAIL_SENT      EventType
+	ISSUED_DOCUMENTS_ALL_EMAIL_SENT                    EventType
+}{
+	ISSUED_DOCUMENTS_INVOICES_CREATE:                   "it.fattureincloud.webhooks.issued_documents.invoices.create",
+	ISSUED_DOCUMENTS_INVOICES_UPDATE:                   "it.fattureincloud.webhooks.issued_documents.invoices.update",
+	ISSUED_DOCUMENTS_INVOICES_DELETE:                   "it.fattureincloud.webhooks.issued_documents.invoices.delete",
+	ISSUED_DOCUMENTS_QUOTES_CREATE:                     "it.fattureincloud.webhooks.issued_documents.quotes.create",
+	ISSUED_DOCUMENTS_QUOTES_UPDATE:                     "it.fattureincloud.webhooks.issued_documents.quotes.update",
+	ISSUED_DOCUMENTS_QUOTES_DELETE:                     "it.fattureincloud.webhooks.issued_documents.quotes.delete",
+	ISSUED_DOCUMENTS_PROFORMAS_CREATE:                  "it.fattureincloud.webhooks.issued_documents.proformas.create",
+	ISSUED_DOCUMENTS_PROFORMAS_UPDATE:                  "it.fattureincloud.webhooks.issued_documents.proformas.update",
+	ISSUED_DOCUMENTS_PROFORMAS_DELETE:                  "it.fattureincloud.webhooks.issued_documents.proformas.delete",
+	ISSUED_DOCUMENTS_RECEIPTS_CREATE:                   "it.fattureincloud.webhooks.issued_documents.receipts.create",
+	ISSUED_DOCUMENTS_RECEIPTS_UPDATE:                   "it.fattureincloud.webhooks.issued_documents.receipts.update",
+	ISSUED_DOCUMENTS_RECEIPTS_DELETE:                   "it.fattureincloud.webhooks.issued_documents.receipts.delete",
+	ISSUED_DOCUMENTS_DELIVERY_NOTES_CREATE:             "it.fattureincloud.webhooks.issued_documents.delivery_notes.create",
+	ISSUED_DOCUMENTS_DELIVERY_NOTES_UPDATE:             "it.fattureincloud.webhooks.issued_documents.delivery_notes.update",
+	ISSUED_DOCUMENTS_DELIVERY_NOTES_DELETE:             "it.fattureincloud.webhooks.issued_documents.delivery_notes.delete",
+	ISSUED_DOCUMENTS_CREDIT_NOTES_CREATE:               "it.fattureincloud.webhooks.issued_documents.credit_notes.create",
+	ISSUED_DOCUMENTS_CREDIT_NOTES_UPDATE:               "it.fattureincloud.webhooks.issued_documents.credit_notes.update",
+	ISSUED_DOCUMENTS_CREDIT_NOTES_DELETE:               "it.fattureincloud.webhooks.issued_documents.credit_notes.delete",
+	ISSUED_DOCUMENTS_ORDERS_CREATE:                     "it.fattureincloud.webhooks.issued_documents.orders.create",
+	ISSUED_DOCUMENTS_ORDERS_UPDATE:                     "it.fattureincloud.webhooks.issued_documents.orders.update",
+	ISSUED_DOCUMENTS_ORDERS_DELETE:                     "it.fattureincloud.webhooks.issued_documents.orders.delete",
+	ISSUED_DOCUMENTS_WORK_REPORTS_CREATE:               "it.fattureincloud.webhooks.issued_documents.work_reports.create",
+	ISSUED_DOCUMENTS_WORK_REPORTS_UPDATE:               "it.fattureincloud.webhooks.issued_documents.work_reports.update",
+	ISSUED_DOCUMENTS_WORK_REPORTS_DELETE:               "it.fattureincloud.webhooks.issued_documents.work_reports.delete",
+	ISSUED_DOCUMENTS_SUPPLIER_ORDERS_CREATE:            "it.fattureincloud.webhooks.issued_documents.supplier_orders.create",
+	ISSUED_DOCUMENTS_SUPPLIER_ORDERS_UPDATE:            "it.fattureincloud.webhooks.issued_documents.supplier_orders.update",
+	ISSUED_DOCUMENTS_SUPPLIER_ORDERS_DELETE:            "it.fattureincloud.webhooks.issued_documents.supplier_orders.delete",
+	ISSUED_DOCUMENTS_SELF_SUPPLIER_INVOICES_CREATE:     "it.fattureincloud.webhooks.issued_documents.self_supplier_invoices.create",
+	ISSUED_DOCUMENTS_SELF_SUPPLIER_INVOICES_UPDATE:     "it.fattureincloud.webhooks.issued_documents.self_supplier_invoices.update",
+	ISSUED_DOCUMENTS_SELF_SUPPLIER_INVOICES_DELETE:     "it.fattureincloud.webhooks.issued_documents.self_supplier_invoices.delete",
+	ISSUED_DOCUMENTS_SELF_OWN_INVOICES_CREATE:          "it.fattureincloud.webhooks.issued_documents.self_own_invoices.create",
+	ISSUED_DOCUMENTS_SELF_OWN_INVOICES_UPDATE:          "it.fattureincloud.webhooks.issued_documents.self_own_invoices.update",
+	ISSUED_DOCUMENTS_SELF_OWN_INVOICES_DELETE:          "it.fattureincloud.webhooks.issued_documents.self_own_invoices.delete",
+	ISSUED_DOCUMENTS_ALL_CREATE:                        "it.fattureincloud.webhooks.issued_documents.all.create",
+	ISSUED_DOCUMENTS_ALL_UPDATE:                        "it.fattureincloud.webhooks.issued_documents.all.update",
+	ISSUED_DOCUMENTS_ALL_DELETE:                        "it.fattureincloud.webhooks.issued_documents.all.delete",
+	RECEIVED_DOCUMENTS_CREATE:                          "it.fattureincloud.webhooks.received_documents.create",
+	RECEIVED_DOCUMENTS_UPDATE:                          "it.fattureincloud.webhooks.received_documents.update",
+	RECEIVED_DOCUMENTS_DELETE:                          "it.fattureincloud.webhooks.received_documents.delete",
+	RECEIPTS_CREATE:                                    "it.fattureincloud.webhooks.receipts.create",
+	RECEIPTS_UPDATE:                                    "it.fattureincloud.webhooks.receipts.update",
+	RECEIPTS_DELETE:                                    "it.fattureincloud.webhooks.receipts.delete",
+	TAXES_CREATE:                                       "it.fattureincloud.webhooks.taxes.create",
+	TAXES_UPDATE:                                       "it.fattureincloud.webhooks.taxes.update",
+	TAXES_DELETE:                                       "it.fattureincloud.webhooks.taxes.delete",
+	ARCHIVE_DOCUMENTS_CREATE:                           "it.fattureincloud.webhooks.archive_documents.create",
+	ARCHIVE_DOCUMENTS_UPDATE:                           "it.fattureincloud.webhooks.archive_documents.update",
+	ARCHIVE_DOCUMENTS_DELETE:                           "it.fattureincloud.webhooks.archive_documents.delete",
+	CASHBOOK_CREATE:                                    "it.fattureincloud.webhooks.cashbook.create",
+	CASHBOOK_UPDATE:                                    "it.fattureincloud.webhooks.cashbook.update",
+	CASHBOOK_DELETE:                                    "it.fattureincloud.webhooks.cashbook.delete",
+	PRODUCTS_CREATE:                                    "it.fattureincloud.webhooks.products.create",
+	PRODUCTS_UPDATE:                                    "it.fattureincloud.webhooks.products.update",
+	PRODUCTS_DELETE:                                    "it.fattureincloud.webhooks.products.delete",
+	PRODUCTS_STOCK_UPDATE:                              "it.fattureincloud.webhooks.products.stock_update",
+	ENTITIES_CLIENTS_CREATE:                            "it.fattureincloud.webhooks.entities.clients.create",
+	ENTITIES_CLIENTS_UPDATE:                            "it.fattureincloud.webhooks.entities.clients.update",
+	ENTITIES_CLIENTS_DELETE:                            "it.fattureincloud.webhooks.entities.clients.delete",
+	ENTITIES_SUPPLIERS_CREATE:                          "it.fattureincloud.webhooks.entities.suppliers.create",
+	ENTITIES_SUPPLIERS_UPDATE:                          "it.fattureincloud.webhooks.entities.suppliers.update",
+	ENTITIES_SUPPLIERS_DELETE:                          "it.fattureincloud.webhooks.entities.suppliers.delete",
+	ENTITIES_ALL_CREATE:                                "it.fattureincloud.webhooks.entities.all.create",
+	ENTITIES_ALL_UPDATE:                                "it.fattureincloud.webhooks.entities.all.update",
+	ENTITIES_ALL_DELETE:                                "it.fattureincloud.webhooks.entities.all.delete",
+	ISSUED_DOCUMENTS_E_INVOICES_STATUS_UPDATE:          "it.fattureincloud.webhooks.issued_documents.e_invoices.status_update",
+	RECEIVED_DOCUMENTS_E_INVOICES_RECEIVE:              "it.fattureincloud.webhooks.received_documents.e_invoices.receive",
+	ISSUED_DOCUMENTS_INVOICES_EMAIL_SENT:               "it.fattureincloud.webhooks.issued_documents.invoices.email_sent",
+	ISSUED_DOCUMENTS_QUOTES_EMAIL_SENT:                 "it.fattureincloud.webhooks.issued_documents.quotes.email_sent",
+	ISSUED_DOCUMENTS_PROFORMAS_EMAIL_SENT:              "it.fattureincloud.webhooks.issued_documents.proformas.email_sent",
+	ISSUED_DOCUMENTS_RECEIPTS_EMAIL_SENT:               "it.fattureincloud.webhooks.issued_documents.receipts.email_sent",
+	ISSUED_DOCUMENTS_DELIVERY_NOTES_EMAIL_SENT:         "it.fattureincloud.webhooks.issued_documents.delivery_notes.email_sent",
+	ISSUED_DOCUMENTS_CREDIT_NOTES_EMAIL_SENT:           "it.fattureincloud.webhooks.issued_documents.credit_notes.email_sent",
+	ISSUED_DOCUMENTS_ORDERS_EMAIL_SENT:                 "it.fattureincloud.webhooks.issued_documents.orders.email_sent",
+	ISSUED_DOCUMENTS_WORK_REPORTS_EMAIL_SENT:           "it.fattureincloud.webhooks.issued_documents.work_reports.email_sent",
+	ISSUED_DOCUMENTS_SUPPLIER_ORDERS_EMAIL_SENT:        "it.fattureincloud.webhooks.issued_documents.supplier_orders.email_sent",
+	ISSUED_DOCUMENTS_SELF_SUPPLIER_INVOICES_EMAIL_SENT: "it.fattureincloud.webhooks.issued_documents.self_supplier_invoices.email_sent",
+	ISSUED_DOCUMENTS_SELF_OWN_INVOICES_EMAIL_SENT:      "it.fattureincloud.webhooks.issued_documents.self_own_invoices.email_sent",
+	ISSUED_DOCUMENTS_ALL_EMAIL_SENT:                    "it.fattureincloud.webhooks.issued_documents.all.email_sent",
 }
 
 // All allowed values of EventType enum
@@ -201,9 +209,12 @@ var AllowedEventTypeEnumValues = []EventType{
 	"it.fattureincloud.webhooks.issued_documents.supplier_orders.create",
 	"it.fattureincloud.webhooks.issued_documents.supplier_orders.update",
 	"it.fattureincloud.webhooks.issued_documents.supplier_orders.delete",
-	"it.fattureincloud.webhooks.issued_documents.self_invoices.create",
-	"it.fattureincloud.webhooks.issued_documents.self_invoices.update",
-	"it.fattureincloud.webhooks.issued_documents.self_invoices.delete",
+	"it.fattureincloud.webhooks.issued_documents.self_supplier_invoices.create",
+	"it.fattureincloud.webhooks.issued_documents.self_supplier_invoices.update",
+	"it.fattureincloud.webhooks.issued_documents.self_supplier_invoices.delete",
+	"it.fattureincloud.webhooks.issued_documents.self_own_invoices.create",
+	"it.fattureincloud.webhooks.issued_documents.self_own_invoices.update",
+	"it.fattureincloud.webhooks.issued_documents.self_own_invoices.delete",
 	"it.fattureincloud.webhooks.issued_documents.all.create",
 	"it.fattureincloud.webhooks.issued_documents.all.update",
 	"it.fattureincloud.webhooks.issued_documents.all.delete",
@@ -246,7 +257,8 @@ var AllowedEventTypeEnumValues = []EventType{
 	"it.fattureincloud.webhooks.issued_documents.orders.email_sent",
 	"it.fattureincloud.webhooks.issued_documents.work_reports.email_sent",
 	"it.fattureincloud.webhooks.issued_documents.supplier_orders.email_sent",
-	"it.fattureincloud.webhooks.issued_documents.self_invoices.email_sent",
+	"it.fattureincloud.webhooks.issued_documents.self_supplier_invoices.email_sent",
+	"it.fattureincloud.webhooks.issued_documents.self_own_invoices.email_sent",
 	"it.fattureincloud.webhooks.issued_documents.all.email_sent",
 }
 
@@ -328,4 +340,3 @@ func (v *NullableEventType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
