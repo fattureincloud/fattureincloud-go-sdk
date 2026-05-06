@@ -34,6 +34,8 @@ Name | Type | Description | Notes
 **Locked** | Pointer to **NullableBool** | Received Document can&#39;t be edited | [optional] 
 **CreatedAt** | Pointer to **NullableString** | Received document creation date | [optional] 
 **UpdatedAt** | Pointer to **NullableString** | Received document last update date | [optional] 
+**EiReceptionDate** | Pointer to **NullableString** | [Read Only] Received document e-invoice reception date, needs fic_view  fieldset | [optional] [readonly] 
+**IsFromPendingExpenses** | Pointer to **NullableBool** | [Read Only] True if received document is generated from pending expenses,  needs fic_view fieldset | [optional] [readonly] 
 
 ## Methods
 
@@ -1074,6 +1076,76 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *ReceivedDocument) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
+### GetEiReceptionDate
+
+`func (o *ReceivedDocument) GetEiReceptionDate() string`
+
+GetEiReceptionDate returns the EiReceptionDate field if non-nil, zero value otherwise.
+
+### GetEiReceptionDateOk
+
+`func (o *ReceivedDocument) GetEiReceptionDateOk() (*string, bool)`
+
+GetEiReceptionDateOk returns a tuple with the EiReceptionDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEiReceptionDate
+
+`func (o *ReceivedDocument) SetEiReceptionDate(v string)`
+
+SetEiReceptionDate sets EiReceptionDate field to given value.
+
+### HasEiReceptionDate
+
+`func (o *ReceivedDocument) HasEiReceptionDate() bool`
+
+HasEiReceptionDate returns a boolean if a field has been set.
+
+### SetEiReceptionDateNil
+
+`func (o *ReceivedDocument) SetEiReceptionDateNil(b bool)`
+
+ SetEiReceptionDateNil sets the value for EiReceptionDate to be an explicit nil
+
+### UnsetEiReceptionDate
+`func (o *ReceivedDocument) UnsetEiReceptionDate()`
+
+UnsetEiReceptionDate ensures that no value is present for EiReceptionDate, not even an explicit nil
+### GetIsFromPendingExpenses
+
+`func (o *ReceivedDocument) GetIsFromPendingExpenses() bool`
+
+GetIsFromPendingExpenses returns the IsFromPendingExpenses field if non-nil, zero value otherwise.
+
+### GetIsFromPendingExpensesOk
+
+`func (o *ReceivedDocument) GetIsFromPendingExpensesOk() (*bool, bool)`
+
+GetIsFromPendingExpensesOk returns a tuple with the IsFromPendingExpenses field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsFromPendingExpenses
+
+`func (o *ReceivedDocument) SetIsFromPendingExpenses(v bool)`
+
+SetIsFromPendingExpenses sets IsFromPendingExpenses field to given value.
+
+### HasIsFromPendingExpenses
+
+`func (o *ReceivedDocument) HasIsFromPendingExpenses() bool`
+
+HasIsFromPendingExpenses returns a boolean if a field has been set.
+
+### SetIsFromPendingExpensesNil
+
+`func (o *ReceivedDocument) SetIsFromPendingExpensesNil(b bool)`
+
+ SetIsFromPendingExpensesNil sets the value for IsFromPendingExpenses to be an explicit nil
+
+### UnsetIsFromPendingExpenses
+`func (o *ReceivedDocument) UnsetIsFromPendingExpenses()`
+
+UnsetIsFromPendingExpenses ensures that no value is present for IsFromPendingExpenses, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

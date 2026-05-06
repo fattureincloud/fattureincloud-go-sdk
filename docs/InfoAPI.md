@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**ListCostCenters**](InfoAPI.md#ListCostCenters) | **Get** /c/{company_id}/info/cost_centers | List Cost Centers
 [**ListCountries**](InfoAPI.md#ListCountries) | **Get** /info/countries | List Countries
 [**ListCurrencies**](InfoAPI.md#ListCurrencies) | **Get** /info/currencies | List Currencies
+[**ListDefaultTemplates**](InfoAPI.md#ListDefaultTemplates) | **Get** /info/templates | List Default Templates
 [**ListDeliveryNotesDefaultCausals**](InfoAPI.md#ListDeliveryNotesDefaultCausals) | **Get** /info/dn_causals | List Delivery Notes Default Causals
 [**ListDetailedCountries**](InfoAPI.md#ListDetailedCountries) | **Get** /info/detailed_countries | List Detailed Countries
 [**ListLanguages**](InfoAPI.md#ListLanguages) | **Get** /info/languages | List Languages
@@ -17,7 +18,6 @@ Method | HTTP request | Description
 [**ListProductCategories**](InfoAPI.md#ListProductCategories) | **Get** /c/{company_id}/info/product_categories | List Product Categories
 [**ListReceivedDocumentCategories**](InfoAPI.md#ListReceivedDocumentCategories) | **Get** /c/{company_id}/info/received_document_categories | List Received Document Categories
 [**ListRevenueCenters**](InfoAPI.md#ListRevenueCenters) | **Get** /c/{company_id}/info/revenue_centers | List Revenue Centers
-[**ListTemplates**](InfoAPI.md#ListTemplates) | **Get** /info/templates | List Templates
 [**ListUnitsOfMeasure**](InfoAPI.md#ListUnitsOfMeasure) | **Get** /info/measures | List Units of Measure
 [**ListVatTypes**](InfoAPI.md#ListVatTypes) | **Get** /c/{company_id}/info/vat_types | List Vat Types
 
@@ -353,6 +353,77 @@ Other parameters are passed through a pointer to a apiListCurrenciesRequest stru
 ### Return type
 
 [**ListCurrenciesResponse**](ListCurrenciesResponse.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListDefaultTemplates
+
+> ListTemplatesResponse ListDefaultTemplates(ctx).Type_(type_).ByType(byType).Execute()
+
+List Default Templates
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"encoding/json"
+	"fmt"
+	"os"
+	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
+	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
+)
+
+func main() {
+	type_ := "type__example" // string | Type of the templates. (optional) (default to "all")
+	byType := true // bool | [Only if type=all] If true, splits the list in objects, grouping templates by type. (optional) (default to false)
+
+	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
+	configuration := fattureincloudapi.NewConfiguration()
+	apiClient := fattureincloudapi.NewAPIClient(configuration)
+	resp, r, err := apiClient.InfoAPI.ListDefaultTemplates(auth).Type_(type_).ByType(byType).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InfoAPI.ListDefaultTemplates``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListDefaultTemplates`: ListTemplatesResponse
+	json.NewEncoder(os.Stdout).Encode(resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListDefaultTemplatesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **type_** | **string** | Type of the templates. | [default to &quot;all&quot;]
+ **byType** | **bool** | [Only if type&#x3D;all] If true, splits the list in objects, grouping templates by type. | [default to false]
+
+### Return type
+
+[**ListTemplatesResponse**](ListTemplatesResponse.md)
 
 ### Authorization
 
@@ -924,77 +995,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ListRevenueCentersResponse**](ListRevenueCentersResponse.md)
-
-### Authorization
-
-[OAuth2AuthenticationCodeFlow](../README.md#OAuth2AuthenticationCodeFlow)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ListTemplates
-
-> ListTemplatesResponse ListTemplates(ctx).Type_(type_).ByType(byType).Execute()
-
-List Templates
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"encoding/json"
-	"fmt"
-	"os"
-	fattureincloudapi "github.com/fattureincloud/fattureincloud-go-sdk/v2/api"
-	fattureincloud "github.com/fattureincloud/fattureincloud-go-sdk/v2/model"
-)
-
-func main() {
-	type_ := "type__example" // string | Type of the templates. (optional) (default to "all")
-	byType := true // bool | [Only if type=all] If true, splits the list in objects, grouping templates by type. (optional) (default to false)
-
-	auth := context.WithValue(context.Background(), fattureincloudapi.ContextAccessToken, "ACCESS_TOKEN")
-	configuration := fattureincloudapi.NewConfiguration()
-	apiClient := fattureincloudapi.NewAPIClient(configuration)
-	resp, r, err := apiClient.InfoAPI.ListTemplates(auth).Type_(type_).ByType(byType).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `InfoAPI.ListTemplates``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ListTemplates`: ListTemplatesResponse
-	json.NewEncoder(os.Stdout).Encode(resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiListTemplatesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type_** | **string** | Type of the templates. | [default to &quot;all&quot;]
- **byType** | **bool** | [Only if type&#x3D;all] If true, splits the list in objects, grouping templates by type. | [default to false]
-
-### Return type
-
-[**ListTemplatesResponse**](ListTemplatesResponse.md)
 
 ### Authorization
 

@@ -25,7 +25,7 @@ import (
 func TestGetCompanyInfo(t *testing.T) {
 	s := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte(`{"data":{"id":12346,"name":"Studio Commercialista","email":"mario.rossi@example.com","type":"accountant","access_info":{"role":"master","through_accountant":false},"plan_info":{"limits":{"clients":5000,"suppliers":5000,"products":5000,"documents":3000},"functions":{"archive":true,"cerved":true,"document_attachments":true,"e_invoice":true,"genius":true,"mail_tracking":true,"payment_notifications":true,"paypal":true,"receipts":true,"recurring":true,"smtp":true,"sofort":false,"stock":true,"subaccounts":true,"tessera_sanitaria":true,"ts_digital":true,"ts_invoice_trading":true,"ts_pay":true},"functions_status":{"ts_digital":{"active":true},"ts_pay":{"active":false}}},"accountant_id":12345,"is_accountant":true}}`))
+		w.Write([]byte(`{"data":{"id":12346,"name":"Studio Commercialista","email":"mario.rossi@example.com","type":"accountant","access_info":{"role":"master","through_accountant":false},"plan_info":{"limits":{"clients":5000,"suppliers":5000,"products":5000,"documents":3000},"functions":{"archive":true,"cerved":true,"document_attachments":true,"e_invoice":true,"genius":true,"mail_tracking":true,"payment_notifications":true,"paypal":true,"receipts":true,"recurring":true,"smtp":true,"stock":true,"subaccounts":true,"tessera_sanitaria":true,"ts_digital":true,"ts_invoice_trading":true,"ts_pay":true},"functions_status":{"ts_digital":{"active":true},"ts_pay":{"active":false}}},"accountant_id":12345,"is_accountant":true}}`))
 	}))
 	defer s.Close()
 
@@ -69,7 +69,6 @@ func TestGetCompanyInfo(t *testing.T) {
 				SetSubaccounts(true).
 				SetTesseraSanitaria(true).
 				SetRecurring(true).
-				SetSofort(false).
 				SetCerved(true).
 				SetTsDigital(true).
 				SetTsPay(true).

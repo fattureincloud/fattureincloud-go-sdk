@@ -18,7 +18,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-var ListTemplatesResponseJsonStr string = "{\"data\":[{\"id\":12345,\"name\":\"New Standard S1\",\"type\":\"Tipo 1\"}]}"
+var ListTemplatesResponseJsonStr string = "{\"data\":[{\"id\":12345,\"name\":\"New Standard S1\",\"type\":\"standard\"}]}"
 
 func TestListTemplatesResponse(t *testing.T) {
 	obj := NewListTemplatesResponse()

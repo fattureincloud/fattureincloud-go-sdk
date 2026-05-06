@@ -3,7 +3,7 @@ Fatture in Cloud API v2 - API Reference
 
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-API version: 2.1.5
+API version: 2.1.8
 Contact: info@fattureincloud.it
 */
 
@@ -75,6 +75,10 @@ type ReceivedDocument struct {
 	CreatedAt NullableString `json:"created_at,omitempty"`
 	// Received document last update date
 	UpdatedAt NullableString `json:"updated_at,omitempty"`
+	// [Read Only] Received document e-invoice reception date, needs fic_view  fieldset
+	EiReceptionDate NullableString `json:"ei_reception_date,omitempty"`
+	// [Read Only] True if received document is generated from pending expenses,  needs fic_view fieldset
+	IsFromPendingExpenses NullableBool `json:"is_from_pending_expenses,omitempty"`
 }
 
 // NewReceivedDocument instantiates a new ReceivedDocument object
@@ -1363,6 +1367,94 @@ func (o *ReceivedDocument) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
+// GetEiReceptionDate returns the EiReceptionDate field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ReceivedDocument) GetEiReceptionDate() string {
+	if o == nil || IsNil(o.EiReceptionDate.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.EiReceptionDate.Get()
+}
+
+// GetEiReceptionDateOk returns a tuple with the EiReceptionDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ReceivedDocument) GetEiReceptionDateOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.EiReceptionDate.Get(), o.EiReceptionDate.IsSet()
+}
+
+// HasEiReceptionDate returns a boolean if a field has been set.
+func (o *ReceivedDocument) HasEiReceptionDate() bool {
+	if o != nil && o.EiReceptionDate.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetEiReceptionDate gets a reference to the given NullableString and assigns it to the EiReceptionDate field.
+func (o *ReceivedDocument) SetEiReceptionDate(v string) *ReceivedDocument {
+	o.EiReceptionDate.Set(&v)
+	return o
+}
+// SetEiReceptionDateNil sets the value for EiReceptionDate to be an explicit nil
+func (o *ReceivedDocument) SetEiReceptionDateNil() *ReceivedDocument {
+	o.EiReceptionDate.Set(nil)
+	return o
+}
+
+// UnsetEiReceptionDate ensures that no value is present for EiReceptionDate, not even an explicit nil
+func (o *ReceivedDocument) UnsetEiReceptionDate() {
+	o.EiReceptionDate.Unset()
+}
+
+// GetIsFromPendingExpenses returns the IsFromPendingExpenses field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ReceivedDocument) GetIsFromPendingExpenses() bool {
+	if o == nil || IsNil(o.IsFromPendingExpenses.Get()) {
+		var ret bool
+		return ret
+	}
+	return *o.IsFromPendingExpenses.Get()
+}
+
+// GetIsFromPendingExpensesOk returns a tuple with the IsFromPendingExpenses field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ReceivedDocument) GetIsFromPendingExpensesOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.IsFromPendingExpenses.Get(), o.IsFromPendingExpenses.IsSet()
+}
+
+// HasIsFromPendingExpenses returns a boolean if a field has been set.
+func (o *ReceivedDocument) HasIsFromPendingExpenses() bool {
+	if o != nil && o.IsFromPendingExpenses.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetIsFromPendingExpenses gets a reference to the given NullableBool and assigns it to the IsFromPendingExpenses field.
+func (o *ReceivedDocument) SetIsFromPendingExpenses(v bool) *ReceivedDocument {
+	o.IsFromPendingExpenses.Set(&v)
+	return o
+}
+// SetIsFromPendingExpensesNil sets the value for IsFromPendingExpenses to be an explicit nil
+func (o *ReceivedDocument) SetIsFromPendingExpensesNil() *ReceivedDocument {
+	o.IsFromPendingExpenses.Set(nil)
+	return o
+}
+
+// UnsetIsFromPendingExpenses ensures that no value is present for IsFromPendingExpenses, not even an explicit nil
+func (o *ReceivedDocument) UnsetIsFromPendingExpenses() {
+	o.IsFromPendingExpenses.Unset()
+}
+
 func (o ReceivedDocument) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -1463,6 +1555,12 @@ func (o ReceivedDocument) ToMap() (map[string]interface{}, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
+	if o.EiReceptionDate.IsSet() {
+		toSerialize["ei_reception_date"] = o.EiReceptionDate.Get()
+	}
+	if o.IsFromPendingExpenses.IsSet() {
+		toSerialize["is_from_pending_expenses"] = o.IsFromPendingExpenses.Get()
+	}
 	return toSerialize, nil
 }
 
@@ -1501,5 +1599,4 @@ func (v *NullableReceivedDocument) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

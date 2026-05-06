@@ -18,7 +18,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-var DocumentTemplateJsonStr string = "{\"id\":10,\"name\":\"New Standard S1\",\"type\":\"Tipo 1\"}"
+var DocumentTemplateJsonStr string = "{\"id\":10,\"name\":\"New Standard S1\",\"type\":\"standard\"}"
 
 func TestDocumentTemplate(t *testing.T) {
 	obj := NewDocumentTemplate()

@@ -18,7 +18,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-var CompanyInfoPlanInfoFunctionsJsonStr string = "{\"archive\":true,\"cerved\":true,\"document_attachments\":true,\"e_invoice\":true,\"genius\":true,\"mail_tracking\":true,\"payment_notifications\":true,\"paypal\":true,\"receipts\":true,\"recurring\":true,\"smtp\":true,\"sofort\":false,\"stock\":true,\"subaccounts\":true,\"tessera_sanitaria\":true,\"ts_digital\":true,\"ts_invoice_trading\":true,\"ts_pay\":true}"
+var CompanyInfoPlanInfoFunctionsJsonStr string = "{\"archive\":true,\"cerved\":true,\"document_attachments\":true,\"e_invoice\":true,\"genius\":true,\"mail_tracking\":true,\"payment_notifications\":true,\"paypal\":true,\"receipts\":true,\"recurring\":true,\"smtp\":true,\"stock\":true,\"subaccounts\":true,\"tessera_sanitaria\":true,\"ts_digital\":true,\"ts_invoice_trading\":true,\"ts_pay\":true}"
 
 func TestCompanyInfoPlanInfoFunctions(t *testing.T) {
 	obj := NewCompanyInfoPlanInfoFunctions()
@@ -50,8 +50,6 @@ func TestCompanyInfoPlanInfoFunctions(t *testing.T) {
 	assert.True(t, reflect.DeepEqual(obj.GetRecurring(), newObj.GetRecurring()))
 	newObj.SetSmtp(obj.GetSmtp())
 	assert.True(t, reflect.DeepEqual(obj.GetSmtp(), newObj.GetSmtp()))
-	newObj.SetSofort(obj.GetSofort())
-	assert.True(t, reflect.DeepEqual(obj.GetSofort(), newObj.GetSofort()))
 	newObj.SetStock(obj.GetStock())
 	assert.True(t, reflect.DeepEqual(obj.GetStock(), newObj.GetStock()))
 	newObj.SetSubaccounts(obj.GetSubaccounts())
