@@ -1,23 +1,25 @@
 name: Release Go SDK version
 on: [workflow_dispatch]
-    
+
+permissions:
+  contents: write
+
 jobs:
   release-version:
     runs-on: ubuntu-latest
-    steps: 
-
+    steps:
       - id: checkout
         name: Checkout repo
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.FATTUREINCLOUD_BOT_TOKEN }}
-      
+
       - id: init-git
         name: Init GIT
         run: |
           git config --global user.email "info@fattureincloud.it"
           git config --global user.name "fattureincloud-bot"
-      
+
       - id: setup-node
         name: Setup Node.js
         uses: actions/setup-node@v4
@@ -73,3 +75,10 @@ jobs:
               ref: "refs/tags/v${{ env.sdk_version }}",
               sha: "${{ env.commit_sha }}"
             })
+
+      - id: create-release
+        name: Create release
+        if: ${{ !env.ACT }}
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: v${{ env.sdk_version }}
